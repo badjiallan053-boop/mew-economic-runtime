@@ -14,6 +14,8 @@ The cap is an admission boundary, not automatic pruning. No unresolved financial
 
 Existing and added tests cover competing reservations, restart/retry, immutable effect/claim contracts, unknown payment/delivery, full refunds, regressive transitions, replay, forged live observations, cross-origin JSON requests, token identity and full seller net receipt, quote substitution, wrong owner/rail, malformed chain evidence, transaction reuse under concurrent reconciliation, rollback on asynchronous transaction callbacks, and 1,000 seeded adversarial retry/unknown-claim operations. Provider fixtures are synthetic. The randomized test checks accounting invariants, not model behavior or real-chain finality.
 
+The subsequent [Cardano integration](CARDANO_INTEGRATION.md) implements persisted operator-attested attribution and read-only connectivity. Reconciliation now requires a saved hash. Cryptographic signer/mission ownership, external dispatch, fee reservation and reorg recovery remain pending.
+
 ## Remaining gates, in execution order
 
 | Gate | Required implementation / proof | Current state |

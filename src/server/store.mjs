@@ -8,6 +8,7 @@ export class Store {
     if(!['demo','live'].includes(mode)) throw new Error('Invalid ledger mode');
     if(!Number.isSafeInteger(maxSnapshotBytes) || maxSnapshotBytes<1024) throw new Error('Invalid storage budget');
     this.maxSnapshotBytes=maxSnapshotBytes;
+    this.mode=mode;
     if(path !== ':memory:') mkdirSync(dirname(path), { recursive:true });
     this.db = new DatabaseSync(path);
     this.db.exec('PRAGMA journal_mode=WAL; PRAGMA busy_timeout=5000; CREATE TABLE IF NOT EXISTS runtime (id INTEGER PRIMARY KEY CHECK(id=1), snapshot TEXT NOT NULL);');
@@ -24,6 +25,31 @@ export class Store {
       this.db.prepare('INSERT OR IGNORE INTO ledger_metadata VALUES (1, ?)').run(mode);
       this.db.exec('COMMIT');
     } catch(error) {this.db.exec('ROLLBACK');this.db.close();throw error;}
+    this.db.exec('CREATE TABLE IF NOT EXISTS cardano_operations (id TEXT PRIMARY KEY, effect_id TEXT NOT NULL UNIQUE, tx_hash TEXT NOT NULL UNIQUE, record TEXT NOT NULL);');
+  }
+  cardanoOperations() {return this.db.prepare('SELECT record FROM cardano_operations ORDER BY rowid').all().map(row=>JSON.parse(row.record));}
+  cardanoOperation(effectId) {const row=this.db.prepare('SELECT record FROM cardano_operations WHERE effect_id=?').get(effectId);return row?JSON.parse(row.record):null;}
+  bindCardanoOperation(input) {
+    if(this.mode!=='live') throw new Error('Cardano operation binding requires live mode');
+    for(const field of ['id','effectId','submissionRef']) if(typeof input?.[field]!=='string' || !input[field].trim() || input[field].length>512) throw new Error(`Invalid operation ${field}`);
+    if(typeof input.txHash!=='string' || !/^[a-f0-9]{64}$/i.test(input.txHash)) throw new Error('Invalid operation transaction hash');
+    const hash=input.txHash.toLowerCase();
+    this.db.exec('BEGIN IMMEDIATE');
+    try {
+      const effect=this.read().snapshot().effects.find(e=>e.id===input.effectId);
+      if(!effect || effect.type!=='payment' || !Number.isSafeInteger(effect.amount) || effect.amount<=0 || !effect.recipientAddress?.startsWith('addr_test1')) throw new Error('Operation requires a reserved preprod payment contract');
+      const record={id:input.id,effectId:effect.id,objectiveId:effect.objectiveId,network:'cardano:preprod',txHash:hash,submissionRef:input.submissionRef,recipientAddress:effect.recipientAddress,amount:effect.amount};
+      const existing=this.db.prepare('SELECT record FROM cardano_operations WHERE id=? OR effect_id=?').get(input.id,effect.id);
+      if(existing) {const saved=JSON.parse(existing.record);const {createdAt,...contract}=saved;if(JSON.stringify(contract)!==JSON.stringify(record)) throw new Error('Cardano operation contract is immutable');this.db.exec('COMMIT');return saved;}
+      if(!['reserved','committed'].includes(effect.status)) throw new Error('Cannot bind a terminal effect');
+      if(this.db.prepare('SELECT id FROM cardano_operations WHERE tx_hash=?').get(hash) || this.read().snapshot().claims.some(c=>c.evidence?.txHash?.toLowerCase()===hash)) throw new Error('Transaction already attributed');
+      record.createdAt=new Date().toISOString();
+      const serialized=this.serialize(record);
+      const used=this.db.prepare('SELECT COALESCE(SUM(length(CAST(record AS BLOB))),0) AS bytes FROM cardano_operations').get().bytes;
+      if(used+Buffer.byteLength(serialized)>this.maxSnapshotBytes) throw new Error('Operation storage budget exceeded');
+      this.db.prepare('INSERT INTO cardano_operations VALUES(?,?,?,?)').run(record.id,effect.id,hash,serialized);
+      this.db.exec('COMMIT');return record;
+    } catch(error) {this.db.exec('ROLLBACK');throw error;}
   }
   serialize(value) {
     const snapshot=JSON.stringify(value);

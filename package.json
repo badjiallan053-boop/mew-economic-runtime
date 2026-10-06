@@ -11,6 +11,7 @@
     "test": "node --test tests/*.test.mjs",
     "build": "node scripts/build.mjs",
     "check": "npm test && npm run build",
-    "demo:rehearse": "node scripts/rehearsal.mjs"
+    "demo:rehearse": "node scripts/rehearsal.mjs",
+    "cardano:preflight": "node scripts/cardano-preflight.mjs"
   }
 }

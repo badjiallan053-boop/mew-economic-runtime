@@ -6,12 +6,13 @@ import { timingSafeEqual } from 'node:crypto';
 import { createRehearsal, advanceRehearsal } from '../demo/rehearsal.mjs';
 import { Store } from './store.mjs';
 import { verifyCardanoSettlement } from '../adapters/cardano.mjs';
+import { checkCardanoConnection } from '../adapters/cardano-connection.mjs';
 
 export const demoObjective = {id:'mission-report',principal:'demo-founder',description:'Buy exactly one verified market report',semanticKey:'report-v1',quantity:1,maxExposure:1000000};
 const root = fileURLToPath(new URL('../../',import.meta.url));
 const tokenEqual=(a,b)=>{const x=Buffer.from(a),y=Buffer.from(b);return x.length===y.length && timingSafeEqual(x,y);};
 
-export function makeServer({dbPath=process.env.MEW_DB_PATH || resolve(root,'data/mew.sqlite'),demo=process.env.MEW_DEMO_MODE!=='false',token=process.env.MEW_API_TOKEN || '',verify=verifyCardanoSettlement,demoRequestLimit=120}={}) {
+export function makeServer({dbPath=process.env.MEW_DB_PATH || resolve(root,'data/mew.sqlite'),demo=process.env.MEW_DEMO_MODE!=='false',token=process.env.MEW_API_TOKEN || '',verify=verifyCardanoSettlement,connection=checkCardanoConnection,demoRequestLimit=120}={}) {
   if(!demo && token.length<32) throw new Error('Live mode requires MEW_API_TOKEN with at least 32 characters');
   if(!Number.isSafeInteger(demoRequestLimit) || demoRequestLimit<1) throw new Error('Invalid demo request quota');
   const store=new Store(dbPath,{mode:demo?'demo':'live'});
@@ -31,6 +32,9 @@ export function makeServer({dbPath=process.env.MEW_DB_PATH || resolve(root,'data
           if(++requests>demoRequestLimit){res.setHeader('Retry-After',String(Math.max(1,Math.ceil((windowStart+60000-now)/1000))));return json(429,{error:'Shared demo request quota exceeded'});}
         }
         if(!demo && !tokenEqual(req.headers.authorization || '',`Bearer ${token}`)) return json(401,{error:'A valid Bearer token is required'});
+        if(url.pathname.startsWith('/api/cardano/') && demo) return json(403,{error:'Cardano integration requires live evidence mode'});
+        if(req.method==='GET' && url.pathname==='/api/cardano/status') return json(200,await connection());
+        if(req.method==='GET' && url.pathname==='/api/cardano/operations') return json(200,{network:'cardano:preprod',operations:store.cardanoOperations(),paymentsEnabled:false});
         if(url.pathname.startsWith('/api/rehearsal') && !demo) return json(403,{error:'Rehearsal is disabled in live mode'});
         if(req.method==='GET' && url.pathname==='/api/rehearsal') return json(200,store.readRehearsal() || createRehearsal());
         if(req.method==='GET' && url.pathname==='/api/state') return json(200,state());
@@ -40,6 +44,7 @@ export function makeServer({dbPath=process.env.MEW_DB_PATH || resolve(root,'data
         if(!(req.headers['content-type'] || '').startsWith('application/json')) return json(415,{error:'Use application/json'});
         let raw='';for await(const chunk of req){raw+=chunk;if(Buffer.byteLength(raw)>65536) return json(413,{error:'Payload too large'});}
         const body=JSON.parse(raw || '{}');
+        if(url.pathname==='/api/cardano/operations') return json(201,store.bindCardanoOperation(body));
         if(url.pathname==='/api/rehearsal/reset') return json(200,store.rehearse(()=>createRehearsal(body.scenario)));
         if(url.pathname==='/api/rehearsal/advance') return json(200,store.rehearse(s=>advanceRehearsal(s || createRehearsal(),body)));
         if(url.pathname==='/api/demo/reset') {
@@ -58,10 +63,18 @@ export function makeServer({dbPath=process.env.MEW_DB_PATH || resolve(root,'data
           if(demo) return json(403,{error:'Start in live mode for verified Cardano observations'});
           const effect=store.read().snapshot().effects.find(e=>e.id===body.effectId);
           if(!effect) return json(404,{error:'Unknown reserved effect'});
-          const claim=await verify({txHash:body.txHash,effect});
+          const operation=store.cardanoOperation(effect.id);
+          if(!operation) return json(409,{error:'Bind an operator-attested Cardano operation before reconciliation'});
+          if(body.txHash!==undefined && (typeof body.txHash!=='string' || body.txHash.toLowerCase()!==operation.txHash)) return json(409,{error:'Transaction hash does not match bound operation'});
+          const recorded=store.read().snapshot().claims.find(c=>c.type==='payment.settled' && c.effectId===effect.id && c.evidence?.txHash===operation.txHash);
+          if(recorded) {const {receivedAt,...original}=recorded;return json(200,store.transact(k=>k.observe(original)));}
+          const claim=await verify({txHash:operation.txHash,effect});
+          if(claim?.effectId!==effect.id || claim.objectiveId!==effect.objectiveId || claim.amount!==effect.amount || claim.source!=='cardano' || claim.type!=='payment.settled' || claim.evidence?.verified!==true || claim.evidence.simulated || claim.evidence.network!=='cardano:preprod' || claim.evidence.txHash!==operation.txHash) throw new Error('Verifier evidence does not match bound operation');
           return json(200,store.transact(k=>{
-            if(k.snapshot().claims.some(c=>c.evidence?.txHash?.toLowerCase()===body.txHash.toLowerCase() && c.effectId!==body.effectId)) throw new Error('Transaction already attributed to a different effect');
-            return k.observe(claim);
+            if(k.snapshot().claims.some(c=>c.evidence?.txHash?.toLowerCase()===operation.txHash && c.effectId!==body.effectId)) throw new Error('Transaction already attributed to a different effect');
+            const previous=k.snapshot().claims.find(c=>c.type==='payment.settled' && c.effectId===effect.id && c.evidence?.txHash===operation.txHash);
+            if(previous) {const {receivedAt,...original}=previous;return k.observe(original);}
+            return k.observe({...claim,evidence:{...claim.evidence,operationId:operation.id,submissionRef:operation.submissionRef,binding:'operator-attested'}});
           }));
         }
         return json(404,{error:'Unknown endpoint'});

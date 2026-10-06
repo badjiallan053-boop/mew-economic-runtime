@@ -21,13 +21,13 @@ Use **Run the demo**: Alpha is reserved; payment settles with unknown delivery; 
 - Deterministic objective/effect kernel, immutable identities, idempotent evidence, safe retries, full refunds and read-only simulation.
 - SQLite transactions persist reservations before ALLOW, serialize concurrent proposals and survive server restart.
 - Responsive mission dashboard, counterfactual comparison, economic trace, budget editor and five-slide presentation.
-- Read-only Cardano preprod verifier checks recipient, lovelace amount, transaction identity and confirmation depth using Blockfrost.
+- Read-only Cardano preprod connectivity and verifier check net recipient lovelace, transaction identity and confirmation depth using Blockfrost; immutable operator-attested operation records bind reconciliation to saved hashes.
 - Automated kernel, adapter and HTTP integration tests; CI and GitHub Pages workflow; Docker deployment.
 - Actual engineering team ownership and reusable local SKILL.md instructions.
 
 ## API
 
-`GET /api/health`, `GET /api/state`, `POST /api/objectives`, `POST /api/evaluate`, `POST /api/simulate`, `POST /api/observe` (demo only), `POST /api/demo/reset` (demo only), `POST /api/cardano/verify` (authenticated live evidence only).
+`GET /api/health`, `GET /api/state`, `POST /api/objectives`, `POST /api/evaluate`, `POST /api/simulate`, `POST /api/observe` (demo only), `POST /api/demo/reset` (demo only). Authenticated live evidence adds `GET /api/cardano/status`, `GET/POST /api/cardano/operations`, and `POST /api/cardano/verify`, which now requires a saved operation. See [Cardano setup and Cursor handoff](docs/CARDANO_INTEGRATION.md).
 
 ```sh
 curl -X POST http://127.0.0.1:3000/api/evaluate \
@@ -47,7 +47,7 @@ Read [DEPLOYMENT.md](DEPLOYMENT.md), [SPEC.md](SPEC.md), [RESEARCH.md](RESEARCH.
 
 ### Agent and x402 contribution
 
-See [agent architecture, system prompts and Origins demo](docs/AGENT_COMMERCE.md). The new `src/adapters/x402.mjs` exports a strict quote-to-reservation boundary using the existing SQLite transaction. It accepts only explicit x402 v2 exact preprod/lovelace direct transfers bound to a trusted mandate. It is not exposed as a public API and does not sign or dispatch payments. Existing demo and live-evidence routes are unchanged.
+See [agent architecture, system prompts and Origins demo](docs/AGENT_COMMERCE.md). The new `src/adapters/x402.mjs` exports a strict quote-to-reservation boundary using the existing SQLite transaction. It accepts only explicit x402 v2 exact preprod/lovelace direct transfers bound to a trusted mandate. It is not exposed as a public API and does not sign or dispatch payments. The later Cardano integration preserves the demo and adds mandatory operation attribution to live reconciliation.
 
 ### Complete local commerce rehearsal
 

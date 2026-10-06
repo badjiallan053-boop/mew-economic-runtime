@@ -1,0 +1,12 @@
+---
+description: MEW economic accounting and Cardano integration boundaries
+alwaysApply: true
+---
+
+Read AGENTS.md and .agents/skills/mew-engineering/SKILL.md before changes.
+Preserve deterministic admission, integer lovelace, atomic reservations and unresolved exposure.
+Read docs/CARDANO_INTEGRATION.md for the current API and operator-attestation limitation.
+No signing, wallet custody or transaction broadcasting is implemented. Do not add funds movement without a concrete approved signer/mandate/fee contract.
+Never promote simulated records to live evidence or print credentials/seed phrases.
+Run node --test tests/*.test.mjs and node scripts/build.mjs before claiming completion.
+Work on the existing feat/cardano-agent-boundaries branch; do not reset or overwrite another editor's changes.

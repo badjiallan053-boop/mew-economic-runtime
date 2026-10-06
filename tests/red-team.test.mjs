@@ -39,13 +39,15 @@ test('seeded adversarial retries and unknown claims never exceed mandate',()=>{
   for(let i=0;i<1000;i++){seed=(Math.imul(seed,1664525)+1013904223)>>>0;const id=`e${seed%20}`;const result=k.evaluate({objectiveId:'o',proposedEffect:{...proposal.proposedEffect,id,amount:100}});if(result.decision==='ALLOW')k.observe({claimId:`unknown-${i}`,effectId:id,source:'agent',type:'payment.unknown'});const p=k.position('o');assert.ok(p.exposure<=1000);assert.ok(k.snapshot().effects.filter(e=>e.status==='reserved').length<=3);}
   assert.equal(k.snapshot().effects.length,3);assert.equal(k.position('o').reserved,300);
 });
-test('concurrent live reconciliation cannot attribute one transaction twice',async()=>{
+test('live operation binding rejects double attribution and concurrent reconciliation stays idempotent',async()=>{
   const token='operator-test-token-'.repeat(3),hash='a'.repeat(64);
-  const verify=async({effect})=>({claimId:`tx:${effect.id}`,effectId:effect.id,objectiveId:effect.objectiveId,source:'cardano',type:'payment.settled',amount:effect.amount,evidence:{verified:true,txHash:hash}});
+  const verify=async({effect})=>({claimId:`tx:${effect.id}`,effectId:effect.id,objectiveId:effect.objectiveId,source:'cardano',type:'payment.settled',amount:effect.amount,evidence:{verified:true,network:'cardano:preprod',txHash:hash}});
   const server=makeServer({dbPath:':memory:',demo:false,token,verify});await new Promise(r=>server.listen(0,'127.0.0.1',r));const url=`http://127.0.0.1:${server.address().port}`;
   const post=async(path,body)=>fetch(url+path,{method:'POST',headers:{'content-type':'application/json',authorization:`Bearer ${token}`},body:JSON.stringify(body)});
-  try{assert.equal((await post('/api/objectives',{...objective,quantity:2})).status,201);for(const id of ['e','f'])assert.equal((await(await post('/api/evaluate',{...proposal,proposedEffect:{...proposal.proposedEffect,id}})).json()).decision,'ALLOW');
-    const results=await Promise.all(['e','f'].map(effectId=>post('/api/cardano/verify',{effectId,txHash:hash})));assert.deepEqual(results.map(r=>r.status).sort(),[200,400]);
+  try{assert.equal((await post('/api/objectives',{...objective,quantity:2})).status,201);for(const id of ['e','f'])assert.equal((await(await post('/api/evaluate',{...proposal,proposedEffect:{...proposal.proposedEffect,id,recipientAddress:'addr_test1fixture'}})).json()).decision,'ALLOW');
+    assert.equal((await post('/api/cardano/operations',{id:'op-e',effectId:'e',txHash:hash,submissionRef:'signer-e'})).status,201);
+    assert.equal((await post('/api/cardano/operations',{id:'op-f',effectId:'f',txHash:hash,submissionRef:'signer-f'})).status,400);
+    const results=await Promise.all([1,2].map(()=>post('/api/cardano/verify',{effectId:'e',txHash:hash})));assert.deepEqual(results.map(r=>r.status),[200,200]);
     const state=await(await fetch(url+'/api/state',{headers:{authorization:`Bearer ${token}`}})).json();assert.equal(state.claims.length,1);assert.equal(state.positions[0].exposure,20);
   }finally{await new Promise(r=>server.close(r));}
 });
