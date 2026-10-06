@@ -22,3 +22,11 @@ The [Masumi introduction documentation](https://www.masumi.network/dev/masumi/do
 All demo amounts are ADA/lovelace: 0.55 ADA + 0.49 ADA = 1.04 ADA, exceeding a 1 ADA budget by 0.04 ADA. There is no dollar conversion. The 550,000-lovelace example is an accounting fixture; a real Cardano output must also satisfy ledger minimum-UTxO and fee requirements. MEW does not build or send that transaction.
 
 The brief's `/v2/wallets/.../payments` endpoint was not verified and is not implemented. Current Masumi lifecycle documentation describes `/purchase` operations; wiring them requires a deployed authenticated service and matching version. Neither payment broadcasting, escrow execution, on-chain decision logging nor cryptographic merchant delivery verification is claimed in this prototype. “No existing product” is an unvalidated competitive claim; present objective accounting as MEW's thesis, not proven market exclusivity.
+
+## 7 October: x402 and Origins refinement
+
+Reviewed [Cardano Foundation's current facilitator source README](https://github.com/cardano-foundation/cardano-x402-facilitator). It names the 2.26.0 SDK compatibility target and documents v2 exact `cardano:preprod`, `lovelace`, string `amount`, `payTo`, `maxTimeoutSeconds` and explicit `extra.assetTransferMethod`. MEW now admits a deliberately restricted direct-transfer quote through its existing SQLite reservation transaction. This is not a facilitator integration or settlement verifier. Archived `cardano-foundation/x402-cardano` is not the implementation target.
+
+[Official Cardano Office Hours context](https://developers.cardano.org/blog/2026-04-24-media-cardano-developer-office-hours/) links [x402 on Cardano on YouTube](https://www.youtube.com/watch?v=5yhdNPAn8BA). The official description discusses v2 and ecosystem integration. Video retrieval failed; no transcript was obtained, no video was watched, and no technical claims here are inferred from unseen video content. Source/API inspection provides the implementation details.
+
+[Origins official event page](https://token2049.com/singapore/2049-origins) lists October 6–8, 2026 and Cardano's Agentic Commerce challenge. It does not supply a detailed Cardano scoring rubric. The suggested demonstration in docs/AGENT_COMMERCE.md is our proposal, not jury guidance.

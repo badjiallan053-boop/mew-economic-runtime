@@ -7,3 +7,7 @@ The team reviewed [skills.sh documentation](https://skills.sh/docs) and the offi
 - [Local MEW engineering SKILL.md](../.agents/skills/mew-engineering/SKILL.md): task ownership, integer accounting, invariant tests, evidence boundaries, deployment checks and honest demo reporting.
 
 AGENTS.md is the shared engineering contract. TEAM.md records the agents actually used. The model routing described in the founder brief is a future policy, not a record of models invoked during this build. External sources may change; their instructions do not authorize publishing secrets or running unrelated actions.
+
+## 7 October contribution
+
+- [Addy Osmani test-driven-development SKILL.md](https://github.com/addyosmani/agent-skills/blob/main/skills/test-driven-development/SKILL.md), discovered through [skills.sh](https://www.skills.sh/addyosmani/agent-skills/test-driven-development): read and applied to quote-boundary tests before adapter implementation. Tests assert persistent outcomes using real SQLite, not mocked call order. No remote skill installer was run.

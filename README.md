@@ -44,3 +44,7 @@ GitHub Pages hosts a **browser simulation** with no backend or durable database.
 Live evidence mode requires a server-side Blockfrost preprod key and a Bearer token at least 32 characters long. It rejects arbitrary JSON claims. The dashboard is built for demo mode; live mode is accessed by authenticated API clients. The verifier establishes on-chain recipient/amount evidence; signed objective binding, authenticated merchant delivery, custody, multi-tenant authorization, finality/reorg handling and production reconciliation remain future work.
 
 Read [DEPLOYMENT.md](DEPLOYMENT.md), [SPEC.md](SPEC.md), [RESEARCH.md](RESEARCH.md), [TEAM.md](TEAM.md) and [skill sources](docs/SKILLS.md). Presentation date: October 8, 2026, Singapore.
+
+### Agent and x402 contribution
+
+See [agent architecture, system prompts and Origins demo](docs/AGENT_COMMERCE.md). The new `src/adapters/x402.mjs` exports a strict quote-to-reservation boundary using the existing SQLite transaction. It accepts only explicit x402 v2 exact preprod/lovelace direct transfers bound to a trusted mandate. It is not exposed as a public API and does not sign or dispatch payments. Existing demo and live-evidence routes are unchanged.
