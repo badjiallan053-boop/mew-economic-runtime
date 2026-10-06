@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { resolve, sep } from 'node:path';
 import { timingSafeEqual } from 'node:crypto';
+import { createRehearsal, advanceRehearsal } from '../demo/rehearsal.mjs';
 import { Store } from './store.mjs';
 import { verifyCardanoSettlement } from '../adapters/cardano.mjs';
 
@@ -24,6 +25,8 @@ export function makeServer({dbPath=process.env.MEW_DB_PATH || resolve(root,'data
       if(url.pathname==='/api/health' && req.method==='GET') return json(200,{ok:true,mode:demo?'demo':'live',persistence:'sqlite',paymentsEnabled:false});
       if(url.pathname.startsWith('/api/')) {
         if(!demo && !tokenEqual(req.headers.authorization || '',`Bearer ${token}`)) return json(401,{error:'A valid Bearer token is required'});
+        if(url.pathname.startsWith('/api/rehearsal') && !demo) return json(403,{error:'Rehearsal is disabled in live mode'});
+        if(req.method==='GET' && url.pathname==='/api/rehearsal') return json(200,store.readRehearsal() || createRehearsal());
         if(req.method==='GET' && url.pathname==='/api/state') return json(200,state());
         if(req.method!=='POST') return json(405,{error:'Method not allowed'});
         // A web page on another origin cannot mutate this local service.
@@ -31,6 +34,8 @@ export function makeServer({dbPath=process.env.MEW_DB_PATH || resolve(root,'data
         if(!(req.headers['content-type'] || '').startsWith('application/json')) return json(415,{error:'Use application/json'});
         let raw='';for await(const chunk of req){raw+=chunk;if(Buffer.byteLength(raw)>65536) return json(413,{error:'Payload too large'});}
         const body=JSON.parse(raw || '{}');
+        if(url.pathname==='/api/rehearsal/reset') return json(200,store.rehearse(()=>createRehearsal(body.scenario)));
+        if(url.pathname==='/api/rehearsal/advance') return json(200,store.rehearse(s=>advanceRehearsal(s || createRehearsal(),body)));
         if(url.pathname==='/api/demo/reset') {
           if(!demo) return json(403,{error:'Demo reset is disabled in live mode'});
           store.reset({...demoObjective,maxExposure:body.maxExposure ?? demoObjective.maxExposure});return json(200,state());

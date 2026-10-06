@@ -30,3 +30,13 @@ Reviewed [Cardano Foundation's current facilitator source README](https://github
 [Official Cardano Office Hours context](https://developers.cardano.org/blog/2026-04-24-media-cardano-developer-office-hours/) links [x402 on Cardano on YouTube](https://www.youtube.com/watch?v=5yhdNPAn8BA). The official description discusses v2 and ecosystem integration. Video retrieval failed; no transcript was obtained, no video was watched, and no technical claims here are inferred from unseen video content. Source/API inspection provides the implementation details.
 
 [Origins official event page](https://token2049.com/singapore/2049-origins) lists October 6–8, 2026 and Cardano's Agentic Commerce challenge. It does not supply a detailed Cardano scoring rubric. The suggested demonstration in docs/AGENT_COMMERCE.md is our proposal, not jury guidance.
+
+## Paid-agent setup refinement
+
+Fetched the user-supplied Masumi TOKEN2049 page, its agent-guide.md, skill/SKILL.md and submission page directly from the official site after the web reader could not access them. The guide separates Workspace credits, escrow funds and independently confirmed seller collection. Its event Task price is 1 test USDM, not ADA. MPS source was prepared at d569a338ca54d5be7441564770d75ebf89b71f12; the official live-demo template was inspected at ff35ea7. It uses saved payment stages, authoritative result bytes and pending-operation reconciliation. No template implementation was copied. Hashing conventions differ by endpoint: the local SHA-256 artifact fingerprint is not claimed to be a universally valid Masumi payment/result hash.
+
+The supplied Cardano AI-development curriculum recommends current bundled source context; its official Dev Skills repository was downloaded and linked locally. `scaffold-project` excludes modifying existing structures, so MEW was preserved.
+
+[Masumi Updates official Office Hours context](https://developers.cardano.org/blog/2026-08-28-media-cardano-developer-office-hours/) links [the YouTube session](https://www.youtube.com/watch?v=mCH4xWJ89Vc). The video page was inspected and transcript export attempted: no transcript is available. No technical behavior is attributed to unseen video content. Official source and guide inspection underpin this rehearsal.
+
+The Masumi submission guide asks for a hosted project, presentation file and embedded recording; the browser presentation alone is not a complete submission. The local rehearsal produces no real model turn, Coworker Task, escrow or collected payment proof.

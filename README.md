@@ -48,3 +48,9 @@ Read [DEPLOYMENT.md](DEPLOYMENT.md), [SPEC.md](SPEC.md), [RESEARCH.md](RESEARCH.
 ### Agent and x402 contribution
 
 See [agent architecture, system prompts and Origins demo](docs/AGENT_COMMERCE.md). The new `src/adapters/x402.mjs` exports a strict quote-to-reservation boundary using the existing SQLite transaction. It accepts only explicit x402 v2 exact preprod/lovelace direct transfers bound to a trusted mandate. It is not exposed as a public API and does not sign or dispatch payments. Existing demo and live-evidence routes are unchanged.
+
+### Complete local commerce rehearsal
+
+Run the Node server and open `/rehearsal.html`. Seven persistent checkpoints show synthetic supplier research, strict x402 quote admission, uncertain delivery, duplicate-purchase prevention, artifact binding, and a separate illustrative 1-test-USDM seller Task/receipt. Missing-evidence and substituted-recipient scenarios stop safely. All roles are fixtures; no model or funds are connected. Export the evidence journal from the page or run `node scripts/rehearsal.mjs`.
+
+[Installation and verified state](docs/INSTALLATION.md) · [Full operating SOP and connector/database plan](docs/OPERATING_SOP.md). PostgreSQL is needed for future MPS, while MEW keeps its own SQLite ledger. Live sign-in, model credentials and wallet funding remain pending.

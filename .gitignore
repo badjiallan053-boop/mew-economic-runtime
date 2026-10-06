@@ -5,3 +5,9 @@ node_modules/
 *.sqlite*
 *.log
 docs/FOUNDER_BRIEF.md
+
+.local/
+.env.local
+.env.*.local
+.agents/skills/cardano-*
+.agents/skills/sokosumi-*

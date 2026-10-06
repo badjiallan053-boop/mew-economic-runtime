@@ -3,11 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "engines": {"node": ">=24"},
+  "engines": {
+    "node": ">=24"
+  },
   "scripts": {
     "start": "node src/server/server.mjs",
     "test": "node --test tests/*.test.mjs",
     "build": "node scripts/build.mjs",
-    "check": "npm test && npm run build"
+    "check": "npm test && npm run build",
+    "demo:rehearse": "node scripts/rehearsal.mjs"
   }
 }
