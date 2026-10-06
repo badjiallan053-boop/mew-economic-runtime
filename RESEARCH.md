@@ -40,3 +40,7 @@ The supplied Cardano AI-development curriculum recommends current bundled source
 [Masumi Updates official Office Hours context](https://developers.cardano.org/blog/2026-08-28-media-cardano-developer-office-hours/) links [the YouTube session](https://www.youtube.com/watch?v=mCH4xWJ89Vc). The video page was inspected and transcript export attempted: no transcript is available. No technical behavior is attributed to unseen video content. Official source and guide inspection underpin this rehearsal.
 
 The Masumi submission guide asks for a hosted project, presentation file and embedded recording; the browser presentation alone is not a complete submission. The local rehearsal produces no real model turn, Coworker Task, escrow or collected payment proof.
+
+## Live-deployment reference audit
+
+Inspected the official `cardano-foundation/x402-cardano-demo` at 6481c9aea1bc36c45c0d872fc1f3a3414c108e8f, including application idempotency and Masumi escrow setup. Its two tUSDM policies must not be mixed. The TOKEN2049 template's positive-net-only seller receipt check informed a stronger MEW read-only verifier that requires full expected net token amount. This verifier is unit-tested against mocked provider responses; no real transaction was supplied. See docs/LIVE_DEPLOYMENT.md for the prepared Railway patch and explicitly pending live gates.
