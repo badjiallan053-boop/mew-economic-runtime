@@ -1,5 +1,16 @@
 .git
+.local
+.agents
 data
-.env
+dist
 node_modules
+**/node_modules
+.env
+.env.*
+*.sqlite*
+*.log
 work
+outputs
+tests
+docs
+tooling
