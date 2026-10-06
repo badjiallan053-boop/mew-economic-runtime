@@ -5,7 +5,7 @@ const hash = 'a'.repeat(64);
 const effect = { id: 'alpha', objectiveId: 'report', amount: 550000, recipientAddress: 'addr_test1recipient' };
 function fixture({ amount = '550000', address = effect.recipientAddress, height = 102, valid = true, status = 200, identity = hash } = {}) {
   const calls = [];
-  const fetchImpl = async (url, options) => { calls.push({ url, options }); return { ok: status === 200, status, json: async () => url.endsWith('/blocks/latest') ? { height } : url.endsWith('/utxos') ? { hash: identity, outputs: [{ address, output_index: 0, amount: [{ unit: 'lovelace', quantity: amount }] }] } : { hash: identity, block_height: 100, valid_contract: valid } }; };
+  const fetchImpl = async (url, options) => { calls.push({ url, options }); return { ok: status === 200, status, json: async () => url.endsWith('/blocks/latest') ? { height } : url.endsWith('/utxos') ? { hash: identity, inputs: [], outputs: [{ address, output_index: 0, amount: [{ unit: 'lovelace', quantity: amount }] }] } : { hash: identity, block_height: 100, valid_contract: valid } }; };
   return { calls, fetchImpl };
 }
 const verify = config => verifyCardanoSettlement({ txHash: hash, effect, projectId: 'server-secret', ...config });
@@ -18,6 +18,21 @@ for (const [name, config] of Object.entries({ 'wrong amount': { amount: '490000'
 test('rejects malformed transaction hash before network access', async () => assert.rejects(verify({ txHash: '../secret', fetchImpl: () => { throw new Error('Should not fetch'); } })));
 test('sums split recipient outputs without accepting a client asserted amount', async () => {
   const f = fixture(); const original = f.fetchImpl;
-  f.fetchImpl = async (url, options) => url.endsWith('/utxos') ? { ok: true, json: async () => ({ hash, outputs: [200000,350000].map((n,i)=>({ address:effect.recipientAddress,output_index:i,amount:[{unit:'lovelace',quantity:String(n)}] })) }) } : original(url,options);
+  f.fetchImpl = async (url, options) => url.endsWith('/utxos') ? { ok: true, json: async () => ({ hash, inputs: [], outputs: [200000,350000].map((n,i)=>({ address:effect.recipientAddress,output_index:i,amount:[{unit:'lovelace',quantity:String(n)}] })) }) } : original(url,options);
   assert.equal((await verify(f)).amount,550000);
+});
+test('recipient-owned change cannot prove a new payment', async () => {
+  const f=fixture(), original=f.fetchImpl;
+  f.fetchImpl=async (url,options)=>{const response=await original(url,options);if(!url.endsWith('/utxos')) return response;const data=await response.json();data.inputs=[{address:effect.recipientAddress,amount:[{unit:'lovelace',quantity:'700000'}]}];return {...response,json:async()=>data};};
+  await assert.rejects(verify(f),/recipient payment/);
+});
+test('missing input evidence fails closed', async () => {
+  const f=fixture(), original=f.fetchImpl;
+  f.fetchImpl=async (url,options)=>{const response=await original(url,options);const data=await response.json();if(url.endsWith('/utxos')) delete data.inputs;return {...response,json:async()=>data};};
+  await assert.rejects(verify(f),/inputs/);
+});
+test('net receipt accepts payment plus recipient change, not the gross output',async()=>{
+  const f=fixture({amount:'750000'}),original=f.fetchImpl;
+  f.fetchImpl=async(url,options)=>{const r=await original(url,options);const data=await r.json();if(url.endsWith('/utxos'))data.inputs=[{address:effect.recipientAddress,amount:[{unit:'lovelace',quantity:'200000'}]}];return {...r,json:async()=>data};};
+  assert.equal((await verify(f)).evidence.lovelace,'550000');
 });

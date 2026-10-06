@@ -11,9 +11,11 @@ export const demoObjective = {id:'mission-report',principal:'demo-founder',descr
 const root = fileURLToPath(new URL('../../',import.meta.url));
 const tokenEqual=(a,b)=>{const x=Buffer.from(a),y=Buffer.from(b);return x.length===y.length && timingSafeEqual(x,y);};
 
-export function makeServer({dbPath=process.env.MEW_DB_PATH || resolve(root,'data/mew.sqlite'),demo=process.env.MEW_DEMO_MODE!=='false',token=process.env.MEW_API_TOKEN || '',verify=verifyCardanoSettlement}={}) {
+export function makeServer({dbPath=process.env.MEW_DB_PATH || resolve(root,'data/mew.sqlite'),demo=process.env.MEW_DEMO_MODE!=='false',token=process.env.MEW_API_TOKEN || '',verify=verifyCardanoSettlement,demoRequestLimit=120}={}) {
   if(!demo && token.length<32) throw new Error('Live mode requires MEW_API_TOKEN with at least 32 characters');
-  const store=new Store(dbPath);
+  if(!Number.isSafeInteger(demoRequestLimit) || demoRequestLimit<1) throw new Error('Invalid demo request quota');
+  const store=new Store(dbPath,{mode:demo?'demo':'live'});
+  let windowStart=Date.now(),requests=0;
   if(demo && !store.read().snapshot().objectives.length) store.transact(k=>k.createObjective(demoObjective));
   const state=()=>{const k=store.read();const s=k.snapshot();return {...s,positions:s.objectives.map(o=>k.position(o.id)),mode:demo?'demo':'live',persistence:'sqlite'};};
   const server=createServer(async(req,res)=>{
@@ -24,6 +26,10 @@ export function makeServer({dbPath=process.env.MEW_DB_PATH || resolve(root,'data
       const url=new URL(req.url,'http://localhost');
       if(url.pathname==='/api/health' && req.method==='GET') return json(200,{ok:true,mode:demo?'demo':'live',persistence:'sqlite',paymentsEnabled:false});
       if(url.pathname.startsWith('/api/')) {
+        if(demo) {
+          const now=Date.now();if(now-windowStart>=60000){windowStart=now;requests=0;}
+          if(++requests>demoRequestLimit){res.setHeader('Retry-After',String(Math.max(1,Math.ceil((windowStart+60000-now)/1000))));return json(429,{error:'Shared demo request quota exceeded'});}
+        }
         if(!demo && !tokenEqual(req.headers.authorization || '',`Bearer ${token}`)) return json(401,{error:'A valid Bearer token is required'});
         if(url.pathname.startsWith('/api/rehearsal') && !demo) return json(403,{error:'Rehearsal is disabled in live mode'});
         if(req.method==='GET' && url.pathname==='/api/rehearsal') return json(200,store.readRehearsal() || createRehearsal());

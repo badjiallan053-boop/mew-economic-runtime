@@ -16,7 +16,7 @@ export async function verifyCardanoSettlement({ txHash, effect, minConfirmations
   if (!Number.isSafeInteger(tx.block_height) || !Number.isSafeInteger(latest.height) || tx.block_height < 0 || latest.height < tx.block_height) throw new Error('Invalid chain height evidence');
   const confirmations = latest.height - tx.block_height + 1;
   if (confirmations < minConfirmations) throw new Error('Settlement is not sufficiently confirmed; reconcile later');
-  if (!Array.isArray(utxos.outputs)) throw new Error('Missing transaction outputs');
+  if (!Array.isArray(utxos.outputs) || !Array.isArray(utxos.inputs)) throw new Error('Missing transaction inputs or outputs');
   let total = 0n;
   const outputIndexes = [];
   for (const output of utxos.outputs) {
@@ -24,10 +24,20 @@ export async function verifyCardanoSettlement({ txHash, effect, minConfirmations
     if (!Array.isArray(output.amount)) throw new Error('Invalid recipient output');
     for (const asset of output.amount) {
       if (asset.unit !== 'lovelace') continue;
-      if (typeof asset.quantity !== 'string' || !/^\d+$/.test(asset.quantity)) throw new Error('Invalid on-chain amount');
+      if (typeof asset.quantity !== 'string' || !/^\d{1,30}$/.test(asset.quantity)) throw new Error('Invalid on-chain amount');
       total += BigInt(asset.quantity);
     }
     outputIndexes.push(output.output_index);
+  }
+  // Change returned from recipient-owned inputs is not newly received value.
+  for (const input of utxos.inputs) {
+    if(input.address!==effect.recipientAddress) continue;
+    if(!Array.isArray(input.amount)) throw new Error('Invalid recipient input');
+    for(const asset of input.amount) {
+      if(asset.unit!=='lovelace') continue;
+      if(typeof asset.quantity!=='string' || !/^\d{1,30}$/.test(asset.quantity)) throw new Error('Invalid on-chain input amount');
+      total-=BigInt(asset.quantity);
+    }
   }
   if (total !== BigInt(effect.amount)) throw new Error('On-chain recipient payment does not match reserved effect amount');
   return { claimId: `tx:${hash}:${effect.id}`, source: 'cardano', type: 'payment.settled', effectId: effect.id, objectiveId: effect.objectiveId, amount: effect.amount, evidence: { verified: true, network: 'cardano:preprod', txHash: hash, recipientAddress: effect.recipientAddress, lovelace: total.toString(), outputIndexes, blockHeight: tx.block_height, confirmations, minConfirmations, verifier: 'blockfrost-readonly' } };
