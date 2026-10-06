@@ -1,0 +1,7 @@
+data/
+dist/
+node_modules/
+.env
+*.sqlite*
+*.log
+docs/FOUNDER_BRIEF.md

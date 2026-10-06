@@ -1,0 +1,13 @@
+{
+  "name": "mew-economic-runtime",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {"node": ">=24"},
+  "scripts": {
+    "start": "node src/server/server.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "build": "node scripts/build.mjs",
+    "check": "npm test && npm run build"
+  }
+}
