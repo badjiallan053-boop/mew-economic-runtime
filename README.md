@@ -93,8 +93,14 @@ See [DELIVERY_PLAN.md](docs/DELIVERY_PLAN.md) for ordered outcomes, accountable 
 
 ## Evaluation, pilot, delivery and payment workstreams
 
-[WORKSTREAM_AGENTS.md](docs/WORKSTREAM_AGENTS.md) maps specialist responsibilities and focused review subtasks to four runnable implementation boundaries. `npm run model:evaluate` runs the conservative fixture baseline; `npm run pilot:rehearse` records five synthetic outlines; `npm run payment:plan` reports offline payment blockers. Authenticated delivery is a tested Ed25519 library with durable replay enforcement still required from its host. Live model calls and payment dispatch are not enabled.
+[WORKSTREAM_AGENTS.md](docs/WORKSTREAM_AGENTS.md) maps specialist responsibilities and focused review subtasks to four runnable implementation boundaries. `npm run model:evaluate` runs the conservative fixture baseline; `npm run pilot:rehearse` records five synthetic outlines; `npm run payment:plan` reports offline payment blockers. Authenticated delivery is a tested Ed25519 library with durable replay enforcement available through the private OperationStore. Live model calls and payment dispatch are not enabled.
 
 ## Durable receipt and outbox foundation
 
 `npm run durable:rehearse` exercises reservation/outbox atomicity, timeout/reopen and signed synthetic delivery with durable replay. [DURABLE_OPERATIONS.md](docs/DURABLE_OPERATIONS.md) describes the trusted library boundary and production gaps. Public HTTP routes and live payment dispatch remain unchanged.
+
+## Production ownership and private operations
+
+[PRODUCTION_TEAM.md](docs/PRODUCTION_TEAM.md) assigns the five compact roles to accountable human responsibilities, independent reviews and incident coverage. Named humans remain unassigned. [OPERATOR_AUTHORIZATION.md](docs/OPERATOR_AUTHORIZATION.md) documents scoped principal authorization and pre-enrolled provider keys; this private library is not exposed through the public demo.
+
+`npm run backup:rehearse` verifies coherent SQLite recovery without activating restored workers. [BACKUP_RECOVERY.md](docs/BACKUP_RECOVERY.md) covers reconciliation before reopening operations. [MASUMI_CONTRACT_PIN.md](docs/MASUMI_CONTRACT_PIN.md) records the pinned upstream API and its compatibility limits. No live model, signer or payment worker is enabled by these additions.

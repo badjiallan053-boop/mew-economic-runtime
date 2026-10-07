@@ -1,0 +1,2010 @@
+{
+  "schema": "mew.masumi-contract-evidence.v1",
+  "sourceUrl": "https://raw.githubusercontent.com/masumi-network/masumi-payment-service/5fccf58b0f30873085b59ee540c67b4ae8433cd0/src/utils/generator/swagger-generator/openapi-docs.json",
+  "pin": "5fccf58b0f30873085b59ee540c67b4ae8433cd0",
+  "rawSha256": "4e1372584ae025b9b83cecf5253a028bbe5bbd2018489ac66f735386f565e950",
+  "sourceBytes": 583294,
+  "openapi": "3.0.0",
+  "publishedApiVersion": "1.0.0",
+  "serverPath": "./../api/v1/",
+  "authentication": {
+    "type": "apiKey",
+    "in": "header",
+    "name": "token"
+  },
+  "liveVerified": false,
+  "paymentsEnabled": false,
+  "operations": [
+    {
+      "method": "GET",
+      "path": "/health/",
+      "category": "read",
+      "authentication": "public",
+      "paymentAuthority": false,
+      "parameters": [],
+      "request": null,
+      "responses": {
+        "200": {
+          "sha256": "78ea428304338426f061fa39fbd247784ee4902d51924392f90e8118cd9c35b7",
+          "type": "object",
+          "required": [
+            "status"
+          ],
+          "fields": [
+            {
+              "name": "status",
+              "type": "string",
+              "nullable": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api-key-status/",
+      "category": "read",
+      "authentication": "token-header",
+      "paymentAuthority": false,
+      "parameters": [],
+      "request": null,
+      "responses": {
+        "200": {
+          "sha256": "371ad8877b084f4236fe1ad398cef4949ba22a3e769ec805ca52cb7d6b5cdd3a",
+          "type": "object",
+          "required": [
+            "status",
+            "data"
+          ],
+          "fields": [
+            {
+              "name": "status",
+              "type": "string",
+              "nullable": false
+            },
+            {
+              "name": "data",
+              "type": "object",
+              "nullable": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/wallet/",
+      "category": "read",
+      "authentication": "token-header",
+      "paymentAuthority": false,
+      "parameters": [
+        {
+          "name": "walletType",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "sha256": "63d4d8f4147bebc836f4da6ebc89fc71df312ace9d15175e128301b6aad673f6",
+            "type": "string",
+            "required": [],
+            "fields": []
+          }
+        },
+        {
+          "name": "id",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "sha256": "9f3f70046966b1c0069e4c60bc3a7f9c01717762d05747d405884827d1b571a9",
+            "type": "string",
+            "required": [],
+            "fields": []
+          }
+        },
+        {
+          "name": "includeSecret",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "sha256": "3005388132eabfc1b032d9948d1e3fe726d81e6d3be1b84e9a9c9a5d9a96168b",
+            "type": "string",
+            "required": [],
+            "fields": []
+          }
+        }
+      ],
+      "request": null,
+      "responses": {
+        "200": {
+          "sha256": "2cffbe54283de78835a86f0ca41b1a40876c64282ecd1aa41fc7651a8ed93c82",
+          "type": "object",
+          "required": [
+            "status",
+            "data"
+          ],
+          "fields": [
+            {
+              "name": "status",
+              "type": "string",
+              "nullable": false
+            },
+            {
+              "name": "data",
+              "type": "object",
+              "nullable": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/wallet/",
+      "category": "administrative-write",
+      "authentication": "token-header",
+      "paymentAuthority": false,
+      "parameters": [],
+      "request": {
+        "sha256": "761f4b21020d1c69dd32ea9970d85c0c1cc44e598ab96b247b74cb172ef0d887",
+        "type": "object",
+        "required": [
+          "network"
+        ],
+        "fields": [
+          {
+            "name": "network",
+            "type": "string",
+            "nullable": false,
+            "enum": [
+              "Preprod",
+              "Mainnet"
+            ]
+          }
+        ]
+      },
+      "responses": {
+        "200": {
+          "sha256": "5d2fb2a82e61ef5f60d21fc44ef9cdbea9a6e2e50ee1f2075a629da3a23f262c",
+          "type": "object",
+          "required": [
+            "walletMnemonic",
+            "walletAddress",
+            "walletVkey"
+          ],
+          "fields": [
+            {
+              "name": "walletMnemonic",
+              "type": "string",
+              "nullable": false
+            },
+            {
+              "name": "walletAddress",
+              "type": "string",
+              "nullable": false
+            },
+            {
+              "name": "walletVkey",
+              "type": "string",
+              "nullable": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api-key/",
+      "category": "read",
+      "authentication": "token-header",
+      "paymentAuthority": false,
+      "parameters": [
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "sha256": "e0e69c4c0369c0b0fba70d7ba099a54dcc794382b53be64d7bcb510b49b67cc9",
+            "type": "number",
+            "required": [],
+            "fields": []
+          }
+        },
+        {
+          "name": "cursorToken",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "sha256": "4ad5455b0c10df85502b253121fb125859565313898b41dfb9cfa6712b173a93",
+            "type": "string",
+            "required": [],
+            "fields": []
+          }
+        }
+      ],
+      "request": null,
+      "responses": {
+        "200": {
+          "sha256": "deea9c16e0cf04464cce4835f01144b56733c5c2b3333c7488398f01cdefa6b5",
+          "type": "object",
+          "required": [
+            "status",
+            "data"
+          ],
+          "fields": [
+            {
+              "name": "status",
+              "type": "string",
+              "nullable": false
+            },
+            {
+              "name": "data",
+              "type": "object",
+              "nullable": false
+            }
+          ]
+        },
+        "400": null,
+        "401": null,
+        "500": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api-key/",
+      "category": "administrative-write",
+      "authentication": "token-header",
+      "paymentAuthority": false,
+      "parameters": [],
+      "request": {
+        "sha256": "ddc122373954f99aa5ee45d58f54ef4ed49a8d2a3dc1374b86bf2f971db44325",
+        "type": "object",
+        "required": [
+          "UsageCredits"
+        ],
+        "fields": [
+          {
+            "name": "usageLimited",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "UsageCredits",
+            "type": "array",
+            "nullable": false
+          },
+          {
+            "name": "networkLimit",
+            "type": "array",
+            "nullable": false
+          },
+          {
+            "name": "permission",
+            "type": "string",
+            "nullable": false,
+            "enum": [
+              "Read",
+              "ReadAndPay",
+              "Admin"
+            ]
+          }
+        ]
+      },
+      "responses": {
+        "200": {
+          "sha256": "7321729680355ac49e08b74f6a7365b37ecfbbca357379ea69154f578addd43d",
+          "type": "object",
+          "required": [
+            "data",
+            "status"
+          ],
+          "fields": [
+            {
+              "name": "data",
+              "type": "object",
+              "nullable": false
+            },
+            {
+              "name": "status",
+              "type": "string",
+              "nullable": false
+            }
+          ]
+        },
+        "400": null,
+        "401": null,
+        "500": null
+      }
+    },
+    {
+      "method": "PATCH",
+      "path": "/api-key/",
+      "category": "administrative-write",
+      "authentication": "token-header",
+      "paymentAuthority": false,
+      "parameters": [],
+      "request": {
+        "sha256": "334f4f9d1df44bfa6ffab74cf622b4212256082ee5d1703f0e3c8f83661e5b5a",
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "fields": [
+          {
+            "name": "id",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "token",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "UsageCreditsToAddOrRemove",
+            "type": "array",
+            "nullable": false
+          },
+          {
+            "name": "usageLimited",
+            "type": "boolean",
+            "nullable": false
+          },
+          {
+            "name": "status",
+            "type": "string",
+            "nullable": false,
+            "enum": [
+              "Active",
+              "Revoked"
+            ]
+          },
+          {
+            "name": "networkLimit",
+            "type": "array",
+            "nullable": false
+          }
+        ]
+      },
+      "responses": {
+        "200": {
+          "sha256": "971dc576bf6f1da714cd258f899cae814a488111018f1ff3013359cce3af3812",
+          "type": "object",
+          "required": [
+            "data",
+            "status"
+          ],
+          "fields": [
+            {
+              "name": "data",
+              "type": "object",
+              "nullable": false
+            },
+            {
+              "name": "status",
+              "type": "string",
+              "nullable": false
+            }
+          ]
+        },
+        "400": null,
+        "401": null,
+        "500": null
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/api-key/",
+      "category": "administrative-write",
+      "authentication": "token-header",
+      "paymentAuthority": false,
+      "parameters": [],
+      "request": {
+        "sha256": "0ec3ae802f732bf675130af20c99248bc6ad2efdc8d6c47d52ab7727b9ece33c",
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "fields": [
+          {
+            "name": "id",
+            "type": "string",
+            "nullable": false
+          }
+        ]
+      },
+      "responses": {
+        "200": {
+          "sha256": "bc14d84432a477db5dd2c51f4c5dfd06913a6e0a36012c623e4b2a1286e0ad2c",
+          "type": "object",
+          "required": [
+            "data",
+            "status"
+          ],
+          "fields": [
+            {
+              "name": "data",
+              "type": "object",
+              "nullable": false
+            },
+            {
+              "name": "status",
+              "type": "string",
+              "nullable": false
+            }
+          ]
+        },
+        "400": null,
+        "401": null,
+        "500": null
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/payment/",
+      "category": "read",
+      "authentication": "token-header",
+      "paymentAuthority": false,
+      "parameters": [
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "sha256": "005535ab2e15bb5a3e07a4a55dd4ba74e61873ce9f83b82e308af1dbf9b62569",
+            "type": "number",
+            "required": [],
+            "fields": []
+          }
+        },
+        {
+          "name": "cursorId",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "sha256": "a876e735ad38c2ed0e6ef5b63acf66484e3d9cd1914da7277dbcdb6a9c356613",
+            "type": "string",
+            "required": [],
+            "fields": []
+          }
+        },
+        {
+          "name": "network",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "sha256": "977224c57a4c8011609c922d97d2a5b2a7cd545cfb04f81bdb79f17b327e5fb2",
+            "type": "string",
+            "required": [],
+            "fields": []
+          }
+        },
+        {
+          "name": "filterSmartContractAddress",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "sha256": "e8481f863f0d5b3a242b5b6bff6e33c1d128eeeaa203181d2591053356eed8b2",
+            "type": "string",
+            "required": [],
+            "fields": []
+          }
+        },
+        {
+          "name": "includeHistory",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "sha256": "aa8e69ed5439633e17861df775521f177c860241d9d88281ae2356400092f5b9",
+            "type": "string",
+            "required": [],
+            "fields": []
+          }
+        }
+      ],
+      "request": null,
+      "responses": {
+        "200": {
+          "sha256": "d4a9348bd0a28d15421d728f0680389f2349333f579e32592335721785ed6737",
+          "type": "object",
+          "required": [
+            "status",
+            "data"
+          ],
+          "fields": [
+            {
+              "name": "status",
+              "type": "string",
+              "nullable": false
+            },
+            {
+              "name": "data",
+              "type": "object",
+              "nullable": false
+            }
+          ]
+        },
+        "400": null,
+        "401": null,
+        "500": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/payment/",
+      "category": "payment-write",
+      "authentication": "token-header",
+      "paymentAuthority": false,
+      "parameters": [],
+      "request": {
+        "sha256": "b403b3ea7cd840eacf94d83f259714374fdf923105417e5729ad4e2ce289f2c0",
+        "type": "object",
+        "required": [
+          "inputHash",
+          "network",
+          "agentIdentifier",
+          "paymentType",
+          "identifierFromPurchaser"
+        ],
+        "fields": [
+          {
+            "name": "inputHash",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "network",
+            "type": "string",
+            "nullable": false,
+            "enum": [
+              "Preprod",
+              "Mainnet"
+            ]
+          },
+          {
+            "name": "agentIdentifier",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "RequestedFunds",
+            "type": "array",
+            "nullable": false
+          },
+          {
+            "name": "paymentType",
+            "type": "string",
+            "nullable": false,
+            "enum": [
+              "Web3CardanoV1"
+            ]
+          },
+          {
+            "name": "payByTime",
+            "type": null,
+            "nullable": false
+          },
+          {
+            "name": "submitResultTime",
+            "type": null,
+            "nullable": false
+          },
+          {
+            "name": "unlockTime",
+            "type": null,
+            "nullable": false
+          },
+          {
+            "name": "externalDisputeUnlockTime",
+            "type": null,
+            "nullable": false
+          },
+          {
+            "name": "metadata",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "identifierFromPurchaser",
+            "type": "string",
+            "nullable": false
+          }
+        ]
+      },
+      "responses": {
+        "200": {
+          "sha256": "2007abc46472777ca72e8177f1aa31ea6b95190b5d20d576fa2fba5df8ed70b6",
+          "type": "object",
+          "required": [
+            "data",
+            "status"
+          ],
+          "fields": [
+            {
+              "name": "data",
+              "type": "object",
+              "nullable": false
+            },
+            {
+              "name": "status",
+              "type": "string",
+              "nullable": false
+            }
+          ]
+        },
+        "400": null,
+        "401": null,
+        "500": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/payment/submit-result",
+      "category": "payment-write",
+      "authentication": "token-header",
+      "paymentAuthority": false,
+      "parameters": [],
+      "request": {
+        "sha256": "d4428d2645b72cfd792ec2023c49bb4076de920eb45c3159928cd843a162ddef",
+        "type": "object",
+        "required": [
+          "network",
+          "submitResultHash",
+          "blockchainIdentifier"
+        ],
+        "fields": [
+          {
+            "name": "network",
+            "type": "string",
+            "nullable": false,
+            "enum": [
+              "Preprod",
+              "Mainnet"
+            ]
+          },
+          {
+            "name": "submitResultHash",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "blockchainIdentifier",
+            "type": "string",
+            "nullable": false
+          }
+        ]
+      },
+      "responses": {
+        "200": {
+          "sha256": "320ea2dbd879b7fa340d99899a830f61af95f47c15dea5d99c938b6cf18338d0",
+          "type": "object",
+          "required": [
+            "data",
+            "status"
+          ],
+          "fields": [
+            {
+              "name": "data",
+              "type": "object",
+              "nullable": false
+            },
+            {
+              "name": "status",
+              "type": "string",
+              "nullable": false
+            }
+          ]
+        },
+        "400": null,
+        "401": null,
+        "500": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/payment/authorize-refund",
+      "category": "payment-write",
+      "authentication": "token-header",
+      "paymentAuthority": false,
+      "parameters": [],
+      "request": {
+        "sha256": "54b10e3fa27500cca85fba339c27e0f01e13429379d7c506a4f2802b7448fc2f",
+        "type": "object",
+        "required": [
+          "blockchainIdentifier",
+          "network"
+        ],
+        "fields": [
+          {
+            "name": "blockchainIdentifier",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "network",
+            "type": "string",
+            "nullable": false,
+            "enum": [
+              "Preprod",
+              "Mainnet"
+            ]
+          }
+        ]
+      },
+      "responses": {
+        "200": {
+          "sha256": "48f867227d269b33300d18a0af253ea689be38525ec0b035690e54bbea865749",
+          "type": "object",
+          "required": [
+            "data",
+            "status"
+          ],
+          "fields": [
+            {
+              "name": "data",
+              "type": "object",
+              "nullable": false
+            },
+            {
+              "name": "status",
+              "type": "string",
+              "nullable": false
+            }
+          ]
+        },
+        "400": null,
+        "401": null,
+        "500": null
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/purchase/",
+      "category": "read",
+      "authentication": "token-header",
+      "paymentAuthority": false,
+      "parameters": [
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "sha256": "a06c5008f3cf83dfb7d259df0a45c2212933a7e8e44f3b57c351469c36102065",
+            "type": "number",
+            "required": [],
+            "fields": []
+          }
+        },
+        {
+          "name": "cursorId",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "sha256": "653864652890daf2deed4bf288431e2f36b0ebeaf2b4ca238f62e59cbb2a1c3a",
+            "type": "string",
+            "required": [],
+            "fields": []
+          }
+        },
+        {
+          "name": "network",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "sha256": "b7ccb938502cf8e92bfdcc66ac5eadcf5d58926d686c18e6a31d1768075aaeb0",
+            "type": "string",
+            "required": [],
+            "fields": []
+          }
+        },
+        {
+          "name": "filterSmartContractAddress",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "sha256": "e8481f863f0d5b3a242b5b6bff6e33c1d128eeeaa203181d2591053356eed8b2",
+            "type": "string",
+            "required": [],
+            "fields": []
+          }
+        },
+        {
+          "name": "includeHistory",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "sha256": "6b6e1d504b1a120d005076162f9a2f7b93f572db7cd4693355c349ced1fe017d",
+            "type": "string",
+            "required": [],
+            "fields": []
+          }
+        }
+      ],
+      "request": null,
+      "responses": {
+        "200": {
+          "sha256": "3b09fc0b414072dada95fcf3b6c1db0576b3104cb4f820ca8e6e622c729f1b78",
+          "type": "object",
+          "required": [
+            "status",
+            "data"
+          ],
+          "fields": [
+            {
+              "name": "status",
+              "type": "string",
+              "nullable": false
+            },
+            {
+              "name": "data",
+              "type": "object",
+              "nullable": false
+            }
+          ]
+        },
+        "400": null,
+        "401": null,
+        "500": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/purchase/",
+      "category": "payment-write",
+      "authentication": "token-header",
+      "paymentAuthority": false,
+      "parameters": [],
+      "request": {
+        "sha256": "bcdc5b0c08f41625648eabd2f0aacc51edf4d9874f263e6cd14fc3428f7ab08c",
+        "type": "object",
+        "required": [
+          "blockchainIdentifier",
+          "network",
+          "inputHash",
+          "sellerVkey",
+          "agentIdentifier",
+          "paymentType",
+          "unlockTime",
+          "externalDisputeUnlockTime",
+          "submitResultTime",
+          "payByTime",
+          "identifierFromPurchaser"
+        ],
+        "fields": [
+          {
+            "name": "blockchainIdentifier",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "network",
+            "type": "string",
+            "nullable": false,
+            "enum": [
+              "Preprod",
+              "Mainnet"
+            ]
+          },
+          {
+            "name": "inputHash",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "sellerVkey",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "agentIdentifier",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "Amounts",
+            "type": "array",
+            "nullable": false
+          },
+          {
+            "name": "paymentType",
+            "type": "string",
+            "nullable": false,
+            "enum": [
+              "Web3CardanoV1"
+            ]
+          },
+          {
+            "name": "unlockTime",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "externalDisputeUnlockTime",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "submitResultTime",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "payByTime",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "metadata",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "identifierFromPurchaser",
+            "type": "string",
+            "nullable": false
+          }
+        ]
+      },
+      "responses": {
+        "200": {
+          "sha256": "13db383ddd369dcf7fb21f28ca7e2e1b27b8cd05ae337ba7eae328781848685e",
+          "type": "object",
+          "required": [
+            "data",
+            "status"
+          ],
+          "fields": [
+            {
+              "name": "data",
+              "type": "object",
+              "nullable": false
+            },
+            {
+              "name": "status",
+              "type": "string",
+              "nullable": false
+            }
+          ]
+        },
+        "400": null,
+        "401": null,
+        "409": {
+          "sha256": "442b782e856d4cc7a684890485842bb594bd0e56d8aa92d6975058253d80ff06",
+          "type": "object",
+          "required": [
+            "status",
+            "error",
+            "id",
+            "object"
+          ],
+          "fields": [
+            {
+              "name": "status",
+              "type": "string",
+              "nullable": false
+            },
+            {
+              "name": "error",
+              "type": "object",
+              "nullable": false
+            },
+            {
+              "name": "id",
+              "type": "string",
+              "nullable": false
+            },
+            {
+              "name": "object",
+              "type": "object",
+              "nullable": false
+            }
+          ]
+        },
+        "500": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/purchase/request-refund",
+      "category": "payment-write",
+      "authentication": "token-header",
+      "paymentAuthority": false,
+      "parameters": [],
+      "request": {
+        "sha256": "54b10e3fa27500cca85fba339c27e0f01e13429379d7c506a4f2802b7448fc2f",
+        "type": "object",
+        "required": [
+          "blockchainIdentifier",
+          "network"
+        ],
+        "fields": [
+          {
+            "name": "blockchainIdentifier",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "network",
+            "type": "string",
+            "nullable": false,
+            "enum": [
+              "Preprod",
+              "Mainnet"
+            ]
+          }
+        ]
+      },
+      "responses": {
+        "200": {
+          "sha256": "f66e874077f29a477298c053dbbcec34f067fcc22ca730928bd0a3edd8389f5d",
+          "type": "object",
+          "required": [
+            "data",
+            "status"
+          ],
+          "fields": [
+            {
+              "name": "data",
+              "type": "object",
+              "nullable": false
+            },
+            {
+              "name": "status",
+              "type": "string",
+              "nullable": false
+            }
+          ]
+        },
+        "400": null,
+        "401": null,
+        "500": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/purchase/cancel-refund-request",
+      "category": "payment-write",
+      "authentication": "token-header",
+      "paymentAuthority": false,
+      "parameters": [],
+      "request": {
+        "sha256": "54b10e3fa27500cca85fba339c27e0f01e13429379d7c506a4f2802b7448fc2f",
+        "type": "object",
+        "required": [
+          "blockchainIdentifier",
+          "network"
+        ],
+        "fields": [
+          {
+            "name": "blockchainIdentifier",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "network",
+            "type": "string",
+            "nullable": false,
+            "enum": [
+              "Preprod",
+              "Mainnet"
+            ]
+          }
+        ]
+      },
+      "responses": {
+        "200": {
+          "sha256": "f66e874077f29a477298c053dbbcec34f067fcc22ca730928bd0a3edd8389f5d",
+          "type": "object",
+          "required": [
+            "data",
+            "status"
+          ],
+          "fields": [
+            {
+              "name": "data",
+              "type": "object",
+              "nullable": false
+            },
+            {
+              "name": "status",
+              "type": "string",
+              "nullable": false
+            }
+          ]
+        },
+        "400": null,
+        "401": null,
+        "500": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/payment/resolve-blockchain-identifier",
+      "category": "read",
+      "authentication": "token-header",
+      "paymentAuthority": false,
+      "parameters": [],
+      "request": {
+        "sha256": "047dfb2066d732e8dcd37bf541b616974cf2cb5ca3afc142621ac4dc0a66ce5a",
+        "type": "object",
+        "required": [
+          "blockchainIdentifier",
+          "network"
+        ],
+        "fields": [
+          {
+            "name": "blockchainIdentifier",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "network",
+            "type": "string",
+            "nullable": false,
+            "enum": [
+              "Preprod",
+              "Mainnet"
+            ]
+          },
+          {
+            "name": "filterSmartContractAddress",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "includeHistory",
+            "type": "string",
+            "nullable": false
+          }
+        ]
+      },
+      "responses": {
+        "200": {
+          "sha256": "c9bbb52f5fca549dda8c6298cdf4496fdf03e0b8e2e6df19f6968a4211c7c937",
+          "type": "object",
+          "required": [
+            "status",
+            "data"
+          ],
+          "fields": [
+            {
+              "name": "status",
+              "type": "string",
+              "nullable": false
+            },
+            {
+              "name": "data",
+              "type": "object",
+              "nullable": false
+            }
+          ]
+        },
+        "400": null,
+        "401": null,
+        "404": null,
+        "500": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/purchase/resolve-blockchain-identifier",
+      "category": "read",
+      "authentication": "token-header",
+      "paymentAuthority": false,
+      "parameters": [],
+      "request": {
+        "sha256": "047dfb2066d732e8dcd37bf541b616974cf2cb5ca3afc142621ac4dc0a66ce5a",
+        "type": "object",
+        "required": [
+          "blockchainIdentifier",
+          "network"
+        ],
+        "fields": [
+          {
+            "name": "blockchainIdentifier",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "network",
+            "type": "string",
+            "nullable": false,
+            "enum": [
+              "Preprod",
+              "Mainnet"
+            ]
+          },
+          {
+            "name": "filterSmartContractAddress",
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "name": "includeHistory",
+            "type": "string",
+            "nullable": false
+          }
+        ]
+      },
+      "responses": {
+        "200": {
+          "sha256": "b58d0e4b395f872cf82687361662e22b2026aae7ebb8a300e0d0cf0dae4a55c4",
+          "type": "object",
+          "required": [
+            "status",
+            "data"
+          ],
+          "fields": [
+            {
+              "name": "status",
+              "type": "string",
+              "nullable": false
+            },
+            {
+              "name": "data",
+              "type": "object",
+              "nullable": false
+            }
+          ]
+        },
+        "400": null,
+        "401": null,
+        "404": null,
+        "500": null
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/registry/wallet",
+      "category": "read",
+      "authentication": "token-header",
+      "paymentAuthority": false,
+      "parameters": [
+        {
+          "name": "walletVKey",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "sha256": "4b7ea21b12cbffc1308c4a8491dc95c002164153f4d684196c03d326408dacb5",
+            "type": "string",
+            "required": [],
+            "fields": []
+          }
+        },
+        {
+          "name": "network",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "sha256": "68fa7f45357710f08ec232a6a7501816fd8f57ff0409b43e16953ff9dc55ad18",
+            "type": "string",
+            "required": [],
+            "fields": []
+          }
+        },
+        {
+          "name": "smartContractAddress",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "sha256": "ca22d1cd0ed938ebe9f0760e377fc79f826ff1171c00388f4f2c9e87b19c1cb8",
+            "type": "string",
+            "required": [],
+            "fields": []
+          }
+        }
+      ],
+      "request": null,
+      "responses": {
+        "200": {
+          "sha256": "79782a72b3c9a22463784a257e8356850a4b5e81c3dea96473dbf05d274f15a6",
+          "type": "object",
+          "required": [
+            "status",
+            "data"
+          ],
+          "fields": [
+            {
+              "name": "status",
+              "type": "string",
+              "nullable": false
+            },
+            {
+              "name": "data",
+              "type": "object",
+              "nullable": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/registry/",
+      "category": "read",
+      "authentication": "token-header",
+      "paymentAuthority": false,
+      "parameters": [
+        {
+          "name": "cursorId",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "sha256": "4b819fd3a0cc12edbe7df28a857d32ddf0cdb6a2a91a1376a89fb26804062c89",
+            "type": "string",
+            "required": [],
+            "fields": []
+          }
+        },
+        {
+          "name": "network",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "sha256": "68fa7f45357710f08ec232a6a7501816fd8f57ff0409b43e16953ff9dc55ad18",
+            "type": "string",
+            "required": [],
+            "fields": []
+          }
+        },
+        {
+          "name": "filterSmartContractAddress",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "sha256": "e8481f863f0d5b3a242b5b6bff6e33c1d128eeeaa203181d2591053356eed8b2",
+            "type": "string",
+            "required": [],
+            "fields": []
+          }
+        }
+      ],
+      "request": null,
+      "responses": {
+        "200": {
+          "sha256": "fc4083be48537ccb9c7ad1095d9a450e53b740b069d54fd55edd1e7b7bac010d",
+          "type": "object",
+          "required": [
+            "status",
+            "data"
+          ],
+          "fields": [
+            {
+              "name": "status",
+              "type": "string",
+              "nullable": false
+            },
+            {
+              "name": "data",
+              "type": "object",
+              "nullable": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/registry/",
+      "category": "administrative-write",
+      "authentication": "token-header",
+      "paymentAuthority": false,
+      "parameters": [],
+      "request": {
+        "sha256": "f44c69ef5667ee886df7996535f60d106f14e637771214470b31015399c2a139",
+        "type": "object",
+        "required": [
+          "network",
+          "sellingWalletVkey",
+          "ExampleOutputs",
+          "Tags",
+          "name",
+          "apiBaseUrl",
+          "description",
+          "Capability",
+          "AgentPricing",
+          "Author"
+        ],
+        "fields": [
+          {
+            "name": "network",
+            "type": "string",
+            "nullable": false,
+            "enum": [
+              "Preprod",
+              "Mainnet"
+            ]
+          },
+          {
+            "name": "sellingWalletVkey",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "ExampleOutputs",
+            "type": "array",
+            "nullable": false
+          },
+          {
+            "name": "Tags",
+            "type": "array",
+            "nullable": false
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "apiBaseUrl",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "description",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "Capability",
+            "type": "object",
+            "nullable": false
+          },
+          {
+            "name": "AgentPricing",
+            "type": "object",
+            "nullable": false
+          },
+          {
+            "name": "Legal",
+            "type": "object",
+            "nullable": false
+          },
+          {
+            "name": "Author",
+            "type": "object",
+            "nullable": false
+          }
+        ]
+      },
+      "responses": {
+        "200": {
+          "sha256": "d6245197929e174308e7d90ea75fa07ef9504d608d60ff0d2095741ba9d60c5b",
+          "type": "object",
+          "required": [
+            "status",
+            "data"
+          ],
+          "fields": [
+            {
+              "name": "status",
+              "type": "string",
+              "nullable": false
+            },
+            {
+              "name": "data",
+              "type": "object",
+              "nullable": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/registry/",
+      "category": "administrative-write",
+      "authentication": "token-header",
+      "paymentAuthority": false,
+      "parameters": [],
+      "request": {
+        "sha256": "dac65d2592b05972e5af9238f4a67c7951babf6c9c4b901e613ba9e597f05461",
+        "type": "object",
+        "required": [
+          "agentIdentifier",
+          "network"
+        ],
+        "fields": [
+          {
+            "name": "agentIdentifier",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "network",
+            "type": "string",
+            "nullable": false,
+            "enum": [
+              "Preprod",
+              "Mainnet"
+            ]
+          },
+          {
+            "name": "smartContractAddress",
+            "type": "string",
+            "nullable": false
+          }
+        ]
+      },
+      "responses": {
+        "200": {
+          "sha256": "751bffbd96a48351ddf233b161f25ef7a53b465a2a0332a89f8f66013fce2144",
+          "type": "object",
+          "required": [
+            "status",
+            "data"
+          ],
+          "fields": [
+            {
+              "name": "status",
+              "type": "string",
+              "nullable": false
+            },
+            {
+              "name": "data",
+              "type": "object",
+              "nullable": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/payment-source/",
+      "category": "read",
+      "authentication": "token-header",
+      "paymentAuthority": false,
+      "parameters": [
+        {
+          "name": "take",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "sha256": "db281f909e7044c28b3a7ec02600a50e4b149480a609c6af31dba86f131c8526",
+            "type": "number",
+            "required": [],
+            "fields": []
+          }
+        },
+        {
+          "name": "cursorId",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "sha256": "3ce4783629ec7fc3708afd485f3440951221ef618c7d5cbf892b976f4d7d0168",
+            "type": "string",
+            "required": [],
+            "fields": []
+          }
+        }
+      ],
+      "request": null,
+      "responses": {
+        "200": {
+          "sha256": "269ab55f0affe6475fd73a623a03aaf1a303411c76759e8a3e38595261502dbd",
+          "type": "object",
+          "required": [
+            "status",
+            "data"
+          ],
+          "fields": [
+            {
+              "name": "status",
+              "type": "string",
+              "nullable": false
+            },
+            {
+              "name": "data",
+              "type": "object",
+              "nullable": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/payment-source-extended/",
+      "category": "read",
+      "authentication": "token-header",
+      "paymentAuthority": false,
+      "parameters": [
+        {
+          "name": "take",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "sha256": "db281f909e7044c28b3a7ec02600a50e4b149480a609c6af31dba86f131c8526",
+            "type": "number",
+            "required": [],
+            "fields": []
+          }
+        },
+        {
+          "name": "cursorId",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "sha256": "3ce4783629ec7fc3708afd485f3440951221ef618c7d5cbf892b976f4d7d0168",
+            "type": "string",
+            "required": [],
+            "fields": []
+          }
+        }
+      ],
+      "request": null,
+      "responses": {
+        "200": {
+          "sha256": "22882c36297d3bebc6a037bcded159260df3366a23327938cdf285e2ffa85c52",
+          "type": "object",
+          "required": [
+            "status",
+            "data"
+          ],
+          "fields": [
+            {
+              "name": "status",
+              "type": "string",
+              "nullable": false
+            },
+            {
+              "name": "data",
+              "type": "object",
+              "nullable": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/payment-source-extended/",
+      "category": "administrative-write",
+      "authentication": "token-header",
+      "paymentAuthority": false,
+      "parameters": [],
+      "request": {
+        "sha256": "e2f78e78c893b5f78ea48700af087785abaf17ebba19c170634bfc54c86fbbf8",
+        "type": "object",
+        "required": [
+          "network",
+          "paymentType",
+          "PaymentSourceConfig",
+          "feeRatePermille",
+          "AdminWallets",
+          "FeeReceiverNetworkWallet",
+          "PurchasingWallets",
+          "SellingWallets"
+        ],
+        "fields": [
+          {
+            "name": "network",
+            "type": "string",
+            "nullable": false,
+            "enum": [
+              "Preprod",
+              "Mainnet"
+            ]
+          },
+          {
+            "name": "paymentType",
+            "type": "string",
+            "nullable": false,
+            "enum": [
+              "Web3CardanoV1"
+            ]
+          },
+          {
+            "name": "PaymentSourceConfig",
+            "type": "object",
+            "nullable": false
+          },
+          {
+            "name": "feeRatePermille",
+            "type": "number",
+            "nullable": true
+          },
+          {
+            "name": "cooldownTime",
+            "type": "number",
+            "nullable": true
+          },
+          {
+            "name": "AdminWallets",
+            "type": "array",
+            "nullable": false
+          },
+          {
+            "name": "FeeReceiverNetworkWallet",
+            "type": "object",
+            "nullable": false
+          },
+          {
+            "name": "PurchasingWallets",
+            "type": "array",
+            "nullable": false
+          },
+          {
+            "name": "SellingWallets",
+            "type": "array",
+            "nullable": false
+          }
+        ]
+      },
+      "responses": {
+        "200": {
+          "sha256": "8f4f85cac5de0c7fc58ecf8323f4be648ac729aa347fdc4cd542e40a9acf5e7e",
+          "type": "object",
+          "required": [
+            "status",
+            "data"
+          ],
+          "fields": [
+            {
+              "name": "status",
+              "type": "string",
+              "nullable": false
+            },
+            {
+              "name": "data",
+              "type": "object",
+              "nullable": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "method": "PATCH",
+      "path": "/payment-source-extended/",
+      "category": "administrative-write",
+      "authentication": "token-header",
+      "paymentAuthority": false,
+      "parameters": [],
+      "request": {
+        "sha256": "36324b891396e1c7f16c872eef534be0d236b3e9b73a67d1476b60c47fc14097",
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "fields": [
+          {
+            "name": "id",
+            "type": "string",
+            "nullable": false
+          },
+          {
+            "name": "PaymentSourceConfig",
+            "type": "object",
+            "nullable": false
+          },
+          {
+            "name": "AddPurchasingWallets",
+            "type": "array",
+            "nullable": false
+          },
+          {
+            "name": "AddSellingWallets",
+            "type": "array",
+            "nullable": false
+          },
+          {
+            "name": "RemovePurchasingWallets",
+            "type": "array",
+            "nullable": false
+          },
+          {
+            "name": "RemoveSellingWallets",
+            "type": "array",
+            "nullable": false
+          },
+          {
+            "name": "lastIdentifierChecked",
+            "type": "string",
+            "nullable": true
+          }
+        ]
+      },
+      "responses": {
+        "200": {
+          "sha256": "63ddeb5d1f0b32583932a85a70cb3abb016710706ddac5d55499dc0bb2352865",
+          "type": "object",
+          "required": [
+            "status",
+            "data"
+          ],
+          "fields": [
+            {
+              "name": "status",
+              "type": "string",
+              "nullable": false
+            },
+            {
+              "name": "data",
+              "type": "object",
+              "nullable": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/payment-source-extended/",
+      "category": "administrative-write",
+      "authentication": "token-header",
+      "paymentAuthority": false,
+      "parameters": [],
+      "request": {
+        "sha256": "e772d7b368998294519eb14755b21e0ada10cf297508db0d5ca4a9577e82c583",
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "fields": [
+          {
+            "name": "id",
+            "type": "string",
+            "nullable": false
+          }
+        ]
+      },
+      "responses": {
+        "200": {
+          "sha256": "82c1a839940e312717987cdfeae69603dc1ee30c88650b8dfe9a94348af76f2a",
+          "type": "object",
+          "required": [
+            "status",
+            "data"
+          ],
+          "fields": [
+            {
+              "name": "status",
+              "type": "string",
+              "nullable": false
+            },
+            {
+              "name": "data",
+              "type": "object",
+              "nullable": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/utxos/",
+      "category": "read",
+      "authentication": "token-header",
+      "paymentAuthority": false,
+      "parameters": [
+        {
+          "name": "address",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "sha256": "8c64077102024ffcce83e2080215c97922f5c876624c0a1de97910e1d70c61d5",
+            "type": "string",
+            "required": [],
+            "fields": []
+          }
+        },
+        {
+          "name": "network",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "sha256": "238d118567084122d99e83c28d2562a2eed139b72acf351888fbd2ab5e7a5e79",
+            "type": "string",
+            "required": [],
+            "fields": []
+          }
+        },
+        {
+          "name": "count",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "sha256": "4e79a2a9d5e46057fb42d8d4970c98e1ded13cb75091ee7e3dc9f924536f02b6",
+            "type": "integer",
+            "required": [],
+            "fields": []
+          }
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "sha256": "b76e89a1504222ef43c0b3517ae28dd9e7591638f593e80db3a98d7415eeba93",
+            "type": "integer",
+            "required": [],
+            "fields": []
+          }
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "sha256": "11aed555185e84af6347c4b18bce2061704c683d9ea44ca98906b74c02677dee",
+            "type": "string",
+            "required": [],
+            "fields": []
+          }
+        }
+      ],
+      "request": null,
+      "responses": {
+        "200": {
+          "sha256": "6a1dec4b708d3ba41aee972d83c4be77662571350cffbca2fd135537f5f7054f",
+          "type": "object",
+          "required": [
+            "status",
+            "data"
+          ],
+          "fields": [
+            {
+              "name": "status",
+              "type": "string",
+              "nullable": false
+            },
+            {
+              "name": "data",
+              "type": "object",
+              "nullable": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/rpc-api-keys/",
+      "category": "read",
+      "authentication": "token-header",
+      "paymentAuthority": false,
+      "parameters": [
+        {
+          "name": "cursorId",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "sha256": "727de672326c7a490f9788ce39e1d5ac0d82db35d3a3adcd1bdebb21e1bf1208",
+            "type": "string",
+            "required": [],
+            "fields": []
+          }
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "sha256": "cf656d95a5804b423e70bc8eb06922ac05a025980f1315e1311f8340b4f4aa33",
+            "type": "number",
+            "required": [],
+            "fields": []
+          }
+        }
+      ],
+      "request": null,
+      "responses": {
+        "200": {
+          "sha256": "90fd971226e34024c84ea36edefdee8f03cf8ac2a591bb23cf4b54eb2040fa06",
+          "type": "object",
+          "required": [
+            "RpcProviderKeys"
+          ],
+          "fields": [
+            {
+              "name": "RpcProviderKeys",
+              "type": "array",
+              "nullable": false
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

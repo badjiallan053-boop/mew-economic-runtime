@@ -24,6 +24,8 @@
     "pilot:rehearse": "node scripts/pilot-rehearsal.mjs",
     "payment:plan": "node scripts/payment-plan.mjs",
     "workstreams:rehearse": "node scripts/workstreams-rehearsal.mjs",
-    "durable:rehearse": "node scripts/durable-rehearsal.mjs"
+    "durable:rehearse": "node scripts/durable-rehearsal.mjs",
+    "backup:rehearse": "node scripts/backup-rehearsal.mjs",
+    "masumi:contract": "node scripts/inspect-masumi-contract.mjs"
   }
 }

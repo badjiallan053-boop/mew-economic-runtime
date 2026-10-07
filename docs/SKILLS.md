@@ -70,3 +70,7 @@ Legacy profiles do not load it, preserving their mission policy fingerprints.
 ## Durable operation review · 7 October 2026
 
 Added original local `durable-operation-review` skill for atomic outbox/receipt commits, conflicting replay and retained UNKNOWN exposure. Reviewed skills.sh secure-code-review and data-engineer listings as references; full external secure-code-review retrieval was unavailable, so no third-party executable skill was installed. See DURABLE_OPERATIONS.md for inspected references and limitations.
+
+## Production readiness
+
+Added original local production-readiness procedure for accountable owners, credential lifecycle, incident coverage and evidence-based release gates. skills.sh incident-response listings were reference material; no third-party executable package was installed. The procedure grants no runtime privileges. See PRODUCTION_TEAM.md.

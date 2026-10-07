@@ -37,3 +37,7 @@ Model inference, authenticated delivery, external job dispatch and signing remai
 ## Durable foundation follow-up
 
 OperationStore now atomically stores reservations with outbox rows and verified delivery receipts with delivery transitions. A simulation worker tests timeout and stale-worker fencing; live dispatch is rejected. Durable local receipt replay is implemented, while public API authentication, provider enrollment, signer integration, Masumi contract pinning and actual network reconciliation remain pending. Run `npm run durable:rehearse` and read DURABLE_OPERATIONS.md before integrating a live executor.
+
+## Private production foundations
+
+Scoped operator authorization, coherent SQLite backup/restore rehearsal and a pinned Masumi contract manifest are implemented and tested as private library boundaries. They do not enable public operator routes or live dispatch. Assign named human owners using PRODUCTION_TEAM.md, authenticate provider key enrollment, reconcile restored operations, and verify the actual deployed Masumi release before enabling writes. Official YouTube context was located, but transcript extraction was unavailable; no unseen video statements are implementation evidence.
