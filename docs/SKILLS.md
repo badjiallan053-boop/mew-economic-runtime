@@ -78,3 +78,7 @@ Added original local production-readiness procedure for accountable owners, cred
 ## Investor and partner demo
 
 Added original partner-demo procedure using evidence classification from local perp-value-proof and reference-only skills.sh positioning-basics listing. Full upstream skill retrieval failed; no third-party package installed. Runtime registries and compact policy fingerprints are unchanged. See INVESTOR_PARTNER_DEMO.md.
+
+## Company design studio
+
+Added an original company-design-studio procedure after inspecting skills.sh frontend-design and upstream web-design-guidelines references. Two implementation roles and independent review were coordinated by root; no third-party packages or runtime privileges added. See WEBSITE_STUDIO.md.

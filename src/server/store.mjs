@@ -2,6 +2,7 @@ import { DatabaseSync } from 'node:sqlite';
 import { mkdirSync } from 'node:fs';
 import { dirname } from 'node:path';
 import { MEW } from '../core/mew.mjs';
+import {emptyDesignStudio,reviseDesignStudio} from '../demo/design-studio.mjs';
 
 export class Store {
   constructor(path, {mode='demo',maxSnapshotBytes=mode==='demo'?2*1024*1024:64*1024*1024}={}) {
@@ -70,6 +71,13 @@ export class Store {
   }
   reset(objective) {
     return this.transact(k=>{k.state=new MEW().snapshot();k.createObjective(objective);return k.snapshot();});
+  }
+  designStudio(input) {
+    if(this.mode!=='demo')throw Error('Design studio demo only');
+    this.db.exec('CREATE TABLE IF NOT EXISTS design_studio (id INTEGER PRIMARY KEY CHECK(id=1), snapshot TEXT NOT NULL)');
+    if(input===undefined){const row=this.db.prepare('SELECT snapshot FROM design_studio WHERE id=1').get();return row?JSON.parse(row.snapshot):emptyDesignStudio();}
+    this.db.exec('BEGIN IMMEDIATE');
+    try{const row=this.db.prepare('SELECT snapshot FROM design_studio WHERE id=1').get();const result=reviseDesignStudio(row?JSON.parse(row.snapshot):null,input);const serialized=JSON.stringify(result);if(Buffer.byteLength(serialized)>16384)throw Error('Studio budget exceeded');this.db.prepare('INSERT INTO design_studio VALUES(1,?) ON CONFLICT(id) DO UPDATE SET snapshot=excluded.snapshot').run(serialized);this.db.exec('COMMIT');return result;}catch(error){this.db.exec('ROLLBACK');throw error;}
   }
   readRehearsal() {
     const row=this.db.prepare('SELECT snapshot FROM rehearsal WHERE id=1').get();

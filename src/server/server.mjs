@@ -44,6 +44,7 @@ export function makeServer({dbPath=process.env.MEW_DB_PATH || resolve(root,'data
         if(url.pathname.startsWith('/api/campaign') && !demo) return json(403,{error:'Campaign fixtures are disabled in live mode'});
         if(req.method==='GET' && url.pathname==='/api/campaign') return json(200,store.campaign(s=>s || createCampaign()));
         if(url.pathname.startsWith('/api/rehearsal') && !demo) return json(403,{error:'Rehearsal is disabled in live mode'});
+        if(req.method==='GET' && url.pathname==='/api/design-studio'){if(!demo)return json(403,{error:'Design studio fixtures disabled'});return json(200,store.designStudio());}
         if(req.method==='GET' && url.pathname==='/api/studio'){if(!demo)return json(403,{error:'Studio fixtures are disabled in live mode'});const rehearsal=store.readRehearsal() || createRehearsal();return json(200,{...rehearsal,position:new MEW(rehearsal.kernel).position('rehearsal-report'),observedAt:new Date().toISOString(),paymentsEnabled:false});}
         if(req.method==='GET' && url.pathname==='/api/rehearsal') return json(200,store.readRehearsal() || createRehearsal());
         if(req.method==='GET' && url.pathname==='/api/state') return json(200,state());
@@ -56,6 +57,7 @@ export function makeServer({dbPath=process.env.MEW_DB_PATH || resolve(root,'data
         let raw='';for await(const chunk of req){raw+=chunk;if(Buffer.byteLength(raw)>65536) return json(413,{error:'Payload too large'});}
         const body=JSON.parse(raw || '{}');
         if(url.pathname==='/api/cardano/operations') return json(201,store.bindCardanoOperation(body));
+        if(url.pathname==='/api/design-studio'){if(!demo)return json(403,{error:'Design studio fixtures disabled'});return json(200,store.designStudio(body));}
         if(url.pathname==='/api/campaign/reset') return json(200,store.campaign(()=>createCampaign(body.scenario)));
         if(url.pathname==='/api/campaign/advance') return json(200,store.campaign(s=>advanceCampaign(s || createCampaign(),body)));
         if(url.pathname==='/api/rehearsal/reset') return json(200,store.rehearse(()=>createRehearsal(body.scenario)));

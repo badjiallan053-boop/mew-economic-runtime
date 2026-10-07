@@ -108,3 +108,5 @@ See [DELIVERY_PLAN.md](docs/DELIVERY_PLAN.md) for ordered outcomes, accountable 
 The private operator host is runnable with `npm run operator:start -- /absolute/private/operator.json /absolute/private/economic.sqlite`. It requires an already provisioned live ledger, binds loopback only, and refuses insecure files. See OPERATOR_AUTHORIZATION.md for provisioning, deployment and credential boundaries.
 
 For investor and ecosystem-partner presentations, see [the demo package](docs/INVESTOR_PARTNER_DEMO.md): positioning, four-minute walkthrough, six-slide narrative, partner asks and evidence limits.
+
+The unified website starts at /; /design-studio.html provides a shared nonconfidential brief and deterministic critique workflow inside the company experience. See [WEBSITE_STUDIO.md](docs/WEBSITE_STUDIO.md). The original ledger demo remains /ledger.html.

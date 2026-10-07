@@ -1,0 +1,2 @@
+const links=[['home.html','Overview'],['studio.html','Decision demo'],['company.html','Team workflows'],['design-studio.html','Design studio'],['research.html','Evidence'],['campaign.html','Clip rehearsal']];
+const nav=document.createElement('nav');nav.className='site-nav';nav.setAttribute('aria-label','MEW website');for(const [path,label] of links){const a=document.createElement('a');a.href=path;a.textContent=label;if(location.pathname.endsWith('/'+path))a.setAttribute('aria-current','page');nav.append(a);}document.body.prepend(nav);
