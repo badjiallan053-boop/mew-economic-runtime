@@ -58,11 +58,20 @@ const plans=deepFreeze(Object.fromEntries(Object.entries(profileSteps).map(([nam
   const specialists=s.specialists.map(slug=>({id:`${s.id}/${slug}`,agentId:`${lead.agentId}/${slug}`,dependsOn:[...s.dependsOn]}));
   return [...specialists,{id:lead.id,agentId:lead.agentId,dependsOn:[...s.dependsOn,...specialists.map(t=>t.id)]}];
 })])));
-export function workflowPlan(name='full'){if(name==='full')return tasks;if(!Object.hasOwn(plans,name))throw new Error('Unknown company workflow');return plans[name];}
+export const compactTasks=deepFreeze([
+{id:'compact-scope',agentId:'chief-of-staff',dependsOn:[]},
+{id:'compact-evidence',agentId:'knowledge',dependsOn:['compact-scope']},
+{id:'compact-proposal',agentId:'engineering',dependsOn:['compact-evidence']},
+{id:'compact-risk',agentId:'risk',dependsOn:['compact-proposal']},
+{id:'compact-challenge',agentId:'red-team',dependsOn:['compact-proposal']},
+{id:'compact-decision',agentId:'chief-of-staff',dependsOn:['compact-risk','compact-challenge']}
+]);
+export function workflowPlan(name='full'){if(name==='compact')return compactTasks;if(name==='full')return tasks;if(!Object.hasOwn(plans,name))throw new Error('Unknown company workflow');return plans[name];}
 export const workflows=deepFreeze([
+  {id:'compact',name:'Compact evidence-to-decision team',deliverable:'Bounded proposal with evidence and independent reviews; five roles, six tasks',tasks:compactTasks},
   {id:'discovery',name:'Evidence and decision brief',deliverable:'Source-backed options, uncertainties and independent challenge',tasks:plans.discovery},
   {id:'release',name:'Product release review',deliverable:'Contract-preserving implementation plan, test review and deployment checklist',tasks:plans.release},
   {id:'paid-readiness',name:'Paid-agent readiness review',deliverable:'Quote-binding, funding and recovery blockers; no payment dispatch',tasks:plans['paid-readiness']},
   {id:'full',name:'Full organization rehearsal',deliverable:'Synthetic tour of all 48 assigned roles; optional',tasks}
 ]);
-export function companyRegistry(){return structuredClone({version:2,agents,tasks,workflows,defaultWorkflow:'discovery',modelExecution:'NOT_CONFIGURED',paymentsEnabled:false});}
+export function companyRegistry(){return structuredClone({version:2,agents,tasks,workflows,defaultWorkflow:'compact',modelExecution:'NOT_CONFIGURED',paymentsEnabled:false});}

@@ -79,3 +79,10 @@ The advisory runtime loads scoped prompts and reviewed local skill references,
 validates outputs, blocks uncertain retries and leaves economic contracts intact.
 See [knowledge and skills provenance](docs/COMPANY_KNOWLEDGE.md). Real inference
 and live external actions remain configuration and activation milestones.
+
+
+## Compact company team
+
+`npm run company:rehearse` now defaults to five roles across six synthetic tasks.
+See [compact team and prompt boundaries](docs/COMPACT_TEAM.md). Existing profiles
+remain selectable explicitly; saved legacy missions are not migrated.

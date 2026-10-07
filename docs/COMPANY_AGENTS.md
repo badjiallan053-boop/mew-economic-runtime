@@ -117,7 +117,7 @@ npm run company:rehearse -- data/company-simulation.sqlite
 npm start
 ```
 
-Open `/company.html` through the server for the department map. The CLI now defaults to 13 discovery **synthetic** advisory tasks. The explicit
+Open `/company.html` through the server for the department map. The CLI now defaults to six compact **synthetic** advisory tasks using five roles; discovery remains available explicitly. The explicit
 full profile executes 48 tasks and persists them in a separate company SQLite
 journal. Re-running completed tasks returns stored output without invoking the
 provider again. These are not model calls. See COHERENT_OPERATIONS.md for all fixed profiles. Each specialist uses its parent prompt,

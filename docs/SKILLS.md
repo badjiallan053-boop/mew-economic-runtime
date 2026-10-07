@@ -58,3 +58,11 @@ bundle quantity, reset identity, initial checkpoint persistence and exact artifa
 bindings. Fixtures remain deterministic; skill texts are not injected into model
 contexts. Existing company mission policies are unchanged. All 96 repository
 tests and the build passed for this contribution.
+
+
+## Compact profile
+
+The compact profile loads the new original handoff-review procedure, scoped to
+five roles. It covers consumer validation and observable acceptance. See
+COMPACT_TEAM.md for the actual skills.sh upstream review and adoption limits.
+Legacy profiles do not load it, preserving their mission policy fingerprints.

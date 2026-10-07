@@ -8,6 +8,8 @@
 !.agents/skills/company-knowledge/SKILL.md
 !.agents/skills/test-driven-development/
 !.agents/skills/test-driven-development/SKILL.md
+!.agents/skills/handoff-review/
+!.agents/skills/handoff-review/SKILL.md
 data
 dist
 node_modules

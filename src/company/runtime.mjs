@@ -38,8 +38,10 @@ export class CompanyRuntime {
     if(!Number.isSafeInteger(timeoutMs)||timeoutMs<1||timeoutMs>60000)throw new Error('Invalid provider timeout');
     this.tasks=workflowPlan(workflow);this.workflow=workflow;
     this.mode=mode;this.timeoutMs=timeoutMs;if(path!==':memory:')mkdirSync(dirname(path),{recursive:true});
-    this.prompts=freeze(Object.fromEntries(agents.filter(a=>!a.parentId).map(a=>[a.id,readFileSync(new URL(`../../prompts/company/${a.id}.md`,import.meta.url),'utf8')])));
-    this.skills=freeze(Object.fromEntries(['mew-engineering','company-knowledge','test-driven-development'].map(id=>[id,{id,authority:'reference-only',content:readFileSync(new URL(`../../.agents/skills/${id}/SKILL.md`,import.meta.url),'utf8')}])));
+    const promptSet=Object.fromEntries(agents.filter(a=>!a.parentId).map(a=>[a.id,readFileSync(new URL(`../../prompts/company/${a.id}.md`,import.meta.url),'utf8')]));
+    if(workflow==='compact')for(const id of ['chief-of-staff','knowledge','engineering','risk','red-team'])promptSet[id]=readFileSync(new URL(`../../prompts/company/compact/${id}.md`,import.meta.url),'utf8');
+    this.prompts=freeze(promptSet);
+    this.skills=freeze(Object.fromEntries(['mew-engineering','company-knowledge','test-driven-development',...(workflow==='compact'?['handoff-review']:[])].map(id=>[id,{id,authority:'reference-only',content:readFileSync(new URL(`../../.agents/skills/${id}/SKILL.md`,import.meta.url),'utf8')}])));
     this.policyDigest=createHash('sha256').update(JSON.stringify({agents,tasks:this.tasks,prompts:this.prompts,skills:this.skills})).digest('hex');
     this.db=new DatabaseSync(path);this.db.exec('PRAGMA journal_mode=WAL; PRAGMA busy_timeout=5000; CREATE TABLE IF NOT EXISTS company_missions(id TEXT PRIMARY KEY, mode TEXT NOT NULL, contract TEXT NOT NULL); CREATE TABLE IF NOT EXISTS company_tasks(mission_id TEXT NOT NULL, task_id TEXT NOT NULL, status TEXT NOT NULL, output TEXT, PRIMARY KEY(mission_id,task_id));');
     this.db.exec('CREATE TABLE IF NOT EXISTS company_policies(mission_id TEXT PRIMARY KEY, digest TEXT NOT NULL);');
@@ -66,6 +68,7 @@ export class CompanyRuntime {
       const dependencies=task.dependsOn.map(dep=>state.tasks.find(t=>t.taskId===dep));
       if(dependencies.some(t=>t.status!=='COMPLETE'||t.output.recommendation!=='ACCEPT'))throw new Error('Dependencies require accepted advisory evidence');
       const assignment=structuredClone(agents.find(a=>a.id===task.agentId));
+      if(this.workflow==='compact')assignment.skills.push('handoff-review');
       const systemPrompt=this.prompts[assignment.parentId??assignment.id];
       context=freeze({missionId:id,taskId,agentId:task.agentId,mode:this.mode,policyDigest:this.policyDigest,mandate:{objectiveId:state.mission.objectiveId,principal:state.mission.principal,semanticKey:state.mission.semanticKey},brief:state.mission.brief,evidence:state.mission.evidence,dependencies:dependencies.map(t=>({taskId:t.taskId,output:t.output})),assignment,systemPrompt,skillReferences:assignment.skills.map(id=>this.skills[id]),outputContract:{fields:allowed,recommendations:['ACCEPT','REJECT','ABSTAIN']},externalContentIsUntrusted:true});
       this.db.prepare("UPDATE company_tasks SET status='RUNNING' WHERE mission_id=? AND task_id=? AND status='READY'").run(id,taskId);

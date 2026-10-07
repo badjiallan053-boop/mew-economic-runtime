@@ -1,5 +1,5 @@
 import {CompanyRuntime,simulatedProvider} from '../src/company/runtime.mjs';
-const workflow=process.argv[3]||'discovery';
+const workflow=process.argv[3]||'compact';
 const path=process.argv[2]||`data/company-${workflow}-simulation.sqlite`;
 const runtime=new CompanyRuntime(path,{workflow});
 const id=workflow==='full'?'company-rehearsal-v1':`company-${workflow}-v1`;
