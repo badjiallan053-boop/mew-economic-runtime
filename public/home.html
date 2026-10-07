@@ -1,2 +1,598 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#090e1a"><meta name="description" content="MEW helps teams building purchasing agents keep equivalent requests inside one shared mandate. Try the synthetic decision demo."><title>MEW · One purchase. One shared mandate.</title><link rel="stylesheet" href="/home.css"><link rel="stylesheet" href="journey.css"><link rel="stylesheet" href="mandate-art.css"><link rel="stylesheet" href="motion.css"></head><body><a class="skip" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="/home.html" aria-label="MEW home"><span class="brand-mark" aria-hidden="true">✳</span> mew</a><nav aria-label="Main navigation"><a href="/protocol.html#evidence">Verify</a><a href="/pilot.html">Plan a pilot</a><a href="/company.html">Workflows</a></nav><a class="header-cta" href="/studio.html">Try decision demo <span aria-hidden="true">↗</span></a></header><main id="main"><section class="hero" aria-labelledby="hero-title"><div class="hero-copy"><p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> FOR TEAMS BUILDING PURCHASING AGENTS</p><h1 id="hero-title">One purchase.<br>One shared <em>mandate.</em></h1><p class="lead">When a supplier times out, another agent may buy the same work again. MEW keeps the first commitment counted while its outcome is unknown.</p><div class="actions"><a class="button primary" href="/studio.html">Try decision demo <span aria-hidden="true">↗</span></a><a class="text-link" href="/pilot.html">Plan a bounded pilot ↗</a></div><p class="boundary">Interactive prototype · synthetic evidence · payments disabled</p></div><figure class="mandate-visual story-art"><div data-mandate-art data-art-phase="reserved" data-art-seed="report-01"></div><figcaption><strong>One report. One shared mandate.</strong><span>Mint: held request · Lilac: equivalent request</span><small>Algorithmic illustration · not live activity</small></figcaption></figure></section><div class="thesis-strip"><p>Define the purchase.</p><span aria-hidden="true">/</span><p>Reserve capacity.</p><span aria-hidden="true">/</span><p>Resolve with evidence.</p><a href="/protocol.html#evidence">Verify the result ↗</a></div><section id="protocol" class="protocol"><div class="section-head"><p class="eyebrow">01 / SEE THE FAILURE CASE</p><h2>A timeout shouldn’t<br>buy the same thing twice.</h2><p class="section-intro">Both suppliers can fit the budget individually. Their combined 2.90 ADA price fits the 3 ADA budget. The one-report quantity still prevents a second equivalent purchase.</p></div><div class="demo-layout"><div class="demo-story"><span class="small-label">LOCAL ILLUSTRATION</span><h3>One report.<br>3 ADA ceiling.</h3><p>Follow a 1.50 ADA reservation, a delivery timeout and a second supplier request. See why an unknown outcome still holds the capacity for one report.</p><ol class="demo-steps"><li class="active" data-step="0"><span>01</span> Reserve 1.50 ADA</li><li data-step="1"><span>02</span> Delivery times out</li><li data-step="2"><span>03</span> Attempt equivalent report</li></ol><button class="button primary" id="demo-next" type="button">Observe the timeout <span aria-hidden="true">→</span></button><button class="reset-link" id="demo-reset" type="button">Restart illustration</button></div><div class="terminal-card"><div class="terminal-head"><span><span class="status-dot" aria-hidden="true"></span> mandate / report-01</span><span>SYNTHETIC</span></div><div class="exposure-row"><div><span class="small-label">RETAINED EXPOSURE</span><strong>1.50 <small>ADA</small></strong></div><span class="decision-badge" id="fixture-decision">RESERVED</span></div><div class="budget-track" aria-label="1.50 of 3 ADA held"><span></span></div><div class="track-labels"><span>1.50 reserved</span><span>3.00 ADA ceiling</span></div><div class="fixture-result" role="status" aria-live="polite"><span id="fixture-kicker">ALLOW → RESERVE</span><h4 id="fixture-title">The first report holds capacity.</h4><p id="fixture-description">1.50 ADA is reserved. No payment has been dispatched in this illustration.</p></div><div class="terminal-foot"><span>Objective capacity</span><strong>1 / 1 held</strong><span>Payment execution</span><strong>Disabled</strong></div><a class="text-link" href="/studio.html">Run the persisted decision rehearsal ↗</a></div></div></section><section id="platform" class="platform"><div class="section-head split"><div><p class="eyebrow">02 / FOLLOW THE DECISION</p><h2>Start with the demo.<br>Inspect what supports it.</h2></div><p class="section-intro">Use the rehearsal to understand the decision. Then inspect agent responsibilities, evidence and the limits of the prototype.</p></div><div class="workspace-grid"><a class="workspace-card featured" href="/studio.html"><div class="card-top"><span class="card-label">DECISION STUDIO</span><span aria-hidden="true">↗</span></div><div class="mini-flow" aria-hidden="true"><span>Intent</span><i>→</i><span class="flow-focus">Bound</span><i>→</i><span>Evidence</span></div><h3>See why the retry waits.</h3><p>Follow a mandate, retained exposure and a duplicate request through a persisted synthetic rehearsal.</p><span class="card-action">Try decision demo →</span></a><a class="workspace-card" href="/company.html"><div class="card-top"><span class="card-label">AGENT WORKFLOWS</span><span aria-hidden="true">↗</span></div><div class="role-stack" aria-hidden="true"><span>Scope</span><span>Build</span><span>Review</span></div><h3>Know who can decide.</h3><p>Inspect scoped advisory roles and handoffs. Agent recommendations do not authorize spending.</p><span class="card-action">Meet the workflow →</span></a><a class="workspace-card" href="/design-studio.html"><div class="card-top"><span class="card-label">DESIGN STUDIO</span><span aria-hidden="true">↗</span></div><div class="design-glyph" aria-hidden="true">✳</div><h3>Review a product brief.</h3><p>Shape a brief and inspect deterministic critiques before human review.</p><span class="card-action">Open the design workspace →</span></a><a class="workspace-card" href="/research.html"><div class="card-top"><span class="card-label">EVIDENCE LIBRARY</span><span aria-hidden="true">↗</span></div><div class="evidence-lines" aria-hidden="true"><span>Source</span><span>Test</span><span>Claim</span></div><h3>Check each claim.</h3><p>Separate implemented behavior, external references and pending integration.</p><span class="card-action">Inspect the evidence →</span></a></div></section><section class="ecosystem" aria-labelledby="ecosystem-title"><div><p class="eyebrow">03 / CARDANO & AGENT COMMERCE</p><h2 id="ecosystem-title">Validate the mandate.<br>Then test a payment rail.</h2><p>For agent-commerce teams, the proposed pilot starts with one purchase objective and a known failure case. Cardano preprod and Masumi remain integration paths to validate, with live payments disabled.</p><a class="text-link" href="/rehearsal.html">Explore the rail rehearsal ↗</a></div><div class="rail-list"><div><span class="rail-symbol" aria-hidden="true">◉</span><h3>Cardano evidence</h3><span class="rail-tag">Verifier prepared · live proof pending</span></div><div><span class="rail-symbol" aria-hidden="true">◇</span><h3>Masumi workflows</h3><span class="rail-tag">Integration prepared · activation pending</span></div><div><span class="rail-symbol" aria-hidden="true">↳</span><h3>Clip procurement</h3><a class="rail-tag" href="/campaign.html">Synthetic pilot rehearsal ↗</a></div></div></section><section class="closing"><p class="eyebrow">MAKE THE NEXT STEP SPECIFIC</p><h2>Test one failure case.<br><em>Define your pilot.</em></h2><div class="actions"><a class="button primary" href="/studio.html">Try decision demo ↗</a><a class="text-link" href="/pilot.html">Plan a bounded pilot ↗</a></div><div class="service-check"><p id="service-status" role="status" aria-live="polite">Checking this host’s service mode…</p><button id="refresh-status" type="button" aria-label="Refresh service status">Refresh ↻</button></div></section></main><footer><div><a class="brand" href="/home.html"><span class="brand-mark" aria-hidden="true">✳</span> mew</a><p>Shared mandates for purchasing agents.</p></div><nav aria-label="Footer navigation"><a href="/studio.html">Decision demo</a><a href="/company.html">Workflows</a><a href="/research.html">Evidence</a><a href="/pilot.html">Plan a pilot</a><a href="/campaign.html">Clip rehearsal</a><a href="/ledger.html">Original ledger</a></nav><p class="footer-boundary">Prototype / synthetic evidence<br>No live models or payments claimed.</p></footer><script type="module" src="/home.js"></script><script type="module" src="journey.js"></script><script type="module" src="mandate-art.js"></script><script type="module" src="motion.js"></script></body></html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#f6f5f0" />
+    <meta
+      name="description"
+      content="A shared mandate for purchasing agents. Try MEW’s interactive prototype: one report, one commitment, no duplicate purchase after a timeout."
+    />
+    <title>MEW — Keep agent commitments in control.</title>
+    <link rel="stylesheet" href="/assets/fonts/instrument.css" />
+    <link rel="stylesheet" href="/home.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="/home.html" aria-label="MEW home"
+        ><svg viewBox="0 0 32 32" aria-hidden="true">
+          <path
+            d="M4 8 16 2 28 8v16l-12 6-12-6Z M4 8l12 6 12-6 M16 14v16 M10 5v15l6 3 6-3V5"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          /></svg
+        ><span>mew<span class="brand-period">.</span></span></a
+      >
+      <nav aria-label="Main navigation">
+        <a href="#how-it-works">The idea</a
+        ><a href="/protocol.html#evidence">The proof</a
+        ><a href="/pilot.html">Pilot with us</a>
+      </nav>
+      <a class="header-cta" href="#demo"
+        >Run the demo <span aria-hidden="true">↗</span></a
+      >
+    </header>
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">
+            <span class="status-dot" aria-hidden="true"></span> SHARED MANDATES
+            FOR AGENT COMMERCE
+          </p>
+          <h1 id="hero-title">
+            AI agents move fast.<br />Keep commitments<br /><em
+              >in your control.</em
+            >
+          </h1>
+          <p class="lead">
+            Many agents. One purchase. MEW keeps their commitments inside a
+            shared mandate—even when a supplier goes silent.
+          </p>
+          <div class="actions">
+            <a class="button primary" href="#demo"
+              >See the decision <span aria-hidden="true">↗</span></a
+            ><a class="text-link" href="/pilot.html"
+              >Explore a pilot <span aria-hidden="true">→</span></a
+            >
+          </div>
+          <p class="boundary">Interactive prototype · payments disabled</p>
+        </div>
+        <figure class="sculpture" aria-labelledby="sculpture-caption">
+          <div class="sculpture-head">
+            <span>01 / ONE SHARED MANDATE</span
+            ><button id="art-pause" type="button" aria-pressed="false">
+              Pause motion <span aria-hidden="true">Ⅱ</span>
+            </button>
+          </div>
+          <svg
+            class="mandate-sculpture"
+            viewBox="0 0 560 470"
+            role="img"
+            aria-label="Three agent paths meet at one shared geometric boundary."
+          >
+            <defs>
+              <pattern
+                id="art-grid"
+                width="28"
+                height="28"
+                patternUnits="userSpaceOnUse"
+              >
+                <path
+                  d="M28 0H0V28"
+                  fill="none"
+                  stroke="#142126"
+                  stroke-opacity=".08"
+                />
+              </pattern>
+              <linearGradient id="ring-tone" x1="0" y1="0" x2="1" y2="1">
+                <stop stop-color="#4345ef" />
+                <stop offset="1" stop-color="#262b97" />
+              </linearGradient>
+              <filter
+                id="soft-shadow"
+                x="-50%"
+                y="-50%"
+                width="200%"
+                height="200%"
+              >
+                <feGaussianBlur stdDeviation="10" />
+              </filter>
+              <g id="voxel">
+                <path d="m0 0 36-20 36 20-36 20Z" fill="#a3d9c9" />
+                <path d="m0 0 36 20v40L0 40Z" fill="#17695a" />
+                <path d="m36 20 36-20v40L36 60Z" fill="#318b74" />
+                <path
+                  d="m0 0 36 20 36-20M36 20v40"
+                  fill="none"
+                  stroke="#f6f5f0"
+                  stroke-opacity=".4"
+                  stroke-width="1"
+                />
+              </g>
+              <g id="violet-voxel">
+                <path d="m0 0 36-20 36 20-36 20Z" fill="#b6b5ff" />
+                <path d="m0 0 36 20v40L0 40Z" fill="#4345ef" />
+                <path d="m36 20 36-20v40L36 60Z" fill="#7271ff" />
+                <path
+                  d="m0 0 36 20 36-20M36 20v40"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-opacity=".4"
+                />
+              </g>
+            </defs>
+            <rect x="0" y="0" width="560" height="470" fill="url(#art-grid)" />
+            <ellipse
+              cx="290"
+              cy="346"
+              rx="165"
+              ry="39"
+              fill="#142126"
+              opacity=".13"
+              filter="url(#soft-shadow)"
+            />
+            <g class="art-orbit">
+              <ellipse
+                cx="282"
+                cy="241"
+                rx="211"
+                ry="112"
+                fill="none"
+                stroke="#142126"
+                stroke-opacity=".14"
+                stroke-dasharray="3 8"
+                transform="rotate(-17 282 241)"
+              />
+              <circle cx="91" cy="217" r="5" fill="#4345ef" />
+              <circle cx="469" cy="252" r="5" fill="#17695a" />
+            </g>
+            <path
+              d="M96 169 160 206M385 168 441 134M355 337 411 370"
+              fill="none"
+              stroke="#142126"
+              stroke-opacity=".22"
+              stroke-width="1.5"
+            />
+            <g class="art-stack">
+              <use href="#voxel" x="210" y="274" />
+              <use href="#voxel" x="246" y="254" />
+              <use href="#voxel" x="282" y="234" />
+              <use href="#voxel" x="174" y="254" />
+              <use href="#voxel" x="210" y="234" />
+              <use href="#voxel" x="246" y="214" />
+              <use href="#voxel" x="210" y="194" />
+              <use href="#voxel" x="246" y="174" />
+              <use href="#voxel" x="282" y="154" />
+              <use href="#voxel" x="174" y="174" />
+              <use href="#voxel" x="210" y="154" />
+              <use href="#voxel" x="246" y="134" />
+              <path
+                d="M129 191C150 147 244 121 333 141s123 63 92 104"
+                fill="none"
+                stroke="url(#ring-tone)"
+                stroke-width="21"
+              />
+              <use href="#voxel" x="210" y="114" />
+              <use href="#voxel" x="246" y="94" />
+              <use href="#violet-voxel" x="174" y="94" />
+              <use href="#voxel" x="210" y="74" />
+              <path
+                d="M425 245C402 287 309 304 216 284s-123-54-87-93"
+                fill="none"
+                stroke="url(#ring-tone)"
+                stroke-width="21"
+              />
+              <path
+                d="M425 245C402 284 309 301 216 281s-119-53-87-90"
+                fill="none"
+                stroke="#a9a7ff"
+                stroke-opacity=".6"
+                stroke-width="1.5"
+              />
+            </g>
+            <g fill="#142126" font-family="monospace" font-size="10">
+              <text x="41" y="155">AGENT 01</text>
+              <text x="417" y="118">AGENT 02</text>
+              <text x="414" y="392">AGENT 03</text>
+            </g>
+          </svg>
+          <figcaption id="sculpture-caption">
+            <span><i class="legend mint"></i> Many agent paths</span
+            ><span><i class="legend blue"></i> One shared boundary</span
+            ><small>Concept illustration · no live activity</small>
+          </figcaption>
+        </figure>
+      </section>
+      <div class="thesis-strip">
+        <p>Agents propose.</p>
+        <span aria-hidden="true">↗</span>
+        <p>Code checks the mandate.</p>
+        <span aria-hidden="true">↗</span>
+        <p>Evidence resolves it.</p>
+        <a href="/protocol.html#evidence"
+          >Inspect the protocol <span aria-hidden="true">→</span></a
+        >
+      </div>
+      <section
+        id="how-it-works"
+        class="idea section"
+        aria-labelledby="idea-title"
+      >
+        <div class="section-head">
+          <p class="eyebrow">THE IDEA / SHARED CONTROL</p>
+          <h2 id="idea-title">
+            A budget is a limit.<br />A mandate is a purpose.
+          </h2>
+          <p class="section-intro">
+            Two purchases can fit the same budget and still buy the same thing
+            twice. MEW tracks the objective as well as the money.
+          </p>
+        </div>
+        <div class="rules">
+          <article>
+            <span class="rule-index">01</span>
+            <h3>Define one outcome.</h3>
+            <p>
+              Agree what counts as the same purchase. Set its quantity and
+              maximum exposure before agents act.
+            </p>
+          </article>
+          <article>
+            <span class="rule-index">02</span>
+            <h3>Hold the commitment.</h3>
+            <p>
+              The first approved request holds capacity. A timeout keeps it held
+              while the outcome is uncertain.
+            </p>
+          </article>
+          <article>
+            <span class="rule-index">03</span>
+            <h3>Resolve with evidence.</h3>
+            <p>
+              Reconcile the original request before trying another supplier.
+              Payment and delivery are separate facts.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section id="demo" class="demo-section" aria-labelledby="demo-title">
+        <div class="demo-top">
+          <p class="eyebrow">THE DEMO / TRY THE FAILURE CASE</p>
+          <span class="prototype-label"
+            ><span class="status-dot"></span> Interactive prototype · payments
+            disabled</span
+          >
+        </div>
+        <div class="demo-layout">
+          <div class="demo-story">
+            <h2 id="demo-title">
+              One report.<br />Three moments.<br /><em>No second purchase.</em>
+            </h2>
+            <p>
+              A 1.50 ADA request times out. A second supplier offers the same
+              report for 1.40 ADA. Both fit a 3 ADA ceiling. Should another
+              request go through?
+            </p>
+            <ol class="demo-steps">
+              <li data-step="1">
+                <span>01</span>
+                <div>
+                  <strong>Reserve the first report</strong
+                  ><small>1.50 ADA · Supplier Alpha</small>
+                </div>
+              </li>
+              <li data-step="2">
+                <span>02</span>
+                <div>
+                  <strong>Observe a timeout</strong
+                  ><small>No evidence that the request failed</small>
+                </div>
+              </li>
+              <li data-step="3">
+                <span>03</span>
+                <div>
+                  <strong>Try the equivalent report</strong
+                  ><small>1.40 ADA · Supplier Beta</small>
+                </div>
+              </li>
+            </ol>
+            <div class="demo-controls">
+              <button
+                class="button primary"
+                id="demo-next"
+                type="button"
+                disabled
+              >
+                Loading decision engine…</button
+              ><button
+                class="reset-link"
+                id="demo-reset"
+                type="button"
+                disabled
+              >
+                Restart
+              </button>
+            </div>
+            <p class="demo-engine-note">
+              Runs the project’s decision engine in a fresh browser simulation.
+              Your clicks create no shared reservation or payment.
+            </p>
+          </div>
+          <div class="decision-console">
+            <div class="console-top">
+              <span><span class="console-dot"></span> MANDATE / ONE REPORT</span
+              ><span id="fixture-decision" class="decision-badge">READY</span>
+            </div>
+            <div class="exposure-row">
+              <div>
+                <span class="small-label">HELD EXPOSURE</span
+                ><strong
+                  ><span id="exposure-value">0.00</span>
+                  <small>ADA</small></strong
+                >
+              </div>
+              <div class="quantity-box">
+                <strong id="quantity-value">0 / 1</strong
+                ><span>reports held</span>
+              </div>
+            </div>
+            <div
+              class="budget-track"
+              role="meter"
+              aria-label="Held exposure"
+              aria-valuemin="0"
+              aria-valuemax="3"
+              aria-valuenow="0"
+              id="budget-meter"
+            >
+              <span id="budget-fill"></span>
+            </div>
+            <div class="track-labels">
+              <span id="budget-label">0.00 ADA held</span
+              ><span>3.00 ADA ceiling</span>
+            </div>
+            <div
+              class="fixture-result"
+              role="status"
+              aria-live="polite"
+              aria-atomic="true"
+            >
+              <span id="fixture-kicker"
+                >YOUR MANDATE, BEFORE THE FIRST REQUEST</span
+              >
+              <h3 id="fixture-title">Start with one clear objective.</h3>
+              <p id="fixture-description">
+                Purchase one report, with maximum exposure of 3 ADA. Run the
+                first request to see the decision.
+              </p>
+            </div>
+            <div class="console-row">
+              <span>Equivalent request</span
+              ><strong id="equivalent-status">Not attempted</strong>
+            </div>
+            <div class="console-row">
+              <span>Payment execution</span><strong>Disabled</strong>
+            </div>
+            <a class="console-link" href="/studio.html"
+              >Open the decision studio <span aria-hidden="true">↗</span></a
+            >
+          </div>
+        </div>
+        <noscript
+          ><p class="noscript-note">
+            Enable JavaScript to run the interactive simulation, or
+            <a href="/protocol.html#evidence">read the protocol evidence</a>.
+          </p></noscript
+        >
+      </section>
+      <section class="evidence section" aria-labelledby="evidence-title">
+        <div class="section-head evidence-heading">
+          <div>
+            <p class="eyebrow">THE PROOF / BUILT WITH VISIBLE BOUNDARIES</p>
+            <h2 id="evidence-title">
+              A working prototype.<br />An honest next step.
+            </h2>
+          </div>
+          <a class="text-link" href="/protocol.html#evidence"
+            >Review the evidence <span aria-hidden="true">↗</span></a
+          >
+        </div>
+        <div class="evidence-grid">
+          <article>
+            <span class="proof-label">DEVELOPMENT BENCHMARK</span
+            ><strong class="proof-number">12<span>/12</span></strong>
+            <h3>Evidence coverage</h3>
+            <p>
+              All agent-reviewed development cases have matching evidence in the
+              expanded source context. This measures evidence coverage, not
+              answer quality or held-out retrieval accuracy.
+            </p>
+          </article>
+          <article>
+            <span class="proof-label">LOCAL CONSTRAINED MODEL</span
+            ><strong class="proof-number">12<span>/12</span></strong>
+            <h3>Response-format checks</h3>
+            <p>
+              Structured responses pass. Grounding and language quality still
+              block model activation.
+            </p>
+          </article>
+          <article class="proof-status">
+            <span class="proof-label">CARDANO PATH</span>
+            <div class="status-icon" aria-hidden="true">◇</div>
+            <h3>Unsigned escrow rehearsal</h3>
+            <p>
+              Transaction construction and durable lifecycle are prepared.
+              Funded preprod execution and an external contract audit remain
+              pending.
+            </p>
+            <span class="pending-pill">Nothing signed or broadcast</span>
+          </article>
+        </div>
+        <p class="evidence-footnote">
+          Local development fixtures · 8 October 2026 · response format is not
+          answer quality. No customer performance or live payment claims.
+          <a href="/research.html">Explore the research library →</a>
+        </p>
+      </section>
+      <section class="pilots section" aria-labelledby="pilots-title">
+        <div class="section-head">
+          <p class="eyebrow">THE NEXT STEP / A BOUNDED PILOT</p>
+          <h2 id="pilots-title">Start small.<br />Make the failure visible.</h2>
+          <p class="section-intro">
+            Choose one purchasing workflow, one mandate and one measurable retry
+            problem.
+          </p>
+        </div>
+        <div class="pilot-grid">
+          <a class="pilot-card" href="/pilot.html"
+            ><span class="card-index">01 / AGENT BUILDERS</span>
+            <div class="pilot-art flow-art" aria-hidden="true">
+              <span>α</span><i>→</i><span class="flow-bound">1</span><i>←</i
+              ><span>β</span>
+            </div>
+            <h3>Keep retries in bounds.</h3>
+            <p>
+              Rehearse one paid research request across two suppliers, with a
+              shared objective and a timeout.
+            </p>
+            <span class="card-action"
+              >Define an agent pilot <span aria-hidden="true">↗</span></span
+            ></a
+          ><a class="pilot-card" href="/rehearsal.html"
+            ><span class="card-index">02 / CARDANO ECOSYSTEM</span>
+            <div class="pilot-art rail-art" aria-hidden="true">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <h3>Connect evidence to intent.</h3>
+            <p>
+              Inspect the Cardano and Masumi integration boundaries before a
+              funded preprod rehearsal.
+            </p>
+            <span class="card-action"
+              >Explore the rail rehearsal
+              <span aria-hidden="true">↗</span></span
+            ></a
+          ><a class="pilot-card" href="/campaign.html"
+            ><span class="card-index">03 / CREATOR OPERATIONS</span>
+            <div class="pilot-art clip-art" aria-hidden="true">
+              <span>01</span><span>02</span><span>03</span>
+            </div>
+            <h3>Buy the clip once.</h3>
+            <p>
+              Scope a clip procurement objective, then test what happens when
+              delivery remains uncertain.
+            </p>
+            <span class="card-action"
+              >Try the clip rehearsal <span aria-hidden="true">↗</span></span
+            ></a
+          >
+        </div>
+      </section>
+      <section class="faq section" aria-labelledby="faq-title">
+        <div>
+          <p class="eyebrow">A FEW CLEAR ANSWERS</p>
+          <h2 id="faq-title">Before we<br />build together.</h2>
+          <a class="text-link" href="/company.html"
+            >Explore agent responsibilities ↗</a
+          >
+        </div>
+        <div class="faq-items">
+          <details>
+            <summary>Is MEW a wallet or a payment rail?</summary>
+            <p>
+              MEW tracks a shared purchasing objective and the exposure of
+              related requests. Cardano and Masumi are payment integration
+              paths; this public prototype does not hold wallet keys or execute
+              payments.
+            </p>
+          </details>
+          <details>
+            <summary>Who decides that two requests are equivalent?</summary>
+            <p>
+              The principal defines an explicit semantic key for the purchase.
+              MEW checks that pre-agreed identity. The prototype does not infer
+              equivalence from free text or let a model authorize spending.
+            </p>
+          </details>
+          <details>
+            <summary>Does a timeout free the budget?</summary>
+            <p>
+              No. An unknown outcome retains capacity. The original request must
+              be reconciled with appropriate evidence before another equivalent
+              purchase can proceed.
+            </p>
+          </details>
+          <details>
+            <summary>What would a first pilot establish?</summary>
+            <p>
+              Whether the mandate prevents duplicate requests in your chosen
+              workflow, including retries and uncertain evidence. Live
+              integration also needs authenticated operators, a funded test
+              wallet, validated transaction evidence and independent security
+              review.
+            </p>
+          </details>
+        </div>
+      </section>
+      <section class="closing" aria-labelledby="closing-title">
+        <p class="eyebrow">FROM A CONVERSATION TO A TEST</p>
+        <h2 id="closing-title">
+          Give your agents room to act.<br /><em
+            >Give every purchase a boundary.</em
+          >
+        </h2>
+        <div class="actions">
+          <a class="button primary" href="/pilot.html"
+            >Plan a bounded pilot <span aria-hidden="true">↗</span></a
+          ><a class="text-link" href="#demo">Run the demo again →</a>
+        </div>
+        <p class="closing-note">
+          Built for conversations at TOKEN2049 · prototype stage
+        </p>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-heading">
+        <a class="brand" href="/home.html"
+          ><svg viewBox="0 0 32 32" aria-hidden="true">
+            <path
+              d="M4 8 16 2 28 8v16l-12 6-12-6Z M4 8l12 6 12-6 M16 14v16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            /></svg
+          ><span>mew.</span></a
+        >
+        <p>One purchase. One shared mandate.</p>
+      </div>
+      <nav aria-label="Footer navigation">
+        <a href="/studio.html">Decision studio</a
+        ><a href="/protocol.html#evidence">Protocol</a
+        ><a href="/research.html">Research</a
+        ><a href="/company.html">Workflows</a
+        ><a href="/design-studio.html">Design studio</a
+        ><a href="/pilot.html">Pilot planner</a>
+      </nav>
+      <div class="footer-status">
+        <p>
+          Local interactive simulation. No wallet connection, model activation
+          or payment execution.
+        </p>
+        <a class="text-link" href="/protocol.html#evidence"
+          >Inspect integration boundaries ↗</a
+        >
+      </div>
+      <div class="footer-bottom">
+        <span>MEW / ECONOMIC RUNTIME</span
+        ><span>Interactive prototype · payments disabled</span
+        ><a href="#main">Back to top ↑</a>
+      </div>
+    </footer>
+    <script type="module" src="/home.js"></script>
+  </body>
+</html>

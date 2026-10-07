@@ -1,19 +1,14 @@
 /* Progressive enhancement: documents, anchors and controls remain native. */
 :root{--mew-fast:140ms;--mew-step:260ms;--mew-page:300ms;--mew-ease:cubic-bezier(.22,1,.36,1)}
+/* Cross-document snapshots can abort in embedded browsers; keep native navigation. */
+@view-transition{navigation:none}
 @media(prefers-reduced-motion:no-preference){
- @view-transition{navigation:auto}
- ::view-transition-old(root){animation:mew-page-out 180ms ease-out both}
- ::view-transition-new(root){animation:mew-page-in var(--mew-page) var(--mew-ease) both}
- ::view-transition-group(mew-journey){animation-duration:var(--mew-page)}
- .story-journey{view-transition-name:mew-journey}
  .story-journey a,.story-next a,button,.primary,.header-cta,.formation-cta{transition:background-color var(--mew-fast),border-color var(--mew-fast),color var(--mew-fast),box-shadow var(--mew-fast),transform var(--mew-fast) var(--mew-ease)}
  button:not(:disabled):active,.primary:active,.header-cta:active,.story-next a:active{transform:translateY(1px)}
  .mandate-field .mandate-path,.mandate-field .mandate-held-marker,.mandate-field .mandate-unknown-ring,.mandate-field .mandate-defer-stop{transition:opacity var(--mew-step),stroke var(--mew-step)}
  .checkpoint-progress .checkpoint-fill{transition:transform var(--mew-step) var(--mew-ease)}
  .support-nav[open]>div{animation:mew-menu-in 160ms var(--mew-ease) both}
 }
-@keyframes mew-page-in{from{opacity:.6;transform:translateY(8px)}to{opacity:1;transform:none}}
-@keyframes mew-page-out{to{opacity:0}}
 @keyframes mew-menu-in{from{opacity:.65;transform:translateY(-4px)}to{opacity:1;transform:none}}
 @media(hover:hover) and (pointer:fine){
  .story-journey a:hover,.story-next a:hover{background:#203c39;border-color:#79aa99}

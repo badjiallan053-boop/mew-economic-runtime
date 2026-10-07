@@ -161,3 +161,9 @@ Skill discovery informed transaction review and grammar-constrained generation;
 actual APIs were verified against official versioned sources. No arbitrary skill
 scripts were run, no training rights were inferred, and no model/financial
 authority was enabled. See [reproduction and remaining gates](ESCROW_MODEL_NEXT_STEPS.md).
+
+## TOKEN2049 presentation workflow
+
+Applied the existing design-studio, jury UI/UX, evidence-design and PDF review skills. Reviewed Anthropic frontend-design, Vercel web-design-guidelines and the linked Web Interface Guidelines through skills.sh discovery at the revisions/hashes recorded in [the design research](TOKEN2049_DESIGN_RESEARCH.md). Public Webflow tutorial captions and the current GSD Core README informed responsive review and bounded ownership. No third-party skill installer, copied template executable or GSD command was run.
+
+Three actual specialist agents handled source research, homepage engineering and a separate evidence/technical critique; the lead integrated the result and ran browser and regression checks. Used skill-creator guidance to add the original repository-local `skills/mew-presentation-review/SKILL.md`, readable explicitly rather than globally installed. It preserves actual-kernel decisions, simulation boundaries and separate execution statuses. See [the presenter guide](TOKEN2049_PRESENTER_GUIDE.md) and [the acceptance audit](TOKEN2049_SHOWCASE_AUDIT.md).

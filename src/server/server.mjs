@@ -102,7 +102,7 @@ export function makeServer({dbPath=process.env.MEW_DB_PATH || resolve(root,'data
       if(!path.startsWith(base+sep)) return json(403,{error:'Forbidden'});
       const bytes=readFileSync(path);
       const ext=path.split('.').at(-1);
-      const mime={html:'text/html',css:'text/css',js:'text/javascript',mjs:'text/javascript',svg:'image/svg+xml',png:'image/png',json:'application/json'}[ext] || 'application/octet-stream';
+      const mime={html:'text/html',css:'text/css',js:'text/javascript',mjs:'text/javascript',svg:'image/svg+xml',png:'image/png',json:'application/json',ttf:'font/ttf',woff2:'font/woff2'}[ext] || 'application/octet-stream';
       res.writeHead(200,{'Content-Type':`${mime}; charset=utf-8`});res.end(req.method==='HEAD'?undefined:bytes);
     } catch(error) {
       if(error.code==='ENOENT') return json(404,{error:'Not found'});

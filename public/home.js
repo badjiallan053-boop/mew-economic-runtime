@@ -1,38 +1,180 @@
-const status=document.querySelector('#service-status');
-const refresh=document.querySelector('#refresh-status');
-async function inspectHost(){
-  refresh.disabled=true;
-  status.textContent='Checking this host’s service mode…';
-  try{
-    const response=await fetch('/api/health',{cache:'no-store',redirect:'error',signal:AbortSignal.timeout(8000)});
-    if(!response.ok) throw new Error('Health endpoint unavailable');
-    const health=await response.json();
-    if(health.mode==='demo'||health.mode==='simulation') status.textContent='Host reports demo mode. Workspaces use synthetic evidence; live payments are not enabled.';
-    else if(health.mode==='live') status.textContent='Host reports live evidence mode. This alone does not establish model execution or a funded payment.';
-    else status.textContent='Host responded with an unrecognized mode. Treat the examples as simulations.';
-  }catch{status.textContent='Host mode could not be verified. These examples remain simulations.';}
-  finally{refresh.disabled=false;}
+// Every request below runs against a fresh, in-memory kernel. No write endpoint,
+// persistent reservation, signing flow or wallet is called from this page.
+const $ = (selector) => document.querySelector(selector);
+const next = $("#demo-next");
+const reset = $("#demo-reset");
+const sculpture = $(".sculpture");
+const pause = $("#art-pause");
+const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
+function setArtPaused(value) {
+  sculpture.classList.toggle("is-paused", value);
+  pause.setAttribute("aria-pressed", String(value));
+  pause.textContent = value ? "Resume motion ▶" : "Pause motion Ⅱ";
 }
-refresh.addEventListener('click',inspectHost);
-// Local explanatory states only. This never calls a reservation or payment API.
-const checkpoints=[
-  {decision:'RESERVED',kicker:'ALLOW → RESERVE',title:'The first report holds capacity.',description:'1.50 ADA is reserved. No payment has been dispatched in this illustration.',next:'Observe the timeout →'},
-  {decision:'UNKNOWN',kicker:'TIMEOUT → RETAIN',title:'Silence doesn’t release the mandate.',description:'Delivery is uncertain. The same 1.50 ADA reservation remains held until evidence resolves the original effect.',next:'Attempt the equivalent report →'},
-  {decision:'DEFER',kicker:'EQUIVALENT REQUEST → RECONCILE',title:'Resolve the original. Don’t buy it again.',description:'The 1.40 ADA equivalent request is deferred because the one-report objective is already held by an unresolved effect. Reconcile the original payment and delivery.',next:'Restart illustration →'}
+setArtPaused(reducedMotion.matches);
+pause.addEventListener("click", () =>
+  setArtPaused(!sculpture.classList.contains("is-paused")),
+);
+reducedMotion.addEventListener("change", (event) => {
+  if (event.matches) setArtPaused(true);
+});
+
+let kernel,
+  phase = 0,
+  MEW;
+const objectiveId = "showcase-one-report";
+const semanticKey = "research-report:showcase:v1";
+const firstId = "showcase-alpha-report";
+const content = [
+  {
+    decision: "READY",
+    kicker: "YOUR MANDATE, BEFORE THE FIRST REQUEST",
+    title: "Start with one clear objective.",
+    description:
+      "Purchase one report, with maximum exposure of 3 ADA. Run the first request to see the decision.",
+    button: "Reserve the first report →",
+    equivalent: "Not attempted",
+  },
+  {
+    decision: "ALLOW",
+    kicker: "ALLOW → RESERVE",
+    title: "The first report holds capacity.",
+    description:
+      "The engine reserved 1.50 ADA for Supplier Alpha. The one-report objective is held. No payment was dispatched.",
+    button: "Observe the timeout →",
+    equivalent: "Not attempted",
+  },
+  {
+    decision: "UNKNOWN",
+    kicker: "TIMEOUT → RETAIN",
+    title: "Silence keeps the commitment held.",
+    description:
+      "The outcome is unknown. Exposure stays at 1.50 ADA and the one-report quantity remains held. A timeout does not prove failure.",
+    button: "Try the equivalent report →",
+    equivalent: "Not attempted",
+  },
+  {
+    decision: "DEFER",
+    kicker: "EQUIVALENT REQUEST → RECONCILE",
+    title: "Enough budget. No spare report.",
+    description:
+      "1.50 + 1.40 = 2.90 ADA fits the 3 ADA ceiling. The engine still defers Beta: the one-report quantity is held by the unresolved Alpha request.",
+    button: "Run the demo again ↻",
+    equivalent: "Deferred · not reserved",
+  },
 ];
-let checkpoint=0;
-function renderIllustration(){
- document.dispatchEvent(new CustomEvent('mew:art-phase',{detail:{phase:['reserved','unknown','defer'][checkpoint]}}));
- const item=checkpoints[checkpoint];
- document.dispatchEvent(new CustomEvent('mew:ui-update',{detail:{kind:'illustration'}}));
- document.querySelector('#fixture-decision').textContent=item.decision;
- document.querySelector('#fixture-kicker').textContent=item.kicker;
- document.querySelector('#fixture-title').textContent=item.title;
- document.querySelector('#fixture-description').textContent=item.description;
- document.querySelector('#demo-next').textContent=item.next;
- document.querySelectorAll('[data-step]').forEach(element=>{const selected=Number(element.dataset.step)===checkpoint;element.classList.toggle('active',selected);if(selected)element.setAttribute('aria-current','step');else element.removeAttribute('aria-current');});
+function render() {
+  const item = content[phase];
+  const position = kernel.position(objectiveId);
+  // The quantity gate and all amounts come from the actual kernel snapshot.
+  const held = position.exposure / 1_000_000;
+  $("#fixture-decision").textContent = item.decision;
+  $("#fixture-decision").dataset.decision = item.decision;
+  $("#fixture-kicker").textContent = item.kicker;
+  $("#fixture-title").textContent = item.title;
+  $("#fixture-description").textContent = item.description;
+  $("#exposure-value").textContent = held.toFixed(2);
+  $("#quantity-value").textContent = `${position.equivalents} / 1`;
+  $("#budget-label").textContent = `${held.toFixed(2)} ADA held`;
+  $("#budget-fill").style.width = `${(100 * position.exposure) / 3_000_000}%`;
+  $("#budget-meter").setAttribute("aria-valuenow", String(held));
+  $("#budget-meter").setAttribute(
+    "aria-valuetext",
+    `${held.toFixed(2)} of 3 ADA held`,
+  );
+  $("#equivalent-status").textContent = item.equivalent;
+  next.textContent = item.button;
+  document.querySelectorAll("[data-step]").forEach((element) => {
+    const step = Number(element.dataset.step);
+    element.classList.toggle("active", step === phase);
+    element.classList.toggle("complete", step < phase);
+    if (step === phase) element.setAttribute("aria-current", "step");
+    else element.removeAttribute("aria-current");
+  });
 }
-document.querySelector('#demo-next').addEventListener('click',()=>{checkpoint=(checkpoint+1)%checkpoints.length;renderIllustration();});
-document.querySelector('#demo-reset').addEventListener('click',()=>{checkpoint=0;renderIllustration();});
-renderIllustration();
-await inspectHost();
+function restart() {
+  kernel = new MEW();
+  kernel.createObjective({
+    id: objectiveId,
+    principal: "local-demo-principal",
+    semanticKey,
+    description: "One research report",
+    quantity: 1,
+    maxExposure: 3_000_000,
+  });
+  phase = 0;
+  render();
+}
+function showFailure() {
+  next.disabled = true;
+  reset.disabled = true;
+  $("#fixture-decision").textContent = "UNAVAILABLE";
+  $("#fixture-kicker").textContent = "DEMO PAUSED";
+  $("#fixture-title").textContent = "The decision engine could not run.";
+  $("#fixture-description").textContent =
+    "No decision is claimed. Inspect the protocol evidence or reload this page from the project server.";
+  next.textContent = "Decision engine unavailable";
+}
+next.addEventListener("click", () => {
+  try {
+    if (phase === 3) {
+      restart();
+      return;
+    }
+    if (phase === 0) {
+      const result = kernel.evaluate({
+        objectiveId,
+        proposedEffect: {
+          id: firstId,
+          semanticKey,
+          provider: "Supplier Alpha",
+          agent: "local-demo-alpha",
+          type: "payment",
+          amount: 1_500_000,
+        },
+      });
+      if (result.decision !== "ALLOW")
+        throw new Error("Unexpected reservation result");
+    } else if (phase === 1) {
+      kernel.observe({
+        claimId: "showcase-timeout",
+        effectId: firstId,
+        source: "local-simulation",
+        type: "unknown",
+      });
+    } else {
+      const result = kernel.evaluate({
+        objectiveId,
+        proposedEffect: {
+          id: "showcase-beta-report",
+          semanticKey,
+          provider: "Supplier Beta",
+          agent: "local-demo-beta",
+          type: "payment",
+          amount: 1_400_000,
+        },
+      });
+      if (result.decision !== "DEFER" || kernel.snapshot().effects.length !== 1)
+        throw new Error("Unexpected quantity result");
+    }
+    phase += 1;
+    render();
+  } catch {
+    showFailure();
+  }
+});
+reset.addEventListener("click", () => {
+  try {
+    restart();
+  } catch {
+    showFailure();
+  }
+});
+try {
+  ({ MEW } = await import("/core/mew.mjs"));
+  restart();
+  next.disabled = false;
+  reset.disabled = false;
+} catch {
+  showFailure();
+}
