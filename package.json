@@ -44,10 +44,16 @@
     "education:collect": "node scripts/collect-education.mjs",
     "education:rehearse": "node scripts/education-rehearsal.mjs",
     "education:publish": "node scripts/publish-education.mjs",
-    "seo:build": "node scripts/build-seo.mjs"
+    "seo:build": "node scripts/build-seo.mjs",
+    "integration:start": "node scripts/integration-host.mjs",
+    "integration:preflight": "node scripts/integration-preflight.mjs"
   },
   "dependencies": {
     "@emurgo/cardano-serialization-lib-nodejs": "15.0.3",
-    "@scure/base": "2.0.0"
+    "@scure/base": "2.0.0",
+    "pg": "8.23.1"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "0.5.8"
   }
 }

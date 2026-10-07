@@ -19,3 +19,23 @@ Claims have stable IDs, source, effect ID, type and evidence. Replay of identica
 The API boundary is trusted. A JSON field `evidence.verified=true` is not a signature or an oracle. Demo claims are controlled fixtures and must stay labeled simulation. Real payment claims must be produced server-side by a verifier; the server must prevent reuse of one transaction for multiple effects. The recipient and amount must come from the persisted reservation, not from a reconcile request. Merchant delivery remains a trusted input and requires authenticated signed receipt verification before production.
 
 The accounting layer only governs actions sent through it. Bypassing MEW, malicious principals, forged upstream data, compromised Blockfrost credentials, chain rollback and multiple independently deployed reservation stores are outside this demo's guarantees. Production requires principal authentication, authorization per objective, signed mandates and receipts, resilient reconciliation, scoped secrets, durable backups and coordinated multi-instance locking. Public demo state must never control wallets. A test suite proves the checked scenarios, not every economic workflow.
+
+## Separate private PostgreSQL integration
+
+`src/integration` adds a separate private store without changing the public SQLite
+API or kernel contracts. Its authenticated operator enrollment derives principal
+identity server-side. Each principal's snapshot mutation, escrow reservation and
+global funding-input locks commit on one checked-out connection under a row lock.
+Forced RLS requires transaction-local principal context; the trusted backend can
+set that context, so its credential is never a browser credential. Hosted schema
+and isolation checks are complete; application login, multi-client contention and
+crash verification against Supabase remain separate prerequisites.
+
+Model evaluation durably records RUNNING before any provider request. COMPLETE,
+UNKNOWN and interrupted attempts cannot automatically retry or activate a model.
+The four synthetic cases are distinct from the research benchmark and customer
+holdout. Payment preparation admits only enrolled-address, unsigned preprod ADA
+funding drafts. A bound transaction observation preserves the full exposure;
+rollback requires review and cannot release capacity. Native-token Masumi writes,
+closing transactions, signing, broadcast and authenticated delivery remain pending.
+See docs/SUPABASE_MODEL_PAYMENTS.md for exact integration boundaries and setup.

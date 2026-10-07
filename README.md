@@ -34,6 +34,15 @@ analytics, publishing or payments are executed. See [campaign design](docs/MARKE
 - Automated kernel, adapter and HTTP integration tests; CI and GitHub Pages workflow; Docker deployment.
 - Actual engineering team ownership and reusable local SKILL.md instructions.
 
+## Private Supabase, model and preprod payment backend
+
+The selected MEW Supabase project has four private tables with forced row security.
+A separate authenticated, loopback backend adds durable model-evaluation attempts,
+unsigned ADA escrow drafts and transaction reconciliation using the existing kernel.
+Application login and provider credentials still require private configuration;
+model activation, signing and payments remain disabled. The public demo retains SQLite.
+See [setup, verification and remaining gates](docs/SUPABASE_MODEL_PAYMENTS.md).
+
 ## API
 
 `GET /api/health`, `GET /api/state`, `POST /api/objectives`, `POST /api/evaluate`, `POST /api/simulate`, `POST /api/observe` (demo only), `POST /api/demo/reset` (demo only). Authenticated live evidence adds `GET /api/cardano/status`, `GET/POST /api/cardano/operations`, and `POST /api/cardano/verify`, which now requires a saved operation. See [Cardano setup and Cursor handoff](docs/CARDANO_INTEGRATION.md).

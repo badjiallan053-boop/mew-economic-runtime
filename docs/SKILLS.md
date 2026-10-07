@@ -173,3 +173,20 @@ Three actual specialist agents handled source research, homepage engineering and
 Continued the repository-local presentation-review and engineering procedures with three actual specialists: frontend motion, Stanford/public-API research and independent boundary review. Reused the previously reviewed skills.sh design/evaluation references; no additional installer or third-party executable was needed. Source learning is implemented through a bounded collector, immutable snapshots and the existing five-role/six-task company contract rather than adding model agents or economic privileges.
 
 Two Stanford-linked public YouTube caption reviews produced short original notes with timestamp cues and digests. Four official course references and five pinned repository references inform retrieval, evaluation, provenance and uncertainty checks. Collection used Crossref, OpenAlex and Koios public endpoints; latest source availability is 12/13 because Crossref rate-limited one request. References grant no training rights or financial authority. See [the runnable workflow](STANFORD_AGENT_WORKFLOW.md) and [independent release review](LIVE_SHOWCASE_RELEASE_AUDIT.md).
+
+## Private Supabase integration
+
+Applied the repository-local engineering procedure and the installed Supabase
+`supabase` and `supabase-postgres-best-practices` skills, including their RLS and
+connection-pooling references. Checked current official Supabase changelog,
+PostgreSQL 17 role behavior, node-postgres TLS/transaction documentation, OpenAI
+structured outputs and the existing revision-pinned Masumi API. Used purpose-built
+Supabase tools to apply the selected project's migration and verify hosted access
+boundaries. Pinned pg 8.23.1 and test-only PGlite 0.5.8; installation scripts were
+disabled and dependency auditing reported zero vulnerabilities.
+
+No additional executable skill, production runtime agent or subagent was added.
+No provider credential was collected, no model request performed and no payment
+signed or broadcast. The database management connection and hosted RLS checks
+are distinct from the still-unconfigured application login. See
+[private integration setup](SUPABASE_MODEL_PAYMENTS.md).

@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "postgres": {
+    "projectRef": "ndorfchuhciidfcltbzf",
+    "connectionString": "postgresql://mew_runtime:PRIVATE_RUNTIME_PASSWORD@db.ndorfchuhciidfcltbzf.supabase.co:5432/postgres"
+  },
+  "policy": [
+    {
+      "principal": "founder",
+      "tokenDigest": "REPLACE_WITH_SHA256_OF_LOCAL_RANDOM_TOKEN",
+      "expiresAtMs": 0,
+      "revoked": false,
+      "actions": [
+        "read",
+        "create-objective",
+        "prepare-payment",
+        "reconcile-payment",
+        "evaluate-model"
+      ]
+    }
+  ],
+  "paymentPolicy": { "principals": [], "providers": [] },
+  "port": 3046
+}
