@@ -66,3 +66,22 @@ These videos are context, not implementation evidence. Source code above is the 
 7. Prove a new Task works with the laptop offline, then record deployed endpoints and sanitized evidence.
 
 Current gates pending: model access, Sokosumi sign-in, payment configuration/funding, live worker implementation and verified collection. Publishing the simulation does not complete these gates.
+
+## Company hierarchy release · 7 October 2026
+
+Deployed commit `38da4f9e0bf67d23d0f0b83f0184d29876f754b3` to the existing
+MEW service; deployment `075b3460-8dee-416a-973e-f3ef7bbe67f6` succeeded. No new
+billed services or model workers were created. Hosted company map:
+https://mew-demo-production.up.railway.app/company.html.
+
+Verified HTTP health, company page/script and registry: 12 leads, 36 specialists,
+48 assigned tasks, `modelExecution: NOT_CONFIGURED`, payments disabled. Company
+runtime tests and existing regression suite: 77 passing. Local synthetic CLI
+completed all 48 advisory tasks; replay returned identical persisted output.
+Browser visual rendering was not inspected in this contribution.
+
+The image explicitly includes only the reviewed company prompts, three skill
+files and local rehearsal CLI. The API exposes the read-only registry; it does
+not start providers, load credentials or dispatch company tasks. Company task
+SQLite is separate from economic SQLite and the MPS PostgreSQL service.
+Read COMPANY_AGENTS.md for configuration gates and interrupted-task recovery.
