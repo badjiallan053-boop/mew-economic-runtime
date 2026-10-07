@@ -6,9 +6,10 @@ MEW prevents individually valid agent actions from composing into an invalid eco
 
 ## Run locally
 
-Requires Node.js 24 or newer. No dependencies, installation step, wallet or API key is needed for the demo.
+Requires Node.js 24 or newer. Install the pinned dependency first; the demo needs no wallet or API key. The standalone escrow planner uses `@scure/base` for address checks.
 
 ```sh
+npm ci --ignore-scripts
 npm test
 npm start
 # Open http://127.0.0.1:3000
@@ -67,6 +68,23 @@ Read-only authenticated Masumi collection verification is runnable with
 `npm run masumi:collection -- /private/path/contract.json`. See
 [Masumi setup](docs/MASUMI_SETUP.md) and [verified deployment state](docs/LIVE_DEPLOYMENT.md).
 Live paid execution still requires credentials, funded wallets and the paid worker.
+
+### Cardano approval escrow prototype
+
+A standalone, compiled Plutus V3 validator now implements explicit two-party
+acceptance and principal cancellation for one ADA job cell. All 49 Aiken handler
+tests pass. The offline planner binds the compiled script, complete payout
+addresses, datum commitments and escrow/fee/collateral exposure. A separate
+read-only follow-up detects changed transaction/block observations for review.
+Neither helper enables dispatch or changes the existing economic kernel.
+See [protocol and preprod gates](docs/BLOCKCHAIN_PROTOCOL_RUNBOOK.md) and
+[on-chain constraints](docs/APPROVAL_ESCROW.md). No transaction has been funded,
+signed or broadcast.
+
+The actual expanded-context local model run covers the annotated evidence in
+12/12 development cases but passes the strict response contract in **0/12**.
+Model activation and training remain blocked; see
+[generation results](docs/PARENT_MODEL_RESULTS.md).
 
 ## Company agent setup
 

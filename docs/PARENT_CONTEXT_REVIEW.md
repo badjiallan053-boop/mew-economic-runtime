@@ -1,5 +1,10 @@
 # Independent parent-context review
 
+Later follow-up: the lead subsequently ran actual expanded-context inference.
+Evidence stayed 12/12, while strict response validation passed 0/12. This review's
+no-inference statements describe its original scope. See
+[the separately recorded generation results](PARENT_MODEL_RESULTS.md).
+
 Reviewed 7 October 2026 by the multilingual red-team subagent. Scope: `src/learning/parent-context.mjs`, its evaluator and tests, and the generated frozen-development report. No model inference, training or deployment was performed by this reviewer.
 
 ## Verified result and its meaning

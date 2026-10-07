@@ -1,7 +1,8 @@
 FROM node:24-alpine
 RUN apk add --no-cache su-exec
 WORKDIR /app
-COPY package.json ./
+COPY package.json package-lock.json ./
+RUN npm ci --ignore-scripts --omit=dev
 COPY src ./src
 COPY public ./public
 COPY prompts/company ./prompts/company

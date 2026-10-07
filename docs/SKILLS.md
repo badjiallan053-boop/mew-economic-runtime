@@ -1,5 +1,24 @@
 # Skills used and reusable instructions
 
+## Approval escrow and actual model follow-up
+
+Applied the already installed Cardano Foundation `write-validator`,
+`review-contract` and `explain-eutxo` procedures with their bundled Aiken/testing
+references. The earlier statement that no custom validator was built describes
+that earlier contribution; this follow-up adds a standalone locally compiled
+approval escrow. See [protocol boundaries](BLOCKCHAIN_PROTOCOL_RUNBOOK.md).
+One contract engineer and one independent review subagent worked on it. The
+reviewer found a caller-mutation race in the new read-only observer; the lead fixed
+it and added a regression test. These local procedures did not authorize signing,
+wallet access or deployment. No new remote skill installer was executed.
+
+Integrated the pinned MIT `@scure/base` 2.0.0 package for checksum-valid address
+encoding/decoding, preserving its license in the npm package. Installation uses
+the lockfile with scripts disabled; adding a library does not certify the escrow.
+The existing evidence procedures led to an actual local model run, whose strict
+response contract failed on all twelve cases despite full evidence coverage.
+See [raw generation results and limits](PARENT_MODEL_RESULTS.md).
+
 The team reviewed [skills.sh documentation](https://skills.sh/docs) and the official skill sources rather than running arbitrary install scripts.
 
 - [Anthropic frontend-design SKILL.md](https://github.com/anthropics/skills/blob/main/skills/frontend-design/SKILL.md): applied to visual hierarchy, subject-specific mission control layout, accessible controls, responsive design and critique by browser inspection.

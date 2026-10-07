@@ -33,6 +33,12 @@
     "learning:evaluate": "node scripts/evaluate-learning.mjs",
     "learning:export": "node scripts/export-learning.mjs",
     "learning:hunt": "node scripts/hunt-models.mjs",
-    "learning:retrieve": "node scripts/train-retrieval.mjs"
+    "learning:retrieve": "node scripts/train-retrieval.mjs",
+    "escrow:plan": "node scripts/approval-escrow-plan.mjs",
+    "cardano:observe": "node scripts/cardano-observation.mjs",
+    "learning:parent-audit": "node scripts/audit-parent-model.mjs"
+  },
+  "dependencies": {
+    "@scure/base": "2.0.0"
   }
 }

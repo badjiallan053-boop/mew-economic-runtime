@@ -1,0 +1,11 @@
+name = "mew/approval-escrow"
+version = "0.1.0"
+compiler = "v1.1.23"
+plutus = "v3"
+license = "Apache-2.0"
+description = "Experimental individual ADA job escrow with explicit bilateral acceptance"
+
+[[dependencies]]
+name = "aiken-lang/stdlib"
+version = "v2.1.0"
+source = "github"

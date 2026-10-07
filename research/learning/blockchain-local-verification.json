@@ -1,0 +1,47 @@
+{
+  "schema": "mew.blockchain-local-verification.v1",
+  "scope": "Local compilation, test fixtures, offline intents and read-only disconnected status",
+  "nodeTests": {
+    "passed": 224,
+    "failed": 0
+  },
+  "pythonModelIntegrityTests": {
+    "passed": 4,
+    "failed": 0
+  },
+  "aikenHandlerTests": {
+    "passed": 49,
+    "failed": 0,
+    "report": "contracts/approval-escrow/test-report-root.json"
+  },
+  "demoBuild": "passed",
+  "pinnedNpmInstall": "passed-with-scripts-disabled",
+  "pinnedMacAikenInstaller": "passed-checksum-bound-official-release",
+  "remoteLinuxCI": "not-verified",
+  "dockerBuild": "not-run",
+  "offlinePlannerCLI": "synthetic-input-passed-no-signing",
+  "observerCLI": {
+    "status": "UNKNOWN",
+    "reason": "NOT_CONFIGURED",
+    "automaticDispatchBlocked": true
+  },
+  "localModel": {
+    "evidenceCovered": 12,
+    "cases": 12,
+    "strictContractPasses": 0,
+    "trainedAdapter": false,
+    "activationAllowed": false
+  },
+  "onChain": {
+    "deployed": false,
+    "funded": false,
+    "signed": false,
+    "broadcast": false
+  },
+  "paymentsEnabled": false,
+  "limitations": [
+    "Handler tests are not ledger lifecycle tests or third-party audit",
+    "Trusted local hashes are not external inference or deployment attestation",
+    "Wallet/network configuration, transaction builder and durable lifecycle wiring remain required"
+  ]
+}
