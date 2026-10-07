@@ -1,5 +1,42 @@
 [
- {"id":"gwi-identity","grain":"publisher_announcement","publishedAt":"2026-06-22","source":"https://www.masumi.network/blogs/verifiable-identity-for-the-gwi-agent","summary":"Masumi describes identity verification for the GWI audience-insight agent on Sokosumi. This is a potential commercial audience-data integration; public data access and a MEW partnership are not established.","classification":"publisher_claim"},
- {"id":"sokosumi-mcp","grain":"publisher_announcement","publishedAt":"2025-09-24","source":"https://www.masumi.network/blogs/sokosumi-meets-mcp","summary":"Masumi announces MCP access to Sokosumi services. Repository and authentication compatibility require separate testing before MEW can dispatch jobs.","classification":"publisher_claim"},
- {"id":"masumi-n8n","grain":"publisher_announcement","publishedAt":"2025-09-23","source":"https://www.masumi.network/blogs/monetize-your-workflows","summary":"Masumi describes monetizing n8n workflows and their payment and job lifecycle. MEW should retain its own durable operation identity and reconcile uncertain outcomes.","classification":"publisher_claim"}
+  {
+    "id": "gwi-identity",
+    "grain": "publisher_announcement",
+    "publishedAt": "2026-06-22",
+    "source": "https://www.masumi.network/blogs/verifiable-identity-for-the-gwi-agent",
+    "summary": "Masumi describes identity verification for the GWI audience-insight agent on Sokosumi. This is a potential commercial audience-data integration; public data access and a MEW partnership are not established.",
+    "classification": "publisher_claim"
+  },
+  {
+    "id": "sokosumi-mcp",
+    "grain": "publisher_announcement",
+    "publishedAt": "2025-09-24",
+    "source": "https://www.masumi.network/blogs/sokosumi-meets-mcp",
+    "summary": "Masumi announces MCP access to Sokosumi services. Repository and authentication compatibility require separate testing before MEW can dispatch jobs.",
+    "classification": "publisher_claim"
+  },
+  {
+    "id": "masumi-n8n",
+    "grain": "publisher_announcement",
+    "publishedAt": "2025-09-23",
+    "source": "https://www.masumi.network/blogs/monetize-your-workflows",
+    "summary": "Masumi describes monetizing n8n workflows and their payment and job lifecycle. MEW should retain its own durable operation identity and reconcile uncertain outcomes.",
+    "classification": "publisher_claim"
+  },
+  {
+    "id": "agent-dispute-analysis",
+    "grain": "publisher_announcement",
+    "publishedAt": "2026-08-10",
+    "source": "https://www.masumi.network/blogs/the-return-counter-nobody-built",
+    "summary": "Masumi argues that agent purchases need traceable authorization and dispute handling. Treat this as publisher analysis; legal conclusions and cited market statistics are not independently validated here. MEW should test dispute evidence export and separate delivery acceptance from settlement.",
+    "classification": "publisher_analysis"
+  },
+  {
+    "id": "x402-security-analysis",
+    "grain": "publisher_announcement",
+    "publishedAt": "2026-07-28",
+    "source": "https://www.masumi.network/blogs/x402-protocol-security-two-phase-gap",
+    "summary": "Masumi discusses HTTP-to-chain settlement races, replay and paid-response caching. This is a threat-model lead rather than independently reproduced security research. MEW still needs authenticated delivery receipts and tests against any actual payment worker before production.",
+    "classification": "publisher_analysis"
+  }
 ]

@@ -2,7 +2,7 @@
 
 Collected 7 October 2026. Run `node scripts/collect-ecosystem.mjs`, then `node scripts/ecosystem-rehearsal.mjs` from the repository root. Collection requires Internet access. No credentials are used. Fixed source URLs, no redirects, 20-second timeout and a 1 MiB response limit bound retrieval. Failed sources remain visible in manifest.json; the collector never substitutes fixtures.
 
-This snapshot contains 20 API records and three manually curated primary-source announcements. It is a small evidence catalog, not an exhaustive news feed, training corpus or customer-demand study. Full articles are not redistributed. The announcements were reviewed independently; the collection script does not automatically refresh them.
+This snapshot contains 54 API records and five manually curated primary-source announcements. It is a small evidence catalog, not an exhaustive news feed, training corpus or customer-demand study. Full articles are not redistributed. The announcements were reviewed independently; the collection script does not automatically refresh them.
 
 ## Data scientist framework
 
@@ -11,7 +11,7 @@ This snapshot contains 20 API records and three manually curated primary-source 
 3. Provenance: manifest records endpoint, retrieval time, response hash and success/failure. records.jsonl contains normalized API observations. news.json contains original summaries and issuer-claim labels. The response hash is provenance metadata, not independently verified authenticity; raw responses are not archived.
 4. Cleaning: reject malformed chain tips and out-of-range percentages; exclude null indicator observations; enforce unique IDs. Nulls never become zero. Repository licenses may remain unknown. Source failures and historical lag must be reviewed before using evidence.
 5. Evaluation: test malformed inputs and missing data. Collect repeated snapshots before estimating activity trends. Acquire real customer labels before predictive modeling. Never infer Masumi payment volume from Cardano tip height.
-6. Model boundary: model-input.json exposes 23 evidence records to the existing compact workflow. rehearsal-result.json uses simulatedProvider; it verifies orchestration and reference transport only. No live model was called, trained or shown to improve strategy.
+6. Model boundary: model-input.json exposes 59 evidence records to the existing compact workflow. rehearsal-result.json uses simulatedProvider; it verifies orchestration and reference transport only. No live model was called, trained or shown to improve strategy.
 
 ## Dictionary
 
@@ -37,3 +37,15 @@ World Bank indicators support country context only. The missing commercially use
 ## Skill references
 
 Applied the installed data-analytics analyze-data-quality skill. Also reviewed the skills.sh exploratory-data-analysis listing at https://www.skills.sh/aj-geddes/useful-ai-prompts/exploratory-data-analysis as reference material. No unreviewed installer or third-party executable was run; no external skill grants authority over secrets, spending or publication.
+
+## Expanded snapshot and integration · 7 October 2026
+
+The ten fixed API sources now include nine country contexts (USA, GBR, SGP, FRA, DEU, ARE, IND, BRA, NGA) and seven repository references. Countries are illustrative contexts, not a ranking of target markets. Five original news summaries include two recent publisher analyses; legal and security statistics in those analyses are not promoted to verified facts. Full articles are not copied.
+
+Validation now rejects incomplete indicator pagination, malformed country/year keys, unexpected indicator identifiers, invalid chain timestamps and repository identity mismatches. quality.json reports excluded null counts. This remains a bounded snapshot: there is no arbitrary URL crawler, no address-level profiling and no automated newsletter or paid data scraping.
+
+Run `npm run research:collect`, `npm run research:rehearse`, then `npm run research:publish`. The publisher produces public/research-snapshot.json and /research.html displays it read-only using text nodes. The existing Docker image already copies public assets, so deployment needs no additional database, worker, credentials or scheduled jobs. Update the snapshot offline before deploying; the public server never starts collection or inference. Collection writes several files sequentially: use one operator and do not publish during collection. Atomic versioned snapshot promotion and scheduled refresh remain future work.
+
+Reviewed https://www.skills.sh/olehsvyrydov/ai-development-team/data-engineer for quality/freshness and idempotent-pipeline ideas. Reference only; its separate workflow gates and tools were not installed or invoked.
+
+Additional product experiment: export a dispute packet linking mandate, reserved effect, remote job ID, payment observations, artifact hash and acceptance decision. This packet is evidence for an operator; it is not a legal guarantee or an authenticated receipt unless signatures are actually verified. A settlement integration should preserve unresolved capacity on ambiguity.

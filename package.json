@@ -15,6 +15,9 @@
     "cardano:preflight": "node scripts/cardano-preflight.mjs",
     "masumi:collection": "node scripts/masumi-collection.mjs",
     "company:rehearse": "node scripts/company.mjs",
-    "live:preflight": "node scripts/live-preflight.mjs"
+    "live:preflight": "node scripts/live-preflight.mjs",
+    "research:collect": "node scripts/collect-ecosystem.mjs",
+    "research:rehearse": "node scripts/ecosystem-rehearsal.mjs",
+    "research:publish": "node scripts/publish-research.mjs"
   }
 }
