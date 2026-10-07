@@ -37,7 +37,14 @@ SELECT jsonb_build_object(
 ) AS catalog`;
 const row = (value) =>
   value !== null && typeof value === "object" && !Array.isArray(value);
-const names = ["escrow_operations", "input_locks", "ledgers", "model_runs"];
+const names = [
+  "delivery_contracts",
+  "delivery_receipts",
+  "escrow_operations",
+  "input_locks",
+  "ledgers",
+  "model_runs",
+];
 const principalExpression =
   "(principal = current_setting('mew.principal'::text, true))";
 
@@ -61,7 +68,7 @@ export function reviewDatabaseCatalog(catalog) {
   const tables = catalog?.tables;
   if (
     !Array.isArray(tables) ||
-    tables.length !== 4 ||
+    tables.length !== names.length ||
     !tables.every(row) ||
     [...tables.map((t) => t.name)].sort().join(",") !== names.join(",")
   )
@@ -73,7 +80,10 @@ export function reviewDatabaseCatalog(catalog) {
       if (
         table.select !== true ||
         table.insert !== true ||
-        table.update !== (table.name !== "input_locks") ||
+        table.update !==
+          !["input_locks", "delivery_contracts", "delivery_receipts"].includes(
+            table.name,
+          ) ||
         ["delete", "truncate", "references", "trigger"].some(
           (k) => table[k] !== false,
         )
@@ -116,7 +126,8 @@ export function reviewDatabaseCatalog(catalog) {
   if (catalog?.currentRole !== "mew_runtime")
     issues.push("application-role-not-observed");
   return {
-    schema: "mew.database-readiness.v1",
+    schema: "mew.database-readiness.v2",
+    requiredMigration: "mew_authenticated_delivery",
     schemaBoundariesValid,
     applicationConnectionReady: issues.length === 0,
     issues,

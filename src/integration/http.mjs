@@ -72,6 +72,8 @@ export function makeIntegrationServer({
         "/integration/payment/unknown": "markUnknown",
         "/integration/payment/reconcile": "reconcilePayment",
         "/integration/model/evaluate": "evaluateModel",
+        "/integration/delivery/enroll": "enrollDelivery",
+        "/integration/delivery/accept": "acceptDelivery",
       }[url.pathname];
       if (req.method !== "POST" || !route || url.search)
         return reply(404, { error: "Route unavailable" });
@@ -89,6 +91,8 @@ export function makeIntegrationServer({
         markUnknown: "prepare-payment",
         reconcilePayment: "reconcile-payment",
         evaluateModel: "evaluate-model",
+        enrollDelivery: "enroll-delivery",
+        acceptDelivery: "accept-delivery",
       }[route];
       service.principal(token, action);
       const chunks = [];

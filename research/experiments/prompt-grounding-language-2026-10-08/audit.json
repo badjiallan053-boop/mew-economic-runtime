@@ -1,0 +1,209 @@
+{
+  "schema": "mew.model-experiment-audit.v1",
+  "verdict": "BLOCKED",
+  "changedVariable": "systemPrompt",
+  "policySha256": "92b147bfa721f5e080964bbfbc32c1ac96ed525356bc2a67a6a094566de4763b",
+  "completionSha256": "e2be0863464963d48edb85db77a52c5af0b2e289b831d58ac3632dd04a1b7b50",
+  "benchmarkSha256": "0ab4d24bf6c71ab886456cc74eaa760b4674bc44a19d27cb21da34b11cd2d738",
+  "variants": {
+    "baseline": {
+      "cases": 12,
+      "strictContractPasses": 12,
+      "annotatedEvidenceCoverage": 12,
+      "semanticPasses": null,
+      "authenticatedHumanReviews": 0,
+      "packSha256": "171c18e9808777d8330837232d2ab9ed4357f130137e1eec4647bda3ea3e3ec8",
+      "casesAudit": [
+        {
+          "id": "unknown-exposure-en",
+          "strictContractValid": true,
+          "errors": [],
+          "allAnnotatedEvidencePresent": true,
+          "semanticStatus": "not-human-reviewed"
+        },
+        {
+          "id": "unknown-exposure-fr",
+          "strictContractValid": true,
+          "errors": [],
+          "allAnnotatedEvidencePresent": true,
+          "semanticStatus": "not-human-reviewed"
+        },
+        {
+          "id": "settlement-delivery-en",
+          "strictContractValid": true,
+          "errors": [],
+          "allAnnotatedEvidencePresent": true,
+          "semanticStatus": "not-human-reviewed"
+        },
+        {
+          "id": "settlement-delivery-fr",
+          "strictContractValid": true,
+          "errors": [],
+          "allAnnotatedEvidencePresent": true,
+          "semanticStatus": "not-human-reviewed"
+        },
+        {
+          "id": "rail-mismatch-en",
+          "strictContractValid": true,
+          "errors": [],
+          "allAnnotatedEvidencePresent": true,
+          "semanticStatus": "not-human-reviewed"
+        },
+        {
+          "id": "rail-mismatch-fr",
+          "strictContractValid": true,
+          "errors": [],
+          "allAnnotatedEvidencePresent": true,
+          "semanticStatus": "not-human-reviewed"
+        },
+        {
+          "id": "evidence-grounding-en",
+          "strictContractValid": true,
+          "errors": [],
+          "allAnnotatedEvidencePresent": true,
+          "semanticStatus": "not-human-reviewed"
+        },
+        {
+          "id": "evidence-grounding-fr",
+          "strictContractValid": true,
+          "errors": [],
+          "allAnnotatedEvidencePresent": true,
+          "semanticStatus": "not-human-reviewed"
+        },
+        {
+          "id": "event-opportunity-en",
+          "strictContractValid": true,
+          "errors": [],
+          "allAnnotatedEvidencePresent": true,
+          "semanticStatus": "not-human-reviewed"
+        },
+        {
+          "id": "event-opportunity-fr",
+          "strictContractValid": true,
+          "errors": [],
+          "allAnnotatedEvidencePresent": true,
+          "semanticStatus": "not-human-reviewed"
+        },
+        {
+          "id": "training-rights-en",
+          "strictContractValid": true,
+          "errors": [],
+          "allAnnotatedEvidencePresent": true,
+          "semanticStatus": "not-human-reviewed"
+        },
+        {
+          "id": "training-rights-fr",
+          "strictContractValid": true,
+          "errors": [],
+          "allAnnotatedEvidencePresent": true,
+          "semanticStatus": "not-human-reviewed"
+        }
+      ]
+    },
+    "candidate": {
+      "cases": 12,
+      "strictContractPasses": 12,
+      "annotatedEvidenceCoverage": 12,
+      "semanticPasses": null,
+      "authenticatedHumanReviews": 0,
+      "packSha256": "501d9a17b7fa8720dc8fe967b0e8cd67fca13a01e20076717fa4d66bbe12b1db",
+      "casesAudit": [
+        {
+          "id": "unknown-exposure-en",
+          "strictContractValid": true,
+          "errors": [],
+          "allAnnotatedEvidencePresent": true,
+          "semanticStatus": "not-human-reviewed"
+        },
+        {
+          "id": "unknown-exposure-fr",
+          "strictContractValid": true,
+          "errors": [],
+          "allAnnotatedEvidencePresent": true,
+          "semanticStatus": "not-human-reviewed"
+        },
+        {
+          "id": "settlement-delivery-en",
+          "strictContractValid": true,
+          "errors": [],
+          "allAnnotatedEvidencePresent": true,
+          "semanticStatus": "not-human-reviewed"
+        },
+        {
+          "id": "settlement-delivery-fr",
+          "strictContractValid": true,
+          "errors": [],
+          "allAnnotatedEvidencePresent": true,
+          "semanticStatus": "not-human-reviewed"
+        },
+        {
+          "id": "rail-mismatch-en",
+          "strictContractValid": true,
+          "errors": [],
+          "allAnnotatedEvidencePresent": true,
+          "semanticStatus": "not-human-reviewed"
+        },
+        {
+          "id": "rail-mismatch-fr",
+          "strictContractValid": true,
+          "errors": [],
+          "allAnnotatedEvidencePresent": true,
+          "semanticStatus": "not-human-reviewed"
+        },
+        {
+          "id": "evidence-grounding-en",
+          "strictContractValid": true,
+          "errors": [],
+          "allAnnotatedEvidencePresent": true,
+          "semanticStatus": "not-human-reviewed"
+        },
+        {
+          "id": "evidence-grounding-fr",
+          "strictContractValid": true,
+          "errors": [],
+          "allAnnotatedEvidencePresent": true,
+          "semanticStatus": "not-human-reviewed"
+        },
+        {
+          "id": "event-opportunity-en",
+          "strictContractValid": true,
+          "errors": [],
+          "allAnnotatedEvidencePresent": true,
+          "semanticStatus": "not-human-reviewed"
+        },
+        {
+          "id": "event-opportunity-fr",
+          "strictContractValid": true,
+          "errors": [],
+          "allAnnotatedEvidencePresent": true,
+          "semanticStatus": "not-human-reviewed"
+        },
+        {
+          "id": "training-rights-en",
+          "strictContractValid": true,
+          "errors": [],
+          "allAnnotatedEvidencePresent": true,
+          "semanticStatus": "not-human-reviewed"
+        },
+        {
+          "id": "training-rights-fr",
+          "strictContractValid": true,
+          "errors": [],
+          "allAnnotatedEvidencePresent": true,
+          "semanticStatus": "not-human-reviewed"
+        }
+      ]
+    }
+  },
+  "semanticImprovementMeasured": false,
+  "customerHoldoutCases": 0,
+  "modelActivationAllowed": false,
+  "trainingAuthorized": false,
+  "paymentsEnabled": false,
+  "limitations": [
+    "Local hashes establish artifact integrity, not authenticated inference or reviewer identity.",
+    "Token counts and invocation markers are local runner receipts, not independent attestations.",
+    "Previously inspected development cases cannot establish generalization or customer value.",
+    "Independent human semantic review and a preregistered lineage-disjoint holdout are pending."
+  ]
+}

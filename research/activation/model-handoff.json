@@ -2,7 +2,7 @@
   "schema": "mew.activation-evidence.v1",
   "lane": "model",
   "verdict": "BLOCKED",
-  "observedAt": "2026-10-07T21:55:25.192Z",
+  "observedAt": "2026-10-07T23:03:10.476Z",
   "claims": [
     {
       "id": "frozen-development-identity",
@@ -36,6 +36,24 @@
       "status": "UNKNOWN",
       "artifact": null,
       "note": "This read-only inspection never reads credentials, calls a provider or inspects hosting secrets."
+    },
+    {
+      "id": "controlled-offline-inference",
+      "status": "PASS",
+      "artifact": {
+        "path": "research/experiments/prompt-grounding-language-2026-10-08/audit.json",
+        "sha256": "0f81768c4315bd279047821de3150770c1eb1538e4ab24d130a9c467ac09002f"
+      },
+      "note": "Actual paired local inference is recorded with exact prompt/context/output bindings; valid JSON is not semantic promotion."
+    },
+    {
+      "id": "localized-candidate-quality",
+      "status": "BLOCKED",
+      "artifact": {
+        "path": "research/experiments/prompt-localized-action-v2-2026-10-08/audit.json",
+        "sha256": "024ca19ab4b5e40d6f861b8e5545fa92a5b04821c363a3ebb53f45db90be7a7c"
+      },
+      "note": "Localized candidate still has grounding/action failures. Thirty-six new offline generations supply no independent customer holdout or authenticated semantic score."
     }
   ],
   "blockers": [

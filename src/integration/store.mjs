@@ -1,3 +1,4 @@
+import { enrollPostgresDelivery, acceptPostgresDelivery } from "./delivery.mjs";
 import { createHash, randomUUID } from "node:crypto";
 import { MEW } from "../core/mew.mjs";
 import {
@@ -362,6 +363,12 @@ export class IntegrationStore {
         settlementClaimProduced: false,
       };
     });
+  }
+  enrollDelivery(principal, expected) {
+    return enrollPostgresDelivery(this, principal, expected);
+  }
+  acceptDelivery(principal, input) {
+    return acceptPostgresDelivery(this, principal, input);
   }
   async startModelRun(principal, { id, contract, maxRuns = 1 }) {
     identifier(id);

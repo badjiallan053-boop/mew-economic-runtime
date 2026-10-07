@@ -235,3 +235,29 @@ contracts rather than installing more frameworks. Independent read-only review
 covered startup grants/policies and pilot authority boundaries. No additional
 production agents, provider calls, credential grants or financial actions ran.
 See PROJECT_GAP_AUDIT.md for the evidence sequence and remaining owners.
+
+## Connected private delivery and Supabase Auth · 8 October
+
+The model, delivery/pilot and security/asset engineers implemented separate lanes;
+the lead integrated private config, six-table catalog checks, a real-runtime
+contention/recovery harness and optional public Auth status. The security reviewer
+identified a vacuous isolation check and unobserved contention; a real peer and
+observed lock-wait barrier now prevent those false-positive claims. A further
+transport review led to redirected/foreign response rejection and malformed-200
+regressions.
+
+Installed the official supabase-postgres-best-practices skill using skill-installer
+at commit c9be0e931b7930f7d02126d04774d904c381e7d7, with full MIT license and file
+hashes in its PROVENANCE.json. RLS/short-transaction/lock-order references were
+read and selectively applied; generic examples never override MEW's reservation
+before external dispatch. The skill is available in the project on the next turn,
+with no automatic model-prompt injection, credential or payment authority.
+
+The existing pinned build-review-interface procedure and Stanford evaluation
+source/captions informed two actual local model experiments. Harvard notes and
+its official lecture transcript plus MIT course/session/study-question context
+were separately inspected; access and limits are explicit in
+ACADEMIC_ACTIVATION_NOTES.md and experiment source manifests. No course material
+is training-approved. No extra agent framework or university implementation was
+copied. The user-requested Supabase SDK packages were installed with scripts
+disabled; these are application dependencies, not an agent-skill runtime.

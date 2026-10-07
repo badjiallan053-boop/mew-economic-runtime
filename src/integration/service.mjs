@@ -1,3 +1,8 @@
+import {
+  enrolledDeliveryKeys,
+  deliveryKey,
+  deliveryKeyFingerprint,
+} from "./delivery.mjs";
 import { timingSafeEqual } from "node:crypto";
 import { operatorTokenDigest } from "../server/operator-service.mjs";
 import { checkCardanoConnection } from "../adapters/cardano-connection.mjs";
@@ -10,6 +15,8 @@ const actions = [
   "prepare-payment",
   "reconcile-payment",
   "evaluate-model",
+  "enroll-delivery",
+  "accept-delivery",
 ];
 
 export class IntegrationService {
@@ -20,6 +27,7 @@ export class IntegrationService {
     blockfrost = {},
     masumi = {},
     clock = Date.now,
+    providerKeys = [],
   } = {}) {
     if (
       !store ||
@@ -59,6 +67,9 @@ export class IntegrationService {
     this.blockfrost = { ...blockfrost };
     this.masumi = { ...masumi };
     this.clock = clock;
+    Object.defineProperty(this, "providerKeys", {
+      value: enrolledDeliveryKeys(providerKeys),
+    });
   }
   principal(token, action) {
     const digest = operatorTokenDigest(token),
@@ -135,6 +146,53 @@ export class IntegrationService {
       body.operationId,
       this.blockfrost,
     );
+  }
+  enrollDelivery(token, body) {
+    exact(body, [
+      "keyId",
+      "objectiveId",
+      "effectId",
+      "provider",
+      "jobId",
+      "artifactSha256",
+    ]);
+    const principal = this.principal(token, "enroll-delivery");
+    const publicKey = deliveryKey(
+      this.providerKeys,
+      body.provider,
+      body.keyId,
+      this.clock(),
+    );
+    return this.store.enrollDelivery(principal, {
+      ...body,
+      principal,
+      keyFingerprint: deliveryKeyFingerprint(publicKey),
+    });
+  }
+  acceptDelivery(token, body) {
+    exact(body, ["effectId", "envelope", "artifactBase64"]);
+    const principal = this.principal(token, "accept-delivery");
+    if (
+      typeof body.artifactBase64 !== "string" ||
+      body.artifactBase64.length > 174764 ||
+      !/^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/.test(
+        body.artifactBase64,
+      )
+    )
+      throw Error("Invalid artifact encoding");
+    const artifactBytes = Buffer.from(body.artifactBase64, "base64");
+    if (
+      artifactBytes.length > 131072 ||
+      artifactBytes.toString("base64") !== body.artifactBase64
+    )
+      throw Error("Bounded artifact required");
+    return this.store.acceptDelivery(principal, {
+      effectId: body.effectId,
+      envelope: body.envelope,
+      artifactBytes,
+      keys: this.providerKeys,
+      nowMs: this.clock(),
+    });
   }
   evaluateModel(token, body) {
     exact(body, ["id"]);

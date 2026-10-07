@@ -3,7 +3,7 @@ import {createHash} from 'node:crypto';
 const origin='https://mew-demo-production.up.railway.app';
 const digest=bytes=>createHash('sha256').update(bytes).digest('hex');
 const checks=[];
-for(const path of ['/api/health','/index.html','/home.html','/home.js','/kinetic-art.js','/kinetic-art.css','/experience-motion.js','/experience-motion.css','/journey.js','/motion.js','/motion.css','/journey.css','/mandate-art.js','/mandate-art.css','/home.css','/studio.html','/studio.js','/studio.css','/formation.js','/protocol.html','/protocol.css','/protocol.js','/pilot.html','/pilot.css','/pilot.js','/pilot-plan.js','/assets/mew-formation.png','/company.html','/company.js','/company.css','/campaign.html','/campaign.js','/research.html','/research.js','/research-snapshot.json','/design-studio.html','/design-studio.js','/design-studio.css','/site-shell.js','/site-shell.css','/core/mew.mjs','/knowledge.html','/knowledge.css','/education-snapshot.json','/robots.txt','/sitemap.xml','/assets/mew-social.png','/assets/fonts/instrument.css',...Array.from({length:6},(_,i)=>`/assets/fonts/instrument-${i}.ttf`)]){
+for(const path of ['/api/health','/api/auth/session','/index.html','/home.html','/home.js','/kinetic-art.js','/kinetic-art.css','/experience-motion.js','/experience-motion.css','/journey.js','/motion.js','/motion.css','/journey.css','/mandate-art.js','/mandate-art.css','/home.css','/studio.html','/studio.js','/studio.css','/formation.js','/protocol.html','/protocol.css','/protocol.js','/pilot.html','/pilot.css','/pilot.js','/pilot-plan.js','/assets/mew-formation.png','/company.html','/company.js','/company.css','/campaign.html','/campaign.js','/research.html','/research.js','/research-snapshot.json','/design-studio.html','/design-studio.js','/design-studio.css','/site-shell.js','/site-shell.css','/core/mew.mjs','/knowledge.html','/knowledge.css','/education-snapshot.json','/robots.txt','/sitemap.xml','/assets/mew-social.png','/assets/fonts/instrument.css',...Array.from({length:6},(_,i)=>`/assets/fonts/instrument-${i}.ttf`)]){
  try{
   const response=await fetch(origin+path,{redirect:'error',signal:AbortSignal.timeout(15000)});
   if(!response.ok)throw Error(`HTTP ${response.status}`);
@@ -12,6 +12,8 @@ for(const path of ['/api/health','/index.html','/home.html','/home.js','/kinetic
   if(bytes.length>3145728)throw Error('Oversized response');
   if(path==='/api/health'){
    const health=JSON.parse(bytes);if(health.ok!==true||health.mode!=='demo'||health.paymentsEnabled!==false||health.persistence!=='sqlite')throw Error('Unexpected health boundary');
+  }else if(path==='/api/auth/session'){
+   const session=JSON.parse(bytes);if(session.configured!==true||session.authenticated!==false||session.privateDatabaseAccess!==false||session.economicAuthority!==false||Object.hasOwn(session,'subject')||response.headers.get('set-cookie')||!response.headers.get('cache-control')?.includes('no-store'))throw Error('Unexpected session authority or cache boundary');
   }else{
    const local=await readFile(path.startsWith('/core/')?`src${path}`:`public${path}`);if(digest(local)!==digest(bytes))throw Error('Hosted asset differs from checkout');
    if(path==='/robots.txt'&&!response.headers.get('content-type')?.startsWith('text/plain'))throw Error('robots MIME mismatch');

@@ -36,6 +36,13 @@ UNKNOWN and interrupted attempts cannot automatically retry or activate a model.
 The four synthetic cases are distinct from the research benchmark and customer
 holdout. Payment preparation admits only enrolled-address, unsigned preprod ADA
 funding drafts. A bound transaction observation preserves the full exposure;
-rollback requires review and cannot release capacity. Native-token Masumi writes,
-closing transactions, signing, broadcast and authenticated delivery remain pending.
+rollback requires review and cannot release capacity. The private PostgreSQL delivery port now binds Ed25519 receipts to immutable
+provider/job/artifact/key identity and commits receipt replay plus satisfaction
+atomically. Its migration is installed; hosted runtime delivery remains unverified.
+Native-token Masumi writes, closing transactions, signing and broadcast remain pending.
+A separate asset-aware in-memory prototype has no dispatch or durable authority.
 See docs/SUPABASE_MODEL_PAYMENTS.md for exact integration boundaries and setup.
+
+Supabase Auth SDK session helpers and a scoped session-status endpoint are separate
+from private database bearer enrollment. Auth user identity grants no economic or
+private ledger access; no automatic mapping to principal mandates exists.

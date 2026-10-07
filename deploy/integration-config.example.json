@@ -19,6 +19,10 @@
       ]
     }
   ],
-  "paymentPolicy": { "principals": [], "providers": [] },
-  "port": 3046
+  "paymentPolicy": {
+    "principals": [],
+    "providers": []
+  },
+  "port": 3046,
+  "providerKeys": []
 }

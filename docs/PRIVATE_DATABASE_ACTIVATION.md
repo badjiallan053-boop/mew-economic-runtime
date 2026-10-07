@@ -91,7 +91,7 @@ Official [Supabase roles](https://supabase.com/docs/guides/database/postgres/rol
 
 Both the private host and process preflight now use
 `src/integration/database-readiness.mjs`. In one read-only catalog query, it checks
-the selected role flags and schema grants, exact four-table set and runtime DML
+the selected role flags and schema grants, exact six-table set and runtime DML
 grants, forced RLS, one exact principal policy per table and denied anon/authenticated
 access. Altered policies, browser access, DELETE/TRUNCATE grants or an unexpected
 table require review and reject startup. A management connection and NOLOGIN role
@@ -101,3 +101,14 @@ schema integrity, hosted race, crash or backup verification.
 
 The latest management observation is
 `research/activation/database-next-observation.json`. No role or record was changed.
+
+## Delivery migration and scoped recovery checks
+
+The reviewed `mew_authenticated_delivery` migration is installed, version
+`20261007225017`. See POSTGRES_AUTHENTICATED_DELIVERY.md and DATABASE_CONTENTION_PROBE.md.
+The v2 catalog guard requires that extension. The latest management observation
+is `research/activation/database-delivery-observation.json`; it still records
+NOLOGIN. Public Supabase Auth SDK/session setup does not supply this role password.
+Private JSON optionally accepts `providerKeys` entries with provider, keyId,
+publicKeyPem (SPKI PUBLIC KEY only), notBeforeMs, expiresAtMs and revoked. Empty
+keys grant no delivery authority; enroll/accept bearer actions are separately scoped.

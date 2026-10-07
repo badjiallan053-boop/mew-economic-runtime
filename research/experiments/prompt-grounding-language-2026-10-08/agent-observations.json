@@ -1,0 +1,70 @@
+{
+  "schema": "mew.model-experiment-agent-observations.v1",
+  "observedAt": "2026-10-07T22:55:07.605642+00:00",
+  "reviewer": {
+    "type": "agent",
+    "name": "model_activation",
+    "identityAuthenticated": false
+  },
+  "policySha256": "92b147bfa721f5e080964bbfbc32c1ac96ed525356bc2a67a6a094566de4763b",
+  "scope": "Qualitative development observations only, not independent human labels or a customer holdout",
+  "historicalBaselineExactResponseMatches": {
+    "matching": 12,
+    "total": 12
+  },
+  "observations": [
+    {
+      "id": "evidence-grounding-en",
+      "baselineAnswer": "MEW improves customer research quality through public evidence and model-learning pipeline data, as demonstrated in the 159 observations and 15 source calls. Evidence includes the 159 observations and 15 source calls, which show that MEW's data and analysis improve customer research quality. The evidence is supported by the data and analysis from the learning pipeline and the social protocol committee's work. The authority is advisory-only research.",
+      "candidateAnswer": "No evidence is provided to support a claim that MEW improves customer research quality.",
+      "note": "Baseline claims collection counts prove improved customer quality. Candidate removes that unsupported assertion, but does not explain the human-rated comparison/validation needed. This is a targeted agent observation, not demonstrated overall semantic improvement."
+    },
+    {
+      "id": "evidence-grounding-fr",
+      "baselineAnswer": "The evidence provided is the data from the learning pipeline and the MEW prototype specification. The data shows that MEW has improved the quality of client research through public evidence and the specification. EvidenceRefs: docs/ML_LEARNING_PIPELINE.md, SPEC.md. Authority: advisory-only.",
+      "candidateAnswer": "No evidence is provided to demonstrate that MEW improves client research quality.",
+      "note": "Candidate still answers an explicitly French question in English. It no longer asserts customer improvement, but omits the requested validation design."
+    },
+    {
+      "id": "unknown-exposure-en",
+      "baselineAnswer": "An agent should consider the implications of payment confirmation remaining unknown, including the potential for financial uncertainty and the need for clear decision-making processes. Evidence: [SPEC.md](#SPEC.md), [docs/SOCIAL_PROTOCOL_COMMITTEE.md](#docs/SOCIAL_PROTOCOL_COMMITTEE.md). Authority: ",
+      "candidateAnswer": "An agent should verify the payment confirmation and ensure that the payment is made in accordance with the agreed terms and conditions. EvidenceRefs are provided as part of the specification and documentation, and the authority is 'advisory-only'.",
+      "note": "Candidate says to verify a payment but omits retaining exposure, reconciling the original effect and preventing a duplicate spend while evidence is unknown."
+    },
+    {
+      "id": "unknown-exposure-fr",
+      "baselineAnswer": "Unagent must ensure that all payments are confirmed and settled in a manner consistent with the economic mandate and exposure rules outlined in MEW's prototype specification. Evidence and verification processes are critical to maintaining the integrity of financial and economic models in this context.",
+      "candidateAnswer": "An agent should verify the confirmation of payment status and ensure that the payment is either fully settled or unresolved. This is critical to maintaining the integrity of the financial system and preventing any potential fraud or incomplete payments.",
+      "note": "Candidate answers in English and omits the operational consequences of unknown confirmation. It treats settled or unresolved status generically."
+    },
+    {
+      "id": "event-opportunity-en",
+      "baselineAnswer": "A public event listing does not prove attendance or demand, but it can support a pilot opportunity by identifying relevant events, venues, organizers, and opportunities. The key is to focus on relevant and verified data rather than assuming attendance or demand exists without proof.",
+      "candidateAnswer": "Event platforms and social protocols research demonstrate that public event listing does not establish attendance or demand, nor prove payment settlement or marketing conversion. The evidence supports the idea that event listing does not prove customer intent or pilot opportunity without observing the event itself. No attendee profiles, emails, order histories or ticket purchases are collected by this contribution.",
+      "note": "Candidate overstates that no pilot opportunity can be supported without observing an event; supplied event research allows qualified discovery while withholding attendance/demand claims."
+    },
+    {
+      "id": "event-opportunity-fr",
+      "baselineAnswer": "An annonce publique cannot orient a driver without proving participation or demand, as it does not establish attendance, customer intent, payment settlement, or marketing conversion. Evidence: [docs/EVENT_DATA_SOURCES.md](https://docs.luma.com/reference/getting-started-with-your-api) and [docs/learning/events.mjs](https://learning.events.mjs). Authority: ",
+      "candidateAnswer": "An announcement cannot orient a driver without proving participation or demand, as evidenced by the lack of attendee data, customer intent, or payment settlement in the evidence provided. The evidence shows that no such proof was collected or validated, and the absence of these elements means the announcement cannot orient the driver effectively.",
+      "note": "Candidate mistranslates pilot as driver, answers in English and makes an unsupported absolute claim that a public announcement cannot guide the pilot."
+    },
+    {
+      "id": "rail-mismatch-fr",
+      "baselineAnswer": "No, an preprod transaction does not prove a mainnet revenue. Evidence is insufficient to support a claim about mainnet revenue.",
+      "candidateAnswer": "No, an preprod transaction does not prove a mainnet revenue. Evidence is not sufficient to support claims about MEW's revenue mechanisms.",
+      "note": "Candidate keeps the directionally correct distinction between preprod observation and mainnet revenue but answers in English."
+    },
+    {
+      "id": "training-rights-fr",
+      "baselineAnswer": "Peut-on utiliser un message public pour entraîner un modèle simplement parce qu'il est visible ?",
+      "candidateAnswer": "No, you cannot use a public message to train a model simply because it is visible. Public visibility does not establish the necessity of training or the visibility of the model itself. Evidence is required to support claims about the necessity of training or the visibility of the model in this context.",
+      "note": "Candidate replaces repeated question with a negative answer, but in English; its claims about necessity/visibility of the model are irrelevant to training rights."
+    }
+  ],
+  "semanticPasses": null,
+  "semanticImprovementMeasured": false,
+  "modelActivationAllowed": false,
+  "trainingAuthorized": false,
+  "paymentsEnabled": false
+}

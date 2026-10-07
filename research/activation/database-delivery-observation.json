@@ -1,0 +1,197 @@
+{
+  "schema": "mew.database-catalog-observation.v1",
+  "projectRef": "ndorfchuhciidfcltbzf",
+  "observedAt": "2026-10-07T22:53:28Z",
+  "channel": "supabase-management-read-only-after-additive-migration",
+  "catalog": {
+    "role": {
+      "login": false,
+      "enrolled": true,
+      "bypassRls": false,
+      "superuser": false,
+      "createRole": false,
+      "createDatabase": false
+    },
+    "tables": [
+      {
+        "rls": true,
+        "name": "delivery_contracts",
+        "delete": false,
+        "forced": true,
+        "insert": true,
+        "select": true,
+        "update": false,
+        "trigger": false,
+        "policies": [
+          {
+            "name": "principal_boundary",
+            "check": "(principal = current_setting('mew.principal'::text, true))",
+            "roles": [
+              "17613"
+            ],
+            "using": "(principal = current_setting('mew.principal'::text, true))",
+            "command": "*",
+            "permissive": true
+          }
+        ],
+        "truncate": false,
+        "references": false
+      },
+      {
+        "rls": true,
+        "name": "delivery_receipts",
+        "delete": false,
+        "forced": true,
+        "insert": true,
+        "select": true,
+        "update": false,
+        "trigger": false,
+        "policies": [
+          {
+            "name": "principal_boundary",
+            "check": "(principal = current_setting('mew.principal'::text, true))",
+            "roles": [
+              "17613"
+            ],
+            "using": "(principal = current_setting('mew.principal'::text, true))",
+            "command": "*",
+            "permissive": true
+          }
+        ],
+        "truncate": false,
+        "references": false
+      },
+      {
+        "rls": true,
+        "name": "escrow_operations",
+        "delete": false,
+        "forced": true,
+        "insert": true,
+        "select": true,
+        "update": true,
+        "trigger": false,
+        "policies": [
+          {
+            "name": "principal_boundary",
+            "check": "(principal = current_setting('mew.principal'::text, true))",
+            "roles": [
+              "17613"
+            ],
+            "using": "(principal = current_setting('mew.principal'::text, true))",
+            "command": "*",
+            "permissive": true
+          }
+        ],
+        "truncate": false,
+        "references": false
+      },
+      {
+        "rls": true,
+        "name": "input_locks",
+        "delete": false,
+        "forced": true,
+        "insert": true,
+        "select": true,
+        "update": false,
+        "trigger": false,
+        "policies": [
+          {
+            "name": "principal_boundary",
+            "check": "(principal = current_setting('mew.principal'::text, true))",
+            "roles": [
+              "17613"
+            ],
+            "using": "(principal = current_setting('mew.principal'::text, true))",
+            "command": "*",
+            "permissive": true
+          }
+        ],
+        "truncate": false,
+        "references": false
+      },
+      {
+        "rls": true,
+        "name": "ledgers",
+        "delete": false,
+        "forced": true,
+        "insert": true,
+        "select": true,
+        "update": true,
+        "trigger": false,
+        "policies": [
+          {
+            "name": "principal_boundary",
+            "check": "(principal = current_setting('mew.principal'::text, true))",
+            "roles": [
+              "17613"
+            ],
+            "using": "(principal = current_setting('mew.principal'::text, true))",
+            "command": "*",
+            "permissive": true
+          }
+        ],
+        "truncate": false,
+        "references": false
+      },
+      {
+        "rls": true,
+        "name": "model_runs",
+        "delete": false,
+        "forced": true,
+        "insert": true,
+        "select": true,
+        "update": true,
+        "trigger": false,
+        "policies": [
+          {
+            "name": "principal_boundary",
+            "check": "(principal = current_setting('mew.principal'::text, true))",
+            "roles": [
+              "17613"
+            ],
+            "using": "(principal = current_setting('mew.principal'::text, true))",
+            "command": "*",
+            "permissive": true
+          }
+        ],
+        "truncate": false,
+        "references": false
+      }
+    ],
+    "backendOid": "17613",
+    "backendSafe": true,
+    "currentRole": "postgres",
+    "browserRoles": [
+      {
+        "name": "anon",
+        "schemaUsage": false,
+        "tableAccess": false,
+        "schemaCreate": false
+      },
+      {
+        "name": "authenticated",
+        "schemaUsage": false,
+        "tableAccess": false,
+        "schemaCreate": false
+      }
+    ],
+    "runtimeSchemaUsage": true,
+    "runtimeSchemaCreate": false
+  },
+  "securityAdvisorNotices": 0,
+  "migrations": [
+    {
+      "version": "20261007213113",
+      "name": "mew_private_integration"
+    },
+    {
+      "version": "20261007225017",
+      "name": "mew_authenticated_delivery"
+    }
+  ],
+  "limitations": [
+    "Reviewed additive delivery migration was applied; no LOGIN, credentials or private customer records were changed.",
+    "Management SQL is not actual runtime Node login or verified application TLS.",
+    "Multi-client contention, connection-loss, reconnect and funded lifecycle checks remain unexecuted on hosted runtime."
+  ]
+}

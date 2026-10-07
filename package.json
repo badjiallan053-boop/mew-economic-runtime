@@ -7,7 +7,7 @@
     "node": ">=24"
   },
   "scripts": {
-    "start": "node src/server/server.mjs",
+    "start": "node --env-file-if-exists=.env.local src/server/server.mjs",
     "test": "node --test tests/*.test.mjs",
     "build": "node scripts/build.mjs",
     "check": "npm test && npm run build",
@@ -51,11 +51,18 @@
     "activation:review": "node scripts/activation-review.mjs",
     "cardano:wallet": "node scripts/preprod-wallet-check.mjs",
     "model:semantic-review": "node scripts/model-semantic-review.mjs",
-    "pilot:readiness": "node scripts/pilot-readiness.mjs"
+    "pilot:readiness": "node scripts/pilot-readiness.mjs",
+    "pilot:measure": "node scripts/pilot-measurement.mjs",
+    "integration:contention": "node scripts/integration-contention.mjs",
+    "supabase:auth-preflight": "node --env-file-if-exists=.env.local scripts/supabase-auth-preflight.mjs",
+    "model:experiment-audit": "node scripts/model-experiment-audit.mjs",
+    "model:localized-experiment-audit": "node scripts/model-experiment-localized-audit.mjs"
   },
   "dependencies": {
     "@emurgo/cardano-serialization-lib-nodejs": "15.0.3",
     "@scure/base": "2.0.0",
+    "@supabase/ssr": "0.12.7",
+    "@supabase/supabase-js": "2.117.3",
     "pg": "8.23.1"
   },
   "devDependencies": {

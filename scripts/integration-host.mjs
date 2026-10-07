@@ -1,49 +1,15 @@
 import { assertPrivateDatabase } from "../src/integration/database-readiness.mjs";
-import {
-  openSync,
-  closeSync,
-  readFileSync,
-  fstatSync,
-  constants,
-} from "node:fs";
-import { isAbsolute } from "node:path";
+import { loadPrivateIntegrationConfiguration } from "../src/integration/private-config.mjs";
 import { connectPostgres } from "../src/integration/postgres.mjs";
-import { IntegrationStore, exact } from "../src/integration/store.mjs";
+import { IntegrationStore } from "../src/integration/store.mjs";
 import { IntegrationService } from "../src/integration/service.mjs";
 import { makeIntegrationServer } from "../src/integration/http.mjs";
 
-// Only an absolute private configuration path is supplied, never credentials.
-function privateConfiguration(path) {
-  if (!isAbsolute(path)) throw Error("Private absolute configuration required");
-  const fd = openSync(path, constants.O_RDONLY | constants.O_NOFOLLOW);
-  try {
-    const stat = fstatSync(fd);
-    if (
-      !stat.isFile() ||
-      (stat.mode & 0o077) !== 0 ||
-      stat.uid !== process.getuid() ||
-      stat.size > 65536
-    )
-      throw Error("Private owned file required");
-    const config = JSON.parse(readFileSync(fd, "utf8"));
-    exact(config, ["version", "postgres", "policy", "paymentPolicy", "port"]);
-    if (
-      config.version !== 1 ||
-      !Number.isSafeInteger(config.port) ||
-      config.port < 1024 ||
-      config.port > 65535
-    )
-      throw Error("Invalid private configuration");
-    return config;
-  } finally {
-    closeSync(fd);
-  }
-}
 let pool, server;
 try {
   if (process.argv.length !== 3)
     throw Error("Pass the private configuration path");
-  const config = privateConfiguration(process.argv[2]);
+  const config = loadPrivateIntegrationConfiguration(process.argv[2]);
   // Validate enrollment before contacting a database. Keys come from host environment.
   const model = {
     apiKey: process.env.OPENAI_API_KEY,
@@ -51,7 +17,12 @@ try {
     approved: process.env.MEW_APPROVE_MODEL_USAGE === "yes",
     maxRuns: 1,
   };
-  new IntegrationService({ store: {}, policy: config.policy, model });
+  new IntegrationService({
+    store: {},
+    policy: config.policy,
+    model,
+    providerKeys: config.providerKeys,
+  });
   pool = await connectPostgres(config.postgres);
   await assertPrivateDatabase(pool);
   const store = new IntegrationStore({
@@ -62,6 +33,7 @@ try {
     store,
     policy: config.policy,
     model,
+    providerKeys: config.providerKeys,
     blockfrost: { projectId: process.env.BLOCKFROST_PROJECT_ID },
     masumi: {
       apiBase: process.env.MPS_API_BASE,

@@ -16,6 +16,12 @@ async function fixture() {
       "utf8",
     ),
   );
+  await db.exec(
+    await readFile(
+      new URL("../deploy/supabase-delivery.sql", import.meta.url),
+      "utf8",
+    ),
+  );
   await db.exec("ALTER ROLE mew_runtime LOGIN; SET ROLE mew_runtime;");
   return db;
 }
@@ -131,6 +137,28 @@ test("malformed catalog rows yield a blocked report rather than incidental TypeE
     assert.equal(
       reviewDatabaseCatalog(changed).applicationConnectionReady,
       false,
+    );
+  } finally {
+    await db.close();
+  }
+});
+
+test("delivery migration is required and immutable delivery rows cannot gain UPDATE", async () => {
+  const db = await fixture();
+  try {
+    await db.exec(
+      "RESET ROLE; GRANT UPDATE ON mew_private.delivery_receipts TO mew_runtime; SET ROLE mew_runtime;",
+    );
+    assert.ok(
+      (await inspectPrivateDatabase(db)).issues.includes(
+        "delivery_receipts:runtime-grants",
+      ),
+    );
+    await db.exec(
+      "RESET ROLE; DROP TABLE mew_private.delivery_receipts; DROP TABLE mew_private.delivery_contracts; SET ROLE mew_runtime;",
+    );
+    assert.ok(
+      (await inspectPrivateDatabase(db)).issues.includes("private-table-set"),
     );
   } finally {
     await db.close();

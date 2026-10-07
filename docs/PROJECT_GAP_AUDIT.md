@@ -1,83 +1,31 @@
-# MEW next release: from demo to evidence-backed pilot
+# MEW activation handoff · 8 October 2026
 
-Audited 8 October 2026. The live Railway release is bf30ef8: a hosted synthetic
-website with original motion, deterministic admission and public evidence. The
-changes in this contribution improve private tooling; they are not a deployed
-private service, a useful-model result, customer traction or a payment.
+This contribution advances implementation and records actual observations. It does not establish a consenting pilot, useful production model or funded payment. The hosted synthetic website is separate from the private economic backend.
 
-## Observed state and what this release closes
+| Priority           | Implemented or observed                                                                                                                                                                                                                                                                | Still required                                                                                                                                                                                                                                  |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Useful model       | Actual offline paired prompt experiment: 36 generations across baseline and two candidates, each format-valid12/12. Candidate1 removes one unsupported count claim; candidate2 improves French output in agent inspection but regresses grounding. Exact request/context/output receipts and review packs preserve the frozen development benchmark. | Independent semantic review and consenting, lineage-disjoint customer holdout. No activation or fine-tuning from development success alone. See MODEL_CONTROLLED_EXPERIMENT.md.                                                                 |
+| Real pilot         | Signed-manifest/local-artifact measurement import verifies hashes, clip identity and invoiced-cost metadata. Consent, rights, acceptance and invoices remain explicitly operator-attested.                                                                                             | One real consenting customer, actual media production/inspection, acceptance, revisions and authentic billing/cost records. No outreach or customer record was fabricated. See PILOT_MEASUREMENT.md.                                            |
+| Private backend    | Reviewed additive delivery migration installed in Supabase; six private tables pass management catalog boundary checks, browser roles denied, runtime NOLOGIN. Optional public Auth SDK connection verified separately.                                                                | Approved runtime credential provisioning; actual Node TLS connection, independent-session contention/recovery and backup/restore. A publishable key is not the runtime password. See DATABASE_CONTENTION_PROBE.md.                              |
+| Connected delivery | Private bearer-scoped service/HTTP port records Ed25519 receipt replay and ledger satisfaction in one PostgreSQL transaction. Exact job/artifact/public-key fingerprint, RLS, global uniqueness, revocation and conflicting replay tested.                                             | Real pretrusted provider key, enrolled job/artifact and hosted concurrent delivery exercise. Delivery never emits settlement or releases exposure. See POSTGRES_AUTHENTICATED_DELIVERY.md.                                                      |
+| Preprod payments   | Separate exact-policy/name native-asset accounting prototype with independent token/ADA-overhead caps, replay and retained UNKNOWN. Existing unsigned ADA boundaries preserved.                                                                                                        | Durable native-asset admission/outbox/locks, audited operation-bound settlement/refund/closing adapters, approved external signer, funds and full lifecycle evidence. In-memory ALLOW has dispatchAllowed:false. See PREPROD_ASSET_BOUNDARY.md. |
 
-| Area                 | Observed foundation                                                                                                                         | New work                                                                                                              | Required next evidence                                                                                                                          |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| Website              | Live synthetic site; 54 hosted asset/header checks from the prior release                                                                   | Public site unchanged                                                                                                 | Customer comprehension, workflow interest and an agreed pilot outcome                                                                           |
-| Model                | Latest constrained local run has 12/12 format checks; this development set is not a customer holdout                                        | Latest-response semantic review pack, exact context/trace binding and dimension-specific annotations                  | Independent correctness/grounding/language review, a lineage-disjoint customer holdout and actual provider/billing evidence                     |
-| Private database     | Fresh management catalog confirms four tables, exact principal policies, forced RLS and denied browser-role access; runtime remains NOLOGIN | Startup/preflight now inspect role, grants and exact RLS policies; catalog tampering blocks startup                   | Deliberately provisioned runtime login, real Node verified-TLS connection and independent-client contention/restart proof                       |
-| Recovery             | Existing transactional reservation and input locks                                                                                          | Destroy uncertain pooled clients on ambiguous BEGIN/COMMIT or failed rollback; no retry                               | Hosted lost-response/restart and backup/restore exercises                                                                                       |
-| Customer/delivery    | Private SQLite lane has Ed25519 verification and transactional receipt/replay persistence                                                   | Bounded offline pilot acceptance checker reuses that verifier and distinguishes attestations from verified signatures | Consenting customer, rights, exact real artifacts, authenticated acceptance and enrolled merchant key                                           |
-| PostgreSQL delivery  | New private ledger and unsigned funding lifecycle exist                                                                                     | The missing port is explicitly documented                                                                             | One principal-scoped receipt/ledger transaction, unique job/receipt identity, revocation and crash/RLS tests                                    |
-| Cardano/Masumi       | Unsigned ADA funding and read-only observations exist; no signing/broadcast                                                                 | Recovery hardening and explicit rail/audit gates                                                                      | Approved external signer, funded preprod ADA lifecycle, independent compiled-contract/closing audit and exact-asset settlement/collection proof |
-| Ownership/operations | Proposed compact five-role advisory structure                                                                                               | Three specialist implementation lanes and an independent review, without more runtime roles                           | Named customer/release/security owners, alternates, incident handover and retention/recourse procedure                                          |
+## Fastest next sequence
 
-Fresh management catalog evidence is in
-`research/activation/database-next-observation.json`. The selected project's
-security advisor returned no notices at this observation; that is not a complete
-security audit. The local process preflight still has no database, model,
-Blockfrost or MPS configuration. This describes this process, not every location
-on the computer. No credential, LOGIN grant or provider call was performed.
+1. Review the bound model outputs and failures. The frozen12-case benchmark is development data; do not call it an independent customer holdout. Record reviewer provenance, language, correctness, entailment, abstention and operational action separately from valid JSON.
+2. Precommit one customer's deliverable, acceptance owner/rubric, rights, permitted processing/reuse, retention/withdrawal procedure and cost currency. Import actual signed manifest and files with `pilot:measure` after those records exist. A complete import does not prove customer success or public case-study permission.
+3. Provision the existing dedicated runtime role through the operator's approved local secret workflow. Follow PRIVATE_DATABASE_ACTIVATION.md; run the actual connection preflight and then `integration:contention -- /absolute/private/config.json --write-probe`. The probe retains new synthetic rows and requires observed overlapping lock wait and a nonempty peer isolation check. Reconnect/controlled acknowledgment injection is narrower than a real database crash or restoration test.
+4. Enroll the real provider's public Ed25519 key out of band in the private configuration, and grant delivery actions only to the approved operator. Bind receipt to the existing economic effect, job and accepted artifact. Authenticate customer acceptance separately from provider delivery.
+5. After independent contract/closing audit and custody approval, connect the exact deployed preprod rail and full native unit. Reserve all token principal and ADA overhead durably before dispatch; timeout never restores capacity. Keep refund/closing/collection evidence separate from signed delivery and customer acceptance.
 
-## Fastest sequence
+## Public authentication boundary
 
-1. **Review meaning before training.** Generate the latest semantic pack with
-   `npm run model:semantic-review -- .local/semantic-review-run-01`. Inspect raw
-   answer and exact context; export self-declared annotations, then rerun into a
-   new directory with `--notes /absolute/private/notes.json`. Even unanimous
-   annotations carry no activation authority. Correct demonstrated failures and
-   evaluate against a separate customer holdout before any training decision.
-2. **Choose one customer workflow.** Precommit one deliverable, its owner,
-   acceptance rubric, source rights and actual cost measure. For the creator
-   path, use `npm run pilot:readiness -- CONTRACT EVIDENCE RECEIPT ARTIFACT PUBLIC_KEY`
-   after the records exist. It cannot render clips, authenticate consent or
-   record acceptance. Keep customer records private; do not manufacture evidence
-   to fill required fields. Report purchasing and clip procurement are separate
-   mandates, not interchangeable proof.
-3. **Establish private persistence.** Follow PRIVATE_DATABASE_ACTIVATION.md for
-   masked credential provisioning and the dedicated role. Run
-   `npm run integration:preflight`, then the separate loopback host with its
-   private config. The new guard rejects broadened grants/policies before listen.
-   It intentionally checks selected role/grant/RLS boundaries, not every index,
-   constraint or security-definer function. Verify two real clients and recovery
-   before treating this as a deployable economic backend.
-4. **Join delivery to the same journal.** Reuse the existing verifier, expected
-   artifact contract and key enrollment in a reviewed PostgreSQL receipt port.
-   Persist receipt identity and ledger transition atomically. A separately
-   checked SQLite receipt cannot close a PostgreSQL reservation.
-5. **Rehearse one funded preprod lifecycle.** Only after signer custody and an
-   independent audit are established, bind reservation to the exact approved
-   transaction and separately verify funding, delivery, collection and refund
-   behavior. Masumi tUSDM and ADA fees are separate assets; the current lovelace
-   ledger must reject native-token admission until asset-aware accounting exists.
+Requested Supabase packages are pinned and installed with lifecycle scripts disabled. Optional cookie helpers use the actual SDK, refresh expired cookies, verify identity with getUser and preserve browser cookies on transient failures. GET `/api/auth/session` exposes no subject, tokens or private data and cannot authorize the ledger. `.env.local` is ignored and owner-only; no private database credentials were obtained. No Next.js runtime, todos table or customer sign-in interface was invented.
 
-The existing US$10 hosting cap is not a model-usage or wallet-spend budget. These
-steps create no paid resources, sign transactions or authorize customer outreach.
-Installing more frameworks, scraping more sources or adding agent roles will not
-supply missing acceptance, credential, quality or settlement evidence.
+The actual public Auth settings probe succeeded; no user account was created or signed in. Six-table Supabase catalog evidence is `research/activation/database-delivery-observation.json`. The security advisor returned zero notices, which is not a security audit. Runtime and independent contract audit remain separate gates.
 
-## Team and review
+## Engineering, knowledge and evidence
 
-Actual specialists: model evaluation, payment/recovery and customer acceptance.
-The coordinator implemented and hosted-checked database boundary inspection and
-integrated the commands. The payment reviewer independently checked the database
-and pilot changes; malformed catalog handling was improved after that review.
-Skills.sh references are recorded per lane in research/activation. They inform
-original procedures; no unreviewed installer, new framework or deployed worker
-was added. Detailed lane outputs: MODEL_NEXT_RELEASE.md, CUSTOMER_NEXT_RELEASE.md
-and PAYMENT_NEXT_RELEASE.md.
+The lead coordinated model evaluation, delivery/pilot engineering and independent security/asset review. The official Supabase database skill is installed locally at pinned commit c9be0e9 with license/provenance; it grants no privileges. Selected skills.sh TDD/evaluation references and official Stanford, MIT and Harvard materials inform original procedures. Video/caption access is recorded explicitly in the experiment sources and ACADEMIC_ACTIVATION_NOTES.md. No course content grants training rights, certifies this implementation or substitutes for an independent audit.
 
-## Verification for this contribution
-
-317 automated tests passed with zero failures; the standalone build passed.
-New coverage includes twelve database-boundary checks, five connection-recovery
-cases, six offline pilot/CLI checks and eight semantic-review cases. No live model
-call, customer artifact production, remote runtime login, receipt persistence or
-wallet transaction was performed. This contribution is published to the existing
-feature branch; the public Railway source remains pinned to the artistic demo.
+Full regression/build results are recorded in `research/activation/implementation-verification.json` after completion. Current private credentials, pilot customer, signer custody and wallet funds remain pending by the user's latest answer. The US$10 hosting cap is not a model-provider or wallet-spend budget. No paid model call, signing or broadcast occurred.

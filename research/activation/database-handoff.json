@@ -2,25 +2,25 @@
   "schema": "mew.activation-evidence.v1",
   "lane": "database",
   "verdict": "BLOCKED",
-  "observedAt": "2026-10-07T22:38:33.697Z",
+  "observedAt": "2026-10-07T23:03:10.476Z",
   "claims": [
     {
       "id": "installed-private-schema",
       "status": "PASS",
       "artifact": {
-        "path": "research/integration/supabase-verification.json",
-        "sha256": "29d6b1315116ced2413d0c3fc622b80f563978f06b9c1bc6ed09ae276f93563b"
+        "path": "research/activation/database-delivery-observation.json",
+        "sha256": "a2136391a98596d3bc961253abd4145bfffe3b7ee9a12fc191dbe599fc8ad048"
       },
-      "note": "Existing hosted verification receipt records forced RLS, principal isolation and anonymous denial. This digest does not independently certify the receipt or a new execution."
+      "note": "Reviewed additive delivery migration applied; six hosted private tables retain forced RLS and least-privilege grants. Management evidence is not runtime connectivity."
     },
     {
       "id": "private-application-login",
       "status": "BLOCKED",
       "artifact": {
-        "path": "research/activation/database-next-observation.json",
-        "sha256": "4ef00c869d13fdcb9c360c822acd4669ff0db38eb174b2aee3bc3292e155ac2b"
+        "path": "research/activation/database-delivery-observation.json",
+        "sha256": "a2136391a98596d3bc961253abd4145bfffe3b7ee9a12fc191dbe599fc8ad048"
       },
-      "note": "Fresh hosted management observation still records mew_runtime NOLOGIN. Actual Node runtime/TLS and independent-client tests remain pending; no grants or credentials changed."
+      "note": "Fresh management observation still records runtime NOLOGIN. Public Auth SDK connectivity is separate from actual Node private runtime/TLS access."
     },
     {
       "id": "hosted-multi-client-durability",
@@ -32,10 +32,10 @@
       "id": "fresh-catalog-boundaries",
       "status": "PASS",
       "artifact": {
-        "path": "research/activation/database-next-observation.json",
-        "sha256": "4ef00c869d13fdcb9c360c822acd4669ff0db38eb174b2aee3bc3292e155ac2b"
+        "path": "research/activation/database-delivery-observation.json",
+        "sha256": "a2136391a98596d3bc961253abd4145bfffe3b7ee9a12fc191dbe599fc8ad048"
       },
-      "note": "Fresh management catalog checks forced RLS, exact principal policies, runtime grants and denied browser-role access. Runtime NOLOGIN and management connection cannot establish application readiness."
+      "note": "Six-table management catalog confirms exact principal policies, scoped runtime DML and browser-role denial. This cannot establish application readiness."
     }
   ],
   "blockers": [
@@ -48,7 +48,7 @@
     {
       "id": "hosted-contention-and-restart",
       "owner": "database-agent",
-      "nextAction": "After private login is available, execute reviewed two-client synthetic contention and restart checks without provider calls.",
+      "nextAction": "After runtime login is supplied, run reviewed integration:contention with explicit --write-probe; then separately exercise database crash and backup/restore. Probe reconnection and controlled lost-COMMIT injection are not failover proof.",
       "evidenceRequired": "Sanitized independent-client locking, replay, context reset and durable restart results."
     }
   ],

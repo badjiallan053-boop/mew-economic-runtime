@@ -1,3 +1,4 @@
+import {authenticateMEWSession} from '../auth/supabase.mjs';
 import { createServer } from 'node:http';
 import {MEW} from '../core/mew.mjs';
 import { readFileSync } from 'node:fs';
@@ -18,7 +19,7 @@ const observeSafely=async fn=>{try{return await fn();}catch{throw new Error('Evi
 const root = fileURLToPath(new URL('../../',import.meta.url));
 const tokenEqual=(a,b)=>{const x=Buffer.from(a),y=Buffer.from(b);return x.length===y.length && timingSafeEqual(x,y);};
 
-export function makeServer({dbPath=process.env.MEW_DB_PATH || resolve(root,'data/mew.sqlite'),demo=process.env.MEW_DEMO_MODE!=='false',token=process.env.MEW_API_TOKEN || '',verify=verifyCardanoSettlement,connection=checkCardanoConnection,demoRequestLimit=120}={}) {
+export function makeServer({dbPath=process.env.MEW_DB_PATH || resolve(root,'data/mew.sqlite'),demo=process.env.MEW_DEMO_MODE!=='false',token=process.env.MEW_API_TOKEN || '',verify=verifyCardanoSettlement,connection=checkCardanoConnection,demoRequestLimit=120,supabaseAuth=(process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ? {url:process.env.NEXT_PUBLIC_SUPABASE_URL,publishableKey:process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY}:null),authFetch=globalThis.fetch}={}) {
   if(!demo && token.length<32) throw new Error('Live mode requires MEW_API_TOKEN with at least 32 characters');
   if(!Number.isSafeInteger(demoRequestLimit) || demoRequestLimit<1) throw new Error('Invalid demo request quota');
   const store=new Store(dbPath,{mode:demo?'demo':'live'});
@@ -39,6 +40,16 @@ export function makeServer({dbPath=process.env.MEW_DB_PATH || resolve(root,'data
         if(demo) {
           const now=Date.now();if(now-windowStart>=60000){windowStart=now;requests=0;}
           if(++requests>demoRequestLimit){res.setHeader('Retry-After',String(Math.max(1,Math.ceil((windowStart+60000-now)/1000))));return json(429,{error:'Shared demo request quota exceeded'});}
+        }
+        if(url.pathname==='/api/auth/session') {
+          if(req.method!=='GET') return json(405,{error:'Method not allowed'});
+          if(req.headers['sec-fetch-site']==='cross-site' || (req.headers.origin && new URL(req.headers.origin).host!==req.headers.host)) return json(403,{error:'Cross-origin session refresh rejected'});
+          try {
+            const session=await authenticateMEWSession({request:req,response:res,config:supabaseAuth,fetchImpl:authFetch,secureCookies:true});
+            return json(200,{configured:session.configured,authenticated:session.authenticated,privateDatabaseAccess:false,economicAuthority:false});
+          } catch {
+            return json(503,{configured:Boolean(supabaseAuth),authenticated:false,privateDatabaseAccess:false,economicAuthority:false,error:'Authentication unavailable'});
+          }
         }
         if(!demo && !tokenEqual(req.headers.authorization || '',`Bearer ${token}`)) return json(401,{error:'A valid Bearer token is required'});
         if(url.pathname.startsWith('/api/cardano/') && demo) return json(403,{error:'Cardano integration requires live evidence mode'});

@@ -1,0 +1,16 @@
+{
+  "modelActivationAllowed": false,
+  "observedAt": "2026-10-07T22:51:07.895947+00:00",
+  "paymentsEnabled": false,
+  "policySha256": "92b147bfa721f5e080964bbfbc32c1ac96ed525356bc2a67a6a094566de4763b",
+  "requestsFiles": {
+    "baseline": "bfd8d5b9a8b255c1db3a5baa19bbbb3e5c86916fe32f4ef17f0b9116f88e302c",
+    "candidate": "df4c6c0d33af101e6aebbcef130a88a8c2cf488e3e71d31fec5277a2a3f66928"
+  },
+  "responseFiles": {
+    "baseline": "b8e7524dce7619e7a49e052d6b365b9f329123576275c93234f5f20bfcbc45b1",
+    "candidate": "0efb976a58a2c28d4a3022cab6b776eaa7469883adfdce8c2a0760980eb98976"
+  },
+  "schema": "mew.model-experiment-completion.v1",
+  "trainingAuthorized": false
+}
