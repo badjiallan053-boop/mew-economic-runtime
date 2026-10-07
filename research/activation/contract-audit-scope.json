@@ -1,0 +1,54 @@
+{
+  "schema": "mew.contract-audit-scope.v1",
+  "status": "INDEPENDENT_ASSESSOR_PENDING",
+  "artifacts": [
+    {
+      "path": "contracts/approval-escrow/validators/approval_escrow.ak",
+      "sha256": "cacd4a39e2d6499e07f7dd76d83ab192d3cb9bc96996483ce8caf9a3385b06dd"
+    },
+    {
+      "path": "contracts/approval-escrow/lib/mew/types.ak",
+      "sha256": "12fb9f7484def7cde21bf361845d774ab35ea2d759bbb146819fa1349aa3c233"
+    },
+    {
+      "path": "contracts/approval-escrow/plutus.json",
+      "sha256": "abe6547ac833a48772ce6e07e9a1071a2e1d6928e9c103195390e88e9474249f"
+    },
+    {
+      "path": "contracts/approval-escrow/aiken.toml",
+      "sha256": "69ffda0b0ac396bc64d6006475c6f30b98aff990b5657528c0ccb1543d65bc15"
+    },
+    {
+      "path": "contracts/approval-escrow/aiken.lock",
+      "sha256": "b285931c531ca3cfebba9a9778627934aa062a46b33f1fb280d0867736ae4066"
+    },
+    {
+      "path": "src/adapters/escrow-transaction.mjs",
+      "sha256": "ced4568251b2cab7db2a4e89a27f970d74ae43bf71fe0ff59f741b47fb8c28d8"
+    },
+    {
+      "path": "src/adapters/escrow-witness-review.mjs",
+      "sha256": "16c00a44f3b278c8d3c2f0ff297c83dbfd9a81d10162c3219ce6edf10c1bb954"
+    },
+    {
+      "path": "src/integration/service.mjs",
+      "sha256": "5ba22f63b6ae37c7111b4d2eca1fadebf1bae27010f90ede3420d0a619448978"
+    },
+    {
+      "path": "src/integration/store.mjs",
+      "sha256": "47de0e34850869040c80f8e4893149123dc6acc9e499d7db19ec28832d601d9c"
+    }
+  ],
+  "requiredReview": [
+    "Custody/authority/recipient/amount/datum/redeemer substitution",
+    "Funded preprod funding, bilateral accept, cancel/refund and closing evidence",
+    "Exact protocol cost models, fees, minimum outputs, collateral and final transaction evaluation",
+    "Durable unknown-state replay, rollback, global input locks, authenticated delivery and separate payment facts",
+    "Separate native-token asset/ADA-overhead implementation before Masumi tUSDM"
+  ],
+  "independentAuditCompleted": false,
+  "limitations": [
+    "This manifest is a scope/digest handoff, not assessor findings, cryptographic attestation or an audit.",
+    "Current source bytes may change; any later audit must rebind its scope."
+  ]
+}

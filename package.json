@@ -56,7 +56,9 @@
     "integration:contention": "node scripts/integration-contention.mjs",
     "supabase:auth-preflight": "node --env-file-if-exists=.env.local scripts/supabase-auth-preflight.mjs",
     "model:experiment-audit": "node scripts/model-experiment-audit.mjs",
-    "model:localized-experiment-audit": "node scripts/model-experiment-localized-audit.mjs"
+    "model:localized-experiment-audit": "node scripts/model-experiment-localized-audit.mjs",
+    "model:blind-review": "node scripts/model-blind-review.mjs",
+    "escrow:witness-review": "node scripts/escrow-witness-review.mjs"
   },
   "dependencies": {
     "@emurgo/cardano-serialization-lib-nodejs": "15.0.3",

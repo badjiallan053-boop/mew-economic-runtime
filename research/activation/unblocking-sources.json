@@ -1,0 +1,84 @@
+{
+  "schema": "mew.unblocking-sources.v1",
+  "checkedAt": "2026-10-07T23:26:31.737Z",
+  "sources": [
+    {
+      "repository": "ai-evals-course/evals-skills",
+      "revision": "80d5f7b0127c7572ed9e9339937adbfd7240ffeb",
+      "path": "README.md",
+      "url": "https://github.com/ai-evals-course/evals-skills/blob/80d5f7b0127c7572ed9e9339937adbfd7240ffeb/README.md",
+      "sha256": "868be07b328ec2ef44f7e702ea945106e9b41fe7e235f8f5a3dc6f90c955c3fb",
+      "bytes": 4398,
+      "usage": "Knowledge/reference, not executable code"
+    },
+    {
+      "repository": "ai-evals-course/evals-skills",
+      "revision": "80d5f7b0127c7572ed9e9339937adbfd7240ffeb",
+      "path": "skills/error-discovery/SKILL.md",
+      "url": "https://github.com/ai-evals-course/evals-skills/blob/80d5f7b0127c7572ed9e9339937adbfd7240ffeb/skills/error-discovery/SKILL.md",
+      "sha256": "e125c9b764b7aa658ea8c9104fb2856b67b40c0604e73d5bfe142e0dd5d10149",
+      "bytes": 14931,
+      "usage": "Pinned official bundle installed; interactive human workflow not invoked"
+    },
+    {
+      "repository": "cardano-foundation/cardano-x402-facilitator",
+      "revision": "97add9f8446630355d77f86c3d040c56e15ca5e4",
+      "path": "docs/verification.md",
+      "url": "https://github.com/cardano-foundation/cardano-x402-facilitator/blob/97add9f8446630355d77f86c3d040c56e15ca5e4/docs/verification.md",
+      "sha256": "0bf45de6074ac04e139a0fecb639f5e639ba16c4705cf8f48d13a66fa4444907",
+      "bytes": 6370,
+      "usage": "Read as design reference; no facilitator installed or called"
+    },
+    {
+      "repository": "ai-evals-course/judgy",
+      "revision": "e6cd4fe96a0c843441c648e85d7be95d2ee81762",
+      "path": "README.md",
+      "url": "https://github.com/ai-evals-course/judgy/blob/e6cd4fe96a0c843441c648e85d7be95d2ee81762/README.md",
+      "sha256": "cd261e259eaef2136c30a1f09cb065845580390fb335551eae3a0c96f20e7ebc",
+      "bytes": 5545,
+      "usage": "Read calibration requirements; no installation or judge run"
+    }
+  ],
+  "video": {
+    "url": "https://www.youtube.com/watch?v=tqUDjc1HzO4",
+    "publisherLink": "https://hamel.dev/blog/posts/evals-skills/",
+    "captionSegments": 331,
+    "captionSha256": "149777a27c8fa6fb633432608188d00c10e29a46071a11a70a01240ac6be3441",
+    "access": "English captions retrieved; relevant sections inspected. Not watched.",
+    "inspectedRangesSeconds": [
+      [
+        168,
+        310
+      ],
+      [
+        531,
+        659
+      ],
+      [
+        1171,
+        1365
+      ]
+    ],
+    "adopted": "Human-grounded trace review and revisiting candidate failure modes",
+    "trainingAuthorized": false,
+    "rawCaptionsCommitted": false
+  },
+  "additionalPrimaryReferences": [
+    {
+      "url": "https://aiken-lang.org/language-tour/tests",
+      "access": "Official testing reference inspected; no new contract audit or compiler run"
+    },
+    {
+      "url": "https://github.com/ml-explore/mlx-lm",
+      "access": "README inspected; no environment or weights changed"
+    },
+    {
+      "url": "https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507",
+      "access": "Official model card inspected; candidate only, no download/inference"
+    }
+  ],
+  "limitations": [
+    "Repository or caption access does not grant wallet authority, training reuse or independent audit evidence.",
+    "No automated judge or authenticated human review ran."
+  ]
+}

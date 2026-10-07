@@ -261,3 +261,11 @@ ACADEMIC_ACTIVATION_NOTES.md and experiment source manifests. No course material
 is training-approved. No extra agent framework or university implementation was
 copied. The user-requested Supabase SDK packages were installed with scripts
 disabled; these are application dependencies, not an agent-skill runtime.
+# Model and payment unblocking follow-up (8 October 2026)
+
+Installed the official `error-discovery` skill from skills.sh at
+`80d5f7b0127c7572ed9e9339937adbfd7240ffeb`, preserving license and source hashes in
+`.agents/skills/error-discovery/PROVENANCE.json`. No interactive human review ran.
+Added original `mew-blinded-model-review` and `mew-external-signer-review` skills
+and routed them from `mew-activation-orchestrator`. See
+`docs/MODEL_PAYMENT_UNBLOCKING.md` for actual commands, research and boundaries.

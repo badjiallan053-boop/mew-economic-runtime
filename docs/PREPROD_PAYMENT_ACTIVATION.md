@@ -1,5 +1,9 @@
 # Preprod payment activation evidence
 
+The offline `escrow:witness-review` tool now verifies supplied transaction
+signatures against a freshly rebuilt exact draft; see
+docs/MODEL_PAYMENT_UNBLOCKING.md. It is not a signer, submitter or activation gate.
+
 The private integration prepares unsigned ADA escrow funding drafts and records full exposure. It does not sign, broadcast or implement a native-token ledger. The funded-wallet, closing and independent-audit gates remain open. This review is internal engineering work, not an independent contract audit.
 
 ## Read-only wallet observation

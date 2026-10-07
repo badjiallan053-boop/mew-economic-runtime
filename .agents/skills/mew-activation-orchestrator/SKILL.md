@@ -5,6 +5,11 @@ description: Coordinate MEW private database, model evaluation and preprod payme
 
 # MEW activation coordinator
 
+For the current quality/custody blockers, route preserved paired answers to
+`mew-blinded-model-review` and offline transaction witnesses to
+`mew-external-signer-review`. Their outputs remain evidence preparation. Read
+docs/MODEL_PAYMENT_UNBLOCKING.md for the exact tools and remaining release gates.
+
 Read `docs/ACTIVATION_TEAM.md` and current `docs/SUPABASE_MODEL_PAYMENTS.md` before assigning work. Keep three implementation lanes; use a separate internal review pass for disputed evidence. Add agents only for distinct deliverables with separate ownership.
 
 Route private connection/enrollment to `mew-private-database-activation`, model/provider and semantic evaluation to `mew-live-model-evaluation`, and wallet/chain/closing evidence to `mew-preprod-payment-review`. Read their repository-local SKILL.md files explicitly if session discovery has not indexed them yet. These are procedures; no remote model worker or paid runtime agent starts when a skill is read.

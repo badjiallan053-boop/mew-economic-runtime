@@ -1,0 +1,49 @@
+{
+  "schema": "mew.model-payment-unblocking-verification.v1",
+  "checkedAt": "2026-10-07T23:28:09.313Z",
+  "tests": {
+    "passed": 387,
+    "failed": 0,
+    "skipped": 0,
+    "logSha256": "8097fbcafbf984a04adb3f57a15632e43d0b826de30970999ad9dc91d5ca2f85"
+  },
+  "buildPassed": true,
+  "blindedComparison": {
+    "pairs": 12,
+    "english": 6,
+    "french": 6,
+    "packSha256": "3881afefd44502f56acd47e40cd406019fb3335306f58e30ddc27a9d2a6d8b26",
+    "annotations": 0,
+    "authenticatedHumanReviews": 0,
+    "semanticPasses": null,
+    "customerHoldoutCases": 0,
+    "notesImportWithAgentUiFixture": true,
+    "copyableExportBrowserVerified": true,
+    "nativeDownloadVerified": false
+  },
+  "offlineWitnessCli": {
+    "synthetic": true,
+    "allRequiredKeysPresent": true,
+    "transactionHash": "2d1a9c7b65c6e4ca349fa3289bd0829b03423e44a7b5012431e2fab9f819ba9d",
+    "dispatchAllowed": false,
+    "sourceReceiptSha256": "c7589fdacff991f781b2b4e5541aa8d7ceffa66bd00b5ce163669caf2204f854"
+  },
+  "skillFrontmatterValidated": [
+    "error-discovery",
+    "mew-blinded-model-review",
+    "mew-external-signer-review"
+  ],
+  "newModelGenerations": 0,
+  "weightsDownloaded": false,
+  "trainingPerformed": false,
+  "realWalletSignatures": 0,
+  "broadcastTransactions": 0,
+  "modelActivationAllowed": false,
+  "paymentsEnabled": false,
+  "publicDeploymentChanged": false,
+  "limitations": [
+    "Ephemeral test-key signatures are fixture cryptography, not a funded wallet transaction.",
+    "Known development cases and self-declared review cannot establish model quality or release eligibility.",
+    "No private database login, customer pilot, independent contract audit or funded payment lifecycle was completed."
+  ]
+}

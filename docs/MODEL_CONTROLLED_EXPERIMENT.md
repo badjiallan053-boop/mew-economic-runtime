@@ -1,5 +1,9 @@
 # One prompt change, with real local inference
 
+Follow-up: docs/MODEL_PAYMENT_UNBLOCKING.md now provides a separate randomized,
+language-balanced blinded review of the preserved baseline/localized outputs.
+It makes no new model call and does not supply authenticated review or a holdout.
+
 On 8 October 2026, MEW ran 24 new local generations: the unchanged baseline
 system prompt and one candidate prompt, each on the same twelve frozen EN/FR
 development cases. Both runs produced 12/12 valid advisory JSON contracts with
