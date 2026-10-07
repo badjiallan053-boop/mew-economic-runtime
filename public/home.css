@@ -5,3 +5,5 @@ section[id]{scroll-margin-top:24px}
 .budget-track>span{width:50%}.story-art{margin:0;display:flex;flex-direction:column;justify-content:center;padding:14px;height:auto;min-height:400px}.story-art [data-mandate-art]{width:100%}.story-art figcaption{padding:6px 16px 18px;color:#acb9cc;font-size:12px;line-height:1.8}.story-art figcaption strong,.story-art figcaption span,.story-art figcaption small{display:block}.story-art figcaption strong{color:#edf3fa;font-size:16px}.story-art figcaption small{font-size:10px}@media(max-width:700px){.story-art{min-height:0}.hero{padding-top:40px}.story-art figcaption{padding:4px 10px 12px}}
 
 @media(min-width:741px){.hero{padding:40px 0 50px}.hero h1{font-size:clamp(60px,6.4vw,82px)}}
+/* Keep the first action within the desktop reading sequence. */
+@media(min-width:741px){.hero{padding:24px 0 44px}.hero h1{font-size:clamp(56px,5.4vw,70px);line-height:1.02}.hero .lead{font-size:16px;line-height:1.75}}

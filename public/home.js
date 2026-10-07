@@ -24,6 +24,7 @@ let checkpoint=0;
 function renderIllustration(){
  document.dispatchEvent(new CustomEvent('mew:art-phase',{detail:{phase:['reserved','unknown','defer'][checkpoint]}}));
  const item=checkpoints[checkpoint];
+ document.dispatchEvent(new CustomEvent('mew:ui-update',{detail:{kind:'illustration'}}));
  document.querySelector('#fixture-decision').textContent=item.decision;
  document.querySelector('#fixture-kicker').textContent=item.kicker;
  document.querySelector('#fixture-title').textContent=item.title;

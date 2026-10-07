@@ -93,3 +93,7 @@ Reviewed [skills.sh copywriting](https://www.skills.sh/coreyhaines31/marketingsk
 ## Connected story and original algorithmic art
 
 Applied local narrative-score and jury UI/UX review with two specialist agents. Inspected [Anthropic algorithmic-art instructions](https://github.com/anthropics/skills/blob/main/skills/algorithmic-art/SKILL.md) as a reference for original seeded art. Implemented a lightweight SVG field instead of the prescribed p5/template package to preserve the existing site architecture. No third-party executable skill installed. The repeated illustration explains retained capacity; it is not live telemetry. See STORY_JOURNEY.md. A [YouTube payment tutorial](https://www.youtube.com/watch?v=1r-F3FIONl8) was opened but its transcript was unavailable; no technical conclusions rely on unseen video content.
+
+## Interaction and motion refinement
+
+Applied local jury UI/UX and evidence-design guidance. Inspected skills.sh interaction-design and its upstream SKILL.md, Vercel Labs' view-transition demo and Chrome's cross-document specification guide. Implemented original native CSS/Web Animations enhancements; no external skill installer or animation framework added. See MOTION_DESIGN.md for treatments, evidence and limitations. Advisory/runtime agent registries are unchanged.
