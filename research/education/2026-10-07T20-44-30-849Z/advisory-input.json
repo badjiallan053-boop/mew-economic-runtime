@@ -1,0 +1,140 @@
+{
+  "schema": "mew.education-context.v1",
+  "asOf": "2026-10-07T20:44:35.964Z",
+  "authority": "advisory-only",
+  "sourceTextUntrusted": true,
+  "trainingAuthorized": false,
+  "modelActivationAllowed": false,
+  "paymentsEnabled": false,
+  "evidence": [
+    {
+      "id": "stanford-cs251:2026-10-07T20:44:30.911Z",
+      "sourceId": "stanford-cs251",
+      "source": "https://cs251.stanford.edu/",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.education-observation.v1\",\"sourceId\":\"stanford-cs251\",\"sourceUrl\":\"https://cs251.stanford.edu/\",\"observedAt\":\"2026-10-07T20:44:30.911Z\",\"availableAt\":\"2026-10-07T20:44:30.911Z\",\"eventAt\":\"2026-10-07T20:44:30.911Z\",\"summary\":\"Public course context on wallets, consensus and blockchain software. Recheck rollback and key boundaries before any preprod signing; Ethereum or Bitcoin examples do not establish Cardano behavior.\",\"workflowRole\":\"blockchain-risk-review\",\"license\":{\"metadata\":\"MEW original research notes; underlying bibliographic facts\",\"content\":\"unknown\",\"trainingReuseApproved\":false},\"freshForSeconds\":2592000,\"authority\":\"advisory-only\",\"trainingEligible\":false,\"sourceTextUntrusted\":true,\"id\":\"stanford-cs251:2026-10-07T20:44:30.911Z\",\"title\":\"CS251: Blockchain Technologies\",\"referenceUrl\":\"https://cs251.stanford.edu/\",\"grain\":\"course_reference\",\"reviewStatus\":\"source-reviewed\",\"commit\":null,\"sourceResponseSha256\":\"b837a6bf3ce04e79ec535223e5324c4d6927e9385d089a27108a1916da426d38\"}"
+    },
+    {
+      "id": "stanford-cs229:2026-10-07T20:44:31.891Z",
+      "sourceId": "stanford-cs229",
+      "source": "https://cs229.stanford.edu/index.html-fall25",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.education-observation.v1\",\"sourceId\":\"stanford-cs229\",\"sourceUrl\":\"https://cs229.stanford.edu/index.html-fall25\",\"observedAt\":\"2026-10-07T20:44:31.891Z\",\"availableAt\":\"2026-10-07T20:44:31.891Z\",\"eventAt\":\"2026-10-07T20:44:31.891Z\",\"summary\":\"Dataset splits, model evaluation and error analysis inform a failure taxonomy. Freeze development comparisons, reserve a separate human-reviewed holdout and distinguish response shape from answer quality.\",\"workflowRole\":\"evaluation-review\",\"license\":{\"metadata\":\"MEW original research notes; underlying bibliographic facts\",\"content\":\"unknown\",\"trainingReuseApproved\":false},\"freshForSeconds\":2592000,\"authority\":\"advisory-only\",\"trainingEligible\":false,\"sourceTextUntrusted\":true,\"id\":\"stanford-cs229:2026-10-07T20:44:31.891Z\",\"title\":\"CS229: Machine Learning, Fall 2025\",\"referenceUrl\":\"https://cs229.stanford.edu/index.html-fall25\",\"grain\":\"course_reference\",\"reviewStatus\":\"source-reviewed\",\"commit\":null,\"sourceResponseSha256\":\"61058df526fcb69f88b4e29590149c64550cdf8e80771bb880e81ddf5555bba5\"}"
+    },
+    {
+      "id": "stanford-cs25:2026-10-07T20:44:33.217Z",
+      "sourceId": "stanford-cs25",
+      "source": "https://web.stanford.edu/class/cs25/recordings/",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.education-observation.v1\",\"sourceId\":\"stanford-cs25\",\"sourceUrl\":\"https://web.stanford.edu/class/cs25/recordings/\",\"observedAt\":\"2026-10-07T20:44:33.217Z\",\"availableAt\":\"2026-10-07T20:44:33.217Z\",\"eventAt\":\"2026-10-07T20:44:33.217Z\",\"summary\":\"Official recording index links public talks on retrieval, alignment and generalist agents. Video access is not a grant of training rights or proof of reliable autonomous commerce.\",\"workflowRole\":\"retrieval-research\",\"license\":{\"metadata\":\"MEW original research notes; underlying bibliographic facts\",\"content\":\"unknown\",\"trainingReuseApproved\":false},\"freshForSeconds\":2592000,\"authority\":\"advisory-only\",\"trainingEligible\":false,\"sourceTextUntrusted\":true,\"id\":\"stanford-cs25:2026-10-07T20:44:33.217Z\",\"title\":\"CS25: Transformers United recordings\",\"referenceUrl\":\"https://web.stanford.edu/class/cs25/recordings/\",\"grain\":\"course_reference\",\"reviewStatus\":\"source-reviewed\",\"commit\":null,\"sourceResponseSha256\":\"87c934853ed74dccfed263dd2bd52c77baadf6e37382e5ab226828803d1460d4\"}"
+    },
+    {
+      "id": "stanford-cs336:2026-10-07T20:44:33.265Z",
+      "sourceId": "stanford-cs336",
+      "source": "https://cs336.stanford.edu/",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.education-observation.v1\",\"sourceId\":\"stanford-cs336\",\"sourceUrl\":\"https://cs336.stanford.edu/\",\"observedAt\":\"2026-10-07T20:44:33.265Z\",\"availableAt\":\"2026-10-07T20:44:33.265Z\",\"eventAt\":\"2026-10-07T20:44:33.265Z\",\"summary\":\"Current public syllabus includes evaluation, data filtering, deduplication and post-training. Apply these as review gates before adaptation; no cloud training or academic assignment execution is performed.\",\"workflowRole\":\"data-quality-review\",\"license\":{\"metadata\":\"MEW original research notes; underlying bibliographic facts\",\"content\":\"unknown\",\"trainingReuseApproved\":false},\"freshForSeconds\":2592000,\"authority\":\"advisory-only\",\"trainingEligible\":false,\"sourceTextUntrusted\":true,\"id\":\"stanford-cs336:2026-10-07T20:44:33.265Z\",\"title\":\"CS336: Language Modeling from Scratch\",\"referenceUrl\":\"https://cs336.stanford.edu/\",\"grain\":\"course_reference\",\"reviewStatus\":\"source-reviewed\",\"commit\":null,\"sourceResponseSha256\":\"bd57fae299fec60afedb5a22edb325a68107fa1af0cd83641695470587f7a4a7\"}"
+    },
+    {
+      "id": "stanford-data:2026-10-07T20:44:33.310Z",
+      "sourceId": "stanford-data",
+      "source": "https://github.com/stanford-cs336/assignment4-data/tree/0555bea66369872d912652debf10b115ca0688c8",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.education-observation.v1\",\"sourceId\":\"stanford-data\",\"sourceUrl\":\"https://raw.githubusercontent.com/stanford-cs336/assignment4-data/0555bea66369872d912652debf10b115ca0688c8/README.md\",\"observedAt\":\"2026-10-07T20:44:33.310Z\",\"availableAt\":\"2026-10-07T20:44:33.310Z\",\"eventAt\":\"2026-10-07T20:44:33.310Z\",\"summary\":\"Reference for filtering and deduplication evaluation; its learner implementation is incomplete and its full training configuration is not a low-cost MEW deployment.\",\"workflowRole\":\"data-quality-review\",\"license\":{\"metadata\":\"MEW original research notes; underlying bibliographic facts\",\"content\":\"MIT (repository metadata); dataset rights separate\",\"trainingReuseApproved\":false},\"freshForSeconds\":2592000,\"authority\":\"advisory-only\",\"trainingEligible\":false,\"sourceTextUntrusted\":true,\"id\":\"stanford-data:2026-10-07T20:44:33.310Z\",\"title\":\"CS336 data assignment reference\",\"referenceUrl\":\"https://github.com/stanford-cs336/assignment4-data/tree/0555bea66369872d912652debf10b115ca0688c8\",\"grain\":\"repository_reference\",\"reviewStatus\":\"source-reviewed\",\"commit\":\"0555bea66369872d912652debf10b115ca0688c8\",\"sourceResponseSha256\":\"adc51b90e2ef0bcea6c599052853106facd6bd70207c25f30f7f0051647f38cd\"}"
+    },
+    {
+      "id": "stanford-alignment:2026-10-07T20:44:33.325Z",
+      "sourceId": "stanford-alignment",
+      "source": "https://github.com/stanford-cs336/assignment5-alignment/tree/c2734a26308710949fe13226960a1e8cece94b7e",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.education-observation.v1\",\"sourceId\":\"stanford-alignment\",\"sourceUrl\":\"https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/c2734a26308710949fe13226960a1e8cece94b7e/README.md\",\"observedAt\":\"2026-10-07T20:44:33.325Z\",\"availableAt\":\"2026-10-07T20:44:33.325Z\",\"eventAt\":\"2026-10-07T20:44:33.325Z\",\"summary\":\"Reference for separating alignment objectives and tests. Starter adapters require learner implementation; no model training result or usable finished agent is implied.\",\"workflowRole\":\"evaluation-review\",\"license\":{\"metadata\":\"MEW original research notes; underlying bibliographic facts\",\"content\":\"unknown\",\"trainingReuseApproved\":false},\"freshForSeconds\":2592000,\"authority\":\"advisory-only\",\"trainingEligible\":false,\"sourceTextUntrusted\":true,\"id\":\"stanford-alignment:2026-10-07T20:44:33.325Z\",\"title\":\"CS336 alignment assignment reference\",\"referenceUrl\":\"https://github.com/stanford-cs336/assignment5-alignment/tree/c2734a26308710949fe13226960a1e8cece94b7e\",\"grain\":\"repository_reference\",\"reviewStatus\":\"source-reviewed\",\"commit\":\"c2734a26308710949fe13226960a1e8cece94b7e\",\"sourceResponseSha256\":\"a3c61c9a6adc99e0910190a7abfe1daaefd70943bf331711c04e4eea1afe639e\"}"
+    },
+    {
+      "id": "koios-api:2026-10-07T20:44:33.340Z",
+      "sourceId": "koios-api",
+      "source": "https://github.com/cardano-community/koios-artifacts/tree/2e2eb57933e1e2528de5ca36ee961759841cf389",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.education-observation.v1\",\"sourceId\":\"koios-api\",\"sourceUrl\":\"https://raw.githubusercontent.com/cardano-community/koios-artifacts/2e2eb57933e1e2528de5ca36ee961759841cf389/README.md\",\"observedAt\":\"2026-10-07T20:44:33.340Z\",\"availableAt\":\"2026-10-07T20:44:33.340Z\",\"eventAt\":\"2026-10-07T20:44:33.340Z\",\"summary\":\"Public Cardano indexer interface reference. A network-tip snapshot cannot verify MEW settlement, wallet ownership, delivery or transaction finality.\",\"workflowRole\":\"blockchain-risk-review\",\"license\":{\"metadata\":\"MEW original research notes; underlying bibliographic facts\",\"content\":\"CC-BY-4.0 repository; chain-data rights separate\",\"trainingReuseApproved\":false},\"freshForSeconds\":2592000,\"authority\":\"advisory-only\",\"trainingEligible\":false,\"sourceTextUntrusted\":true,\"id\":\"koios-api:2026-10-07T20:44:33.340Z\",\"title\":\"Koios public API repository\",\"referenceUrl\":\"https://github.com/cardano-community/koios-artifacts/tree/2e2eb57933e1e2528de5ca36ee961759841cf389\",\"grain\":\"repository_reference\",\"reviewStatus\":\"source-reviewed\",\"commit\":\"2e2eb57933e1e2528de5ca36ee961759841cf389\",\"sourceResponseSha256\":\"daa96bfd6b10cef7a95da9c989d60615ba9c54048b6ed99cdd41326369fce05a\"}"
+    },
+    {
+      "id": "crossref-api:2026-10-07T20:44:33.361Z",
+      "sourceId": "crossref-api",
+      "source": "https://github.com/CrossRef/rest-api-doc/tree/00b1cc2c90e62d49c82f5381710590a6d9ca53ff",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.education-observation.v1\",\"sourceId\":\"crossref-api\",\"sourceUrl\":\"https://raw.githubusercontent.com/CrossRef/rest-api-doc/00b1cc2c90e62d49c82f5381710590a6d9ca53ff/README.md\",\"observedAt\":\"2026-10-07T20:44:33.361Z\",\"availableAt\":\"2026-10-07T20:44:33.361Z\",\"eventAt\":\"2026-10-07T20:44:33.361Z\",\"summary\":\"Historical REST API source; README explicitly points to current API documentation. Only bounded bibliographic metadata is collected, and paper titles do not establish paper findings.\",\"workflowRole\":\"research-discovery\",\"license\":{\"metadata\":\"MEW original research notes; underlying bibliographic facts\",\"content\":\"CC-BY-4.0 documentation; individual metadata no Crossref ownership claim\",\"trainingReuseApproved\":false},\"freshForSeconds\":2592000,\"authority\":\"advisory-only\",\"trainingEligible\":false,\"sourceTextUntrusted\":true,\"id\":\"crossref-api:2026-10-07T20:44:33.361Z\",\"title\":\"Crossref API repository, deprecated documentation\",\"referenceUrl\":\"https://github.com/CrossRef/rest-api-doc/tree/00b1cc2c90e62d49c82f5381710590a6d9ca53ff\",\"grain\":\"repository_reference\",\"reviewStatus\":\"source-reviewed\",\"commit\":\"00b1cc2c90e62d49c82f5381710590a6d9ca53ff\",\"sourceResponseSha256\":\"7c1d9010cacd833645f7019ea6a8825b70fb3f33b5db98907c5d0637eec4663a\"}"
+    },
+    {
+      "id": "openalex-api:2026-10-07T20:44:33.377Z",
+      "sourceId": "openalex-api",
+      "source": "https://github.com/ourresearch/openalex/tree/312af8772356104fc80cb4597113a5ab7ce3b027",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.education-observation.v1\",\"sourceId\":\"openalex-api\",\"sourceUrl\":\"https://raw.githubusercontent.com/ourresearch/openalex/312af8772356104fc80cb4597113a5ab7ce3b027/README.md\",\"observedAt\":\"2026-10-07T20:44:33.377Z\",\"availableAt\":\"2026-10-07T20:44:33.377Z\",\"eventAt\":\"2026-10-07T20:44:33.377Z\",\"summary\":\"Public research-index source. Current documentation states basic no-key access; failures remain recorded. The API metadata license does not transfer publisher full-text rights.\",\"workflowRole\":\"research-discovery\",\"license\":{\"metadata\":\"MEW original research notes; underlying bibliographic facts\",\"content\":\"unknown repository; API metadata CC0 per current docs\",\"trainingReuseApproved\":false},\"freshForSeconds\":2592000,\"authority\":\"advisory-only\",\"trainingEligible\":false,\"sourceTextUntrusted\":true,\"id\":\"openalex-api:2026-10-07T20:44:33.377Z\",\"title\":\"OpenAlex API source reference\",\"referenceUrl\":\"https://github.com/ourresearch/openalex/tree/312af8772356104fc80cb4597113a5ab7ce3b027\",\"grain\":\"repository_reference\",\"reviewStatus\":\"source-reviewed\",\"commit\":\"312af8772356104fc80cb4597113a5ab7ce3b027\",\"sourceResponseSha256\":\"370887bcac58d137138852c291304d2879d348d7c2009da13c909a4c6e57d59e\"}"
+    },
+    {
+      "id": "crossref-rag:10.36085/jsai.v9i1.9897:2026-10-07T20:44:34.161Z",
+      "sourceId": "crossref-rag",
+      "source": "https://doi.org/10.36085%2Fjsai.v9i1.9897",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.education-observation.v1\",\"sourceId\":\"crossref-rag\",\"sourceUrl\":\"https://api.crossref.org/works?query.bibliographic=retrieval+augmented+generation+evaluation&rows=4&select=DOI%2Ctitle%2Cpublished%2Ctype%2Clicense&filter=until-pub-date%3A2026-10-08\",\"observedAt\":\"2026-10-07T20:44:34.161Z\",\"availableAt\":\"2026-10-07T20:44:34.161Z\",\"eventAt\":\"2026-01-23T00:00:00.000Z\",\"summary\":\"Bounded relevance-ranked bibliographic discovery only; human relevance review and full source inspection remain pending.\",\"workflowRole\":\"research-discovery\",\"license\":{\"metadata\":\"MEW original research notes; underlying bibliographic facts\",\"content\":\"Crossref metadata; publisher content rights not evaluated\",\"trainingReuseApproved\":false},\"freshForSeconds\":86400,\"authority\":\"advisory-only\",\"trainingEligible\":false,\"sourceTextUntrusted\":true,\"title\":\"Evaluation of Retrieval Methods in Domain-Specific Chatbots Based on Retrieval-Augmented Generation\",\"alternativeTitles\":[\"Evaluasi Metode Retrieval pada Chatbot Domain Khusus Berbasis Retrieval-Augmented Generation\"],\"referenceUrl\":\"https://doi.org/10.36085%2Fjsai.v9i1.9897\",\"publicationPrecision\":\"day\",\"workType\":\"journal-article\",\"id\":\"crossref-rag:10.36085/jsai.v9i1.9897:2026-10-07T20:44:34.161Z\",\"grain\":\"work_metadata\",\"reviewStatus\":\"discovery-only\",\"sourceResponseSha256\":\"538625acc3209df36cd0cfc4329df6160e03c52b8afaddeda7edcd30656bfa28\"}"
+    },
+    {
+      "id": "crossref-rag:10.18653/v1/2026.magmar-main.6:2026-10-07T20:44:34.161Z",
+      "sourceId": "crossref-rag",
+      "source": "https://doi.org/10.18653%2Fv1%2F2026.magmar-main.6",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.education-observation.v1\",\"sourceId\":\"crossref-rag\",\"sourceUrl\":\"https://api.crossref.org/works?query.bibliographic=retrieval+augmented+generation+evaluation&rows=4&select=DOI%2Ctitle%2Cpublished%2Ctype%2Clicense&filter=until-pub-date%3A2026-10-08\",\"observedAt\":\"2026-10-07T20:44:34.161Z\",\"availableAt\":\"2026-10-07T20:44:34.161Z\",\"eventAt\":\"2026-01-01T00:00:00.000Z\",\"summary\":\"Bounded relevance-ranked bibliographic discovery only; human relevance review and full source inspection remain pending.\",\"workflowRole\":\"research-discovery\",\"license\":{\"metadata\":\"MEW original research notes; underlying bibliographic facts\",\"content\":\"Crossref metadata; publisher content rights not evaluated\",\"trainingReuseApproved\":false},\"freshForSeconds\":86400,\"authority\":\"advisory-only\",\"trainingEligible\":false,\"sourceTextUntrusted\":true,\"title\":\"MODE-RAG: Manifold Outlier Diagnosis and Energy-based Retrieval-Augmented Generation Evaluation\",\"alternativeTitles\":[],\"referenceUrl\":\"https://doi.org/10.18653%2Fv1%2F2026.magmar-main.6\",\"publicationPrecision\":\"year\",\"workType\":\"proceedings-article\",\"id\":\"crossref-rag:10.18653/v1/2026.magmar-main.6:2026-10-07T20:44:34.161Z\",\"grain\":\"work_metadata\",\"reviewStatus\":\"discovery-only\",\"sourceResponseSha256\":\"538625acc3209df36cd0cfc4329df6160e03c52b8afaddeda7edcd30656bfa28\"}"
+    },
+    {
+      "id": "crossref-rag:10.1002/9781394374717.ch03:2026-10-07T20:44:34.161Z",
+      "sourceId": "crossref-rag",
+      "source": "https://doi.org/10.1002%2F9781394374717.ch03",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.education-observation.v1\",\"sourceId\":\"crossref-rag\",\"sourceUrl\":\"https://api.crossref.org/works?query.bibliographic=retrieval+augmented+generation+evaluation&rows=4&select=DOI%2Ctitle%2Cpublished%2Ctype%2Clicense&filter=until-pub-date%3A2026-10-08\",\"observedAt\":\"2026-10-07T20:44:34.161Z\",\"availableAt\":\"2026-10-07T20:44:34.161Z\",\"eventAt\":\"2026-06-30T00:00:00.000Z\",\"summary\":\"Bounded relevance-ranked bibliographic discovery only; human relevance review and full source inspection remain pending.\",\"workflowRole\":\"research-discovery\",\"license\":{\"metadata\":\"MEW original research notes; underlying bibliographic facts\",\"content\":\"Crossref metadata; publisher content rights not evaluated\",\"trainingReuseApproved\":false},\"freshForSeconds\":86400,\"authority\":\"advisory-only\",\"trainingEligible\":false,\"sourceTextUntrusted\":true,\"title\":\"Retrieval‐Augmented Generation\",\"alternativeTitles\":[],\"referenceUrl\":\"https://doi.org/10.1002%2F9781394374717.ch03\",\"publicationPrecision\":\"day\",\"workType\":\"other\",\"id\":\"crossref-rag:10.1002/9781394374717.ch03:2026-10-07T20:44:34.161Z\",\"grain\":\"work_metadata\",\"reviewStatus\":\"discovery-only\",\"sourceResponseSha256\":\"538625acc3209df36cd0cfc4329df6160e03c52b8afaddeda7edcd30656bfa28\"}"
+    },
+    {
+      "id": "crossref-rag:10.1142/9789819827602_0010:2026-10-07T20:44:34.161Z",
+      "sourceId": "crossref-rag",
+      "source": "https://doi.org/10.1142%2F9789819827602_0010",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.education-observation.v1\",\"sourceId\":\"crossref-rag\",\"sourceUrl\":\"https://api.crossref.org/works?query.bibliographic=retrieval+augmented+generation+evaluation&rows=4&select=DOI%2Ctitle%2Cpublished%2Ctype%2Clicense&filter=until-pub-date%3A2026-10-08\",\"observedAt\":\"2026-10-07T20:44:34.161Z\",\"availableAt\":\"2026-10-07T20:44:34.161Z\",\"eventAt\":\"2026-06-01T00:00:00.000Z\",\"summary\":\"Bounded relevance-ranked bibliographic discovery only; human relevance review and full source inspection remain pending.\",\"workflowRole\":\"research-discovery\",\"license\":{\"metadata\":\"MEW original research notes; underlying bibliographic facts\",\"content\":\"Crossref metadata; publisher content rights not evaluated\",\"trainingReuseApproved\":false},\"freshForSeconds\":86400,\"authority\":\"advisory-only\",\"trainingEligible\":false,\"sourceTextUntrusted\":true,\"title\":\"Evaluation Methodology\",\"alternativeTitles\":[],\"referenceUrl\":\"https://doi.org/10.1142%2F9789819827602_0010\",\"publicationPrecision\":\"month\",\"workType\":\"book-chapter\",\"id\":\"crossref-rag:10.1142/9789819827602_0010:2026-10-07T20:44:34.161Z\",\"grain\":\"work_metadata\",\"reviewStatus\":\"discovery-only\",\"sourceResponseSha256\":\"538625acc3209df36cd0cfc4329df6160e03c52b8afaddeda7edcd30656bfa28\"}"
+    },
+    {
+      "id": "openalex-rag:W4416095724:2026-10-07T20:44:35.317Z",
+      "sourceId": "openalex-rag",
+      "source": "https://doi.org/10.48550/arxiv.2505.04680",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.education-observation.v1\",\"sourceId\":\"openalex-rag\",\"sourceUrl\":\"https://api.openalex.org/works?search=retrieval+augmented+generation+evaluation&per_page=4&select=id%2Cdoi%2Ctitle%2Cpublication_date%2Ctype&filter=to_publication_date%3A2026-10-08\",\"observedAt\":\"2026-10-07T20:44:35.317Z\",\"availableAt\":\"2026-10-07T20:44:35.317Z\",\"eventAt\":\"2025-05-07T00:00:00.000Z\",\"summary\":\"Bounded public research metadata discovery only; no abstract, authors, personal identifiers or full text are retained.\",\"workflowRole\":\"research-discovery\",\"license\":{\"metadata\":\"MEW original research notes; underlying bibliographic facts\",\"content\":\"CC0 metadata; publisher content rights separate\",\"trainingReuseApproved\":false},\"freshForSeconds\":86400,\"authority\":\"advisory-only\",\"trainingEligible\":false,\"sourceTextUntrusted\":true,\"title\":\"Retrieval Augmented Generation Evaluation for Health Documents\",\"referenceUrl\":\"https://doi.org/10.48550/arxiv.2505.04680\",\"publicationPrecision\":\"day\",\"workType\":\"preprint\",\"id\":\"openalex-rag:W4416095724:2026-10-07T20:44:35.317Z\",\"grain\":\"work_metadata\",\"reviewStatus\":\"discovery-only\",\"sourceResponseSha256\":\"f7160f851d7e3980443577465e4682a4992fc923beb346135359ba02ca40dd07\"}"
+    },
+    {
+      "id": "openalex-rag:W7162642619:2026-10-07T20:44:35.317Z",
+      "sourceId": "openalex-rag",
+      "source": "https://doi.org/10.48550/arxiv.2605.27445",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.education-observation.v1\",\"sourceId\":\"openalex-rag\",\"sourceUrl\":\"https://api.openalex.org/works?search=retrieval+augmented+generation+evaluation&per_page=4&select=id%2Cdoi%2Ctitle%2Cpublication_date%2Ctype&filter=to_publication_date%3A2026-10-08\",\"observedAt\":\"2026-10-07T20:44:35.317Z\",\"availableAt\":\"2026-10-07T20:44:35.317Z\",\"eventAt\":\"2026-05-23T00:00:00.000Z\",\"summary\":\"Bounded public research metadata discovery only; no abstract, authors, personal identifiers or full text are retained.\",\"workflowRole\":\"research-discovery\",\"license\":{\"metadata\":\"MEW original research notes; underlying bibliographic facts\",\"content\":\"CC0 metadata; publisher content rights separate\",\"trainingReuseApproved\":false},\"freshForSeconds\":86400,\"authority\":\"advisory-only\",\"trainingEligible\":false,\"sourceTextUntrusted\":true,\"title\":\"RAGe: A Retrieval-Augmented Generation Evaluation Framework\",\"referenceUrl\":\"https://doi.org/10.48550/arxiv.2605.27445\",\"publicationPrecision\":\"day\",\"workType\":\"preprint\",\"id\":\"openalex-rag:W7162642619:2026-10-07T20:44:35.317Z\",\"grain\":\"work_metadata\",\"reviewStatus\":\"discovery-only\",\"sourceResponseSha256\":\"f7160f851d7e3980443577465e4682a4992fc923beb346135359ba02ca40dd07\"}"
+    },
+    {
+      "id": "openalex-rag:W4402834774:2026-10-07T20:44:35.317Z",
+      "sourceId": "openalex-rag",
+      "source": "https://doi.org/10.1109/vtc2024-spring62846.2024.10683437",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.education-observation.v1\",\"sourceId\":\"openalex-rag\",\"sourceUrl\":\"https://api.openalex.org/works?search=retrieval+augmented+generation+evaluation&per_page=4&select=id%2Cdoi%2Ctitle%2Cpublication_date%2Ctype&filter=to_publication_date%3A2026-10-08\",\"observedAt\":\"2026-10-07T20:44:35.317Z\",\"availableAt\":\"2026-10-07T20:44:35.317Z\",\"eventAt\":\"2024-06-24T00:00:00.000Z\",\"summary\":\"Bounded public research metadata discovery only; no abstract, authors, personal identifiers or full text are retained.\",\"workflowRole\":\"research-discovery\",\"license\":{\"metadata\":\"MEW original research notes; underlying bibliographic facts\",\"content\":\"CC0 metadata; publisher content rights separate\",\"trainingReuseApproved\":false},\"freshForSeconds\":86400,\"authority\":\"advisory-only\",\"trainingEligible\":false,\"sourceTextUntrusted\":true,\"title\":\"Multimodal Retrieval Augmented Generation Evaluation Benchmark\",\"referenceUrl\":\"https://doi.org/10.1109/vtc2024-spring62846.2024.10683437\",\"publicationPrecision\":\"day\",\"workType\":\"conference-paper\",\"id\":\"openalex-rag:W4402834774:2026-10-07T20:44:35.317Z\",\"grain\":\"work_metadata\",\"reviewStatus\":\"discovery-only\",\"sourceResponseSha256\":\"f7160f851d7e3980443577465e4682a4992fc923beb346135359ba02ca40dd07\"}"
+    },
+    {
+      "id": "openalex-rag:W4416374855:2026-10-07T20:44:35.317Z",
+      "sourceId": "openalex-rag",
+      "source": "https://doi.org/10.48550/arxiv.2504.01840",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.education-observation.v1\",\"sourceId\":\"openalex-rag\",\"sourceUrl\":\"https://api.openalex.org/works?search=retrieval+augmented+generation+evaluation&per_page=4&select=id%2Cdoi%2Ctitle%2Cpublication_date%2Ctype&filter=to_publication_date%3A2026-10-08\",\"observedAt\":\"2026-10-07T20:44:35.317Z\",\"availableAt\":\"2026-10-07T20:44:35.317Z\",\"eventAt\":\"2025-04-02T00:00:00.000Z\",\"summary\":\"Bounded public research metadata discovery only; no abstract, authors, personal identifiers or full text are retained.\",\"workflowRole\":\"research-discovery\",\"license\":{\"metadata\":\"MEW original research notes; underlying bibliographic facts\",\"content\":\"CC0 metadata; publisher content rights separate\",\"trainingReuseApproved\":false},\"freshForSeconds\":86400,\"authority\":\"advisory-only\",\"trainingEligible\":false,\"sourceTextUntrusted\":true,\"title\":\"LRAGE: Legal Retrieval Augmented Generation Evaluation Tool\",\"referenceUrl\":\"https://doi.org/10.48550/arxiv.2504.01840\",\"publicationPrecision\":\"day\",\"workType\":\"preprint\",\"id\":\"openalex-rag:W4416374855:2026-10-07T20:44:35.317Z\",\"grain\":\"work_metadata\",\"reviewStatus\":\"discovery-only\",\"sourceResponseSha256\":\"f7160f851d7e3980443577465e4682a4992fc923beb346135359ba02ca40dd07\"}"
+    },
+    {
+      "id": "koios-preprod-tip:5265725:2026-10-07T20:44:35.964Z",
+      "sourceId": "koios-preprod-tip",
+      "source": "https://preprod.koios.rest/api/v1/tip?select=block_no,abs_slot,block_time",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.education-observation.v1\",\"sourceId\":\"koios-preprod-tip\",\"sourceUrl\":\"https://preprod.koios.rest/api/v1/tip?select=block_no,abs_slot,block_time\",\"observedAt\":\"2026-10-07T20:44:35.964Z\",\"availableAt\":\"2026-10-07T20:44:35.964Z\",\"eventAt\":\"2026-10-07T20:44:30.000Z\",\"summary\":\"Public network aggregate observation only; not a wallet, payment or delivery verification.\",\"workflowRole\":\"blockchain-risk-review\",\"license\":{\"metadata\":\"MEW original research notes; underlying bibliographic facts\",\"content\":\"Chain-data reuse review pending\",\"trainingReuseApproved\":false},\"freshForSeconds\":600,\"authority\":\"advisory-only\",\"trainingEligible\":false,\"sourceTextUntrusted\":true,\"id\":\"koios-preprod-tip:5265725:2026-10-07T20:44:35.964Z\",\"title\":\"Cardano preprod network tip\",\"referenceUrl\":\"https://preprod.koios.rest/api/v1/tip?select=block_no,abs_slot,block_time\",\"grain\":\"network_tip\",\"reviewStatus\":\"discovery-only\",\"network\":\"preprod\",\"metrics\":{\"blockHeight\":5265725,\"absoluteSlot\":135722670,\"blockTime\":1791405870},\"sourceResponseSha256\":\"cb0b6d1df7566138361dacf02e264901c509c0ca5500fc97f50c6c3bea04f68c\"}"
+    }
+  ],
+  "excludedRecords": 0,
+  "omittedForBudget": 0,
+  "selection": "Fixed reviewed registry plus bounded discovery; not representative or authoritative."
+}

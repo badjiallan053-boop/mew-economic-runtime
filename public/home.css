@@ -1645,3 +1645,63 @@ footer nav a:hover {
   outline-width: 3px;
   outline-offset: 5px;
 }
+
+/* Kernel-driven emphasis, never an autonomous transaction animation. */
+.decision-console {
+  transition:
+    border-color 0.28s ease,
+    box-shadow 0.28s ease;
+}
+.decision-console[data-decision="ALLOW"] {
+  border-color: #a3d9c9;
+  box-shadow:
+    0 20px 50px #0002,
+    0 0 0 1px #a3d9c918;
+}
+.decision-console[data-decision="UNKNOWN"] {
+  border-color: #c6cda8;
+}
+.decision-console[data-decision="DEFER"] {
+  border-color: #b9b4ff;
+  box-shadow:
+    0 20px 50px #0002,
+    0 0 0 1px #b9b4ff18;
+}
+.decision-badge[data-decision="UNKNOWN"] {
+  border-color: #c6cda870;
+  color: #e4e9cb;
+  background: #c6cda81a;
+}
+.demo-steps li {
+  transition:
+    opacity 0.25s ease,
+    color 0.25s ease;
+}
+.demo-steps li > span {
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+.quantity-box strong,
+#exposure-value {
+  font-variant-numeric: tabular-nums;
+}
+.sculpture[data-decision="UNKNOWN"] .art-orbit {
+  opacity: 0.5;
+}
+.sculpture[data-decision="DEFER"] .art-orbit circle:first-of-type {
+  stroke: #4345ef;
+  stroke-width: 6;
+  stroke-opacity: 0.18;
+}
+.sculpture-head button:disabled {
+  cursor: default;
+  opacity: 0.85;
+}
+@media (prefers-reduced-motion: reduce) {
+  .decision-console,
+  .demo-steps li,
+  .demo-steps li > span {
+    transition: none;
+  }
+}

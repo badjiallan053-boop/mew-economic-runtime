@@ -1,0 +1,22 @@
+{
+  "schema": "mew.education-quality.v1",
+  "asOf": "2026-10-07T20:43:20.437Z",
+  "recordCount": 22,
+  "recordsSha256": "15fb90fc60bfd4d50eacdbcb80be6ae0553c4a01e99dcc57d6eb5800ede96552",
+  "manifestSha256": "910236c3db86c0edff343251a1df3343feb7b58b3e9fa68e220e6a1710e3dbed",
+  "registrySha256": "3cfbe34cdedc5b3dcc42a8af819932a258c6af7ea7d51fc78a7a897a18e5192d",
+  "succeeded": 13,
+  "unavailable": 0,
+  "complete": true,
+  "trainingAuthorized": false,
+  "modelActivationAllowed": false,
+  "paymentsEnabled": false,
+  "sourceTextUntrusted": true,
+  "limitations": [
+    "Course labels and reviewed summaries do not establish model competence.",
+    "Metadata search results require relevance and full-source review.",
+    "Network tip is an indexer observation, never settlement or delivery evidence.",
+    "No full text, raw captions, identities, wallet addresses or keys are published.",
+    "No retraining, benchmark mutation, signer or deployment is triggered."
+  ]
+}

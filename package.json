@@ -40,7 +40,11 @@
     "escrow:build": "node scripts/build-escrow-draft.mjs",
     "escrow:rehearse": "node scripts/escrow-rehearsal.mjs",
     "escrow:evaluate-fixtures": "node scripts/evaluate-escrow-fixtures.mjs",
-    "learning:constrained-audit": "node scripts/audit-constrained-parent-model.mjs"
+    "learning:constrained-audit": "node scripts/audit-constrained-parent-model.mjs",
+    "education:collect": "node scripts/collect-education.mjs",
+    "education:rehearse": "node scripts/education-rehearsal.mjs",
+    "education:publish": "node scripts/publish-education.mjs",
+    "seo:build": "node scripts/build-seo.mjs"
   },
   "dependencies": {
     "@emurgo/cardano-serialization-lib-nodejs": "15.0.3",

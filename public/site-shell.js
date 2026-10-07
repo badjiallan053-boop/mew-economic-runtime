@@ -1,5 +1,5 @@
 const primary=[['home.html','Understand'],['studio.html','Try'],['protocol.html#evidence','Verify'],['pilot.html','Plan']];
-const supporting=[['company.html','Agent workflows'],['design-studio.html','Design tools'],['research.html','Source library'],['campaign.html','Clip rehearsal']];
+const supporting=[['company.html','Agent workflows'],['design-studio.html','Design tools'],['research.html','Source library'],['knowledge.html','Engineering knowledge'],['campaign.html','Clip rehearsal']];
 const nav=document.createElement('nav');nav.className='site-nav';nav.setAttribute('aria-label','MEW website');const brand=document.createElement('a');brand.className='site-brand';brand.href='home.html';brand.textContent='mew';const mark=document.createElement('span');mark.textContent='✳';mark.setAttribute('aria-hidden','true');brand.append(mark);nav.append(brand);
 function addLink(parent,path,label){const a=document.createElement('a');a.href=path;a.textContent=label;const page=path.split('#')[0];if(location.pathname.endsWith('/'+page)||(page==='home.html'&&(location.pathname==='/'||location.pathname.endsWith('/index.html'))))a.setAttribute('aria-current','page');parent.append(a);}
 for(const [path,label]of primary)addLink(nav,path,label);

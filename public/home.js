@@ -6,18 +6,63 @@ const reset = $("#demo-reset");
 const sculpture = $(".sculpture");
 const pause = $("#art-pause");
 const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
-function setArtPaused(value) {
-  sculpture.classList.toggle("is-paused", value);
-  pause.setAttribute("aria-pressed", String(value));
-  pause.textContent = value ? "Resume motion ▶" : "Pause motion Ⅱ";
+// Motion is decoration; it never advances a request or implies live activity.
+let manuallyPaused = false;
+let artInView = true;
+let resultAnimation;
+function syncMotion() {
+  const preferencePaused = reducedMotion.matches;
+  const effectivePaused =
+    manuallyPaused || preferencePaused || document.hidden || !artInView;
+  sculpture.classList.toggle("is-paused", effectivePaused);
+  pause.disabled = preferencePaused;
+  pause.setAttribute(
+    "aria-pressed",
+    String(manuallyPaused || preferencePaused),
+  );
+  pause.textContent = preferencePaused
+    ? "Reduced motion on"
+    : manuallyPaused
+      ? "Resume motion ▶"
+      : "Pause motion Ⅱ";
+  if (effectivePaused) resultAnimation?.cancel();
 }
-setArtPaused(reducedMotion.matches);
-pause.addEventListener("click", () =>
-  setArtPaused(!sculpture.classList.contains("is-paused")),
-);
-reducedMotion.addEventListener("change", (event) => {
-  if (event.matches) setArtPaused(true);
+pause.addEventListener("click", () => {
+  manuallyPaused = !manuallyPaused;
+  syncMotion();
 });
+reducedMotion.addEventListener("change", syncMotion);
+document.addEventListener("visibilitychange", syncMotion);
+if ("IntersectionObserver" in window) {
+  const artVisibility = new IntersectionObserver(
+    (entries) => {
+      artInView = entries[0].isIntersecting;
+      syncMotion();
+    },
+    { threshold: 0.05 },
+  );
+  artVisibility.observe(sculpture);
+}
+syncMotion();
+function animateDecision() {
+  resultAnimation?.cancel();
+  if (
+    reducedMotion.matches ||
+    manuallyPaused ||
+    document.hidden ||
+    !$(".fixture-result").animate
+  )
+    return;
+  const bounds = $(".fixture-result").getBoundingClientRect();
+  if (bounds.bottom < 0 || bounds.top > innerHeight) return;
+  resultAnimation = $(".fixture-result").animate(
+    [
+      { transform: "translateY(5px)", opacity: 0.72 },
+      { transform: "translateY(0)", opacity: 1 },
+    ],
+    { duration: 280, easing: "cubic-bezier(.2,.7,.2,1)" },
+  );
+}
 
 let kernel,
   phase = 0,
@@ -84,6 +129,13 @@ function render() {
   );
   $("#equivalent-status").textContent = item.equivalent;
   next.textContent = item.button;
+  $(".decision-console").dataset.decision = item.decision;
+  sculpture.dataset.decision = item.decision;
+  $("#art-caption-state").textContent =
+    phase === 0
+      ? "Concept illustration · no live activity"
+      : `Concept illustration · local demo: ${position.equivalents}/1 report held · ${item.decision}`;
+  animateDecision();
   document.querySelectorAll("[data-step]").forEach((element) => {
     const step = Number(element.dataset.step);
     element.classList.toggle("active", step === phase);
@@ -108,6 +160,11 @@ function restart() {
 function showFailure() {
   next.disabled = true;
   reset.disabled = true;
+  resultAnimation?.cancel();
+  $(".decision-console").dataset.decision = "UNAVAILABLE";
+  sculpture.dataset.decision = "UNAVAILABLE";
+  $("#art-caption-state").textContent =
+    "Concept illustration · decision engine unavailable";
   $("#fixture-decision").textContent = "UNAVAILABLE";
   $("#fixture-kicker").textContent = "DEMO PAUSED";
   $("#fixture-title").textContent = "The decision engine could not run.";

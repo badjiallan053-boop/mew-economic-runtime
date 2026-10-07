@@ -27,10 +27,13 @@ export function makeServer({dbPath=process.env.MEW_DB_PATH || resolve(root,'data
   const state=()=>{const k=store.read();const s=k.snapshot();return {...s,positions:s.objectives.map(o=>k.position(o.id)),mode:demo?'demo':'live',persistence:'sqlite'};};
   const server=createServer(async(req,res)=>{
     res.setHeader('X-Content-Type-Options','nosniff');
+    res.setHeader('Referrer-Policy','strict-origin-when-cross-origin');
+    res.setHeader('Permissions-Policy','camera=(), microphone=(), geolocation=()');
     res.setHeader('Content-Security-Policy',"default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self'; img-src 'self' data:; font-src 'self'; frame-ancestors 'none'");
     const json=(status,body)=>{res.writeHead(status,{'Content-Type':'application/json','Cache-Control':'no-store'});res.end(JSON.stringify(body));};
     try {
       const url=new URL(req.url,'http://localhost');
+      if(url.pathname.startsWith('/api/') || ['/studio.html','/campaign.html','/rehearsal.html','/design-studio.html','/presentation.html'].includes(url.pathname)) res.setHeader('X-Robots-Tag','noindex');
       if(url.pathname==='/api/health' && req.method==='GET') return json(200,{ok:true,mode:demo?'demo':'live',persistence:'sqlite',paymentsEnabled:false});
       if(url.pathname.startsWith('/api/')) {
         if(demo) {
@@ -102,7 +105,7 @@ export function makeServer({dbPath=process.env.MEW_DB_PATH || resolve(root,'data
       if(!path.startsWith(base+sep)) return json(403,{error:'Forbidden'});
       const bytes=readFileSync(path);
       const ext=path.split('.').at(-1);
-      const mime={html:'text/html',css:'text/css',js:'text/javascript',mjs:'text/javascript',svg:'image/svg+xml',png:'image/png',json:'application/json',ttf:'font/ttf',woff2:'font/woff2'}[ext] || 'application/octet-stream';
+      const mime={html:'text/html',css:'text/css',js:'text/javascript',mjs:'text/javascript',svg:'image/svg+xml',png:'image/png',json:'application/json',txt:'text/plain',xml:'application/xml',ttf:'font/ttf',woff2:'font/woff2'}[ext] || 'application/octet-stream';
       res.writeHead(200,{'Content-Type':`${mime}; charset=utf-8`});res.end(req.method==='HEAD'?undefined:bytes);
     } catch(error) {
       if(error.code==='ENOENT') return json(404,{error:'Not found'});
