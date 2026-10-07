@@ -2,15 +2,37 @@
 
 7 October 2026. Real hosting and real payments are separate milestones.
 
-## Prepared Railway change
+## Railway rollout
 
-Authenticated Railway inventory found `survival-alpha-prod`, with an unrelated `deepagents` app and its database. Neither was modified. A separate `mew-demo` service and 100 MB `mew-demo-data` volume mounted at `/data` are staged, not provisioned. Source is MEW's `feat/cardano-agent-boundaries`, pinned to the tested deployment commit. Mode is explicitly simulation; no wallet, model or Blockfrost credential is attached. Railway healthcheck configuration is in `railway.toml`.
+The owner approved up to US$10 total for this submission on 7 October. Only the
+new MEW services in `survival-alpha-prod` were changed; its existing app and
+database were left intact.
 
-Container copies only runtime files. `.local`, environment files, downloaded dependencies, wallet databases and skill downloads are excluded. The entrypoint fixes ownership of the mounted data directory and drops to the node user. Docker is unavailable locally, so the image has not been built here; Railway build logs must confirm it before any deployment claim. Node tests and build pass locally.
+- `mew-demo`: service `b0d1b572-6582-453e-a176-af5c857e1c8b`, 100 MB persistent
+  `/data` volume, one Singapore replica, 0.25 vCPU / 0.25 GB memory limits.
+- Dedicated MPS `Postgres`: service `bfadf5cd-6867-4a73-b0d0-b30f0c8c21ae`,
+  PostgreSQL 18, 500 MB persistent volume, one Singapore replica, 0.25 vCPU /
+  0.5 GB memory limits. Verified online, no public domain or TCP proxy. No MPS
+  migrations, wallet seed or worker connection have been performed.
 
-The connector rejected resource/region tuning on the not-yet-created service with `Service Instance not found`. Those settings are not staged. Confirm the effective service region, one replica and resource limits after creation, before public access. Do not describe CPU/memory limits as a guaranteed dollar spending cap. Railway usage is billed; owner approval of an allowed budget is pending. The public demo shares one SQLite state and permits resets; it never controls wallets.
+The first two demo builds failed Dockerfile validation before runtime logs.
+Removed the Docker `VOLUME` instruction, retaining Railway's attached volume,
+then deployed full commit `659b36d35a05cf9229becaeb4b4276c280282e85`.
+Container copies runtime files only; secrets and `.local` are excluded, and
+entrypoint drops privileges after preparing `/data`. Simulation mode is explicit.
 
-After approval: re-read the environment patch (commit applies every staged change), verify all changes are still MEW-only, apply it, follow actual build/deployment status, check health and rehearsal endpoints, create a demo domain, and verify persistence across restart. Record the URL and deployed commit. If build fails, preserve logs and repair the source; never declare success from a triggered deploy.
+Verified hosted simulation: https://mew-demo-production.up.railway.app/rehearsal.html.
+Health, page and rehearsal endpoint checks passed. A synthetic reservation was
+saved at rehearsal stage 2, redeployed as `21320afc-0cdd-426b-b5f1-85475ceab442`,
+and the full saved rehearsal state matched after the new deployment succeeded.
+The rehearsal was then reset for judges. This proves hosted fixture persistence,
+not a live blockchain payment. Local verification: 66 tests passed; build passed.
+
+Resource limits are applied but are not a dollar spending cap. Check incremental
+Railway usage against the approved US$10 budget; avoid extra replicas and idle
+payment/model services. Do not alter workspace-wide settings affecting unrelated
+apps. Railway rejected the deprecated config-file update; healthcheck, Dockerfile
+path and region were configured through the service API instead.
 
 ## References that actually match the desired behavior
 
@@ -22,7 +44,7 @@ After approval: re-read the environment patch (commit applies every staged chang
 | [eve deployment guide](https://github.com/vercel/eve/blob/main/docs/guides/deployment/vercel.mdx) | Separate hosted agent runtime | Hosting eve alone does not deploy the Task worker or MPS |
 | [Cardano x402 facilitator](https://github.com/cardano-foundation/cardano-x402-facilitator) | v2 exact, network/asset/amount admission and broadcast/reconciliation | Protocol verification does not establish user's objective satisfaction |
 
-The live template's receipt helper accepts net token value greater than zero. MEW's new `verifyTokenReceipt` requires the full configured atomic amount, validates transaction identity, token unit and confirmation depth, and subtracts seller input value from seller outputs. It is read-only and not wired to a paid worker yet. Callers must first bind the withdrawal hash to the authenticated Task/MPS receipt. No foreign asset is inserted into MEW's lovelace kernel.
+The live template's receipt helper accepts net token value greater than zero. MEW's new `verifyTokenReceipt` requires the full configured atomic amount, validates transaction identity, token unit and confirmation depth, and subtracts seller input value from seller outputs. The read-only `verifyMasumiCollection` bridge now binds trusted saved terms to the authenticated Task receipt and confirmed MPS ordinary withdrawal before invoking chain verification. See [MASUMI_SETUP.md](MASUMI_SETUP.md) for the runnable CLI. It is not a paid-task worker and has only been exercised with synthetic provider fixtures. No foreign asset is inserted into MEW's lovelace kernel.
 
 Two assets named tUSDM exist in the inspected x402 demo. The ordinary token payment route defaults to a different policy from Masumi dispenser tUSDM. Configure the complete policy/asset-name unit, not a symbol. The demo documents policy `16a55b2a…` for Masumi. Do not silently substitute token policies or treat escrow lock as seller collection.
 
@@ -43,4 +65,4 @@ These videos are context, not implementation evidence. Source code above is the 
 6. Run the real Task, escrow lock, exact result/hash submission and collection sequence. Independently verify the full expected net seller receipt.
 7. Prove a new Task works with the laptop offline, then record deployed endpoints and sanitized evidence.
 
-Current gates pending: hosting budget approval, model access, Sokosumi sign-in, payment configuration/funding, live worker implementation and verified collection. Publishing the simulation does not complete these gates.
+Current gates pending: model access, Sokosumi sign-in, payment configuration/funding, live worker implementation and verified collection. Publishing the simulation does not complete these gates.

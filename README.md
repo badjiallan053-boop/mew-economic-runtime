@@ -54,3 +54,8 @@ See [agent architecture, system prompts and Origins demo](docs/AGENT_COMMERCE.md
 Run the Node server and open `/rehearsal.html`. Seven persistent checkpoints show synthetic supplier research, strict x402 quote admission, uncertain delivery, duplicate-purchase prevention, artifact binding, and a separate illustrative 1-test-USDM seller Task/receipt. Missing-evidence and substituted-recipient scenarios stop safely. All roles are fixtures; no model or funds are connected. Export the evidence journal from the page or run `node scripts/rehearsal.mjs`.
 
 [Installation and verified state](docs/INSTALLATION.md) · [Full operating SOP and connector/database plan](docs/OPERATING_SOP.md). PostgreSQL is needed for future MPS, while MEW keeps its own SQLite ledger. Live sign-in, model credentials and wallet funding remain pending.
+
+Read-only authenticated Masumi collection verification is runnable with
+`npm run masumi:collection -- /private/path/contract.json`. See
+[Masumi setup](docs/MASUMI_SETUP.md) and [verified deployment state](docs/LIVE_DEPLOYMENT.md).
+Live paid execution still requires credentials, funded wallets and the paid worker.
