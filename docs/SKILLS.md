@@ -42,3 +42,8 @@ digests and avoids changing prior mission contracts. The interoperability review
 used a documentation subagent and reviewed the actual Anthropic MCP-builder skill
 through skills.sh; no upstream installer or scripts were executed. See
 INTEROPERABILITY.md for source, licensing and version-pin limitations.
+
+
+See AI_NATIVE_COMPANY_PLAN.md for the product, backend, security, frontend and
+strategy candidate matrix. Added original company-product-delivery host procedure;
+no automatic provider injection or third-party installation.

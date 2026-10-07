@@ -20,7 +20,7 @@ The subsequent [Cardano integration](CARDANO_INTEGRATION.md) implements persiste
 
 | Gate | Required implementation / proof | Current state |
 | --- | --- | --- |
-| Hosting | Build Docker image; configure one replica, durable volume, TLS, private operator access, edge limits; verify backup restore and restart | Railway staged only; budget approval pending; Docker unavailable locally |
+| Hosting | Build Docker image; configure one replica, durable volume, TLS, private operator access, edge limits; verify backup restore and restart | Prior Railway simulation deployed with a durable volume; US$10 total submission cap approved. Private-repository source access now blocks deploying latest commit; restore/edge protection checks remain pending. |
 | Durable dispatch | Store immutable mandate, normalized accepted quote/resource/digest, operation ID, expiry, fee allowance and submitted transaction hash atomically; lease/outbox; recover crash after submission without another spend | Not implemented; no dispatcher exists |
 | Evidence provenance | Reconcile only authenticated operation/Task withdrawal hash; authenticated artifact/manifest digest, mission ID and delivery criteria | Net receipt is necessary but does not establish payer identity, mission ownership or delivery |
 | Chain lifecycle | Handle provider outages, rollbacks/reorgs, delayed indexing, partial refunds and failed submissions; unknown keeps exposure | Confirmation policy exists; reorg lifecycle not implemented |
