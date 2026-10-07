@@ -12,6 +12,8 @@ import { companyRegistry } from '../company/registry.mjs';
 import { interoperabilityCapabilities } from '../company/handoff.mjs';
 
 export const demoObjective = {id:'mission-report',principal:'demo-founder',description:'Buy exactly one verified market report',semanticKey:'report-v1',quantity:1,maxExposure:1000000};
+// Observer errors may contain credentials or private provider details.
+const observeSafely=async fn=>{try{return await fn();}catch{throw new Error('Evidence provider unavailable; reconcile the existing operation');}};
 const root = fileURLToPath(new URL('../../',import.meta.url));
 const tokenEqual=(a,b)=>{const x=Buffer.from(a),y=Buffer.from(b);return x.length===y.length && timingSafeEqual(x,y);};
 
@@ -36,7 +38,7 @@ export function makeServer({dbPath=process.env.MEW_DB_PATH || resolve(root,'data
         }
         if(!demo && !tokenEqual(req.headers.authorization || '',`Bearer ${token}`)) return json(401,{error:'A valid Bearer token is required'});
         if(url.pathname.startsWith('/api/cardano/') && demo) return json(403,{error:'Cardano integration requires live evidence mode'});
-        if(req.method==='GET' && url.pathname==='/api/cardano/status') return json(200,await connection());
+        if(req.method==='GET' && url.pathname==='/api/cardano/status') return json(200,await observeSafely(()=>connection()));
         if(req.method==='GET' && url.pathname==='/api/cardano/operations') return json(200,{network:'cardano:preprod',operations:store.cardanoOperations(),paymentsEnabled:false});
         if(url.pathname.startsWith('/api/campaign') && !demo) return json(403,{error:'Campaign fixtures are disabled in live mode'});
         if(req.method==='GET' && url.pathname==='/api/campaign') return json(200,store.campaign(s=>s || createCampaign()));
@@ -77,7 +79,7 @@ export function makeServer({dbPath=process.env.MEW_DB_PATH || resolve(root,'data
           if(body.txHash!==undefined && (typeof body.txHash!=='string' || body.txHash.toLowerCase()!==operation.txHash)) return json(409,{error:'Transaction hash does not match bound operation'});
           const recorded=store.read().snapshot().claims.find(c=>c.type==='payment.settled' && c.effectId===effect.id && c.evidence?.txHash===operation.txHash);
           if(recorded) {const {receivedAt,...original}=recorded;return json(200,store.transact(k=>k.observe(original)));}
-          const claim=await verify({txHash:operation.txHash,effect});
+          const claim=await observeSafely(()=>verify({txHash:operation.txHash,effect}));
           if(claim?.effectId!==effect.id || claim.objectiveId!==effect.objectiveId || claim.amount!==effect.amount || claim.source!=='cardano' || claim.type!=='payment.settled' || claim.evidence?.verified!==true || claim.evidence.simulated || claim.evidence.network!=='cardano:preprod' || claim.evidence.txHash!==operation.txHash) throw new Error('Verifier evidence does not match bound operation');
           return json(200,store.transact(k=>{
             if(k.snapshot().claims.some(c=>c.evidence?.txHash?.toLowerCase()===operation.txHash && c.effectId!==body.effectId)) throw new Error('Transaction already attributed to a different effect');

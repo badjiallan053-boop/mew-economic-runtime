@@ -1,4 +1,5 @@
 import {createHash} from 'node:crypto';
+import {tasks} from './registry.mjs';
 const keys=['schema','missionId','taskId','agentId','policyDigest','authority','executionMode','recommendation','summary','evidenceRefs','riskCodes'];
 const canonical=value=>Array.isArray(value)?value.map(canonical):value&&typeof value==='object'?Object.fromEntries(Object.keys(value).sort().map(k=>[k,canonical(value[k])])):value;
 const digest=value=>createHash('sha256').update(JSON.stringify(canonical(value))).digest('hex');
@@ -16,6 +17,9 @@ export function exportHandoff(snapshot,taskId){
   const task=snapshot.tasks.find(t=>t.taskId===taskId);
   if(task?.status!=='COMPLETE'||!task.output)throw new Error('Completed advisory task required');
   const o=task.output;
+  const fields=['missionId','taskId','agentId','recommendation','summary','evidenceRefs','riskCodes'];
+  if(typeof o!=='object'||Array.isArray(o)||Object.keys(o).some(k=>!fields.includes(k))||fields.some(k=>!Object.hasOwn(o,k)))throw new Error('Invalid stored output fields');
+  if(!Array.isArray(o.evidenceRefs)||tasks.find(t=>t.id===taskId)?.agentId!==o.agentId)throw new Error('Stored output binding mismatch');
   if(o.missionId!==snapshot.mission.id||o.taskId!==taskId||o.evidenceRefs.some(id=>!snapshot.mission.evidence.some(e=>e.id===id)))throw new Error('Stored output binding mismatch');
   const record={schema:'mew.advisory-handoff.v1',missionId:o.missionId,taskId:o.taskId,agentId:o.agentId,policyDigest:snapshot.policyDigest,authority:'advisory-only',executionMode:snapshot.mode,recommendation:o.recommendation,summary:o.summary,evidenceRefs:structuredClone(o.evidenceRefs),riskCodes:structuredClone(o.riskCodes)};
   validate(record);return {record,digest:digest(record)};

@@ -42,3 +42,10 @@ test('conflicting adapter evidence cannot mutate the live ledger',async()=>{
   const post=async(path,body)=>fetch(base+path,{method:'POST',headers:{'content-type':'application/json',authorization:`Bearer ${token}`},body:JSON.stringify(body)});
   try{assert.equal((await fetch(base+'/api/cardano/status')).status,401);await post('/api/objectives',objective);await post('/api/evaluate',proposal('e'));await post('/api/cardano/operations',operation);assert.equal((await post('/api/cardano/verify',{effectId:'e'})).status,400);const state=await(await fetch(base+'/api/state',{headers:{authorization:`Bearer ${token}`}})).json();assert.equal(state.claims.length,0);assert.equal(state.positions[0].reserved,1500000);}finally{await new Promise(r=>server.close(r));}
 });
+
+test('HTTP observer failures do not disclose upstream secrets or release reservations',async()=>{
+ const secret='sensitive-upstream-credential';const server=makeServer({dbPath:':memory:',demo:false,token,verify:async()=>{throw new Error(secret);},connection:async()=>{throw new Error(secret);}});
+ await new Promise(r=>server.listen(0,'127.0.0.1',r));const base=`http://127.0.0.1:${server.address().port}`;
+ const headers={'content-type':'application/json',authorization:`Bearer ${token}`};const post=(path,body)=>fetch(base+path,{method:'POST',headers,body:JSON.stringify(body)});
+ try{await post('/api/objectives',objective);await post('/api/evaluate',proposal('e'));await post('/api/cardano/operations',operation);for(const response of [await post('/api/cardano/verify',{effectId:'e'}),await fetch(base+'/api/cardano/status',{headers})]){assert.equal(response.status,400);assert.ok(!(await response.text()).includes(secret));}const state=await(await fetch(base+'/api/state',{headers})).json();assert.equal(state.claims.length,0);assert.equal(state.positions[0].reserved,1500000);}finally{await new Promise(r=>server.close(r));}
+});
