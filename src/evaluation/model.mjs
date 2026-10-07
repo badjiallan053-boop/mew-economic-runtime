@@ -22,11 +22,11 @@ export async function evaluateProvider(provider,{label='unnamed',cases=evaluatio
   return {schema:'mew.model-evaluation.v1',label,fixtureEvaluation:true,paymentsEnabled:false,productionReady:false,limitations:['Four synthetic first-task fixtures; not customer efficacy, complete workflow coverage or semantic proof.','Expected-decision checks cannot detect all unsupported claims in free text.'],results,passed:results.filter(r=>r.contractValid&&r.expectedDecision).length,total:results.length};
 }
 /** Opt-in Responses API transport. One request per invocation, no retry/tools. */
-export function createOpenAIProvider({apiKey,model,approved=false,maxCalls=4,maxOutputTokens=512,fetchImpl=fetch}={}){
+export function createOpenAIProvider({apiKey,model,approved=false,maxCalls=4,maxOutputTokens=512,evaluationScope='first-task',fetchImpl=fetch}={}){
   if(approved!==true)throw new Error('Explicit model usage approval required');
   if(typeof apiKey!=='string'||!apiKey.trim()||/[\r\n]/.test(apiKey))throw new Error('Provider credential required');
   if(typeof model!=='string'||!model.trim()||model.length>100)throw new Error('Explicit model required');
-  if(!Number.isSafeInteger(maxCalls)||maxCalls<1||maxCalls>4||!Number.isSafeInteger(maxOutputTokens)||maxOutputTokens<128||maxOutputTokens>1024)throw new Error('Invalid evaluation budget');
+  if(!['first-task','compact-workflow'].includes(evaluationScope)||!Number.isSafeInteger(maxCalls)||maxCalls<1||maxCalls>(evaluationScope==='compact-workflow'?6:4)||!Number.isSafeInteger(maxOutputTokens)||maxOutputTokens<128||maxOutputTokens>1024)throw new Error('Invalid evaluation budget');
   let calls=0;
   return async (context,{signal}={})=>{
     if(calls>=maxCalls)throw new Error('Evaluation call limit reached');
@@ -44,4 +44,15 @@ export function createOpenAIProvider({apiKey,model,approved=false,maxCalls=4,max
     if(texts.length!==1)throw new Error('Expected one model JSON response');
     return JSON.parse(texts[0].text);
   };
+}
+
+/** Full advisory handoff evaluation; no economic store, payment or publication. */
+export async function evaluateCompactWorkflow(provider){
+ const runtime=new CompanyRuntime(':memory:',{mode:'advisory',workflow:'compact'});
+ const item=evaluationCases[0];let providerFailed=false;
+ try{runtime.create({id:'workflow-evaluation',objectiveId:'eval-workflow',principal:'evaluation-only',semanticKey:'five-outline-fixture',brief:item.brief,evidence:item.evidence});
+ try{await runtime.run('workflow-evaluation',provider);}catch{providerFailed=true;}
+ const snapshot=runtime.snapshot('workflow-evaluation');
+ return {schema:'mew.workflow-evaluation.v1',fixtureEvaluation:true,productionReady:false,paymentsEnabled:false,providerFailed,allTasksAccepted:snapshot.tasks.every(t=>t.status==='COMPLETE'&&t.output?.recommendation==='ACCEPT'),tasks:snapshot.tasks.map(t=>({taskId:t.taskId,status:t.status,recommendation:t.output?.recommendation??null,recoveryNeeded:t.recoveryNeeded})),limitations:['Six-task synthetic handoff coverage, not customer efficacy or semantic truth.','Human review and separate provider billing evidence remain required.']};
+ }finally{runtime.close();}
 }

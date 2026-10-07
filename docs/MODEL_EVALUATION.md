@@ -9,3 +9,9 @@ A real Responses API adapter is prepared but has not been called. Locally set OP
 The fixture report records contract failures, recommendation matches and latency, not synthetic confidence or dollar estimates. Collect provider billing/usage separately before comparing cost. Next gate: an independently reviewed, held-out set of actual authorized pilot briefs and outcomes, full six-task integration checks, repeated model runs, unsupported-claim review and a documented go/no-go decision. Do not train on holdout cases or treat public ecosystem statistics as customer demand.
 
 Transport references: [official openai-node repository](https://github.com/openai/openai-node) documents Responses, explicit model/input/instructions and server-side credential use; [Responses API reference](https://platform.openai.com/docs/api-reference/responses/create) defines structured text format and output. No repository implementation was copied or new dependency installed. Tests use mocked HTTP only.
+
+## Six-task integration evaluation
+
+Run npm run model:evaluate -- --workflow for the deterministic comparator through the full compact handoff plan. It stops at the first abstention. The report records all six task statuses and UNKNOWN recovery requirements, without treating completion as semantic truth.
+
+After entitled credentials, explicit model-usage approval, provider data handling and a separate USD budget are configured, npm run model:evaluate -- --live --workflow permits at most six calls with 512 output tokens per call. This explicit workflow scope is separate from the unchanged four-call first-task default. It has no retries, tools, payment store or publication capability. These token/call bounds still do not enforce USD billing; review model pricing and account budget before calling. Holdout customer cases and human review remain required.
