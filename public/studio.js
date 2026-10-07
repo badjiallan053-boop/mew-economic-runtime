@@ -6,3 +6,6 @@ async function action(fn){if(busy)return;busy=true;if(state)render();try{state=a
 $('reset').addEventListener('click',()=>{const scenario=$('scenario').value;action(()=>request('/api/rehearsal/reset',{scenario}));});
 $('advance').addEventListener('click',()=>action(()=>request('/api/rehearsal/advance',{expectedStage:state.stage})));
 $('advance').disabled=true;action(()=>request('/api/studio'));
+
+// Optional learning feedback is ephemeral and is never submitted as analytics.
+for(const button of document.querySelectorAll('[data-learning]'))button.addEventListener('click',()=>{const correct=button.dataset.learning==='quantity';document.getElementById('learning-feedback').textContent=correct?'Correct. The one-report objective remains occupied. Find the retained exposure and checkpoint record above, then define a pilot for your own workflow. This local answer is not proof of customer activation.':'Review the example: 2.90 ADA is below the limit, and a timeout is not verified failure. The unresolved one-report objective still holds capacity.';});
