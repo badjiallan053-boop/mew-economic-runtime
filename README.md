@@ -90,3 +90,7 @@ remain selectable explicitly; saved legacy missions are not migrated.
 ## Delivery priorities and release checks
 
 See [DELIVERY_PLAN.md](docs/DELIVERY_PLAN.md) for ordered outcomes, accountable roles and evidence gates. `npm run deploy:verify` checks the existing hosted demo against the checkout without making changes. Public ecosystem evidence is presented at `/research.html`; model processing remains simulated.
+
+## Evaluation, pilot, delivery and payment workstreams
+
+[WORKSTREAM_AGENTS.md](docs/WORKSTREAM_AGENTS.md) maps specialist responsibilities and focused review subtasks to four runnable implementation boundaries. `npm run model:evaluate` runs the conservative fixture baseline; `npm run pilot:rehearse` records five synthetic outlines; `npm run payment:plan` reports offline payment blockers. Authenticated delivery is a tested Ed25519 library with durable replay enforcement still required from its host. Live model calls and payment dispatch are not enabled.

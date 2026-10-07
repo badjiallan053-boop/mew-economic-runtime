@@ -19,6 +19,10 @@
     "research:collect": "node scripts/collect-ecosystem.mjs",
     "research:rehearse": "node scripts/ecosystem-rehearsal.mjs",
     "research:publish": "node scripts/publish-research.mjs",
-    "deploy:verify": "node scripts/verify-deployment.mjs"
+    "deploy:verify": "node scripts/verify-deployment.mjs",
+    "model:evaluate": "node scripts/evaluate-model.mjs",
+    "pilot:rehearse": "node scripts/pilot-rehearsal.mjs",
+    "payment:plan": "node scripts/payment-plan.mjs",
+    "workstreams:rehearse": "node scripts/workstreams-rehearsal.mjs"
   }
 }
