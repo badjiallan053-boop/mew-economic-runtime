@@ -1,0 +1,18 @@
+{
+  "schema": "mew.skill-provenance.v1",
+  "originalSkill": "mew-live-model-evaluation",
+  "reviewedAt": "2026-10-08",
+  "reference": {
+    "repository": "https://github.com/ai-evals-course/evals-skills",
+    "revision": "80d5f7b0127c7572ed9e9339937adbfd7240ffeb",
+    "upstreamPath": "skills/validate-evaluator/SKILL.md",
+    "localPath": "references/validate-evaluator.md",
+    "sha256": "dd601ca58d2165f51798e12934170a435af9a7938832b67bb00986b881752355",
+    "license": "Apache-2.0",
+    "licensePath": "references/VALIDATE_EVALUATOR_LICENSE",
+    "upstreamModified": false
+  },
+  "discoveredVia": "https://www.skills.sh/ai-evals-course/evals-skills/validate-evaluator",
+  "sourceRegister": "research/activation/model-sources.json",
+  "productionPermissionGranted": false
+}

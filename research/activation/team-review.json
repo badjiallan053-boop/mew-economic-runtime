@@ -1,0 +1,125 @@
+{
+  "schema": "mew.activation-team-review.v1",
+  "observedAt": "2026-10-07T21:58:08.657Z",
+  "reviewVerdict": "BLOCKED",
+  "reviews": [
+    {
+      "schema": "mew.activation-review.v1",
+      "lane": "database",
+      "reportedVerdict": "BLOCKED",
+      "reviewVerdict": "BLOCKED",
+      "artifactsIntact": true,
+      "issues": [],
+      "blockers": [
+        {
+          "id": "dedicated-role-provisioning",
+          "owner": "operator",
+          "nextAction": "Provision the existing dedicated runtime password and LOGIN locally; supply only the private configuration path.",
+          "evidenceRequired": "Sanitized real Node TLS connection and role/RLS verification receipt for the selected project."
+        },
+        {
+          "id": "hosted-contention-and-restart",
+          "owner": "database-agent",
+          "nextAction": "After private login is available, execute reviewed two-client synthetic contention and restart checks without provider calls.",
+          "evidenceRequired": "Sanitized independent-client locking, replay, context reset and durable restart results."
+        }
+      ],
+      "authority": {
+        "modelActivation": false,
+        "paymentSigning": false,
+        "paymentBroadcast": false,
+        "productionDeployment": false
+      },
+      "limitations": [
+        "Matching hashes establish artifact integrity, not semantic correctness, chain finality, independent audit or permission to activate.",
+        "This report never changes a credential, model, payment, deployment or economic ledger."
+      ]
+    },
+    {
+      "schema": "mew.activation-review.v1",
+      "lane": "model",
+      "reportedVerdict": "BLOCKED",
+      "reviewVerdict": "BLOCKED",
+      "artifactsIntact": true,
+      "issues": [],
+      "blockers": [
+        {
+          "id": "domain-review",
+          "owner": "model-evaluation specialist + domain human",
+          "nextAction": "Review every constrained response against exact supplied spans and requested language; resolve supported failures.",
+          "evidenceRequired": "Authenticated reviewer record, rubric version, response/source hashes and per-case judgments."
+        },
+        {
+          "id": "customer-holdout",
+          "owner": "product pilot owner",
+          "nextAction": "Freeze new human-reviewed, lineage-disjoint pilot cases and release criteria before running a candidate.",
+          "evidenceRequired": "Approved pilot scope, disjointness register, holdout hash and precommitted thresholds."
+        },
+        {
+          "id": "provider-proof",
+          "owner": "private backend operator",
+          "nextAction": "After scoped credentials and spend control are configured, run one durably fenced synthetic attempt and retain raw outputs/usage/provenance.",
+          "evidenceRequired": "Immutable run ID, bound experiment receipt, sanitized per-case traces, actual usage and spend evidence; no automatic retry."
+        }
+      ],
+      "authority": {
+        "modelActivation": false,
+        "paymentSigning": false,
+        "paymentBroadcast": false,
+        "productionDeployment": false
+      },
+      "limitations": [
+        "Matching hashes establish artifact integrity, not semantic correctness, chain finality, independent audit or permission to activate.",
+        "This report never changes a credential, model, payment, deployment or economic ledger."
+      ]
+    },
+    {
+      "schema": "mew.activation-review.v1",
+      "lane": "payment",
+      "reportedVerdict": "BLOCKED",
+      "reviewVerdict": "BLOCKED",
+      "artifactsIntact": true,
+      "issues": [],
+      "blockers": [
+        {
+          "id": "fresh-enrolled-wallet",
+          "owner": "wallet-operator",
+          "nextAction": "Supply public enrolled address and run configured read-only observation; recheck selected outpoints before external signing.",
+          "evidenceRequired": "Fresh fixed-preprod UTxOs/parameters plus operator control and locking evidence; no mnemonic."
+        },
+        {
+          "id": "funded-preprod-lifecycle",
+          "owner": "payment-integrator",
+          "nextAction": "Perform separately authorized external signing and operation-bound funding/accept/cancel reconciliation.",
+          "evidenceRequired": "Exact signed/submitted transaction identities, confirmed datum/outputs, measured fees/collateral and restart/rollback records."
+        },
+        {
+          "id": "native-token-lane",
+          "owner": "payment-integrator",
+          "nextAction": "Keep Masumi native-token writes blocked until a separate token accounting/lifecycle connector is implemented.",
+          "evidenceRequired": "Pinned authenticated terms, full policy/asset unit, atomic amounts and full seller receipt bound to task/operation."
+        },
+        {
+          "id": "independent-contract-audit",
+          "owner": "independent-assessor",
+          "nextAction": "Obtain scoped independent assessment of pinned contract, blueprint and integration boundaries.",
+          "evidenceRequired": "Independent report, exact revision/digests, remediation and retest opinion."
+        }
+      ],
+      "authority": {
+        "modelActivation": false,
+        "paymentSigning": false,
+        "paymentBroadcast": false,
+        "productionDeployment": false
+      },
+      "limitations": [
+        "Matching hashes establish artifact integrity, not semantic correctness, chain finality, independent audit or permission to activate.",
+        "This report never changes a credential, model, payment, deployment or economic ledger."
+      ]
+    }
+  ],
+  "modelActivationAllowed": false,
+  "paymentSigningAllowed": false,
+  "paymentBroadcastAllowed": false,
+  "productionDeploymentAllowed": false
+}

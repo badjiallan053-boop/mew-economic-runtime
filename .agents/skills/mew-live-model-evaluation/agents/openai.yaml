@@ -1,0 +1,4 @@
+interface:
+  display_name: "MEW Model Activation Review"
+  short_description: "Separate evidence, answer quality and live readiness"
+  default_prompt: "Use $mew-live-model-evaluation to review MEW model activation evidence and produce a blocked or qualified handoff."

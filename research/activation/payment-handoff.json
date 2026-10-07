@@ -1,0 +1,82 @@
+{
+  "schema": "mew.activation-evidence.v1",
+  "lane": "payment",
+  "verdict": "BLOCKED",
+  "observedAt": "2026-10-07T21:56:39.749Z",
+  "claims": [
+    {
+      "id": "local-resolved-uplc-fixtures",
+      "status": "PASS",
+      "artifact": {
+        "path": "research/cardano/escrow-uplc-evaluation.json",
+        "sha256": "ff6dea2213231dc265992c9f0f2342981ddd17707be7a85a9d766dc054ac70bc"
+      },
+      "note": "Local synthetic resolved UPLC evaluation artifact; not funded chain or independent audit."
+    },
+    {
+      "id": "bounded-wallet-negative-tests",
+      "status": "PASS",
+      "artifact": {
+        "path": "tests/preprod-wallet.test.mjs",
+        "sha256": "01ffbdccbe15bcddefb4d021d2191ffab88e0ef857fa2b9ad1a5fa277ff36374"
+      },
+      "note": "Eight fake-transport tests passed in this review, including injected upstream fields and redirected/substituted response URLs. Test source digest is not provider evidence."
+    },
+    {
+      "id": "fresh-enrolled-wallet",
+      "status": "BLOCKED",
+      "artifact": null,
+      "note": "Fresh fixed-preprod UTxOs/parameters plus operator control and locking evidence; no mnemonic."
+    },
+    {
+      "id": "funded-preprod-lifecycle",
+      "status": "BLOCKED",
+      "artifact": null,
+      "note": "Exact signed/submitted transaction identities, confirmed datum/outputs, measured fees/collateral and restart/rollback records."
+    },
+    {
+      "id": "native-token-lane",
+      "status": "BLOCKED",
+      "artifact": null,
+      "note": "Pinned authenticated terms, full policy/asset unit, atomic amounts and full seller receipt bound to task/operation."
+    },
+    {
+      "id": "independent-contract-audit",
+      "status": "BLOCKED",
+      "artifact": null,
+      "note": "Independent report, exact revision/digests, remediation and retest opinion."
+    }
+  ],
+  "blockers": [
+    {
+      "id": "fresh-enrolled-wallet",
+      "owner": "wallet-operator",
+      "nextAction": "Supply public enrolled address and run configured read-only observation; recheck selected outpoints before external signing.",
+      "evidenceRequired": "Fresh fixed-preprod UTxOs/parameters plus operator control and locking evidence; no mnemonic."
+    },
+    {
+      "id": "funded-preprod-lifecycle",
+      "owner": "payment-integrator",
+      "nextAction": "Perform separately authorized external signing and operation-bound funding/accept/cancel reconciliation.",
+      "evidenceRequired": "Exact signed/submitted transaction identities, confirmed datum/outputs, measured fees/collateral and restart/rollback records."
+    },
+    {
+      "id": "native-token-lane",
+      "owner": "payment-integrator",
+      "nextAction": "Keep Masumi native-token writes blocked until a separate token accounting/lifecycle connector is implemented.",
+      "evidenceRequired": "Pinned authenticated terms, full policy/asset unit, atomic amounts and full seller receipt bound to task/operation."
+    },
+    {
+      "id": "independent-contract-audit",
+      "owner": "independent-assessor",
+      "nextAction": "Obtain scoped independent assessment of pinned contract, blueprint and integration boundaries.",
+      "evidenceRequired": "Independent report, exact revision/digests, remediation and retest opinion."
+    }
+  ],
+  "authority": {
+    "modelActivation": false,
+    "paymentSigning": false,
+    "paymentBroadcast": false,
+    "productionDeployment": false
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "schema": "mew.activation-evidence.v1",
+  "lane": "database",
+  "verdict": "BLOCKED",
+  "observedAt": "2026-10-07T21:55:40.714Z",
+  "claims": [
+    {
+      "id": "installed-private-schema",
+      "status": "PASS",
+      "artifact": {
+        "path": "research/integration/supabase-verification.json",
+        "sha256": "29d6b1315116ced2413d0c3fc622b80f563978f06b9c1bc6ed09ae276f93563b"
+      },
+      "note": "Existing hosted verification receipt records forced RLS, principal isolation and anonymous denial. This digest does not independently certify the receipt or a new execution."
+    },
+    {
+      "id": "private-application-login",
+      "status": "BLOCKED",
+      "artifact": null,
+      "note": "Existing receipt records NOT_CONFIGURED; mew_runtime login false. No credential was read or LOGIN enabled by this work."
+    },
+    {
+      "id": "hosted-multi-client-durability",
+      "status": "BLOCKED",
+      "artifact": null,
+      "note": "Two-client locking and crash evidence against Supabase remains absent; local PGlite tests are serialized."
+    }
+  ],
+  "blockers": [
+    {
+      "id": "dedicated-role-provisioning",
+      "owner": "operator",
+      "nextAction": "Provision the existing dedicated runtime password and LOGIN locally; supply only the private configuration path.",
+      "evidenceRequired": "Sanitized real Node TLS connection and role/RLS verification receipt for the selected project."
+    },
+    {
+      "id": "hosted-contention-and-restart",
+      "owner": "database-agent",
+      "nextAction": "After private login is available, execute reviewed two-client synthetic contention and restart checks without provider calls.",
+      "evidenceRequired": "Sanitized independent-client locking, replay, context reset and durable restart results."
+    }
+  ],
+  "authority": {
+    "modelActivation": false,
+    "paymentSigning": false,
+    "paymentBroadcast": false,
+    "productionDeployment": false
+  }
+}

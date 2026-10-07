@@ -41,7 +41,10 @@ A separate authenticated, loopback backend adds durable model-evaluation attempt
 unsigned ADA escrow drafts and transaction reconciliation using the existing kernel.
 Application login and provider credentials still require private configuration;
 model activation, signing and payments remain disabled. The public demo retains SQLite.
-See [setup, verification and remaining gates](docs/SUPABASE_MODEL_PAYMENTS.md).
+See [setup, verification and remaining gates](docs/SUPABASE_MODEL_PAYMENTS.md) and
+[the three-lane activation team](docs/ACTIVATION_TEAM.md). New commands prepare
+private enrollment (`integration:setup`), inspect public preprod wallet data
+(`cardano:wallet`) and verify advisory handoffs (`activation:review`).
 
 ## API
 

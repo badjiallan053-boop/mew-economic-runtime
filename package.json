@@ -46,7 +46,10 @@
     "education:publish": "node scripts/publish-education.mjs",
     "seo:build": "node scripts/build-seo.mjs",
     "integration:start": "node scripts/integration-host.mjs",
-    "integration:preflight": "node scripts/integration-preflight.mjs"
+    "integration:preflight": "node scripts/integration-preflight.mjs",
+    "integration:setup": "node scripts/integration-setup.mjs",
+    "activation:review": "node scripts/activation-review.mjs",
+    "cardano:wallet": "node scripts/preprod-wallet-check.mjs"
   },
   "dependencies": {
     "@emurgo/cardano-serialization-lib-nodejs": "15.0.3",

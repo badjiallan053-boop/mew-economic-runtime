@@ -1,0 +1,45 @@
+{
+  "schema": "mew.model-inspection-proof.v1",
+  "checkedOn": "2026-10-08",
+  "cases": [
+    {
+      "scenario": "unchanged",
+      "expected": "BLOCKED handoff with reproduced contracts",
+      "passed": true
+    },
+    {
+      "scenario": "benchmark-byte-tamper",
+      "expected": "reject mismatched artifact",
+      "passed": true
+    },
+    {
+      "scenario": "forged-contract-count",
+      "expected": "reject mismatched artifact",
+      "passed": true
+    },
+    {
+      "scenario": "forged-human-review",
+      "expected": "reject mismatched artifact",
+      "passed": true
+    }
+  ],
+  "modelInvoked": false,
+  "paymentsEnabled": false,
+  "limitations": [
+    "Offline artifact-binding checks only; no semantic or inference attestation.",
+    "Temporary copies isolated tampering from preserved experiment files."
+  ],
+  "inspector": {
+    "path": ".agents/skills/mew-live-model-evaluation/scripts/inspect-evidence.mjs",
+    "sha256": "ebf187da9ff1e8ed59eb23ba76fe9be24a3c3dca08e0495ffc212af505e47201"
+  },
+  "existingModelTests": {
+    "passed": 14,
+    "failed": 0,
+    "paths": [
+      "tests/model-evaluation.test.mjs",
+      "tests/parent-model-audit.test.mjs",
+      "tests/model-review.test.mjs"
+    ]
+  }
+}

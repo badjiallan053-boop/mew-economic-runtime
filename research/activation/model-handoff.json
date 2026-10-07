@@ -1,0 +1,67 @@
+{
+  "schema": "mew.activation-evidence.v1",
+  "lane": "model",
+  "verdict": "BLOCKED",
+  "observedAt": "2026-10-07T21:55:25.192Z",
+  "claims": [
+    {
+      "id": "frozen-development-identity",
+      "status": "PASS",
+      "artifact": {
+        "path": "research/learning/frozen-0ab4d24bf6c71ab8/benchmark.json",
+        "sha256": "0ab4d24bf6c71ab886456cc74eaa760b4674bc44a19d27cb21da34b11cd2d738"
+      },
+      "note": "Twelve agent-reviewed EN/FR cases verified against the frozen manifest; not a customer holdout."
+    },
+    {
+      "id": "expanded-context-and-constrained-contract",
+      "status": "PASS",
+      "artifact": {
+        "path": "research/learning/frozen-0ab4d24bf6c71ab8/constrained-parent-audit.json",
+        "sha256": "6e717848f5c435d2861e826f3ee8900e6f1ed17bfaa81098ecc38d0abcc49a36"
+      },
+      "note": "12/12 exact annotated evidence coverage and 12/12 strict contract validity; no semantic success implied."
+    },
+    {
+      "id": "semantic-customer-readiness",
+      "status": "BLOCKED",
+      "artifact": {
+        "path": "research/learning/frozen-0ab4d24bf6c71ab8/constrained-parent-audit.json",
+        "sha256": "6e717848f5c435d2861e826f3ee8900e6f1ed17bfaa81098ecc38d0abcc49a36"
+      },
+      "note": "All cases remain not-human-reviewed; citation entailment unmeasured; no customer holdout or promotion proof."
+    },
+    {
+      "id": "private-provider-activation",
+      "status": "UNKNOWN",
+      "artifact": null,
+      "note": "This read-only inspection never reads credentials, calls a provider or inspects hosting secrets."
+    }
+  ],
+  "blockers": [
+    {
+      "id": "domain-review",
+      "owner": "model-evaluation specialist + domain human",
+      "nextAction": "Review every constrained response against exact supplied spans and requested language; resolve supported failures.",
+      "evidenceRequired": "Authenticated reviewer record, rubric version, response/source hashes and per-case judgments."
+    },
+    {
+      "id": "customer-holdout",
+      "owner": "product pilot owner",
+      "nextAction": "Freeze new human-reviewed, lineage-disjoint pilot cases and release criteria before running a candidate.",
+      "evidenceRequired": "Approved pilot scope, disjointness register, holdout hash and precommitted thresholds."
+    },
+    {
+      "id": "provider-proof",
+      "owner": "private backend operator",
+      "nextAction": "After scoped credentials and spend control are configured, run one durably fenced synthetic attempt and retain raw outputs/usage/provenance.",
+      "evidenceRequired": "Immutable run ID, bound experiment receipt, sanitized per-case traces, actual usage and spend evidence; no automatic retry."
+    }
+  ],
+  "authority": {
+    "modelActivation": false,
+    "paymentSigning": false,
+    "paymentBroadcast": false,
+    "productionDeployment": false
+  }
+}

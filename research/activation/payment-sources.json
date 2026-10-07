@@ -1,0 +1,56 @@
+{
+  "schema": "mew.payment-source-review.v1",
+  "reviewedAt": "2026-10-08",
+  "localSourceRevision": "58e1df27c1db1926bf69003080c4d61b76bbf5d0",
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/masumi-network/masumi-payment-service/5fccf58b0f30873085b59ee540c67b4ae8433cd0/src/utils/generator/swagger-generator/openapi-docs.json",
+      "commit": "5fccf58b0f30873085b59ee540c67b4ae8433cd0",
+      "sha256": "4e1372584ae025b9b83cecf5253a028bbe5bbd2018489ac66f735386f565e950",
+      "status": "existing-pinned-local-adapter-reviewed",
+      "lesson": "Read-only MPS connection and ADA escrow preparation do not implement native-token lifecycle writes."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/cardano-foundation/cardano-x402-facilitator/97add9f8446630355d77f86c3d040c56e15ca5e4/README.md",
+      "status": "pinned-primary-README-reviewed",
+      "compatibilityTarget": "@x402/cardano and @x402/core 2.26.0; documented upstream 6323ec7",
+      "lesson": "Verify may return HTTP200 with false; settlement_pending hash requires original-operation reconciliation. Facilitator signs nothing. Current documented offline suite is not live proof.",
+      "commit": "97add9f8446630355d77f86c3d040c56e15ca5e4",
+      "sha256": "e06b79a6e67ed4927e547089ae598aa1b9c7f7d4334ac7b4494d9d92872fe544"
+    },
+    {
+      "url": "https://docs.blockfrost.io/",
+      "status": "official-current-API-index-reviewed-unpinned",
+      "lesson": "Use fixed preprod GET address UTxO pagination, latest block and epoch parameters; provider evidence is not signer authority."
+    },
+    {
+      "url": "https://www.skills.sh/addyosmani/agent-skills/test-driven-development",
+      "status": "directory-skill-guidance-reviewed-not-installed",
+      "lesson": "New bounded observation behavior was tested first; meaningful malformed/stale/network/pagination/precision failure cases rather than text-matching tests."
+    }
+  ],
+  "videos": [
+    {
+      "url": "https://www.youtube.com/watch?v=mCH4xWJ89Vc",
+      "status": "new-retrieval-unavailable",
+      "attempts": [
+        "Web video fetch: cache miss",
+        "Public timedtext list attempted; shell DNS unavailable, no usable caption bytes obtained",
+        "Authorized public timedtext-list request returned HTTP200 with zero bytes; no captions retrieved."
+      ],
+      "transcriptObtained": false,
+      "watched": false,
+      "implementationClaimsDerived": false
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=JWmvVJz_X1M",
+      "status": "prior-local-provenance-only",
+      "provenancePath": "research/cardano/integration-research-provenance.json",
+      "lesson": "Prior review records resolved transaction-context tests and measured execution costs; this subtask did not re-review captions."
+    }
+  ],
+  "limitations": [
+    "Initial sandbox GitHub/timedtext reads failed DNS. Authorized public GitHub read subsequently pinned facilitator README; Blockfrost API index remains an unpinned documentation reference, not an executable dependency.",
+    "No model execution, signer access, live wallet GET, financial write or independent audit performed."
+  ]
+}

@@ -190,3 +190,29 @@ No provider credential was collected, no model request performed and no payment
 signed or broadcast. The database management connection and hosted RLS checks
 are distinct from the still-unconfigured application login. See
 [private integration setup](SUPABASE_MODEL_PAYMENTS.md).
+
+## Activation specialist team and shared evidence
+
+Used three actual Codex specialists: private database activation, model evaluation
+and the resumed security reviewer assigned fresh payment work. The lead authored
+an original coordinator skill and the deterministic advisory handoff verifier.
+Four new repository-local skills preserve distinct file ownership, explicit
+inputs/outputs and no economic or activation authority. Canonical skill-creator
+validation passed, and the model specialist forward-tested the coordinator with
+raw model evidence; grammar validity correctly did not authorize activation.
+
+Supabase skills.sh guidance was reviewed at pinned upstream sources. Model work
+retains an unchanged, licensed Apache-2.0 validate-evaluator reference and reviews
+pinned Promptfoo/MLflow sources without installing their frameworks or services.
+The payment lane used skills.sh TDD guidance and pinned official facilitator source.
+Public Shreya Shankar captions were actually retrieved and paraphrased with time
+cues; fresh Masumi captions remained unavailable. Raw captions stay ignored/local;
+no training permission was inferred. Source manifests and adoption limits are in
+research/activation. Skills are original MEW procedures with referenced material,
+not additional deployed or paid runtime agents. PyYAML 6.0.2 was installed only in
+an ignored isolated validation environment; no runtime dependency was added.
+
+The work adds secure local enrollment scaffolding, bounded read-only preprod wallet
+observations and artifact-bound advisory reviews. Model/provider calls, remote LOGIN,
+funded wallet transactions, signing, independent audit and production activation
+were not performed. See [team procedure](ACTIVATION_TEAM.md).
