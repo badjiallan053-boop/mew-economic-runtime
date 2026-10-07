@@ -1,6 +1,13 @@
 .git
 .local
-.agents
+.agents/**
+!.agents/skills/
+!.agents/skills/mew-engineering/
+!.agents/skills/mew-engineering/SKILL.md
+!.agents/skills/company-knowledge/
+!.agents/skills/company-knowledge/SKILL.md
+!.agents/skills/test-driven-development/
+!.agents/skills/test-driven-development/SKILL.md
 data
 dist
 node_modules

@@ -59,3 +59,13 @@ Read-only authenticated Masumi collection verification is runnable with
 `npm run masumi:collection -- /private/path/contract.json`. See
 [Masumi setup](docs/MASUMI_SETUP.md) and [verified deployment state](docs/LIVE_DEPLOYMENT.md).
 Live paid execution still requires credentials, funded wallets and the paid worker.
+
+## Company agent setup
+
+The [company operating model](docs/COMPANY_AGENTS.md) defines 12 department leads
+and 36 specialist subagents. Open `/company.html` through the MEW server.
+Run `npm run company:rehearse` for a durable **synthetic** 48-task rehearsal.
+The advisory runtime loads scoped prompts and reviewed local skill references,
+validates outputs, blocks uncertain retries and leaves economic contracts intact.
+See [knowledge and skills provenance](docs/COMPANY_KNOWLEDGE.md). Real inference
+and live external actions remain configuration and activation milestones.

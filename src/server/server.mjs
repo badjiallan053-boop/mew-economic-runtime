@@ -7,6 +7,7 @@ import { createRehearsal, advanceRehearsal } from '../demo/rehearsal.mjs';
 import { Store } from './store.mjs';
 import { verifyCardanoSettlement } from '../adapters/cardano.mjs';
 import { checkCardanoConnection } from '../adapters/cardano-connection.mjs';
+import { companyRegistry } from '../company/registry.mjs';
 
 export const demoObjective = {id:'mission-report',principal:'demo-founder',description:'Buy exactly one verified market report',semanticKey:'report-v1',quantity:1,maxExposure:1000000};
 const root = fileURLToPath(new URL('../../',import.meta.url));
@@ -38,6 +39,7 @@ export function makeServer({dbPath=process.env.MEW_DB_PATH || resolve(root,'data
         if(url.pathname.startsWith('/api/rehearsal') && !demo) return json(403,{error:'Rehearsal is disabled in live mode'});
         if(req.method==='GET' && url.pathname==='/api/rehearsal') return json(200,store.readRehearsal() || createRehearsal());
         if(req.method==='GET' && url.pathname==='/api/state') return json(200,state());
+        if(req.method==='GET' && url.pathname==='/api/company') return json(200,companyRegistry());
         if(req.method!=='POST') return json(405,{error:'Method not allowed'});
         // A web page on another origin cannot mutate this local service.
         if(req.headers.origin && new URL(req.headers.origin).host!==req.headers.host) return json(403,{error:'Cross-origin mutation rejected'});

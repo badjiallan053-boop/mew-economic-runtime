@@ -19,3 +19,13 @@ Reviewed and installed the [official TOKEN2049 paid-agent SKILL.md](https://www.
 See INSTALLATION.md for pinned tool/source versions. External skills are reference procedures, not payment or credential authorization. The orchestrator used one documentation subagent, which owned only OPERATING_SOP.md. All rehearsal agent roles remain deterministic fixtures.
 
 The subsequent risk review used the installed Codex Security standard-scan SKILL.md with independent offline source reviewers and source-backed validation. Its three baseline findings were followed by failing regression tests and fixes. See [RED_TEAM.md](RED_TEAM.md) for coverage, remaining live gates and the explicit YouTube transcript limitation. Extra skills.sh listings were reviewed as knowledge references; no unreviewed installer was executed.
+
+## Company hierarchy contribution
+
+Company knowledge review selected existing TDD and Cardano procedures plus
+reference-only Vercel interface guidelines. See COMPANY_KNOWLEDGE.md for verified
+links, license limits and unavailable YouTube transcripts. The company runtime
+loads three reviewed local skill texts (MEW engineering, company knowledge and
+TDD for QA) as references; each specialist inherits its lead's selected skills.
+No installer or third-party script runs. Runtime policy digests cover registry,
+prompt and skill contents. Assigned references are not evidence of real inference.
