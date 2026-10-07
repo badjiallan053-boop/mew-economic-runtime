@@ -1,4 +1,5 @@
 import { createServer } from 'node:http';
+import {MEW} from '../core/mew.mjs';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { resolve, sep } from 'node:path';
@@ -43,6 +44,7 @@ export function makeServer({dbPath=process.env.MEW_DB_PATH || resolve(root,'data
         if(url.pathname.startsWith('/api/campaign') && !demo) return json(403,{error:'Campaign fixtures are disabled in live mode'});
         if(req.method==='GET' && url.pathname==='/api/campaign') return json(200,store.campaign(s=>s || createCampaign()));
         if(url.pathname.startsWith('/api/rehearsal') && !demo) return json(403,{error:'Rehearsal is disabled in live mode'});
+        if(req.method==='GET' && url.pathname==='/api/studio'){if(!demo)return json(403,{error:'Studio fixtures are disabled in live mode'});const rehearsal=store.readRehearsal() || createRehearsal();return json(200,{...rehearsal,position:new MEW(rehearsal.kernel).position('rehearsal-report'),observedAt:new Date().toISOString(),paymentsEnabled:false});}
         if(req.method==='GET' && url.pathname==='/api/rehearsal') return json(200,store.readRehearsal() || createRehearsal());
         if(req.method==='GET' && url.pathname==='/api/state') return json(200,state());
         if(req.method==='GET' && url.pathname==='/api/company') return json(200,companyRegistry());
