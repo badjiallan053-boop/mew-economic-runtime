@@ -12,6 +12,7 @@ export class Store {
     if(path !== ':memory:') mkdirSync(dirname(path), { recursive:true });
     this.db = new DatabaseSync(path);
     this.db.exec('PRAGMA journal_mode=WAL; PRAGMA busy_timeout=5000; CREATE TABLE IF NOT EXISTS runtime (id INTEGER PRIMARY KEY CHECK(id=1), snapshot TEXT NOT NULL);');
+    this.db.exec('CREATE TABLE IF NOT EXISTS campaign (id INTEGER PRIMARY KEY CHECK(id=1), snapshot TEXT NOT NULL);');
     this.db.exec('CREATE TABLE IF NOT EXISTS rehearsal (id INTEGER PRIMARY KEY CHECK(id=1), snapshot TEXT NOT NULL);');
     this.db.prepare('INSERT OR IGNORE INTO runtime VALUES (1, ?)').run(JSON.stringify(new MEW().snapshot()));
     this.db.exec('CREATE TABLE IF NOT EXISTS ledger_metadata (id INTEGER PRIMARY KEY CHECK(id=1), mode TEXT NOT NULL); BEGIN IMMEDIATE;');
@@ -20,7 +21,7 @@ export class Store {
       if(saved && saved.mode!==mode) throw new Error('Ledger mode mismatch: use a separate database for live and demo');
       if(!saved && mode==='live') {
         const existing=this.read().snapshot();
-        if(Object.values(existing).some(v=>Array.isArray(v) && v.length) || this.readRehearsal()) throw new Error('Unclassified ledger cannot enter live mode: use a fresh database');
+        if(Object.values(existing).some(v=>Array.isArray(v) && v.length) || this.readRehearsal() || this.readCampaign()) throw new Error('Unclassified ledger cannot enter live mode: use a fresh database');
       }
       this.db.prepare('INSERT OR IGNORE INTO ledger_metadata VALUES (1, ?)').run(mode);
       this.db.exec('COMMIT');
@@ -82,6 +83,20 @@ export class Store {
       this.db.prepare('INSERT INTO rehearsal VALUES (1, ?) ON CONFLICT(id) DO UPDATE SET snapshot=excluded.snapshot').run(this.serialize(result));
       this.db.exec('COMMIT'); return result;
     } catch(error) { this.db.exec('ROLLBACK'); throw error; }
+  }
+  readCampaign() {
+    const row=this.db.prepare('SELECT snapshot FROM campaign WHERE id=1').get();
+    return row?JSON.parse(row.snapshot):null;
+  }
+  campaign(fn) {
+    if(this.mode!=='demo') throw new Error('Campaign fixtures require demo mode');
+    this.db.exec('BEGIN IMMEDIATE');
+    try {
+      const result=fn(this.readCampaign());
+      if(result?.then) throw new Error('Transactions must be synchronous');
+      this.db.prepare('INSERT INTO campaign VALUES (1, ?) ON CONFLICT(id) DO UPDATE SET snapshot=excluded.snapshot').run(this.serialize(result));
+      this.db.exec('COMMIT');return result;
+    }catch(error){this.db.exec('ROLLBACK');throw error;}
   }
   close() { this.db.close(); }
 }

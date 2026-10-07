@@ -16,6 +16,14 @@ npm start
 
 Use **Run the demo**: Alpha is reserved; payment settles with unknown delivery; Beta is deferred; Alpha's delivery satisfies the objective. Without the guard, 0.55 + 0.49 = 1.04 ADA and two equivalent purchases exceed a one-report, one-ADA mandate. With MEW, exposure stays at 0.55 ADA.
 
+## Marketing campaign rehearsal
+
+Open `/campaign.html` through `npm start`. Three synthetic scenarios exercise
+source rights, independent reviews, competing commitments, provisional metrics
+and exact five-outline artifact acceptance. SQLite persists the shared demo
+checkpoint; replaced/stale requests cannot advance it. No videos, model calls,
+analytics, publishing or payments are executed. See [campaign design](docs/MARKETING_CAMPAIGN.md).
+
 ## Implemented
 
 - Deterministic objective/effect kernel, immutable identities, idempotent evidence, safe retries, full refunds and read-only simulation.

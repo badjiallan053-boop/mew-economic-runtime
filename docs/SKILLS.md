@@ -47,3 +47,14 @@ INTEROPERABILITY.md for source, licensing and version-pin limitations.
 See AI_NATIVE_COMPANY_PLAN.md for the product, backend, security, frontend and
 strategy candidate matrix. Added original company-product-delivery host procedure;
 no automatic provider injection or third-party installation.
+
+
+## Campaign contribution
+
+Added original local campaign-acceptance and campaign-measurement procedures.
+The implementation team used one campaign engineer, one skill/SOP designer and
+one independent reviewer, coordinated by the lead. Review feedback corrected
+bundle quantity, reset identity, initial checkpoint persistence and exact artifact
+bindings. Fixtures remain deterministic; skill texts are not injected into model
+contexts. Existing company mission policies are unchanged. All 96 repository
+tests and the build passed for this contribution.

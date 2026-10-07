@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { resolve, sep } from 'node:path';
 import { timingSafeEqual } from 'node:crypto';
+import {createCampaign,advanceCampaign} from '../demo/campaign.mjs';
 import { createRehearsal, advanceRehearsal } from '../demo/rehearsal.mjs';
 import { Store } from './store.mjs';
 import { verifyCardanoSettlement } from '../adapters/cardano.mjs';
@@ -37,6 +38,8 @@ export function makeServer({dbPath=process.env.MEW_DB_PATH || resolve(root,'data
         if(url.pathname.startsWith('/api/cardano/') && demo) return json(403,{error:'Cardano integration requires live evidence mode'});
         if(req.method==='GET' && url.pathname==='/api/cardano/status') return json(200,await connection());
         if(req.method==='GET' && url.pathname==='/api/cardano/operations') return json(200,{network:'cardano:preprod',operations:store.cardanoOperations(),paymentsEnabled:false});
+        if(url.pathname.startsWith('/api/campaign') && !demo) return json(403,{error:'Campaign fixtures are disabled in live mode'});
+        if(req.method==='GET' && url.pathname==='/api/campaign') return json(200,store.campaign(s=>s || createCampaign()));
         if(url.pathname.startsWith('/api/rehearsal') && !demo) return json(403,{error:'Rehearsal is disabled in live mode'});
         if(req.method==='GET' && url.pathname==='/api/rehearsal') return json(200,store.readRehearsal() || createRehearsal());
         if(req.method==='GET' && url.pathname==='/api/state') return json(200,state());
@@ -49,6 +52,8 @@ export function makeServer({dbPath=process.env.MEW_DB_PATH || resolve(root,'data
         let raw='';for await(const chunk of req){raw+=chunk;if(Buffer.byteLength(raw)>65536) return json(413,{error:'Payload too large'});}
         const body=JSON.parse(raw || '{}');
         if(url.pathname==='/api/cardano/operations') return json(201,store.bindCardanoOperation(body));
+        if(url.pathname==='/api/campaign/reset') return json(200,store.campaign(()=>createCampaign(body.scenario)));
+        if(url.pathname==='/api/campaign/advance') return json(200,store.campaign(s=>advanceCampaign(s || createCampaign(),body)));
         if(url.pathname==='/api/rehearsal/reset') return json(200,store.rehearse(()=>createRehearsal(body.scenario)));
         if(url.pathname==='/api/rehearsal/advance') return json(200,store.rehearse(s=>advanceRehearsal(s || createRehearsal(),body)));
         if(url.pathname==='/api/demo/reset') {
