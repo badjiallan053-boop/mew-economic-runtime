@@ -178,8 +178,8 @@ export function drawKineticArt(
   ctx.fillRect(80, 150, 400, 440);
   ctx.restore();
   paths.forEach((path, k) => {
-    ctx.strokeStyle = k === 1 ? "rgba(120,95,198,.22)" : "rgba(94,147,132,.22)";
-    ctx.lineWidth = k === 1 ? 0.9 : 0.7;
+    ctx.strokeStyle = k === 1 ? "rgba(120,95,198,.34)" : "rgba(94,147,132,.32)";
+    ctx.lineWidth = k === 1 ? 1.1 : 0.95;
     ctx.beginPath();
     path.forEach((p, i) => (i ? ctx.lineTo(p.x, p.y) : ctx.moveTo(p.x, p.y)));
     ctx.stroke();
@@ -247,8 +247,8 @@ export function drawKineticArt(
   paths.forEach((path, k) => {
     const p = path[[12, 57, 84][k]];
     ctx.beginPath();
-    ctx.arc(p.x, p.y, k === 1 ? 5 : 4, 0, TAU);
-    ctx.fillStyle = k === 1 ? "#a4a0db" : "#9bbdac";
+    ctx.arc(p.x, p.y, k === 1 ? 6 : 5, 0, TAU);
+    ctx.fillStyle = k === 1 ? "#9186c8" : "#7ea58f";
     ctx.fill();
     ctx.strokeStyle = "rgba(252,252,248,.9)";
     ctx.lineWidth = 1.6;
