@@ -117,3 +117,9 @@ A data-science reviewer audited task labels, lineage leakage, runtime-target fit
 ## Frozen local model experiment
 
 Continued the reference-only skills.sh MLE/evaluation workflow with an independent data-science agent checking labels and exact source support. Installed an isolated MLX runtime for local development evaluation and selected a public Apache-2.0 Qwen 0.6B quantization after finding no existing local model. No remote model code or skill installer is required. Benchmark labels remain agent-reviewed, not human-approved training data. See FROZEN_MODEL_EXPERIMENT.md.
+
+## Installed model reliability skills and focused agents
+
+Installed `evaluate-rag` and `eval-audit` from [skills.sh](https://www.skills.sh/ai-evals-course/evals-skills/evaluate-rag), upstream `ai-evals-course/evals-skills` revision `80d5f7b0127c7572ed9e9339937adbfd7240ffeb`, into `.agents/skills`. Upstream files are unchanged; each includes Apache-2.0 license and provenance. No upstream executable scripts were installed or run. Added original `mew-model-reliability` skill and three reusable role prompts under `prompts/learning`. Skills are available for project discovery on the next turn and were read explicitly for this work.
+
+Three actual Codex agents performed passage retrieval, strict answer-contract engineering and publisher/YouTube source review. New experimental answer validation is distinct from the existing seven-field company runtime contract; no production agent, payment or live-model settings were changed. See MODEL_RELIABILITY_RESOURCES.md and MODEL_RELIABILITY_TEAM.md.
