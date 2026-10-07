@@ -1,0 +1,7 @@
+{
+  "sha256": "0ab4d24bf6c71ab886456cc74eaa760b4674bc44a19d27cb21da34b11cd2d738",
+  "sourceSnapshotDigest": "92a4367be413bae0836c0a965c2e4e8c0c3c7a622aa388cd6fc462aba86a84b1",
+  "cases": 12,
+  "labels": "agent-reviewed development only",
+  "trainingEligible": false
+}

@@ -113,3 +113,7 @@ Applied reference-only skills.sh deep-research and MLE workflow with three actua
 ## Independent data-science audit
 
 A data-science reviewer audited task labels, lineage leakage, runtime-target fit, rights records and customer outcomes. Read skills.sh llm-evaluation and its upstream SKILL.md as reference guidance. Added a gap audit/resource map and 12 bilingual pending benchmark prompts; no trained model or approved labels claimed. See DATA_SCIENCE_GAP_AUDIT.md.
+
+## Frozen local model experiment
+
+Continued the reference-only skills.sh MLE/evaluation workflow with an independent data-science agent checking labels and exact source support. Installed an isolated MLX runtime for local development evaluation and selected a public Apache-2.0 Qwen 0.6B quantization after finding no existing local model. No remote model code or skill installer is required. Benchmark labels remain agent-reviewed, not human-approved training data. See FROZEN_MODEL_EXPERIMENT.md.

@@ -1,0 +1,28 @@
+{
+  "schema": "mew.local-model-evaluation-summary.v1",
+  "benchmarkSha256": "0ab4d24bf6c71ab886456cc74eaa760b4674bc44a19d27cb21da34b11cd2d738",
+  "modelRevision": "73e3e38d981303bc594367cd910ea6eb48349da8",
+  "modelId": "mlx-community/Qwen3-0.6B-4bit",
+  "adapterTrained": false,
+  "languageModelInvoked": true,
+  "runs": {
+    "base": {
+      "cases": 12,
+      "strictContractPasses": 0,
+      "expectedSpanPresent": 7,
+      "generationCapReached": 4
+    },
+    "prompt-v2": {
+      "cases": 12,
+      "strictContractPasses": 1,
+      "expectedSpanPresent": 8,
+      "generationCapReached": 0
+    }
+  },
+  "comparisonLimits": [
+    "Prompt-v2 changes system prompt, context length and generation cap together; this is diagnostic, not a controlled attribution experiment.",
+    "Output-contract validity is not semantic correctness. The one valid prompt-v2 answer is semantically wrong.",
+    "All labels and reviews are agent development work, not human-approved training labels or independent customer evaluation."
+  ],
+  "promotionAllowed": false
+}

@@ -11,3 +11,6 @@ docs/FOUNDER_BRIEF.md
 .env.*.local
 .agents/skills/cardano-*
 .agents/skills/sokosumi-*
+
+__pycache__/
+*.pyc
