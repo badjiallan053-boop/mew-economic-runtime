@@ -30,3 +30,7 @@ No server endpoint invokes this verifier yet. Production requires principal auth
 Run `node --test tests/delivery-receipt.test.mjs`. Coverage includes exact-byte hashing, all binding fields, altered payload/signature, wrong/private keys, source-supplied extra keys, malformed timestamps, expiration/future issuance/age/lifetime, canonical ordering and a correctly signed conflicting replay digest. Replay persistence itself is a documented caller requirement, not implemented by this stateless adapter.
 
 Primary API reference: [Node.js crypto signatures](https://nodejs.org/api/crypto.html#cryptoverifyalgorithm-data-key-signature-callback). Implementation uses public KeyObjects and Ed25519 null algorithm supported by the project's Node 24 runtime; it does not use Node 26-only Ed25519 context options. The versioned GitHub source URL for Node 24.19.0 could not be retrieved by the web reader; API behavior was verified through official documentation and local tests. No external repository code was copied.
+
+## Durable implementation follow-up
+
+OperationStore now supplies same-database receipt uniqueness and atomic kernel delivery transitions for a trusted operator caller. See DURABLE_OPERATIONS.md and operation-store tests for restart, replay and rollback evidence. The HTTP server still uses the original Store and exposes no delivery route; authenticated provider enrollment, customer acceptance and key revocation remain external prerequisites. The standalone verifier stays stateless.

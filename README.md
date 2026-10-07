@@ -94,3 +94,7 @@ See [DELIVERY_PLAN.md](docs/DELIVERY_PLAN.md) for ordered outcomes, accountable 
 ## Evaluation, pilot, delivery and payment workstreams
 
 [WORKSTREAM_AGENTS.md](docs/WORKSTREAM_AGENTS.md) maps specialist responsibilities and focused review subtasks to four runnable implementation boundaries. `npm run model:evaluate` runs the conservative fixture baseline; `npm run pilot:rehearse` records five synthetic outlines; `npm run payment:plan` reports offline payment blockers. Authenticated delivery is a tested Ed25519 library with durable replay enforcement still required from its host. Live model calls and payment dispatch are not enabled.
+
+## Durable receipt and outbox foundation
+
+`npm run durable:rehearse` exercises reservation/outbox atomicity, timeout/reopen and signed synthetic delivery with durable replay. [DURABLE_OPERATIONS.md](docs/DURABLE_OPERATIONS.md) describes the trusted library boundary and production gaps. Public HTTP routes and live payment dispatch remain unchanged.

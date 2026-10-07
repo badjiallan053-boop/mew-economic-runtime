@@ -33,3 +33,7 @@ The source is pinned to a reviewed commit. Git pushes alone do not update it. A 
 Research collection currently writes multiple files sequentially. Next data change should add a versioned staging directory, atomic promotion and a last-good snapshot policy before scheduling automatic refresh. Current data is a small snapshot, not continuous monitoring or a customer-demand model.
 
 Model inference, authenticated delivery, external job dispatch and signing remain unavailable or unimplemented. The roadmap does not count them as completed. Repository announcements guide hypotheses; they are not verified compatibility, security results or partnerships.
+
+## Durable foundation follow-up
+
+OperationStore now atomically stores reservations with outbox rows and verified delivery receipts with delivery transitions. A simulation worker tests timeout and stale-worker fencing; live dispatch is rejected. Durable local receipt replay is implemented, while public API authentication, provider enrollment, signer integration, Masumi contract pinning and actual network reconciliation remain pending. Run `npm run durable:rehearse` and read DURABLE_OPERATIONS.md before integrating a live executor.

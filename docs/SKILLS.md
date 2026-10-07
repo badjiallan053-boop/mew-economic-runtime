@@ -66,3 +66,7 @@ The compact profile loads the new original handoff-review procedure, scoped to
 five roles. It covers consumer validation and observable acceptance. See
 COMPACT_TEAM.md for the actual skills.sh upstream review and adoption limits.
 Legacy profiles do not load it, preserving their mission policy fingerprints.
+
+## Durable operation review · 7 October 2026
+
+Added original local `durable-operation-review` skill for atomic outbox/receipt commits, conflicting replay and retained UNKNOWN exposure. Reviewed skills.sh secure-code-review and data-engineer listings as references; full external secure-code-review retrieval was unavailable, so no third-party executable skill was installed. See DURABLE_OPERATIONS.md for inspected references and limitations.
