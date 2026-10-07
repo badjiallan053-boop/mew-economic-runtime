@@ -31,6 +31,8 @@
     "learning:collect": "node scripts/collect-learning.mjs",
     "learning:analyze": "node scripts/analyze-learning.mjs",
     "learning:evaluate": "node scripts/evaluate-learning.mjs",
-    "learning:export": "node scripts/export-learning.mjs"
+    "learning:export": "node scripts/export-learning.mjs",
+    "learning:hunt": "node scripts/hunt-models.mjs",
+    "learning:retrieve": "node scripts/train-retrieval.mjs"
   }
 }

@@ -1,0 +1,123 @@
+{
+  "algorithm": "smoothed TF-IDF cosine",
+  "corpusDocuments": 8,
+  "cases": [
+    {
+      "query": "How are recipient transaction confirmations verified on Cardano?",
+      "expected": "docs/CARDANO_INTEGRATION.md",
+      "results": [
+        {
+          "id": "SPEC.md",
+          "sha256": "fec538843190a64a262f63304c36f54c5add2489a583ec8c219fa8bdeca40359",
+          "score": 0.17014753241904637
+        },
+        {
+          "id": "docs/CARDANO_INTEGRATION.md",
+          "sha256": "a063438e65c95f96feba09b5723ec66ed595a2ba7ac45292f732626fc3d0b418",
+          "score": 0.1534845887520108
+        },
+        {
+          "id": "docs/AGENT_COMMERCE.md",
+          "sha256": "df39d9372af84a017e107618efc0950f3f1586af3bc99e2b307fff9b42c6df03",
+          "score": 0.11606821643133237
+        }
+      ],
+      "hitAt3": true
+    },
+    {
+      "query": "How should we run a customer pilot?",
+      "expected": "docs/CUSTOMER_PILOT.md",
+      "results": [
+        {
+          "id": "docs/CUSTOMER_PILOT.md",
+          "sha256": "b9c47ce9b4c79b95fce4ef0d1c3a0d8811943aa284d16ea7f14fa5ff511ca0cc",
+          "score": 0.16194317618780762
+        },
+        {
+          "id": "docs/MODEL_EVALUATION.md",
+          "sha256": "62bfd6cfbc2d5b8984e5034d1e2c2f54b0f21118521e1a238824357a6b1e4b9b",
+          "score": 0.10479787557762979
+        },
+        {
+          "id": "docs/MARKETING_CAMPAIGN.md",
+          "sha256": "da2c49928e3b6d93236ba6d188e9970ebc236085281cacb26ce8d753bc22b05e",
+          "score": 0.10158235879387292
+        }
+      ],
+      "hitAt3": true
+    },
+    {
+      "query": "How do we restore a durable backup?",
+      "expected": "docs/BACKUP_RECOVERY.md",
+      "results": [
+        {
+          "id": "docs/BACKUP_RECOVERY.md",
+          "sha256": "6b7143e9778f4a5964bd854324c495f164d9a486ca8e0a040ec324d50fb18773",
+          "score": 0.14694526662670582
+        },
+        {
+          "id": "SPEC.md",
+          "sha256": "fec538843190a64a262f63304c36f54c5add2489a583ec8c219fa8bdeca40359",
+          "score": 0.052518497614077335
+        },
+        {
+          "id": "docs/CARDANO_INTEGRATION.md",
+          "sha256": "a063438e65c95f96feba09b5723ec66ed595a2ba7ac45292f732626fc3d0b418",
+          "score": 0.028930987592029826
+        }
+      ],
+      "hitAt3": true
+    },
+    {
+      "query": "How do we prevent temporal leakage in training data?",
+      "expected": "docs/ML_LEARNING_PIPELINE.md",
+      "results": [
+        {
+          "id": "docs/ML_LEARNING_PIPELINE.md",
+          "sha256": "ec5778ce7224a6161d010160e78be1cca328c1ba60958e424cd7e17593644e0f",
+          "score": 0.12479446022438731
+        },
+        {
+          "id": "SPEC.md",
+          "sha256": "fec538843190a64a262f63304c36f54c5add2489a583ec8c219fa8bdeca40359",
+          "score": 0.030620046501221923
+        },
+        {
+          "id": "docs/BACKUP_RECOVERY.md",
+          "sha256": "6b7143e9778f4a5964bd854324c495f164d9a486ca8e0a040ec324d50fb18773",
+          "score": 0.024601700759527306
+        }
+      ],
+      "hitAt3": true
+    },
+    {
+      "query": "How is marketing campaign artifact acceptance tracked?",
+      "expected": "docs/MARKETING_CAMPAIGN.md",
+      "results": [
+        {
+          "id": "docs/MARKETING_CAMPAIGN.md",
+          "sha256": "da2c49928e3b6d93236ba6d188e9970ebc236085281cacb26ce8d753bc22b05e",
+          "score": 0.16521827450356305
+        },
+        {
+          "id": "docs/CUSTOMER_PILOT.md",
+          "sha256": "b9c47ce9b4c79b95fce4ef0d1c3a0d8811943aa284d16ea7f14fa5ff511ca0cc",
+          "score": 0.09780732916556933
+        },
+        {
+          "id": "docs/AGENT_COMMERCE.md",
+          "sha256": "df39d9372af84a017e107618efc0950f3f1586af3bc99e2b307fff9b42c6df03",
+          "score": 0.022480993317764722
+        }
+      ],
+      "hitAt3": true
+    }
+  ],
+  "hits": 5,
+  "total": 5,
+  "limitations": [
+    "Five authored smoke queries; not independent customer evaluation.",
+    "Corpus-fitted lexical retrieval only, not a fine-tuned language model.",
+    "No external training data, credentials, uploads or payments used."
+  ]
+}

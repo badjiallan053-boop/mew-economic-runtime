@@ -1,0 +1,16 @@
+{
+  "dataset": "nvidia/When2Call",
+  "revision": "0582f7749df63a96fdc3070932e83e72396ace53",
+  "source": "https://huggingface.co/datasets/nvidia/When2Call/resolve/0582f7749df63a96fdc3070932e83e72396ace53/train/when2call_train_sft.jsonl",
+  "sourceSplit": "train_sft/train",
+  "sampleMethod": "First 32 records; convenience sample, not representative",
+  "records": 32,
+  "license": "cc-by-4.0",
+  "attribution": "NVIDIA Corporation; Ross, Mahabaleshwarka and Suhara, When2Call, NAACL 2025",
+  "synthetic": true,
+  "trainingEligible": false,
+  "review": "Pending domain, privacy, tool-authority and attribution review. No tools executed.",
+  "sha256": "71157cabb023e19ed316798067b14dd8e594492a6d5cdee96983517e9fe47d95",
+  "hashScope": "Retained sample bytes only; not full upstream file",
+  "collectedAt": "2026-10-07T13:28:46.739Z"
+}

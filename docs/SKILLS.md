@@ -101,3 +101,7 @@ Applied local jury UI/UX and evidence-design guidance. Inspected skills.sh inter
 ## Machine-learning evidence pipeline
 
 Applied the local engineering procedure and data-analytics data-quality guidance. Inspected [skills.sh MLE workflow](https://www.skills.sh/affaan-m/ecc/mle-workflow) and its [upstream SKILL.md](https://github.com/affaan-m/ecc/blob/main/skills/mle-workflow/SKILL.md) as reference material for task definitions, baselines, split integrity and promotion gates. Implemented native Node tooling and a standard-library quality notebook; no third-party executable skill or ML framework installed. Public data remains untrusted context, and the export gate grants no training or payment authority. See ML_LEARNING_PIPELINE.md. References are not version-pinned.
+
+## Dataset and model discovery
+
+Extended the reference-only skills.sh MLE workflow into a fixed-source, revision-pinned catalog and an original local TF-IDF retrieval fit. Reviewed official dataset cards, Qwen model cards and MLX-LM LoRA guidance. No remote installers, dataset scripts or model-weight code were executed. See MODEL_DATA_SHORTLIST.md; language-model fine-tuning remains pending reviewed data and hardware feasibility.
