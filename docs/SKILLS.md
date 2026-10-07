@@ -109,3 +109,7 @@ Extended the reference-only skills.sh MLE workflow into a fixed-source, revision
 ## Social research committee
 
 Applied reference-only skills.sh deep-research and MLE workflow with three actual review agents. Built strict advisory proposal validation and research-only social source exclusions; generated synthetic oracle fixtures using the existing deterministic core. No remote installers or scraped transcripts used. See SOCIAL_PROTOCOL_COMMITTEE.md.
+
+## Independent data-science audit
+
+A data-science reviewer audited task labels, lineage leakage, runtime-target fit, rights records and customer outcomes. Read skills.sh llm-evaluation and its upstream SKILL.md as reference guidance. Added a gap audit/resource map and 12 bilingual pending benchmark prompts; no trained model or approved labels claimed. See DATA_SCIENCE_GAP_AUDIT.md.
