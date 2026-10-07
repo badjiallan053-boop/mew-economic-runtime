@@ -51,3 +51,7 @@ Both narrow robustness findings sent to the lead are now resolved and independen
 Reran **9/9 education collector/context tests and 1/1 SEO test**, all passing. These cover future event/availability, stale network blocks, malformed source-count metadata and final SEO asset boundaries. No further material finding remains within this narrowly reviewed integration scope.
 
 These are local source findings, not fresh hosted deployment evidence. Models remain simulated; training, paid jobs, signer dispatch, fresh ledger acceptance and external professional contract audit remain gated.
+
+## Lead's hosted release verification
+
+After the independent review, the lead deployed source `17ab667ee27e5581e42961ffbf7522fcc5929d76` as Railway deployment `05dd6861-5552-47af-be79-69cfa91605d1` (SUCCESS). Fifty read-only hosted health/asset checks passed, including exact source bytes and security/crawler headers. Hosted company status remains NOT_CONFIGURED for models, payments remain false, and the demo Cardano endpoint returns 403. The lead's browser exercised pause/resume and ALLOW → UNKNOWN → DEFER with retained exposure, then verified the historical knowledge page and clean browser logs. Detailed limits and receipts are summarized in [deployment history](LIVE_DEPLOYMENT.md). This addition records the lead's evidence, not an independent production penetration test or contract audit.
