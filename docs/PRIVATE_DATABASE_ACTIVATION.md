@@ -85,7 +85,7 @@ If an outcome is uncertain, retain reservations and mark the lane UNKNOWN/BLOCKE
 
 ## References adopted
 
-Official [Supabase roles](https://supabase.com/docs/guides/database/postgres/roles) and [connection guidance](https://supabase.com/docs/guides/database/connecting-to-postgres) inform role separation and endpoint choice. [PostgreSQL 17 psql](https://www.postgresql.org/docs/17/app-psql.html) documents masked password handling. [node-postgres transaction guidance](https://node-postgres.com/features/transactions) establishes the same-client transaction boundary. The [Supabase skill on skills.sh](https://skills.sh/supabase/agent-skills/supabase-postgres-best-practices) is pinned and hashed in [database sources](../research/activation/database-sources.json); it informed the original local activation skill. No third-party skill code was installed or executed. The local skill validator used pinned PyYAML 6.0.2 in an ignored tooling directory; no application runtime dependency was added.
+Official [Supabase roles](https://supabase.com/docs/guides/database/postgres/roles) and [connection guidance](https://supabase.com/docs/guides/database/connecting-to-postgres) inform role separation and endpoint choice. [PostgreSQL 17 psql](https://www.postgresql.org/docs/17/app-psql.html) documents masked password handling. [node-postgres transaction guidance](https://node-postgres.com/features/transactions) establishes the same-client transaction boundary. The [Supabase skill on skills.sh](https://skills.sh/supabase/agent-skills/supabase-postgres-best-practices) is pinned and hashed in [database sources](../research/activation/database-sources.json); it informed the original local activation skill. That original activation step installed no third-party skill code. The subsequent SDK integration installed the reviewed official skill bundle at the pinned commit recorded in `.agents/skills/supabase-postgres-best-practices/PROVENANCE.json`; it is reference material, not runtime code. The local skill validator used pinned PyYAML 6.0.2 in an ignored tooling directory; no application runtime dependency was added.
 
 ## Startup catalog guard added 8 October
 
@@ -112,3 +112,20 @@ NOLOGIN. Public Supabase Auth SDK/session setup does not supply this role passwo
 Private JSON optionally accepts `providerKeys` entries with provider, keyId,
 publicKeyPem (SPKI PUBLIC KEY only), notBeforeMs, expiresAtMs and revoked. Empty
 keys grant no delivery authority; enroll/accept bearer actions are separately scoped.
+
+## Foreign-key index follow-up
+
+The additive migration `20261007230838_mew_private_fk_indexes` installs
+`deploy/supabase-private-indexes.sql`. Two composite indexes cover the three
+delivery/input-lock foreign-key notices without changing grants, policies or
+records. The new PGlite regression verifies column order and that the strict
+private catalog guard still passes for its explicitly enabled fixture role.
+
+The hosted security advisor reports no notices. Its performance advisor still
+reports six [RLS initialization-plan warnings](https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan).
+Optimization remains pending measured runtime queries and a reviewed update to
+the guard's exact policy-expression check. The two new indexes are also marked
+unused because no private runtime workload has run; that observation is not a
+reason to remove foreign-key coverage. The sanitized snapshot is
+`research/activation/hosted-release-observation.json`. These management checks do
+not establish application login, concurrency, recovery or database failover.

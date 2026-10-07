@@ -1,12 +1,12 @@
 {
   "schema": "mew.implementation-verification.v1",
-  "checkedAt": "2026-10-07T23:02:30.274433+00:00",
+  "checkedAt": "2026-10-07T23:09:31.611Z",
   "tests": {
-    "passed": 374,
+    "passed": 375,
     "failed": 0,
     "skipped": 0,
     "suite": "node --test tests/*.test.mjs",
-    "logSha256": "3516dcf86b56e3f9b07476af67853c2a19ece74bc8404cb4b13bb4bbe0cb4209"
+    "logSha256": "2384ac2e6018ad0aa6cc27b9aa6f9074cb8aa6e77536984de6e1b347c88cee5e"
   },
   "build": {
     "passed": true,
@@ -33,5 +33,12 @@
     "Local PGlite tests do not establish hosted multi-session or crash behavior.",
     "Agent review and advisory snapshots do not replace independent compiled-contract audit.",
     "Model experiments preserve development benchmark; semantic promotion remains blocked."
-  ]
+  ],
+  "supabaseIndexMigration": "20261007230838",
+  "hostedDeployment": {
+    "commit": "9e8acd4b3645cc3fdc9af9c4cd9ca9c95d7e5944",
+    "deploymentId": "aa9ef122-6b8b-4f08-92c6-5e0ba14ee9df",
+    "readOnlyChecks": 55,
+    "failed": 0
+  }
 }

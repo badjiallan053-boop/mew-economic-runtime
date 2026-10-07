@@ -42,3 +42,13 @@ Nine SDK regressions include rejection of redirected/foreign response URLs and
 malformed HTTP 200 responses without retrying or deleting browser cookies. Empty
 response URLs are supported for explicitly injected local fixture transports;
 native fetch must report the exact approved response target.
+
+## Deployed verification
+
+Railway deployment `aa9ef122-6b8b-4f08-92c6-5e0ba14ee9df` is successful and
+pinned to application commit `9e8acd4b3645cc3fdc9af9c4cd9ca9c95d7e5944`.
+All 55 read-only HTTP checks passed, including asset hashes, security headers,
+demo health and the configured but unauthenticated session response. The public
+settings are installed on the existing service; its backend remains SQLite.
+See `research/activation/hosted-http-verification.json`. This does not demonstrate
+a real user's refresh cycle or grant private database/economic authority.

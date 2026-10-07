@@ -1,0 +1,144 @@
+{
+  "schema": "mew.hosted-release-observation.v1",
+  "checkedAt": "2026-10-07T23:09:31.533Z",
+  "railway": {
+    "deployment": {
+      "id": "aa9ef122-6b8b-4f08-92c6-5e0ba14ee9df",
+      "status": "SUCCESS",
+      "createdAt": "2026-10-07T23:04:51.526Z",
+      "url": null
+    },
+    "source": {
+      "repo": "badjiallan053-boop/mew-economic-runtime",
+      "branch": "feat/cardano-agent-boundaries",
+      "commitSha": "9e8acd4b3645cc3fdc9af9c4cd9ca9c95d7e5944"
+    },
+    "state": "live",
+    "staged": null,
+    "variableNames": [
+      "HOST",
+      "MEW_DB_PATH",
+      "MEW_DEMO_MODE",
+      "NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY",
+      "NEXT_PUBLIC_SUPABASE_URL",
+      "PORT"
+    ]
+  },
+  "supabase": {
+    "projectId": "ndorfchuhciidfcltbzf",
+    "indexMigration": "20261007230838",
+    "securityAdvisor": {
+      "lints": []
+    },
+    "performanceAdvisor": {
+      "lints": [
+        {
+          "name": "auth_rls_initplan",
+          "title": "Auth RLS Initialization Plan",
+          "level": "WARN",
+          "facing": "EXTERNAL",
+          "categories": [
+            "PERFORMANCE"
+          ],
+          "description": "Detects if calls to \\`current_setting()\\` and \\`auth.<function>()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+          "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+          "count": 6,
+          "findings": [
+            {
+              "detail": "Table \\`mew_private.ledgers\\` has a row level security policy \\`principal_boundary\\` that re-evaluates current_setting() or auth.<function>() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.<function>()\\` with \\`(select auth.<function>())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+              "metadata": {
+                "name": "ledgers",
+                "type": "table",
+                "schema": "mew_private"
+              },
+              "observed_at": "2026-10-07T23:08:46.042Z"
+            },
+            {
+              "detail": "Table \\`mew_private.escrow_operations\\` has a row level security policy \\`principal_boundary\\` that re-evaluates current_setting() or auth.<function>() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.<function>()\\` with \\`(select auth.<function>())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+              "metadata": {
+                "name": "escrow_operations",
+                "type": "table",
+                "schema": "mew_private"
+              },
+              "observed_at": "2026-10-07T23:08:46.042Z"
+            },
+            {
+              "detail": "Table \\`mew_private.input_locks\\` has a row level security policy \\`principal_boundary\\` that re-evaluates current_setting() or auth.<function>() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.<function>()\\` with \\`(select auth.<function>())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+              "metadata": {
+                "name": "input_locks",
+                "type": "table",
+                "schema": "mew_private"
+              },
+              "observed_at": "2026-10-07T23:08:46.042Z"
+            },
+            {
+              "detail": "Table \\`mew_private.model_runs\\` has a row level security policy \\`principal_boundary\\` that re-evaluates current_setting() or auth.<function>() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.<function>()\\` with \\`(select auth.<function>())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+              "metadata": {
+                "name": "model_runs",
+                "type": "table",
+                "schema": "mew_private"
+              },
+              "observed_at": "2026-10-07T23:08:46.042Z"
+            },
+            {
+              "detail": "Table \\`mew_private.delivery_contracts\\` has a row level security policy \\`principal_boundary\\` that re-evaluates current_setting() or auth.<function>() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.<function>()\\` with \\`(select auth.<function>())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+              "metadata": {
+                "name": "delivery_contracts",
+                "type": "table",
+                "schema": "mew_private"
+              },
+              "observed_at": "2026-10-07T23:08:46.042Z"
+            },
+            {
+              "detail": "Table \\`mew_private.delivery_receipts\\` has a row level security policy \\`principal_boundary\\` that re-evaluates current_setting() or auth.<function>() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.<function>()\\` with \\`(select auth.<function>())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+              "metadata": {
+                "name": "delivery_receipts",
+                "type": "table",
+                "schema": "mew_private"
+              },
+              "observed_at": "2026-10-07T23:08:46.042Z"
+            }
+          ]
+        },
+        {
+          "name": "unused_index",
+          "title": "Unused Index",
+          "level": "INFO",
+          "facing": "EXTERNAL",
+          "categories": [
+            "PERFORMANCE"
+          ],
+          "description": "Detects if an index has never been used and may be a candidate for removal.",
+          "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0005_unused_index",
+          "count": 2,
+          "findings": [
+            {
+              "detail": "Index \\`delivery_receipts_principal_job_idx\\` on table \\`mew_private.delivery_receipts\\` has not been used",
+              "metadata": {
+                "name": "delivery_receipts",
+                "type": "table",
+                "schema": "mew_private"
+              },
+              "observed_at": "2026-10-07T23:08:46.042Z"
+            },
+            {
+              "detail": "Index \\`input_locks_principal_operation_idx\\` on table \\`mew_private.input_locks\\` has not been used",
+              "metadata": {
+                "name": "input_locks",
+                "type": "table",
+                "schema": "mew_private"
+              },
+              "observed_at": "2026-10-07T23:08:46.042Z"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "Railway remains the SQLite demo; no private runtime login or real user session was exercised.",
+    "Six RLS initplan performance warnings require measured workload and a reviewed catalog-guard update; authorization policies were preserved.",
+    "New indexes are unused because no private runtime workload has run; retain foreign-key coverage.",
+    "No model activation, signing, broadcast, customer pilot or independent contract audit."
+  ]
+}
