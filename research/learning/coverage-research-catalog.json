@@ -1,0 +1,62 @@
+{
+  "schema": "mew.coverage-research-catalog.v1",
+  "checkedAt": "2026-10-07",
+  "authority": "reference-only",
+  "corpusChanged": false,
+  "sources": [
+    {
+      "id": "anthropic-contextual",
+      "url": "https://www.anthropic.com/engineering/contextual-retrieval",
+      "kind": "engineering-report",
+      "originalSummary": "Hybrid lexical/semantic retrieval and preserving chunk context motivate experiments; no hosted contextualizer executed.",
+      "trainingEligible": false,
+      "repositoryRefPinned": false
+    },
+    {
+      "id": "lost-in-middle",
+      "url": "https://arxiv.org/abs/2307.03172",
+      "kind": "paper-abstract",
+      "originalSummary": "Longer supplied contexts require separate answer-use evaluation; abstract reviewed only.",
+      "trainingEligible": false,
+      "repositoryRefPinned": false
+    },
+    {
+      "id": "langchain-parent",
+      "url": "https://raw.githubusercontent.com/langchain-ai/langchain/master/libs/langchain/langchain_classic/retrievers/parent_document_retriever.py",
+      "kind": "repository-source",
+      "originalSummary": "Small retrieval chunks can map to larger original parents; original MEW implementation retains exact hashes and bounded text.",
+      "trainingEligible": false,
+      "repositoryRefPinned": false
+    },
+    {
+      "id": "langchain-ensemble",
+      "url": "https://raw.githubusercontent.com/langchain-ai/langchain/master/libs/langchain/langchain_classic/retrievers/ensemble.py",
+      "kind": "repository-source",
+      "originalSummary": "Reciprocal rank fusion combines different ranked results; MEW prevents duplicate child amplification within a source.",
+      "trainingEligible": false,
+      "repositoryRefPinned": false
+    },
+    {
+      "id": "safetensors",
+      "url": "https://github.com/safetensors/safetensors",
+      "kind": "repository-and-library",
+      "originalSummary": "Direct local library integration inspects metadata after receipt hashes; does not execute tensors or validate factual model quality.",
+      "trainingEligible": false,
+      "repositoryRefPinned": false
+    },
+    {
+      "id": "skills-rag",
+      "url": "https://www.skills.sh/giuseppe-trisciuoglio/developer-kit/rag",
+      "kind": "skill-directory",
+      "originalSummary": "Reference listing only; original evidence-coverage skill preserves local architecture and evaluation boundaries.",
+      "trainingEligible": false,
+      "repositoryRefPinned": false
+    }
+  ],
+  "youtube": {
+    "url": "https://www.youtube.com/watch?v=2c64G-iDJKQ",
+    "pageRead": true,
+    "transcriptExport": "unavailable",
+    "spokenContentUsed": false
+  }
+}
