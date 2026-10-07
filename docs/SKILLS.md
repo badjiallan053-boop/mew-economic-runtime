@@ -82,3 +82,10 @@ Added original partner-demo procedure using evidence classification from local p
 ## Company design studio
 
 Added an original company-design-studio procedure after inspecting skills.sh frontend-design and upstream web-design-guidelines references. Two implementation roles and independent review were coordinated by root; no third-party packages or runtime privileges added. See WEBSITE_STUDIO.md.
+
+
+## Product-led growth and writing
+
+Created original mew-gtm and mew-product-writing skills with shared PRODUCT_MARKETING_CONTEXT.md and GTM_PLAYBOOK.md. Two implementation agents contributed website copy and GTM/skill authoring; root integrated the pilot planner and reviewed claims and rendered behavior. Both skill validators passed. The skills and workstream prompts are host-side guidance, not additions to the runtime role registry.
+
+Reviewed [skills.sh copywriting](https://www.skills.sh/coreyhaines31/marketingskills/copywriting), [upstream copywriting](https://github.com/coreyhaines31/marketingskills/blob/main/skills/copywriting/SKILL.md) and [upstream free-tools](https://github.com/coreyhaines31/marketingskills/blob/main/skills/free-tools/SKILL.md). References informed audience context and a useful ungated planning tool. No installer, executable package, external conversion statistics or customer results were adopted. Sources are not version-pinned.
