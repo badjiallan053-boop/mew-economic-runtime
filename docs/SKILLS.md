@@ -49,7 +49,6 @@ TDD for QA) as references; each specialist inherits its lead's selected skills.
 No installer or third-party script runs. Runtime policy digests cover registry,
 prompt and skill contents. Assigned references are not evidence of real inference.
 
-
 ## Design and interoperability procedures
 
 Added original local `design-discovery` and `interoperability-review` SKILL.md
@@ -62,11 +61,9 @@ used a documentation subagent and reviewed the actual Anthropic MCP-builder skil
 through skills.sh; no upstream installer or scripts were executed. See
 INTEROPERABILITY.md for source, licensing and version-pin limitations.
 
-
 See AI_NATIVE_COMPANY_PLAN.md for the product, backend, security, frontend and
 strategy candidate matrix. Added original company-product-delivery host procedure;
 no automatic provider injection or third-party installation.
-
 
 ## Campaign contribution
 
@@ -77,7 +74,6 @@ bundle quantity, reset identity, initial checkpoint persistence and exact artifa
 bindings. Fixtures remain deterministic; skill texts are not injected into model
 contexts. Existing company mission policies are unchanged. All 96 repository
 tests and the build passed for this contribution.
-
 
 ## Compact profile
 
@@ -101,7 +97,6 @@ Added original partner-demo procedure using evidence classification from local p
 ## Company design studio
 
 Added an original company-design-studio procedure after inspecting skills.sh frontend-design and upstream web-design-guidelines references. Two implementation roles and independent review were coordinated by root; no third-party packages or runtime privileges added. See WEBSITE_STUDIO.md.
-
 
 ## Product-led growth and writing
 
@@ -216,3 +211,15 @@ The work adds secure local enrollment scaffolding, bounded read-only preprod wal
 observations and artifact-bound advisory reviews. Model/provider calls, remote LOGIN,
 funded wallet transactions, signing, independent audit and production activation
 were not performed. See [team procedure](ACTIVATION_TEAM.md).
+
+## Artistic motion studio
+
+Three actual specialists handled original kinetic artwork, shared experience
+motion and independent UI/UX/evidence review. The lead integrated and browser-tested
+the site. Existing local perp-design-studio, perp-jury-uiux, perp-graphic-design
+and perp-evidence-design skills informed review, adapted to MEW's own palette
+and prototype boundaries. Reviewed skills.sh interaction-design, CSS motion
+systems and motion-performance guidance; source provenance and adoption limits
+are recorded in research/design/\*-sources.json. No remote installer, new animation
+framework or runtime agents were added. Source/storyboard and rendered reviews
+are documented in ARTISTIC_MOTION_REVIEW.md.

@@ -8,3 +8,7 @@ const details=document.createElement('details');details.className='support-nav';
 // Native disclosure: Escape restores focus; outside pointer closes without trapping it.
 details.addEventListener('keydown',event=>{if(event.key==='Escape'&&details.open){details.open=false;summary.focus();event.preventDefault();}});
 document.addEventListener('pointerdown',event=>{if(details.open&&!details.contains(event.target))details.open=false;});
+
+// Independent progressive enhancement: an optional art failure cannot block navigation.
+const motionStyles=document.createElement('link');motionStyles.rel='stylesheet';motionStyles.href='/experience-motion.css';document.head.append(motionStyles);
+import('/experience-motion.js').catch(()=>{});

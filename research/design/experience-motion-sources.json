@@ -1,0 +1,80 @@
+{
+  "schema": "mew.experience-motion-sources.v1",
+  "checkedOn": "2026-10-08",
+  "sources": [
+    {
+      "repository": "https://github.com/stolinski/motion-skills",
+      "revision": "aa804dc26c6d863a7c79cc1dfe8f2f6a4912b069",
+      "files": [
+        {
+          "path": "skills/css-motion-systems/SKILL.md",
+          "sha256": "229fac0c4a69aed821ea84b8c7de2a3e535ff12bbf47a575c7ae6dd98a5f3dcf",
+          "url": "https://raw.githubusercontent.com/stolinski/motion-skills/aa804dc26c6d863a7c79cc1dfe8f2f6a4912b069/skills/css-motion-systems/SKILL.md",
+          "bytes": 7333
+        },
+        {
+          "path": "LICENSE",
+          "status": "unavailable",
+          "reason": "HTTPError"
+        }
+      ],
+      "discoveredVia": "https://www.skills.sh/stolinski/motion-skills/css-motion-systems",
+      "licenseReview": "Top-level LICENSE retrieval unavailable; reference-only, no copied skill bundle.",
+      "adoption": "Conceptual reference for original native WAAPI/CSS implementation; no installer, dependency or framework executed."
+    },
+    {
+      "repository": "https://github.com/wshobson/agents",
+      "revision": "46891e7e60da0e52baf1050b7b6391b64e84c6d9",
+      "files": [
+        {
+          "path": "plugins/ui-design/skills/interaction-design/SKILL.md",
+          "sha256": "87f2765ed1deeef3f1c06f9e4338ff103c391c6c4adcdffc885f3516b7c34ff2",
+          "url": "https://raw.githubusercontent.com/wshobson/agents/46891e7e60da0e52baf1050b7b6391b64e84c6d9/plugins/ui-design/skills/interaction-design/SKILL.md",
+          "bytes": 7572
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "f89abb55d9f073f38f1703e4518f0613c788c6174be7f13b8dfe48a1c076c746",
+          "url": "https://raw.githubusercontent.com/wshobson/agents/46891e7e60da0e52baf1050b7b6391b64e84c6d9/LICENSE",
+          "bytes": 1068
+        }
+      ],
+      "discoveredVia": "https://www.skills.sh/wshobson/agents/interaction-design",
+      "licenseReview": "MIT LICENSE retrieved and reviewed; no upstream implementation copied.",
+      "adoption": "Conceptual reference for original native WAAPI/CSS implementation; no installer, dependency or framework executed."
+    }
+  ],
+  "browserReferences": [
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Animation/cancel",
+      "application": "Cancel finite animations and handle rejected finished promises."
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API",
+      "application": "Once-per-element section entrances with disconnect/visibility lifecycle."
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion",
+      "application": "CSS and live preference suppression with static visible fallback."
+    }
+  ],
+  "localSkills": [
+    "company-design-studio",
+    "design-discovery",
+    "perp-design-studio",
+    "perp-jury-uiux",
+    "perp-evidence-design"
+  ],
+  "implementationFiles": [
+    "public/experience-motion.js",
+    "public/experience-motion.css"
+  ],
+  "externalDependenciesAdded": false,
+  "browserReviewPerformedByThisLane": false,
+  "networkCallsAddedToWebsite": false,
+  "economicBehaviorChanged": false,
+  "limitations": [
+    "Source and lifecycle review only; lead must inspect actual rendered integration.",
+    "No video transcript or remote installer was needed for this narrow motion change."
+  ]
+}

@@ -26,6 +26,11 @@ function syncMotion() {
       ? "Resume motion ▶"
       : "Pause motion Ⅱ";
   if (effectivePaused) resultAnimation?.cancel();
+  document.dispatchEvent(
+    new CustomEvent("mew:motion-preference", {
+      detail: { paused: manuallyPaused || preferencePaused || document.hidden },
+    }),
+  );
 }
 pause.addEventListener("click", () => {
   manuallyPaused = !manuallyPaused;
@@ -43,6 +48,7 @@ if ("IntersectionObserver" in window) {
   );
   artVisibility.observe(sculpture);
 }
+sculpture.dataset.motionReady = "true";
 syncMotion();
 function animateDecision() {
   resultAnimation?.cancel();

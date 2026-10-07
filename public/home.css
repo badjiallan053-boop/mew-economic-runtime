@@ -250,7 +250,7 @@ em {
   display: flex;
   flex-wrap: wrap;
   gap: 18px;
-  font-size: 10px;
+  font-size: 12px;
   margin: 0 10px;
   padding-top: 14px;
   border-top: 1px solid var(--line);
@@ -258,8 +258,8 @@ em {
 }
 .sculpture figcaption small {
   width: 100%;
-  font-size: 9px;
-  opacity: 0.8;
+  font-size: 11px;
+  opacity: 1;
 }
 .legend {
   display: inline-block;
@@ -275,11 +275,12 @@ em {
   background: var(--blue);
 }
 .art-stack {
-  animation: float 7s ease-in-out infinite;
+  /* Static fallback: optional Canvas enhancement owns continuous motion. */
+  animation: none;
   transform-origin: 280px 240px;
 }
 .art-orbit {
-  animation: orbit-breathe 7s ease-in-out infinite;
+  animation: none;
 }
 .sculpture.is-paused .art-stack,
 .sculpture.is-paused .art-orbit {
