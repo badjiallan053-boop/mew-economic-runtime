@@ -1,0 +1,25 @@
+{
+  "schema": "mew.learning-quality.v1",
+  "records": 159,
+  "duplicates": 0,
+  "sourcesSucceeded": 15,
+  "sourcesUnavailable": 0,
+  "byGrain": {
+    "article_day": 112,
+    "repository_snapshot": 5,
+    "network_block": 10,
+    "network_transaction": 32
+  },
+  "supervisedLabels": 0,
+  "verifiedMerchantPayments": 0,
+  "fineTuningReady": false,
+  "blockers": [
+    "No reviewed supervised task labels.",
+    "External data reuse review pending.",
+    "No held-out customer outcomes or model baseline.",
+    "Public attention and chain observations have different grains; no causal correlation established."
+  ],
+  "snapshotSha256": "f51240a10b772c3a4ce84286830c0001f85ef08ed3cec0fa19cfda93599c9f72",
+  "collectedAt": "2026-10-07T13:13:16.559Z",
+  "directory": "research/learning/2026-10-07T13-13-06-688Z"
+}

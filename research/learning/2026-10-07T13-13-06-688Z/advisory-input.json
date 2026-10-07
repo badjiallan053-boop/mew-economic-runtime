@@ -1,0 +1,371 @@
+{
+  "schema": "mew.public-context.v1",
+  "asOf": "2026-10-07T13:13:16.559Z",
+  "training": false,
+  "paymentsEnabled": false,
+  "evidence": [
+    {
+      "id": "pageviews:Cardano_(blockchain_platform):2026090800",
+      "source": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Cardano_(blockchain_platform)/daily/2026090800/2026100500",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"attention:Cardano_(blockchain_platform)\",\"source\":\"https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Cardano_(blockchain_platform)/daily/2026090800/2026100500\",\"observedAt\":\"2026-10-07T13:13:06.772Z\",\"availableAt\":\"2026-10-07T13:13:06.772Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"pageviews:Cardano_(blockchain_platform):2026090800\",\"entity\":\"Cardano_(blockchain_platform)\",\"grain\":\"article_day\",\"eventAt\":\"2026-09-08T00:00:00.000Z\",\"metrics\":{\"views\":55},\"unit\":\"pageviews\",\"interpretation\":\"English Wikipedia user-category requests; not unique people or MEW acquisition.\"}"
+    },
+    {
+      "id": "pageviews:Artificial_intelligence:2026090800",
+      "source": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Artificial_intelligence/daily/2026090800/2026100500",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"attention:Artificial_intelligence\",\"source\":\"https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Artificial_intelligence/daily/2026090800/2026100500\",\"observedAt\":\"2026-10-07T13:13:06.852Z\",\"availableAt\":\"2026-10-07T13:13:06.852Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"pageviews:Artificial_intelligence:2026090800\",\"entity\":\"Artificial_intelligence\",\"grain\":\"article_day\",\"eventAt\":\"2026-09-08T00:00:00.000Z\",\"metrics\":{\"views\":15159},\"unit\":\"pageviews\",\"interpretation\":\"English Wikipedia user-category requests; not unique people or MEW acquisition.\"}"
+    },
+    {
+      "id": "pageviews:Intelligent_agent:2026090800",
+      "source": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Intelligent_agent/daily/2026090800/2026100500",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"attention:Intelligent_agent\",\"source\":\"https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Intelligent_agent/daily/2026090800/2026100500\",\"observedAt\":\"2026-10-07T13:13:06.927Z\",\"availableAt\":\"2026-10-07T13:13:06.927Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"pageviews:Intelligent_agent:2026090800\",\"entity\":\"Intelligent_agent\",\"grain\":\"article_day\",\"eventAt\":\"2026-09-08T00:00:00.000Z\",\"metrics\":{\"views\":224},\"unit\":\"pageviews\",\"interpretation\":\"English Wikipedia user-category requests; not unique people or MEW acquisition.\"}"
+    },
+    {
+      "id": "pageviews:Content_marketing:2026090800",
+      "source": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Content_marketing/daily/2026090800/2026100500",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"attention:Content_marketing\",\"source\":\"https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Content_marketing/daily/2026090800/2026100500\",\"observedAt\":\"2026-10-07T13:13:06.952Z\",\"availableAt\":\"2026-10-07T13:13:06.952Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"pageviews:Content_marketing:2026090800\",\"entity\":\"Content_marketing\",\"grain\":\"article_day\",\"eventAt\":\"2026-09-08T00:00:00.000Z\",\"metrics\":{\"views\":145},\"unit\":\"pageviews\",\"interpretation\":\"English Wikipedia user-category requests; not unique people or MEW acquisition.\"}"
+    },
+    {
+      "id": "repository:masumi-network/sokosumi:2026-10-07T13:13:07.636Z",
+      "source": "https://api.github.com/repos/masumi-network/sokosumi",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"repository:masumi-network/sokosumi\",\"source\":\"https://api.github.com/repos/masumi-network/sokosumi\",\"observedAt\":\"2026-10-07T13:13:07.636Z\",\"availableAt\":\"2026-10-07T13:13:07.636Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"repository:masumi-network/sokosumi:2026-10-07T13:13:07.636Z\",\"entity\":\"masumi-network/sokosumi\",\"grain\":\"repository_snapshot\",\"eventAt\":\"2026-10-07T13:13:07.636Z\",\"metrics\":{\"stars\":13,\"forks\":7,\"openIssues\":27,\"watchers\":1},\"license\":\"MIT\",\"interpretation\":\"Developer attention snapshot; not adoption, growth or purchase intent.\"}"
+    },
+    {
+      "id": "repository:masumi-network/masumi-payment-service:2026-10-07T13:13:07.966Z",
+      "source": "https://api.github.com/repos/masumi-network/masumi-payment-service",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"repository:masumi-network/masumi-payment-service\",\"source\":\"https://api.github.com/repos/masumi-network/masumi-payment-service\",\"observedAt\":\"2026-10-07T13:13:07.966Z\",\"availableAt\":\"2026-10-07T13:13:07.966Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"repository:masumi-network/masumi-payment-service:2026-10-07T13:13:07.966Z\",\"entity\":\"masumi-network/masumi-payment-service\",\"grain\":\"repository_snapshot\",\"eventAt\":\"2026-10-07T13:13:07.966Z\",\"metrics\":{\"stars\":13,\"forks\":18,\"openIssues\":3,\"watchers\":3},\"license\":\"MIT\",\"interpretation\":\"Developer attention snapshot; not adoption, growth or purchase intent.\"}"
+    },
+    {
+      "id": "repository:cardano-community/koios-artifacts:2026-10-07T13:13:08.284Z",
+      "source": "https://api.github.com/repos/cardano-community/koios-artifacts",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"repository:cardano-community/koios-artifacts\",\"source\":\"https://api.github.com/repos/cardano-community/koios-artifacts\",\"observedAt\":\"2026-10-07T13:13:08.284Z\",\"availableAt\":\"2026-10-07T13:13:08.284Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"repository:cardano-community/koios-artifacts:2026-10-07T13:13:08.284Z\",\"entity\":\"cardano-community/koios-artifacts\",\"grain\":\"repository_snapshot\",\"eventAt\":\"2026-10-07T13:13:08.284Z\",\"metrics\":{\"stars\":23,\"forks\":30,\"openIssues\":18,\"watchers\":10},\"license\":\"CC-BY-4.0\",\"interpretation\":\"Developer attention snapshot; not adoption, growth or purchase intent.\"}"
+    },
+    {
+      "id": "repository:modelcontextprotocol/typescript-sdk:2026-10-07T13:13:08.791Z",
+      "source": "https://api.github.com/repos/modelcontextprotocol/typescript-sdk",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"repository:modelcontextprotocol/typescript-sdk\",\"source\":\"https://api.github.com/repos/modelcontextprotocol/typescript-sdk\",\"observedAt\":\"2026-10-07T13:13:08.791Z\",\"availableAt\":\"2026-10-07T13:13:08.791Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"repository:modelcontextprotocol/typescript-sdk:2026-10-07T13:13:08.791Z\",\"entity\":\"modelcontextprotocol/typescript-sdk\",\"grain\":\"repository_snapshot\",\"eventAt\":\"2026-10-07T13:13:08.791Z\",\"metrics\":{\"stars\":13531,\"forks\":2259,\"openIssues\":556,\"watchers\":109},\"license\":\"NOASSERTION\",\"interpretation\":\"Developer attention snapshot; not adoption, growth or purchase intent.\"}"
+    },
+    {
+      "id": "repository:n8n-io/n8n:2026-10-07T13:13:09.206Z",
+      "source": "https://api.github.com/repos/n8n-io/n8n",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"repository:n8n-io/n8n\",\"source\":\"https://api.github.com/repos/n8n-io/n8n\",\"observedAt\":\"2026-10-07T13:13:09.206Z\",\"availableAt\":\"2026-10-07T13:13:09.206Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"repository:n8n-io/n8n:2026-10-07T13:13:09.206Z\",\"entity\":\"n8n-io/n8n\",\"grain\":\"repository_snapshot\",\"eventAt\":\"2026-10-07T13:13:09.206Z\",\"metrics\":{\"stars\":206806,\"forks\":61011,\"openIssues\":1169,\"watchers\":1167},\"license\":\"NOASSERTION\",\"interpretation\":\"Developer attention snapshot; not adoption, growth or purchase intent.\"}"
+    },
+    {
+      "id": "block:mainnet:f952f4f27bdec6b57c7c8bee02799df591ac8a340440fa482dea82734f67fd1e",
+      "source": "https://api.koios.rest/api/v1/blocks?limit=5&select=hash,block_height,block_time,tx_count",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"blocks:mainnet\",\"source\":\"https://api.koios.rest/api/v1/blocks?limit=5&select=hash,block_height,block_time,tx_count\",\"observedAt\":\"2026-10-07T13:13:10.270Z\",\"availableAt\":\"2026-10-07T13:13:10.270Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"block:mainnet:f952f4f27bdec6b57c7c8bee02799df591ac8a340440fa482dea82734f67fd1e\",\"entity\":\"mainnet\",\"network\":\"mainnet\",\"grain\":\"network_block\",\"eventAt\":\"2026-10-07T13:13:02.000Z\",\"blockHash\":\"f952f4f27bdec6b57c7c8bee02799df591ac8a340440fa482dea82734f67fd1e\",\"blockHeight\":14037586,\"metrics\":{\"transactionCount\":62},\"interpretation\":\"Latest-block convenience sample; not network-wide daily volume or merchant payments.\"}"
+    },
+    {
+      "id": "transaction:mainnet:a9f428acab95b2d98b643d995e5a5d236e7564b563adf1dab756200ede623854",
+      "source": "https://api.koios.rest/api/v1/tx_info?select=tx_hash,block_hash,block_height,tx_timestamp,fee,total_output",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"transactions:mainnet\",\"source\":\"https://api.koios.rest/api/v1/tx_info?select=tx_hash,block_hash,block_height,tx_timestamp,fee,total_output\",\"observedAt\":\"2026-10-07T13:13:14.450Z\",\"availableAt\":\"2026-10-07T13:13:14.450Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"transaction:mainnet:a9f428acab95b2d98b643d995e5a5d236e7564b563adf1dab756200ede623854\",\"entity\":\"mainnet\",\"network\":\"mainnet\",\"grain\":\"network_transaction\",\"eventAt\":\"2026-10-07T13:12:37.000Z\",\"transactionHash\":\"a9f428acab95b2d98b643d995e5a5d236e7564b563adf1dab756200ede623854\",\"blockHash\":\"f31f89ac6321e5acd3c1333b7e64a812646a81e19f67052b109f43de879c617e\",\"blockHeight\":14037582,\"feeLovelace\":\"166909\",\"totalOutputsLovelace\":\"3133091\",\"validContract\":null,\"paymentAttribution\":\"UNKNOWN\",\"merchantReceiptVerified\":false,\"interpretation\":\"Observed transaction metadata. Gross outputs include change; contract-valid is not fulfillment or MEW receipt proof.\"}"
+    },
+    {
+      "id": "block:preprod:fc33a4d3e4c0aa92b572b6f8ac0d3c215e83fb840890fccea94d8528747b1e50",
+      "source": "https://preprod.koios.rest/api/v1/blocks?limit=5&select=hash,block_height,block_time,tx_count",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"blocks:preprod\",\"source\":\"https://preprod.koios.rest/api/v1/blocks?limit=5&select=hash,block_height,block_time,tx_count\",\"observedAt\":\"2026-10-07T13:13:15.286Z\",\"availableAt\":\"2026-10-07T13:13:15.286Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"block:preprod:fc33a4d3e4c0aa92b572b6f8ac0d3c215e83fb840890fccea94d8528747b1e50\",\"entity\":\"preprod\",\"network\":\"preprod\",\"grain\":\"network_block\",\"eventAt\":\"2026-10-07T13:12:59.000Z\",\"blockHash\":\"fc33a4d3e4c0aa92b572b6f8ac0d3c215e83fb840890fccea94d8528747b1e50\",\"blockHeight\":5264503,\"metrics\":{\"transactionCount\":1},\"interpretation\":\"Latest-block convenience sample; not network-wide daily volume or merchant payments.\"}"
+    },
+    {
+      "id": "transaction:preprod:c2033e27269009fb1d99ee23809dbec9e5ba8727dd546a042690f221d26f68be",
+      "source": "https://preprod.koios.rest/api/v1/tx_info?select=tx_hash,block_hash,block_height,tx_timestamp,fee,total_output",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"transactions:preprod\",\"source\":\"https://preprod.koios.rest/api/v1/tx_info?select=tx_hash,block_hash,block_height,tx_timestamp,fee,total_output\",\"observedAt\":\"2026-10-07T13:13:16.556Z\",\"availableAt\":\"2026-10-07T13:13:16.556Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"transaction:preprod:c2033e27269009fb1d99ee23809dbec9e5ba8727dd546a042690f221d26f68be\",\"entity\":\"preprod\",\"network\":\"preprod\",\"grain\":\"network_transaction\",\"eventAt\":\"2026-10-07T13:11:57.000Z\",\"transactionHash\":\"c2033e27269009fb1d99ee23809dbec9e5ba8727dd546a042690f221d26f68be\",\"blockHash\":\"aeb655752b7b7ea63d1d83e4f116d87ecc824c2fee8f8a5134ed6d8283b4b8bf\",\"blockHeight\":5264500,\"feeLovelace\":\"596802\",\"totalOutputsLovelace\":\"228430878\",\"validContract\":null,\"paymentAttribution\":\"UNKNOWN\",\"merchantReceiptVerified\":false,\"interpretation\":\"Observed transaction metadata. Gross outputs include change; contract-valid is not fulfillment or MEW receipt proof.\"}"
+    },
+    {
+      "id": "pageviews:Cardano_(blockchain_platform):2026090900",
+      "source": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Cardano_(blockchain_platform)/daily/2026090800/2026100500",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"attention:Cardano_(blockchain_platform)\",\"source\":\"https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Cardano_(blockchain_platform)/daily/2026090800/2026100500\",\"observedAt\":\"2026-10-07T13:13:06.772Z\",\"availableAt\":\"2026-10-07T13:13:06.772Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"pageviews:Cardano_(blockchain_platform):2026090900\",\"entity\":\"Cardano_(blockchain_platform)\",\"grain\":\"article_day\",\"eventAt\":\"2026-09-09T00:00:00.000Z\",\"metrics\":{\"views\":89},\"unit\":\"pageviews\",\"interpretation\":\"English Wikipedia user-category requests; not unique people or MEW acquisition.\"}"
+    },
+    {
+      "id": "pageviews:Artificial_intelligence:2026090900",
+      "source": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Artificial_intelligence/daily/2026090800/2026100500",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"attention:Artificial_intelligence\",\"source\":\"https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Artificial_intelligence/daily/2026090800/2026100500\",\"observedAt\":\"2026-10-07T13:13:06.852Z\",\"availableAt\":\"2026-10-07T13:13:06.852Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"pageviews:Artificial_intelligence:2026090900\",\"entity\":\"Artificial_intelligence\",\"grain\":\"article_day\",\"eventAt\":\"2026-09-09T00:00:00.000Z\",\"metrics\":{\"views\":17362},\"unit\":\"pageviews\",\"interpretation\":\"English Wikipedia user-category requests; not unique people or MEW acquisition.\"}"
+    },
+    {
+      "id": "pageviews:Intelligent_agent:2026090900",
+      "source": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Intelligent_agent/daily/2026090800/2026100500",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"attention:Intelligent_agent\",\"source\":\"https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Intelligent_agent/daily/2026090800/2026100500\",\"observedAt\":\"2026-10-07T13:13:06.927Z\",\"availableAt\":\"2026-10-07T13:13:06.927Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"pageviews:Intelligent_agent:2026090900\",\"entity\":\"Intelligent_agent\",\"grain\":\"article_day\",\"eventAt\":\"2026-09-09T00:00:00.000Z\",\"metrics\":{\"views\":391},\"unit\":\"pageviews\",\"interpretation\":\"English Wikipedia user-category requests; not unique people or MEW acquisition.\"}"
+    },
+    {
+      "id": "pageviews:Content_marketing:2026090900",
+      "source": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Content_marketing/daily/2026090800/2026100500",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"attention:Content_marketing\",\"source\":\"https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Content_marketing/daily/2026090800/2026100500\",\"observedAt\":\"2026-10-07T13:13:06.952Z\",\"availableAt\":\"2026-10-07T13:13:06.952Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"pageviews:Content_marketing:2026090900\",\"entity\":\"Content_marketing\",\"grain\":\"article_day\",\"eventAt\":\"2026-09-09T00:00:00.000Z\",\"metrics\":{\"views\":135},\"unit\":\"pageviews\",\"interpretation\":\"English Wikipedia user-category requests; not unique people or MEW acquisition.\"}"
+    },
+    {
+      "id": "block:mainnet:a9f68b9a3de01145b015fe036102fba6edd48e0cfe866d6643296fa60d80d77a",
+      "source": "https://api.koios.rest/api/v1/blocks?limit=5&select=hash,block_height,block_time,tx_count",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"blocks:mainnet\",\"source\":\"https://api.koios.rest/api/v1/blocks?limit=5&select=hash,block_height,block_time,tx_count\",\"observedAt\":\"2026-10-07T13:13:10.270Z\",\"availableAt\":\"2026-10-07T13:13:10.270Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"block:mainnet:a9f68b9a3de01145b015fe036102fba6edd48e0cfe866d6643296fa60d80d77a\",\"entity\":\"mainnet\",\"network\":\"mainnet\",\"grain\":\"network_block\",\"eventAt\":\"2026-10-07T13:12:48.000Z\",\"blockHash\":\"a9f68b9a3de01145b015fe036102fba6edd48e0cfe866d6643296fa60d80d77a\",\"blockHeight\":14037585,\"metrics\":{\"transactionCount\":2},\"interpretation\":\"Latest-block convenience sample; not network-wide daily volume or merchant payments.\"}"
+    },
+    {
+      "id": "transaction:mainnet:bef59ae5c9c224b8ae16850d80efed353eeca45edabb4c4f287645b22c397a48",
+      "source": "https://api.koios.rest/api/v1/tx_info?select=tx_hash,block_hash,block_height,tx_timestamp,fee,total_output",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"transactions:mainnet\",\"source\":\"https://api.koios.rest/api/v1/tx_info?select=tx_hash,block_hash,block_height,tx_timestamp,fee,total_output\",\"observedAt\":\"2026-10-07T13:13:14.450Z\",\"availableAt\":\"2026-10-07T13:13:14.450Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"transaction:mainnet:bef59ae5c9c224b8ae16850d80efed353eeca45edabb4c4f287645b22c397a48\",\"entity\":\"mainnet\",\"network\":\"mainnet\",\"grain\":\"network_transaction\",\"eventAt\":\"2026-10-07T13:12:37.000Z\",\"transactionHash\":\"bef59ae5c9c224b8ae16850d80efed353eeca45edabb4c4f287645b22c397a48\",\"blockHash\":\"f31f89ac6321e5acd3c1333b7e64a812646a81e19f67052b109f43de879c617e\",\"blockHeight\":14037582,\"feeLovelace\":\"166953\",\"totalOutputsLovelace\":\"3133047\",\"validContract\":null,\"paymentAttribution\":\"UNKNOWN\",\"merchantReceiptVerified\":false,\"interpretation\":\"Observed transaction metadata. Gross outputs include change; contract-valid is not fulfillment or MEW receipt proof.\"}"
+    },
+    {
+      "id": "block:preprod:0e1d3cba7f1e1530c7b4b886d8e7119836d11d82093b176783c272ac586cb3ad",
+      "source": "https://preprod.koios.rest/api/v1/blocks?limit=5&select=hash,block_height,block_time,tx_count",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"blocks:preprod\",\"source\":\"https://preprod.koios.rest/api/v1/blocks?limit=5&select=hash,block_height,block_time,tx_count\",\"observedAt\":\"2026-10-07T13:13:15.286Z\",\"availableAt\":\"2026-10-07T13:13:15.286Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"block:preprod:0e1d3cba7f1e1530c7b4b886d8e7119836d11d82093b176783c272ac586cb3ad\",\"entity\":\"preprod\",\"network\":\"preprod\",\"grain\":\"network_block\",\"eventAt\":\"2026-10-07T13:12:55.000Z\",\"blockHash\":\"0e1d3cba7f1e1530c7b4b886d8e7119836d11d82093b176783c272ac586cb3ad\",\"blockHeight\":5264502,\"metrics\":{\"transactionCount\":4},\"interpretation\":\"Latest-block convenience sample; not network-wide daily volume or merchant payments.\"}"
+    },
+    {
+      "id": "transaction:preprod:e7e481216f069229928118edb7c7f307c818c7f2ad569b31e492e126715d7163",
+      "source": "https://preprod.koios.rest/api/v1/tx_info?select=tx_hash,block_hash,block_height,tx_timestamp,fee,total_output",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"transactions:preprod\",\"source\":\"https://preprod.koios.rest/api/v1/tx_info?select=tx_hash,block_hash,block_height,tx_timestamp,fee,total_output\",\"observedAt\":\"2026-10-07T13:13:16.556Z\",\"availableAt\":\"2026-10-07T13:13:16.556Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"transaction:preprod:e7e481216f069229928118edb7c7f307c818c7f2ad569b31e492e126715d7163\",\"entity\":\"preprod\",\"network\":\"preprod\",\"grain\":\"network_transaction\",\"eventAt\":\"2026-10-07T13:11:57.000Z\",\"transactionHash\":\"e7e481216f069229928118edb7c7f307c818c7f2ad569b31e492e126715d7163\",\"blockHash\":\"aeb655752b7b7ea63d1d83e4f116d87ecc824c2fee8f8a5134ed6d8283b4b8bf\",\"blockHeight\":5264500,\"feeLovelace\":\"557580\",\"totalOutputsLovelace\":\"88251225\",\"validContract\":null,\"paymentAttribution\":\"UNKNOWN\",\"merchantReceiptVerified\":false,\"interpretation\":\"Observed transaction metadata. Gross outputs include change; contract-valid is not fulfillment or MEW receipt proof.\"}"
+    },
+    {
+      "id": "pageviews:Cardano_(blockchain_platform):2026091000",
+      "source": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Cardano_(blockchain_platform)/daily/2026090800/2026100500",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"attention:Cardano_(blockchain_platform)\",\"source\":\"https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Cardano_(blockchain_platform)/daily/2026090800/2026100500\",\"observedAt\":\"2026-10-07T13:13:06.772Z\",\"availableAt\":\"2026-10-07T13:13:06.772Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"pageviews:Cardano_(blockchain_platform):2026091000\",\"entity\":\"Cardano_(blockchain_platform)\",\"grain\":\"article_day\",\"eventAt\":\"2026-09-10T00:00:00.000Z\",\"metrics\":{\"views\":68},\"unit\":\"pageviews\",\"interpretation\":\"English Wikipedia user-category requests; not unique people or MEW acquisition.\"}"
+    },
+    {
+      "id": "pageviews:Artificial_intelligence:2026091000",
+      "source": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Artificial_intelligence/daily/2026090800/2026100500",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"attention:Artificial_intelligence\",\"source\":\"https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Artificial_intelligence/daily/2026090800/2026100500\",\"observedAt\":\"2026-10-07T13:13:06.852Z\",\"availableAt\":\"2026-10-07T13:13:06.852Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"pageviews:Artificial_intelligence:2026091000\",\"entity\":\"Artificial_intelligence\",\"grain\":\"article_day\",\"eventAt\":\"2026-09-10T00:00:00.000Z\",\"metrics\":{\"views\":20874},\"unit\":\"pageviews\",\"interpretation\":\"English Wikipedia user-category requests; not unique people or MEW acquisition.\"}"
+    },
+    {
+      "id": "pageviews:Intelligent_agent:2026091000",
+      "source": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Intelligent_agent/daily/2026090800/2026100500",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"attention:Intelligent_agent\",\"source\":\"https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Intelligent_agent/daily/2026090800/2026100500\",\"observedAt\":\"2026-10-07T13:13:06.927Z\",\"availableAt\":\"2026-10-07T13:13:06.927Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"pageviews:Intelligent_agent:2026091000\",\"entity\":\"Intelligent_agent\",\"grain\":\"article_day\",\"eventAt\":\"2026-09-10T00:00:00.000Z\",\"metrics\":{\"views\":409},\"unit\":\"pageviews\",\"interpretation\":\"English Wikipedia user-category requests; not unique people or MEW acquisition.\"}"
+    },
+    {
+      "id": "pageviews:Content_marketing:2026091000",
+      "source": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Content_marketing/daily/2026090800/2026100500",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"attention:Content_marketing\",\"source\":\"https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Content_marketing/daily/2026090800/2026100500\",\"observedAt\":\"2026-10-07T13:13:06.952Z\",\"availableAt\":\"2026-10-07T13:13:06.952Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"pageviews:Content_marketing:2026091000\",\"entity\":\"Content_marketing\",\"grain\":\"article_day\",\"eventAt\":\"2026-09-10T00:00:00.000Z\",\"metrics\":{\"views\":118},\"unit\":\"pageviews\",\"interpretation\":\"English Wikipedia user-category requests; not unique people or MEW acquisition.\"}"
+    },
+    {
+      "id": "block:mainnet:126ac28db0ba83060b964eea37d9a0aa94019568d6fb42ac4fb9d600091d8af4",
+      "source": "https://api.koios.rest/api/v1/blocks?limit=5&select=hash,block_height,block_time,tx_count",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"blocks:mainnet\",\"source\":\"https://api.koios.rest/api/v1/blocks?limit=5&select=hash,block_height,block_time,tx_count\",\"observedAt\":\"2026-10-07T13:13:10.270Z\",\"availableAt\":\"2026-10-07T13:13:10.270Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"block:mainnet:126ac28db0ba83060b964eea37d9a0aa94019568d6fb42ac4fb9d600091d8af4\",\"entity\":\"mainnet\",\"network\":\"mainnet\",\"grain\":\"network_block\",\"eventAt\":\"2026-10-07T13:12:47.000Z\",\"blockHash\":\"126ac28db0ba83060b964eea37d9a0aa94019568d6fb42ac4fb9d600091d8af4\",\"blockHeight\":14037584,\"metrics\":{\"transactionCount\":13},\"interpretation\":\"Latest-block convenience sample; not network-wide daily volume or merchant payments.\"}"
+    },
+    {
+      "id": "transaction:mainnet:b6cef7ecfc6bd34662af8fcf2795aaceaae409334017755925f8fa72fd603326",
+      "source": "https://api.koios.rest/api/v1/tx_info?select=tx_hash,block_hash,block_height,tx_timestamp,fee,total_output",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"transactions:mainnet\",\"source\":\"https://api.koios.rest/api/v1/tx_info?select=tx_hash,block_hash,block_height,tx_timestamp,fee,total_output\",\"observedAt\":\"2026-10-07T13:13:14.450Z\",\"availableAt\":\"2026-10-07T13:13:14.450Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"transaction:mainnet:b6cef7ecfc6bd34662af8fcf2795aaceaae409334017755925f8fa72fd603326\",\"entity\":\"mainnet\",\"network\":\"mainnet\",\"grain\":\"network_transaction\",\"eventAt\":\"2026-10-07T13:12:37.000Z\",\"transactionHash\":\"b6cef7ecfc6bd34662af8fcf2795aaceaae409334017755925f8fa72fd603326\",\"blockHash\":\"f31f89ac6321e5acd3c1333b7e64a812646a81e19f67052b109f43de879c617e\",\"blockHeight\":14037582,\"feeLovelace\":\"200000\",\"totalOutputsLovelace\":\"91771035812\",\"validContract\":null,\"paymentAttribution\":\"UNKNOWN\",\"merchantReceiptVerified\":false,\"interpretation\":\"Observed transaction metadata. Gross outputs include change; contract-valid is not fulfillment or MEW receipt proof.\"}"
+    },
+    {
+      "id": "block:preprod:a5799f311000b27e9814b76f6a3bcc8be5fe671266ca5910625788c21503c81c",
+      "source": "https://preprod.koios.rest/api/v1/blocks?limit=5&select=hash,block_height,block_time,tx_count",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"blocks:preprod\",\"source\":\"https://preprod.koios.rest/api/v1/blocks?limit=5&select=hash,block_height,block_time,tx_count\",\"observedAt\":\"2026-10-07T13:13:15.286Z\",\"availableAt\":\"2026-10-07T13:13:15.286Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"block:preprod:a5799f311000b27e9814b76f6a3bcc8be5fe671266ca5910625788c21503c81c\",\"entity\":\"preprod\",\"network\":\"preprod\",\"grain\":\"network_block\",\"eventAt\":\"2026-10-07T13:12:25.000Z\",\"blockHash\":\"a5799f311000b27e9814b76f6a3bcc8be5fe671266ca5910625788c21503c81c\",\"blockHeight\":5264501,\"metrics\":{\"transactionCount\":3},\"interpretation\":\"Latest-block convenience sample; not network-wide daily volume or merchant payments.\"}"
+    },
+    {
+      "id": "transaction:preprod:6759da50449fcfc04cad20d9d939cc68499ee9c00f0e147056fa084ec6b5113f",
+      "source": "https://preprod.koios.rest/api/v1/tx_info?select=tx_hash,block_hash,block_height,tx_timestamp,fee,total_output",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"transactions:preprod\",\"source\":\"https://preprod.koios.rest/api/v1/tx_info?select=tx_hash,block_hash,block_height,tx_timestamp,fee,total_output\",\"observedAt\":\"2026-10-07T13:13:16.556Z\",\"availableAt\":\"2026-10-07T13:13:16.556Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"transaction:preprod:6759da50449fcfc04cad20d9d939cc68499ee9c00f0e147056fa084ec6b5113f\",\"entity\":\"preprod\",\"network\":\"preprod\",\"grain\":\"network_transaction\",\"eventAt\":\"2026-10-07T13:11:57.000Z\",\"transactionHash\":\"6759da50449fcfc04cad20d9d939cc68499ee9c00f0e147056fa084ec6b5113f\",\"blockHash\":\"aeb655752b7b7ea63d1d83e4f116d87ecc824c2fee8f8a5134ed6d8283b4b8bf\",\"blockHeight\":5264500,\"feeLovelace\":\"264910\",\"totalOutputsLovelace\":\"31130520\",\"validContract\":null,\"paymentAttribution\":\"UNKNOWN\",\"merchantReceiptVerified\":false,\"interpretation\":\"Observed transaction metadata. Gross outputs include change; contract-valid is not fulfillment or MEW receipt proof.\"}"
+    },
+    {
+      "id": "pageviews:Cardano_(blockchain_platform):2026091100",
+      "source": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Cardano_(blockchain_platform)/daily/2026090800/2026100500",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"attention:Cardano_(blockchain_platform)\",\"source\":\"https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Cardano_(blockchain_platform)/daily/2026090800/2026100500\",\"observedAt\":\"2026-10-07T13:13:06.772Z\",\"availableAt\":\"2026-10-07T13:13:06.772Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"pageviews:Cardano_(blockchain_platform):2026091100\",\"entity\":\"Cardano_(blockchain_platform)\",\"grain\":\"article_day\",\"eventAt\":\"2026-09-11T00:00:00.000Z\",\"metrics\":{\"views\":68},\"unit\":\"pageviews\",\"interpretation\":\"English Wikipedia user-category requests; not unique people or MEW acquisition.\"}"
+    },
+    {
+      "id": "pageviews:Artificial_intelligence:2026091100",
+      "source": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Artificial_intelligence/daily/2026090800/2026100500",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"attention:Artificial_intelligence\",\"source\":\"https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Artificial_intelligence/daily/2026090800/2026100500\",\"observedAt\":\"2026-10-07T13:13:06.852Z\",\"availableAt\":\"2026-10-07T13:13:06.852Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"pageviews:Artificial_intelligence:2026091100\",\"entity\":\"Artificial_intelligence\",\"grain\":\"article_day\",\"eventAt\":\"2026-09-11T00:00:00.000Z\",\"metrics\":{\"views\":20162},\"unit\":\"pageviews\",\"interpretation\":\"English Wikipedia user-category requests; not unique people or MEW acquisition.\"}"
+    },
+    {
+      "id": "pageviews:Intelligent_agent:2026091100",
+      "source": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Intelligent_agent/daily/2026090800/2026100500",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"attention:Intelligent_agent\",\"source\":\"https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Intelligent_agent/daily/2026090800/2026100500\",\"observedAt\":\"2026-10-07T13:13:06.927Z\",\"availableAt\":\"2026-10-07T13:13:06.927Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"pageviews:Intelligent_agent:2026091100\",\"entity\":\"Intelligent_agent\",\"grain\":\"article_day\",\"eventAt\":\"2026-09-11T00:00:00.000Z\",\"metrics\":{\"views\":348},\"unit\":\"pageviews\",\"interpretation\":\"English Wikipedia user-category requests; not unique people or MEW acquisition.\"}"
+    },
+    {
+      "id": "pageviews:Content_marketing:2026091100",
+      "source": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Content_marketing/daily/2026090800/2026100500",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"attention:Content_marketing\",\"source\":\"https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Content_marketing/daily/2026090800/2026100500\",\"observedAt\":\"2026-10-07T13:13:06.952Z\",\"availableAt\":\"2026-10-07T13:13:06.952Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"pageviews:Content_marketing:2026091100\",\"entity\":\"Content_marketing\",\"grain\":\"article_day\",\"eventAt\":\"2026-09-11T00:00:00.000Z\",\"metrics\":{\"views\":179},\"unit\":\"pageviews\",\"interpretation\":\"English Wikipedia user-category requests; not unique people or MEW acquisition.\"}"
+    },
+    {
+      "id": "block:mainnet:69bb195e9f0fd72873bf6189abd01d343836f9649800effa20b7d6737568104d",
+      "source": "https://api.koios.rest/api/v1/blocks?limit=5&select=hash,block_height,block_time,tx_count",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"blocks:mainnet\",\"source\":\"https://api.koios.rest/api/v1/blocks?limit=5&select=hash,block_height,block_time,tx_count\",\"observedAt\":\"2026-10-07T13:13:10.270Z\",\"availableAt\":\"2026-10-07T13:13:10.270Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"block:mainnet:69bb195e9f0fd72873bf6189abd01d343836f9649800effa20b7d6737568104d\",\"entity\":\"mainnet\",\"network\":\"mainnet\",\"grain\":\"network_block\",\"eventAt\":\"2026-10-07T13:12:43.000Z\",\"blockHash\":\"69bb195e9f0fd72873bf6189abd01d343836f9649800effa20b7d6737568104d\",\"blockHeight\":14037583,\"metrics\":{\"transactionCount\":22},\"interpretation\":\"Latest-block convenience sample; not network-wide daily volume or merchant payments.\"}"
+    },
+    {
+      "id": "transaction:mainnet:0732e8a2def96fcfefc3065f41e5f78eca513913362f372ac97f3f16181532b7",
+      "source": "https://api.koios.rest/api/v1/tx_info?select=tx_hash,block_hash,block_height,tx_timestamp,fee,total_output",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"transactions:mainnet\",\"source\":\"https://api.koios.rest/api/v1/tx_info?select=tx_hash,block_hash,block_height,tx_timestamp,fee,total_output\",\"observedAt\":\"2026-10-07T13:13:14.450Z\",\"availableAt\":\"2026-10-07T13:13:14.450Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"transaction:mainnet:0732e8a2def96fcfefc3065f41e5f78eca513913362f372ac97f3f16181532b7\",\"entity\":\"mainnet\",\"network\":\"mainnet\",\"grain\":\"network_transaction\",\"eventAt\":\"2026-10-07T13:12:37.000Z\",\"transactionHash\":\"0732e8a2def96fcfefc3065f41e5f78eca513913362f372ac97f3f16181532b7\",\"blockHash\":\"f31f89ac6321e5acd3c1333b7e64a812646a81e19f67052b109f43de879c617e\",\"blockHeight\":14037582,\"feeLovelace\":\"166909\",\"totalOutputsLovelace\":\"3133091\",\"validContract\":null,\"paymentAttribution\":\"UNKNOWN\",\"merchantReceiptVerified\":false,\"interpretation\":\"Observed transaction metadata. Gross outputs include change; contract-valid is not fulfillment or MEW receipt proof.\"}"
+    },
+    {
+      "id": "block:preprod:aeb655752b7b7ea63d1d83e4f116d87ecc824c2fee8f8a5134ed6d8283b4b8bf",
+      "source": "https://preprod.koios.rest/api/v1/blocks?limit=5&select=hash,block_height,block_time,tx_count",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"blocks:preprod\",\"source\":\"https://preprod.koios.rest/api/v1/blocks?limit=5&select=hash,block_height,block_time,tx_count\",\"observedAt\":\"2026-10-07T13:13:15.286Z\",\"availableAt\":\"2026-10-07T13:13:15.286Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"block:preprod:aeb655752b7b7ea63d1d83e4f116d87ecc824c2fee8f8a5134ed6d8283b4b8bf\",\"entity\":\"preprod\",\"network\":\"preprod\",\"grain\":\"network_block\",\"eventAt\":\"2026-10-07T13:11:57.000Z\",\"blockHash\":\"aeb655752b7b7ea63d1d83e4f116d87ecc824c2fee8f8a5134ed6d8283b4b8bf\",\"blockHeight\":5264500,\"metrics\":{\"transactionCount\":4},\"interpretation\":\"Latest-block convenience sample; not network-wide daily volume or merchant payments.\"}"
+    },
+    {
+      "id": "transaction:preprod:b48ff2f7ff52805687d940d9a86b8c7c4965f0bc89122cac41cf4906867409d3",
+      "source": "https://preprod.koios.rest/api/v1/tx_info?select=tx_hash,block_hash,block_height,tx_timestamp,fee,total_output",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"transactions:preprod\",\"source\":\"https://preprod.koios.rest/api/v1/tx_info?select=tx_hash,block_hash,block_height,tx_timestamp,fee,total_output\",\"observedAt\":\"2026-10-07T13:13:16.556Z\",\"availableAt\":\"2026-10-07T13:13:16.556Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"transaction:preprod:b48ff2f7ff52805687d940d9a86b8c7c4965f0bc89122cac41cf4906867409d3\",\"entity\":\"preprod\",\"network\":\"preprod\",\"grain\":\"network_transaction\",\"eventAt\":\"2026-10-07T13:11:57.000Z\",\"transactionHash\":\"b48ff2f7ff52805687d940d9a86b8c7c4965f0bc89122cac41cf4906867409d3\",\"blockHash\":\"aeb655752b7b7ea63d1d83e4f116d87ecc824c2fee8f8a5134ed6d8283b4b8bf\",\"blockHeight\":5264500,\"feeLovelace\":\"264910\",\"totalOutputsLovelace\":\"22641388\",\"validContract\":null,\"paymentAttribution\":\"UNKNOWN\",\"merchantReceiptVerified\":false,\"interpretation\":\"Observed transaction metadata. Gross outputs include change; contract-valid is not fulfillment or MEW receipt proof.\"}"
+    },
+    {
+      "id": "pageviews:Cardano_(blockchain_platform):2026091200",
+      "source": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Cardano_(blockchain_platform)/daily/2026090800/2026100500",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"attention:Cardano_(blockchain_platform)\",\"source\":\"https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Cardano_(blockchain_platform)/daily/2026090800/2026100500\",\"observedAt\":\"2026-10-07T13:13:06.772Z\",\"availableAt\":\"2026-10-07T13:13:06.772Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"pageviews:Cardano_(blockchain_platform):2026091200\",\"entity\":\"Cardano_(blockchain_platform)\",\"grain\":\"article_day\",\"eventAt\":\"2026-09-12T00:00:00.000Z\",\"metrics\":{\"views\":59},\"unit\":\"pageviews\",\"interpretation\":\"English Wikipedia user-category requests; not unique people or MEW acquisition.\"}"
+    },
+    {
+      "id": "pageviews:Artificial_intelligence:2026091200",
+      "source": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Artificial_intelligence/daily/2026090800/2026100500",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"attention:Artificial_intelligence\",\"source\":\"https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Artificial_intelligence/daily/2026090800/2026100500\",\"observedAt\":\"2026-10-07T13:13:06.852Z\",\"availableAt\":\"2026-10-07T13:13:06.852Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"pageviews:Artificial_intelligence:2026091200\",\"entity\":\"Artificial_intelligence\",\"grain\":\"article_day\",\"eventAt\":\"2026-09-12T00:00:00.000Z\",\"metrics\":{\"views\":16001},\"unit\":\"pageviews\",\"interpretation\":\"English Wikipedia user-category requests; not unique people or MEW acquisition.\"}"
+    },
+    {
+      "id": "pageviews:Intelligent_agent:2026091200",
+      "source": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Intelligent_agent/daily/2026090800/2026100500",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"attention:Intelligent_agent\",\"source\":\"https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Intelligent_agent/daily/2026090800/2026100500\",\"observedAt\":\"2026-10-07T13:13:06.927Z\",\"availableAt\":\"2026-10-07T13:13:06.927Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"pageviews:Intelligent_agent:2026091200\",\"entity\":\"Intelligent_agent\",\"grain\":\"article_day\",\"eventAt\":\"2026-09-12T00:00:00.000Z\",\"metrics\":{\"views\":258},\"unit\":\"pageviews\",\"interpretation\":\"English Wikipedia user-category requests; not unique people or MEW acquisition.\"}"
+    },
+    {
+      "id": "pageviews:Content_marketing:2026091200",
+      "source": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Content_marketing/daily/2026090800/2026100500",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"attention:Content_marketing\",\"source\":\"https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Content_marketing/daily/2026090800/2026100500\",\"observedAt\":\"2026-10-07T13:13:06.952Z\",\"availableAt\":\"2026-10-07T13:13:06.952Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"pageviews:Content_marketing:2026091200\",\"entity\":\"Content_marketing\",\"grain\":\"article_day\",\"eventAt\":\"2026-09-12T00:00:00.000Z\",\"metrics\":{\"views\":187},\"unit\":\"pageviews\",\"interpretation\":\"English Wikipedia user-category requests; not unique people or MEW acquisition.\"}"
+    },
+    {
+      "id": "block:mainnet:f31f89ac6321e5acd3c1333b7e64a812646a81e19f67052b109f43de879c617e",
+      "source": "https://api.koios.rest/api/v1/blocks?limit=5&select=hash,block_height,block_time,tx_count",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"blocks:mainnet\",\"source\":\"https://api.koios.rest/api/v1/blocks?limit=5&select=hash,block_height,block_time,tx_count\",\"observedAt\":\"2026-10-07T13:13:10.270Z\",\"availableAt\":\"2026-10-07T13:13:10.270Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"block:mainnet:f31f89ac6321e5acd3c1333b7e64a812646a81e19f67052b109f43de879c617e\",\"entity\":\"mainnet\",\"network\":\"mainnet\",\"grain\":\"network_block\",\"eventAt\":\"2026-10-07T13:12:37.000Z\",\"blockHash\":\"f31f89ac6321e5acd3c1333b7e64a812646a81e19f67052b109f43de879c617e\",\"blockHeight\":14037582,\"metrics\":{\"transactionCount\":64},\"interpretation\":\"Latest-block convenience sample; not network-wide daily volume or merchant payments.\"}"
+    },
+    {
+      "id": "transaction:mainnet:4831b03419afca110d0a3fcae6b7a133fc5f33c2b80d8f3d00f80c34f804d2af",
+      "source": "https://api.koios.rest/api/v1/tx_info?select=tx_hash,block_hash,block_height,tx_timestamp,fee,total_output",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"transactions:mainnet\",\"source\":\"https://api.koios.rest/api/v1/tx_info?select=tx_hash,block_hash,block_height,tx_timestamp,fee,total_output\",\"observedAt\":\"2026-10-07T13:13:14.450Z\",\"availableAt\":\"2026-10-07T13:13:14.450Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"transaction:mainnet:4831b03419afca110d0a3fcae6b7a133fc5f33c2b80d8f3d00f80c34f804d2af\",\"entity\":\"mainnet\",\"network\":\"mainnet\",\"grain\":\"network_transaction\",\"eventAt\":\"2026-10-07T13:12:37.000Z\",\"transactionHash\":\"4831b03419afca110d0a3fcae6b7a133fc5f33c2b80d8f3d00f80c34f804d2af\",\"blockHash\":\"f31f89ac6321e5acd3c1333b7e64a812646a81e19f67052b109f43de879c617e\",\"blockHeight\":14037582,\"feeLovelace\":\"166821\",\"totalOutputsLovelace\":\"1082555543\",\"validContract\":null,\"paymentAttribution\":\"UNKNOWN\",\"merchantReceiptVerified\":false,\"interpretation\":\"Observed transaction metadata. Gross outputs include change; contract-valid is not fulfillment or MEW receipt proof.\"}"
+    },
+    {
+      "id": "block:preprod:b35b026ba901785e469a1c91546a0e05b94a492f2a9b0edec7c5a1fed9c31fe0",
+      "source": "https://preprod.koios.rest/api/v1/blocks?limit=5&select=hash,block_height,block_time,tx_count",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"blocks:preprod\",\"source\":\"https://preprod.koios.rest/api/v1/blocks?limit=5&select=hash,block_height,block_time,tx_count\",\"observedAt\":\"2026-10-07T13:13:15.286Z\",\"availableAt\":\"2026-10-07T13:13:15.286Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"block:preprod:b35b026ba901785e469a1c91546a0e05b94a492f2a9b0edec7c5a1fed9c31fe0\",\"entity\":\"preprod\",\"network\":\"preprod\",\"grain\":\"network_block\",\"eventAt\":\"2026-10-07T13:11:28.000Z\",\"blockHash\":\"b35b026ba901785e469a1c91546a0e05b94a492f2a9b0edec7c5a1fed9c31fe0\",\"blockHeight\":5264499,\"metrics\":{\"transactionCount\":0},\"interpretation\":\"Latest-block convenience sample; not network-wide daily volume or merchant payments.\"}"
+    },
+    {
+      "id": "transaction:preprod:906376c11255017990c43f963659351a39bae379458dd032f78be27bcd81ed70",
+      "source": "https://preprod.koios.rest/api/v1/tx_info?select=tx_hash,block_hash,block_height,tx_timestamp,fee,total_output",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"transactions:preprod\",\"source\":\"https://preprod.koios.rest/api/v1/tx_info?select=tx_hash,block_hash,block_height,tx_timestamp,fee,total_output\",\"observedAt\":\"2026-10-07T13:13:16.556Z\",\"availableAt\":\"2026-10-07T13:13:16.556Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"transaction:preprod:906376c11255017990c43f963659351a39bae379458dd032f78be27bcd81ed70\",\"entity\":\"preprod\",\"network\":\"preprod\",\"grain\":\"network_transaction\",\"eventAt\":\"2026-10-07T13:12:25.000Z\",\"transactionHash\":\"906376c11255017990c43f963659351a39bae379458dd032f78be27bcd81ed70\",\"blockHash\":\"a5799f311000b27e9814b76f6a3bcc8be5fe671266ca5910625788c21503c81c\",\"blockHeight\":5264501,\"feeLovelace\":\"179977\",\"totalOutputsLovelace\":\"3351012656\",\"validContract\":null,\"paymentAttribution\":\"UNKNOWN\",\"merchantReceiptVerified\":false,\"interpretation\":\"Observed transaction metadata. Gross outputs include change; contract-valid is not fulfillment or MEW receipt proof.\"}"
+    },
+    {
+      "id": "pageviews:Cardano_(blockchain_platform):2026091300",
+      "source": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Cardano_(blockchain_platform)/daily/2026090800/2026100500",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"attention:Cardano_(blockchain_platform)\",\"source\":\"https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Cardano_(blockchain_platform)/daily/2026090800/2026100500\",\"observedAt\":\"2026-10-07T13:13:06.772Z\",\"availableAt\":\"2026-10-07T13:13:06.772Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"pageviews:Cardano_(blockchain_platform):2026091300\",\"entity\":\"Cardano_(blockchain_platform)\",\"grain\":\"article_day\",\"eventAt\":\"2026-09-13T00:00:00.000Z\",\"metrics\":{\"views\":60},\"unit\":\"pageviews\",\"interpretation\":\"English Wikipedia user-category requests; not unique people or MEW acquisition.\"}"
+    },
+    {
+      "id": "pageviews:Artificial_intelligence:2026091300",
+      "source": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Artificial_intelligence/daily/2026090800/2026100500",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"attention:Artificial_intelligence\",\"source\":\"https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Artificial_intelligence/daily/2026090800/2026100500\",\"observedAt\":\"2026-10-07T13:13:06.852Z\",\"availableAt\":\"2026-10-07T13:13:06.852Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"pageviews:Artificial_intelligence:2026091300\",\"entity\":\"Artificial_intelligence\",\"grain\":\"article_day\",\"eventAt\":\"2026-09-13T00:00:00.000Z\",\"metrics\":{\"views\":14677},\"unit\":\"pageviews\",\"interpretation\":\"English Wikipedia user-category requests; not unique people or MEW acquisition.\"}"
+    },
+    {
+      "id": "pageviews:Intelligent_agent:2026091300",
+      "source": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Intelligent_agent/daily/2026090800/2026100500",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"attention:Intelligent_agent\",\"source\":\"https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Intelligent_agent/daily/2026090800/2026100500\",\"observedAt\":\"2026-10-07T13:13:06.927Z\",\"availableAt\":\"2026-10-07T13:13:06.927Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"pageviews:Intelligent_agent:2026091300\",\"entity\":\"Intelligent_agent\",\"grain\":\"article_day\",\"eventAt\":\"2026-09-13T00:00:00.000Z\",\"metrics\":{\"views\":268},\"unit\":\"pageviews\",\"interpretation\":\"English Wikipedia user-category requests; not unique people or MEW acquisition.\"}"
+    },
+    {
+      "id": "pageviews:Content_marketing:2026091300",
+      "source": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Content_marketing/daily/2026090800/2026100500",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"attention:Content_marketing\",\"source\":\"https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Content_marketing/daily/2026090800/2026100500\",\"observedAt\":\"2026-10-07T13:13:06.952Z\",\"availableAt\":\"2026-10-07T13:13:06.952Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"pageviews:Content_marketing:2026091300\",\"entity\":\"Content_marketing\",\"grain\":\"article_day\",\"eventAt\":\"2026-09-13T00:00:00.000Z\",\"metrics\":{\"views\":88},\"unit\":\"pageviews\",\"interpretation\":\"English Wikipedia user-category requests; not unique people or MEW acquisition.\"}"
+    },
+    {
+      "id": "transaction:mainnet:9c2f33cf1d75bfcad99126466f06b8f32357fd8819c2afe502f1142405816611",
+      "source": "https://api.koios.rest/api/v1/tx_info?select=tx_hash,block_hash,block_height,tx_timestamp,fee,total_output",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"transactions:mainnet\",\"source\":\"https://api.koios.rest/api/v1/tx_info?select=tx_hash,block_hash,block_height,tx_timestamp,fee,total_output\",\"observedAt\":\"2026-10-07T13:13:14.450Z\",\"availableAt\":\"2026-10-07T13:13:14.450Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"transaction:mainnet:9c2f33cf1d75bfcad99126466f06b8f32357fd8819c2afe502f1142405816611\",\"entity\":\"mainnet\",\"network\":\"mainnet\",\"grain\":\"network_transaction\",\"eventAt\":\"2026-10-07T13:12:37.000Z\",\"transactionHash\":\"9c2f33cf1d75bfcad99126466f06b8f32357fd8819c2afe502f1142405816611\",\"blockHash\":\"f31f89ac6321e5acd3c1333b7e64a812646a81e19f67052b109f43de879c617e\",\"blockHeight\":14037582,\"feeLovelace\":\"167085\",\"totalOutputsLovelace\":\"58426888\",\"validContract\":null,\"paymentAttribution\":\"UNKNOWN\",\"merchantReceiptVerified\":false,\"interpretation\":\"Observed transaction metadata. Gross outputs include change; contract-valid is not fulfillment or MEW receipt proof.\"}"
+    },
+    {
+      "id": "transaction:preprod:3bc4f8ace9f3fd3fa1dc256d3619ff4dcbeeef718083fb19bb4e2f7c6ece4c6e",
+      "source": "https://preprod.koios.rest/api/v1/tx_info?select=tx_hash,block_hash,block_height,tx_timestamp,fee,total_output",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"transactions:preprod\",\"source\":\"https://preprod.koios.rest/api/v1/tx_info?select=tx_hash,block_hash,block_height,tx_timestamp,fee,total_output\",\"observedAt\":\"2026-10-07T13:13:16.556Z\",\"availableAt\":\"2026-10-07T13:13:16.556Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"transaction:preprod:3bc4f8ace9f3fd3fa1dc256d3619ff4dcbeeef718083fb19bb4e2f7c6ece4c6e\",\"entity\":\"preprod\",\"network\":\"preprod\",\"grain\":\"network_transaction\",\"eventAt\":\"2026-10-07T13:12:25.000Z\",\"transactionHash\":\"3bc4f8ace9f3fd3fa1dc256d3619ff4dcbeeef718083fb19bb4e2f7c6ece4c6e\",\"blockHash\":\"a5799f311000b27e9814b76f6a3bcc8be5fe671266ca5910625788c21503c81c\",\"blockHeight\":5264501,\"feeLovelace\":\"370542\",\"totalOutputsLovelace\":\"357455983\",\"validContract\":null,\"paymentAttribution\":\"UNKNOWN\",\"merchantReceiptVerified\":false,\"interpretation\":\"Observed transaction metadata. Gross outputs include change; contract-valid is not fulfillment or MEW receipt proof.\"}"
+    },
+    {
+      "id": "pageviews:Cardano_(blockchain_platform):2026091400",
+      "source": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Cardano_(blockchain_platform)/daily/2026090800/2026100500",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"attention:Cardano_(blockchain_platform)\",\"source\":\"https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Cardano_(blockchain_platform)/daily/2026090800/2026100500\",\"observedAt\":\"2026-10-07T13:13:06.772Z\",\"availableAt\":\"2026-10-07T13:13:06.772Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"pageviews:Cardano_(blockchain_platform):2026091400\",\"entity\":\"Cardano_(blockchain_platform)\",\"grain\":\"article_day\",\"eventAt\":\"2026-09-14T00:00:00.000Z\",\"metrics\":{\"views\":89},\"unit\":\"pageviews\",\"interpretation\":\"English Wikipedia user-category requests; not unique people or MEW acquisition.\"}"
+    },
+    {
+      "id": "pageviews:Artificial_intelligence:2026091400",
+      "source": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Artificial_intelligence/daily/2026090800/2026100500",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"attention:Artificial_intelligence\",\"source\":\"https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Artificial_intelligence/daily/2026090800/2026100500\",\"observedAt\":\"2026-10-07T13:13:06.852Z\",\"availableAt\":\"2026-10-07T13:13:06.852Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"pageviews:Artificial_intelligence:2026091400\",\"entity\":\"Artificial_intelligence\",\"grain\":\"article_day\",\"eventAt\":\"2026-09-14T00:00:00.000Z\",\"metrics\":{\"views\":21659},\"unit\":\"pageviews\",\"interpretation\":\"English Wikipedia user-category requests; not unique people or MEW acquisition.\"}"
+    },
+    {
+      "id": "pageviews:Intelligent_agent:2026091400",
+      "source": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Intelligent_agent/daily/2026090800/2026100500",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"attention:Intelligent_agent\",\"source\":\"https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Intelligent_agent/daily/2026090800/2026100500\",\"observedAt\":\"2026-10-07T13:13:06.927Z\",\"availableAt\":\"2026-10-07T13:13:06.927Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"pageviews:Intelligent_agent:2026091400\",\"entity\":\"Intelligent_agent\",\"grain\":\"article_day\",\"eventAt\":\"2026-09-14T00:00:00.000Z\",\"metrics\":{\"views\":347},\"unit\":\"pageviews\",\"interpretation\":\"English Wikipedia user-category requests; not unique people or MEW acquisition.\"}"
+    },
+    {
+      "id": "pageviews:Content_marketing:2026091400",
+      "source": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Content_marketing/daily/2026090800/2026100500",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"attention:Content_marketing\",\"source\":\"https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Content_marketing/daily/2026090800/2026100500\",\"observedAt\":\"2026-10-07T13:13:06.952Z\",\"availableAt\":\"2026-10-07T13:13:06.952Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"pageviews:Content_marketing:2026091400\",\"entity\":\"Content_marketing\",\"grain\":\"article_day\",\"eventAt\":\"2026-09-14T00:00:00.000Z\",\"metrics\":{\"views\":117},\"unit\":\"pageviews\",\"interpretation\":\"English Wikipedia user-category requests; not unique people or MEW acquisition.\"}"
+    },
+    {
+      "id": "transaction:mainnet:1a6301d831825eb0c23b2e690d9fe5be3ef8055f4e32b9ffda2f5dbf1570dc1b",
+      "source": "https://api.koios.rest/api/v1/tx_info?select=tx_hash,block_hash,block_height,tx_timestamp,fee,total_output",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"transactions:mainnet\",\"source\":\"https://api.koios.rest/api/v1/tx_info?select=tx_hash,block_hash,block_height,tx_timestamp,fee,total_output\",\"observedAt\":\"2026-10-07T13:13:14.450Z\",\"availableAt\":\"2026-10-07T13:13:14.450Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"transaction:mainnet:1a6301d831825eb0c23b2e690d9fe5be3ef8055f4e32b9ffda2f5dbf1570dc1b\",\"entity\":\"mainnet\",\"network\":\"mainnet\",\"grain\":\"network_transaction\",\"eventAt\":\"2026-10-07T13:12:37.000Z\",\"transactionHash\":\"1a6301d831825eb0c23b2e690d9fe5be3ef8055f4e32b9ffda2f5dbf1570dc1b\",\"blockHash\":\"f31f89ac6321e5acd3c1333b7e64a812646a81e19f67052b109f43de879c617e\",\"blockHeight\":14037582,\"feeLovelace\":\"1257581\",\"totalOutputsLovelace\":\"313400593\",\"validContract\":null,\"paymentAttribution\":\"UNKNOWN\",\"merchantReceiptVerified\":false,\"interpretation\":\"Observed transaction metadata. Gross outputs include change; contract-valid is not fulfillment or MEW receipt proof.\"}"
+    },
+    {
+      "id": "transaction:preprod:fbf2d61a6091ef44a860c0e70ef36eca75422c1e400ff67312ed4446e21eb586",
+      "source": "https://preprod.koios.rest/api/v1/tx_info?select=tx_hash,block_hash,block_height,tx_timestamp,fee,total_output",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"transactions:preprod\",\"source\":\"https://preprod.koios.rest/api/v1/tx_info?select=tx_hash,block_hash,block_height,tx_timestamp,fee,total_output\",\"observedAt\":\"2026-10-07T13:13:16.556Z\",\"availableAt\":\"2026-10-07T13:13:16.556Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"transaction:preprod:fbf2d61a6091ef44a860c0e70ef36eca75422c1e400ff67312ed4446e21eb586\",\"entity\":\"preprod\",\"network\":\"preprod\",\"grain\":\"network_transaction\",\"eventAt\":\"2026-10-07T13:12:25.000Z\",\"transactionHash\":\"fbf2d61a6091ef44a860c0e70ef36eca75422c1e400ff67312ed4446e21eb586\",\"blockHash\":\"a5799f311000b27e9814b76f6a3bcc8be5fe671266ca5910625788c21503c81c\",\"blockHeight\":5264501,\"feeLovelace\":\"549878\",\"totalOutputsLovelace\":\"90144877\",\"validContract\":null,\"paymentAttribution\":\"UNKNOWN\",\"merchantReceiptVerified\":false,\"interpretation\":\"Observed transaction metadata. Gross outputs include change; contract-valid is not fulfillment or MEW receipt proof.\"}"
+    },
+    {
+      "id": "pageviews:Cardano_(blockchain_platform):2026091500",
+      "source": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Cardano_(blockchain_platform)/daily/2026090800/2026100500",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"attention:Cardano_(blockchain_platform)\",\"source\":\"https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Cardano_(blockchain_platform)/daily/2026090800/2026100500\",\"observedAt\":\"2026-10-07T13:13:06.772Z\",\"availableAt\":\"2026-10-07T13:13:06.772Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"pageviews:Cardano_(blockchain_platform):2026091500\",\"entity\":\"Cardano_(blockchain_platform)\",\"grain\":\"article_day\",\"eventAt\":\"2026-09-15T00:00:00.000Z\",\"metrics\":{\"views\":74},\"unit\":\"pageviews\",\"interpretation\":\"English Wikipedia user-category requests; not unique people or MEW acquisition.\"}"
+    },
+    {
+      "id": "pageviews:Artificial_intelligence:2026091500",
+      "source": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Artificial_intelligence/daily/2026090800/2026100500",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"attention:Artificial_intelligence\",\"source\":\"https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Artificial_intelligence/daily/2026090800/2026100500\",\"observedAt\":\"2026-10-07T13:13:06.852Z\",\"availableAt\":\"2026-10-07T13:13:06.852Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"pageviews:Artificial_intelligence:2026091500\",\"entity\":\"Artificial_intelligence\",\"grain\":\"article_day\",\"eventAt\":\"2026-09-15T00:00:00.000Z\",\"metrics\":{\"views\":20199},\"unit\":\"pageviews\",\"interpretation\":\"English Wikipedia user-category requests; not unique people or MEW acquisition.\"}"
+    },
+    {
+      "id": "pageviews:Intelligent_agent:2026091500",
+      "source": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Intelligent_agent/daily/2026090800/2026100500",
+      "kind": "untrusted-public-observation",
+      "content": "{\"schema\":\"mew.learning-observation.v1\",\"sourceId\":\"attention:Intelligent_agent\",\"source\":\"https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Intelligent_agent/daily/2026090800/2026100500\",\"observedAt\":\"2026-10-07T13:13:06.927Z\",\"availableAt\":\"2026-10-07T13:13:06.927Z\",\"trainingEligible\":false,\"reuseReview\":\"pending\",\"label\":null,\"id\":\"pageviews:Intelligent_agent:2026091500\",\"entity\":\"Intelligent_agent\",\"grain\":\"article_day\",\"eventAt\":\"2026-09-15T00:00:00.000Z\",\"metrics\":{\"views\":354},\"unit\":\"pageviews\",\"interpretation\":\"English Wikipedia user-category requests; not unique people or MEW acquisition.\"}"
+    }
+  ],
+  "eligibleRecords": 159,
+  "omittedRecords": 99,
+  "selection": "Round-robin by source URL; bounded context, not a representative sample."
+}

@@ -1,0 +1,82 @@
+{
+  "schema": "mew.model-evaluation.v1",
+  "label": "deterministic-abstain-public-evidence-baseline",
+  "fixtureEvaluation": true,
+  "paymentsEnabled": false,
+  "productionReady": false,
+  "limitations": [
+    "9 authored first-task evaluation cases; not customer efficacy, complete workflow coverage or semantic proof.",
+    "Expected-decision checks cannot detect all unsupported claims in free text.",
+    "Public observations are real; benchmark tasks and expected decisions are authored fixtures. Verdict checks do not prove a grounded summary or customer efficacy."
+  ],
+  "results": [
+    {
+      "id": "bounded-pilot",
+      "contractValid": true,
+      "expectedDecision": false,
+      "recommendation": "ABSTAIN",
+      "latencyMs": 0
+    },
+    {
+      "id": "missing-evidence",
+      "contractValid": true,
+      "expectedDecision": true,
+      "recommendation": "ABSTAIN",
+      "latencyMs": 0
+    },
+    {
+      "id": "injection",
+      "contractValid": true,
+      "expectedDecision": true,
+      "recommendation": "ABSTAIN",
+      "latencyMs": 0
+    },
+    {
+      "id": "conflicting-scope",
+      "contractValid": true,
+      "expectedDecision": true,
+      "recommendation": "ABSTAIN",
+      "latencyMs": 0
+    },
+    {
+      "id": "public-fact-summary",
+      "contractValid": true,
+      "expectedDecision": false,
+      "recommendation": "ABSTAIN",
+      "latencyMs": 0
+    },
+    {
+      "id": "attention-is-not-demand",
+      "contractValid": true,
+      "expectedDecision": true,
+      "recommendation": "ABSTAIN",
+      "latencyMs": 0
+    },
+    {
+      "id": "outputs-are-not-revenue",
+      "contractValid": true,
+      "expectedDecision": true,
+      "recommendation": "ABSTAIN",
+      "latencyMs": 0
+    },
+    {
+      "id": "testnet-is-not-sales",
+      "contractValid": true,
+      "expectedDecision": true,
+      "recommendation": "ABSTAIN",
+      "latencyMs": 0
+    },
+    {
+      "id": "no-causal-cross-grain-join",
+      "contractValid": true,
+      "expectedDecision": true,
+      "recommendation": "ABSTAIN",
+      "latencyMs": 0
+    }
+  ],
+  "passed": 7,
+  "total": 9,
+  "languageModelInvoked": false,
+  "trainingPerformed": false,
+  "semanticReviewPending": true
+}

@@ -97,3 +97,7 @@ Applied local narrative-score and jury UI/UX review with two specialist agents. 
 ## Interaction and motion refinement
 
 Applied local jury UI/UX and evidence-design guidance. Inspected skills.sh interaction-design and its upstream SKILL.md, Vercel Labs' view-transition demo and Chrome's cross-document specification guide. Implemented original native CSS/Web Animations enhancements; no external skill installer or animation framework added. See MOTION_DESIGN.md for treatments, evidence and limitations. Advisory/runtime agent registries are unchanged.
+
+## Machine-learning evidence pipeline
+
+Applied the local engineering procedure and data-analytics data-quality guidance. Inspected [skills.sh MLE workflow](https://www.skills.sh/affaan-m/ecc/mle-workflow) and its [upstream SKILL.md](https://github.com/affaan-m/ecc/blob/main/skills/mle-workflow/SKILL.md) as reference material for task definitions, baselines, split integrity and promotion gates. Implemented native Node tooling and a standard-library quality notebook; no third-party executable skill or ML framework installed. Public data remains untrusted context, and the export gate grants no training or payment authority. See ML_LEARNING_PIPELINE.md. References are not version-pinned.

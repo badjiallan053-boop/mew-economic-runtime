@@ -27,6 +27,10 @@
     "durable:rehearse": "node scripts/durable-rehearsal.mjs",
     "backup:rehearse": "node scripts/backup-rehearsal.mjs",
     "masumi:contract": "node scripts/inspect-masumi-contract.mjs",
-    "operator:start": "node scripts/operator-host.mjs"
+    "operator:start": "node scripts/operator-host.mjs",
+    "learning:collect": "node scripts/collect-learning.mjs",
+    "learning:analyze": "node scripts/analyze-learning.mjs",
+    "learning:evaluate": "node scripts/evaluate-learning.mjs",
+    "learning:export": "node scripts/export-learning.mjs"
   }
 }
