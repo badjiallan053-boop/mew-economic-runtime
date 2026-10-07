@@ -1,0 +1,19 @@
+# Event-platform intelligence for MEW
+
+Event listings can help identify relevant workshops, venues, organizers and pilot opportunities. They do not prove attendance, customer intent, payment settlement or marketing conversion. No attendee profiles, emails, order histories or ticket purchases are collected by this contribution.
+
+| Platform | Useful role | Official acquisition boundary | Current state |
+|---|---|---|---|
+| Luma | Candidate startup/AI/Web3 community events; validate actual geographic coverage | [API documentation](https://docs.luma.com/reference/getting-started-with-your-api): Plus subscription, calendar-scoped key, x-luma-api-key header; not an unrestricted global discovery feed | Documentation inspected; no subscription/key configured |
+| Eventbrite | Organizer-owned workshops and public listing links | [Official API docs](https://www.eventbrite.com/platform/new/api): organization event resources; broad search must not be assumed | API documentation fetch returned 429; no API calls or connector claimed |
+| Ticketmaster | Broader public-event discovery, attractions and venues | [Discovery API](https://developer.ticketmaster.com/products-and-docs/apis/discovery/v2/): API key required; source/city/date filters | Documentation inspected; no key configured |
+
+Prioritize relevant organizer calendars/public links and permissioned exports for MEW pilots; measure relevance before adding Ticketmaster's broader entertainment inventory. Never infer available inventory or prices from stale listings. Preserve event and observation times separately, normalize timezone-aware starts to UTC, and deduplicate across providers using organizer/venue/time review rather than assuming different event IDs mean different events.
+
+`src/learning/events.mjs` is a tested normalization contract for permitted listing imports. It drops unknown fields including attendee/order fields, retains only bounded source/title/time data and denies credential-bearing or substituted URLs. Supported source hosts are deliberately limited; custom organizer domains require a reviewed adapter. Titles remain untrusted text. The module does not fetch an event API or add live connectors. Import schema: platform, id, title, HTTPS url without query/fragment, startsAt with timezone, optional endsAt. Supply observedAt separately.
+
+The training exporter rejects these platform URLs and explicit event-platform provenance by default. API access does not imply permission to train Qwen on descriptions or attendee data. Collect separately consented customer outcomes and reviewer-authored opportunity assessments if we later build a relevance model. Event recommendations remain advisory; registration, payment and outreach require their own authorized workflows.
+
+Suggested pilot: a bounded Singapore event shortlist, reviewer-labeled fit to MEW's agent-commerce use case, then an independently reviewed invitation plan. No invitations were sent. Existing API credentials, provider rights and calendar/organization scope are needed for live acquisition. No paid resource was purchased under the Railway budget.
+
+Retention must follow provider terms rather than the blockchain snapshot policy. [Eventbrite API terms](https://www.eventbrite.sg/help/en-sg/articles/833731/eventbrite-api-terms-of-use/) restrict retaining past-event content without explicit permission; the normalizer conservatively refuses Eventbrite listings whose start precedes observation and marks retainPastEvents false. This does not implement an expiration worker: live storage will need updates/deletions and consent-aware retention. [Ticketmaster terms](https://developer.ticketmaster.com/support/terms-of-use/) require bounded service caching. Its API key is a query parameter: never store credential-bearing API URLs in logs, source manifests or model prompts. Start at a conservative two requests per second and honor actual account quotas.

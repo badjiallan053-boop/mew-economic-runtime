@@ -1,0 +1,8 @@
+const hosts={luma:['luma.com','lu.ma'],eventbrite:['eventbrite.com'],ticketmaster:['ticketmaster.com']};
+export function normalizeEventListing(input,observedAt){
+ if(!input||!Object.hasOwn(hosts,input.platform)||typeof input.id!=='string'||!input.id.trim()||input.id.length>200||typeof input.title!=='string'||!input.title.trim()||input.title.length>300)throw Error('Invalid event identity');
+ const url=new URL(input.url);if(url.protocol!=='https:'||url.username||url.password||url.search||url.hash||!hosts[input.platform].some(h=>url.hostname===h||url.hostname.endsWith('.'+h)))throw Error('Invalid event source URL');
+ if(!Number.isFinite(Date.parse(observedAt))||typeof input.startsAt!=='string'||!/(Z|[+-][0-9]{2}:[0-9]{2})$/.test(input.startsAt)||!Number.isFinite(Date.parse(input.startsAt)))throw Error('Event time must include timezone');
+ const startsAt=new Date(input.startsAt).toISOString();if(input.platform==='eventbrite'&&Date.parse(startsAt)<Date.parse(observedAt))throw Error('Past Eventbrite listings require a separate permissioned adapter');if(input.endsAt!==undefined&&(typeof input.endsAt!=='string'||!/(Z|[+-][0-9]{2}:[0-9]{2})$/.test(input.endsAt)||!Number.isFinite(Date.parse(input.endsAt))||Date.parse(input.endsAt)<Date.parse(startsAt)))throw Error('Invalid event end time');
+ return{schema:'mew.event-listing.v1',id:`${input.platform}:${input.id}`,platform:input.platform,source:url.href,title:input.title,startsAt,endsAt:input.endsAt?new Date(input.endsAt).toISOString():null,observedAt,originClass:'event-platform',trainingEligible:false,retainPastEvents:false,reuseReview:'pending',authority:'untrusted-research-only',attendanceVerified:false,paymentAttribution:'UNKNOWN'};
+}

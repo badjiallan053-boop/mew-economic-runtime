@@ -48,3 +48,7 @@ test('supervised export requires bounded evidence with source provenance',()=>{
  assert.throws(()=>prepareSupervisedExport([{...example('a','train'),evidence:[{eventAt:'2026-09-01',availableAt:'2026-10-01'}]}]),/provenance/);
  assert.throws(()=>prepareSupervisedExport([{...example('a','train'),evidence:Array(101).fill(example('a','train').evidence[0])}]),/size/);
 });
+
+test('summarized social platform evidence cannot pass the supervised export gate',()=>{for(const source of ['https://x.com/user/status/1','https://www.reddit.com/r/cardano/','https://creator.substack.com/p/article','https://www.youtube.com/watch?v=example']){assert.throws(()=>prepareSupervisedExport([{...example('a','train'),evidence:[{...example('a','train').evidence[0],source}]}]),/research-only/);}assert.throws(()=>prepareSupervisedExport([{...example('a','train'),evidence:[{...example('a','train').evidence[0],originClass:'social-platform'}]}]),/research-only/);});
+
+test('event discovery is not automatically a licensed training source',()=>{assert.throws(()=>prepareSupervisedExport([{...example('a','train'),evidence:[{...example('a','train').evidence[0],source:'https://lu.ma/example'}]}]),/research-only/);assert.throws(()=>prepareSupervisedExport([{...example('a','train'),evidence:[{...example('a','train').evidence[0],originClass:'event-platform'}]}]),/research-only/);});

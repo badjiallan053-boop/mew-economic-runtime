@@ -1,0 +1,11 @@
+{
+  "rows": 40,
+  "scenarioFamilies": 5,
+  "sha256": "0e94abc652eb0b46eb9c970f8db10421ad3f335a094b76fd7655281bbcda3ba1",
+  "generatorRevision": "79793e4a3ddadcba6bbdfad999e2e961441e6e4ca5bb256c006ca8239c6fdfe1",
+  "coreRevision": "d5ce78b64cab80c46fc040feb4e7d33713a1ef82b86364f34699ec318f540916",
+  "synthetic": true,
+  "languageModelTrained": false,
+  "paymentsExecuted": false,
+  "splitInstruction": "Assign entire scenario families to splits; amount variants are not independent examples."
+}

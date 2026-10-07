@@ -105,3 +105,7 @@ Applied the local engineering procedure and data-analytics data-quality guidance
 ## Dataset and model discovery
 
 Extended the reference-only skills.sh MLE workflow into a fixed-source, revision-pinned catalog and an original local TF-IDF retrieval fit. Reviewed official dataset cards, Qwen model cards and MLX-LM LoRA guidance. No remote installers, dataset scripts or model-weight code were executed. See MODEL_DATA_SHORTLIST.md; language-model fine-tuning remains pending reviewed data and hardware feasibility.
+
+## Social research committee
+
+Applied reference-only skills.sh deep-research and MLE workflow with three actual review agents. Built strict advisory proposal validation and research-only social source exclusions; generated synthetic oracle fixtures using the existing deterministic core. No remote installers or scraped transcripts used. See SOCIAL_PROTOCOL_COMMITTEE.md.
