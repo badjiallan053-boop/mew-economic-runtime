@@ -142,3 +142,7 @@ See PRODUCT_MARKETING_CONTEXT.md and GTM_PLAYBOOK.md for audience hypotheses and
 ## Connected website story — 7 October 2026
 
 Deployed commit `e7ac76ff53276af71ad1b55e67b790bf6e40fc95` through existing Railway service, deployment `1c4ce8d9-229f-4b32-a829-bb9e9314d907` reported SUCCESS. The four-step story and original seeded SVG artwork preserve existing economic contracts. 157 tests and build passed. Browser checks verified UNKNOWN/DEFER artwork, open checkpoint disclosure, and 390 px verification layout without horizontal overflow. No live model or payment execution occurred.
+
+## Interaction and motion release — 7 October 2026
+
+Railway deployment `7db52e7d-bf82-47ea-a105-1d51cfc8adea` reported SUCCESS for pinned commit `3d7147e2c5e6211dbd5b4f251f1d20daca61b0c4`. All 159 tests and build passed; 36 hosted health/asset checks passed against exact checkout bytes. Browser review confirmed published progress and synthetic state, local checkpoint focus restoration, tab arrow navigation, menu Escape, disconnected control recovery and mobile width. Reduced-motion behavior is unit-tested and stylesheet-gated; customer-device frame rate was not measured. No live model or payment execution was performed. See MOTION_DESIGN.md.
