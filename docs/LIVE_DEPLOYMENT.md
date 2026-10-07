@@ -96,3 +96,11 @@ No new services were created; models remain NOT_CONFIGURED and payments disabled
 83 tests pass; build passes; local discovery completed synthetic tasks and the
 previous full journal replay was unchanged. Visual browser rendering was not
 inspected. See COHERENT_OPERATIONS.md for ownership and knowledge references.
+
+## Ecosystem research release · 7 October 2026
+
+Code commit `0d01ce71e4643d6ec3bca46bfda22cfc88527845` adds a bounded public-source snapshot and read-only `/research.html`. Ten API sources succeeded: 54 normalized observations plus five original summaries of publisher announcements/analyses. 102 regression tests and build passed; local health, page, script and snapshot endpoints passed. The 59-record compact handoff used simulatedProvider; no live model, wallet or payment worker ran.
+
+A staged connect of this exact commit to existing mew-demo failed: Railway reported repository not found or not accessible. Hosted health remained HTTP 200, demo mode with payments disabled; `/research.html` returned 404. The new research page is therefore not deployed. No additional services or resources were created.
+
+Owner action: in GitHub installed applications, grant Railway access to private `badjiallan053-boop/mew-economic-runtime`, using the same owner account as the Railway GitHub connection. Reconnect the source and pin the desired reviewed branch commit; inspect pending environment changes before deploying. After success, verify `/api/health`, `/research.html`, `/research-snapshot.json` and SQLite persistence. Existing US$10 total authorization remains the budget; resource limits do not enforce a dollar cap. Do not enable live payment or model execution as part of this static research rollout.
