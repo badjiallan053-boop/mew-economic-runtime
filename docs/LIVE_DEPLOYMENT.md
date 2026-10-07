@@ -85,3 +85,14 @@ files and local rehearsal CLI. The API exposes the read-only registry; it does
 not start providers, load credentials or dispatch company tasks. Company task
 SQLite is separate from economic SQLite and the MPS PostgreSQL service.
 Read COMPANY_AGENTS.md for configuration gates and interrupted-task recovery.
+
+## Focused operating workflows · 7 October 2026
+
+Deployed `bdbd2af9d0584bcf880dd9686a6bd100762f452b`; Railway deployment
+`ded356cd-d7c4-40df-a2a1-d100a97fbd7f` succeeded. The hosted registry and
+company page/script return discovery (13 tasks), release (21), paid-readiness
+(20) and explicit full (48). The UI/CLI default is discovery.
+No new services were created; models remain NOT_CONFIGURED and payments disabled.
+83 tests pass; build passes; local discovery completed synthetic tasks and the
+previous full journal replay was unchanged. Visual browser rendering was not
+inspected. See COHERENT_OPERATIONS.md for ownership and knowledge references.
