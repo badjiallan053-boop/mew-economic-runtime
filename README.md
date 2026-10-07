@@ -86,3 +86,7 @@ and live external actions remain configuration and activation milestones.
 `npm run company:rehearse` now defaults to five roles across six synthetic tasks.
 See [compact team and prompt boundaries](docs/COMPACT_TEAM.md). Existing profiles
 remain selectable explicitly; saved legacy missions are not migrated.
+
+## Delivery priorities and release checks
+
+See [DELIVERY_PLAN.md](docs/DELIVERY_PLAN.md) for ordered outcomes, accountable roles and evidence gates. `npm run deploy:verify` checks the existing hosted demo against the checkout without making changes. Public ecosystem evidence is presented at `/research.html`; model processing remains simulated.

@@ -18,6 +18,7 @@
     "live:preflight": "node scripts/live-preflight.mjs",
     "research:collect": "node scripts/collect-ecosystem.mjs",
     "research:rehearse": "node scripts/ecosystem-rehearsal.mjs",
-    "research:publish": "node scripts/publish-research.mjs"
+    "research:publish": "node scripts/publish-research.mjs",
+    "deploy:verify": "node scripts/verify-deployment.mjs"
   }
 }
