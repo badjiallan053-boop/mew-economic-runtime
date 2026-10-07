@@ -62,6 +62,21 @@ and conversion provenance, verify local memory/token limits, preserve the
 baseline and record actual outputs/cost. Do not silently replace the historical
 runner or activate a larger model on the 250 MB Railway demo container.
 
+## Completed agent domain review
+
+The prepared comparison now has a completed
+[agent domain review](../research/experiments/agent-domain-review-2026-10-08/README.md).
+All twelve pairs have source-bound notes finalized before this review opened the
+mapping. They diagnose unsupported customer-improvement claims, incomplete UNKNOWN
+guidance, language failures and unjustified event-opportunity abstention. French
+language compliance improves from 2/6 to 4/6 in the localized variant, without
+establishing semantic usefulness. These are unauthenticated development annotations,
+not human labels or customer accuracy; semantic passes remain null. Run the
+included read-only verifier to reproduce the original trace bindings and counts.
+The [single capability-comparison plan](../research/experiments/agent-domain-review-2026-10-08/next-experiment.md)
+requires independent customer evaluation preparation before a release decision.
+No new generation, training or activation occurred in this review.
+
 ## Inspect an externally signed transaction offline
 
 The trusted operator supplies the original builder arguments and a full

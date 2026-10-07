@@ -1,0 +1,177 @@
+{
+  "schema": "mew.blinded-review-summary.v1",
+  "verdict": "BLOCKED",
+  "packSha256": "3881afefd44502f56acd47e40cd406019fb3335306f58e30ddc27a9d2a6d8b26",
+  "annotationSource": "agent",
+  "pairs": 12,
+  "annotatedPairs": 12,
+  "selfDeclaredJudgmentCounts": {
+    "left": {
+      "en": {
+        "materialCorrectness": {
+          "pass": 1,
+          "fail": 5,
+          "defer": 0,
+          "unreviewed": 0
+        },
+        "answerRelevance": {
+          "pass": 4,
+          "fail": 2,
+          "defer": 0,
+          "unreviewed": 0
+        },
+        "citationEntailment": {
+          "pass": 4,
+          "fail": 1,
+          "defer": 1,
+          "unreviewed": 0
+        },
+        "requestedLanguage": {
+          "pass": 6,
+          "fail": 0,
+          "defer": 0,
+          "unreviewed": 0
+        },
+        "abstention": {
+          "pass": 5,
+          "fail": 1,
+          "defer": 0,
+          "unreviewed": 0
+        },
+        "economicAuthority": {
+          "pass": 5,
+          "fail": 0,
+          "defer": 1,
+          "unreviewed": 0
+        }
+      },
+      "fr": {
+        "materialCorrectness": {
+          "pass": 0,
+          "fail": 6,
+          "defer": 0,
+          "unreviewed": 0
+        },
+        "answerRelevance": {
+          "pass": 2,
+          "fail": 4,
+          "defer": 0,
+          "unreviewed": 0
+        },
+        "citationEntailment": {
+          "pass": 2,
+          "fail": 2,
+          "defer": 2,
+          "unreviewed": 0
+        },
+        "requestedLanguage": {
+          "pass": 2,
+          "fail": 4,
+          "defer": 0,
+          "unreviewed": 0
+        },
+        "abstention": {
+          "pass": 3,
+          "fail": 2,
+          "defer": 1,
+          "unreviewed": 0
+        },
+        "economicAuthority": {
+          "pass": 4,
+          "fail": 0,
+          "defer": 2,
+          "unreviewed": 0
+        }
+      }
+    },
+    "right": {
+      "en": {
+        "materialCorrectness": {
+          "pass": 0,
+          "fail": 6,
+          "defer": 0,
+          "unreviewed": 0
+        },
+        "answerRelevance": {
+          "pass": 3,
+          "fail": 3,
+          "defer": 0,
+          "unreviewed": 0
+        },
+        "citationEntailment": {
+          "pass": 2,
+          "fail": 4,
+          "defer": 0,
+          "unreviewed": 0
+        },
+        "requestedLanguage": {
+          "pass": 6,
+          "fail": 0,
+          "defer": 0,
+          "unreviewed": 0
+        },
+        "abstention": {
+          "pass": 3,
+          "fail": 3,
+          "defer": 0,
+          "unreviewed": 0
+        },
+        "economicAuthority": {
+          "pass": 5,
+          "fail": 0,
+          "defer": 1,
+          "unreviewed": 0
+        }
+      },
+      "fr": {
+        "materialCorrectness": {
+          "pass": 0,
+          "fail": 5,
+          "defer": 1,
+          "unreviewed": 0
+        },
+        "answerRelevance": {
+          "pass": 2,
+          "fail": 4,
+          "defer": 0,
+          "unreviewed": 0
+        },
+        "citationEntailment": {
+          "pass": 0,
+          "fail": 5,
+          "defer": 1,
+          "unreviewed": 0
+        },
+        "requestedLanguage": {
+          "pass": 4,
+          "fail": 2,
+          "defer": 0,
+          "unreviewed": 0
+        },
+        "abstention": {
+          "pass": 3,
+          "fail": 3,
+          "defer": 0,
+          "unreviewed": 0
+        },
+        "economicAuthority": {
+          "pass": 4,
+          "fail": 0,
+          "defer": 2,
+          "unreviewed": 0
+        }
+      }
+    }
+  },
+  "authenticatedHumanReviews": 0,
+  "customerHoldoutCases": 0,
+  "semanticPasses": null,
+  "modelActivationAllowed": false,
+  "trainingAuthorized": false,
+  "paymentsEnabled": false,
+  "limitations": [
+    "Balanced randomized sides mask variant labels and prompts, not answer style or publicly accessible prior answers.",
+    "Self-declared notes are development observations, not authenticated human review or accuracy.",
+    "These known question families cannot establish customer generalization."
+  ]
+}

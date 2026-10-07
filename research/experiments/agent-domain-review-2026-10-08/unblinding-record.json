@@ -1,0 +1,12 @@
+{
+  "schema": "mew.agent-review-unblinding.v1",
+  "openedAt": "2026-10-07T23:52:29.841Z",
+  "notesFileSha256": "376c57b1eab620d94a1f6ba0788c51fe6a7eef1e090ce05031e8fa4a853e9a88",
+  "protocolFileSha256": "cd99e2e60e4242e53b2a431b563514d0f55aee9a8a9336d8ceee5705dce1be93",
+  "originalMappingPreserved": true,
+  "reviewerType": "agent",
+  "identityAuthenticated": false,
+  "modelActivationAllowed": false,
+  "trainingAuthorized": false,
+  "paymentsEnabled": false
+}
