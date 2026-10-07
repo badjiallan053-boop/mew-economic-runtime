@@ -104,3 +104,5 @@ See [DELIVERY_PLAN.md](docs/DELIVERY_PLAN.md) for ordered outcomes, accountable 
 [PRODUCTION_TEAM.md](docs/PRODUCTION_TEAM.md) assigns the five compact roles to accountable human responsibilities, independent reviews and incident coverage. Named humans remain unassigned. [OPERATOR_AUTHORIZATION.md](docs/OPERATOR_AUTHORIZATION.md) documents scoped principal authorization and pre-enrolled provider keys; this private library is not exposed through the public demo.
 
 `npm run backup:rehearse` verifies coherent SQLite recovery without activating restored workers. [BACKUP_RECOVERY.md](docs/BACKUP_RECOVERY.md) covers reconciliation before reopening operations. [MASUMI_CONTRACT_PIN.md](docs/MASUMI_CONTRACT_PIN.md) records the pinned upstream API and its compatibility limits. No live model, signer or payment worker is enabled by these additions.
+
+The private operator host is runnable with `npm run operator:start -- /absolute/private/operator.json /absolute/private/economic.sqlite`. It requires an already provisioned live ledger, binds loopback only, and refuses insecure files. See OPERATOR_AUTHORIZATION.md for provisioning, deployment and credential boundaries.

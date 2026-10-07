@@ -26,6 +26,7 @@
     "workstreams:rehearse": "node scripts/workstreams-rehearsal.mjs",
     "durable:rehearse": "node scripts/durable-rehearsal.mjs",
     "backup:rehearse": "node scripts/backup-rehearsal.mjs",
-    "masumi:contract": "node scripts/inspect-masumi-contract.mjs"
+    "masumi:contract": "node scripts/inspect-masumi-contract.mjs",
+    "operator:start": "node scripts/operator-host.mjs"
   }
 }
