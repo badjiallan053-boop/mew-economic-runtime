@@ -74,3 +74,7 @@ Added original local `durable-operation-review` skill for atomic outbox/receipt 
 ## Production readiness
 
 Added original local production-readiness procedure for accountable owners, credential lifecycle, incident coverage and evidence-based release gates. skills.sh incident-response listings were reference material; no third-party executable package was installed. The procedure grants no runtime privileges. See PRODUCTION_TEAM.md.
+
+## Investor and partner demo
+
+Added original partner-demo procedure using evidence classification from local perp-value-proof and reference-only skills.sh positioning-basics listing. Full upstream skill retrieval failed; no third-party package installed. Runtime registries and compact policy fingerprints are unchanged. See INVESTOR_PARTNER_DEMO.md.
