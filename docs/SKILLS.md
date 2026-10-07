@@ -29,3 +29,16 @@ loads three reviewed local skill texts (MEW engineering, company knowledge and
 TDD for QA) as references; each specialist inherits its lead's selected skills.
 No installer or third-party script runs. Runtime policy digests cover registry,
 prompt and skill contents. Assigned references are not evidence of real inference.
+
+
+## Design and interoperability procedures
+
+Added original local `design-discovery` and `interoperability-review` SKILL.md
+procedures. They guide host reviews: user needs, alternative designs, reversible
+experiments, identity mappings, evidence provenance and authorization boundaries.
+They are available to the engineering team; they are not automatically injected
+into existing company provider contexts. This preserves existing journal policy
+digests and avoids changing prior mission contracts. The interoperability review
+used a documentation subagent and reviewed the actual Anthropic MCP-builder skill
+through skills.sh; no upstream installer or scripts were executed. See
+INTEROPERABILITY.md for source, licensing and version-pin limitations.
