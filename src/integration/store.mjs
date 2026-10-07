@@ -85,7 +85,9 @@ export class IntegrationStore {
   async transaction(principal, fn) {
     identifier(principal);
     const client = await this.pool.connect();
-    let begun = false;
+    let begun = false,
+      commitAttempted = false,
+      destroyClient = false;
     try {
       await client.query("BEGIN");
       begun = true;
@@ -111,14 +113,26 @@ export class IntegrationStore {
         "UPDATE mew_private.ledgers SET snapshot=$2::jsonb,revision=revision+1 WHERE principal=$1",
         [principal, snapshot],
       );
+      commitAttempted = true;
       await client.query("COMMIT");
       begun = false;
       return result;
     } catch (error) {
-      if (begun) await client.query("ROLLBACK").catch(() => {});
+      // A lost BEGIN/COMMIT acknowledgement or failed rollback leaves this
+      // connection's state uncertain. Do not pool a potentially open transaction
+      // carrying transaction-local principal context. Never retry the mutation:
+      // a failed COMMIT response can mean its durable effects already committed.
+      destroyClient = !begun || commitAttempted;
+      if (begun) {
+        try {
+          await client.query("ROLLBACK");
+        } catch {
+          destroyClient = true;
+        }
+      }
       throw error;
     } finally {
-      client.release();
+      client.release(destroyClient);
     }
   }
   async createObjective(principal, input) {

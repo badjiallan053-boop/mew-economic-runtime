@@ -223,3 +223,15 @@ systems and motion-performance guidance; source provenance and adoption limits
 are recorded in research/design/\*-sources.json. No remote installer, new animation
 framework or runtime agents were added. Source/storyboard and rendered reviews
 are documented in ARTISTIC_MOTION_REVIEW.md.
+
+## Next-release gap audit
+
+Three existing specialists were reassigned narrow model, customer and payment
+deliverables; the coordinator implemented database startup checks. Used the local
+mew-activation-orchestrator, production-readiness, private database, live-model
+and preprod-payment procedures, with lane-specific skills.sh discovery recorded
+in research/activation/\*-next-sources.json. Original tools reuse existing MEW
+contracts rather than installing more frameworks. Independent read-only review
+covered startup grants/policies and pilot authority boundaries. No additional
+production agents, provider calls, credential grants or financial actions ran.
+See PROJECT_GAP_AUDIT.md for the evidence sequence and remaining owners.

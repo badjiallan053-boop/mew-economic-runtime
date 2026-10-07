@@ -1,0 +1,24 @@
+{
+  "schema": "mew.next-release-sources.v1",
+  "reviewedOn": "2026-10-08",
+  "lane": "database",
+  "sources": [
+    {
+      "url": "https://www.skills.sh/supabase/agent-skills/supabase-postgres-best-practices",
+      "adoption": "Reference discovery for pooling, role separation and RLS. Existing pinned source review is in database-sources.json. No installer ran."
+    },
+    {
+      "url": "https://node-postgres.com/features/transactions",
+      "adoption": "Same checked-out connection throughout transaction; independent session safety reviewed by payment specialist."
+    },
+    {
+      "url": "https://supabase.com/docs/guides/database/connecting-to-postgres",
+      "adoption": "Application connection evidence remains separate from management SQL."
+    }
+  ],
+  "limits": [
+    "Original guard checks selected role/grant/RLS boundaries only.",
+    "No framework or third-party executable installed.",
+    "Read-only hosted management catalog observation is not real runtime login, TLS or contention proof."
+  ]
+}

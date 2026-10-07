@@ -1,0 +1,47 @@
+{
+  "schema": "mew.model-next-sources.v1",
+  "checkedOn": "2026-10-08",
+  "skillSource": {
+    "repository": "https://github.com/ai-evals-course/evals-skills",
+    "revision": "80d5f7b0127c7572ed9e9339937adbfd7240ffeb",
+    "path": "skills/build-review-interface",
+    "discoveredVia": "https://skills.sh/ai-evals-course/evals-skills/build-review-interface",
+    "license": "Apache-2.0",
+    "skillSha256": "8cd4f794f590619a220162e366faf6bd35cb620050db324b69a7af0d36f52c4b",
+    "upstreamModified": false,
+    "executableScriptsInstalled": false,
+    "verifiedPinnedPrimaryUrl": "https://raw.githubusercontent.com/ai-evals-course/evals-skills/80d5f7b0127c7572ed9e9339937adbfd7240ffeb/skills/build-review-interface/SKILL.md",
+    "verifiedSha256": "8cd4f794f590619a220162e366faf6bd35cb620050db324b69a7af0d36f52c4b",
+    "verifiedEqualToInstalled": true,
+    "adoption": "Full supplied traces and review criteria, structured judgments and safe text rendering; original local implementation, no upstream scripts executed. Explicit download-only persistence."
+  },
+  "webAccessLimit": "skills.sh and GitHub web-reader pages were unavailable on this pass; pinned primary raw source was successfully fetched and verified.",
+  "actualArtifacts": [
+    {
+      "path": "research/learning/frozen-0ab4d24bf6c71ab8/benchmark.json",
+      "sha256": "0ab4d24bf6c71ab886456cc74eaa760b4674bc44a19d27cb21da34b11cd2d738"
+    },
+    {
+      "path": "research/learning/frozen-0ab4d24bf6c71ab8/constrained-parent-responses.jsonl",
+      "sha256": "285d8a410c4aeca35ba6c7209a232935bb821d95435be4966e9a2c7d4e2d9f1f"
+    },
+    {
+      "path": "research/learning/frozen-0ab4d24bf6c71ab8/constrained-parent-audit.json",
+      "sha256": "6e717848f5c435d2861e826f3ee8900e6f1ed17bfaa81098ecc38d0abcc49a36"
+    }
+  ],
+  "measuredPreparation": {
+    "packSha256": "f59e15f9c961d2a6ebad1ad2654fd1c17dcb356bfd0fabcf9cb64b37cbb5b112",
+    "cases": 12,
+    "strictContractPasses": 12,
+    "annotatedEvidenceCoverage": 12,
+    "semanticPasses": null,
+    "unreviewedDimensionJudgments": 72,
+    "authenticatedHumanReviews": 0,
+    "verdict": "BLOCKED"
+  },
+  "modelInvoked": false,
+  "trainingAuthorized": false,
+  "paymentsEnabled": false,
+  "dependenciesInstalled": false
+}

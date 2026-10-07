@@ -2,7 +2,7 @@
   "schema": "mew.activation-evidence.v1",
   "lane": "database",
   "verdict": "BLOCKED",
-  "observedAt": "2026-10-07T21:55:40.714Z",
+  "observedAt": "2026-10-07T22:38:33.697Z",
   "claims": [
     {
       "id": "installed-private-schema",
@@ -16,14 +16,26 @@
     {
       "id": "private-application-login",
       "status": "BLOCKED",
-      "artifact": null,
-      "note": "Existing receipt records NOT_CONFIGURED; mew_runtime login false. No credential was read or LOGIN enabled by this work."
+      "artifact": {
+        "path": "research/activation/database-next-observation.json",
+        "sha256": "4ef00c869d13fdcb9c360c822acd4669ff0db38eb174b2aee3bc3292e155ac2b"
+      },
+      "note": "Fresh hosted management observation still records mew_runtime NOLOGIN. Actual Node runtime/TLS and independent-client tests remain pending; no grants or credentials changed."
     },
     {
       "id": "hosted-multi-client-durability",
       "status": "BLOCKED",
       "artifact": null,
       "note": "Two-client locking and crash evidence against Supabase remains absent; local PGlite tests are serialized."
+    },
+    {
+      "id": "fresh-catalog-boundaries",
+      "status": "PASS",
+      "artifact": {
+        "path": "research/activation/database-next-observation.json",
+        "sha256": "4ef00c869d13fdcb9c360c822acd4669ff0db38eb174b2aee3bc3292e155ac2b"
+      },
+      "note": "Fresh management catalog checks forced RLS, exact principal policies, runtime grants and denied browser-role access. Runtime NOLOGIN and management connection cannot establish application readiness."
     }
   ],
   "blockers": [

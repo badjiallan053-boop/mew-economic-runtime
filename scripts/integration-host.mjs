@@ -1,3 +1,4 @@
+import { assertPrivateDatabase } from "../src/integration/database-readiness.mjs";
 import {
   openSync,
   closeSync,
@@ -52,6 +53,7 @@ try {
   };
   new IntegrationService({ store: {}, policy: config.policy, model });
   pool = await connectPostgres(config.postgres);
+  await assertPrivateDatabase(pool);
   const store = new IntegrationStore({
     pool,
     paymentPolicy: config.paymentPolicy,

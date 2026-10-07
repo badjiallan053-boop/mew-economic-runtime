@@ -1,3 +1,4 @@
+import { inspectPrivateDatabase } from "../src/integration/database-readiness.mjs";
 import {
   postgresOptions,
   connectPostgres,
@@ -6,7 +7,8 @@ const projectRef =
   process.env.MEW_SUPABASE_PROJECT_REF || "ndorfchuhciidfcltbzf";
 const configured = Boolean(process.env.MEW_SUPABASE_DATABASE_URL);
 let database = "NOT_CONFIGURED",
-  pool;
+  pool,
+  databaseReview;
 if (configured)
   try {
     const options = {
@@ -15,10 +17,9 @@ if (configured)
     };
     postgresOptions(options);
     pool = await connectPostgres(options);
-    const { rows } = await pool.query(
-      "select count(*)::int as n from pg_tables where schemaname='mew_private' and rowsecurity",
-    );
-    if (rows[0]?.n !== 4) throw Error("Private schema unavailable");
+    databaseReview = await inspectPrivateDatabase(pool);
+    if (!databaseReview.applicationConnectionReady)
+      throw Error("Private schema boundary rejected");
     database = "PRIVATE_ROLE_CONNECTION_VERIFIED";
   } catch {
     database = "CONNECTION_OR_POLICY_REJECTED";
@@ -31,6 +32,7 @@ console.log(
       schema: "mew.integration-preflight.v1",
       projectRef,
       database,
+      databaseReview: databaseReview ?? null,
       modelCredentialConfigured: Boolean(process.env.OPENAI_API_KEY),
       modelConfigured: Boolean(process.env.MEW_EVAL_MODEL),
       modelUsageApproved: process.env.MEW_APPROVE_MODEL_USAGE === "yes",
