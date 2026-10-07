@@ -3,7 +3,7 @@ import {createHash} from 'node:crypto';
 const origin='https://mew-demo-production.up.railway.app';
 const digest=bytes=>createHash('sha256').update(bytes).digest('hex');
 const checks=[];
-for(const path of ['/api/health','/index.html','/home.html','/home.js','/home.css','/studio.html','/studio.js','/studio.css','/formation.js','/protocol.html','/protocol.css','/protocol.js','/pilot.html','/pilot.css','/pilot.js','/pilot-plan.js','/assets/mew-formation.png','/company.html','/company.js','/company.css','/campaign.html','/campaign.js','/research.html','/research.js','/research-snapshot.json','/design-studio.html','/design-studio.js','/design-studio.css','/site-shell.js','/site-shell.css']){
+for(const path of ['/api/health','/index.html','/home.html','/home.js','/journey.js','/journey.css','/mandate-art.js','/mandate-art.css','/home.css','/studio.html','/studio.js','/studio.css','/formation.js','/protocol.html','/protocol.css','/protocol.js','/pilot.html','/pilot.css','/pilot.js','/pilot-plan.js','/assets/mew-formation.png','/company.html','/company.js','/company.css','/campaign.html','/campaign.js','/research.html','/research.js','/research-snapshot.json','/design-studio.html','/design-studio.js','/design-studio.css','/site-shell.js','/site-shell.css']){
  try{
   const response=await fetch(origin+path,{redirect:'error',signal:AbortSignal.timeout(15000)});
   if(!response.ok)throw Error(`HTTP ${response.status}`);

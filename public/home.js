@@ -16,12 +16,13 @@ async function inspectHost(){
 refresh.addEventListener('click',inspectHost);
 // Local explanatory states only. This never calls a reservation or payment API.
 const checkpoints=[
-  {decision:'RESERVED',kicker:'ALLOW → RESERVE',title:'The first report holds capacity.',description:'0.55 ADA is reserved. No payment has been dispatched in this illustration.',next:'Observe the timeout →'},
-  {decision:'UNKNOWN',kicker:'TIMEOUT → RETAIN',title:'Silence doesn’t release the mandate.',description:'Delivery is uncertain. The same 0.55 ADA reservation remains held until evidence resolves the original effect.',next:'Attempt the equivalent report →'},
-  {decision:'DEFER',kicker:'EQUIVALENT REQUEST → RECONCILE',title:'Resolve the original. Don’t buy it again.',description:'The 0.49 ADA equivalent request is deferred because the one-report objective is already held by an unresolved effect. Reconcile the original payment and delivery.',next:'Restart illustration →'}
+  {decision:'RESERVED',kicker:'ALLOW → RESERVE',title:'The first report holds capacity.',description:'1.50 ADA is reserved. No payment has been dispatched in this illustration.',next:'Observe the timeout →'},
+  {decision:'UNKNOWN',kicker:'TIMEOUT → RETAIN',title:'Silence doesn’t release the mandate.',description:'Delivery is uncertain. The same 1.50 ADA reservation remains held until evidence resolves the original effect.',next:'Attempt the equivalent report →'},
+  {decision:'DEFER',kicker:'EQUIVALENT REQUEST → RECONCILE',title:'Resolve the original. Don’t buy it again.',description:'The 1.40 ADA equivalent request is deferred because the one-report objective is already held by an unresolved effect. Reconcile the original payment and delivery.',next:'Restart illustration →'}
 ];
 let checkpoint=0;
 function renderIllustration(){
+ document.dispatchEvent(new CustomEvent('mew:art-phase',{detail:{phase:['reserved','unknown','defer'][checkpoint]}}));
  const item=checkpoints[checkpoint];
  document.querySelector('#fixture-decision').textContent=item.decision;
  document.querySelector('#fixture-kicker').textContent=item.kicker;
