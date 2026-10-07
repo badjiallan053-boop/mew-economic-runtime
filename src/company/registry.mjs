@@ -47,4 +47,22 @@ export const tasks=deepFreeze(leadTasks.flatMap(task=>{
   const specialists=specialistAssignments[task.agentId].map(([slug])=>({id:`${task.id}/${slug}`,agentId:`${task.agentId}/${slug}`,dependsOn:[...task.dependsOn]}));
   return [...specialists,{...task,dependsOn:[...task.dependsOn,...specialists.map(t=>t.id)]}];
 }));
-export function companyRegistry(){return structuredClone({version:1,agents,tasks,modelExecution:'NOT_CONFIGURED',paymentsEnabled:false});}
+const step=(id,dependsOn,specialists)=>({id,dependsOn,specialists});
+const profileSteps={
+  discovery:[step('plan',[],['scope']),step('sources',['plan'],['repository']),step('research',['sources'],['source-check','freshness']),step('risk-review',['research'],['failure-modes']),step('adversarial-review',['research'],['injection']),step('submission-brief',['risk-review','adversarial-review'],['claims'])],
+  release:[step('plan',[],['scope','acceptance']),step('implementation',['plan'],['contracts','migration']),step('tests',['implementation'],['regression','recovery']),step('risk-review',['tests'],['authority']),step('adversarial-review',['tests'],['substitution','replay']),step('funding-review',['tests'],['cost']),step('deployment-plan',['risk-review','adversarial-review','funding-review'],['readiness','backup']),step('submission-brief',['deployment-plan'],['claims'])],
+  'paid-readiness':[step('plan',[],['acceptance']),step('sources',['plan'],['repository']),step('options',['sources'],['quote-binding','capacity']),step('risk-review',['options'],['economic']),step('adversarial-review',['options'],['substitution','replay']),step('funding-review',['risk-review','adversarial-review'],['funding','cost']),step('deployment-plan',['funding-review'],['readiness','reconciliation']),step('submission-brief',['deployment-plan'],['claims'])]
+};
+const plans=deepFreeze(Object.fromEntries(Object.entries(profileSteps).map(([name,steps])=>[name,steps.flatMap(s=>{
+  const lead=leadTasks.find(t=>t.id===s.id);
+  const specialists=s.specialists.map(slug=>({id:`${s.id}/${slug}`,agentId:`${lead.agentId}/${slug}`,dependsOn:[...s.dependsOn]}));
+  return [...specialists,{id:lead.id,agentId:lead.agentId,dependsOn:[...s.dependsOn,...specialists.map(t=>t.id)]}];
+})])));
+export function workflowPlan(name='full'){if(name==='full')return tasks;if(!Object.hasOwn(plans,name))throw new Error('Unknown company workflow');return plans[name];}
+export const workflows=deepFreeze([
+  {id:'discovery',name:'Evidence and decision brief',deliverable:'Source-backed options, uncertainties and independent challenge',tasks:plans.discovery},
+  {id:'release',name:'Product release review',deliverable:'Contract-preserving implementation plan, test review and deployment checklist',tasks:plans.release},
+  {id:'paid-readiness',name:'Paid-agent readiness review',deliverable:'Quote-binding, funding and recovery blockers; no payment dispatch',tasks:plans['paid-readiness']},
+  {id:'full',name:'Full organization rehearsal',deliverable:'Synthetic tour of all 48 assigned roles; optional',tasks}
+]);
+export function companyRegistry(){return structuredClone({version:2,agents,tasks,workflows,defaultWorkflow:'discovery',modelExecution:'NOT_CONFIGURED',paymentsEnabled:false});}

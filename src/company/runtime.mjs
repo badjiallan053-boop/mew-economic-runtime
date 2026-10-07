@@ -3,7 +3,7 @@ import {mkdirSync} from 'node:fs';
 import {dirname} from 'node:path';
 import {readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
-import {agents,tasks} from './registry.mjs';
+import {agents,workflowPlan} from './registry.mjs';
 
 const allowed=['missionId','taskId','agentId','recommendation','summary','evidenceRefs','riskCodes'];
 const text=(v,name,max=512)=>{if(typeof v!=='string'||!v.trim()||v.length>max)throw new Error(`Invalid ${name}`);return v;};
@@ -33,13 +33,14 @@ function output(input,context){
  * from this runtime. Persist RUNNING before invocation; interruption is UNKNOWN.
  */
 export class CompanyRuntime {
-  constructor(path,{mode='simulation',timeoutMs=30000}={}){
+  constructor(path,{mode='simulation',timeoutMs=30000,workflow='full'}={}){
     if(!['simulation','advisory'].includes(mode))throw new Error('Invalid company mode');
     if(!Number.isSafeInteger(timeoutMs)||timeoutMs<1||timeoutMs>60000)throw new Error('Invalid provider timeout');
+    this.tasks=workflowPlan(workflow);this.workflow=workflow;
     this.mode=mode;this.timeoutMs=timeoutMs;if(path!==':memory:')mkdirSync(dirname(path),{recursive:true});
     this.prompts=freeze(Object.fromEntries(agents.filter(a=>!a.parentId).map(a=>[a.id,readFileSync(new URL(`../../prompts/company/${a.id}.md`,import.meta.url),'utf8')])));
     this.skills=freeze(Object.fromEntries(['mew-engineering','company-knowledge','test-driven-development'].map(id=>[id,{id,authority:'reference-only',content:readFileSync(new URL(`../../.agents/skills/${id}/SKILL.md`,import.meta.url),'utf8')}])));
-    this.policyDigest=createHash('sha256').update(JSON.stringify({agents,tasks,prompts:this.prompts,skills:this.skills})).digest('hex');
+    this.policyDigest=createHash('sha256').update(JSON.stringify({agents,tasks:this.tasks,prompts:this.prompts,skills:this.skills})).digest('hex');
     this.db=new DatabaseSync(path);this.db.exec('PRAGMA journal_mode=WAL; PRAGMA busy_timeout=5000; CREATE TABLE IF NOT EXISTS company_missions(id TEXT PRIMARY KEY, mode TEXT NOT NULL, contract TEXT NOT NULL); CREATE TABLE IF NOT EXISTS company_tasks(mission_id TEXT NOT NULL, task_id TEXT NOT NULL, status TEXT NOT NULL, output TEXT, PRIMARY KEY(mission_id,task_id));');
     this.db.exec('CREATE TABLE IF NOT EXISTS company_policies(mission_id TEXT PRIMARY KEY, digest TEXT NOT NULL);');
   }
@@ -47,7 +48,7 @@ export class CompanyRuntime {
   create(input){const m=mission(input);const encoded=JSON.stringify(m);if(Buffer.byteLength(encoded)>262144)throw new Error('Mission evidence budget exceeded');this.db.exec('BEGIN IMMEDIATE');try{
     const saved=this.db.prepare('SELECT mode,contract FROM company_missions WHERE id=?').get(m.id);
     if(saved&&(saved.mode!==this.mode||!same(JSON.parse(saved.contract),m)||this.db.prepare('SELECT digest FROM company_policies WHERE mission_id=?').get(m.id)?.digest!==this.policyDigest))throw new Error('Mission contract, policy and mode are immutable');
-    if(!saved){if(this.db.prepare('SELECT COUNT(*) AS n FROM company_missions').get().n>=20||this.usage()+Buffer.byteLength(encoded)>8*1024*1024)throw new Error('Company journal budget exceeded');this.db.prepare('INSERT INTO company_missions VALUES(?,?,?)').run(m.id,this.mode,encoded);this.db.prepare('INSERT INTO company_policies VALUES(?,?)').run(m.id,this.policyDigest);for(const t of tasks)this.db.prepare('INSERT INTO company_tasks VALUES(?,?,?,NULL)').run(m.id,t.id,'READY');}
+    if(!saved){if(this.db.prepare('SELECT COUNT(*) AS n FROM company_missions').get().n>=20||this.usage()+Buffer.byteLength(encoded)>8*1024*1024)throw new Error('Company journal budget exceeded');this.db.prepare('INSERT INTO company_missions VALUES(?,?,?)').run(m.id,this.mode,encoded);this.db.prepare('INSERT INTO company_policies VALUES(?,?)').run(m.id,this.policyDigest);for(const t of this.tasks)this.db.prepare('INSERT INTO company_tasks VALUES(?,?,?,NULL)').run(m.id,t.id,'READY');}
     this.db.exec('COMMIT');return this.snapshot(m.id);
   }catch(e){this.db.exec('ROLLBACK');throw e;}}
   snapshot(id){const row=this.db.prepare('SELECT mode,contract FROM company_missions WHERE id=?').get(id);if(!row)throw new Error('Unknown company mission');
@@ -55,7 +56,7 @@ export class CompanyRuntime {
   }
   async runTask(id,taskId,provider){
     if(typeof provider!=='function')throw new Error('Trusted provider required');
-    const task=tasks.find(t=>t.id===taskId);if(!task)throw new Error('Unknown assigned task');
+    const task=this.tasks.find(t=>t.id===taskId);if(!task)throw new Error('Unknown assigned task');
     let context;
     this.db.exec('BEGIN IMMEDIATE');try{
       const state=this.snapshot(id);if(state.mode!==this.mode||state.policyDigest!==this.policyDigest)throw new Error('Mission mode or policy mismatch');
@@ -81,7 +82,7 @@ export class CompanyRuntime {
       }catch(e){this.db.exec('ROLLBACK');throw e;}return result;
     }catch(e){this.db.prepare("UPDATE company_tasks SET status='UNKNOWN' WHERE mission_id=? AND task_id=? AND status='RUNNING'").run(id,taskId);throw new Error('Task UNKNOWN: provider failed or output rejected; automatic retry disabled',{cause:e});}
   }
-  async run(id,provider){for(const task of tasks){const state=this.snapshot(id);const item=state.tasks.find(t=>t.taskId===task.id);if(item.status==='COMPLETE'){if(item.output.recommendation!=='ACCEPT')break;continue;}await this.runTask(id,task.id,provider);if(this.snapshot(id).tasks.find(t=>t.taskId===task.id).output.recommendation!=='ACCEPT')break;}return this.snapshot(id);}
+  async run(id,provider){const initial=this.snapshot(id);if(initial.mode!==this.mode||initial.policyDigest!==this.policyDigest)throw new Error('Mission mode or policy mismatch');for(const task of this.tasks){const state=this.snapshot(id);const item=state.tasks.find(t=>t.taskId===task.id);if(item.status==='COMPLETE'){if(item.output.recommendation!=='ACCEPT')break;continue;}await this.runTask(id,task.id,provider);if(this.snapshot(id).tasks.find(t=>t.taskId===task.id).output.recommendation!=='ACCEPT')break;}return this.snapshot(id);}
   close(){this.db.close();}
 }
 

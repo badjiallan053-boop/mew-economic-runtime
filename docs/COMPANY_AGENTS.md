@@ -117,10 +117,10 @@ npm run company:rehearse -- data/company-simulation.sqlite
 npm start
 ```
 
-Open `/company.html` through the server for the department map. The CLI executes
-48 **synthetic** advisory tasks and persists them in a separate company SQLite
+Open `/company.html` through the server for the department map. The CLI now defaults to 13 discovery **synthetic** advisory tasks. The explicit
+full profile executes 48 tasks and persists them in a separate company SQLite
 journal. Re-running completed tasks returns stored output without invoking the
-provider again. This is not 48 model calls. Each specialist uses its parent prompt,
+provider again. These are not model calls. See COHERENT_OPERATIONS.md for all fixed profiles. Each specialist uses its parent prompt,
 exact assignment and only host-selected reviewed skill references. QA also loads
 the existing TDD skill; no skill installer is invoked by the runtime.
 
