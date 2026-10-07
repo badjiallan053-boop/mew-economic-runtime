@@ -1,0 +1,58 @@
+[
+  {
+    "id": "cardano-mainnet",
+    "kind": "chain",
+    "network": "mainnet",
+    "url": "https://api.koios.rest/api/v1/tip",
+    "retrievedAt": "2026-10-07T10:13:11.745Z",
+    "sha256": "c984b161140f21a9c017ed9abce55a44ff5d15b351a1874c0e263d33a2a050d0",
+    "status": "collected",
+    "records": 1
+  },
+  {
+    "id": "cardano-preprod",
+    "kind": "chain",
+    "network": "preprod",
+    "url": "https://preprod.koios.rest/api/v1/tip",
+    "retrievedAt": "2026-10-07T10:13:12.730Z",
+    "sha256": "885a28b01ef7cf17657f6a60b9e04863ad9cc0af2ce0488555b9248e01c858ea",
+    "status": "collected",
+    "records": 1
+  },
+  {
+    "id": "internet-context",
+    "kind": "indicator",
+    "url": "https://api.worldbank.org/v2/country/USA;GBR;SGP/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100",
+    "retrievedAt": "2026-10-07T10:13:13.691Z",
+    "sha256": "ddc1356c8f13ed6db9ff1e1bb52e185a0a4717cf7464dba4b4ef68b0200d63bd",
+    "status": "collected",
+    "records": 15
+  },
+  {
+    "id": "masumi-network/Sokosumi-MCP",
+    "kind": "repository",
+    "url": "https://api.github.com/repos/masumi-network/Sokosumi-MCP",
+    "retrievedAt": "2026-10-07T10:13:23.658Z",
+    "sha256": "37ab94f8a3b4b6f29cc76aaec7192b966a653f7829485b53949fbe48e41c4fa9",
+    "status": "collected",
+    "records": 1
+  },
+  {
+    "id": "masumi-network/sokosumi",
+    "kind": "repository",
+    "url": "https://api.github.com/repos/masumi-network/sokosumi",
+    "retrievedAt": "2026-10-07T10:13:24.149Z",
+    "sha256": "e4a4b8e2e0679fcb459ad895b3f4fd68ac62b08995f4f178d03b34efcfe946e8",
+    "status": "collected",
+    "records": 1
+  },
+  {
+    "id": "cardano-community/koios-artifacts",
+    "kind": "repository",
+    "url": "https://api.github.com/repos/cardano-community/koios-artifacts",
+    "retrievedAt": "2026-10-07T10:13:24.510Z",
+    "sha256": "36262e24b2f10d08476f85e12d06572e2b58a440013e695bf3bbbd15415f1519",
+    "status": "collected",
+    "records": 1
+  }
+]
