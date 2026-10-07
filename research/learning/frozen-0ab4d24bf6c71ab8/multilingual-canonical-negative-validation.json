@@ -1,0 +1,6 @@
+{
+  "case": "58 unique correctly offset source slices, but one noncanonical paragraph boundary",
+  "rejectedBeforeModelDownload": true,
+  "reason": "Ranking input differs from independently regenerated canonical frozen chunks or queries",
+  "exitCode": 1
+}

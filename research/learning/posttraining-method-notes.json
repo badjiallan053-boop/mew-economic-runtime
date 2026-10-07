@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "mew-method-extraction-v1",
+  "authority": "reference-only",
+  "trainingEligible": false,
+  "papers": [
+    {
+      "url": "https://arxiv.org/html/2106.09685v2",
+      "sectionsRead": [
+        "4.1",
+        "4.2"
+      ],
+      "summary": "Freeze pretrained weights and fit a low-rank update; initialize the update at zero and record scaling. Base-weight memory still matters.",
+      "mewDecision": "Evaluate a local adapter only after reviewed demonstrations, render compatibility and memory feasibility; preserve base comparison."
+    },
+    {
+      "url": "https://arxiv.org/html/2305.18290v3",
+      "sectionsRead": [
+        "3",
+        "4"
+      ],
+      "summary": "Optimize same-prompt chosen/rejected pairs using policy-to-reference log probability ratios, under preference-model assumptions.",
+      "mewDecision": "Defer DPO until credible paired judgments and local implementation verification exist; never prefer fabrication because it sounds useful."
+    }
+  ],
+  "youtube": {
+    "url": "https://www.youtube.com/watch?v=tqUDjc1HzO4",
+    "accessStatus": "page-read-transcript-export-unavailable",
+    "spokenContentUsed": false
+  }
+}

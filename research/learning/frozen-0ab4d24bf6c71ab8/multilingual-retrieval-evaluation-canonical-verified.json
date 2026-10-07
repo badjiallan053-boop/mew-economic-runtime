@@ -1,0 +1,1023 @@
+{
+  "schema": "mew.multilingual-retrieval-evaluation.v1",
+  "benchmarkSha256": "0ab4d24bf6c71ab886456cc74eaa760b4674bc44a19d27cb21da34b11cd2d738",
+  "sourceSnapshotDigest": "92a4367be413bae0836c0a965c2e4e8c0c3c7a622aa388cd6fc462aba86a84b1",
+  "rankingInputSha256": "088c25f5f71ff2e6b1ac90757fdd5afb65b21e89dbd3e91209bba33f3420ef8d",
+  "canonicalInputVerified": true,
+  "canonicalVerifier": "Node frozen benchmark verifier plus paragraphChunks; full input structural equality",
+  "offsetUnit": "UTF-16 code units",
+  "algorithm": "Publisher multilingual MiniLM ARM64 int8 ONNX, masked mean pooling, normalized cosine, top 3",
+  "chunkCount": 58,
+  "tokenization": {
+    "maxSequenceLength": 128,
+    "maxObservedTokens": 289,
+    "truncatedInputs": 14,
+    "truncatedChunks": 14,
+    "truncatedQueries": 0,
+    "fullTokenLengths": [
+      9,
+      44,
+      108,
+      48,
+      7,
+      100,
+      95,
+      187,
+      12,
+      118,
+      133,
+      11,
+      7,
+      73,
+      122,
+      5,
+      17,
+      83,
+      122,
+      10,
+      206,
+      122,
+      107,
+      77,
+      8,
+      103,
+      231,
+      169,
+      66,
+      7,
+      95,
+      7,
+      218,
+      11,
+      60,
+      289,
+      100,
+      156,
+      91,
+      83,
+      211,
+      12,
+      5,
+      84,
+      123,
+      81,
+      6,
+      106,
+      137,
+      98,
+      7,
+      136,
+      262,
+      154,
+      93,
+      11,
+      278,
+      66,
+      16,
+      16,
+      16,
+      22,
+      15,
+      18,
+      17,
+      24,
+      21,
+      23,
+      22,
+      23
+    ],
+    "encoderVisibleUtf16Lengths": [
+      29,
+      215,
+      443,
+      189,
+      27,
+      431,
+      448,
+      524,
+      36,
+      517,
+      555,
+      45,
+      28,
+      333,
+      487,
+      12,
+      51,
+      251,
+      507,
+      30,
+      433,
+      498,
+      486,
+      357,
+      31,
+      404,
+      537,
+      517,
+      270,
+      19,
+      438,
+      21,
+      345,
+      37,
+      289,
+      406,
+      456,
+      492,
+      429,
+      346,
+      494,
+      56,
+      17,
+      405,
+      519,
+      393,
+      21,
+      450,
+      522,
+      410,
+      20,
+      558,
+      456,
+      517,
+      432,
+      36,
+      410,
+      260,
+      66,
+      73,
+      67,
+      72,
+      65,
+      65,
+      80,
+      92,
+      96,
+      102,
+      84,
+      95
+    ]
+  },
+  "elapsedSeconds": 0.6438252919760998,
+  "overall": {
+    "cases": 12,
+    "sourceHitsAt3": 10,
+    "exactSpanHitsAt3": 4,
+    "encoderSpanHitsAt3": 4,
+    "meanEvidenceSpanRecallAt3": 0.3333333333333333,
+    "exactSpanMrrAt3": 0.2777777777777778
+  },
+  "byLanguage": {
+    "en": {
+      "cases": 6,
+      "sourceHitsAt3": 5,
+      "exactSpanHitsAt3": 2,
+      "encoderSpanHitsAt3": 2,
+      "meanEvidenceSpanRecallAt3": 0.3333333333333333,
+      "exactSpanMrrAt3": 0.3333333333333333
+    },
+    "fr": {
+      "cases": 6,
+      "sourceHitsAt3": 5,
+      "exactSpanHitsAt3": 2,
+      "encoderSpanHitsAt3": 2,
+      "meanEvidenceSpanRecallAt3": 0.3333333333333333,
+      "exactSpanMrrAt3": 0.2222222222222222
+    }
+  },
+  "cases": [
+    {
+      "id": "unknown-exposure-en",
+      "language": "en",
+      "results": [
+        {
+          "id": "SPEC.md:913:1344",
+          "sourceId": "SPEC.md",
+          "sourceSha256": "fec538843190a64a262f63304c36f54c5add2489a583ec8c219fa8bdeca40359",
+          "start": 913,
+          "end": 1344,
+          "text": "Spent is settled value. Reserved is authorized value that has not yet committed. Committed is verified in-flight value. Exposure is their sum; these categories are disjoint. Equivalent paid or unresolved effects consume objective capacity, even when delivery is unknown. Full verified refund or verified failure/release of an unpaid reservation can restore capacity. Delivery satisfaction and payment settlement are separate facts.",
+          "score": 0.5256911914836155,
+          "encoderVisibleEnd": 1344
+        },
+        {
+          "id": "docs/SOCIAL_PROTOCOL_COMMITTEE.md:6411:6671",
+          "sourceId": "docs/SOCIAL_PROTOCOL_COMMITTEE.md",
+          "sourceSha256": "b360fc373d7462ef63a5aee7f9007cf98a30e88231c34a561822c04272f2a8b3",
+          "start": 6411,
+          "end": 6671,
+          "text": "Acceptance: strict advisory proposal tests, source-training rejection tests, generated fixture audit, full repository tests/build, and no live core/execution modifications. Website, API credentials, live model readiness and payment activation remain unchanged.",
+          "score": 0.4896702677229083,
+          "encoderVisibleEnd": 6671
+        },
+        {
+          "id": "SPEC.md:2596:3113",
+          "sourceId": "SPEC.md",
+          "sourceSha256": "fec538843190a64a262f63304c36f54c5add2489a583ec8c219fa8bdeca40359",
+          "start": 2596,
+          "end": 3113,
+          "text": "The API boundary is trusted. A JSON field `evidence.verified=true` is not a signature or an oracle. Demo claims are controlled fixtures and must stay labeled simulation. Real payment claims must be produced server-side by a verifier; the server must prevent reuse of one transaction for multiple effects. The recipient and amount must come from the persisted reservation, not from a reconcile request. Merchant delivery remains a trusted input and requires authenticated signed receipt verification before production.",
+          "score": 0.48832970822383,
+          "encoderVisibleEnd": 3113
+        }
+      ],
+      "selectedContexts": [
+        {
+          "id": "SPEC.md:913:1344",
+          "sourceId": "SPEC.md",
+          "sourceSha256": "fec538843190a64a262f63304c36f54c5add2489a583ec8c219fa8bdeca40359",
+          "start": 913,
+          "end": 1344,
+          "text": "Spent is settled value. Reserved is authorized value that has not yet committed. Committed is verified in-flight value. Exposure is their sum; these categories are disjoint. Equivalent paid or unresolved effects consume objective capacity, even when delivery is unknown. Full verified refund or verified failure/release of an unpaid reservation can restore capacity. Delivery satisfaction and payment settlement are separate facts."
+        },
+        {
+          "id": "docs/SOCIAL_PROTOCOL_COMMITTEE.md:6411:6671",
+          "sourceId": "docs/SOCIAL_PROTOCOL_COMMITTEE.md",
+          "sourceSha256": "b360fc373d7462ef63a5aee7f9007cf98a30e88231c34a561822c04272f2a8b3",
+          "start": 6411,
+          "end": 6671,
+          "text": "Acceptance: strict advisory proposal tests, source-training rejection tests, generated fixture audit, full repository tests/build, and no live core/execution modifications. Website, API credentials, live model readiness and payment activation remain unchanged."
+        },
+        {
+          "id": "SPEC.md:2596:3113",
+          "sourceId": "SPEC.md",
+          "sourceSha256": "fec538843190a64a262f63304c36f54c5add2489a583ec8c219fa8bdeca40359",
+          "start": 2596,
+          "end": 3113,
+          "text": "The API boundary is trusted. A JSON field `evidence.verified=true` is not a signature or an oracle. Demo claims are controlled fixtures and must stay labeled simulation. Real payment claims must be produced server-side by a verifier; the server must prevent reuse of one transaction for multiple effects. The recipient and amount must come from the persisted reservation, not from a reconcile request. Merchant delivery remains a trusted input and requires authenticated signed receipt verification before production."
+        }
+      ],
+      "sourceHitAt3": true,
+      "exactSpanHitAt3": false,
+      "encoderSpanHitAt3": false,
+      "exactSpanReciprocalRank": 0,
+      "evidenceSpanRecallAt3": 0.0
+    },
+    {
+      "id": "unknown-exposure-fr",
+      "language": "fr",
+      "results": [
+        {
+          "id": "SPEC.md:913:1344",
+          "sourceId": "SPEC.md",
+          "sourceSha256": "fec538843190a64a262f63304c36f54c5add2489a583ec8c219fa8bdeca40359",
+          "start": 913,
+          "end": 1344,
+          "text": "Spent is settled value. Reserved is authorized value that has not yet committed. Committed is verified in-flight value. Exposure is their sum; these categories are disjoint. Equivalent paid or unresolved effects consume objective capacity, even when delivery is unknown. Full verified refund or verified failure/release of an unpaid reservation can restore capacity. Delivery satisfaction and payment settlement are separate facts.",
+          "score": 0.5499492906996963,
+          "encoderVisibleEnd": 1344
+        },
+        {
+          "id": "docs/ML_LEARNING_PIPELINE.md:6285:6723",
+          "sourceId": "docs/ML_LEARNING_PIPELINE.md",
+          "sourceSha256": "ec5778ce7224a6161d010160e78be1cca328c1ba60958e424cd7e17593644e0f",
+          "start": 6285,
+          "end": 6723,
+          "text": "Scheduled collection, retries/backoff, source retention, private customer instrumentation, model credentials, a reviewed training license policy, held-out human labels, model-specific export validation and a funded training budget remain pending. This is a runnable offline research/learning tool, not a production data warehouse or a deployed training service. The website and payment configuration were not changed by this contribution.",
+          "score": 0.4848019873439212,
+          "encoderVisibleEnd": 6723
+        },
+        {
+          "id": "docs/SOCIAL_PROTOCOL_COMMITTEE.md:6411:6671",
+          "sourceId": "docs/SOCIAL_PROTOCOL_COMMITTEE.md",
+          "sourceSha256": "b360fc373d7462ef63a5aee7f9007cf98a30e88231c34a561822c04272f2a8b3",
+          "start": 6411,
+          "end": 6671,
+          "text": "Acceptance: strict advisory proposal tests, source-training rejection tests, generated fixture audit, full repository tests/build, and no live core/execution modifications. Website, API credentials, live model readiness and payment activation remain unchanged.",
+          "score": 0.4712324248924271,
+          "encoderVisibleEnd": 6671
+        }
+      ],
+      "selectedContexts": [
+        {
+          "id": "SPEC.md:913:1344",
+          "sourceId": "SPEC.md",
+          "sourceSha256": "fec538843190a64a262f63304c36f54c5add2489a583ec8c219fa8bdeca40359",
+          "start": 913,
+          "end": 1344,
+          "text": "Spent is settled value. Reserved is authorized value that has not yet committed. Committed is verified in-flight value. Exposure is their sum; these categories are disjoint. Equivalent paid or unresolved effects consume objective capacity, even when delivery is unknown. Full verified refund or verified failure/release of an unpaid reservation can restore capacity. Delivery satisfaction and payment settlement are separate facts."
+        },
+        {
+          "id": "docs/ML_LEARNING_PIPELINE.md:6285:6723",
+          "sourceId": "docs/ML_LEARNING_PIPELINE.md",
+          "sourceSha256": "ec5778ce7224a6161d010160e78be1cca328c1ba60958e424cd7e17593644e0f",
+          "start": 6285,
+          "end": 6723,
+          "text": "Scheduled collection, retries/backoff, source retention, private customer instrumentation, model credentials, a reviewed training license policy, held-out human labels, model-specific export validation and a funded training budget remain pending. This is a runnable offline research/learning tool, not a production data warehouse or a deployed training service. The website and payment configuration were not changed by this contribution."
+        },
+        {
+          "id": "docs/SOCIAL_PROTOCOL_COMMITTEE.md:6411:6671",
+          "sourceId": "docs/SOCIAL_PROTOCOL_COMMITTEE.md",
+          "sourceSha256": "b360fc373d7462ef63a5aee7f9007cf98a30e88231c34a561822c04272f2a8b3",
+          "start": 6411,
+          "end": 6671,
+          "text": "Acceptance: strict advisory proposal tests, source-training rejection tests, generated fixture audit, full repository tests/build, and no live core/execution modifications. Website, API credentials, live model readiness and payment activation remain unchanged."
+        }
+      ],
+      "sourceHitAt3": true,
+      "exactSpanHitAt3": false,
+      "encoderSpanHitAt3": false,
+      "exactSpanReciprocalRank": 0,
+      "evidenceSpanRecallAt3": 0.0
+    },
+    {
+      "id": "settlement-delivery-en",
+      "language": "en",
+      "results": [
+        {
+          "id": "SPEC.md:913:1344",
+          "sourceId": "SPEC.md",
+          "sourceSha256": "fec538843190a64a262f63304c36f54c5add2489a583ec8c219fa8bdeca40359",
+          "start": 913,
+          "end": 1344,
+          "text": "Spent is settled value. Reserved is authorized value that has not yet committed. Committed is verified in-flight value. Exposure is their sum; these categories are disjoint. Equivalent paid or unresolved effects consume objective capacity, even when delivery is unknown. Full verified refund or verified failure/release of an unpaid reservation can restore capacity. Delivery satisfaction and payment settlement are separate facts.",
+          "score": 0.5607265633240607,
+          "encoderVisibleEnd": 1344
+        },
+        {
+          "id": "SPEC.md:1796:2556",
+          "sourceId": "SPEC.md",
+          "sourceSha256": "fec538843190a64a262f63304c36f54c5add2489a583ec8c219fa8bdeca40359",
+          "start": 1796,
+          "end": 2556,
+          "text": "Claims have stable IDs, source, effect ID, type and evidence. Replay of identical evidence is idempotent; conflicting evidence is rejected. Payment settlement requires rail verification. The Cardano verifier reads transaction inputs and outputs from the fixed preprod Blockfrost origin, validates a 64-character hash, exactly matches net recipient lovelace receipt to the reserved contract, and requires latestHeight - transactionHeight + 1 to meet its threshold. Live HTTP reconciliation requires an immutable operator-attested operation binding; it does not cryptographically establish payer or mission ownership. It never signs or sends payments. Confirmation depth is a configured observation policy, not absolute finality. See docs/CARDANO_INTEGRATION.md.",
+          "score": 0.5306212675951709,
+          "encoderVisibleEnd": 2320
+        },
+        {
+          "id": "SPEC.md:2596:3113",
+          "sourceId": "SPEC.md",
+          "sourceSha256": "fec538843190a64a262f63304c36f54c5add2489a583ec8c219fa8bdeca40359",
+          "start": 2596,
+          "end": 3113,
+          "text": "The API boundary is trusted. A JSON field `evidence.verified=true` is not a signature or an oracle. Demo claims are controlled fixtures and must stay labeled simulation. Real payment claims must be produced server-side by a verifier; the server must prevent reuse of one transaction for multiple effects. The recipient and amount must come from the persisted reservation, not from a reconcile request. Merchant delivery remains a trusted input and requires authenticated signed receipt verification before production.",
+          "score": 0.5017522206957429,
+          "encoderVisibleEnd": 3113
+        }
+      ],
+      "selectedContexts": [
+        {
+          "id": "SPEC.md:913:1344",
+          "sourceId": "SPEC.md",
+          "sourceSha256": "fec538843190a64a262f63304c36f54c5add2489a583ec8c219fa8bdeca40359",
+          "start": 913,
+          "end": 1344,
+          "text": "Spent is settled value. Reserved is authorized value that has not yet committed. Committed is verified in-flight value. Exposure is their sum; these categories are disjoint. Equivalent paid or unresolved effects consume objective capacity, even when delivery is unknown. Full verified refund or verified failure/release of an unpaid reservation can restore capacity. Delivery satisfaction and payment settlement are separate facts."
+        },
+        {
+          "id": "SPEC.md:1796:2556",
+          "sourceId": "SPEC.md",
+          "sourceSha256": "fec538843190a64a262f63304c36f54c5add2489a583ec8c219fa8bdeca40359",
+          "start": 1796,
+          "end": 2556,
+          "text": "Claims have stable IDs, source, effect ID, type and evidence. Replay of identical evidence is idempotent; conflicting evidence is rejected. Payment settlement requires rail verification. The Cardano verifier reads transaction inputs and outputs from the fixed preprod Blockfrost origin, validates a 64-character hash, exactly matches net recipient lovelace receipt to the reserved contract, and requires latestHeight - transactionHeight + 1 to meet its threshold. Live HTTP reconciliation requires an immutable operator-attested operation binding; it does not cryptographically establish payer or mission ownership. It never signs or sends payments. Confirmation depth is a configured observation policy, not absolute finality. See docs/CARDANO_INTEGRATION.md."
+        },
+        {
+          "id": "SPEC.md:2596:3113",
+          "sourceId": "SPEC.md",
+          "sourceSha256": "fec538843190a64a262f63304c36f54c5add2489a583ec8c219fa8bdeca40359",
+          "start": 2596,
+          "end": 3113,
+          "text": "The API boundary is trusted. A JSON field `evidence.verified=true` is not a signature or an oracle. Demo claims are controlled fixtures and must stay labeled simulation. Real payment claims must be produced server-side by a verifier; the server must prevent reuse of one transaction for multiple effects. The recipient and amount must come from the persisted reservation, not from a reconcile request. Merchant delivery remains a trusted input and requires authenticated signed receipt verification before production."
+        }
+      ],
+      "sourceHitAt3": true,
+      "exactSpanHitAt3": true,
+      "encoderSpanHitAt3": true,
+      "exactSpanReciprocalRank": 1.0,
+      "evidenceSpanRecallAt3": 1.0
+    },
+    {
+      "id": "settlement-delivery-fr",
+      "language": "fr",
+      "results": [
+        {
+          "id": "SPEC.md:913:1344",
+          "sourceId": "SPEC.md",
+          "sourceSha256": "fec538843190a64a262f63304c36f54c5add2489a583ec8c219fa8bdeca40359",
+          "start": 913,
+          "end": 1344,
+          "text": "Spent is settled value. Reserved is authorized value that has not yet committed. Committed is verified in-flight value. Exposure is their sum; these categories are disjoint. Equivalent paid or unresolved effects consume objective capacity, even when delivery is unknown. Full verified refund or verified failure/release of an unpaid reservation can restore capacity. Delivery satisfaction and payment settlement are separate facts.",
+          "score": 0.6519738615313814,
+          "encoderVisibleEnd": 1344
+        },
+        {
+          "id": "SPEC.md:2596:3113",
+          "sourceId": "SPEC.md",
+          "sourceSha256": "fec538843190a64a262f63304c36f54c5add2489a583ec8c219fa8bdeca40359",
+          "start": 2596,
+          "end": 3113,
+          "text": "The API boundary is trusted. A JSON field `evidence.verified=true` is not a signature or an oracle. Demo claims are controlled fixtures and must stay labeled simulation. Real payment claims must be produced server-side by a verifier; the server must prevent reuse of one transaction for multiple effects. The recipient and amount must come from the persisted reservation, not from a reconcile request. Merchant delivery remains a trusted input and requires authenticated signed receipt verification before production.",
+          "score": 0.5024717556608493,
+          "encoderVisibleEnd": 3113
+        },
+        {
+          "id": "SPEC.md:1796:2556",
+          "sourceId": "SPEC.md",
+          "sourceSha256": "fec538843190a64a262f63304c36f54c5add2489a583ec8c219fa8bdeca40359",
+          "start": 1796,
+          "end": 2556,
+          "text": "Claims have stable IDs, source, effect ID, type and evidence. Replay of identical evidence is idempotent; conflicting evidence is rejected. Payment settlement requires rail verification. The Cardano verifier reads transaction inputs and outputs from the fixed preprod Blockfrost origin, validates a 64-character hash, exactly matches net recipient lovelace receipt to the reserved contract, and requires latestHeight - transactionHeight + 1 to meet its threshold. Live HTTP reconciliation requires an immutable operator-attested operation binding; it does not cryptographically establish payer or mission ownership. It never signs or sends payments. Confirmation depth is a configured observation policy, not absolute finality. See docs/CARDANO_INTEGRATION.md.",
+          "score": 0.4935777726664916,
+          "encoderVisibleEnd": 2320
+        }
+      ],
+      "selectedContexts": [
+        {
+          "id": "SPEC.md:913:1344",
+          "sourceId": "SPEC.md",
+          "sourceSha256": "fec538843190a64a262f63304c36f54c5add2489a583ec8c219fa8bdeca40359",
+          "start": 913,
+          "end": 1344,
+          "text": "Spent is settled value. Reserved is authorized value that has not yet committed. Committed is verified in-flight value. Exposure is their sum; these categories are disjoint. Equivalent paid or unresolved effects consume objective capacity, even when delivery is unknown. Full verified refund or verified failure/release of an unpaid reservation can restore capacity. Delivery satisfaction and payment settlement are separate facts."
+        },
+        {
+          "id": "SPEC.md:2596:3113",
+          "sourceId": "SPEC.md",
+          "sourceSha256": "fec538843190a64a262f63304c36f54c5add2489a583ec8c219fa8bdeca40359",
+          "start": 2596,
+          "end": 3113,
+          "text": "The API boundary is trusted. A JSON field `evidence.verified=true` is not a signature or an oracle. Demo claims are controlled fixtures and must stay labeled simulation. Real payment claims must be produced server-side by a verifier; the server must prevent reuse of one transaction for multiple effects. The recipient and amount must come from the persisted reservation, not from a reconcile request. Merchant delivery remains a trusted input and requires authenticated signed receipt verification before production."
+        },
+        {
+          "id": "SPEC.md:1796:2556",
+          "sourceId": "SPEC.md",
+          "sourceSha256": "fec538843190a64a262f63304c36f54c5add2489a583ec8c219fa8bdeca40359",
+          "start": 1796,
+          "end": 2556,
+          "text": "Claims have stable IDs, source, effect ID, type and evidence. Replay of identical evidence is idempotent; conflicting evidence is rejected. Payment settlement requires rail verification. The Cardano verifier reads transaction inputs and outputs from the fixed preprod Blockfrost origin, validates a 64-character hash, exactly matches net recipient lovelace receipt to the reserved contract, and requires latestHeight - transactionHeight + 1 to meet its threshold. Live HTTP reconciliation requires an immutable operator-attested operation binding; it does not cryptographically establish payer or mission ownership. It never signs or sends payments. Confirmation depth is a configured observation policy, not absolute finality. See docs/CARDANO_INTEGRATION.md."
+        }
+      ],
+      "sourceHitAt3": true,
+      "exactSpanHitAt3": true,
+      "encoderSpanHitAt3": true,
+      "exactSpanReciprocalRank": 1.0,
+      "evidenceSpanRecallAt3": 1.0
+    },
+    {
+      "id": "rail-mismatch-en",
+      "language": "en",
+      "results": [
+        {
+          "id": "SPEC.md:2596:3113",
+          "sourceId": "SPEC.md",
+          "sourceSha256": "fec538843190a64a262f63304c36f54c5add2489a583ec8c219fa8bdeca40359",
+          "start": 2596,
+          "end": 3113,
+          "text": "The API boundary is trusted. A JSON field `evidence.verified=true` is not a signature or an oracle. Demo claims are controlled fixtures and must stay labeled simulation. Real payment claims must be produced server-side by a verifier; the server must prevent reuse of one transaction for multiple effects. The recipient and amount must come from the persisted reservation, not from a reconcile request. Merchant delivery remains a trusted input and requires authenticated signed receipt verification before production.",
+          "score": 0.5379526848607632,
+          "encoderVisibleEnd": 3113
+        },
+        {
+          "id": "SPEC.md:1796:2556",
+          "sourceId": "SPEC.md",
+          "sourceSha256": "fec538843190a64a262f63304c36f54c5add2489a583ec8c219fa8bdeca40359",
+          "start": 1796,
+          "end": 2556,
+          "text": "Claims have stable IDs, source, effect ID, type and evidence. Replay of identical evidence is idempotent; conflicting evidence is rejected. Payment settlement requires rail verification. The Cardano verifier reads transaction inputs and outputs from the fixed preprod Blockfrost origin, validates a 64-character hash, exactly matches net recipient lovelace receipt to the reserved contract, and requires latestHeight - transactionHeight + 1 to meet its threshold. Live HTTP reconciliation requires an immutable operator-attested operation binding; it does not cryptographically establish payer or mission ownership. It never signs or sends payments. Confirmation depth is a configured observation policy, not absolute finality. See docs/CARDANO_INTEGRATION.md.",
+          "score": 0.47841656546566264,
+          "encoderVisibleEnd": 2320
+        },
+        {
+          "id": "SPEC.md:913:1344",
+          "sourceId": "SPEC.md",
+          "sourceSha256": "fec538843190a64a262f63304c36f54c5add2489a583ec8c219fa8bdeca40359",
+          "start": 913,
+          "end": 1344,
+          "text": "Spent is settled value. Reserved is authorized value that has not yet committed. Committed is verified in-flight value. Exposure is their sum; these categories are disjoint. Equivalent paid or unresolved effects consume objective capacity, even when delivery is unknown. Full verified refund or verified failure/release of an unpaid reservation can restore capacity. Delivery satisfaction and payment settlement are separate facts.",
+          "score": 0.46379404480207465,
+          "encoderVisibleEnd": 1344
+        }
+      ],
+      "selectedContexts": [
+        {
+          "id": "SPEC.md:2596:3113",
+          "sourceId": "SPEC.md",
+          "sourceSha256": "fec538843190a64a262f63304c36f54c5add2489a583ec8c219fa8bdeca40359",
+          "start": 2596,
+          "end": 3113,
+          "text": "The API boundary is trusted. A JSON field `evidence.verified=true` is not a signature or an oracle. Demo claims are controlled fixtures and must stay labeled simulation. Real payment claims must be produced server-side by a verifier; the server must prevent reuse of one transaction for multiple effects. The recipient and amount must come from the persisted reservation, not from a reconcile request. Merchant delivery remains a trusted input and requires authenticated signed receipt verification before production."
+        },
+        {
+          "id": "SPEC.md:1796:2556",
+          "sourceId": "SPEC.md",
+          "sourceSha256": "fec538843190a64a262f63304c36f54c5add2489a583ec8c219fa8bdeca40359",
+          "start": 1796,
+          "end": 2556,
+          "text": "Claims have stable IDs, source, effect ID, type and evidence. Replay of identical evidence is idempotent; conflicting evidence is rejected. Payment settlement requires rail verification. The Cardano verifier reads transaction inputs and outputs from the fixed preprod Blockfrost origin, validates a 64-character hash, exactly matches net recipient lovelace receipt to the reserved contract, and requires latestHeight - transactionHeight + 1 to meet its threshold. Live HTTP reconciliation requires an immutable operator-attested operation binding; it does not cryptographically establish payer or mission ownership. It never signs or sends payments. Confirmation depth is a configured observation policy, not absolute finality. See docs/CARDANO_INTEGRATION.md."
+        },
+        {
+          "id": "SPEC.md:913:1344",
+          "sourceId": "SPEC.md",
+          "sourceSha256": "fec538843190a64a262f63304c36f54c5add2489a583ec8c219fa8bdeca40359",
+          "start": 913,
+          "end": 1344,
+          "text": "Spent is settled value. Reserved is authorized value that has not yet committed. Committed is verified in-flight value. Exposure is their sum; these categories are disjoint. Equivalent paid or unresolved effects consume objective capacity, even when delivery is unknown. Full verified refund or verified failure/release of an unpaid reservation can restore capacity. Delivery satisfaction and payment settlement are separate facts."
+        }
+      ],
+      "sourceHitAt3": false,
+      "exactSpanHitAt3": false,
+      "encoderSpanHitAt3": false,
+      "exactSpanReciprocalRank": 0,
+      "evidenceSpanRecallAt3": 0.0
+    },
+    {
+      "id": "rail-mismatch-fr",
+      "language": "fr",
+      "results": [
+        {
+          "id": "SPEC.md:913:1344",
+          "sourceId": "SPEC.md",
+          "sourceSha256": "fec538843190a64a262f63304c36f54c5add2489a583ec8c219fa8bdeca40359",
+          "start": 913,
+          "end": 1344,
+          "text": "Spent is settled value. Reserved is authorized value that has not yet committed. Committed is verified in-flight value. Exposure is their sum; these categories are disjoint. Equivalent paid or unresolved effects consume objective capacity, even when delivery is unknown. Full verified refund or verified failure/release of an unpaid reservation can restore capacity. Delivery satisfaction and payment settlement are separate facts.",
+          "score": 0.5619843780621353,
+          "encoderVisibleEnd": 1344
+        },
+        {
+          "id": "SPEC.md:2596:3113",
+          "sourceId": "SPEC.md",
+          "sourceSha256": "fec538843190a64a262f63304c36f54c5add2489a583ec8c219fa8bdeca40359",
+          "start": 2596,
+          "end": 3113,
+          "text": "The API boundary is trusted. A JSON field `evidence.verified=true` is not a signature or an oracle. Demo claims are controlled fixtures and must stay labeled simulation. Real payment claims must be produced server-side by a verifier; the server must prevent reuse of one transaction for multiple effects. The recipient and amount must come from the persisted reservation, not from a reconcile request. Merchant delivery remains a trusted input and requires authenticated signed receipt verification before production.",
+          "score": 0.548757710678855,
+          "encoderVisibleEnd": 3113
+        },
+        {
+          "id": "SPEC.md:1796:2556",
+          "sourceId": "SPEC.md",
+          "sourceSha256": "fec538843190a64a262f63304c36f54c5add2489a583ec8c219fa8bdeca40359",
+          "start": 1796,
+          "end": 2556,
+          "text": "Claims have stable IDs, source, effect ID, type and evidence. Replay of identical evidence is idempotent; conflicting evidence is rejected. Payment settlement requires rail verification. The Cardano verifier reads transaction inputs and outputs from the fixed preprod Blockfrost origin, validates a 64-character hash, exactly matches net recipient lovelace receipt to the reserved contract, and requires latestHeight - transactionHeight + 1 to meet its threshold. Live HTTP reconciliation requires an immutable operator-attested operation binding; it does not cryptographically establish payer or mission ownership. It never signs or sends payments. Confirmation depth is a configured observation policy, not absolute finality. See docs/CARDANO_INTEGRATION.md.",
+          "score": 0.5222608514671037,
+          "encoderVisibleEnd": 2320
+        }
+      ],
+      "selectedContexts": [
+        {
+          "id": "SPEC.md:913:1344",
+          "sourceId": "SPEC.md",
+          "sourceSha256": "fec538843190a64a262f63304c36f54c5add2489a583ec8c219fa8bdeca40359",
+          "start": 913,
+          "end": 1344,
+          "text": "Spent is settled value. Reserved is authorized value that has not yet committed. Committed is verified in-flight value. Exposure is their sum; these categories are disjoint. Equivalent paid or unresolved effects consume objective capacity, even when delivery is unknown. Full verified refund or verified failure/release of an unpaid reservation can restore capacity. Delivery satisfaction and payment settlement are separate facts."
+        },
+        {
+          "id": "SPEC.md:2596:3113",
+          "sourceId": "SPEC.md",
+          "sourceSha256": "fec538843190a64a262f63304c36f54c5add2489a583ec8c219fa8bdeca40359",
+          "start": 2596,
+          "end": 3113,
+          "text": "The API boundary is trusted. A JSON field `evidence.verified=true` is not a signature or an oracle. Demo claims are controlled fixtures and must stay labeled simulation. Real payment claims must be produced server-side by a verifier; the server must prevent reuse of one transaction for multiple effects. The recipient and amount must come from the persisted reservation, not from a reconcile request. Merchant delivery remains a trusted input and requires authenticated signed receipt verification before production."
+        },
+        {
+          "id": "SPEC.md:1796:2556",
+          "sourceId": "SPEC.md",
+          "sourceSha256": "fec538843190a64a262f63304c36f54c5add2489a583ec8c219fa8bdeca40359",
+          "start": 1796,
+          "end": 2556,
+          "text": "Claims have stable IDs, source, effect ID, type and evidence. Replay of identical evidence is idempotent; conflicting evidence is rejected. Payment settlement requires rail verification. The Cardano verifier reads transaction inputs and outputs from the fixed preprod Blockfrost origin, validates a 64-character hash, exactly matches net recipient lovelace receipt to the reserved contract, and requires latestHeight - transactionHeight + 1 to meet its threshold. Live HTTP reconciliation requires an immutable operator-attested operation binding; it does not cryptographically establish payer or mission ownership. It never signs or sends payments. Confirmation depth is a configured observation policy, not absolute finality. See docs/CARDANO_INTEGRATION.md."
+        }
+      ],
+      "sourceHitAt3": false,
+      "exactSpanHitAt3": false,
+      "encoderSpanHitAt3": false,
+      "exactSpanReciprocalRank": 0,
+      "evidenceSpanRecallAt3": 0.0
+    },
+    {
+      "id": "evidence-grounding-en",
+      "language": "en",
+      "results": [
+        {
+          "id": "docs/ML_LEARNING_PIPELINE.md:77:410",
+          "sourceId": "docs/ML_LEARNING_PIPELINE.md",
+          "sourceSha256": "ec5778ce7224a6161d010160e78be1cca328c1ba60958e424cd7e17593644e0f",
+          "start": 77,
+          "end": 410,
+          "text": "Improve MEW's source-grounded advisory research and pilot planning: produce useful conclusions with citations, distinguish observations from assumptions, and abstain when evidence cannot support a claim. Financial admission, signing, settlement and capacity decisions remain deterministic. This pipeline grants no runtime privileges.",
+          "score": 0.6384744409613157,
+          "encoderVisibleEnd": 410
+        },
+        {
+          "id": "docs/SOCIAL_PROTOCOL_COMMITTEE.md:1005:1398",
+          "sourceId": "docs/SOCIAL_PROTOCOL_COMMITTEE.md",
+          "sourceSha256": "b360fc373d7462ef63a5aee7f9007cf98a30e88231c34a561822c04272f2a8b3",
+          "start": 1005,
+          "end": 1398,
+          "text": "The source pages suggest two useful product questions: can MEW expose understandable spend/retry controls for agent commerce, and can a pilot demonstrate separately authenticated payment and delivery? These are our hypotheses, not measured customer demand. Verify technical mechanisms using official code and specifications. Do not repeat social claims about volume, fees or adoption as facts.",
+          "score": 0.560221085137742,
+          "encoderVisibleEnd": 1398
+        },
+        {
+          "id": "docs/ML_LEARNING_PIPELINE.md:3894:4298",
+          "sourceId": "docs/ML_LEARNING_PIPELINE.md",
+          "sourceSha256": "ec5778ce7224a6161d010160e78be1cca328c1ba60958e424cd7e17593644e0f",
+          "start": 3894,
+          "end": 4298,
+          "text": "The current evaluation exercises nine authored verdict scenarios through MEW's existing runtime. Its deterministic always-abstain baseline passes seven and fails two useful-answer cases. This measures contract/verdict behavior only: no language model was invoked, and factual correctness, citation entailment and customer value remain unmeasured. Treat 7/9 as a baseline failure mode, not model accuracy.",
+          "score": 0.4548911938200063,
+          "encoderVisibleEnd": 4298
+        }
+      ],
+      "selectedContexts": [
+        {
+          "id": "docs/ML_LEARNING_PIPELINE.md:77:410",
+          "sourceId": "docs/ML_LEARNING_PIPELINE.md",
+          "sourceSha256": "ec5778ce7224a6161d010160e78be1cca328c1ba60958e424cd7e17593644e0f",
+          "start": 77,
+          "end": 410,
+          "text": "Improve MEW's source-grounded advisory research and pilot planning: produce useful conclusions with citations, distinguish observations from assumptions, and abstain when evidence cannot support a claim. Financial admission, signing, settlement and capacity decisions remain deterministic. This pipeline grants no runtime privileges."
+        },
+        {
+          "id": "docs/SOCIAL_PROTOCOL_COMMITTEE.md:1005:1398",
+          "sourceId": "docs/SOCIAL_PROTOCOL_COMMITTEE.md",
+          "sourceSha256": "b360fc373d7462ef63a5aee7f9007cf98a30e88231c34a561822c04272f2a8b3",
+          "start": 1005,
+          "end": 1398,
+          "text": "The source pages suggest two useful product questions: can MEW expose understandable spend/retry controls for agent commerce, and can a pilot demonstrate separately authenticated payment and delivery? These are our hypotheses, not measured customer demand. Verify technical mechanisms using official code and specifications. Do not repeat social claims about volume, fees or adoption as facts."
+        },
+        {
+          "id": "docs/ML_LEARNING_PIPELINE.md:3894:4298",
+          "sourceId": "docs/ML_LEARNING_PIPELINE.md",
+          "sourceSha256": "ec5778ce7224a6161d010160e78be1cca328c1ba60958e424cd7e17593644e0f",
+          "start": 3894,
+          "end": 4298,
+          "text": "The current evaluation exercises nine authored verdict scenarios through MEW's existing runtime. Its deterministic always-abstain baseline passes seven and fails two useful-answer cases. This measures contract/verdict behavior only: no language model was invoked, and factual correctness, citation entailment and customer value remain unmeasured. Treat 7/9 as a baseline failure mode, not model accuracy."
+        }
+      ],
+      "sourceHitAt3": true,
+      "exactSpanHitAt3": false,
+      "encoderSpanHitAt3": false,
+      "exactSpanReciprocalRank": 0,
+      "evidenceSpanRecallAt3": 0.0
+    },
+    {
+      "id": "evidence-grounding-fr",
+      "language": "fr",
+      "results": [
+        {
+          "id": "docs/ML_LEARNING_PIPELINE.md:77:410",
+          "sourceId": "docs/ML_LEARNING_PIPELINE.md",
+          "sourceSha256": "ec5778ce7224a6161d010160e78be1cca328c1ba60958e424cd7e17593644e0f",
+          "start": 77,
+          "end": 410,
+          "text": "Improve MEW's source-grounded advisory research and pilot planning: produce useful conclusions with citations, distinguish observations from assumptions, and abstain when evidence cannot support a claim. Financial admission, signing, settlement and capacity decisions remain deterministic. This pipeline grants no runtime privileges.",
+          "score": 0.6770154535709078,
+          "encoderVisibleEnd": 410
+        },
+        {
+          "id": "docs/SOCIAL_PROTOCOL_COMMITTEE.md:1005:1398",
+          "sourceId": "docs/SOCIAL_PROTOCOL_COMMITTEE.md",
+          "sourceSha256": "b360fc373d7462ef63a5aee7f9007cf98a30e88231c34a561822c04272f2a8b3",
+          "start": 1005,
+          "end": 1398,
+          "text": "The source pages suggest two useful product questions: can MEW expose understandable spend/retry controls for agent commerce, and can a pilot demonstrate separately authenticated payment and delivery? These are our hypotheses, not measured customer demand. Verify technical mechanisms using official code and specifications. Do not repeat social claims about volume, fees or adoption as facts.",
+          "score": 0.569661129227911,
+          "encoderVisibleEnd": 1398
+        },
+        {
+          "id": "docs/ML_LEARNING_PIPELINE.md:0:45",
+          "sourceId": "docs/ML_LEARNING_PIPELINE.md",
+          "sourceSha256": "ec5778ce7224a6161d010160e78be1cca328c1ba60958e424cd7e17593644e0f",
+          "start": 0,
+          "end": 45,
+          "text": "# Public evidence and model-learning pipeline",
+          "score": 0.4751857696640869,
+          "encoderVisibleEnd": 45
+        }
+      ],
+      "selectedContexts": [
+        {
+          "id": "docs/ML_LEARNING_PIPELINE.md:77:410",
+          "sourceId": "docs/ML_LEARNING_PIPELINE.md",
+          "sourceSha256": "ec5778ce7224a6161d010160e78be1cca328c1ba60958e424cd7e17593644e0f",
+          "start": 77,
+          "end": 410,
+          "text": "Improve MEW's source-grounded advisory research and pilot planning: produce useful conclusions with citations, distinguish observations from assumptions, and abstain when evidence cannot support a claim. Financial admission, signing, settlement and capacity decisions remain deterministic. This pipeline grants no runtime privileges."
+        },
+        {
+          "id": "docs/SOCIAL_PROTOCOL_COMMITTEE.md:1005:1398",
+          "sourceId": "docs/SOCIAL_PROTOCOL_COMMITTEE.md",
+          "sourceSha256": "b360fc373d7462ef63a5aee7f9007cf98a30e88231c34a561822c04272f2a8b3",
+          "start": 1005,
+          "end": 1398,
+          "text": "The source pages suggest two useful product questions: can MEW expose understandable spend/retry controls for agent commerce, and can a pilot demonstrate separately authenticated payment and delivery? These are our hypotheses, not measured customer demand. Verify technical mechanisms using official code and specifications. Do not repeat social claims about volume, fees or adoption as facts."
+        },
+        {
+          "id": "docs/ML_LEARNING_PIPELINE.md:0:45",
+          "sourceId": "docs/ML_LEARNING_PIPELINE.md",
+          "sourceSha256": "ec5778ce7224a6161d010160e78be1cca328c1ba60958e424cd7e17593644e0f",
+          "start": 0,
+          "end": 45,
+          "text": "# Public evidence and model-learning pipeline"
+        }
+      ],
+      "sourceHitAt3": true,
+      "exactSpanHitAt3": false,
+      "encoderSpanHitAt3": false,
+      "exactSpanReciprocalRank": 0,
+      "evidenceSpanRecallAt3": 0.0
+    },
+    {
+      "id": "event-opportunity-en",
+      "language": "en",
+      "results": [
+        {
+          "id": "docs/EVENT_DATA_SOURCES.md:39:328",
+          "sourceId": "docs/EVENT_DATA_SOURCES.md",
+          "sourceSha256": "d7fc14a3d0b7559667eb0ca7352492a584eea6b43272c9f3ed8399062aebe9b6",
+          "start": 39,
+          "end": 328,
+          "text": "Event listings can help identify relevant workshops, venues, organizers and pilot opportunities. They do not prove attendance, customer intent, payment settlement or marketing conversion. No attendee profiles, emails, order histories or ticket purchases are collected by this contribution.",
+          "score": 0.74705647580753,
+          "encoderVisibleEnd": 328
+        },
+        {
+          "id": "docs/EVENT_DATA_SOURCES.md:2761:3107",
+          "sourceId": "docs/EVENT_DATA_SOURCES.md",
+          "sourceSha256": "d7fc14a3d0b7559667eb0ca7352492a584eea6b43272c9f3ed8399062aebe9b6",
+          "start": 2761,
+          "end": 3107,
+          "text": "Suggested pilot: a bounded Singapore event shortlist, reviewer-labeled fit to MEW's agent-commerce use case, then an independently reviewed invitation plan. No invitations were sent. Existing API credentials, provider rights and calendar/organization scope are needed for live acquisition. No paid resource was purchased under the Railway budget.",
+          "score": 0.5764777531587623,
+          "encoderVisibleEnd": 3107
+        },
+        {
+          "id": "docs/EVENT_DATA_SOURCES.md:1291:1747",
+          "sourceId": "docs/EVENT_DATA_SOURCES.md",
+          "sourceSha256": "d7fc14a3d0b7559667eb0ca7352492a584eea6b43272c9f3ed8399062aebe9b6",
+          "start": 1291,
+          "end": 1747,
+          "text": "Prioritize relevant organizer calendars/public links and permissioned exports for MEW pilots; measure relevance before adding Ticketmaster's broader entertainment inventory. Never infer available inventory or prices from stale listings. Preserve event and observation times separately, normalize timezone-aware starts to UTC, and deduplicate across providers using organizer/venue/time review rather than assuming different event IDs mean different events.",
+          "score": 0.5341434922911256,
+          "encoderVisibleEnd": 1747
+        }
+      ],
+      "selectedContexts": [
+        {
+          "id": "docs/EVENT_DATA_SOURCES.md:39:328",
+          "sourceId": "docs/EVENT_DATA_SOURCES.md",
+          "sourceSha256": "d7fc14a3d0b7559667eb0ca7352492a584eea6b43272c9f3ed8399062aebe9b6",
+          "start": 39,
+          "end": 328,
+          "text": "Event listings can help identify relevant workshops, venues, organizers and pilot opportunities. They do not prove attendance, customer intent, payment settlement or marketing conversion. No attendee profiles, emails, order histories or ticket purchases are collected by this contribution."
+        },
+        {
+          "id": "docs/EVENT_DATA_SOURCES.md:2761:3107",
+          "sourceId": "docs/EVENT_DATA_SOURCES.md",
+          "sourceSha256": "d7fc14a3d0b7559667eb0ca7352492a584eea6b43272c9f3ed8399062aebe9b6",
+          "start": 2761,
+          "end": 3107,
+          "text": "Suggested pilot: a bounded Singapore event shortlist, reviewer-labeled fit to MEW's agent-commerce use case, then an independently reviewed invitation plan. No invitations were sent. Existing API credentials, provider rights and calendar/organization scope are needed for live acquisition. No paid resource was purchased under the Railway budget."
+        },
+        {
+          "id": "docs/EVENT_DATA_SOURCES.md:1291:1747",
+          "sourceId": "docs/EVENT_DATA_SOURCES.md",
+          "sourceSha256": "d7fc14a3d0b7559667eb0ca7352492a584eea6b43272c9f3ed8399062aebe9b6",
+          "start": 1291,
+          "end": 1747,
+          "text": "Prioritize relevant organizer calendars/public links and permissioned exports for MEW pilots; measure relevance before adding Ticketmaster's broader entertainment inventory. Never infer available inventory or prices from stale listings. Preserve event and observation times separately, normalize timezone-aware starts to UTC, and deduplicate across providers using organizer/venue/time review rather than assuming different event IDs mean different events."
+        }
+      ],
+      "sourceHitAt3": true,
+      "exactSpanHitAt3": true,
+      "encoderSpanHitAt3": true,
+      "exactSpanReciprocalRank": 1.0,
+      "evidenceSpanRecallAt3": 1.0
+    },
+    {
+      "id": "event-opportunity-fr",
+      "language": "fr",
+      "results": [
+        {
+          "id": "docs/EVENT_DATA_SOURCES.md:2761:3107",
+          "sourceId": "docs/EVENT_DATA_SOURCES.md",
+          "sourceSha256": "d7fc14a3d0b7559667eb0ca7352492a584eea6b43272c9f3ed8399062aebe9b6",
+          "start": 2761,
+          "end": 3107,
+          "text": "Suggested pilot: a bounded Singapore event shortlist, reviewer-labeled fit to MEW's agent-commerce use case, then an independently reviewed invitation plan. No invitations were sent. Existing API credentials, provider rights and calendar/organization scope are needed for live acquisition. No paid resource was purchased under the Railway budget.",
+          "score": 0.5119270739654969,
+          "encoderVisibleEnd": 3107
+        },
+        {
+          "id": "docs/EVENT_DATA_SOURCES.md:1291:1747",
+          "sourceId": "docs/EVENT_DATA_SOURCES.md",
+          "sourceSha256": "d7fc14a3d0b7559667eb0ca7352492a584eea6b43272c9f3ed8399062aebe9b6",
+          "start": 1291,
+          "end": 1747,
+          "text": "Prioritize relevant organizer calendars/public links and permissioned exports for MEW pilots; measure relevance before adding Ticketmaster's broader entertainment inventory. Never infer available inventory or prices from stale listings. Preserve event and observation times separately, normalize timezone-aware starts to UTC, and deduplicate across providers using organizer/venue/time review rather than assuming different event IDs mean different events.",
+          "score": 0.464467460473277,
+          "encoderVisibleEnd": 1747
+        },
+        {
+          "id": "docs/EVENT_DATA_SOURCES.md:39:328",
+          "sourceId": "docs/EVENT_DATA_SOURCES.md",
+          "sourceSha256": "d7fc14a3d0b7559667eb0ca7352492a584eea6b43272c9f3ed8399062aebe9b6",
+          "start": 39,
+          "end": 328,
+          "text": "Event listings can help identify relevant workshops, venues, organizers and pilot opportunities. They do not prove attendance, customer intent, payment settlement or marketing conversion. No attendee profiles, emails, order histories or ticket purchases are collected by this contribution.",
+          "score": 0.44989000055720096,
+          "encoderVisibleEnd": 328
+        }
+      ],
+      "selectedContexts": [
+        {
+          "id": "docs/EVENT_DATA_SOURCES.md:2761:3107",
+          "sourceId": "docs/EVENT_DATA_SOURCES.md",
+          "sourceSha256": "d7fc14a3d0b7559667eb0ca7352492a584eea6b43272c9f3ed8399062aebe9b6",
+          "start": 2761,
+          "end": 3107,
+          "text": "Suggested pilot: a bounded Singapore event shortlist, reviewer-labeled fit to MEW's agent-commerce use case, then an independently reviewed invitation plan. No invitations were sent. Existing API credentials, provider rights and calendar/organization scope are needed for live acquisition. No paid resource was purchased under the Railway budget."
+        },
+        {
+          "id": "docs/EVENT_DATA_SOURCES.md:1291:1747",
+          "sourceId": "docs/EVENT_DATA_SOURCES.md",
+          "sourceSha256": "d7fc14a3d0b7559667eb0ca7352492a584eea6b43272c9f3ed8399062aebe9b6",
+          "start": 1291,
+          "end": 1747,
+          "text": "Prioritize relevant organizer calendars/public links and permissioned exports for MEW pilots; measure relevance before adding Ticketmaster's broader entertainment inventory. Never infer available inventory or prices from stale listings. Preserve event and observation times separately, normalize timezone-aware starts to UTC, and deduplicate across providers using organizer/venue/time review rather than assuming different event IDs mean different events."
+        },
+        {
+          "id": "docs/EVENT_DATA_SOURCES.md:39:328",
+          "sourceId": "docs/EVENT_DATA_SOURCES.md",
+          "sourceSha256": "d7fc14a3d0b7559667eb0ca7352492a584eea6b43272c9f3ed8399062aebe9b6",
+          "start": 39,
+          "end": 328,
+          "text": "Event listings can help identify relevant workshops, venues, organizers and pilot opportunities. They do not prove attendance, customer intent, payment settlement or marketing conversion. No attendee profiles, emails, order histories or ticket purchases are collected by this contribution."
+        }
+      ],
+      "sourceHitAt3": true,
+      "exactSpanHitAt3": true,
+      "encoderSpanHitAt3": true,
+      "exactSpanReciprocalRank": 0.3333333333333333,
+      "evidenceSpanRecallAt3": 1.0
+    },
+    {
+      "id": "training-rights-en",
+      "language": "en",
+      "results": [
+        {
+          "id": "docs/ML_LEARNING_PIPELINE.md:0:45",
+          "sourceId": "docs/ML_LEARNING_PIPELINE.md",
+          "sourceSha256": "ec5778ce7224a6161d010160e78be1cca328c1ba60958e424cd7e17593644e0f",
+          "start": 0,
+          "end": 45,
+          "text": "# Public evidence and model-learning pipeline",
+          "score": 0.4762126674175222,
+          "encoderVisibleEnd": 45
+        },
+        {
+          "id": "docs/SOCIAL_PROTOCOL_COMMITTEE.md:484:1003",
+          "sourceId": "docs/SOCIAL_PROTOCOL_COMMITTEE.md",
+          "sourceSha256": "b360fc373d7462ef63a5aee7f9007cf98a30e88231c34a561822c04272f2a8b3",
+          "start": 484,
+          "end": 1003,
+          "text": "Inspected three accessible public pages directly: one Reddit x402 announcement and two Substack agent-payment articles. The discovery catalog records original URLs, curated short research notes, unknown publication times where necessary and two genuine access failures: YouTube and X. No video was watched, no transcript obtained, no paywall/login bypass attempted and no whole social corpus scraped. Hashes bind our curated catalog, not unseen page bytes. No social content or summaries were used to fine-tune a model.",
+          "score": 0.3717259698412726,
+          "encoderVisibleEnd": 1003
+        },
+        {
+          "id": "docs/SOCIAL_PROTOCOL_COMMITTEE.md:0:56",
+          "sourceId": "docs/SOCIAL_PROTOCOL_COMMITTEE.md",
+          "sourceSha256": "b360fc373d7462ef63a5aee7f9007cf98a30e88231c34a561822c04272f2a8b3",
+          "start": 0,
+          "end": 56,
+          "text": "# Research committee and deterministic protocol boundary",
+          "score": 0.36336088613295703,
+          "encoderVisibleEnd": 56
+        }
+      ],
+      "selectedContexts": [
+        {
+          "id": "docs/ML_LEARNING_PIPELINE.md:0:45",
+          "sourceId": "docs/ML_LEARNING_PIPELINE.md",
+          "sourceSha256": "ec5778ce7224a6161d010160e78be1cca328c1ba60958e424cd7e17593644e0f",
+          "start": 0,
+          "end": 45,
+          "text": "# Public evidence and model-learning pipeline"
+        },
+        {
+          "id": "docs/SOCIAL_PROTOCOL_COMMITTEE.md:484:1003",
+          "sourceId": "docs/SOCIAL_PROTOCOL_COMMITTEE.md",
+          "sourceSha256": "b360fc373d7462ef63a5aee7f9007cf98a30e88231c34a561822c04272f2a8b3",
+          "start": 484,
+          "end": 1003,
+          "text": "Inspected three accessible public pages directly: one Reddit x402 announcement and two Substack agent-payment articles. The discovery catalog records original URLs, curated short research notes, unknown publication times where necessary and two genuine access failures: YouTube and X. No video was watched, no transcript obtained, no paywall/login bypass attempted and no whole social corpus scraped. Hashes bind our curated catalog, not unseen page bytes. No social content or summaries were used to fine-tune a model."
+        },
+        {
+          "id": "docs/SOCIAL_PROTOCOL_COMMITTEE.md:0:56",
+          "sourceId": "docs/SOCIAL_PROTOCOL_COMMITTEE.md",
+          "sourceSha256": "b360fc373d7462ef63a5aee7f9007cf98a30e88231c34a561822c04272f2a8b3",
+          "start": 0,
+          "end": 56,
+          "text": "# Research committee and deterministic protocol boundary"
+        }
+      ],
+      "sourceHitAt3": true,
+      "exactSpanHitAt3": false,
+      "encoderSpanHitAt3": false,
+      "exactSpanReciprocalRank": 0,
+      "evidenceSpanRecallAt3": 0.0
+    },
+    {
+      "id": "training-rights-fr",
+      "language": "fr",
+      "results": [
+        {
+          "id": "docs/ML_LEARNING_PIPELINE.md:0:45",
+          "sourceId": "docs/ML_LEARNING_PIPELINE.md",
+          "sourceSha256": "ec5778ce7224a6161d010160e78be1cca328c1ba60958e424cd7e17593644e0f",
+          "start": 0,
+          "end": 45,
+          "text": "# Public evidence and model-learning pipeline",
+          "score": 0.5919240468431438,
+          "encoderVisibleEnd": 45
+        },
+        {
+          "id": "SPEC.md:2558:2594",
+          "sourceId": "SPEC.md",
+          "sourceSha256": "fec538843190a64a262f63304c36f54c5add2489a583ec8c219fa8bdeca40359",
+          "start": 2558,
+          "end": 2594,
+          "text": "## Threat model and prototype limits",
+          "score": 0.39308948549695644,
+          "encoderVisibleEnd": 2594
+        },
+        {
+          "id": "docs/SOCIAL_PROTOCOL_COMMITTEE.md:1005:1398",
+          "sourceId": "docs/SOCIAL_PROTOCOL_COMMITTEE.md",
+          "sourceSha256": "b360fc373d7462ef63a5aee7f9007cf98a30e88231c34a561822c04272f2a8b3",
+          "start": 1005,
+          "end": 1398,
+          "text": "The source pages suggest two useful product questions: can MEW expose understandable spend/retry controls for agent commerce, and can a pilot demonstrate separately authenticated payment and delivery? These are our hypotheses, not measured customer demand. Verify technical mechanisms using official code and specifications. Do not repeat social claims about volume, fees or adoption as facts.",
+          "score": 0.3838921696512987,
+          "encoderVisibleEnd": 1398
+        }
+      ],
+      "selectedContexts": [
+        {
+          "id": "docs/ML_LEARNING_PIPELINE.md:0:45",
+          "sourceId": "docs/ML_LEARNING_PIPELINE.md",
+          "sourceSha256": "ec5778ce7224a6161d010160e78be1cca328c1ba60958e424cd7e17593644e0f",
+          "start": 0,
+          "end": 45,
+          "text": "# Public evidence and model-learning pipeline"
+        },
+        {
+          "id": "SPEC.md:2558:2594",
+          "sourceId": "SPEC.md",
+          "sourceSha256": "fec538843190a64a262f63304c36f54c5add2489a583ec8c219fa8bdeca40359",
+          "start": 2558,
+          "end": 2594,
+          "text": "## Threat model and prototype limits"
+        },
+        {
+          "id": "docs/SOCIAL_PROTOCOL_COMMITTEE.md:1005:1398",
+          "sourceId": "docs/SOCIAL_PROTOCOL_COMMITTEE.md",
+          "sourceSha256": "b360fc373d7462ef63a5aee7f9007cf98a30e88231c34a561822c04272f2a8b3",
+          "start": 1005,
+          "end": 1398,
+          "text": "The source pages suggest two useful product questions: can MEW expose understandable spend/retry controls for agent commerce, and can a pilot demonstrate separately authenticated payment and delivery? These are our hypotheses, not measured customer demand. Verify technical mechanisms using official code and specifications. Do not repeat social claims about volume, fees or adoption as facts."
+        }
+      ],
+      "sourceHitAt3": true,
+      "exactSpanHitAt3": false,
+      "encoderSpanHitAt3": false,
+      "exactSpanReciprocalRank": 0,
+      "evidenceSpanRecallAt3": 0.0
+    }
+  ],
+  "model": {
+    "modelId": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "revision": "e8f8c211226b894fcb81acc59f3b34ba3efd5f42",
+    "license": "apache-2.0",
+    "trustRemoteCode": false,
+    "weightsIgnored": true,
+    "files": {
+      "tokenizer_config.json": "5036ea374ffedd706e3bef33e2e0d6953cb868ef8a490e76e32ba0faa37a6b9b",
+      "config.json": "6300193cb75e01cf80c96decef7187dfb33094d97cc1490b7ead6ff134476e4e",
+      "tokenizer.json": "2c3387be76557bd40970cec13153b3bbf80407865484b209e655e5e4729076b8",
+      "README.md": "1e98ea05b0de579fcaad3d625b62ea55647142ed674d5f5ebf1440e4bbbb6f23",
+      "sentence_bert_config.json": "70f4448f31320443fe3557cacea5abf2dcc4915dda8c80646bec9f3bb0aa5a1f",
+      "1_Pooling/config.json": "4be450dde3b0273bb9787637cfbd28fe04a7ba6ab9d36ac48e92b11e350ffc23",
+      "onnx/model_qint8_arm64.onnx": "783fea82d71a58179b830a4dbd2d58447e640609e98eedf9ffa12622d375a672"
+    },
+    "runtime": {
+      "onnxruntime": "1.24.3",
+      "tokenizers": "0.23.2",
+      "numpy": "2.5.3",
+      "huggingface_hub": "1.33.0"
+    }
+  },
+  "limitations": [
+    "Agent-reviewed development diagnostics; no independent customer holdout.",
+    "Full-context span coverage and encoder-visible span coverage are reported separately; truncated tails did not influence embeddings.",
+    "Embedding coverage does not prove answer faithfulness.",
+    "No training, model deployment, payment or external inference."
+  ]
+}

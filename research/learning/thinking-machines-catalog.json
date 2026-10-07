@@ -1,0 +1,157 @@
+{
+  "schemaVersion": "mew-research-catalog-v1",
+  "checkedAt": "2026-10-07",
+  "authority": "reference-only",
+  "cloudJobsStarted": false,
+  "externalTextTrainingExported": false,
+  "sources": [
+    {
+      "id": "tml-tinker",
+      "title": "Tinker managed training overview",
+      "url": "https://thinkingmachines.ai/tinker/",
+      "kind": "official-product-page",
+      "accessStatus": "html-read",
+      "method": "Managed training API using LoRA; current supported models are a changing provider catalog.",
+      "reuseConstraint": "Remote credentials, data-transfer review and a separate budget are pending; not a local training engine.",
+      "mewFailure": "local-isolation",
+      "trainingEligible": false
+    },
+    {
+      "id": "tml-cookbook",
+      "title": "Tinker Cookbook",
+      "url": "https://github.com/thinking-machines-lab/tinker-cookbook",
+      "kind": "official-repository",
+      "accessStatus": "readme-read",
+      "method": "Client-side SFT, RL, DPO and distillation examples run on Tinker.",
+      "reuseConstraint": "Apache-2.0 code license verified separately; model, dataset and hosted-service terms remain separate.",
+      "mewFailure": "experiment-receipts",
+      "trainingEligible": false,
+      "verifiedRepositoryRevision": "1c03a20fdda98156ccbec15728c0e2764b5a0bc3"
+    },
+    {
+      "id": "tml-license",
+      "title": "Cookbook LICENSE",
+      "url": "https://github.com/thinking-machines-lab/tinker-cookbook/blob/main/LICENSE",
+      "kind": "official-license",
+      "accessStatus": "license-text-read",
+      "method": "Repository code is Apache-2.0.",
+      "reuseConstraint": "No permission inferred for example datasets, model weights or blog text.",
+      "mewFailure": "reuse-rights",
+      "trainingEligible": false
+    },
+    {
+      "id": "tml-lora",
+      "title": "LoRA Without Regret",
+      "url": "https://thinkingmachines.ai/blog/lora/",
+      "kind": "official-research-blog",
+      "accessStatus": "html-read",
+      "method": "Ranks, learning rates, target modules and batch sizes influence results; conclusions are experiment-specific.",
+      "reuseConstraint": "No guarantee of transfer to quantized local Qwen3-0.6B/MLX.",
+      "mewFailure": "adapter-design",
+      "trainingEligible": false
+    },
+    {
+      "id": "tml-opd",
+      "title": "On-Policy Distillation",
+      "url": "https://thinkingmachines.ai/blog/on-policy-distillation/",
+      "kind": "official-research-blog",
+      "accessStatus": "html-read",
+      "method": "Student-generated trajectories are graded with teacher token probabilities; support and teacher quality matter.",
+      "reuseConstraint": "Teacher API/model-output reuse must be approved; no teacher calls made.",
+      "mewFailure": "student-errors",
+      "trainingEligible": false
+    },
+    {
+      "id": "tml-nondeterminism",
+      "title": "Defeating Nondeterminism in LLM Inference",
+      "url": "https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/",
+      "kind": "official-research-blog",
+      "accessStatus": "html-read",
+      "method": "Changing batch sizes and numerical reductions can change inference even apart from sampling.",
+      "reuseConstraint": "CUDA/kernel examples do not prove MLX equivalence.",
+      "mewFailure": "reproducibility",
+      "trainingEligible": false
+    },
+    {
+      "id": "tml-expert",
+      "title": "Learning to Replicate Expert Judgment in Financial Tasks",
+      "url": "https://thinkingmachines.ai/news/learning-to-replicate-expert-judgment-in-financial-tasks/",
+      "kind": "official-collaborator-case-study",
+      "accessStatus": "html-read",
+      "method": "Expert correction of contested training labels is separated from held-out evaluation.",
+      "reuseConstraint": "Publisher results use a proprietary task/dataset and larger base model; no MEW performance inference.",
+      "mewFailure": "human-label-quality",
+      "trainingEligible": false
+    },
+    {
+      "id": "tml-preferences",
+      "title": "Learning from Preferences",
+      "url": "https://tinker-docs.thinkingmachines.ai/cookbook/preferences/",
+      "kind": "official-documentation",
+      "accessStatus": "html-read",
+      "method": "DPO directly learns chosen versus rejected responses; RLHF additionally trains a reward model.",
+      "reuseConstraint": "Model-generated preferences are not human approvals; local DPO support not established.",
+      "mewFailure": "preference-quality",
+      "trainingEligible": false
+    },
+    {
+      "id": "lora-paper",
+      "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+      "url": "https://arxiv.org/abs/2106.09685",
+      "kind": "primary-paper",
+      "accessStatus": "abstract-and-html-method-section-read",
+      "method": "Low-rank trainable updates adapt frozen model weights.",
+      "reuseConstraint": "Paper methods are reference only, no paper text exported for training.",
+      "mewFailure": "adapter-design",
+      "trainingEligible": false,
+      "methodSections": [
+        "4.1",
+        "4.2"
+      ],
+      "methodUrl": "https://arxiv.org/html/2106.09685v2"
+    },
+    {
+      "id": "dpo-paper",
+      "title": "Direct Preference Optimization",
+      "url": "https://arxiv.org/abs/2305.18290",
+      "kind": "primary-paper",
+      "accessStatus": "abstract-and-html-method-section-read",
+      "method": "Preference optimization can avoid fitting a separate reward model.",
+      "reuseConstraint": "Pairwise labels and implementation compatibility must be verified.",
+      "mewFailure": "preference-quality",
+      "trainingEligible": false,
+      "methodSections": [
+        "3",
+        "4"
+      ],
+      "methodUrl": "https://arxiv.org/html/2305.18290v3"
+    },
+    {
+      "id": "rag-paper",
+      "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+      "url": "https://arxiv.org/abs/2005.11401",
+      "kind": "primary-paper",
+      "accessStatus": "abstract-read",
+      "method": "Combines retrieval memory with generation for knowledge tasks.",
+      "reuseConstraint": "Retrieved content still needs provenance and applicable reuse decisions.",
+      "mewFailure": "missing-evidence",
+      "trainingEligible": false
+    },
+    {
+      "id": "validators-paper",
+      "title": "Who Validates the Validators?",
+      "url": "https://arxiv.org/abs/2404.12272",
+      "kind": "primary-paper",
+      "accessStatus": "abstract-read",
+      "method": "Aligning automated evaluation with human preferences requires attention to evaluator validity.",
+      "reuseConstraint": "No claim of complete PDF reading or validated MEW judge.",
+      "mewFailure": "judge-calibration",
+      "trainingEligible": false
+    }
+  ],
+  "limitations": [
+    "Official YouTube channel link resolved to an inaccessible page; no video/transcript used.",
+    "Guessed standalone pricing path unavailable; no price assumption recorded.",
+    "Paper abstracts were read; complete PDFs were not examined."
+  ]
+}

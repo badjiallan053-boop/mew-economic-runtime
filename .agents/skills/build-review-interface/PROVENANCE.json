@@ -1,0 +1,10 @@
+{
+  "repository": "https://github.com/ai-evals-course/evals-skills",
+  "revision": "80d5f7b0127c7572ed9e9339937adbfd7240ffeb",
+  "path": "skills/build-review-interface",
+  "discoveredVia": "https://skills.sh/ai-evals-course/evals-skills/build-review-interface",
+  "license": "Apache-2.0",
+  "skillSha256": "8cd4f794f590619a220162e366faf6bd35cb620050db324b69a7af0d36f52c4b",
+  "upstreamModified": false,
+  "executableScriptsInstalled": false
+}
