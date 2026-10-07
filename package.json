@@ -14,6 +14,7 @@
     "demo:rehearse": "node scripts/rehearsal.mjs",
     "cardano:preflight": "node scripts/cardano-preflight.mjs",
     "masumi:collection": "node scripts/masumi-collection.mjs",
-    "company:rehearse": "node scripts/company.mjs"
+    "company:rehearse": "node scripts/company.mjs",
+    "live:preflight": "node scripts/live-preflight.mjs"
   }
 }

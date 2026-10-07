@@ -43,3 +43,22 @@ Both video retrievals failed again in this contribution. No transcript was obtai
 7. Update source pins only through a reviewed diff. Preserve the old version until new tests and required live checks pass. Mark stale or contradicted knowledge explicitly instead of silently replacing evidence.
 
 Do not feed entire third-party repositories or video transcripts to privileged agents. Keep retrieved data in a quoted reference field, separate from system instructions; strip credentials and customer data. The curator has no payment, production-write or message-sending authority.
+
+## Deeper live-path check · 7 October
+
+Reviewed the official Pi-Sokosumi documentation and source README:
+https://www.masumi.network/dev/sokosumi/documentation/pysokosumi and
+https://github.com/masumi-network/pi-sokosumi. The current helper supplies coworker
+client/poller and completion-payment plumbing; agent behavior still belongs in
+the consuming callback. It does not eliminate authentication, model access or
+funding prerequisites. The official docs describe version 0.1.5 with UNLICENSED
+metadata. No helper code was vendored and the existing paid-template path remains
+unchanged. Resolve license and pin actual source before adoption; replace any
+example in-memory pending-payment storage with durable recovery for production.
+
+The official Masumi Updates article lists Smart Contract V2, Hydra and Veridian
+Agent Certification as topics. Those are research leads, not proof that MEW
+integrates them. Its linked YouTube session again failed retrieval; no transcript
+or timestamps were obtained. The account preflight still reports AUTH_REQUIRED
+and model/Blockfrost/runtime credentials are pending. Do not expand the swarm or
+create more billed services to conceal these prerequisites.

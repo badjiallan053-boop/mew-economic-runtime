@@ -51,3 +51,20 @@ does not enter native tokens into MEW's lovelace accounting.
 Before submission, retain sanitized Task ID, withdrawal hash, verified receipt,
 hosted demo URL, deployed commit, and the required recording/presentation.
 Do not describe simulation screenshots as a completed paid job.
+
+## One consolidated live check
+
+After login, run `npm run live:preflight`. To load an existing private config
+without printing its contents, use Node 24 directly:
+
+```sh
+node --env-file=/private/path/mew.env scripts/live-preflight.mjs
+```
+
+The command is read-only. It checks the deployed demo, local account login and
+credential presence; if Blockfrost is configured it checks preprod connectivity.
+It deliberately exits 1 until live execution is independently proven.
+CONFIGURED_UNTESTED is not a valid model response, registered wallet or paid job.
+Model proof, MPS readiness, wallet funding and seller receipt still require the
+separate ordered checkpoints above. No raw CLI account response or secret is
+printed. No new worker, account, migration or payment is created by preflight.
