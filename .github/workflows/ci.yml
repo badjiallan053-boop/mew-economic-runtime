@@ -19,3 +19,5 @@ jobs:
       - run: ../../.local/aiken/aiken-x86_64-unknown-linux-musl/aiken build --deny
         working-directory: contracts/approval-escrow
       - run: node --test tests/approval-escrow-plan.test.mjs
+      - run: npm run escrow:evaluate-fixtures
+      - run: npm run learning:constrained-audit

@@ -36,9 +36,14 @@
     "learning:retrieve": "node scripts/train-retrieval.mjs",
     "escrow:plan": "node scripts/approval-escrow-plan.mjs",
     "cardano:observe": "node scripts/cardano-observation.mjs",
-    "learning:parent-audit": "node scripts/audit-parent-model.mjs"
+    "learning:parent-audit": "node scripts/audit-parent-model.mjs",
+    "escrow:build": "node scripts/build-escrow-draft.mjs",
+    "escrow:rehearse": "node scripts/escrow-rehearsal.mjs",
+    "escrow:evaluate-fixtures": "node scripts/evaluate-escrow-fixtures.mjs",
+    "learning:constrained-audit": "node scripts/audit-constrained-parent-model.mjs"
   },
   "dependencies": {
+    "@emurgo/cardano-serialization-lib-nodejs": "15.0.3",
     "@scure/base": "2.0.0"
   }
 }

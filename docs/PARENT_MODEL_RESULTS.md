@@ -48,3 +48,17 @@ labels independent evaluation. Demonstrated shape/citation failures may guide th
 training objective after a suitable baseline and approved dataset exist. Model
 outputs remain advisory; deterministic MEW and human signing boundaries continue
 to control any future monetary action.
+
+## Subsequent constrained-decoding experiment
+
+The same local weights and receipt-bound parent contexts now pass **12/12** strict
+response-contract checks under Outlines 1.3.3. This separate run adds grammar
+constraints, canonical source-subset choices and a 1,000-character answer limit;
+it preserves the original **0/12** raw baseline. It does not demonstrate semantic
+correctness. Unsupported product claims and mixed EN/FR answers remain visible,
+and model activation/training authorization remain false. No adapter was trained.
+
+Run `npm run learning:constrained-audit` to verify the new receipts. See the
+[implementation and live gates](ESCROW_MODEL_NEXT_STEPS.md) and the separate
+`constrained-parent-responses.jsonl`, `constrained-model-policy.json`, and
+`constrained-parent-audit.json` in the frozen experiment directory.

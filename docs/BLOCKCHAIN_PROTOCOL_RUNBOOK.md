@@ -2,8 +2,9 @@
 
 ## Verified local state
 
-The repository now contains a compiled individual ADA approval escrow, an offline
-intent planner and a read-only transaction/block re-observation helper. They are
+The repository now contains a compiled individual ADA approval escrow, a real
+unsigned CBOR builder, a private durable lifecycle coordinator, validated escrow
+backup restore and read-only transaction/block observation helpers. They are
 standalone boundaries, with no signer, transaction broadcaster or public payment
 route. Existing MEW reservation, persistence and Masumi contracts are unchanged.
 Preprod connectivity currently reports `NOT_CONFIGURED`; no on-chain deployment
@@ -11,10 +12,12 @@ or lifecycle transaction has occurred. Model/payment activation remains disabled
 
 | Boundary | Implemented | Authority and limits |
 | --- | --- | --- |
-| MEW kernel | Existing transactional reservation/outbox libraries | Preserves objective capacity and integer exposure; escrow lifecycle wiring is pending |
-| Offline escrow planner | Strict addresses, commitments, fee/collateral cap, compiled script binding, Plutus data JSON | Produces reviewable intent only; no CBOR, balance, signature or reservation |
+| MEW kernel | Existing transactional reservation/outbox libraries | Preserves objective capacity and integer exposure; private escrow coordinator implemented; authenticated worker integration pending |
+| Offline escrow planner | Strict addresses, commitments, fee/collateral cap, compiled script binding, Plutus data JSON | Produces reviewable intent; CBOR and reservations are separate private boundaries |
 | Aiken spending validator | Explicit acceptance or principal cancellation; exact full-address ADA payout | Controls one funded cell; does not enforce a global budget, job uniqueness or artifact quality |
 | Read-only block observer | Compares a trusted saved transaction/block binding against preprod indexer responses | Signals review or unknown; never authorizes settlement, retry or exposure release |
+| Unsigned CBOR builder | CSL 15.0.3 balancing, min-ADA, script-data hash and exact compiled identity | No signing; fresh UTxO/provider evaluation pending |
+| Durable escrow journal | Atomic lifecycle exposure, immutable hashes/input locks, funding output binding, restart/backup checks | Private library; no hosted signer, automatic retry or cost release |
 | Masumi adapter | Existing independently pinned read-only boundaries | This escrow is not a replacement for MPS or its managed state |
 
 Acceptance requires both the principal and provider payment keys as required
@@ -50,8 +53,10 @@ the remote workflow result must be checked after pushing. The stdlib version is
 locked to `v2.1.0`; a version tag is not an immutable source commit. Release review
 must verify its resolved source and the compiled blueprint against the checked-in
 receipt before signing. Local tests bind source/artifact hashes and recursively
-check planner constructors against the compiled blueprint. They do not test CBOR
-serialization, transaction balancing or ledger evaluation.
+check planner constructors against the compiled blueprint. The new builder tests
+exercise CBOR and balancing. `npm run escrow:evaluate-fixtures`
+evaluates compiled scripts on synthetic resolved inputs with Aiken’s built-in cost
+model; fresh provider ledger evaluation remains pending.
 
 Prepare a JSON file with exactly these fields; address placeholders must be
 replaced with checksum-valid testnet key-payment base or enterprise addresses:
@@ -67,10 +72,10 @@ replaced with checksum-valid testnet key-payment base or enterprise addresses:
   "artifactSha256": "<64 lowercase hexadecimal characters>",
   "nonceHex": "<fresh random 32-byte nonce as 64 lowercase hexadecimal characters>",
   "amountLovelace": 3000000,
-  "fundingFeeBudgetLovelace": 250000,
-  "closingFeeBudgetLovelace": 250000,
-  "collateralExposureLovelace": 500000,
-  "maxExposureLovelace": 5000000,
+  "fundingFeeBudgetLovelace": 350000,
+  "closingFeeBudgetLovelace": 2000000,
+  "collateralExposureLovelace": 3000000,
+  "maxExposureLovelace": 9000000,
   "minimumOutputLovelace": 2000000
 }
 ```
@@ -100,13 +105,15 @@ binding and requires a reviewed version change.
    Blockfrost credentials locally and an external preprod signer; keep keys and
    seeds outside Git, the browser, model contexts and this server. Confirm network
    magic and obtain test funds. No such wallet setup is currently available.
-2. Build a trusted coordinator which atomically reserves escrow, funding/closing
+2. Integrate the implemented private `EscrowStore` with an authenticated operator
+   and restricted worker. It already atomically reserves escrow, funding/closing
    fees and collateral exposure in MEW, records a durable funding outbox, and
    attests the exact resulting transaction output reference. Do not reuse the
    direct-transfer settlement amount as proof of total escrow lifecycle costs.
    Ambiguous funding retains exposure; a scan for matching hashes cannot authorize
    a replacement transaction. Repeated datum commitments are possible on chain.
-3. Implement and independently test the transaction builder: CIP-19 address to
+3. Independently review the implemented unsigned builder and add fresh provider
+   evaluation of the exact final draft: CIP-19 address to
    datum encoding, CBOR round trips, actual minimum UTxO, fresh protocol parameters,
    Plutus V3 execution budget, script-data hash, separate ADA-only fee inputs,
    collateral accounting and required signers. No recipient-address input may be
@@ -154,9 +161,11 @@ not absolute finality, payer identity, artifact acceptance or refund proof.
 exposure release, automatic retry and a settlement claim. The helper snapshots
 caller-owned fields before awaiting I/O and rejects unsafe confirmation counts.
 
-This is not wired into existing settlement handlers. The current operation store
-must gain a trusted immutable block binding and lifecycle integration before
-periodic checks can protect a live worker. Never treat this standalone helper as
+This is not wired into existing settlement handlers. The private escrow
+coordinator now persists immutable block/output bindings and
+quarantines changed observations. Hosted scheduling, authentication and signer
+integration are still required before these checks protect a live worker. Never
+treat this standalone helper as
 a complete production rollback solution.
 
 ## Source and review record
@@ -173,3 +182,11 @@ Primary references: [Aiken compiler release](https://github.com/aiken-lang/aiken
 [CIP-57 blueprint](https://github.com/cardano-foundation/CIPs/tree/master/CIP-0057),
 [scure-base](https://github.com/paulmillr/scure-base),
 [Blockfrost API](https://docs.blockfrost.io/).
+
+## Latest implementation and setup sequence
+
+See [escrow/model follow-up](ESCROW_MODEL_NEXT_STEPS.md) for runnable CBOR, restart,
+backup and compiled-script rehearsals, source provenance, wallet setup and the
+remaining external audit/evaluation gates. The unconstrained model baseline
+remains 0/12; a separate constrained run reaches 12/12 shape checks but still fails
+visible grounding/language expectations. No model was activated.

@@ -152,3 +152,12 @@ Added original `mew-posttraining-research` using the local skill-creator procedu
 ## Evidence coverage and repository integration
 
 Applied installed embedding-strategies and created original `mew-evidence-coverage` after reviewing the skills.sh RAG listing and official LangChain RAG skill. Parent-document retrieval and ensemble source code informed an original dependency-free selector; existing Safetensors/Transformers libraries are directly integrated for artifact verification and rendered-token fit. See EVIDENCE_COVERAGE_EXPERIMENT.md for unchanged benchmark, 1/2/3-parent tradeoffs, YouTube transcript failure and actual adoption limits. One independent review subagent audited selection and cached receipt contracts; no new production runtime agents or live execution changes.
+
+## Escrow and constrained-model follow-up
+
+Reviewed the pinned MeshJS Cardano and Outlines skill files and public caption
+segments recorded in `research/cardano/integration-research-provenance.json`.
+Skill discovery informed transaction review and grammar-constrained generation;
+actual APIs were verified against official versioned sources. No arbitrary skill
+scripts were run, no training rights were inferred, and no model/financial
+authority was enabled. See [reproduction and remaining gates](ESCROW_MODEL_NEXT_STEPS.md).

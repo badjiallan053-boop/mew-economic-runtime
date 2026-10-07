@@ -1,0 +1,98 @@
+{
+  "schema": "mew.escrow-uplc-fixture-evaluation.v1",
+  "aikenVersion": "v1.1.23+8949565",
+  "scriptSha256": "ed1ceb3e0287d89b4899036fd023760d8f8101d77ab7498cedd71de51e651949",
+  "blueprintSha256": "abe6547ac833a48772ce6e07e9a1071a2e1d6928e9c103195390e88e9474249f",
+  "parameterFixtureSha256": "26bf52d91448e1a09b7e32a2c148a7ce57e14f8bb1bdb0200e98f3a5a53cb6eb",
+  "cases": [
+    {
+      "caseId": "accept-fee-0",
+      "scriptPassed": true,
+      "txHash": "99bf43e345a181410e934fbdc222a989dd3b2fbc59ff055e844a6c8017b76634",
+      "transactionCborSha256": "60cc17a6db1e98b362a70ab6a7559c9260e4560cc50f4b520c3bb3786882a709",
+      "redeemerIndex": "1",
+      "declaredExecutionUnits": {
+        "memory": 362654,
+        "steps": 138599581
+      },
+      "measuredExecutionUnits": {
+        "memory": 329685,
+        "steps": 125999619
+      },
+      "feeLovelace": 312448
+    },
+    {
+      "caseId": "accept-fee-0-missing-approval",
+      "scriptRejected": true
+    },
+    {
+      "caseId": "accept-fee-f",
+      "scriptPassed": true,
+      "txHash": "a7c86faefb9b12ba4224381c6af03b671a5835e44a590105ebf039d84dc0818a",
+      "transactionCborSha256": "cb4acc842e8ce48c724babab23718dfddd93dc179f9e0ba204a969090da22eeb",
+      "redeemerIndex": "0",
+      "declaredExecutionUnits": {
+        "memory": 362654,
+        "steps": 138599581
+      },
+      "measuredExecutionUnits": {
+        "memory": 329685,
+        "steps": 125999619
+      },
+      "feeLovelace": 312448
+    },
+    {
+      "caseId": "accept-fee-f-missing-approval",
+      "scriptRejected": true
+    },
+    {
+      "caseId": "cancel-fee-0",
+      "scriptPassed": true,
+      "txHash": "0fb3a7e99bb6e4101c77a07dcd4d10613a66a2950ff06bc9a01f832677c4f8dd",
+      "transactionCborSha256": "423be6b20c34ea879db5139625bc52e67c06991ebe57bfcf910c3399359bf6bc",
+      "redeemerIndex": "1",
+      "declaredExecutionUnits": {
+        "memory": 343768,
+        "steps": 132361107
+      },
+      "measuredExecutionUnits": {
+        "memory": 312516,
+        "steps": 120328279
+      },
+      "feeLovelace": 303604
+    },
+    {
+      "caseId": "cancel-fee-0-missing-approval",
+      "scriptRejected": true
+    },
+    {
+      "caseId": "cancel-fee-f",
+      "scriptPassed": true,
+      "txHash": "f196f25f83b4f65f5ce173a52e40a8e64c10cdb458f42baa655426b8e6cc10bf",
+      "transactionCborSha256": "6566ee06d8eba4acccfc6fc75ca37444fd44582d0f59ea5f489fbdf23784d893",
+      "redeemerIndex": "0",
+      "declaredExecutionUnits": {
+        "memory": 343768,
+        "steps": 132361107
+      },
+      "measuredExecutionUnits": {
+        "memory": 312516,
+        "steps": 120328279
+      },
+      "feeLovelace": 303604
+    },
+    {
+      "caseId": "cancel-fee-f-missing-approval",
+      "scriptRejected": true
+    }
+  ],
+  "synthetic": true,
+  "signingAllowed": false,
+  "dispatchAllowed": false,
+  "limitations": [
+    "Compiled phase-two evaluation of synthetic resolved UTxOs only, not node ledger acceptance.",
+    "Aiken CLI uses its built-in cost model: fresh preprod provider evaluation must bind the exact final transaction and current parameters.",
+    "No UTxO existence, signatures, collateral consumption, funded wallet or broadcast was verified.",
+    "Preprod slot origin uses the official Shelley genesis systemStart, magic 1 and one-second slots."
+  ]
+}

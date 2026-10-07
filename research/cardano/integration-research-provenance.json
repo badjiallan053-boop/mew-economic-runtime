@@ -1,0 +1,59 @@
+{
+  "schema": "mew.integration-research-provenance.v1",
+  "skills": [
+    {
+      "repository": "flux-point-studios/cardano-agent-skills",
+      "commit": "727e02f3f7849b06a3e112dffe1c901840e1da51",
+      "path": "skills/meshjs-cardano/SKILL.md",
+      "sourceUrl": "https://github.com/flux-point-studios/cardano-agent-skills/blob/727e02f3f7849b06a3e112dffe1c901840e1da51/skills/meshjs-cardano/SKILL.md",
+      "skillSha256": "2dbaa570c3b681464536ac99ba31b97462907850ff94b710615a187733537f5c",
+      "reviewedOnly": true
+    },
+    {
+      "repository": "orchestra-research/ai-research-skills",
+      "commit": "773a52944ba4747a18bd4ae9ade53fff041adcbc",
+      "path": "16-prompt-engineering/outlines/SKILL.md",
+      "sourceUrl": "https://github.com/orchestra-research/ai-research-skills/blob/773a52944ba4747a18bd4ae9ade53fff041adcbc/16-prompt-engineering/outlines/SKILL.md",
+      "skillSha256": "1a797a1bb4d7fae753e4fbf1895beb36f63b8e75c7fba50e940cd1ef1a372574",
+      "reviewedOnly": true
+    }
+  ],
+  "videos": [
+    {
+      "url": "https://www.youtube.com/watch?v=JWmvVJz_X1M",
+      "title": "Writing Smart Contracts on Cardano with Aiken",
+      "reviewedStartSeconds": 613,
+      "reviewedEndSeconds": 744,
+      "captionSha256": "200b349c8706ee8382791720928ed873c9f73901950bab1cffc30ff781fca402",
+      "lesson": "Test compiled scripts in resolved transaction contexts and measure execution costs.",
+      "captionUse": "Local review only; no redistribution or training permission inferred",
+      "authority": "Context only; implementation verified against official APIs"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=EPYsP-l6z2s",
+      "title": "Local llama.cpp guide",
+      "reviewedStartSeconds": 2112,
+      "reviewedEndSeconds": 2235,
+      "captionSha256": "242e21533507f47c69e93c8b43f8e681070e8dbc1d6dd61ead227ac01880b36d",
+      "lesson": "Separate structured-output enforcement from model weight training and semantic evaluation.",
+      "captionUse": "Local review only; no redistribution or training permission inferred",
+      "authority": "Context only; implementation verified against official APIs"
+    }
+  ],
+  "packages": {
+    "outlines": "1.3.3",
+    "outlines_core": "0.2.14",
+    "mlx": "0.32.3",
+    "mlx-lm": "0.32.0",
+    "youtube-transcript-api": "1.2.4"
+  },
+  "transactionLibrary": {
+    "package": "@emurgo/cardano-serialization-lib-nodejs",
+    "version": "15.0.3"
+  },
+  "limitations": [
+    "Selected skill files reviewed from pinned commits; neither complete skill bundles nor their scripts were automatically installed.",
+    "Mesh/Outlines tutorial APIs were not assumed compatible; actual version-pinned APIs were used.",
+    "YouTube captions are noisy third-party context, not trusted instructions, evidence of product efficacy or training data."
+  ]
+}

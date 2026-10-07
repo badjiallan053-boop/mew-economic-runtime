@@ -4,6 +4,7 @@ import {dirname,join,resolve} from 'node:path';
 import {tmpdir} from 'node:os';
 import {createHash} from 'node:crypto';
 import {MEW} from '../core/mew.mjs';
+import {inspectEscrowJournal} from './escrow-backup.mjs';
 
 const fingerprint=path=>createHash('sha256').update(readFileSync(path)).digest('hex');
 /** Trusted operator paths only. Integrity is structural, not proof of freshness,
@@ -24,7 +25,8 @@ export function inspectBackup(path,{expectedDigest}={}){
     if(operations.some(o=>!['READY','DISPATCHING','UNKNOWN','ACKNOWLEDGED'].includes(o.status)||!snapshot.effects.some(e=>e.id===o.effectId)))throw Error('Backup operation binding invalid');
     const positions=snapshot.objectives.map(o=>k.position(o.id));
     if(positions.some(p=>!Number.isSafeInteger(p.exposure)||p.exposure<0||p.remainingBudget<0))throw Error('Backup exposure invalid');
-    return {integrity:'ok',mode,positions,operations,dispatchAllowed:false,retrySpendAllowed:false,releaseExposureAllowed:false,reconciliationRequired:true};
+    const escrowOperations=inspectEscrowJournal(db,snapshot);
+    return {integrity:'ok',mode,positions,operations,escrowOperations,dispatchAllowed:false,retrySpendAllowed:false,releaseExposureAllowed:false,reconciliationRequired:true};
   }finally{db.close();}
 }
 
