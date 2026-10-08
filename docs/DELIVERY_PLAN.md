@@ -15,6 +15,8 @@ Updated 7 October 2026. This is the sequenced backlog and ownership map; OPERATI
 
 The cross-functional target model is documented in [MEW_OPERATING_ECOSYSTEM.md](MEW_OPERATING_ECOSYSTEM.md). It preserves the release order above and does not mark proposed agent roles, partner mappings or Cardano lifecycle stages as implemented.
 
+For a complete presentation-to-launch review, use the [launch-readiness swarm](LAUNCH_READINESS_SWARM.md) and its bounded reviewer prompts. It supplies evidence handoffs and GO/NO-GO gates without adding runtime agent permissions.
+
 ## Interoperability contract
 
 Each adapter must carry objectiveId, principal, semanticKey, immutable effectId and provider jobId without replacing identities during retry. Use integer atomic monetary units and explicit network/asset identifiers. Source text and agent proposals carry no financial authority. Receipts must bind exact artifact hash and operation before they establish delivery. An unknown payment outcome retains capacity; the original operation is reconciled rather than repeated.

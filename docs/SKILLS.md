@@ -1,5 +1,9 @@
 # Skills used and reusable instructions
 
+## Launch readiness swarm
+
+Added an original `mew-launch-readiness` skill and seven bounded reviewer/orchestrator prompts for demo, model quality, customer delivery, security, Cardano rail, release operations and independent acceptance. They preserve the existing five-role advisory runtime and economic invariants; they do not add tools, live permissions or persistent agents. Skills.sh was used to discover security skill topics, then compared against OWASP's source project and existing local procedures. No third-party skill package was installed or executed. See [the gate workflow and source notes](LAUNCH_READINESS_SWARM.md).
+
 ## Agentic execution assurance cross-market positioning
 
 Created the original repository-local `agentic-execution-assurance` skill after
