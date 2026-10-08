@@ -1,5 +1,8 @@
 import {createPilotPlan,formatPilotPlan} from './pilot-plan.js';
 const form=document.querySelector('#pilot-form'),status=document.querySelector('#pilot-status'),output=document.querySelector('#pilot-output'),download=document.querySelector('#download-brief');
+// A guide link may select an existing deliverable, never submit or authorize it.
+const linkedWorkflow=new URLSearchParams(location.search).get('workflow');
+if(['report','clips'].includes(linkedWorkflow))document.querySelector('#workflow').value=linkedWorkflow;
 let currentBrief;
 form.addEventListener('submit',event=>{event.preventDefault();try{const fields=new FormData(form),plan=createPilotPlan({workflow:fields.get('workflow'),stage:fields.get('stage'),goal:fields.get('goal'),acceptance:fields.get('acceptance'),uncertainty:fields.get('uncertainty')==='on'});currentBrief=formatPilotPlan(plan);output.textContent=currentBrief;download.disabled=false;status.textContent='Draft prepared in this tab. Nothing was submitted. Review the required setup before arranging a pilot.';}catch(error){currentBrief=undefined;download.disabled=true;output.textContent='';status.textContent=error.message;}});
 form.addEventListener('input',()=>{currentBrief=undefined;download.disabled=true;output.textContent='';status.textContent='Inputs changed. Prepare the brief again to include your latest choices.';});

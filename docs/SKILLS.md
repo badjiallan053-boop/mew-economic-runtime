@@ -269,3 +269,18 @@ Installed the official `error-discovery` skill from skills.sh at
 Added original `mew-blinded-model-review` and `mew-external-signer-review` skills
 and routed them from `mew-activation-orchestrator`. See
 `docs/MODEL_PAYMENT_UNBLOCKING.md` for actual commands, research and boundaries.
+
+## 8 October: marketing and clipping story
+
+Created the original project-local `mew-marketing-workflow` skill for bounded
+planner/producer/reviewer/measurement handoffs, simple explanatory graphics and
+separate production/ad/creator evidence. Reviewed
+[web-design-guidelines on skills.sh](https://www.skills.sh/vercel-labs/agent-skills/web-design-guidelines)
+and its current Vercel interface guidance. Used native disclosures, visible focus,
+responsive diagrams, exact file review and simulation labels.
+
+Applied the [current GSD Core phase loop](https://github.com/open-gsd/gsd-core/blob/main/docs/explanation/the-phase-loop.md)
+as a local planning/verification convention in `.planning`. The older
+`gsd-build/get-shit-done` README redirects to this repository. No full GSD runtime
+installation, upstream command execution, remote skills installer or activated
+supplier model is claimed. Source reference guidance grants no external authority.

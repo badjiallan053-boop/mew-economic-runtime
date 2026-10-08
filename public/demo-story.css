@@ -1,0 +1,149 @@
+/* A diagram of browser-only kernel decisions. Paths never mean money moved. */
+#demo { --demo-mint: #bce9d5; --demo-muted: #c1d0c9; border-radius: 18px; }
+#demo .demo-top { margin-bottom: 30px; }
+#demo .prototype-label { font: 12px/1.5 var(--sans, "Instrument Sans", sans-serif); color: #d2e1d9; }
+#demo .demo-layout { grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(28px, 4vw, 60px); align-items: start; }
+#demo .demo-story h2 { font-size: clamp(36px, 3.8vw, 53px); line-height: 1.08; letter-spacing: -1.4px; }
+#demo .demo-story > p { max-width: 420px; font-size: 16px; line-height: 1.7; color: #c5d6cd; }
+#demo .demo-steps { margin: 25px 0; }
+#demo .demo-steps li { gap: 14px; padding: 14px 0; opacity: 1; color: #c1d0c9; }
+#demo .demo-steps li.active { color: #c7f4df; }
+#demo .demo-steps li.complete { color: #e6f3eb; }
+#demo .demo-steps li > span { flex: 0 0 30px; width: 30px; height: 30px; font-size: 11px; }
+#demo .demo-steps strong { font-size: 15px; line-height: 1.45; }
+#demo .demo-steps small { font-size: 13px; line-height: 1.5; }
+#demo .demo-controls { flex-wrap: wrap; gap: 12px 20px; }
+#demo .demo-controls .primary { min-height: 50px; font-size: 14px; padding: 14px 18px; }
+#demo .reset-link { font-size: 13px; }
+#demo .demo-engine-note { font-size: 12px !important; line-height: 1.6 !important; color: #bdcfc5 !important; }
+#demo .decision-console { padding: 24px; border-radius: 14px; background: #1d342d; overflow: hidden; }
+#demo .console-top { font: 13px/1.4 "Instrument Sans", sans-serif; letter-spacing: 0; padding-bottom: 16px; }
+#demo .console-top > span:first-child { color: #ccdcd3; }
+#demo .console-top strong { color: #f5f8f1; font-weight: 500; }
+#demo .decision-badge { font-size: 11px; font-weight: 500; letter-spacing: 0; padding: 6px 9px; border-radius: 40px; text-align: center; }
+#demo .purchase-map { margin: 24px 0 0; }
+#demo .map-route { display: grid; grid-template-columns: 80px 100px minmax(0, 1fr); align-items: center; gap: 12px; position: relative; padding: 12px 0 20px; }
+#demo .map-route svg { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+#demo .map-goal { display: grid; justify-items: center; position: relative; color: #d5e2d8; z-index: 1; }
+#demo .map-goal::after { content: ""; position: absolute; left: 100%; width: 20px; top: 35px; height: 1px; background: #8bafa0; }
+#demo .map-goal svg { width: 38px; height: 46px; margin-bottom: 12px; }
+#demo .map-goal span { font-size: 12px; }
+#demo .map-goal small { font-size: 10px; color: #bfd0c5; margin-top: 5px; }
+#demo .map-guard { position: relative; display: grid; justify-items: center; color: var(--demo-mint); z-index: 1; padding-top: 14px; }
+#demo .guard-halo { position: absolute; width: 72px; height: 72px; border-radius: 50%; border: 1px solid #a3d9c954; top: 0; background: radial-gradient(circle, #a3d9c91c, transparent 75%); transition: border-color .3s, box-shadow .3s; }
+#demo .map-guard::after { content: ""; position: absolute; left: calc(50% + 36px); width: calc(50% - 20px); top: 35px; height: 1px; background: #688c7d; }
+#demo .map-guard svg { width: 36px; height: 40px; z-index: 1; }
+#demo .map-guard strong { font-size: 14px; letter-spacing: 2px; margin-top: 24px; }
+#demo .map-guard small { font-size: 10px; line-height: 1.5; margin-top: 5px; text-align: center; white-space: nowrap; }
+#demo .map-suppliers { display: grid; gap: 16px; padding-left: 10px; position: relative; }
+#demo .map-suppliers::before { content: ""; position: absolute; left: -3px; top: 40px; bottom: 40px; width: 1px; background: #688c7d; }
+#demo .supplier-card { min-height: 80px; display: grid; grid-template-columns: 28px 1fr; gap: 4px 10px; align-items: center; padding: 12px; border: 1px solid #627b6e; border-radius: 10px; background: #253e33; position: relative; transition: border-color .3s, background .3s; }
+#demo .supplier-card::before { content: ""; position: absolute; right: 100%; width: 14px; height: 1px; top: 39px; background: #688c7d; }
+#demo .supplier-avatar { grid-row: 1; display: grid; place-items: center; width: 28px; height: 28px; background: #d9dfd218; border-radius: 8px; font-size: 12px; color: #dfebdf; }
+#demo .supplier-card strong { display: block; font-size: 13px; font-weight: 500; color: #eff4e9; }
+#demo .supplier-card small { display: block; font-size: 11px; margin-top: 3px; color: #c4d5c8; }
+#demo .supplier-state { grid-column: 1 / -1; padding-top: 6px; font-size: 11px; color: #c2d2c9; }
+#demo .route-dot { position: absolute; left: -17px; top: 36px; width: 7px; height: 7px; background: #8caf9d; border-radius: 50%; }
+#demo[data-phase="1"] .supplier-alpha, #demo[data-phase="2"] .supplier-alpha, #demo[data-phase="3"] .supplier-alpha { border-color: #bce9d5; }
+#demo[data-phase="1"] .supplier-alpha .supplier-state { color: #c5f4db; }
+#demo[data-phase="2"] .supplier-alpha .supplier-state, #demo[data-phase="3"] .supplier-alpha .supplier-state { color: #f2dcab; }
+#demo[data-phase="2"] .supplier-alpha .supplier-state::before, #demo[data-phase="3"] .supplier-alpha .supplier-state::before { content: "◷ "; }
+#demo[data-phase="3"] .supplier-beta { border-color: #c5baff; background: #3d3b522e; }
+#demo[data-phase="3"] .supplier-beta .supplier-state { color: #e0d8ff; }
+#demo[data-phase="3"] .supplier-beta .supplier-state::before { content: "Ⅱ "; }
+#demo[data-phase="3"] .supplier-beta .route-dot { background: #c5baff; border-radius: 2px; }
+#demo[data-phase="3"] .guard-halo { border-color: #c5baff; box-shadow: 0 0 24px #b9b4ff1a; }
+#demo[data-phase="unavailable"] .map-route { opacity: .55; }
+#demo .purchase-map figcaption { color: #c3d6c8; font-size: 12px; line-height: 1.6; margin-top: 4px; min-height: 38px; }
+#demo .fixture-result { min-height: 158px; padding: 20px 0 18px; margin-top: 8px; border-top: 1px solid #446055; }
+#demo .fixture-result > span { font-size: 10px; letter-spacing: 1px; color: #bcd8c7; }
+#demo .fixture-result h3 { font-size: clamp(21px, 2vw, 27px); line-height: 1.2; margin: 10px 0; letter-spacing: -.5px; }
+#demo .fixture-result p { font-size: 14px; line-height: 1.65; color: #ccdad0; margin: 0; }
+#demo .demo-money { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 4px 0 16px; }
+#demo .demo-money > div { padding: 12px; border-radius: 8px; background: #122b22a3; }
+#demo .demo-money > div > span { display: block; font-size: 11px; line-height: 1.5; color: #c3d3c9; }
+#demo .demo-money strong { display: block; font-size: 28px; font-weight: 500; font-variant-numeric: tabular-nums; margin-top: 6px; letter-spacing: -1px; }
+#demo .demo-money small { font-size: 12px; color: #c9ddd0; letter-spacing: 0; }
+#demo .budget-track { height: 5px; margin: 0; }
+#demo .track-labels { font-size: 11px; line-height: 1.6; color: #c9d9cf; margin-top: 9px; }
+#demo .demo-details { border-top: 1px solid #446055; margin-top: 20px; padding-top: 15px; }
+#demo .demo-details summary { cursor: pointer; color: #d4e4da; font-size: 12px; min-height: 30px; line-height: 1.6; padding-bottom: 8px; }
+#demo .demo-details summary:focus-visible { outline: 3px solid #bce9d5; outline-offset: 4px; border-radius: 3px; }
+#demo .demo-details p { color: #c3d4c9; font-size: 13px; line-height: 1.7; }
+#demo .console-row { font-size: 12px; }
+#demo .console-link { font-size: 13px; }
+#demo .demo-takeaway { display: grid; grid-template-columns: 1.15fr 1fr 1fr; gap: 22px; margin-top: 40px; padding-top: 30px; border-top: 1px solid #426053; }
+#demo .demo-takeaway .eyebrow { color: #bbd6c6; font-size: 10px; letter-spacing: 1px; }
+#demo .demo-takeaway h3 { font: 26px/1.2 "Instrument Serif", Georgia, serif; letter-spacing: 0; margin: 12px 0; }
+#demo .demo-takeaway h3 em { color: #bce9d5; }
+#demo .demo-takeaway p { font-size: 13px; line-height: 1.7; color: #c4d5ca; max-width: 300px; margin: 0; }
+#demo .comparison-card { border-radius: 10px; border: 1px solid #64806f; padding: 18px; }
+#demo .comparison-card > span { color: #c6d9cb; font-size: 12px; }
+#demo .report-pair { display: flex; align-items: center; gap: 13px; margin: 20px 0; color: #dbbaaa; }
+#demo .report-pair svg { width: 30px; height: 38px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linejoin: round; }
+#demo .report-pair > span { font-size: 20px; }
+#demo .comparison-card strong { display: block; font-size: 14px; font-weight: 500; line-height: 1.5; }
+#demo .comparison-card small { display: block; margin-top: 8px; color: #c6d5cb; font-size: 11px; line-height: 1.6; }
+#demo .comparison-mew { background: #bce9d510; border-color: #bce9d56b; }
+#demo .comparison-mew .report-pair { color: #bce9d5; }
+#demo .comparison-pause { display: grid; place-items: center; width: 34px; height: 34px; background: #c5baff16; color: #e0d8ff; border: 1px solid #c5baff55; border-radius: 50%; }
+@keyframes demo-path-arrival { from { transform: scale(.75); opacity: .5; } to { transform: scale(1); opacity: 1; } }
+#demo[data-phase="1"] .supplier-alpha .route-dot, #demo[data-phase="3"] .supplier-beta .route-dot { animation: demo-path-arrival .4s ease-out both; }
+#demo[data-motion-paused="true"] *, #demo[data-motion-paused="true"] *::before, #demo[data-motion-paused="true"] *::after { animation: none !important; transition: none !important; }
+@media (max-width: 1020px) {
+  #demo { padding: 32px 28px; }
+  #demo .demo-layout { gap: 28px; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); }
+  #demo .decision-console { padding: 20px; }
+  #demo .map-route { grid-template-columns: 56px 80px minmax(0, 1fr); gap: 8px; }
+  #demo .map-goal::after { width: 12px; }
+  #demo .supplier-card { padding: 10px; gap: 4px 6px; }
+  #demo .demo-takeaway { gap: 14px; }
+}
+@media (max-width: 800px) {
+  #demo .demo-layout { grid-template-columns: 1fr; }
+  #demo .demo-story h2 br:last-child { display: none; }
+  #demo .demo-story > p { max-width: 560px; }
+  #demo .demo-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+  #demo .demo-steps li { display: block; border-bottom: 0; border-top: 1px solid #527363; padding-top: 16px; }
+  #demo .demo-steps li > span { margin-bottom: 12px; }
+  #demo .demo-controls { margin-bottom: 14px; }
+  #demo .map-route { grid-template-columns: 90px 100px minmax(0, 1fr); gap: 20px; }
+  #demo .map-goal::after { width: 28px; }
+  #demo .demo-takeaway { grid-template-columns: 1fr 1fr; }
+  #demo .demo-takeaway > div:first-child { grid-column: 1 / -1; }
+  #demo .demo-takeaway h3 br { display: none; }
+  #demo .demo-takeaway p { max-width: 560px; }
+}
+@media (max-width: 520px) {
+  #demo { padding: 25px 18px; border-radius: 12px; }
+  #demo .demo-top { display: block; margin-bottom: 24px; }
+  #demo .demo-top .eyebrow { margin-bottom: 10px; font-size: 10px; }
+  #demo .demo-story h2 { font-size: 37px; }
+  #demo .demo-story > p { font-size: 15px; }
+  #demo .demo-steps { grid-template-columns: 1fr; gap: 0; margin: 20px 0; }
+  #demo .demo-steps li { display: flex; border-top: 0; border-bottom: 1px solid #426053; padding: 12px 0; }
+  #demo .demo-steps li > span { margin-bottom: 0; }
+  #demo .demo-steps strong { font-size: 14px; }
+  #demo .demo-controls { gap: 10px 16px; }
+  #demo .demo-controls .primary { font-size: 13px; }
+  #demo .decision-console { padding: 16px; }
+  #demo .console-top { flex-wrap: wrap; gap: 8px; }
+  #demo .map-route { grid-template-columns: 60px 70px minmax(0, 1fr); gap: 8px; }
+  #demo .map-goal::after { width: 12px; }
+  #demo .map-goal span { font-size: 10px; }
+  #demo .map-goal small { font-size: 9px; }
+  #demo .map-guard small { font-size: 9px; white-space: normal; }
+  #demo .map-guard::after { left: calc(50% + 30px); width: calc(50% - 20px); }
+  #demo .guard-halo { width: 60px; height: 60px; top: 3px; }
+  #demo .supplier-card { grid-template-columns: 22px 1fr; padding: 9px 7px; }
+  #demo .supplier-avatar { width: 22px; height: 24px; }
+  #demo .supplier-state { font-size: 10px; }
+  #demo .demo-takeaway { margin-top: 28px; gap: 12px; }
+  #demo .comparison-card { padding: 14px; }
+  #demo .comparison-card > span { font-size: 11px; }
+  #demo .comparison-card strong { font-size: 13px; }
+  #demo .report-pair { gap: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #demo *, #demo *::before, #demo *::after { animation: none !important; transition: none !important; }
+}

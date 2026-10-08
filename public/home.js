@@ -25,6 +25,7 @@ function syncMotion() {
     : manuallyPaused
       ? "Resume motion ▶"
       : "Pause motion Ⅱ";
+  $("#demo").dataset.motionPaused = String(manuallyPaused || preferencePaused || document.hidden);
   if (effectivePaused) resultAnimation?.cancel();
   document.dispatchEvent(
     new CustomEvent("mew:motion-preference", {
@@ -78,40 +79,36 @@ const semanticKey = "research-report:showcase:v1";
 const firstId = "showcase-alpha-report";
 const content = [
   {
-    decision: "READY",
-    kicker: "YOUR MANDATE, BEFORE THE FIRST REQUEST",
-    title: "Start with one clear objective.",
-    description:
-      "Purchase one report, with maximum exposure of 3 ADA. Run the first request to see the decision.",
-    button: "Reserve the first report →",
-    equivalent: "Not attempted",
+    decision: "READY", label: "Ready to try",
+    kicker: "BEFORE YOU START", title: "One report. A 3 ADA limit.",
+    description: "Let’s ask Alpha first. Watch what changes when the answer never comes.",
+    button: "Ask Alpha for the report →", equivalent: "Not tried",
+    alpha: "Not started", beta: "Not started", guard: "Checks the rule",
+    caption: "One report. Two possible suppliers. MEW checks every request.",
   },
   {
-    decision: "ALLOW",
-    kicker: "ALLOW → RESERVE",
-    title: "The first report holds capacity.",
-    description:
-      "The engine reserved 1.50 ADA for Supplier Alpha. The one-report objective is held. No payment was dispatched.",
-    button: "Observe the timeout →",
-    equivalent: "Not attempted",
+    decision: "ALLOW", label: "First request OK",
+    kicker: "01 / ASK ALPHA", title: "The first request is OK.",
+    description: "MEW sets aside 1.50 ADA for Alpha and keeps one report request open. No real money moves.",
+    button: "What if Alpha goes quiet? →", equivalent: "Not tried",
+    alpha: "Request held", beta: "Not started", guard: "First request OK",
+    caption: "Alpha has the only report slot. Beta has not been asked.",
   },
   {
-    decision: "UNKNOWN",
-    kicker: "TIMEOUT → RETAIN",
-    title: "Silence keeps the commitment held.",
-    description:
-      "The outcome is unknown. Exposure stays at 1.50 ADA and the one-report quantity remains held. A timeout does not prove failure.",
-    button: "Try the equivalent report →",
-    equivalent: "Not attempted",
+    decision: "UNKNOWN", label: "Still waiting",
+    kicker: "02 / NO ANSWER", title: "No answer doesn’t mean it failed.",
+    description: "Alpha might still be working. MEW keeps the 1.50 ADA set aside until there’s evidence of what happened.",
+    button: "Try the same report from Beta →", equivalent: "Not tried",
+    alpha: "Still waiting", beta: "Not started", guard: "Keeps the slot",
+    caption: "Alpha’s outcome is unknown. Its request stays open.",
   },
   {
-    decision: "DEFER",
-    kicker: "EQUIVALENT REQUEST → RECONCILE",
-    title: "Enough budget. No spare report.",
-    description:
-      "1.50 + 1.40 = 2.90 ADA fits the 3 ADA ceiling. The engine still defers Beta: the one-report quantity is held by the unresolved Alpha request.",
-    button: "Run the demo again ↻",
-    equivalent: "Deferred · not reserved",
+    decision: "DEFER", label: "Second request paused",
+    kicker: "03 / TRY BETA", title: "Same report? Pause the second request.",
+    description: "You have enough budget for both, but asked for only one report. MEW pauses Beta. Check what happened with Alpha first.",
+    button: "Try the story again ↻", equivalent: "Paused · no money set aside",
+    alpha: "Still waiting", beta: "Paused by MEW", guard: "Stops a duplicate",
+    caption: "Alpha is still open. MEW pauses Beta, so no second request is approved.",
   },
 ];
 function render() {
@@ -119,19 +116,25 @@ function render() {
   const position = kernel.position(objectiveId);
   // The quantity gate and all amounts come from the actual kernel snapshot.
   const held = position.exposure / 1_000_000;
-  $("#fixture-decision").textContent = item.decision;
+  $("#fixture-decision").textContent = item.label;
+  $("#engine-decision").textContent = item.decision;
+  $("#demo").dataset.phase = String(phase);
+  $("#alpha-state").textContent = item.alpha;
+  $("#beta-state").textContent = item.beta;
+  $("#map-guard-label").textContent = item.guard;
+  $("#map-caption").textContent = item.caption;
   $("#fixture-decision").dataset.decision = item.decision;
   $("#fixture-kicker").textContent = item.kicker;
   $("#fixture-title").textContent = item.title;
   $("#fixture-description").textContent = item.description;
   $("#exposure-value").textContent = held.toFixed(2);
   $("#quantity-value").textContent = `${position.equivalents} / 1`;
-  $("#budget-label").textContent = `${held.toFixed(2)} ADA held`;
+  $("#budget-label").textContent = `${held.toFixed(2)} ADA set aside`;
   $("#budget-fill").style.width = `${(100 * position.exposure) / 3_000_000}%`;
   $("#budget-meter").setAttribute("aria-valuenow", String(held));
   $("#budget-meter").setAttribute(
     "aria-valuetext",
-    `${held.toFixed(2)} of 3 ADA held`,
+    `${held.toFixed(2)} of 3 ADA set aside in this demo`,
   );
   $("#equivalent-status").textContent = item.equivalent;
   next.textContent = item.button;
@@ -171,7 +174,14 @@ function showFailure() {
   sculpture.dataset.decision = "UNAVAILABLE";
   $("#art-caption-state").textContent =
     "Concept illustration · decision engine unavailable";
-  $("#fixture-decision").textContent = "UNAVAILABLE";
+  $("#demo").dataset.phase = "unavailable";
+  $("#alpha-state").textContent = "Demo unavailable";
+  $("#beta-state").textContent = "Demo unavailable";
+  $("#map-guard-label").textContent = "Demo unavailable";
+  $("#map-caption").textContent = "The demo could not run. No decision is claimed.";
+  $("#engine-decision").textContent = "UNAVAILABLE";
+  $("#fixture-decision").textContent = "Demo unavailable";
+  $("#fixture-decision").dataset.decision = "UNAVAILABLE";
   $("#fixture-kicker").textContent = "DEMO PAUSED";
   $("#fixture-title").textContent = "The decision engine could not run.";
   $("#fixture-description").textContent =
