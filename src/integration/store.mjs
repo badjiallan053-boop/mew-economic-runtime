@@ -1,4 +1,5 @@
 import { enrollPostgresDelivery, acceptPostgresDelivery } from "./delivery.mjs";
+import { preparePostgresClosing, markPostgresClosingUnknown, reconcilePostgresClosing } from "./escrow-closing.mjs";
 import { createHash, randomUUID } from "node:crypto";
 import { MEW } from "../core/mew.mjs";
 import {
@@ -50,7 +51,7 @@ function parties(rows) {
 
 /** Async PostgreSQL ledger, separate from the public SQLite fixture store.
  * Every mutation uses one checked-out connection and one principal row lock.
- * No signer, broadcast, refunds or model-controlled economic action. */
+ * No signer, broadcast, exposure release or model-controlled economic action. */
 export class IntegrationStore {
   constructor({
     pool,
@@ -298,6 +299,7 @@ export class IntegrationStore {
   ) {
     const before = await this.operation(principal, id);
     if (!before) throw Error("Unknown funding operation");
+    if (before.closing) throw Error("Reconcile original closing; funding stage is immutable");
     const observed = before.observation
       ? await revalidateCardanoObservation({
           observation: before.observation,
@@ -369,6 +371,15 @@ export class IntegrationStore {
   }
   acceptDelivery(principal, input) {
     return acceptPostgresDelivery(this, principal, input);
+  }
+  prepareClosing(principal, input) {
+    return preparePostgresClosing(this, principal, input);
+  }
+  markClosingUnknown(principal, input) {
+    return markPostgresClosingUnknown(this, principal, input);
+  }
+  reconcileClosing(principal, input, options) {
+    return reconcilePostgresClosing(this, principal, input, options);
   }
   async startModelRun(principal, { id, contract, maxRuns = 1 }) {
     identifier(id);

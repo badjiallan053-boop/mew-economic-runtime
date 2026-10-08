@@ -14,6 +14,8 @@ const actions = [
   "create-objective",
   "prepare-payment",
   "reconcile-payment",
+  "prepare-closing",
+  "reconcile-closing",
   "evaluate-model",
   "enroll-delivery",
   "accept-delivery",
@@ -146,6 +148,15 @@ export class IntegrationService {
       body.operationId,
       this.blockfrost,
     );
+  }
+  prepareClosing(token, body) {
+    return this.store.prepareClosing(this.principal(token, "prepare-closing"), body);
+  }
+  markClosingUnknown(token, body) {
+    return this.store.markClosingUnknown(this.principal(token, "prepare-closing"), body);
+  }
+  reconcileClosing(token, body) {
+    return this.store.reconcileClosing(this.principal(token, "reconcile-closing"), body, this.blockfrost);
   }
   enrollDelivery(token, body) {
     exact(body, [

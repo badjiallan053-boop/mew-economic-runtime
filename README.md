@@ -36,7 +36,7 @@ analytics, publishing or payments are executed. See [campaign design](docs/MARKE
 
 ## Private Supabase, model and preprod payment backend
 
-The selected MEW Supabase project has four private tables with forced row security.
+The selected MEW Supabase project has six private tables with forced row security.
 A separate authenticated, loopback backend adds durable model-evaluation attempts,
 unsigned ADA escrow drafts and transaction reconciliation using the existing kernel.
 Application login and provider credentials still require private configuration;
@@ -45,6 +45,13 @@ See [setup, verification and remaining gates](docs/SUPABASE_MODEL_PAYMENTS.md) a
 [the three-lane activation team](docs/ACTIVATION_TEAM.md). New commands prepare
 private enrollment (`integration:setup`), inspect public preprod wallet data
 (`cardano:wallet`) and verify advisory handoffs (`activation:review`).
+
+The [Cardano payment system](docs/PAYMENT_SYSTEM.md) connects the existing compiled
+ADA escrow to durable acceptance/cancellation preparation, exact funding-cell and
+receipt binding, UNKNOWN/replay recovery and offline external-witness assembly.
+Run `npm run payment:lifecycle-rehearse` for the synthetic local SQL/CBOR demo.
+It makes no wallet/model/network calls. Live signing, submission and aggregate
+fee/refund release remain disabled pending custody, funding and independent audit.
 
 ## API
 

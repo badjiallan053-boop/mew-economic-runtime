@@ -46,9 +46,7 @@ const provider = (
     if (gate) await gate;
     assert.ok(url.startsWith("https://cardano-preprod.blockfrost.io/api/v0/"));
     assert.equal(opts.redirect, "error");
-    return {
-      ok: true,
-      json: async () =>
+    return new Response(JSON.stringify(
         url.endsWith("/blocks/latest")
           ? { hash: "9".repeat(64), height: tip }
           : {
@@ -57,7 +55,7 @@ const provider = (
               block_height: height,
               valid_contract: true,
             },
-    };
+    ));
   },
 });
 const closing = (s, action) => {

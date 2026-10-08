@@ -6,6 +6,11 @@ The offline planner, fee/collateral budget, protocol identity binding, read-only
 re-observation helper and remaining preprod gates are described in
 [BLOCKCHAIN_PROTOCOL_RUNBOOK.md](BLOCKCHAIN_PROTOCOL_RUNBOOK.md).
 
+The existing contract is now connected to private durable closing preparation and
+external key-witness assembly; see [PAYMENT_SYSTEM.md](PAYMENT_SYSTEM.md). Its source,
+compiled blueprint and address are unchanged. Local checks and simulated lifecycle
+observations do not satisfy the funded preprod or independent-audit requirements.
+
 The two terminal actions consume the escrow input once. `Accept` requires both the principal and provider payment keys in the transaction's required signatories, an exact match to the precommitted artifact digest, and a single payout of every locked lovelace to the provider's full address. `Cancel` requires the principal's required signature and pays every locked lovelace to the principal's full address. Cancellation is available immediately; there is no time-based automatic release.
 
 ## Immutable datum and action encoding

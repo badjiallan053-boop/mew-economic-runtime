@@ -1,4 +1,5 @@
 import { revalidateCardanoObservation } from "./cardano-observation.mjs";
+import { readPreprodJson } from "./cardano-read.mjs";
 /** First trusted provider lookup for a locally computed transaction hash. */
 export async function observeDraftTransaction({
   txHash,
@@ -21,16 +22,7 @@ export async function observeDraftTransaction({
   if (typeof projectId !== "string" || !projectId)
     return { ...denied, reason: "NOT_CONFIGURED" };
   try {
-    const response = await fetchImpl(
-      "https://cardano-preprod.blockfrost.io/api/v0/txs/" + txHash,
-      {
-        headers: { project_id: projectId },
-        redirect: "error",
-        signal: AbortSignal.timeout(10000),
-      },
-    );
-    if (!response.ok) throw Error("Transaction unavailable");
-    const tx = await response.json();
+    const tx = await readPreprodJson("/txs/" + txHash, { projectId, fetchImpl });
     if (
       tx.hash !== txHash ||
       typeof tx.block !== "string" ||

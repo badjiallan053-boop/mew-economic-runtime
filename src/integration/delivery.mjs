@@ -108,6 +108,16 @@ function boundEffect(kernel, principal, expected) {
     throw Error("Delivery effect binding mismatch");
   return effect;
 }
+async function boundEscrowArtifact(client, principal, expected) {
+  const { rows } = await client.query(
+    "SELECT record FROM mew_private.escrow_operations WHERE principal=$1 AND effect_id=$2",
+    [principal, expected.effectId],
+  );
+  // Non-escrow delivery workflows keep their existing contract. An escrow must
+  // never satisfy its objective with a different artifact, even if signed.
+  if (rows.length && rows[0].record.contract.intent.artifactSha256 !== expected.artifactSha256)
+    throw Error("Delivery differs from committed escrow artifact");
+}
 /** Immutable operator-attested external job and accepted digest, no dispatch. */
 export async function enrollPostgresDelivery(store, principal, expected) {
   validateExpected(expected);
@@ -115,6 +125,7 @@ export async function enrollPostgresDelivery(store, principal, expected) {
     throw Error("Delivery ownership mismatch");
   return store.transaction(principal, async (c, k) => {
     boundEffect(k, principal, expected);
+    await boundEscrowArtifact(c, principal, expected);
     const old = await c.query(
       "SELECT contract FROM mew_private.delivery_contracts WHERE principal=$1 AND (effect_id=$2 OR (provider=$3 AND job_id=$4))",
       [principal, expected.effectId, expected.provider, expected.jobId],
@@ -176,6 +187,7 @@ export async function acceptPostgresDelivery(
     if (!expected) throw Error("No accepted delivery contract");
     validateExpected(expected);
     boundEffect(k, principal, expected);
+    await boundEscrowArtifact(c, principal, expected);
     for (const field of fields)
       if (envelope.payload[field] !== expected[field])
         throw Error("Delivery receipt binding mismatch");

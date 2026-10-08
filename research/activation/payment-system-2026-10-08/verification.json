@@ -1,0 +1,70 @@
+{
+  "schema": "mew.payment-system-verification.v1",
+  "checkedAt": "2026-10-08T00:13:32.923358+00:00",
+  "sourceSha256": {
+    "contracts/approval-escrow/validators/approval_escrow.ak": "cacd4a39e2d6499e07f7dd76d83ab192d3cb9bc96996483ce8caf9a3385b06dd",
+    "contracts/approval-escrow/lib/mew/types.ak": "12fb9f7484def7cde21bf361845d774ab35ea2d759bbb146819fa1349aa3c233",
+    "contracts/approval-escrow/plutus.json": "abe6547ac833a48772ce6e07e9a1071a2e1d6928e9c103195390e88e9474249f",
+    "contracts/approval-escrow/aiken.toml": "69ffda0b0ac396bc64d6006475c6f30b98aff990b5657528c0ccb1543d65bc15",
+    "contracts/approval-escrow/aiken.lock": "b285931c531ca3cfebba9a9778627934aa062a46b33f1fb280d0867736ae4066",
+    "src/adapters/cardano-read.mjs": "4859ce5970e7d940eb35fdbcf4b7ee4ec802cebdef2aa2b5a953e4d3a5f3c85f",
+    "src/adapters/cardano-observation.mjs": "36fafafb7d8e807117b4dc6778e7d79a6569ab0a7136868d3048157c3998547a",
+    "src/adapters/cardano-first-observation.mjs": "1634b9fcd75e2057bb7cbde36b9380955dd344d30149f590d390a7e4eec5c373",
+    "src/adapters/escrow-witness-assembly.mjs": "7b830178dfa283fcaea2b847b1095ad3df5f4db58717a9ecb91c8dacca46ba84",
+    "src/integration/escrow-closing.mjs": "2c5235ff15dbab06ac7502a4dfd33c53a5a5c8315d94f661b55c1278078e5ef1",
+    "src/integration/delivery.mjs": "69cfd77d833a2c2614b970a313e7279c52744c5037fc4034eb7c7d174a1cbb11",
+    "src/integration/store.mjs": "7f195f60531975099f3e56f2f80f989374eeabd48959f8cf264ac775a2f83acb",
+    "src/integration/service.mjs": "8c82d69924eec44f557eb9e0fc1a3de60bce4330dfe5ea7bad9a51e1a55b4633",
+    "src/integration/http.mjs": "9c9c8f09d979b530cb8ed03ef681a2384d7841a8ef5677e9beda0294ce5e4d2e",
+    "scripts/assemble-escrow-witnesses.mjs": "d8c7ea6f4ef05fc1db81a75ed1553c559c051097350716ad22a176d4ef2f65f9",
+    "scripts/payment-lifecycle-rehearsal.mjs": "7613efea0aa4bac808bb25258230641308a7a709434c08a259a41ba9e3785fb5"
+  },
+  "applicationTests": {
+    "tests": 405,
+    "passed": 405,
+    "failed": 0,
+    "logSha256": "9e08b473818cd0d3514b5b1b86916fb3414fa4a20e54b8aeaaaa14e34ae1276f"
+  },
+  "buildPassed": true,
+  "aiken": {
+    "version": "v1.1.23+8949565",
+    "checkPassed": true,
+    "buildPassed": true,
+    "tests": 49,
+    "passed": 49,
+    "failed": 0,
+    "reportSha256": "52a625285ed72e76735a87c73c65b4155958a28bb1eac14a5ab2aef2672fae6f",
+    "blueprintUnchanged": true
+  },
+  "localRehearsal": {
+    "synthetic": true,
+    "sha256": "20573e38a063c7574da1f3facfad7bea668bab35dbe9ec3c2e6a81b90c5f01c9",
+    "currentRunnerReproductionMatched": true,
+    "provider": "mock-only",
+    "database": "local-pglite"
+  },
+  "witnessCliSmoke": {
+    "synthetic": true,
+    "ephemeralTestKeyOnly": true,
+    "assembledExternalFixtureWitness": true,
+    "allRequiredKeysPresent": true,
+    "reportSha256": "ba23ba00941200cf5fe5919f5f739c80c656b8ce5f71c8eea57a48290070aab7",
+    "privateOutputPermissionsVerified": true
+  },
+  "liveDatabaseAccessed": false,
+  "liveModelInvoked": false,
+  "walletInvoked": false,
+  "realTransactionSigned": false,
+  "transactionBroadcast": false,
+  "paymentsEnabled": false,
+  "aggregateExposureReleaseEnabled": false,
+  "independentAuditPerformed": false,
+  "deploymentPerformed": false,
+  "limitations": [
+    "PGlite serialized SQL and close/reopen checks do not prove hosted PostgreSQL multi-client concurrency or crash recovery",
+    "Mocked hash observations are not funded preprod lifecycle evidence",
+    "Fixture signatures are cryptographic tests, not signer custody approval",
+    "ADA only; Masumi native-token economic lifecycle remains pending",
+    "Aggregate fee/collateral cost release and abandoned-close replacement recovery need separate reviewed protocols"
+  ]
+}

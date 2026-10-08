@@ -58,7 +58,9 @@
     "model:experiment-audit": "node scripts/model-experiment-audit.mjs",
     "model:localized-experiment-audit": "node scripts/model-experiment-localized-audit.mjs",
     "model:blind-review": "node scripts/model-blind-review.mjs",
-    "escrow:witness-review": "node scripts/escrow-witness-review.mjs"
+    "escrow:witness-review": "node scripts/escrow-witness-review.mjs",
+    "escrow:assemble-witnesses": "node scripts/assemble-escrow-witnesses.mjs",
+    "payment:lifecycle-rehearse": "node scripts/payment-lifecycle-rehearsal.mjs"
   },
   "dependencies": {
     "@emurgo/cardano-serialization-lib-nodejs": "15.0.3",

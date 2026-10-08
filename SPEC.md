@@ -39,9 +39,14 @@ funding drafts. A bound transaction observation preserves the full exposure;
 rollback requires review and cannot release capacity. The private PostgreSQL delivery port now binds Ed25519 receipts to immutable
 provider/job/artifact/key identity and commits receipt replay plus satisfaction
 atomically. Its migration is installed; hosted runtime delivery remains unverified.
-Native-token Masumi writes, closing transactions, signing and broadcast remain pending.
+Durable acceptance/cancellation preparation and fixed-hash closing observations now
+bind the original funding cell and retain all exposure/locks. Acceptance preparation
+requires authenticated delivery of the committed artifact. Observed escrow return
+does not establish full fee-inclusive refund; aggregate cost release remains pending.
+Native-token Masumi writes, signing and broadcast remain pending.
 A separate asset-aware in-memory prototype has no dispatch or durable authority.
 See docs/SUPABASE_MODEL_PAYMENTS.md for exact integration boundaries and setup.
+See docs/PAYMENT_SYSTEM.md for the closing journal and offline witness assembly.
 
 Supabase Auth SDK session helpers and a scoped session-status endpoint are separate
 from private database bearer enrollment. Auth user identity grants no economic or

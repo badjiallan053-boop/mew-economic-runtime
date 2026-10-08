@@ -4,7 +4,13 @@ The offline `escrow:witness-review` tool now verifies supplied transaction
 signatures against a freshly rebuilt exact draft; see
 docs/MODEL_PAYMENT_UNBLOCKING.md. It is not a signer, submitter or activation gate.
 
-The private integration prepares unsigned ADA escrow funding drafts and records full exposure. It does not sign, broadcast or implement a native-token ledger. The funded-wallet, closing and independent-audit gates remain open. This review is internal engineering work, not an independent contract audit.
+The private integration prepares unsigned ADA escrow funding and closing drafts,
+records full exposure and journals observations of the original accept/cancel
+transactions. The offline helper assembles supplied wallet key witnesses without
+invoking a wallet. See [PAYMENT_SYSTEM.md](PAYMENT_SYSTEM.md). It does not sign,
+broadcast, release aggregate exposure or implement a durable native-token ledger.
+Funded-wallet, live closing lifecycle and independent-audit gates remain open.
+This review is internal engineering work, not an independent contract audit.
 
 ## Read-only wallet observation
 

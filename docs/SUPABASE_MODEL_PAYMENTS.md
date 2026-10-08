@@ -12,6 +12,14 @@ Real model evaluation uses the existing OpenAI Responses transport and original 
 
 Payment integration persists an unsigned **Cardano preprod ADA approval-escrow funding draft**, the full amount/fee/collateral exposure and globally unique input locks in one transaction. It reuses the existing deterministic kernel, address enrollment, intent validator, CSL builder and Blockfrost observer. A timeout retains exposure. Reconciliation uses the locally computed transaction hash; changed block observations require review. Funding observation does not claim seller settlement, delivery, refund or absolute finality. Nothing signs or broadcasts.
 
+The private store now also prepares an immutable acceptance/cancellation close for
+the exact original funding cell, locks closing inputs atomically and journals UNKNOWN
+and fixed-hash observations. Acceptance preparation requires authenticated delivery
+of the committed artifact. New `prepare-closing`/`reconcile-closing` scopes are explicit;
+existing tokens receive no additional authority. No aggregate cost release follows
+from observing returned escrow. The runnable workflow, routes and offline wallet
+witness-set assembly are in [PAYMENT_SYSTEM.md](PAYMENT_SYSTEM.md).
+
 Masumi connectivity supports the reviewed MPS health and authenticated preprod purchase **GET** endpoints. The pinned source is `5fccf58b0f30873085b59ee540c67b4ae8433cd0`; health alone cannot prove deployment version or authenticated access. Private purchase contents are not returned. **Masumi tUSDM purchases/withdrawals are not enabled:** the current economic kernel accounts in lovelace and cannot silently reinterpret native-token units. Existing native-token receipt verification remains a separate boundary.
 
 ## Provision the private database credential
