@@ -134,6 +134,12 @@ remain selectable explicitly; saved legacy missions are not migrated.
 
 See [DELIVERY_PLAN.md](docs/DELIVERY_PLAN.md) for ordered outcomes, accountable roles and evidence gates. `npm run deploy:verify` checks the existing hosted demo against the checkout without making changes. Public ecosystem evidence is presented at `/research.html`; model processing remains simulated.
 
+## License and bundled materials
+
+Project-authored code and documentation are licensed under the [MIT License](LICENSE), with the copyright holder recorded as `badjiallan053-boop`. Bundled fonts, dependencies, vendored skills and artwork may carry separate terms; see [third-party notices](THIRD_PARTY_NOTICES.md) before redistributing those materials.
+
+See the [repository publication policy](docs/REPOSITORY_PUBLICATION_POLICY.md) for what belongs in this public repo, what stays private and the remaining release-security checks.
+
 ## Evaluation, pilot, delivery and payment workstreams
 
 [WORKSTREAM_AGENTS.md](docs/WORKSTREAM_AGENTS.md) maps specialist responsibilities and focused review subtasks to four runnable implementation boundaries. `npm run model:evaluate` runs the conservative fixture baseline; `npm run pilot:rehearse` records five synthetic outlines; `npm run payment:plan` reports offline payment blockers. Authenticated delivery is a tested Ed25519 library with durable replay enforcement available through the private OperationStore. Live model calls and payment dispatch are not enabled.
