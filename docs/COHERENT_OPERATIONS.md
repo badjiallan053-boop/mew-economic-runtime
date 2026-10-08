@@ -72,15 +72,18 @@ npm run company:rehearse -- data/full.sqlite full
 
 These are synthetic advisory runs, not real deployment or paid-model execution.
 The constructor `CompanyRuntime(path, {workflow})` selects a fixed graph. Its
-default remains full for API compatibility; the CLI/UI default is discovery.
-Existing full mission IDs, tasks and policy fingerprint remain compatible.
+default remains full for API compatibility; the CLI and registry/UI default is
+compact. Existing full mission IDs, tasks and policy fingerprint remain compatible.
 Another profile cannot reuse or reinterpret the same saved mission.
 
 The runtime currently persists mission identity, supplied evidence, policy digest,
-task states and advisory outputs. The richer work-package record described above
-is an operating template; signed mandates, artifact digests, timestamps and real
-provider billing evidence are not supplied by this synthetic company journal.
+task states and advisory outputs. The compact coordinator receives the proposal,
+Risk review and Red Team review as separate direct inputs; the two reviewers still
+cannot see one another's conclusions. The richer work-package record described
+above is an operating template; signed mandates, artifact digests, timestamps and
+real provider billing evidence are not supplied by this synthetic company journal.
 
-Verification: 83 tests pass, build passes, discovery completes 13 synthetic tasks,
-and the previous full-company journal replays unchanged. No local Ollama
-executable/server was found, so no credential-free local inference was claimed.
+The company rehearsals use a synthetic provider; passing them proves workflow
+wiring and recovery mechanics only, not independent model judgment. No local
+Ollama executable/server was found, so no credential-free local inference was
+claimed.

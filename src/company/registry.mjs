@@ -64,7 +64,7 @@ export const compactTasks=deepFreeze([
 {id:'compact-proposal',agentId:'engineering',dependsOn:['compact-evidence']},
 {id:'compact-risk',agentId:'risk',dependsOn:['compact-proposal']},
 {id:'compact-challenge',agentId:'red-team',dependsOn:['compact-proposal']},
-{id:'compact-decision',agentId:'chief-of-staff',dependsOn:['compact-risk','compact-challenge']}
+{id:'compact-decision',agentId:'chief-of-staff',dependsOn:['compact-proposal','compact-risk','compact-challenge']}
 ]);
 export function workflowPlan(name='full'){if(name==='compact')return compactTasks;if(name==='full')return tasks;if(!Object.hasOwn(plans,name))throw new Error('Unknown company workflow');return plans[name];}
 export const workflows=deepFreeze([

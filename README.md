@@ -109,8 +109,8 @@ Model activation and training remain blocked; see
 
 The [company operating model](docs/COMPANY_AGENTS.md) defines 12 department leads
 and 36 specialist subagents. Open `/company.html` through the MEW server.
-Run `npm run company:rehearse` for a durable **synthetic** 13-task discovery
-workflow. Explicit release, paid-readiness and full profiles are documented in
+Run `npm run company:rehearse` for a durable **synthetic** six-task compact
+workflow. Explicit discovery, release, paid-readiness and full profiles are documented in
 [coherent company operations](docs/COHERENT_OPERATIONS.md).
 The advisory runtime loads scoped prompts and reviewed local skill references,
 validates outputs, blocks uncertain retries and leaves economic contracts intact.
