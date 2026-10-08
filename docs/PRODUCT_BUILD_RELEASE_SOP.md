@@ -69,10 +69,10 @@ Confirm the health route reports demo mode, SQLite persistence and payments disa
 
 ## 5. Deploy to the existing Railway demo
 
-Deployment is pinned to a selected source revision; a Git push alone does not publish it.
+The existing Railway service currently tracks `feat/cardano-agent-boundaries`; a push to that branch automatically deploys to the production demo. Treat a push as a production release and complete review/tests first. Verify the live commit and assets after every push.
 
 1. Review `git diff`, `npm run check` and the exact commit. Confirm no secrets, private customer records or local database files entered the change.
-2. Push the authorized branch. In Railway, select the existing `mew-demo` service and stage only the reviewed commit. Inspect the environment diff before applying it; preserve the existing volume, region, replica and resource limits.
+2. Push the authorized branch only after review and tests. The connected service auto-deploys; do not separately stage or accept a second deployment for the same commit. Preserve the existing volume, region, replica and resource limits.
 3. Wait for Railway to report deployment success and a healthy service. Run `npm run deploy:verify` from the same checkout to compare hosted assets with local bytes and verify the demo boundary.
 4. Open the hosted decision flow. Confirm the page labels synthetic activity and the timeout case still defers the equivalent request. Record commit, deployment ID, health result, test count and any observed limitation in `docs/LIVE_DEPLOYMENT.md`.
 5. If health or byte checks fail, stop the release, preserve the last healthy revision, inspect logs and revert the Railway source pin to that revision. Do not toggle model/payment flags to repair a presentation deployment.

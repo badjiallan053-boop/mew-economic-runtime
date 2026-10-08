@@ -30,12 +30,12 @@ The contributor-facing design and deployment sequence is consolidated in
 remain the release acceptance contract.
 
 1. Review working-tree changes, run `npm test` and `npm run build`.
-2. Push the authorized branch. Inspect Railway's staged changes; apply only the intended MEW service release. Keep the persistent volume, replica count and resource limits.
+2. The existing Railway `mew-demo` production service currently tracks `feat/cardano-agent-boundaries` and automatically deploys on a push to that branch. Treat each push as a production release: push only reviewed commits after checks pass, then inspect deployment status. Keep the persistent volume, replica count and resource limits.
 3. Wait for successful deployment, then run `npm run deploy:verify`. This compares hosted assets to checkout hashes and checks simulation/payment boundaries. It does not alter hosted state.
 4. Record deployed commit and deployment ID in LIVE_DEPLOYMENT.md. If deployment fails, inspect logs and preserve the previously healthy deployment; do not enable models or payments to fix a static rollout.
 5. Track cumulative incremental hosting usage against the owner's US$10 authorization. The resource limit is not a billing cap. No extra worker, replica or database is required for research publication.
 
-The source is pinned to a reviewed commit. Git pushes alone do not update it. A later release requires an explicit source update and verification, which prevents unrelated work from automatically reaching the demo.
+Railway is branch-tracking rather than commit-pinned at present. A push can deploy automatically; never assume the production demo is unchanged after a branch push. This setting must be changed to a reviewed release branch or commit pin if automatic production deploys are not intended.
 
 ## Remaining engineering gaps
 
