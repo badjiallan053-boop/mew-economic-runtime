@@ -56,7 +56,7 @@ Every handoff carries schema/version, case ID, source digests, actor role, obser
 
 ## Interoperability envelope
 
-This is a proposed export contract, not a shipped API. Version a canonical envelope around explicit state and provenance instead of adopting one vendor's object model as the internal ledger:
+This is a proposed export contract, not a shipped API. The implementation requirements, state vocabulary, Web2/Web3 boundaries and release gates are in [Agent Payment Assurance](AGENT_PAYMENT_ASSURANCE.md). Version a canonical envelope around explicit state and provenance instead of adopting one vendor's object model as the internal ledger:
 
 ```json
 {

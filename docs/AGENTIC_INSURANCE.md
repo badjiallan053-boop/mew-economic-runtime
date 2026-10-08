@@ -45,6 +45,8 @@ MEW may prove what its configured boundary allowed and what a trusted observer l
 
 ## Minimum evidence contract (proposal, not a shipped runtime API)
 
+Use the shared payment lifecycle and provenance requirements in [Agent Payment Assurance](AGENT_PAYMENT_ASSURANCE.md). The insurance export is a minimized view over that operation record, with broker/underwriter decisions kept as separate partner evidence.
+
 Capture facts necessary to reconstruct delegated authority and outcomes:
 
 1. **System inventory:** pseudonymous system/workflow ID, version, model/provider revision where known, connected tools and deployment period.

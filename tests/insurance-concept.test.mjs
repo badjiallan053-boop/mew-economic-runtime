@@ -6,6 +6,7 @@ const html = readFileSync(new URL('../public/insurance.html', import.meta.url), 
 const css = readFileSync(new URL('../public/insurance.css', import.meta.url), 'utf8');
 const shell = readFileSync(new URL('../public/site-shell.js', import.meta.url), 'utf8');
 const seo = readFileSync(new URL('../public/sitemap.xml', import.meta.url), 'utf8');
+const assurance = readFileSync(new URL('../docs/AGENT_PAYMENT_ASSURANCE.md', import.meta.url), 'utf8');
 
 test('insurance explainer distinguishes MEW controls from an insurer coverage decision', () => {
   assert.match(html, /no insurance offered/);
@@ -32,4 +33,18 @@ test('ecosystem handoffs keep operator, MEW, rail, supplier and insurer facts se
   assert.match(html, /a transaction hash does not prove delivery/);
   assert.match(html, /No live signing, payment, policy or claim decision is available/);
   assert.match(css, /\.ecosystem-map/);
+});
+
+test('payment assurance shows all eight controls and keeps rail status bounded', () => {
+  assert.match(html, /aria-label="Eight checkpoints in an agent payment"/);
+  for (const label of ['AUTHORITY', 'INTENT', 'QUOTE', 'RESERVE', 'DISPATCH', 'SETTLEMENT', 'DELIVERY', 'RECOVERY']) {
+    assert.ok(html.includes(label), `missing payment assurance checkpoint: ${label}`);
+  }
+  assert.match(html, /WEB2 ADAPTER/);
+  assert.match(html, /WEB3 ADAPTER/);
+  assert.match(html, /Private production identity, signed mandates, a live dispatch worker, fully bound settlement proof and a funded audited lifecycle are still pending/);
+  assert.match(assurance, /UNKNOWN.*query\/reconcile original request, never submit a replacement blindly/s);
+  assert.match(assurance, /No unresolved result releases capacity/);
+  assert.match(css, /\.assurance-steps/);
+  assert.match(css, /@media\(max-width:600px\)/);
 });

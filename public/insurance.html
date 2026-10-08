@@ -46,6 +46,29 @@
     <a class="insurance-inline-link" href="/protocol.html#evidence">Inspect the current control boundary →</a>
   </section>
 
+  <section id="assurance-layer" class="insurance-section assurance-section" aria-labelledby="assurance-title">
+    <p class="protocol-label">THE ASSURANCE LAYER · ONE OPERATION ID FROM START TO FINISH</p>
+    <h2 id="assurance-title">Eight checks keep one agent payment accountable.</h2>
+    <p class="assurance-intro">In the target design, one operation ID follows a request across the agent, MEW, payment rail and supplier. Each checkpoint names who can attest to it and what happens when evidence is missing.</p>
+    <ol class="assurance-steps" aria-label="Eight checkpoints in an agent payment">
+      <li><span>01 · AUTHORITY</span><h3>Who may act?</h3><p>Bind the agent, human owner, action class, allowed recipient and mandate revision.</p><small>Operator attests · signed mandate required</small></li>
+      <li><span>02 · INTENT</span><h3>What is the job?</h3><p>Give the objective and effect stable IDs; set quantity, purpose and duplicate key.</p><small>MEW checks · same intent reuses its ID</small></li>
+      <li><span>03 · QUOTE</span><h3>What will it cost?</h3><p>Bind supplier, service, amount, asset, expiry and recipient before approval.</p><small>Supplier provides · MEW validates terms</small></li>
+      <li><span>04 · RESERVE</span><h3>Is capacity available?</h3><p>Check the whole mandate and reserve budget plus quantity in one durable transaction.</p><small>MEW decides · no reserve means no dispatch</small></li>
+      <li><span>05 · DISPATCH</span><h3>Was it sent once?</h3><p>Persist an outbox item and stable idempotency key before a worker calls the provider.</p><small>Worker reports · timeout stays unresolved</small></li>
+      <li><span>06 · SETTLEMENT</span><h3>Did value move?</h3><p>Verify the exact rail, asset, payer/recipient, amount and transaction against saved terms.</p><small>Rail observer attests · inclusion is not delivery</small></li>
+      <li><span>07 · DELIVERY</span><h3>Was the job fulfilled?</h3><p>Verify the enrolled supplier receipt and exact accepted artifact or service result.</p><small>Supplier signs · payment alone is not acceptance</small></li>
+      <li><span>08 · RECOVERY</span><h3>Can we explain the ending?</h3><p>Reconcile the original operation after retry, refund, reversal, timeout or restart.</p><small>Operator reviews · unknown keeps capacity held</small></li>
+    </ol>
+    <div class="assurance-crosscut"><strong>Across every step:</strong> advisory agents can gather and challenge evidence; deterministic code enforces limits; an enrolled signer controls keys; a named human owns exceptions. No agent recommendation can approve its own spend.</div>
+    <div class="assurance-adapters" aria-label="Payment rail adapters">
+      <article><span>WEB2 ADAPTER</span><h3>Cards · invoices · service APIs</h3><p>Use provider idempotency, authenticated webhooks and bank/card reconciliation. A timeout triggers lookup of the original payment.</p></article>
+      <article><span>WEB3 ADAPTER</span><h3>Cardano · escrow · tokens</h3><p>Bind network, asset unit, UTxOs, fee/collateral and transaction outputs. A confirmation is an observation; a contract needs its own review.</p></article>
+    </div>
+    <p class="assurance-status"><strong>What exists today:</strong> the deterministic reserve/defer kernel, durable journals, authenticated delivery receipt path and read-only Cardano observation. Private production identity, signed mandates, a live dispatch worker, fully bound settlement proof and a funded audited lifecycle are still pending.</p>
+    <a class="insurance-inline-link" href="/protocol.html#evidence">Inspect the current evidence boundary →</a>
+  </section>
+
   <section class="insurance-section" aria-labelledby="example-title">
     <p class="protocol-label">ONE CLEAR FAILURE CASE</p>
     <h2 id="example-title">A supplier times out. The agent wants to pay again.</h2>
