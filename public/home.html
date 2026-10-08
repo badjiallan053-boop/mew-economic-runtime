@@ -72,9 +72,9 @@
     <link rel="stylesheet" href="/experience-motion.css" />
     <link rel="stylesheet" href="/demo-story.css" />
   <link rel="stylesheet" href="/site-shell.css" />
-  <link rel="stylesheet" href="/cream-motion.css?v=cream-20261008c">
+  <link rel="stylesheet" href="/cream-motion.css?v=cream-20261008e">
 </head>
-  <body>
+  <body class="home-page">
     <a class="skip" href="#main">Skip to content</a>
 <main id="main">
       <section class="hero" aria-labelledby="hero-title">
@@ -95,7 +95,7 @@
           <div class="actions">
             <a class="button primary" href="#demo"
               >See the decision <span aria-hidden="true">↗</span></a
-            ><a class="text-link" href="/pilot.html?workflow=report"
+            ><a class="text-link" href="/pilot.html"
               >Explore a pilot <span aria-hidden="true">→</span></a
             >
           </div>
@@ -106,7 +106,7 @@
         <figure class="sculpture" aria-labelledby="sculpture-caption">
           <div class="sculpture-head">
             <span>01 / ONE SHARED MANDATE</span
-            ><button id="art-pause" disabled type="button" aria-pressed="false">
+            ><button id="art-pause" type="button" aria-pressed="false">
               Pause motion <span aria-hidden="true">Ⅱ</span>
             </button>
           </div>
@@ -114,7 +114,7 @@
             class="mandate-sculpture"
             viewBox="0 0 560 470"
             role="img"
-            aria-label="Concept sculpture: three orbital paths, a violet shared boundary and a protected mint core."
+            aria-label="Three agent paths meet at one shared geometric boundary."
           >
             <defs>
               <pattern
@@ -131,8 +131,8 @@
                 />
               </pattern>
               <linearGradient id="ring-tone" x1="0" y1="0" x2="1" y2="1">
-                <stop stop-color="#4345ef" />
-                <stop offset="1" stop-color="#262b97" />
+                <stop stop-color="#245b49" />
+                <stop offset="1" stop-color="#174535" />
               </linearGradient>
               <filter
                 id="soft-shadow"
@@ -156,9 +156,9 @@
                 />
               </g>
               <g id="violet-voxel">
-                <path d="m0 0 36-20 36 20-36 20Z" fill="#b6b5ff" />
-                <path d="m0 0 36 20v40L0 40Z" fill="#4345ef" />
-                <path d="m36 20 36-20v40L36 60Z" fill="#7271ff" />
+                <path d="m0 0 36-20 36 20-36 20Z" fill="#b7cbbc" />
+                <path d="m0 0 36 20v40L0 40Z" fill="#245b49" />
+                <path d="m36 20 36-20v40L36 60Z" fill="#174535" />
                 <path
                   d="m0 0 36 20 36-20M36 20v40"
                   fill="none"
@@ -189,7 +189,7 @@
                 stroke-dasharray="3 8"
                 transform="rotate(-17 282 241)"
               />
-              <circle cx="91" cy="217" r="5" fill="#4345ef" />
+              <circle cx="91" cy="217" r="5" fill="#245b49" />
               <circle cx="469" cy="252" r="5" fill="#17695a" />
             </g>
             <path
@@ -231,7 +231,7 @@
               <path
                 d="M425 245C402 284 309 301 216 281s-119-53-87-90"
                 fill="none"
-                stroke="#a9a7ff"
+                stroke="#b7cbbc"
                 stroke-opacity=".6"
                 stroke-width="1.5"
               />
@@ -257,7 +257,7 @@
         <p>Code checks the mandate.</p>
         <span aria-hidden="true">↗</span>
         <p>Evidence resolves it.</p>
-        <a href="/protocol.html?workflow=report#evidence"
+        <a href="/protocol.html#evidence"
           >Inspect the protocol <span aria-hidden="true">→</span></a
         >
       </div>
@@ -303,66 +303,135 @@
           </article>
         </div>
       </section>
-      <section id="demo" class="demo-section" aria-labelledby="demo-title" data-phase="0">
+      <section id="demo" class="demo-section" aria-labelledby="demo-title">
         <div class="demo-top">
-          <p class="eyebrow">TRY MEW / A 30-SECOND STORY</p>
-          <span class="prototype-label"><span class="status-dot" aria-hidden="true"></span> Interactive demo · no real payments</span>
+          <p class="eyebrow">THE DEMO / TRY THE FAILURE CASE</p>
+          <span class="prototype-label"
+            ><span class="status-dot"></span> Interactive prototype · models and
+            payments disabled</span
+          >
         </div>
         <div class="demo-layout">
           <div class="demo-story">
-            <h2 id="demo-title">Buy it once.<br /><em>Even when<br />you’re left waiting.</em></h2>
-            <p>You want one research report. The first supplier goes quiet. Another offers the same report. Should your agent try again?</p>
-            <ol class="demo-steps" aria-label="The three demo steps">
-              <li data-step="1"><span>01</span><div><strong>Ask Alpha for the report</strong><small>Set aside 1.50 ADA</small></div></li>
-              <li data-step="2"><span>02</span><div><strong>Get no answer</strong><small>Did it fail, or is it still running?</small></div></li>
-              <li data-step="3"><span>03</span><div><strong>Try Beta for the same report</strong><small>Another 1.40 ADA · same purchase</small></div></li>
+            <h2 id="demo-title">
+              One report.<br />Three moments.<br /><em>No second purchase.</em>
+            </h2>
+            <p>
+              A 1.50 ADA request times out. A second supplier offers the same
+              report for 1.40 ADA. Both fit a 3 ADA ceiling. Should another
+              request go through?
+            </p>
+            <ol class="demo-steps">
+              <li data-step="1">
+                <span>01</span>
+                <div>
+                  <strong>Reserve the first report</strong
+                  ><small>1.50 ADA · Supplier Alpha</small>
+                </div>
+              </li>
+              <li data-step="2">
+                <span>02</span>
+                <div>
+                  <strong>Observe a timeout</strong
+                  ><small>No evidence that the request failed</small>
+                </div>
+              </li>
+              <li data-step="3">
+                <span>03</span>
+                <div>
+                  <strong>Try the equivalent report</strong
+                  ><small>1.40 ADA · Supplier Beta</small>
+                </div>
+              </li>
             </ol>
             <div class="demo-controls">
-              <button class="button primary" id="demo-next" type="button" disabled>Loading demo…</button>
-              <button class="reset-link" id="demo-reset" type="button" disabled>Restart</button>
+              <button
+                class="button primary"
+                id="demo-next"
+                type="button"
+                disabled
+              >
+                Loading decision engine…</button
+              ><button
+                class="reset-link"
+                id="demo-reset"
+                type="button"
+                disabled
+              >
+                Restart
+              </button>
             </div>
-            <p class="demo-engine-note">Try it safely. Everything happens in this browser. No wallet, money transfer or model call. Example prices use ADA, Cardano’s currency.</p>
+            <p class="demo-engine-note">
+              Runs the project’s decision engine in a fresh browser simulation.
+              Your clicks create no shared reservation or payment.
+            </p>
           </div>
           <div class="decision-console" data-decision="READY">
-            <div class="console-top"><span>Your goal: <strong>one report</strong></span><span id="fixture-decision" class="decision-badge">Ready to try</span></div>
-            <figure class="purchase-map" aria-labelledby="map-caption">
-              <div class="map-route" aria-hidden="true">
-                <div class="map-goal"><svg viewBox="0 0 40 48"><path d="M8 3h18l8 8v34H8Z M26 3v10h8 M14 22h14 M14 29h14 M14 36h9"/></svg><span>Your report</span><small>Buy only once</small></div>
-                <div class="map-guard"><span class="guard-halo"></span><svg viewBox="0 0 40 44"><path d="M20 3 35 9v12c0 9-9 16-15 20C14 37 5 30 5 21V9Z"/><path d="m13 21 5 5 10-11"/></svg><strong>MEW</strong><small id="map-guard-label">Checks the rule</small></div>
-                <div class="map-suppliers">
-                  <div class="supplier-card supplier-alpha"><span class="supplier-avatar">A</span><div><strong>Alpha</strong><small>1.50 ADA</small></div><span class="supplier-state" id="alpha-state">Not started</span><span class="route-dot"></span></div>
-                  <div class="supplier-card supplier-beta"><span class="supplier-avatar">B</span><div><strong>Beta</strong><small>1.40 ADA</small></div><span class="supplier-state" id="beta-state">Not started</span><span class="route-dot"></span></div>
-                </div>
+            <div class="console-top">
+              <span><span class="console-dot"></span> MANDATE / ONE REPORT</span
+              ><span id="fixture-decision" class="decision-badge">READY</span>
+            </div>
+            <div class="exposure-row">
+              <div>
+                <span class="small-label">HELD EXPOSURE</span
+                ><strong
+                  ><span id="exposure-value">0.00</span>
+                  <small>ADA</small></strong
+                >
               </div>
-              <figcaption id="map-caption">One report. Two possible suppliers. MEW checks every request.</figcaption>
-            </figure>
-            <div class="fixture-result" role="status" aria-live="polite" aria-atomic="true">
-              <span id="fixture-kicker">BEFORE YOU START</span>
-              <h3 id="fixture-title">One report. A 3 ADA limit.</h3>
-              <p id="fixture-description">Let’s ask Alpha first. Watch what changes when the answer never comes.</p>
+              <div class="quantity-box">
+                <strong id="quantity-value">0 / 1</strong
+                ><span>reports held</span>
+              </div>
             </div>
-            <div class="demo-money">
-              <div><span>Money set aside</span><strong><span id="exposure-value">0.00</span> <small>ADA</small></strong></div>
-              <div><span>Open report requests</span><strong id="quantity-value">0 / 1</strong></div>
+            <div
+              class="budget-track"
+              role="meter"
+              aria-label="Held exposure"
+              aria-valuemin="0"
+              aria-valuemax="3"
+              aria-valuenow="0"
+              id="budget-meter"
+            >
+              <span id="budget-fill"></span>
             </div>
-            <div class="budget-track" role="meter" aria-label="Money set aside in the demo" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0" id="budget-meter"><span id="budget-fill"></span></div>
-            <div class="track-labels"><span id="budget-label">0.00 ADA set aside</span><span>3.00 ADA limit</span></div>
-            <details class="demo-details">
-              <summary>What is the demo actually doing?</summary>
-              <p>Each click runs MEW’s real decision rules on a fresh, temporary record in your browser. “Set aside” means a simulated commitment, not money moved into a wallet. A timeout keeps the first request open.</p>
-              <div class="console-row"><span>Engine decision</span><strong id="engine-decision">READY</strong></div>
-              <div class="console-row"><span>Second request</span><strong id="equivalent-status">Not tried</strong></div>
-              <p>Models and payments are disabled. Live payments still need private database access, approved signer custody, funding and an independent contract audit.</p>
-              <a class="console-link" href="/studio.html">Explore the decision studio <span aria-hidden="true">↗</span></a>
-            </details>
+            <div class="track-labels">
+              <span id="budget-label">0.00 ADA held</span
+              ><span>3.00 ADA ceiling</span>
+            </div>
+            <div
+              class="fixture-result"
+              role="status"
+              aria-live="polite"
+              aria-atomic="true"
+            >
+              <span id="fixture-kicker"
+                >YOUR MANDATE, BEFORE THE FIRST REQUEST</span
+              >
+              <h3 id="fixture-title">Start with one clear objective.</h3>
+              <p id="fixture-description">
+                Purchase one report, with maximum exposure of 3 ADA. Run the
+                first request to see the decision.
+              </p>
+            </div>
+            <div class="console-row">
+              <span>Equivalent request</span
+              ><strong id="equivalent-status">Not attempted</strong>
+            </div>
+            <div class="console-row">
+              <span>Payment execution</span><strong>Disabled</strong>
+            </div>
+            <a class="console-link" href="/studio.html"
+              >Open the decision studio <span aria-hidden="true">↗</span></a
+            >
           </div>
         </div>
-        <div class="demo-takeaway">
-          <div><span class="eyebrow">WHY THIS MATTERS</span><h3>Under budget.<br /><em>Still the wrong purchase.</em></h3><p>Both requests add up to 2.90 ADA. That’s below your 3 ADA limit—but you only asked for one report.</p></div>
-          <div class="comparison-card comparison-budget"><span>Checking only the budget</span><div class="report-pair" aria-hidden="true"><svg viewBox="0 0 32 40"><path d="M5 2h15l7 7v29H5Z M20 2v9h7 M10 19h12 M10 26h12"/></svg><span>+</span><svg viewBox="0 0 32 40"><path d="M5 2h15l7 7v29H5Z M20 2v9h7 M10 19h12 M10 26h12"/></svg></div><strong>Two requests could go through</strong><small>Illustrative risk · 1.50 + 1.40 ADA</small></div>
-          <div class="comparison-card comparison-mew"><span>Checking the goal with MEW</span><div class="report-pair" aria-hidden="true"><svg viewBox="0 0 32 40"><path d="M5 2h15l7 7v29H5Z M20 2v9h7 M10 19h12 M10 26h12"/></svg><span class="comparison-pause">Ⅱ</span></div><strong>Keep the first. Pause the second.</strong><small>Demo rule · check Alpha before trying again</small></div>
-        </div>
-        <noscript><p class="noscript-note">Enable JavaScript to try the demo. The picture shows the rule: keep the first request open and pause a duplicate until its outcome is known. <a href="/protocol.html?workflow=report#evidence">Read the evidence</a>.</p></noscript>
+        <noscript
+          ><p class="noscript-note">
+            Enable JavaScript to run the interactive simulation, or
+            <a href="/protocol.html#evidence">read the protocol evidence</a>.
+          </p></noscript
+        >
       </section>
       <section class="evidence section" aria-labelledby="evidence-title">
         <div class="section-head evidence-heading">
@@ -372,7 +441,7 @@
               A working prototype.<br />An honest next step.
             </h2>
           </div>
-          <a class="text-link" href="/protocol.html?workflow=report#evidence"
+          <a class="text-link" href="/protocol.html#evidence"
             >Review the evidence <span aria-hidden="true">↗</span></a
           >
         </div>
@@ -424,7 +493,7 @@
           </p>
         </div>
         <div class="pilot-grid">
-          <a class="pilot-card" href="/pilot.html?workflow=report"
+          <a class="pilot-card" href="/pilot.html"
             ><span class="card-index">01 / AGENT BUILDERS</span>
             <div class="pilot-art flow-art" aria-hidden="true">
               <span>α</span><i>→</i><span class="flow-bound">1</span><i>←</i
@@ -454,18 +523,18 @@
               >Explore the rail rehearsal
               <span aria-hidden="true">↗</span></span
             ></a
-          ><a class="pilot-card" href="/marketing.html"
+          ><a class="pilot-card" href="/campaign.html"
             ><span class="card-index">03 / CREATOR OPERATIONS</span>
             <div class="pilot-art clip-art" aria-hidden="true">
               <span>01</span><span>02</span><span>03</span>
             </div>
             <h3>Buy the clip once.</h3>
             <p>
-              Turn one recording into a clear editing brief. Follow the clips, review
-              and separately approved advertising.
+              Scope a clip procurement objective, then test what happens when
+              delivery remains uncertain.
             </p>
             <span class="card-action"
-              >Explore marketing &amp; clipping <span aria-hidden="true">↗</span></span
+              >Try the clip rehearsal <span aria-hidden="true">↗</span></span
             ></a
           >
         </div>
@@ -524,7 +593,7 @@
           >
         </h2>
         <div class="actions">
-          <a class="button primary" href="/pilot.html?workflow=report"
+          <a class="button primary" href="/pilot.html"
             >Plan a bounded pilot <span aria-hidden="true">↗</span></a
           ><a class="text-link" href="#demo">Run the demo again →</a>
         </div>
@@ -549,19 +618,19 @@
       </div>
       <nav aria-label="Footer navigation">
         <a href="/studio.html">Decision studio</a
-        ><a href="/protocol.html?workflow=report#evidence">Protocol</a
+        ><a href="/protocol.html#evidence">Protocol</a
         ><a href="/research.html">Research</a
         ><a href="/knowledge.html">Learning &amp; evidence</a
         ><a href="/company.html">Workflows</a
         ><a href="/design-studio.html">Design studio</a
-        ><a href="/pilot.html?workflow=report">Pilot planner</a>
+        ><a href="/pilot.html">Pilot planner</a>
       </nav>
       <div class="footer-status">
         <p>
           Local interactive simulation. No wallet connection, model activation
           or payment execution.
         </p>
-        <a class="text-link" href="/protocol.html?workflow=report#evidence"
+        <a class="text-link" href="/protocol.html#evidence"
           >Inspect integration boundaries ↗</a
         >
       </div>

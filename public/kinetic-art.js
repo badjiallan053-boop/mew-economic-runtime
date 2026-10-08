@@ -89,9 +89,9 @@ export function kineticGeometry({
       const glint = Math.pow(light, 8) * 38,
         wave = (Math.sin(u * 3 - time * 0.35) + 1) * 0.5;
       const rgb = [
-        clamp(62 + light * 132 + glint + wave * 12, 0, 255),
-        clamp(58 + light * 140 + glint, 0, 255),
-        clamp(137 + light * 94 + glint, 0, 255),
+        clamp(39 + light * 88 + glint + wave * 9, 0, 255),
+        clamp(78 + light * 124 + glint, 0, 255),
+        clamp(61 + light * 91 + glint, 0, 255),
       ].map(Math.round);
       faces.push({
         points,
@@ -150,13 +150,13 @@ export function drawKineticArt(
   ctx.save();
   ctx.scale(width / 560, height / 470);
   const haze = ctx.createRadialGradient(280, 236, 20, 280, 236, 210);
-  haze.addColorStop(0, "rgba(180,165,246,.10)");
-  haze.addColorStop(0.6, "rgba(210,202,245,.06)");
-  haze.addColorStop(1, "rgba(240,238,250,0)");
+  haze.addColorStop(0, "rgba(121,160,132,.10)");
+  haze.addColorStop(0.6, "rgba(190,211,187,.06)");
+  haze.addColorStop(1, "rgba(246,242,233,0)");
   ctx.fillStyle = haze;
   ctx.fillRect(20, 10, 520, 450);
   // A quiet floor anchors the object; geometry is illustrative rather than a data feed.
-  ctx.strokeStyle = "rgba(57,54,92,.075)";
+  ctx.strokeStyle = "rgba(36,91,73,.075)";
   ctx.lineWidth = 0.6;
   for (let i = -7; i <= 7; i++) {
     ctx.beginPath();
@@ -169,8 +169,8 @@ export function drawKineticArt(
     ctx.stroke();
   }
   const shadow = ctx.createRadialGradient(282, 362, 5, 282, 362, 150);
-  shadow.addColorStop(0, "rgba(66,44,100,.15)");
-  shadow.addColorStop(1, "rgba(66,44,100,0)");
+  shadow.addColorStop(0, "rgba(33,61,43,.15)");
+  shadow.addColorStop(1, "rgba(33,61,43,0)");
   ctx.save();
   ctx.translate(0, 220);
   ctx.scale(1, 0.4);
@@ -178,7 +178,7 @@ export function drawKineticArt(
   ctx.fillRect(80, 150, 400, 440);
   ctx.restore();
   paths.forEach((path, k) => {
-    ctx.strokeStyle = k === 1 ? "rgba(120,95,198,.34)" : "rgba(94,147,132,.32)";
+    ctx.strokeStyle = k === 1 ? "rgba(23,69,53,.34)" : "rgba(94,147,132,.32)";
     ctx.lineWidth = k === 1 ? 1.1 : 0.95;
     ctx.beginPath();
     path.forEach((p, i) => (i ? ctx.lineTo(p.x, p.y) : ctx.moveTo(p.x, p.y)));
@@ -238,7 +238,7 @@ export function drawKineticArt(
     ctx.fill();
     ctx.strokeStyle = face.edge
       ? "rgba(240,239,255,.6)"
-      : "rgba(54,37,104,.12)";
+      : "rgba(23,69,53,.12)";
     ctx.lineWidth = face.edge ? 0.85 : 0.35;
     ctx.stroke();
   }
@@ -248,7 +248,7 @@ export function drawKineticArt(
     const p = path[[12, 57, 84][k]];
     ctx.beginPath();
     ctx.arc(p.x, p.y, k === 1 ? 6 : 5, 0, TAU);
-    ctx.fillStyle = k === 1 ? "#9186c8" : "#7ea58f";
+    ctx.fillStyle = k === 1 ? "#245b49" : "#7ea58f";
     ctx.fill();
     ctx.strokeStyle = "rgba(252,252,248,.9)";
     ctx.lineWidth = 1.6;

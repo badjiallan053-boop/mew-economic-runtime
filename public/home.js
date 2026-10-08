@@ -1,6 +1,12 @@
 // Every request below runs against a fresh, in-memory kernel. No write endpoint,
 // persistent reservation, signing flow or wallet is called from this page.
 const $ = (selector) => document.querySelector(selector);
+// Supplier-map labels are optional presentation details; they must not block
+// the shared decision engine on the simpler one-report homepage.
+const setOptionalText = (selector, value) => {
+  const element = $(selector);
+  if (element) element.textContent = value;
+};
 const next = $("#demo-next");
 const reset = $("#demo-reset");
 const sculpture = $(".sculpture");
@@ -117,12 +123,12 @@ function render() {
   // The quantity gate and all amounts come from the actual kernel snapshot.
   const held = position.exposure / 1_000_000;
   $("#fixture-decision").textContent = item.label;
-  $("#engine-decision").textContent = item.decision;
+  setOptionalText("#engine-decision", item.decision);
   $("#demo").dataset.phase = String(phase);
-  $("#alpha-state").textContent = item.alpha;
-  $("#beta-state").textContent = item.beta;
-  $("#map-guard-label").textContent = item.guard;
-  $("#map-caption").textContent = item.caption;
+  setOptionalText("#alpha-state", item.alpha);
+  setOptionalText("#beta-state", item.beta);
+  setOptionalText("#map-guard-label", item.guard);
+  setOptionalText("#map-caption", item.caption);
   $("#fixture-decision").dataset.decision = item.decision;
   $("#fixture-kicker").textContent = item.kicker;
   $("#fixture-title").textContent = item.title;
@@ -175,11 +181,11 @@ function showFailure() {
   $("#art-caption-state").textContent =
     "Concept illustration · decision engine unavailable";
   $("#demo").dataset.phase = "unavailable";
-  $("#alpha-state").textContent = "Demo unavailable";
-  $("#beta-state").textContent = "Demo unavailable";
-  $("#map-guard-label").textContent = "Demo unavailable";
-  $("#map-caption").textContent = "The demo could not run. No decision is claimed.";
-  $("#engine-decision").textContent = "UNAVAILABLE";
+  setOptionalText("#alpha-state", "Demo unavailable");
+  setOptionalText("#beta-state", "Demo unavailable");
+  setOptionalText("#map-guard-label", "Demo unavailable");
+  setOptionalText("#map-caption", "The demo could not run. No decision is claimed.");
+  setOptionalText("#engine-decision", "UNAVAILABLE");
   $("#fixture-decision").textContent = "Demo unavailable";
   $("#fixture-decision").dataset.decision = "UNAVAILABLE";
   $("#fixture-kicker").textContent = "DEMO PAUSED";

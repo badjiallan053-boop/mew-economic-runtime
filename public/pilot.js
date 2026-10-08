@@ -8,7 +8,7 @@ function updateContext(){
  const url=new URL(location.href);url.search='';url.searchParams.set('workflow',choice.value);history.replaceState(null,'',url);
  document.querySelector('#goal').placeholder=choice.value==='clips'?'Example: Can we recover from an editor timeout without ordering the same outline bundle twice?':'Example: Can we recover from a supplier timeout without ordering the same report again?';
  document.querySelector('#acceptance').placeholder=choice.value==='clips'?'Example: Five source-linked outlines, checked rights and review by the agreed acceptance owner.':'Example: A sourced report, exact file version and review by the agreed acceptance owner.';
- for(const link of document.querySelectorAll('.protocol-footer a')){link.href=contextHref(link.textContent.includes('demo')?(choice.value==='clips'?'campaign.html':'studio.html'):'protocol.html',choice.value);link.dataset.workflowHref=link.getAttribute('href');}
+ for(const [index,link] of [...document.querySelectorAll('.protocol-footer a')].entries()){const isDemo=index===0;link.href=contextHref(isDemo?(choice.value==='clips'?'campaign.html':'studio.html'):'protocol.html',choice.value);if(isDemo)link.textContent=choice.value==='clips'?'Try the clipping rehearsal':'Try the decision demo';link.dataset.workflowHref=link.getAttribute('href');}
  window.dispatchEvent(new Event('mew:workflow-change'));
 }
 updateContext();choice.addEventListener('change',updateContext);

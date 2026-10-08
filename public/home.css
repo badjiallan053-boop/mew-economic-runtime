@@ -6,7 +6,7 @@
   --paper: #f6f5f0;
   --ink: #142126;
   --muted: #53615f;
-  --blue: #4345ef;
+  --blue: #245b49;
   --mint: #17695a;
   --line: #d8dcd5;
   --dark: #122323;
@@ -1691,7 +1691,7 @@ footer nav a:hover {
   opacity: 0.5;
 }
 .sculpture[data-decision="DEFER"] .art-orbit circle:first-of-type {
-  stroke: #4345ef;
+  stroke: #245b49;
   stroke-width: 6;
   stroke-opacity: 0.18;
 }
