@@ -4,8 +4,8 @@ export const origin = "https://mew-demo-production.up.railway.app";
 export const indexedPages = {
   "marketing.html": ["MEW — Marketing, advertising and clipping", "See how one recording becomes five reviewed clips and a campaign. Explore Web2 and Web3 pilot examples, separate budgets and the integration roadmap."],
   "protocol.html": [
-    "MEW — Protocol and evidence boundaries",
-    "Explore objective accounting, retained exposure and the boundary between agent advice, delivery evidence and payment rails.",
+    "MEW — Why the second order waits",
+    "Understand why an unanswered supplier request stays open. Follow a simple visual example, inspect the demo record and plan one reviewable pilot.",
   ],
   "pilot.html": [
     "MEW — Plan a bounded purchasing-agent pilot",

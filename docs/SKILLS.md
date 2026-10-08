@@ -284,3 +284,43 @@ as a local planning/verification convention in `.planning`. The older
 `gsd-build/get-shit-done` README redirects to this repository. No full GSD runtime
 installation, upstream command execution, remote skills installer or activated
 supplier model is claimed. Source reference guidance grants no external authority.
+
+## 8 October — synchronized report and clipping experience
+
+Applied the installed `perp-jury-uiux`, `perp-evidence-design`,
+`company-design-studio` and `mew-marketing-workflow` procedures to a two-route
+website journey and the decision studio. The presentation catalog shares names,
+amounts and destinations. Browser checks compared those values to the actual
+deterministic report/campaign fixtures.
+
+Reviewed the [Vercel web-design-guidelines skill in skills.sh](https://www.skills.sh/vercel-labs/agent-skills/web-design-guidelines)
+and its [public Web Interface Guidelines repository](https://github.com/vercel-labs/web-interface-guidelines).
+Applied native links, buttons, labels and disclosures; visible keyboard focus;
+44px controls; diagram status text in addition to color; and narrow-screen CSS.
+These are implementation checks, not formal accessibility certification. No
+skills package was installed.
+
+Subagent startup was attempted for a studio author and an independent
+accessibility reviewer. The connected account rejected its default `gpt-6.1-sol`
+worker model, so neither task ran. The UI work was completed in the main task;
+do not report those agents as having reviewed it.
+
+_External Vercel interface references observed 8 October 2026 via skills.sh and
+GitHub: [Web Interface Guidelines](https://github.com/vercel-labs/web-interface-guidelines)._
+
+## 8 October: shared cream interface review
+
+Compared the rendered site against the [Vercel interface guidelines](https://github.com/vercel-labs/web-interface-guidelines)
+and [shadcn semantic theming model](https://github.com/shadcn-ui/ui/blob/main/apps/v4/content/docs/%28root%29/theming.mdx).
+Applied a shared paper/foreground/surface palette without adding dependencies;
+kept buttons styled by role, reduced motion honored, and focused motion on the
+hero and useful state transitions. Two read-only UI reviewers found the earlier
+theme pass had dark panels with pale foregrounds and primary styling on quiet
+controls. Those findings drove this replacement and the shared navigation for
+the decision demo. This is a browser review, not a formal accessibility audit.
+
+The follow-up repository-led UI pass aligned the homepage and engineering
+knowledge page to the same generated route shell, tightened Verify spacing, and
+added direct tests for common navigation and light browser chrome. Browser
+review verified report and clipping handoffs at the available desktop width;
+a forced mobile viewport could not be applied and is not claimed as verified.

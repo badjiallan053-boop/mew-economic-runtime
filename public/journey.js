@@ -1,16 +1,29 @@
-export const storySteps=Object.freeze([
- {id:'understand',label:'Understand',href:'home.html',question:'What goes wrong when a supplier times out?'},
- {id:'try',label:'Try the demo',href:'studio.html#decision-workspace',question:'Why does the second report wait?'},
- {id:'verify',label:'Verify the result',href:'protocol.html#evidence',question:'What does the evidence actually prove?'},
- {id:'plan',label:'Plan a pilot',href:'pilot.html',question:'How would you test your own workflow?'}
-]);
-export function storyForPath(path){const page=path.split('/').at(-1)||'index.html';const id=['index.html','home.html'].includes(page)?'understand':page==='studio.html'?'try':['protocol.html','research.html'].includes(page)?'verify':page==='pilot.html'?'plan':null;return {id,step:storySteps.find(s=>s.id===id)||null,next:id?storySteps[storySteps.findIndex(s=>s.id===id)+1]||null:storySteps[1]};}
+import {workflowForLocation,workflowCatalog,stepsForWorkflow,contextHref,presentationMode,syncWorkflowLinks} from './workflow-context.js';
+// Preserve the existing default-route export for consumers of the report story.
+export const storySteps=Object.freeze(stepsForWorkflow('report').map(step=>Object.freeze({...step,href:workflowCatalog.report.routes[step.id]})));
+export function storyForPath(path,search=''){
+ const page=path.split('/').at(-1)||'index.html',workflow=workflowForLocation(path,search);
+ const id=['index.html','home.html','marketing.html'].includes(page)?'understand':['studio.html','campaign.html'].includes(page)?'try':['protocol.html','research.html'].includes(page)?'verify':page==='pilot.html'?'plan':null;
+ const steps=stepsForWorkflow(workflow.id);return {id,workflow,steps,step:steps.find(s=>s.id===id)||null,next:id?steps[steps.findIndex(s=>s.id===id)+1]||null:steps[1]};
+}
 if(typeof document!=='undefined'){
  const main=document.querySelector('main');
- if(main){const story=storyForPath(location.pathname),wrapper=document.createElement('section');wrapper.className='story-journey';wrapper.setAttribute('aria-label','MEW guided story');const nav=document.createElement('nav');nav.setAttribute('aria-label','Understand, try, verify and plan');for(const [i,step]of storySteps.entries()){const a=document.createElement('a'),number=document.createElement('span');a.href=step.href;number.textContent=String(i+1).padStart(2,'0');number.setAttribute('aria-hidden','true');a.append(number,document.createTextNode(step.label));if(step.id===story.id)a.setAttribute('aria-current','step');nav.append(a);}const context=document.createElement('p');context.className='story-context';const clipping=location.pathname.endsWith('/marketing.html')||location.pathname.endsWith('/campaign.html');context.textContent=clipping?'Clipping example: one five-outline bundle · 10 ADA limit · Editor A 8 ADA · Editor B 6 ADA. Example only; no video or payment.':'Main decision example: one report · 3 ADA limit · Alpha 1.50 ADA · Beta 1.40 ADA. Example only; no real payments.';wrapper.append(nav,context);main.prepend(wrapper);
- const footer=document.createElement('section');footer.className='story-next';const title=document.createElement('h2'),description=document.createElement('p'),link=document.createElement('a');
- if(story.next){title.textContent=story.next.question;description.textContent=story.id==='try'?'Inspect why the one-report objective remains occupied even though both prices total less than the budget.':story.id==='verify'?'Turn the lesson into one reviewable pilot brief. Planning does not activate models, book a service or authorize payment.':'Continue with the same report example. The demo uses synthetic supplier and payment evidence.';link.href=story.next.href;link.textContent=story.next.label;}else{title.textContent='Keep the brief reviewable.';description.textContent='Prepare and download the draft above. Agree ownership, rights and budget with your team before arranging any real work.';link.href='studio.html#decision-workspace';link.textContent='Return to the decision example';}
- if(clipping){title.textContent=location.pathname.endsWith('/marketing.html')?'What happens when another editor offers the same job?':'Ready to test this with your own recording?';description.textContent=location.pathname.endsWith('/marketing.html')?'Follow the shared synthetic outline example. No real editing, publishing or payment occurs.':'Prepare a local brief for one rights-cleared recording, five clip outlines and an acceptance owner. This does not book or submit a pilot.';link.href=location.pathname.endsWith('/marketing.html')?'campaign.html':'pilot.html?workflow=clips';link.textContent=location.pathname.endsWith('/marketing.html')?'Try the clipping rehearsal':'Prepare an outline pilot brief';}
- footer.append(title,description,link);main.append(footer);
+ if(main){
+  const wrapper=document.createElement('section'),footer=document.createElement('section');wrapper.className='story-journey';wrapper.setAttribute('aria-label','MEW guided story');footer.className='story-next';const homeAnchor=main.querySelector('#how-it-works');const after=main.querySelector('[data-journey-after]');if(homeAnchor)homeAnchor.before(wrapper);else if(after)after.after(wrapper);else main.prepend(wrapper);main.append(footer);
+  function render(){
+   const story=storyForPath(location.pathname,location.search);wrapper.replaceChildren();footer.replaceChildren();
+   const choices=document.createElement('div');choices.className='story-choices';const label=document.createElement('span');label.textContent='Choose your example';choices.append(label);
+   for(const profile of Object.values(workflowCatalog)){const link=document.createElement('a');link.href=contextHref(profile.routes[story.id||'understand'],profile.id);link.textContent=profile.name;if(profile.id===story.workflow.id)link.setAttribute('aria-current','true');choices.append(link);}
+   const nav=document.createElement('nav');nav.setAttribute('aria-label','Understand, try, verify and plan');
+   for(const [i,step]of story.steps.entries()){const a=document.createElement('a'),number=document.createElement('span');a.href=step.href;number.textContent=String(i+1).padStart(2,'0');number.setAttribute('aria-hidden','true');a.append(number,document.createTextNode(step.label));if(step.id===story.id)a.setAttribute('aria-current','step');nav.append(a);}
+   const context=document.createElement('p');context.className='story-context';context.textContent=`${story.workflow.example} Synthetic example · models and payments disabled.`;
+   const mode=document.createElement('p');mode.className='story-mode';mode.textContent=presentationMode(location.pathname);wrapper.append(choices,nav,context,mode);
+   const next=story.next||story.steps[1],title=document.createElement('h2'),description=document.createElement('p'),link=document.createElement('a');
+   title.textContent=story.next?next.question:'Keep the brief reviewable.';
+   description.textContent=story.id==='try'?'Check the decision record and the limits of this simulation before planning real work.':story.id==='verify'?'Prepare a local pilot brief. It does not book a supplier, run a model or authorize payment.':story.id==='plan'?'Review scope, rights, acceptance and cost with your team. Return to the rehearsal when you need to test uncertainty.':`Continue with the ${story.workflow.id==='clips'?'five-outline':'one-report'} example. Nothing is ordered or paid through these navigation links.`;
+   link.href=next.href;link.textContent=story.next?next.label:'Return to this demo';footer.append(title,description,link);
+   syncWorkflowLinks(main,story.workflow.id);
+  }
+  render();window.addEventListener('mew:workflow-change',render);
  }
 }

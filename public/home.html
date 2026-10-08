@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="theme-color" content="#f6f5f0" />
+    <meta name="theme-color" content="#f6f2e9" />
     <meta
       name="description"
       content="A shared mandate for purchasing agents. Try MEW’s interactive prototype: one report, one commitment, no duplicate purchase after a timeout."
@@ -66,34 +66,17 @@
       }
     </script>
     <link rel="stylesheet" href="/assets/fonts/instrument.css" />
+    <link rel="stylesheet" href="/journey.css" />
     <link rel="stylesheet" href="/home.css" />
     <link rel="stylesheet" href="/kinetic-art.css" />
     <link rel="stylesheet" href="/experience-motion.css" />
     <link rel="stylesheet" href="/demo-story.css" />
-  </head>
+  <link rel="stylesheet" href="/site-shell.css" />
+  <link rel="stylesheet" href="/cream-motion.css?v=cream-20261008c">
+</head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
-    <header class="site-header">
-      <a class="brand" href="/home.html" aria-label="MEW home"
-        ><svg viewBox="0 0 32 32" aria-hidden="true">
-          <path
-            d="M4 8 16 2 28 8v16l-12 6-12-6Z M4 8l12 6 12-6 M16 14v16 M10 5v15l6 3 6-3V5"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          /></svg
-        ><span>mew<span class="brand-period">.</span></span></a
-      >
-      <nav aria-label="Main navigation">
-        <a href="#how-it-works">The idea</a
-        ><a href="/protocol.html#evidence">The proof</a
-        ><a href="/pilot.html">Pilot with us</a>
-      </nav>
-      <a class="header-cta" href="#demo"
-        >Run the demo <span aria-hidden="true">↗</span></a
-      >
-    </header>
-    <main id="main">
+<main id="main">
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
           <p class="eyebrow">
@@ -112,7 +95,7 @@
           <div class="actions">
             <a class="button primary" href="#demo"
               >See the decision <span aria-hidden="true">↗</span></a
-            ><a class="text-link" href="/pilot.html"
+            ><a class="text-link" href="/pilot.html?workflow=report"
               >Explore a pilot <span aria-hidden="true">→</span></a
             >
           </div>
@@ -274,7 +257,7 @@
         <p>Code checks the mandate.</p>
         <span aria-hidden="true">↗</span>
         <p>Evidence resolves it.</p>
-        <a href="/protocol.html#evidence"
+        <a href="/protocol.html?workflow=report#evidence"
           >Inspect the protocol <span aria-hidden="true">→</span></a
         >
       </div>
@@ -379,7 +362,7 @@
           <div class="comparison-card comparison-budget"><span>Checking only the budget</span><div class="report-pair" aria-hidden="true"><svg viewBox="0 0 32 40"><path d="M5 2h15l7 7v29H5Z M20 2v9h7 M10 19h12 M10 26h12"/></svg><span>+</span><svg viewBox="0 0 32 40"><path d="M5 2h15l7 7v29H5Z M20 2v9h7 M10 19h12 M10 26h12"/></svg></div><strong>Two requests could go through</strong><small>Illustrative risk · 1.50 + 1.40 ADA</small></div>
           <div class="comparison-card comparison-mew"><span>Checking the goal with MEW</span><div class="report-pair" aria-hidden="true"><svg viewBox="0 0 32 40"><path d="M5 2h15l7 7v29H5Z M20 2v9h7 M10 19h12 M10 26h12"/></svg><span class="comparison-pause">Ⅱ</span></div><strong>Keep the first. Pause the second.</strong><small>Demo rule · check Alpha before trying again</small></div>
         </div>
-        <noscript><p class="noscript-note">Enable JavaScript to try the demo. The picture shows the rule: keep the first request open and pause a duplicate until its outcome is known. <a href="/protocol.html#evidence">Read the evidence</a>.</p></noscript>
+        <noscript><p class="noscript-note">Enable JavaScript to try the demo. The picture shows the rule: keep the first request open and pause a duplicate until its outcome is known. <a href="/protocol.html?workflow=report#evidence">Read the evidence</a>.</p></noscript>
       </section>
       <section class="evidence section" aria-labelledby="evidence-title">
         <div class="section-head evidence-heading">
@@ -389,7 +372,7 @@
               A working prototype.<br />An honest next step.
             </h2>
           </div>
-          <a class="text-link" href="/protocol.html#evidence"
+          <a class="text-link" href="/protocol.html?workflow=report#evidence"
             >Review the evidence <span aria-hidden="true">↗</span></a
           >
         </div>
@@ -441,7 +424,7 @@
           </p>
         </div>
         <div class="pilot-grid">
-          <a class="pilot-card" href="/pilot.html"
+          <a class="pilot-card" href="/pilot.html?workflow=report"
             ><span class="card-index">01 / AGENT BUILDERS</span>
             <div class="pilot-art flow-art" aria-hidden="true">
               <span>α</span><i>→</i><span class="flow-bound">1</span><i>←</i
@@ -478,8 +461,8 @@
             </div>
             <h3>Buy the clip once.</h3>
             <p>
-              Scope a clip procurement objective, then test what happens when
-              delivery remains uncertain.
+              Turn one recording into a clear editing brief. Follow the clips, review
+              and separately approved advertising.
             </p>
             <span class="card-action"
               >Explore marketing &amp; clipping <span aria-hidden="true">↗</span></span
@@ -541,7 +524,7 @@
           >
         </h2>
         <div class="actions">
-          <a class="button primary" href="/pilot.html"
+          <a class="button primary" href="/pilot.html?workflow=report"
             >Plan a bounded pilot <span aria-hidden="true">↗</span></a
           ><a class="text-link" href="#demo">Run the demo again →</a>
         </div>
@@ -566,19 +549,19 @@
       </div>
       <nav aria-label="Footer navigation">
         <a href="/studio.html">Decision studio</a
-        ><a href="/protocol.html#evidence">Protocol</a
+        ><a href="/protocol.html?workflow=report#evidence">Protocol</a
         ><a href="/research.html">Research</a
         ><a href="/knowledge.html">Learning &amp; evidence</a
         ><a href="/company.html">Workflows</a
         ><a href="/design-studio.html">Design studio</a
-        ><a href="/pilot.html">Pilot planner</a>
+        ><a href="/pilot.html?workflow=report">Pilot planner</a>
       </nav>
       <div class="footer-status">
         <p>
           Local interactive simulation. No wallet connection, model activation
           or payment execution.
         </p>
-        <a class="text-link" href="/protocol.html#evidence"
+        <a class="text-link" href="/protocol.html?workflow=report#evidence"
           >Inspect integration boundaries ↗</a
         >
       </div>
@@ -589,7 +572,9 @@
       </div>
     </footer>
     <script type="module" src="/home.js"></script>
+    <script type="module" src="/journey.js"></script>
     <script type="module" src="/kinetic-art.js"></script>
     <script type="module" src="/experience-motion.js"></script>
-  </body>
+    <script type="module" src="/site-shell.js"></script>
+</body>
 </html>
