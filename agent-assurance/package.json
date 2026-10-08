@@ -1,0 +1,11 @@
+{
+  "name": "agent-assurance",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "engines": {"node": ">=24"},
+  "scripts": {
+    "start": "node src/server/server.mjs",
+    "test": "node --test tests/*.test.mjs"
+  }
+}
