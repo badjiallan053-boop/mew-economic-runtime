@@ -1,5 +1,5 @@
-/** Read-only settlement verifier. effect must come from the server's reserved contract. */
-export async function verifyCardanoSettlement({ txHash, effect, minConfirmations = 3, fetchImpl = globalThis.fetch, projectId = process.env.BLOCKFROST_PROJECT_ID }) {
+/** Read-only payment observer. An indexer observation never releases MEW exposure. */
+export async function observeCardanoPayment({ txHash, effect, minConfirmations = 3, fetchImpl = globalThis.fetch, projectId = process.env.BLOCKFROST_PROJECT_ID }) {
   if (typeof txHash !== 'string' || !/^[a-f0-9]{64}$/i.test(txHash)) throw new Error('Transaction hash must be 64 hexadecimal characters');
   const hash = txHash.toLowerCase();
   if (!projectId || typeof projectId !== 'string') throw new Error('Server BLOCKFROST_PROJECT_ID is required');
@@ -15,7 +15,7 @@ export async function verifyCardanoSettlement({ txHash, effect, minConfirmations
   if (tx.hash !== hash || utxos.hash !== hash || tx.valid_contract === false) throw new Error('Transaction identity or validity mismatch');
   if (!Number.isSafeInteger(tx.block_height) || !Number.isSafeInteger(latest.height) || tx.block_height < 0 || latest.height < tx.block_height) throw new Error('Invalid chain height evidence');
   const confirmations = latest.height - tx.block_height + 1;
-  if (confirmations < minConfirmations) throw new Error('Settlement is not sufficiently confirmed; reconcile later');
+  if (confirmations < minConfirmations) throw new Error('Observation has not met the configured confirmation threshold; reconcile later');
   if (!Array.isArray(utxos.outputs) || !Array.isArray(utxos.inputs)) throw new Error('Missing transaction inputs or outputs');
   let total = 0n;
   const outputIndexes = [];
@@ -40,5 +40,8 @@ export async function verifyCardanoSettlement({ txHash, effect, minConfirmations
     }
   }
   if (total !== BigInt(effect.amount)) throw new Error('On-chain recipient payment does not match reserved effect amount');
-  return { claimId: `tx:${hash}:${effect.id}`, source: 'cardano', type: 'payment.settled', effectId: effect.id, objectiveId: effect.objectiveId, amount: effect.amount, evidence: { verified: true, network: 'cardano:preprod', txHash: hash, recipientAddress: effect.recipientAddress, lovelace: total.toString(), outputIndexes, blockHeight: tx.block_height, confirmations, minConfirmations, verifier: 'blockfrost-readonly' } };
+  return { claimId: `tx:${hash}:${effect.id}`, source: 'cardano', type: 'payment.observed', effectId: effect.id, objectiveId: effect.objectiveId, amount: effect.amount, evidence: { verified: true, network: 'cardano:preprod', txHash: hash, recipientAddress: effect.recipientAddress, lovelace: total.toString(), outputIndexes, blockHeight: tx.block_height, confirmations, minConfirmations, verifier: 'blockfrost-readonly', payerAttribution: 'unverified', transactionBinding: 'operator-attested', settlementFinality: 'not-established', exposureReleaseAllowed: false } };
 }
+
+/** @deprecated Use observeCardanoPayment; this adapter cannot establish settlement finality. */
+export const verifyCardanoSettlement = observeCardanoPayment;

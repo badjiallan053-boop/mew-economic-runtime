@@ -4,6 +4,12 @@ MEW prevents individually valid agent actions from composing into an invalid eco
 
 [Open the demo](https://badjiallan053-boop.github.io/mew-economic-runtime/) · [Open the presentation](https://badjiallan053-boop.github.io/mew-economic-runtime/presentation.html) · [90-second runbook](DEMO_RUNBOOK.md)
 
+**Build or release?** Start with the [product build and release SOP](docs/PRODUCT_BUILD_RELEASE_SOP.md) for the short design loop, local checks and pinned Railway deployment. See the [cross-market execution assurance position](docs/AGENTIC_EXECUTION_ASSURANCE_POSITIONING.md) for the API-commerce wedge and later trading/insurance boundaries.
+
+**Agentic insurance:** explore the [evidence concept](public/insurance.html) or read its [partner pilot and evidence design](docs/AGENTIC_INSURANCE.md). The concept page is not a quote, policy, coverage decision or claim service.
+
+**Operating ecosystem:** see the [MEW operating model](docs/MEW_OPERATING_ECOSYSTEM.md) for the Cardano transaction path, bounded advisory-agent roles, participant authority map, evidence envelope proposal and gated route from demo to a shadow-mode business pilot.
+
 ## Run locally
 
 Requires Node.js 24 or newer. Install the pinned dependency first; the demo needs no wallet or API key. The standalone escrow planner uses `@scure/base` for address checks.

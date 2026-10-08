@@ -11,6 +11,9 @@ Updated 7 October 2026. This is the sequenced backlog and ownership map; OPERATI
 | 5 | One authenticated external job | Engineering | Exact deployed provider schema checked; signed delivery receipts; persisted job/effect identity and UNKNOWN reconciliation after timeout/restart; simulation first |
 | 6 | One verified preprod payment lifecycle | Engineering + risk | Funded approved signer, scoped MPS credentials and migrations, durable executor, exact asset/amount/seller binding; settlement and delivery independently verified |
 | 7 | Commercial product decision | Coordinator | Pilot comparison of customer-only brief versus licensed audience input; report cost/accepted artifact, acceptance rate, latency and duplicate spend prevented; do not infer demand from Internet penetration |
+| 8 | Agentic insurance evidence pilot | Product + broker/insurer partner | Begin with a consented shadow-mode Agent Execution Evidence pack; broker/insurer maps it to one named process; no premium, coverage or claims decision by MEW |
+
+The cross-functional target model is documented in [MEW_OPERATING_ECOSYSTEM.md](MEW_OPERATING_ECOSYSTEM.md). It preserves the release order above and does not mark proposed agent roles, partner mappings or Cardano lifecycle stages as implemented.
 
 ## Interoperability contract
 
@@ -19,6 +22,10 @@ Each adapter must carry objectiveId, principal, semanticKey, immutable effectId 
 Keep three storage domains separate: economic SQLite, advisory mission journal and any future MPS PostgreSQL. A public research snapshot contains no customer briefs, credentials or wallet seeds. Customer pilot records need separate access control and a retention policy; public /research.html must never become a private-data dashboard.
 
 ## Release procedure
+
+The contributor-facing design and deployment sequence is consolidated in
+[PRODUCT_BUILD_RELEASE_SOP.md](PRODUCT_BUILD_RELEASE_SOP.md); the steps below
+remain the release acceptance contract.
 
 1. Review working-tree changes, run `npm test` and `npm run build`.
 2. Push the authorized branch. Inspect Railway's staged changes; apply only the intended MEW service release. Keep the persistent volume, replica count and resource limits.

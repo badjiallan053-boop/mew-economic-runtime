@@ -41,7 +41,7 @@ test('seeded adversarial retries and unknown claims never exceed mandate',()=>{
 });
 test('live operation binding rejects double attribution and concurrent reconciliation stays idempotent',async()=>{
   const token='operator-test-token-'.repeat(3),hash='a'.repeat(64);
-  const verify=async({effect})=>({claimId:`tx:${effect.id}`,effectId:effect.id,objectiveId:effect.objectiveId,source:'cardano',type:'payment.settled',amount:effect.amount,evidence:{verified:true,network:'cardano:preprod',txHash:hash}});
+  const verify=async({effect})=>({claimId:`tx:${effect.id}`,effectId:effect.id,objectiveId:effect.objectiveId,source:'cardano',type:'payment.observed',amount:effect.amount,evidence:{verified:true,network:'cardano:preprod',txHash:hash,exposureReleaseAllowed:false,payerAttribution:'unverified',transactionBinding:'operator-attested',settlementFinality:'not-established'}});
   const server=makeServer({dbPath:':memory:',demo:false,token,verify});await new Promise(r=>server.listen(0,'127.0.0.1',r));const url=`http://127.0.0.1:${server.address().port}`;
   const post=async(path,body)=>fetch(url+path,{method:'POST',headers:{'content-type':'application/json',authorization:`Bearer ${token}`},body:JSON.stringify(body)});
   try{assert.equal((await post('/api/objectives',{...objective,quantity:2})).status,201);for(const id of ['e','f'])assert.equal((await(await post('/api/evaluate',{...proposal,proposedEffect:{...proposal.proposedEffect,id,recipientAddress:'addr_test1fixture'}})).json()).decision,'ALLOW');

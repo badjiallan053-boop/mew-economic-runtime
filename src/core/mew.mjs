@@ -69,9 +69,11 @@ export class MEW {
     if(financial.includes(type) && (!['cardano','masumi'].includes(source) || input.evidence?.verified!==true)) throw new Error('Financial transition requires verified rail evidence');
     if(type==='delivery' && (source!=='merchant' || input.evidence?.verified!==true)) throw new Error('Delivery requires verified merchant evidence');
     if(input.amount!==undefined && integer(input.amount,'claim amount')!==effect.amount) throw new Error('Claim amount does not match effect');
+    if(type==='observed' && (source!=='cardano' || input.evidence?.verified!==true || input.evidence?.exposureReleaseAllowed!==false)) throw new Error('Cardano observation must be verified and cannot release exposure');
     if(type==='committed') {if(!['reserved','committed'].includes(effect.status)) throw new Error('Regressive commitment');effect.status='committed';}
     else if(type==='settled') {if(!['reserved','committed','settled'].includes(effect.status)) throw new Error('Conflicting settlement');effect.status='settled';effect.unknown=false;}
     else if(type==='delivery') {if(['failed','released','refunded'].includes(effect.status)) throw new Error('Delivery conflicts with terminal release');effect.deliveryVerified=true;}
+    else if(type==='observed') { /* Record chain evidence only; no accounting state transition. */ }
     else if(type==='unknown') {effect.unknown=true;}
     else if(['failed','released'].includes(type)) {if(effect.status!=='reserved' || effect.deliveryVerified) throw new Error('Cannot release a paid, committed, or delivered effect');effect.status=type;}
     else if(type==='refunded') {if(!['committed','settled','refunded'].includes(effect.status) || input.amount!==effect.amount) throw new Error('Refund requires full amount and existing paid commitment');effect.status='refunded';effect.unknown=false;}

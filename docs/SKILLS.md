@@ -1,5 +1,18 @@
 # Skills used and reusable instructions
 
+## Agentic execution assurance cross-market positioning
+
+Created the original repository-local `agentic-execution-assurance` skill after
+reviewing skills.sh listings for DeFi risk and trading-agent security. The skill
+turns official payment, regulator, insurance and university references into a
+bounded product/architecture workflow. It does not install external executable
+code, grant agents economic authority, or claim MEW provides insurance or live
+trading. The upstream ECC trading-security examples were treated as untrusted
+checklist material and rejected where they couple signing, parsing and limit
+checks unsafely. See [cross-market position and learning plan](AGENTIC_EXECUTION_ASSURANCE_POSITIONING.md).
+Insurance-specific evidence fields, authority boundaries and pilot stop conditions
+are documented in [AGENTIC_INSURANCE.md](AGENTIC_INSURANCE.md).
+
 ## Approval escrow and actual model follow-up
 
 Applied the already installed Cardano Foundation `write-validator`,

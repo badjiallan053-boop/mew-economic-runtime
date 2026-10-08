@@ -8,7 +8,7 @@ import { timingSafeEqual } from 'node:crypto';
 import {createCampaign,advanceCampaign} from '../demo/campaign.mjs';
 import { createRehearsal, advanceRehearsal } from '../demo/rehearsal.mjs';
 import { Store } from './store.mjs';
-import { verifyCardanoSettlement } from '../adapters/cardano.mjs';
+import { observeCardanoPayment } from '../adapters/cardano.mjs';
 import { checkCardanoConnection } from '../adapters/cardano-connection.mjs';
 import { companyRegistry } from '../company/registry.mjs';
 import { interoperabilityCapabilities } from '../company/handoff.mjs';
@@ -19,7 +19,7 @@ const observeSafely=async fn=>{try{return await fn();}catch{throw new Error('Evi
 const root = fileURLToPath(new URL('../../',import.meta.url));
 const tokenEqual=(a,b)=>{const x=Buffer.from(a),y=Buffer.from(b);return x.length===y.length && timingSafeEqual(x,y);};
 
-export function makeServer({dbPath=process.env.MEW_DB_PATH || resolve(root,'data/mew.sqlite'),demo=process.env.MEW_DEMO_MODE!=='false',token=process.env.MEW_API_TOKEN || '',verify=verifyCardanoSettlement,connection=checkCardanoConnection,demoRequestLimit=120,supabaseAuth=(process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ? {url:process.env.NEXT_PUBLIC_SUPABASE_URL,publishableKey:process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY}:null),authFetch=globalThis.fetch}={}) {
+export function makeServer({dbPath=process.env.MEW_DB_PATH || resolve(root,'data/mew.sqlite'),demo=process.env.MEW_DEMO_MODE!=='false',token=process.env.MEW_API_TOKEN || '',verify=observeCardanoPayment,connection=checkCardanoConnection,demoRequestLimit=120,supabaseAuth=(process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ? {url:process.env.NEXT_PUBLIC_SUPABASE_URL,publishableKey:process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY}:null),authFetch=globalThis.fetch}={}) {
   if(!demo && token.length<32) throw new Error('Live mode requires MEW_API_TOKEN with at least 32 characters');
   if(!Number.isSafeInteger(demoRequestLimit) || demoRequestLimit<1) throw new Error('Invalid demo request quota');
   const store=new Store(dbPath,{mode:demo?'demo':'live'});
@@ -95,13 +95,13 @@ export function makeServer({dbPath=process.env.MEW_DB_PATH || resolve(root,'data
           const operation=store.cardanoOperation(effect.id);
           if(!operation) return json(409,{error:'Bind an operator-attested Cardano operation before reconciliation'});
           if(body.txHash!==undefined && (typeof body.txHash!=='string' || body.txHash.toLowerCase()!==operation.txHash)) return json(409,{error:'Transaction hash does not match bound operation'});
-          const recorded=store.read().snapshot().claims.find(c=>c.type==='payment.settled' && c.effectId===effect.id && c.evidence?.txHash===operation.txHash);
+          const recorded=store.read().snapshot().claims.find(c=>c.type==='payment.observed' && c.effectId===effect.id && c.evidence?.txHash===operation.txHash);
           if(recorded) {const {receivedAt,...original}=recorded;return json(200,store.transact(k=>k.observe(original)));}
           const claim=await observeSafely(()=>verify({txHash:operation.txHash,effect}));
-          if(claim?.effectId!==effect.id || claim.objectiveId!==effect.objectiveId || claim.amount!==effect.amount || claim.source!=='cardano' || claim.type!=='payment.settled' || claim.evidence?.verified!==true || claim.evidence.simulated || claim.evidence.network!=='cardano:preprod' || claim.evidence.txHash!==operation.txHash) throw new Error('Verifier evidence does not match bound operation');
+          if(claim?.effectId!==effect.id || claim.objectiveId!==effect.objectiveId || claim.amount!==effect.amount || claim.source!=='cardano' || claim.type!=='payment.observed' || claim.evidence?.verified!==true || claim.evidence.exposureReleaseAllowed!==false || claim.evidence.payerAttribution!=='unverified' || claim.evidence.transactionBinding!=='operator-attested' || claim.evidence.settlementFinality!=='not-established' || claim.evidence.simulated || claim.evidence.network!=='cardano:preprod' || claim.evidence.txHash!==operation.txHash) throw new Error('Verifier evidence does not match bound operation');
           return json(200,store.transact(k=>{
             if(k.snapshot().claims.some(c=>c.evidence?.txHash?.toLowerCase()===operation.txHash && c.effectId!==body.effectId)) throw new Error('Transaction already attributed to a different effect');
-            const previous=k.snapshot().claims.find(c=>c.type==='payment.settled' && c.effectId===effect.id && c.evidence?.txHash===operation.txHash);
+            const previous=k.snapshot().claims.find(c=>c.type==='payment.observed' && c.effectId===effect.id && c.evidence?.txHash===operation.txHash);
             if(previous) {const {receivedAt,...original}=previous;return k.observe(original);}
             return k.observe({...claim,evidence:{...claim.evidence,operationId:operation.id,submissionRef:operation.submissionRef,binding:'operator-attested'}});
           }));

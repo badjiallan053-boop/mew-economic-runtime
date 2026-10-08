@@ -3,6 +3,7 @@ import { readFile, writeFile } from "node:fs/promises";
 export const origin = "https://mew-demo-production.up.railway.app";
 export const indexedPages = {
   "marketing.html": ["MEW — Marketing, advertising and clipping", "See how one recording becomes five reviewed clips and a campaign. Explore Web2 and Web3 pilot examples, separate budgets and the integration roadmap."],
+  "insurance.html": ["MEW — Evidence for agentic insurance workflows", "See how bounded agent actions and verified evidence could support insurance review, while policy terms and claims remain with authorized insurers."],
   "protocol.html": [
     "MEW — Why the second order waits",
     "Understand why an unanswered supplier request stays open. Follow a simple visual example, inspect the demo record and plan one reviewable pilot.",
@@ -39,38 +40,38 @@ const escape = (value) =>
 export async function buildSeo(root = "public") {
   for (const [file, [title, description]] of Object.entries(indexedPages)) {
     let html = await readFile(`${root}/${file}`, "utf8");
-    html = html
-      .replace(/<title>[\s\S]*?<\/title>/, `<title>${escape(title)}</title>`)
-      .replace(/\s*<!-- MEW SEO START -->[\s\S]*?<!-- MEW SEO END -->\s*/, "");
-    html = html
-      .replace(/<meta\b[^>]*>/gi, (tag) =>
-        /\b(?:name|property)=["'](?:description|robots|og:[^"']+|twitter:[^"']+)["']/i.test(
-          tag,
-        )
-          ? ""
-          : tag,
-      )
-      .replace(/<link\b[^>]*\brel=["']canonical["'][^>]*>/gi, "");
+    html = html.replace(/<title>[\s\S]*?<\/title>/, `<title>${escape(title)}</title>`);
     const url = `${origin}/${file}`;
     const block = `<!-- MEW SEO START -->\n<meta name="description" content="${escape(description)}"><link rel="canonical" href="${url}"><meta name="robots" content="index,follow"><meta property="og:type" content="website"><meta property="og:site_name" content="MEW"><meta property="og:title" content="${escape(title)}"><meta property="og:description" content="${escape(description)}"><meta property="og:url" content="${url}"><meta property="og:image" content="${origin}/assets/mew-social.png"><meta property="og:image:alt" content="MEW — one purchase, one shared mandate. Interactive prototype; models and payments disabled."><meta name="twitter:card" content="summary_large_image">\n<!-- MEW SEO END -->`;
-    await writeFile(
-      `${root}/${file}`,
-      html.replace("</head>", `${block}\n</head>`),
-    );
+    const markers = /<!-- MEW SEO START -->[\s\S]*?<!-- MEW SEO END -->/;
+    const existingBlock = html.match(markers)?.[0];
+    if (existingBlock) {
+      if (!existingBlock.includes(url) || !existingBlock.includes(escape(description))) {
+        html = html.replace(markers, block);
+      }
+    } else {
+      html = html
+        .replace(/<meta\b[^>]*>/gi, (tag) =>
+          /\b(?:name|property)=["'](?:description|robots|og:[^"']+|twitter:[^"']+)["']/i.test(tag)
+            ? ""
+            : tag,
+        )
+        .replace(/<link\b[^>]*\brel=["']canonical["'][^>]*>/gi, "")
+        .replace("</head>", `${block}\n</head>`);
+    }
+    await writeFile(`${root}/${file}`, html);
   }
   for (const file of workspacePages) {
     let html = await readFile(`${root}/${file}`, "utf8");
-    html = html.replace(
-      /\s*<!-- MEW SEO START -->[\s\S]*?<!-- MEW SEO END -->\s*/,
-      "",
-    );
-    await writeFile(
-      `${root}/${file}`,
-      html.replace(
-        "</head>",
-        '<!-- MEW SEO START --><meta name="robots" content="noindex,follow"><!-- MEW SEO END --></head>',
-      ),
-    );
+    const markers = /<!-- MEW SEO START -->[\s\S]*?<!-- MEW SEO END -->/;
+    const noindex = '<!-- MEW SEO START --><meta name="robots" content="noindex,follow"><!-- MEW SEO END -->';
+    const existingBlock = html.match(markers)?.[0];
+    if (existingBlock) {
+      if (!existingBlock.includes('name="robots" content="noindex,follow"')) html = html.replace(markers, noindex);
+    } else {
+      html = html.replace("</head>", `${noindex}</head>`);
+    }
+    await writeFile(`${root}/${file}`, html);
   }
   const paths = ["/", ...Object.keys(indexedPages).map((file) => `/${file}`)];
   await writeFile(
