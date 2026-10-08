@@ -1,0 +1,58 @@
+{
+  "schema": "mew.education-video-notes.v1",
+  "reviewedAt": "2026-10-08",
+  "provider": "Stanford CS25 official recording index",
+  "indexUrl": "https://web.stanford.edu/class/cs25/recordings/",
+  "method": "public English caption review; no full media viewing claimed",
+  "trainingEligible": false,
+  "rawCaptionsPublished": false,
+  "videos": [
+    {
+      "id": "mE7IDf2SmJg",
+      "title": "Retrieval Augmented Language Models",
+      "url": "https://www.youtube.com/watch?v=mE7IDf2SmJg",
+      "status": "captions-reviewed",
+      "segments": 1980,
+      "captionSha256": "f44a9a1f5c0afd21ddb589a72433e8ef95c9b3a46c9c927283e22cf6f402a8be",
+      "reviewedCues": [
+        {
+          "startSeconds": 392,
+          "endSeconds": 535,
+          "note": "Explains supplying external context and grounding generation; MEW still needs claim-by-claim entailment review."
+        },
+        {
+          "startSeconds": 731,
+          "endSeconds": 969,
+          "note": "Contrasts sparse and dense retrieval and the retrieval/generation separation; use matched-context ablations rather than count-only evidence coverage."
+        }
+      ]
+    },
+    {
+      "id": "wwQ1LQA3RCU",
+      "title": "Generalist Agents in Open-Ended Worlds",
+      "url": "https://www.youtube.com/watch?v=wwQ1LQA3RCU",
+      "status": "captions-reviewed",
+      "segments": 1131,
+      "captionSha256": "6017c6029fa9ece5fa50129326af72939b533c88476ef58ccf05b94b1d78e104",
+      "reviewedCues": [
+        {
+          "startSeconds": 178,
+          "endSeconds": 189,
+          "note": "Generalist-agent discussion includes a feedback loop; MEW feedback is advisory and never controls wallet authority."
+        },
+        {
+          "startSeconds": 286,
+          "endSeconds": 451,
+          "note": "Contrasts narrow task performance and open-ended task interfaces; bounded MEW tasks require explicit contracts and measurable failures."
+        }
+      ]
+    }
+  ],
+  "unavailable": [
+    {
+      "id": "cs251-current-recordings",
+      "status": "restricted",
+      "reason": "Official Fall 2026 page states lecture recordings require course Canvas login; no bypass or transcript retrieval attempted."
+    }
+  ]
+}

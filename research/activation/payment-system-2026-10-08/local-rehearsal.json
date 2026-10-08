@@ -1,0 +1,42 @@
+{
+  "schema": "mew.payment-lifecycle-rehearsal.v1",
+  "synthetic": true,
+  "database": "local-pglite",
+  "provider": "mock-only",
+  "liveChainObservationPerformed": false,
+  "walletInvoked": false,
+  "transactionSigned": false,
+  "transactionBroadcast": false,
+  "modelInvoked": false,
+  "paymentsEnabled": false,
+  "scenarios": [
+    {
+      "action": "accept",
+      "preparedStatus": "CLOSE_PREPARED",
+      "syntheticObservedStatus": "ACCEPT_OBSERVED",
+      "replayDecision": "DEFER",
+      "unsignedFundingHash": "6f1a215fe48bcfab3a4f888794b53550dc43c6a6881b1f868a80c7fd0952dd35",
+      "unsignedClosingHash": "4c38d4cbd842c7a599dbd2f0b1627a1b1ee6f1ad61e5c66148293eca0c207ec4",
+      "escrowLovelace": 3000000,
+      "retainedExposureLovelace": 8350000,
+      "authenticatedFixtureDelivery": true,
+      "settlementClaimProduced": false,
+      "refundClaimProduced": false,
+      "exposureReleaseAllowed": false
+    },
+    {
+      "action": "cancel",
+      "preparedStatus": "CLOSE_PREPARED",
+      "syntheticObservedStatus": "CANCEL_OBSERVED",
+      "replayDecision": "DEFER",
+      "unsignedFundingHash": "6f1a215fe48bcfab3a4f888794b53550dc43c6a6881b1f868a80c7fd0952dd35",
+      "unsignedClosingHash": "84023120ced134e5e04bc7440a305ad9471f811dd4f45f1cded8f6aaad590b90",
+      "escrowLovelace": 3000000,
+      "retainedExposureLovelace": 8350000,
+      "authenticatedFixtureDelivery": false,
+      "settlementClaimProduced": false,
+      "refundClaimProduced": false,
+      "exposureReleaseAllowed": false
+    }
+  ]
+}

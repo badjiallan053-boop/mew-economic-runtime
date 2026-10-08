@@ -1,0 +1,4 @@
+interface:
+  display_name: "MEW private database activation"
+  short_description: "Prepare and verify private MEW database access"
+  default_prompt: "Use $mew-private-database-activation to prepare private MEW database setup and identify the evidence still needed for hosted operation."

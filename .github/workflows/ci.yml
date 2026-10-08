@@ -10,5 +10,14 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
+      - run: npm ci --ignore-scripts
       - run: npm test
       - run: npm run build
+      - run: python3 scripts/install-aiken-local.py
+      - run: ../../.local/aiken/aiken-x86_64-unknown-linux-musl/aiken check --deny
+        working-directory: contracts/approval-escrow
+      - run: ../../.local/aiken/aiken-x86_64-unknown-linux-musl/aiken build --deny
+        working-directory: contracts/approval-escrow
+      - run: node --test tests/approval-escrow-plan.test.mjs
+      - run: npm run escrow:evaluate-fixtures
+      - run: npm run learning:constrained-audit

@@ -1,0 +1,61 @@
+{
+  "schema": "mew.kinetic-art-sources.v1",
+  "reviewedAt": "2026-10-08",
+  "implementation": "Original MEW Canvas2D toroidal mesh and lifecycle; no external runtime dependency or copied asset",
+  "sourceTextUntrusted": true,
+  "installerRun": false,
+  "skillFilesCopied": false,
+  "sources": [
+    {
+      "directoryUrl": "https://www.skills.sh/stolinski/motion-skills/css-motion-systems",
+      "repository": "stolinski/motion-skills",
+      "commit": "aa804dc26c6d863a7c79cc1dfe8f2f6a4912b069",
+      "path": "skills/css-motion-systems/SKILL.md",
+      "sha256": "229fac0c4a69aed821ea84b8c7de2a3e535ff12bbf47a575c7ae6dd98a5f3dcf",
+      "license": "not asserted by GitHub API; no source code copied",
+      "adoption": "Reviewed motion continuity, interruption, reduced motion, performance budgets and progressive fallback; user explicitly requested decorative art so Canvas renderer is a scoped exception to default UI transform-only guidance.",
+      "references": [
+        {
+          "path": "skills/css-motion-systems/references/MOTION_REVIEW_CHECKLIST.md",
+          "sha256": "89da21d850cf75224fc41b57ab478c40168fadaff0a80933a1bd8dc2bc20f4ad"
+        },
+        {
+          "path": "skills/css-motion-systems/references/MOTION_TOKENS.css",
+          "sha256": "1bea4dbda81a1681aa823311c42a5790725a2d6bd60d13038e98f741f8b2ea48"
+        },
+        {
+          "path": "skills/css-motion-systems/references/LINEAR_EASING_PATTERNS.md",
+          "sha256": "cf0c2f578934769e25efaff2dea87df3dbb0e240387c75a624117f7aa2edd58c"
+        },
+        {
+          "path": "skills/css-motion-systems/references/VIEW_TRANSITION_RECIPES.md",
+          "sha256": "b25f6c4bf7f87ebdf739c7e766245fd12ba0a3ea55f45591d93174bb5e14d315"
+        }
+      ],
+      "sourceUrl": "https://raw.githubusercontent.com/stolinski/motion-skills/aa804dc26c6d863a7c79cc1dfe8f2f6a4912b069/skills/css-motion-systems/SKILL.md"
+    },
+    {
+      "directoryUrl": "https://www.skills.sh/wshobson/agents/interaction-design",
+      "repository": "wshobson/agents",
+      "commit": "46891e7e60da0e52baf1050b7b6391b64e84c6d9",
+      "path": "plugins/ui-design/skills/interaction-design/SKILL.md",
+      "sha256": "87f2765ed1deeef3f1c06f9e4338ff103c391c6c4adcdffc885f3516b7c34ff2",
+      "license": "MIT per GitHub repository metadata",
+      "adoption": "Reviewed purposeful orientation, interruptibility, fallback and listener cleanup; no Framer Motion/React dependency or copied implementation.",
+      "sourceUrl": "https://raw.githubusercontent.com/wshobson/agents/46891e7e60da0e52baf1050b7b6391b64e84c6d9/plugins/ui-design/skills/interaction-design/SKILL.md"
+    }
+  ],
+  "projectSkills": [
+    "perp-design-studio",
+    "perp-jury-uiux",
+    "perp-evidence-design",
+    "perp-graphic-design",
+    "mew-engineering"
+  ],
+  "boundaries": [
+    "Concept illustration, not observed blockchain/agent activity",
+    "Renderer never advances demo state",
+    "Only existing figure data-decision may affect a read-only tint",
+    "No signing, model activation, funds, network fetch, personal telemetry or publication capability"
+  ]
+}

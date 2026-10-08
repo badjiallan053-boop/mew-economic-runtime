@@ -1,0 +1,229 @@
+{
+  "origin": "https://mew-demo-production.up.railway.app",
+  "checks": [
+    {
+      "path": "/api/health",
+      "status": "verified"
+    },
+    {
+      "path": "/api/auth/session",
+      "status": "verified"
+    },
+    {
+      "path": "/index.html",
+      "status": "verified"
+    },
+    {
+      "path": "/home.html",
+      "status": "verified"
+    },
+    {
+      "path": "/home.js",
+      "status": "verified"
+    },
+    {
+      "path": "/kinetic-art.js",
+      "status": "verified"
+    },
+    {
+      "path": "/kinetic-art.css",
+      "status": "verified"
+    },
+    {
+      "path": "/experience-motion.js",
+      "status": "verified"
+    },
+    {
+      "path": "/experience-motion.css",
+      "status": "verified"
+    },
+    {
+      "path": "/journey.js",
+      "status": "verified"
+    },
+    {
+      "path": "/motion.js",
+      "status": "verified"
+    },
+    {
+      "path": "/motion.css",
+      "status": "verified"
+    },
+    {
+      "path": "/journey.css",
+      "status": "verified"
+    },
+    {
+      "path": "/mandate-art.js",
+      "status": "verified"
+    },
+    {
+      "path": "/mandate-art.css",
+      "status": "verified"
+    },
+    {
+      "path": "/home.css",
+      "status": "verified"
+    },
+    {
+      "path": "/studio.html",
+      "status": "verified"
+    },
+    {
+      "path": "/studio.js",
+      "status": "verified"
+    },
+    {
+      "path": "/studio.css",
+      "status": "verified"
+    },
+    {
+      "path": "/formation.js",
+      "status": "verified"
+    },
+    {
+      "path": "/protocol.html",
+      "status": "verified"
+    },
+    {
+      "path": "/protocol.css",
+      "status": "verified"
+    },
+    {
+      "path": "/protocol.js",
+      "status": "verified"
+    },
+    {
+      "path": "/pilot.html",
+      "status": "verified"
+    },
+    {
+      "path": "/pilot.css",
+      "status": "verified"
+    },
+    {
+      "path": "/pilot.js",
+      "status": "verified"
+    },
+    {
+      "path": "/pilot-plan.js",
+      "status": "verified"
+    },
+    {
+      "path": "/assets/mew-formation.png",
+      "status": "verified"
+    },
+    {
+      "path": "/company.html",
+      "status": "verified"
+    },
+    {
+      "path": "/company.js",
+      "status": "verified"
+    },
+    {
+      "path": "/company.css",
+      "status": "verified"
+    },
+    {
+      "path": "/campaign.html",
+      "status": "verified"
+    },
+    {
+      "path": "/campaign.js",
+      "status": "verified"
+    },
+    {
+      "path": "/research.html",
+      "status": "verified"
+    },
+    {
+      "path": "/research.js",
+      "status": "verified"
+    },
+    {
+      "path": "/research-snapshot.json",
+      "status": "verified"
+    },
+    {
+      "path": "/design-studio.html",
+      "status": "verified"
+    },
+    {
+      "path": "/design-studio.js",
+      "status": "verified"
+    },
+    {
+      "path": "/design-studio.css",
+      "status": "verified"
+    },
+    {
+      "path": "/site-shell.js",
+      "status": "verified"
+    },
+    {
+      "path": "/site-shell.css",
+      "status": "verified"
+    },
+    {
+      "path": "/core/mew.mjs",
+      "status": "verified"
+    },
+    {
+      "path": "/knowledge.html",
+      "status": "verified"
+    },
+    {
+      "path": "/knowledge.css",
+      "status": "verified"
+    },
+    {
+      "path": "/education-snapshot.json",
+      "status": "verified"
+    },
+    {
+      "path": "/robots.txt",
+      "status": "verified"
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": "verified"
+    },
+    {
+      "path": "/assets/mew-social.png",
+      "status": "verified"
+    },
+    {
+      "path": "/assets/fonts/instrument.css",
+      "status": "verified"
+    },
+    {
+      "path": "/assets/fonts/instrument-0.ttf",
+      "status": "verified"
+    },
+    {
+      "path": "/assets/fonts/instrument-1.ttf",
+      "status": "verified"
+    },
+    {
+      "path": "/assets/fonts/instrument-2.ttf",
+      "status": "verified"
+    },
+    {
+      "path": "/assets/fonts/instrument-3.ttf",
+      "status": "verified"
+    },
+    {
+      "path": "/assets/fonts/instrument-4.ttf",
+      "status": "verified"
+    },
+    {
+      "path": "/assets/fonts/instrument-5.ttf",
+      "status": "verified"
+    }
+  ],
+  "limitations": "Read-only HTTP and asset checks; no claim of wallet execution, model inference or persistence after redeploy.",
+  "checkedAt": "2026-10-07T23:09:31.611Z",
+  "deploymentId": "aa9ef122-6b8b-4f08-92c6-5e0ba14ee9df",
+  "commit": "9e8acd4b3645cc3fdc9af9c4cd9ca9c95d7e5944"
+}

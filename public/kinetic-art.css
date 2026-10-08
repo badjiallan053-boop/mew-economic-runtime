@@ -1,0 +1,38 @@
+/* Canvas enhances only the artwork. Caption, controls and SVG semantics remain intact. */
+.kinetic-stage {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  overflow: visible;
+  margin: 0;
+}
+.kinetic-stage > .mandate-sculpture {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+.kinetic-canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+}
+.kinetic-stage.is-rendered > .kinetic-canvas {
+  opacity: 1;
+}
+.kinetic-stage.is-rendered > .mandate-sculpture {
+  opacity: 0;
+}
+.kinetic-stage.is-rendered .art-stack,
+.kinetic-stage.is-rendered .art-orbit {
+  animation: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .kinetic-stage {
+    scroll-behavior: auto;
+  }
+}

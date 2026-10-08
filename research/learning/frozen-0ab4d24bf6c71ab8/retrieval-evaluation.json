@@ -1,0 +1,319 @@
+{
+  "schema": "mew.frozen-retrieval-evaluation.v1",
+  "benchmarkSha256": "0ab4d24bf6c71ab886456cc74eaa760b4674bc44a19d27cb21da34b11cd2d738",
+  "algorithm": "smoothed TF-IDF cosine",
+  "languageModelInvoked": false,
+  "overall": {
+    "cases": 12,
+    "hitsAt3": 8,
+    "hitRateAt3": 0.6666666666666666,
+    "mrrAt3": 0.625
+  },
+  "byLanguage": {
+    "en": {
+      "cases": 6,
+      "hitsAt3": 6,
+      "hitRateAt3": 1,
+      "mrrAt3": 0.9166666666666666
+    },
+    "fr": {
+      "cases": 6,
+      "hitsAt3": 2,
+      "hitRateAt3": 0.3333333333333333,
+      "mrrAt3": 0.3333333333333333
+    }
+  },
+  "cases": [
+    {
+      "id": "unknown-exposure-en",
+      "language": "en",
+      "expected": [
+        "SPEC.md"
+      ],
+      "results": [
+        {
+          "id": "SPEC.md",
+          "sha256": "fec538843190a64a262f63304c36f54c5add2489a583ec8c219fa8bdeca40359",
+          "score": 0.12219443030030364
+        },
+        {
+          "id": "docs/SOCIAL_PROTOCOL_COMMITTEE.md",
+          "sha256": "b360fc373d7462ef63a5aee7f9007cf98a30e88231c34a561822c04272f2a8b3",
+          "score": 0.07348318718886629
+        },
+        {
+          "id": "docs/EVENT_DATA_SOURCES.md",
+          "sha256": "d7fc14a3d0b7559667eb0ca7352492a584eea6b43272c9f3ed8399062aebe9b6",
+          "score": 0.03771338680674926
+        }
+      ],
+      "hitAt3": true,
+      "reciprocalRank": 1
+    },
+    {
+      "id": "unknown-exposure-fr",
+      "language": "fr",
+      "expected": [
+        "SPEC.md"
+      ],
+      "results": [
+        {
+          "id": "SPEC.md",
+          "sha256": "fec538843190a64a262f63304c36f54c5add2489a583ec8c219fa8bdeca40359",
+          "score": 0.06421136177241257
+        },
+        {
+          "id": "docs/SOCIAL_PROTOCOL_COMMITTEE.md",
+          "sha256": "b360fc373d7462ef63a5aee7f9007cf98a30e88231c34a561822c04272f2a8b3",
+          "score": 0.03202617768033854
+        },
+        {
+          "id": "docs/EVENT_DATA_SOURCES.md",
+          "sha256": "d7fc14a3d0b7559667eb0ca7352492a584eea6b43272c9f3ed8399062aebe9b6",
+          "score": 0.01791886783673515
+        }
+      ],
+      "hitAt3": true,
+      "reciprocalRank": 1
+    },
+    {
+      "id": "settlement-delivery-en",
+      "language": "en",
+      "expected": [
+        "SPEC.md"
+      ],
+      "results": [
+        {
+          "id": "docs/ML_LEARNING_PIPELINE.md",
+          "sha256": "ec5778ce7224a6161d010160e78be1cca328c1ba60958e424cd7e17593644e0f",
+          "score": 0.1078820222867659
+        },
+        {
+          "id": "SPEC.md",
+          "sha256": "fec538843190a64a262f63304c36f54c5add2489a583ec8c219fa8bdeca40359",
+          "score": 0.10226766877044774
+        },
+        {
+          "id": "docs/EVENT_DATA_SOURCES.md",
+          "sha256": "d7fc14a3d0b7559667eb0ca7352492a584eea6b43272c9f3ed8399062aebe9b6",
+          "score": 0.08665957451717271
+        }
+      ],
+      "hitAt3": true,
+      "reciprocalRank": 0.5
+    },
+    {
+      "id": "settlement-delivery-fr",
+      "language": "fr",
+      "expected": [
+        "SPEC.md"
+      ],
+      "results": [
+        {
+          "id": "docs/SOCIAL_PROTOCOL_COMMITTEE.md",
+          "sha256": "b360fc373d7462ef63a5aee7f9007cf98a30e88231c34a561822c04272f2a8b3",
+          "score": 0.030811464814628313
+        },
+        {
+          "id": "docs/ML_LEARNING_PIPELINE.md",
+          "sha256": "ec5778ce7224a6161d010160e78be1cca328c1ba60958e424cd7e17593644e0f",
+          "score": 0.029109758998777813
+        }
+      ],
+      "hitAt3": false,
+      "reciprocalRank": 0
+    },
+    {
+      "id": "rail-mismatch-en",
+      "language": "en",
+      "expected": [
+        "docs/ML_LEARNING_PIPELINE.md"
+      ],
+      "results": [
+        {
+          "id": "docs/ML_LEARNING_PIPELINE.md",
+          "sha256": "ec5778ce7224a6161d010160e78be1cca328c1ba60958e424cd7e17593644e0f",
+          "score": 0.12533203433233456
+        },
+        {
+          "id": "SPEC.md",
+          "sha256": "fec538843190a64a262f63304c36f54c5add2489a583ec8c219fa8bdeca40359",
+          "score": 0.052996562975623746
+        },
+        {
+          "id": "docs/SOCIAL_PROTOCOL_COMMITTEE.md",
+          "sha256": "b360fc373d7462ef63a5aee7f9007cf98a30e88231c34a561822c04272f2a8b3",
+          "score": 0.0281856544989446
+        }
+      ],
+      "hitAt3": true,
+      "reciprocalRank": 1
+    },
+    {
+      "id": "rail-mismatch-fr",
+      "language": "fr",
+      "expected": [
+        "docs/ML_LEARNING_PIPELINE.md"
+      ],
+      "results": [
+        {
+          "id": "docs/ML_LEARNING_PIPELINE.md",
+          "sha256": "ec5778ce7224a6161d010160e78be1cca328c1ba60958e424cd7e17593644e0f",
+          "score": 0.10767036814879091
+        },
+        {
+          "id": "SPEC.md",
+          "sha256": "fec538843190a64a262f63304c36f54c5add2489a583ec8c219fa8bdeca40359",
+          "score": 0.06960525914234066
+        }
+      ],
+      "hitAt3": true,
+      "reciprocalRank": 1
+    },
+    {
+      "id": "evidence-grounding-en",
+      "language": "en",
+      "expected": [
+        "docs/ML_LEARNING_PIPELINE.md"
+      ],
+      "results": [
+        {
+          "id": "docs/ML_LEARNING_PIPELINE.md",
+          "sha256": "ec5778ce7224a6161d010160e78be1cca328c1ba60958e424cd7e17593644e0f",
+          "score": 0.13345631869545818
+        },
+        {
+          "id": "docs/SOCIAL_PROTOCOL_COMMITTEE.md",
+          "sha256": "b360fc373d7462ef63a5aee7f9007cf98a30e88231c34a561822c04272f2a8b3",
+          "score": 0.08219638609385904
+        },
+        {
+          "id": "SPEC.md",
+          "sha256": "fec538843190a64a262f63304c36f54c5add2489a583ec8c219fa8bdeca40359",
+          "score": 0.05866233775138377
+        }
+      ],
+      "hitAt3": true,
+      "reciprocalRank": 1
+    },
+    {
+      "id": "evidence-grounding-fr",
+      "language": "fr",
+      "expected": [
+        "docs/ML_LEARNING_PIPELINE.md"
+      ],
+      "results": [
+        {
+          "id": "SPEC.md",
+          "sha256": "fec538843190a64a262f63304c36f54c5add2489a583ec8c219fa8bdeca40359",
+          "score": 0.059275103645885445
+        },
+        {
+          "id": "docs/EVENT_DATA_SOURCES.md",
+          "sha256": "d7fc14a3d0b7559667eb0ca7352492a584eea6b43272c9f3ed8399062aebe9b6",
+          "score": 0.057142559330744795
+        },
+        {
+          "id": "docs/SOCIAL_PROTOCOL_COMMITTEE.md",
+          "sha256": "b360fc373d7462ef63a5aee7f9007cf98a30e88231c34a561822c04272f2a8b3",
+          "score": 0.04866559289729101
+        }
+      ],
+      "hitAt3": false,
+      "reciprocalRank": 0
+    },
+    {
+      "id": "event-opportunity-en",
+      "language": "en",
+      "expected": [
+        "docs/EVENT_DATA_SOURCES.md"
+      ],
+      "results": [
+        {
+          "id": "docs/EVENT_DATA_SOURCES.md",
+          "sha256": "d7fc14a3d0b7559667eb0ca7352492a584eea6b43272c9f3ed8399062aebe9b6",
+          "score": 0.18485041889922244
+        },
+        {
+          "id": "docs/SOCIAL_PROTOCOL_COMMITTEE.md",
+          "sha256": "b360fc373d7462ef63a5aee7f9007cf98a30e88231c34a561822c04272f2a8b3",
+          "score": 0.0578570246285387
+        },
+        {
+          "id": "docs/ML_LEARNING_PIPELINE.md",
+          "sha256": "ec5778ce7224a6161d010160e78be1cca328c1ba60958e424cd7e17593644e0f",
+          "score": 0.045397580434322016
+        }
+      ],
+      "hitAt3": true,
+      "reciprocalRank": 1
+    },
+    {
+      "id": "event-opportunity-fr",
+      "language": "fr",
+      "expected": [
+        "docs/EVENT_DATA_SOURCES.md"
+      ],
+      "results": [],
+      "hitAt3": false,
+      "reciprocalRank": 0
+    },
+    {
+      "id": "training-rights-en",
+      "language": "en",
+      "expected": [
+        "docs/SOCIAL_PROTOCOL_COMMITTEE.md"
+      ],
+      "results": [
+        {
+          "id": "docs/SOCIAL_PROTOCOL_COMMITTEE.md",
+          "sha256": "b360fc373d7462ef63a5aee7f9007cf98a30e88231c34a561822c04272f2a8b3",
+          "score": 0.14097628876032928
+        },
+        {
+          "id": "docs/ML_LEARNING_PIPELINE.md",
+          "sha256": "ec5778ce7224a6161d010160e78be1cca328c1ba60958e424cd7e17593644e0f",
+          "score": 0.051702992745321294
+        },
+        {
+          "id": "docs/EVENT_DATA_SOURCES.md",
+          "sha256": "d7fc14a3d0b7559667eb0ca7352492a584eea6b43272c9f3ed8399062aebe9b6",
+          "score": 0.04167526009712804
+        }
+      ],
+      "hitAt3": true,
+      "reciprocalRank": 1
+    },
+    {
+      "id": "training-rights-fr",
+      "language": "fr",
+      "expected": [
+        "docs/SOCIAL_PROTOCOL_COMMITTEE.md"
+      ],
+      "results": [
+        {
+          "id": "docs/EVENT_DATA_SOURCES.md",
+          "sha256": "d7fc14a3d0b7559667eb0ca7352492a584eea6b43272c9f3ed8399062aebe9b6",
+          "score": 0.057142559330744795
+        },
+        {
+          "id": "docs/ML_LEARNING_PIPELINE.md",
+          "sha256": "ec5778ce7224a6161d010160e78be1cca328c1ba60958e424cd7e17593644e0f",
+          "score": 0.05379008937458418
+        },
+        {
+          "id": "SPEC.md",
+          "sha256": "fec538843190a64a262f63304c36f54c5add2489a583ec8c219fa8bdeca40359",
+          "score": 0.028244904485670654
+        }
+      ],
+      "hitAt3": false,
+      "reciprocalRank": 0
+    }
+  ],
+  "limitations": [
+    "Agent-labeled development set, not independent customer holdout.",
+    "Document-level retrieval only; no answer quality or dense retrieval measurement.",
+    "Frozen labels are excluded from model training."
+  ]
+}

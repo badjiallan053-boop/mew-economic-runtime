@@ -1,0 +1,199 @@
+{
+  "schema": "mew.parent-model-audit.v1",
+  "benchmarkSha256": "0ab4d24bf6c71ab886456cc74eaa760b4674bc44a19d27cb21da34b11cd2d738",
+  "responseFileSha256": "e32a4cf1d63c921c405d0e4c28bf6ad8c7fb78000abc9b4448144bfaec4eca78",
+  "cases": [
+    {
+      "id": "unknown-exposure-en",
+      "language": "en",
+      "allAnnotatedEvidencePresent": true,
+      "strictContractValid": false,
+      "errors": [
+        {
+          "category": "serialization",
+          "code": "invalid-json"
+        }
+      ],
+      "semanticStatus": "not-human-reviewed",
+      "citationEntailment": "unmeasured",
+      "authorityAccepted": false
+    },
+    {
+      "id": "unknown-exposure-fr",
+      "language": "fr",
+      "allAnnotatedEvidencePresent": true,
+      "strictContractValid": false,
+      "errors": [
+        {
+          "category": "serialization",
+          "code": "invalid-json"
+        }
+      ],
+      "semanticStatus": "not-human-reviewed",
+      "citationEntailment": "unmeasured",
+      "authorityAccepted": false
+    },
+    {
+      "id": "settlement-delivery-en",
+      "language": "en",
+      "allAnnotatedEvidencePresent": true,
+      "strictContractValid": false,
+      "errors": [
+        {
+          "category": "serialization",
+          "code": "invalid-json"
+        }
+      ],
+      "semanticStatus": "not-human-reviewed",
+      "citationEntailment": "unmeasured",
+      "authorityAccepted": false
+    },
+    {
+      "id": "settlement-delivery-fr",
+      "language": "fr",
+      "allAnnotatedEvidencePresent": true,
+      "strictContractValid": false,
+      "errors": [
+        {
+          "category": "serialization",
+          "code": "invalid-json"
+        }
+      ],
+      "semanticStatus": "not-human-reviewed",
+      "citationEntailment": "unmeasured",
+      "authorityAccepted": false
+    },
+    {
+      "id": "rail-mismatch-en",
+      "language": "en",
+      "allAnnotatedEvidencePresent": true,
+      "strictContractValid": false,
+      "errors": [
+        {
+          "category": "serialization",
+          "code": "invalid-json"
+        }
+      ],
+      "semanticStatus": "not-human-reviewed",
+      "citationEntailment": "unmeasured",
+      "authorityAccepted": false
+    },
+    {
+      "id": "rail-mismatch-fr",
+      "language": "fr",
+      "allAnnotatedEvidencePresent": true,
+      "strictContractValid": false,
+      "errors": [
+        {
+          "category": "serialization",
+          "code": "invalid-json"
+        }
+      ],
+      "semanticStatus": "not-human-reviewed",
+      "citationEntailment": "unmeasured",
+      "authorityAccepted": false
+    },
+    {
+      "id": "evidence-grounding-en",
+      "language": "en",
+      "allAnnotatedEvidencePresent": true,
+      "strictContractValid": false,
+      "errors": [
+        {
+          "category": "serialization",
+          "code": "invalid-json"
+        }
+      ],
+      "semanticStatus": "not-human-reviewed",
+      "citationEntailment": "unmeasured",
+      "authorityAccepted": false
+    },
+    {
+      "id": "evidence-grounding-fr",
+      "language": "fr",
+      "allAnnotatedEvidencePresent": true,
+      "strictContractValid": false,
+      "errors": [
+        {
+          "category": "serialization",
+          "code": "invalid-json"
+        }
+      ],
+      "semanticStatus": "not-human-reviewed",
+      "citationEntailment": "unmeasured",
+      "authorityAccepted": false
+    },
+    {
+      "id": "event-opportunity-en",
+      "language": "en",
+      "allAnnotatedEvidencePresent": true,
+      "strictContractValid": false,
+      "errors": [
+        {
+          "category": "serialization",
+          "code": "invalid-json"
+        }
+      ],
+      "semanticStatus": "not-human-reviewed",
+      "citationEntailment": "unmeasured",
+      "authorityAccepted": false
+    },
+    {
+      "id": "event-opportunity-fr",
+      "language": "fr",
+      "allAnnotatedEvidencePresent": true,
+      "strictContractValid": false,
+      "errors": [
+        {
+          "category": "serialization",
+          "code": "invalid-json"
+        }
+      ],
+      "semanticStatus": "not-human-reviewed",
+      "citationEntailment": "unmeasured",
+      "authorityAccepted": false
+    },
+    {
+      "id": "training-rights-en",
+      "language": "en",
+      "allAnnotatedEvidencePresent": true,
+      "strictContractValid": false,
+      "errors": [
+        {
+          "category": "serialization",
+          "code": "invalid-json"
+        }
+      ],
+      "semanticStatus": "not-human-reviewed",
+      "citationEntailment": "unmeasured",
+      "authorityAccepted": false
+    },
+    {
+      "id": "training-rights-fr",
+      "language": "fr",
+      "allAnnotatedEvidencePresent": true,
+      "strictContractValid": false,
+      "errors": [
+        {
+          "category": "serialization",
+          "code": "invalid-json"
+        }
+      ],
+      "semanticStatus": "not-human-reviewed",
+      "citationEntailment": "unmeasured",
+      "authorityAccepted": false
+    }
+  ],
+  "strictContractPasses": 0,
+  "annotatedEvidenceCoverage": 12,
+  "modelActivationAllowed": false,
+  "trainingAuthorized": false,
+  "paymentsEnabled": false,
+  "limitations": [
+    "Actual local base inference; no adapter trained.",
+    "Expanded evidence did not establish valid or grounded model answers.",
+    "No JSON repair, fabricated human labels or training consent.",
+    "Fresh human-reviewed development/holdout questions and a suitable model are pending.",
+    "Trusted local receipts are not authenticated proof of inference."
+  ]
+}

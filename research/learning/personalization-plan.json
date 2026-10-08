@@ -1,0 +1,121 @@
+{
+  "schema": "mew.personalization-plan.v1",
+  "profile": {
+    "organization": "mew-development",
+    "languages": [
+      "en",
+      "fr"
+    ],
+    "scope": "advisory-research",
+    "style": "concise-evidence-first",
+    "vocabulary": [
+      "economic-mandate",
+      "retained-exposure",
+      "preprod",
+      "delivery-evidence"
+    ],
+    "retrievalContext": [
+      "mew-owned-documentation"
+    ],
+    "authority": "advisory-only"
+  },
+  "profileSha256": "efcc4306f32764da37cf8201dfb99483cb5b6158499a0b6a689133ecd592ca88",
+  "benchmarkSha256": "0ab4d24bf6c71ab886456cc74eaa760b4674bc44a19d27cb21da34b11cd2d738",
+  "excludedCaseIds": [
+    "unknown-exposure-en",
+    "unknown-exposure-fr",
+    "settlement-delivery-en",
+    "settlement-delivery-fr",
+    "rail-mismatch-en",
+    "rail-mismatch-fr",
+    "evidence-grounding-en",
+    "evidence-grounding-fr",
+    "event-opportunity-en",
+    "event-opportunity-fr",
+    "training-rights-en",
+    "training-rights-fr"
+  ],
+  "excludedLineageGroups": [
+    "unknown-exposure",
+    "settlement-delivery",
+    "rail-mismatch",
+    "evidence-grounding",
+    "event-opportunity",
+    "training-rights"
+  ],
+  "model": {
+    "id": "mlx-community/Qwen3-0.6B-4bit",
+    "revision": "73e3e38d981303bc594367cd910ea6eb48349da8",
+    "receiptSha256": "ac8745a99559ec1fa698d9380caf847721bb263004db5e98ff5911ec6117705d"
+  },
+  "trainingAuthorized": false,
+  "fineTuningReady": false,
+  "reviewedExampleCount": 0,
+  "splitCounts": {
+    "train": 0,
+    "validation": 0,
+    "test": 0
+  },
+  "exportReadyForReview": false,
+  "reviewProvenance": "Declared human reviewer fields require operator authentication; this planner cannot authenticate a reviewer.",
+  "blockers": [
+    "Separate human-approved, reuse-approved training examples are pending.",
+    "Train, validation and test groups must all contain reviewed examples.",
+    "Demonstrate generation failures with supporting evidence present before selecting SFT targets.",
+    "Validate chat rendering, prompt masking, context length and local memory feasibility before training.",
+    "Authenticate reviewer and tenant consent records; define retention and adapter access per organization."
+  ],
+  "failureRouting": {
+    "missingFrenchEvidence": "Multilingual retrieval and exact-span coverage; not an SFT target.",
+    "schemaOrAdvisoryFailureWithEvidencePresent": "Candidate SFT target after human correction and leakage review.",
+    "unsupportedCitation": "Grounding review; JSON validity alone is insufficient."
+  },
+  "candidate": {
+    "status": "unexecuted-local-MLX-LoRA-plan",
+    "runtime": "mlx-lm==0.32.0",
+    "source": "https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LORA.md",
+    "config": {
+      "model": ".local/models/qwen3-0.6b-4bit",
+      "fine_tune_type": "lora",
+      "data": ".local/personalization/reviewed-export",
+      "adapter_path": ".local/personalization/adapters",
+      "seed": 42,
+      "num_layers": 4,
+      "batch_size": 1,
+      "iters": 100,
+      "learning_rate": 0.00001,
+      "max_seq_length": 2048,
+      "mask_prompt": true,
+      "trust_remote_code": false,
+      "lora_parameters": {
+        "rank": 8,
+        "dropout": 0,
+        "scale": 20
+      }
+    },
+    "dataFiles": {
+      "train": "train.jsonl",
+      "validation": "valid.jsonl",
+      "test": "test.jsonl"
+    },
+    "configDelivery": "Write these verified MLX configuration keys to YAML only after review; no training command is executed.",
+    "moduleSelection": "Installed MLX architecture defaults must be inspected and recorded before run; no universal optimal rank claimed."
+  },
+  "evaluation": {
+    "languages": [
+      "en",
+      "fr"
+    ],
+    "compare": "Same frozen cases and identical retrieval context for base versus adapter; these repeatedly used development cases are not a customer holdout.",
+    "metrics": [
+      "exact-span-coverage",
+      "schema-validity",
+      "citation-entailment",
+      "answer-correctness",
+      "false-acceptance",
+      "authority-violation"
+    ],
+    "promotion": "Fresh disjoint human-reviewed pilot holdout and zero authority violations required; no automatic deployment."
+  },
+  "externalResearchUse": "Papers, blogs, repositories and videos inform methods only; excluded from weight-training input."
+}

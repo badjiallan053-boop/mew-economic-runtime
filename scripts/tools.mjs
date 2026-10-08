@@ -1,0 +1,10 @@
+import { spawnSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
+import { existsSync } from 'node:fs';
+const [tool,...args]=process.argv.slice(2);
+const bins={sokosumi:'../.local/tooling/node_modules/@masumi_network/sokosumi/dist/bin/sokosumi.js',pnpm:'../.local/tooling/node_modules/pnpm/bin/pnpm.cjs'};
+if(!bins[tool])throw new Error('Use node scripts/tools.mjs sokosumi|pnpm [arguments]');
+const path=fileURLToPath(new URL(bins[tool],import.meta.url));
+if(!existsSync(path))throw new Error('Run the installation procedure in docs/INSTALLATION.md first');
+const result=spawnSync(process.execPath,[path,...args],{stdio:'inherit'});
+process.exit(result.status ?? 1);

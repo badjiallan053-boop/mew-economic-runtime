@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { createRehearsal, advanceRehearsal } from '../src/demo/rehearsal.mjs';
+import { Store } from '../src/server/store.mjs';
+const next=s=>advanceRehearsal(s,{expectedStage:s.stage});
+test('complete rehearsal binds result and keeps duplicate procurement blocked',()=>{let s=createRehearsal();for(let i=0;i<7;i++)s=next(s);assert.equal(s.stage,7);assert.equal(s.kernel.effects.length,1);assert.equal(s.decisions.duplicate,'DEFER');assert.equal(s.seller.receipt.simulated,true);assert.equal(s.seller.receipt.txHash,null);assert.equal(s.seller.receipt.assetAmount,'1000000');assert.match(s.seller.resultHash,/^[a-f0-9]{64}$/);assert.equal(s.kernel.effects[0].deliveryVerified,true);});
+test('stale stage and unknown scenario never advance',()=>{const s=createRehearsal();assert.throws(()=>advanceRehearsal(s,{expectedStage:1}));assert.throws(()=>createRehearsal('unknown'));assert.equal(s.stage,0);});
+test('recipient substitution stops before reservation',()=>{let s=createRehearsal('wrong-recipient');s=next(s);s=next(s);assert.equal(s.blocked,true);assert.equal(s.kernel.effects.length,0);assert.equal(s.stage,2);assert.equal(next(s).stage,2);});
+test('missing evidence produces abstention rather than fabricated report',()=>{let s=createRehearsal('missing-evidence');s=next(s);assert.equal(s.blocked,true);assert.equal(s.report,null);assert.equal(s.kernel.effects.length,0);});
+test('SQLite rehearsal survives reopen and failed mutation rolls back',()=>{const store=new Store(':memory:');try{store.rehearse(()=>createRehearsal());store.rehearse(next);assert.equal(store.readRehearsal().stage,1);assert.throws(()=>store.rehearse(s=>advanceRehearsal(s,{expectedStage:0})));assert.equal(store.readRehearsal().stage,1);}finally{store.close();}});

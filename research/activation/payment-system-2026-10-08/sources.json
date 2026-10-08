@@ -1,0 +1,30 @@
+{
+  "schema": "mew.payment-system-sources.v1",
+  "inspectedAt": "2026-10-08T00:13:32.923358+00:00",
+  "references": [
+    {
+      "url": "https://cips.cardano.org/cip/CIP-30",
+      "use": "Wallet signTx returns a witness set; the new helper accepts externally supplied key witnesses without calling a wallet",
+      "acquisition": "official specification read with web reader",
+      "externalImplementationCopied": false
+    },
+    {
+      "url": "https://aiken-lang.org/language-tour/validators",
+      "use": "Reuse the existing compiled spend validator and handler testing boundary",
+      "acquisition": "official reference inspected; project compiler/check/build exercised",
+      "externalImplementationCopied": false
+    },
+    {
+      "path": "node_modules/@emurgo/cardano-serialization-lib-nodejs/cardano_serialization_lib.d.ts",
+      "version": "15.0.3",
+      "use": "FixedTransaction raw-body retention and add_vkey_witness API",
+      "sha256": "19e89088b592586838f155c238b10afc83b1f8fb316b7e975b56caa36c3dee88"
+    },
+    {
+      "path": "RESEARCH.md",
+      "use": "Existing verified Blockfrost read-only endpoint contract; fixed preprod origin reused"
+    }
+  ],
+  "newRuntimeDependencies": [],
+  "youtubeOrSocialTrainingPerformed": false
+}

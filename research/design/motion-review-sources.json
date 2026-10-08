@@ -1,0 +1,35 @@
+{
+  "reviewDate": "2026-10-08",
+  "timezone": "Asia/Singapore",
+  "baselineCommit": "991144bdb8328994133de66582511c7a948ed453",
+  "status": "round-2-complete-source-and-desktop-mobile-image-review; runtime-measurements-not-executed-by-reviewer",
+  "installedSkillsApplied": ["perp-jury-uiux", "perp-evidence-design"],
+  "coordinatorReportedChecks": [{"check": "390px shared navigation popover", "result": "left edge -66px before fix; mobile left:0/right:auto and viewport width bound added; readback pending", "sourceVerified": "public/journey.css:1"}, {"check": "Full repository suite", "result": "286 tests passed", "independentlyExecuted": false}],
+  "sources": [
+    {
+      "title": "Emil Kowalski Motion Follow-Up",
+      "url": "https://www.skills.sh/nexu-io/open-design/emilkowalski-motion",
+      "access": "Opened skills.sh SKILL.md excerpt",
+      "appliedPrinciples": ["Small set of state/hierarchy effects", "Transform and opacity first", "Consistent motion language", "Reduced-motion alternatives"],
+      "installed": false
+    },
+    {
+      "title": "Optimize Web Animations",
+      "url": "https://www.skills.sh/akillness/jeo-skills/optimize-web-animations",
+      "access": "Opened skills.sh SKILL.md excerpt",
+      "appliedPrinciples": ["Offscreen and lifecycle work checks", "Release RAF, timers, observers and listeners", "Measure behavior beyond screenshots"],
+      "installed": false
+    },
+    {
+      "title": "Fixing Motion Performance",
+      "url": "https://www.skills.sh/ibelick/ui-skills/fixing-motion-performance",
+      "authorRepository": "https://github.com/ibelick/ui-skills",
+      "access": "Opened skills.sh excerpt and linked author repository",
+      "appliedPrinciples": ["Concrete source review", "Batch DOM reads before writes", "Avoid unnecessary animation-stack migration"],
+      "installed": false
+    }
+  ],
+  "renderEvidence": [{"path": "/private/tmp/mew-art-desktop.jpg", "width": 805, "height": 827, "captureClockTime": null, "observed": "Clear hero hierarchy, unobstructed artwork, visible prototype and concept qualifiers"}, {"path": "/private/tmp/mew-art-mobile.jpg", "width": 390, "height": 7448, "captureClockTime": null, "observed": "Readable single-column hierarchy, visible art/pause/qualifiers, uncut demo and evidence sections"}],
+  "executedChecks": ["Read current home and shared shell/motion source", "Read installed design-review skill instructions", "Research reference pages through web tool", "Read new kinetic-art and experience-motion source", "Recheck integrated source corrections", "Inspect coordinator-supplied desktop and full-page mobile screenshots"],
+  "unexecutedChecks": ["Own browser automation", "Keyboard/screen-reader interaction", "Rendered contrast measurements", "Animation frame rate", "Reduced-motion emulation", "Offscreen/hidden-tab RAF counters", "Canvas failure and BFCache lifecycle"]
+}

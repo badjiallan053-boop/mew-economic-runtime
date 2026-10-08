@@ -1,0 +1,10 @@
+import {readFile,writeFile} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import {balancedContext,describeLearning} from '../src/learning/dataset.mjs';
+const dir=process.argv[2];if(!dir||process.argv.length!==3)throw Error('Usage: node scripts/analyze-learning.mjs SNAPSHOT_DIRECTORY');
+const bytes=await readFile(`${dir}/records.jsonl`),quality=JSON.parse(await readFile(`${dir}/quality.json`));
+if(createHash('sha256').update(bytes).digest('hex')!==quality.snapshotSha256)throw Error('Dataset integrity mismatch');
+const rows=bytes.toString().trim().split('\n').map(JSON.parse),analysis=describeLearning(rows);
+await writeFile(`${dir}/analysis.json`,JSON.stringify(analysis,null,2)+'\n');
+await writeFile(`${dir}/advisory-input.json`,JSON.stringify({schema:'mew.public-context.v1',asOf:quality.collectedAt,training:false,paymentsEnabled:false,...balancedContext(rows,quality.collectedAt)},null,2)+'\n');
+console.log(JSON.stringify(analysis,null,2));

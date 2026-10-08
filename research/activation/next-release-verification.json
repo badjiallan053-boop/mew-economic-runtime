@@ -1,0 +1,33 @@
+{
+  "schema": "mew.next-release-verification.v1",
+  "observedAt": "2026-10-07T22:38:33.697Z",
+  "tests": {
+    "passed": 317,
+    "failed": 0,
+    "new": 31,
+    "command": "node --test tests/*.test.mjs"
+  },
+  "build": "PASS",
+  "databaseObservation": {
+    "path": "research/activation/database-next-observation.json",
+    "sha256": "4ef00c869d13fdcb9c360c822acd4669ff0db38eb174b2aee3bc3292e155ac2b"
+  },
+  "modelReview": {
+    "cases": 12,
+    "strictContractPasses": 12,
+    "evidenceCoverage": 12,
+    "unreviewedDimensionJudgments": 72,
+    "semanticPasses": null,
+    "packSha256": "f59e15f9c961d2a6ebad1ad2654fd1c17dcb356bfd0fabcf9cb64b37cbb5b112"
+  },
+  "authority": {
+    "modelActivation": false,
+    "paymentSigning": false,
+    "paymentBroadcast": false,
+    "productionDeployment": false
+  },
+  "limitations": [
+    "Local tests and read-only management metadata do not prove provider operation, human acceptance, hosted concurrency or payment execution.",
+    "Public source remains pinned to bf30ef83961700eca2187b223c4569920ae27e60; no private backend deployed."
+  ]
+}

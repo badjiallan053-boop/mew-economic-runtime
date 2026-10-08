@@ -1,0 +1,10 @@
+import {readFile,writeFile} from 'node:fs/promises';
+import {verifyFrozenBenchmark} from '../src/learning/benchmark.mjs';
+import {fitRetrieval,searchRetrieval} from '../src/learning/retrieval.mjs';
+const dir=process.argv[2];if(!dir)throw Error('Frozen benchmark directory required');
+const raw=await readFile(`${dir}/benchmark.json`),manifest=JSON.parse(await readFile(`${dir}/manifest.json`));
+const b=verifyFrozenBenchmark(raw,manifest);
+const model=fitRetrieval(b.sources.map(s=>({id:s.id,text:s.text}))),cases=b.cases.map(c=>{const expected=[...new Set(c.supportingEvidenceSpans.map(s=>s.sourceId))],results=searchRetrieval(model,c.question,3),rank=results.findIndex(r=>expected.includes(r.id));return{id:c.id,language:c.language,expected,results,hitAt3:rank>=0,reciprocalRank:rank>=0?1/(rank+1):0};});
+const metrics=language=>{const rows=cases.filter(c=>!language||c.language===language);return{cases:rows.length,hitsAt3:rows.filter(c=>c.hitAt3).length,hitRateAt3:rows.filter(c=>c.hitAt3).length/rows.length,mrrAt3:rows.reduce((n,c)=>n+c.reciprocalRank,0)/rows.length};};
+const report={schema:'mew.frozen-retrieval-evaluation.v1',benchmarkSha256:manifest.sha256,algorithm:model.algorithm,languageModelInvoked:false,overall:metrics(),byLanguage:{en:metrics('en'),fr:metrics('fr')},cases,limitations:['Agent-labeled development set, not independent customer holdout.','Document-level retrieval only; no answer quality or dense retrieval measurement.','Frozen labels are excluded from model training.']};
+await writeFile(`${dir}/retrieval-evaluation.json`,JSON.stringify(report,null,2)+'\n');await writeFile(`${dir}/retrieval-model.json`,JSON.stringify(model)+'\n');console.log(JSON.stringify({overall:report.overall,byLanguage:report.byLanguage},null,2));

@@ -1,0 +1,142 @@
+{
+  "schema": "mew.constrained-parent-audit.v1",
+  "benchmarkSha256": "0ab4d24bf6c71ab886456cc74eaa760b4674bc44a19d27cb21da34b11cd2d738",
+  "responseFileSha256": "285d8a410c4aeca35ba6c7209a232935bb821d95435be4966e9a2c7d4e2d9f1f",
+  "cases": [
+    {
+      "id": "unknown-exposure-en",
+      "language": "en",
+      "allAnnotatedEvidencePresent": true,
+      "strictContractValid": true,
+      "errors": [],
+      "semanticStatus": "not-human-reviewed",
+      "citationEntailment": "unmeasured",
+      "authorityAccepted": true
+    },
+    {
+      "id": "unknown-exposure-fr",
+      "language": "fr",
+      "allAnnotatedEvidencePresent": true,
+      "strictContractValid": true,
+      "errors": [],
+      "semanticStatus": "not-human-reviewed",
+      "citationEntailment": "unmeasured",
+      "authorityAccepted": true
+    },
+    {
+      "id": "settlement-delivery-en",
+      "language": "en",
+      "allAnnotatedEvidencePresent": true,
+      "strictContractValid": true,
+      "errors": [],
+      "semanticStatus": "not-human-reviewed",
+      "citationEntailment": "unmeasured",
+      "authorityAccepted": true
+    },
+    {
+      "id": "settlement-delivery-fr",
+      "language": "fr",
+      "allAnnotatedEvidencePresent": true,
+      "strictContractValid": true,
+      "errors": [],
+      "semanticStatus": "not-human-reviewed",
+      "citationEntailment": "unmeasured",
+      "authorityAccepted": true
+    },
+    {
+      "id": "rail-mismatch-en",
+      "language": "en",
+      "allAnnotatedEvidencePresent": true,
+      "strictContractValid": true,
+      "errors": [],
+      "semanticStatus": "not-human-reviewed",
+      "citationEntailment": "unmeasured",
+      "authorityAccepted": true
+    },
+    {
+      "id": "rail-mismatch-fr",
+      "language": "fr",
+      "allAnnotatedEvidencePresent": true,
+      "strictContractValid": true,
+      "errors": [],
+      "semanticStatus": "not-human-reviewed",
+      "citationEntailment": "unmeasured",
+      "authorityAccepted": true
+    },
+    {
+      "id": "evidence-grounding-en",
+      "language": "en",
+      "allAnnotatedEvidencePresent": true,
+      "strictContractValid": true,
+      "errors": [],
+      "semanticStatus": "not-human-reviewed",
+      "citationEntailment": "unmeasured",
+      "authorityAccepted": true
+    },
+    {
+      "id": "evidence-grounding-fr",
+      "language": "fr",
+      "allAnnotatedEvidencePresent": true,
+      "strictContractValid": true,
+      "errors": [],
+      "semanticStatus": "not-human-reviewed",
+      "citationEntailment": "unmeasured",
+      "authorityAccepted": true
+    },
+    {
+      "id": "event-opportunity-en",
+      "language": "en",
+      "allAnnotatedEvidencePresent": true,
+      "strictContractValid": true,
+      "errors": [],
+      "semanticStatus": "not-human-reviewed",
+      "citationEntailment": "unmeasured",
+      "authorityAccepted": true
+    },
+    {
+      "id": "event-opportunity-fr",
+      "language": "fr",
+      "allAnnotatedEvidencePresent": true,
+      "strictContractValid": true,
+      "errors": [],
+      "semanticStatus": "not-human-reviewed",
+      "citationEntailment": "unmeasured",
+      "authorityAccepted": true
+    },
+    {
+      "id": "training-rights-en",
+      "language": "en",
+      "allAnnotatedEvidencePresent": true,
+      "strictContractValid": true,
+      "errors": [],
+      "semanticStatus": "not-human-reviewed",
+      "citationEntailment": "unmeasured",
+      "authorityAccepted": true
+    },
+    {
+      "id": "training-rights-fr",
+      "language": "fr",
+      "allAnnotatedEvidencePresent": true,
+      "strictContractValid": true,
+      "errors": [],
+      "semanticStatus": "not-human-reviewed",
+      "citationEntailment": "unmeasured",
+      "authorityAccepted": true
+    }
+  ],
+  "strictContractPasses": 12,
+  "annotatedEvidenceCoverage": 12,
+  "modelActivationAllowed": false,
+  "trainingAuthorized": false,
+  "paymentsEnabled": false,
+  "limitations": [
+    "Actual same-weight local generation with a constrained decoder; no adapter or answer repair.",
+    "Shorter bounded answers and canonical source-subset choices change the generation policy.",
+    "Strict validity does not prove correct answers, citation entailment or correct language.",
+    "Visible unsupported product claims and mixed-language answers require further work.",
+    "No human grading, customer holdout, model activation, training permission or payment authority.",
+    "Trusted local hashes are not authenticated inference attestation."
+  ],
+  "constraintPolicySha256": "00fab99aab0def01796641764f4fa5c008ce5bbc4c58fe1f0deb04965e3e0280",
+  "decodingBackend": "outlines-mlx"
+}

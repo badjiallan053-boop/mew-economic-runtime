@@ -1,0 +1,9 @@
+{
+  "repository": "https://github.com/ai-evals-course/evals-skills",
+  "revision": "80d5f7b0127c7572ed9e9339937adbfd7240ffeb",
+  "path": "skills/eval-audit",
+  "discoveredVia": "https://www.skills.sh/ai-evals-course/evals-skills/eval-audit",
+  "license": "Apache-2.0",
+  "skillSha256": "9f4b23dfe06f4c42a28d4bb054d75b5da1bff39ea57e0450689a4f699604bc63",
+  "upstreamModified": false
+}

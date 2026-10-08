@@ -1,0 +1,131 @@
+{
+  "schema": "mew.database-catalog-observation.v1",
+  "projectRef": "ndorfchuhciidfcltbzf",
+  "observedAt": "2026-10-07T22:33:42.833Z",
+  "channel": "supabase-management-read-only",
+  "catalog": {
+    "role": {
+      "login": false,
+      "enrolled": true,
+      "bypassRls": false,
+      "superuser": false,
+      "createRole": false,
+      "createDatabase": false
+    },
+    "tables": [
+      {
+        "rls": true,
+        "name": "escrow_operations",
+        "delete": false,
+        "forced": true,
+        "insert": true,
+        "select": true,
+        "update": true,
+        "trigger": false,
+        "policies": [
+          {
+            "name": "principal_boundary",
+            "check": "(principal = current_setting('mew.principal'::text, true))",
+            "roles": ["17613"],
+            "using": "(principal = current_setting('mew.principal'::text, true))",
+            "command": "*",
+            "permissive": true
+          }
+        ],
+        "truncate": false,
+        "references": false
+      },
+      {
+        "rls": true,
+        "name": "input_locks",
+        "delete": false,
+        "forced": true,
+        "insert": true,
+        "select": true,
+        "update": false,
+        "trigger": false,
+        "policies": [
+          {
+            "name": "principal_boundary",
+            "check": "(principal = current_setting('mew.principal'::text, true))",
+            "roles": ["17613"],
+            "using": "(principal = current_setting('mew.principal'::text, true))",
+            "command": "*",
+            "permissive": true
+          }
+        ],
+        "truncate": false,
+        "references": false
+      },
+      {
+        "rls": true,
+        "name": "ledgers",
+        "delete": false,
+        "forced": true,
+        "insert": true,
+        "select": true,
+        "update": true,
+        "trigger": false,
+        "policies": [
+          {
+            "name": "principal_boundary",
+            "check": "(principal = current_setting('mew.principal'::text, true))",
+            "roles": ["17613"],
+            "using": "(principal = current_setting('mew.principal'::text, true))",
+            "command": "*",
+            "permissive": true
+          }
+        ],
+        "truncate": false,
+        "references": false
+      },
+      {
+        "rls": true,
+        "name": "model_runs",
+        "delete": false,
+        "forced": true,
+        "insert": true,
+        "select": true,
+        "update": true,
+        "trigger": false,
+        "policies": [
+          {
+            "name": "principal_boundary",
+            "check": "(principal = current_setting('mew.principal'::text, true))",
+            "roles": ["17613"],
+            "using": "(principal = current_setting('mew.principal'::text, true))",
+            "command": "*",
+            "permissive": true
+          }
+        ],
+        "truncate": false,
+        "references": false
+      }
+    ],
+    "backendOid": "17613",
+    "backendSafe": true,
+    "currentRole": "postgres",
+    "browserRoles": [
+      {
+        "name": "anon",
+        "schemaUsage": false,
+        "tableAccess": false,
+        "schemaCreate": false
+      },
+      {
+        "name": "authenticated",
+        "schemaUsage": false,
+        "tableAccess": false,
+        "schemaCreate": false
+      }
+    ],
+    "runtimeSchemaUsage": true,
+    "runtimeSchemaCreate": false
+  },
+  "securityAdvisorNotices": 0,
+  "limitations": [
+    "Management SQL is not runtime Node login or TLS proof.",
+    "No roles, grants, schema, application configuration or records were changed.",
+    "Independent-client locking and crash recovery remain untested on the hosted runtime."
+  ]
+}

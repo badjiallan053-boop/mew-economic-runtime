@@ -1,0 +1,15 @@
+{
+  "reviewerId": "data-science-audit",
+  "reviewerType": "independent-agent",
+  "benchmarkSha256": "0ab4d24bf6c71ab886456cc74eaa760b4674bc44a19d27cb21da34b11cd2d738",
+  "answerabilityAgreement": "All six EN/FR families answerable as advisory explanations. Evidence-grounding is methodology, not a proven improvement claim.",
+  "criticalNuances": [
+    "Unknown exposure advice cannot issue a binding runtime decision.",
+    "Settlement alone does not prove delivery.",
+    "Preprod and generic mainnet metadata do not prove MEW revenue.",
+    "Event listing does not authorize outreach or prove demand.",
+    "Public visibility does not grant model training rights."
+  ],
+  "humanReviewed": false,
+  "customerHoldout": false
+}

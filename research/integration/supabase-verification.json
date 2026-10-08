@@ -1,0 +1,93 @@
+{
+  "schema": "mew.supabase-verification.v1",
+  "verifiedOn": "2026-10-08",
+  "projectRef": "ndorfchuhciidfcltbzf",
+  "organizationRef": "zmyixaggruyupoyhpkkm",
+  "projectName": "mew",
+  "region": "ap-southeast-2",
+  "migration": {
+    "name": "mew_private_integration",
+    "version": "20261007213113",
+    "artifact": "deploy/supabase-bootstrap.sql",
+    "sha256": "affa66972acfa8504990e099554e043e9a57ee3ea06362384475f5ba20127a98"
+  },
+  "hostedChecks": {
+    "tables": [
+      {
+        "name": "escrow_operations",
+        "rls": true,
+        "forcedRls": true,
+        "anonSelect": false,
+        "authenticatedSelect": false
+      },
+      {
+        "name": "input_locks",
+        "rls": true,
+        "forcedRls": true,
+        "anonSelect": false,
+        "authenticatedSelect": false
+      },
+      {
+        "name": "ledgers",
+        "rls": true,
+        "forcedRls": true,
+        "anonSelect": false,
+        "authenticatedSelect": false
+      },
+      {
+        "name": "model_runs",
+        "rls": true,
+        "forcedRls": true,
+        "anonSelect": false,
+        "authenticatedSelect": false
+      }
+    ],
+    "roles": [
+      {
+        "name": "mew_backend",
+        "login": false,
+        "superuser": false,
+        "bypassRls": false,
+        "createRole": false,
+        "createDatabase": false
+      },
+      {
+        "name": "mew_runtime",
+        "login": false,
+        "superuser": false,
+        "bypassRls": false,
+        "createRole": false,
+        "createDatabase": false
+      }
+    ],
+    "principalIsolation": "PASS",
+    "principalReassignmentDenied": "PASS",
+    "anonymousAccessDenied": "PASS",
+    "probeFixturesAndTemporaryRoleGrantRolledBack": true,
+    "remainingRows": {
+      "ledgers": 0,
+      "escrow_operations": 0,
+      "input_locks": 0,
+      "model_runs": 0
+    },
+    "securityAdvisorFindings": 0
+  },
+  "applicationDatabaseLogin": "NOT_CONFIGURED",
+  "actualModelRequestPerformed": false,
+  "modelActivated": false,
+  "paymentSigned": false,
+  "paymentBroadcast": false,
+  "masumiNativeTokenWritesEnabled": false,
+  "limitations": [
+    "Management SQL access and hosted RLS checks do not prove Node TLS connectivity.",
+    "PGlite tests use a single serialized engine connection, not hosted multi-worker concurrency.",
+    "Private credentials, funded preprod lifecycle, closing integration and independent contract audit remain pending."
+  ],
+  "localChecks": {
+    "tests": 260,
+    "passed": 260,
+    "failed": 0,
+    "providerTransport": "mocked",
+    "postgresEngine": "PGlite 0.5.8"
+  }
+}

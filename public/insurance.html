@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f6f2e9">
+  <title>MEW — Evidence for agentic insurance workflows</title>
+  <link rel="stylesheet" href="/assets/fonts/instrument.css"><link rel="stylesheet" href="/site-shell.css?v=palette-20261008a"><link rel="stylesheet" href="/journey.css?v=palette-20261008a"><link rel="stylesheet" href="/protocol.css"><link rel="stylesheet" href="/insurance.css"><link rel="stylesheet" href="/cream-motion.css?v=cream-20261008f">
+<!-- MEW SEO START -->
+<meta name="description" content="See how bounded agent actions and verified evidence could support insurance review, while policy terms and claims remain with authorized insurers."><link rel="canonical" href="https://mew-demo-production.up.railway.app/insurance.html"><meta name="robots" content="index,follow"><meta property="og:type" content="website"><meta property="og:site_name" content="MEW"><meta property="og:title" content="MEW — Evidence for agentic insurance workflows"><meta property="og:description" content="See how bounded agent actions and verified evidence could support insurance review, while policy terms and claims remain with authorized insurers."><meta property="og:url" content="https://mew-demo-production.up.railway.app/insurance.html"><meta property="og:image" content="https://mew-demo-production.up.railway.app/assets/mew-social.png"><meta property="og:image:alt" content="MEW — one purchase, one shared mandate. Interactive prototype; models and payments disabled."><meta name="twitter:card" content="summary_large_image">
+<!-- MEW SEO END -->
+</head>
+<body class="site-page verify-page insurance-page">
+<a class="protocol-skip" href="#main">Skip to content</a>
+<main id="main">
+  <header class="protocol-heading">
+    <p class="protocol-label">Agentic insurance · product concept</p>
+    <h1>Show how an agent is bounded.<br><em>Let insurers decide what it means.</em></h1>
+    <p class="protocol-lead">MEW’s prototype demonstrates how to record a configured mandate, decision and observed outcome. A future evidence pack could include system inventory and tested controls. A broker or insurer decides whether those facts matter to underwriting or a claim.</p>
+    <span class="protocol-mode">Evidence prototype · no insurance offered · payments disabled</span>
+    <a class="protocol-cta" href="#boundary">See the boundary <span aria-hidden="true">↓</span></a>
+  </header>
+
+  <section id="boundary" class="insurance-section" aria-labelledby="boundary-title">
+    <p class="protocol-label">THREE DIFFERENT JOBS</p>
+    <h2 id="boundary-title">Control the action. Record the facts. Decide coverage separately.</h2>
+    <ol class="insurance-flow">
+      <li><span class="insurance-index">01</span><h3>Operator sets authority</h3><p>Which agent, tools, actions, recipient, asset and limit are allowed?</p><small>Owned by the deploying organization</small></li>
+      <li><span class="insurance-index">02</span><h3>MEW records execution</h3><p>Was the action allowed, reserved, uncertain, verified, delivered or reversed?</p><small>Deterministic control and evidence</small></li>
+      <li><span class="insurance-index">03</span><h3>Insurer evaluates risk</h3><p>Do the facts matter under this application, policy wording and claim?</p><small>Owned by the authorized insurance partner</small></li>
+    </ol>
+    <p class="insurance-callout"><strong>Key boundary:</strong> MEW’s ALLOW means “within this configured mandate.” It does not mean a broker accepts the risk, a policy covers an event, or a claim will be paid.</p>
+  </section>
+
+  <section class="insurance-section" aria-labelledby="ecosystem-title">
+    <p class="protocol-label">ONE WORKFLOW · FOUR SOURCES OF TRUTH</p>
+    <h2 id="ecosystem-title">Each participant proves its own part.</h2>
+    <p>MEW connects the records. It does not take over the authority of the operator, wallet, supplier or insurer.</p>
+    <ol class="ecosystem-map" aria-label="Evidence and authority handoffs">
+      <li><span>01 · CUSTOMER</span><h3>Operator mandate</h3><p>Declares the agent, allowed action, recipient and limit.</p><small>Authority: customer</small></li>
+      <li><span>02 · CONTROL</span><h3>MEW decision</h3><p>Reserves capacity and records ALLOW, DEFER or DENY.</p><small>Evidence: MEW journal</small></li>
+      <li><span>03 · RAIL</span><h3>Cardano observation</h3><p>Reports a transaction and output at a measured confirmation depth.</p><small>Evidence: chain observer</small></li>
+      <li><span>04 · SERVICE</span><h3>Supplier delivery</h3><p>Confirms the exact job and delivered artifact.</p><small>Evidence: supplier receipt</small></li>
+      <li><span>05 · REVIEW</span><h3>Partner decision</h3><p>Broker, insurer or claims team makes its own determination.</p><small>Authority: licensed partner</small></li>
+    </ol>
+    <p class="insurance-callout"><strong>Never merge these events:</strong> a transaction hash does not prove delivery; a delivery receipt does not prove settlement; an MEW decision does not establish insurance coverage.</p>
+    <p class="ecosystem-status">Current status: the website is a demo, Cardano support is a preprod observation and unsigned-escrow prototype, and the insurance evidence pack is proposed. No live signing, payment, policy or claim decision is available.</p>
+    <a class="insurance-inline-link" href="/protocol.html#evidence">Inspect the current control boundary →</a>
+  </section>
+
+  <section id="assurance-layer" class="insurance-section assurance-section" aria-labelledby="assurance-title">
+    <p class="protocol-label">THE ASSURANCE LAYER · ONE OPERATION ID FROM START TO FINISH</p>
+    <h2 id="assurance-title">Eight checks keep one agent payment accountable.</h2>
+    <p class="assurance-intro">In the target design, one operation ID follows a request across the agent, MEW, payment rail and supplier. Each checkpoint names who can attest to it and what happens when evidence is missing.</p>
+    <ol class="assurance-steps" aria-label="Eight checkpoints in an agent payment">
+      <li><span>01 · AUTHORITY</span><h3>Who may act?</h3><p>Bind the agent, human owner, action class, allowed recipient and mandate revision.</p><small>Operator attests · signed mandate required</small></li>
+      <li><span>02 · INTENT</span><h3>What is the job?</h3><p>Give the objective and effect stable IDs; set quantity, purpose and duplicate key.</p><small>MEW checks · same intent reuses its ID</small></li>
+      <li><span>03 · QUOTE</span><h3>What will it cost?</h3><p>Bind supplier, service, amount, asset, expiry and recipient before approval.</p><small>Supplier provides · MEW validates terms</small></li>
+      <li><span>04 · RESERVE</span><h3>Is capacity available?</h3><p>Check the whole mandate and reserve budget plus quantity in one durable transaction.</p><small>MEW decides · no reserve means no dispatch</small></li>
+      <li><span>05 · DISPATCH</span><h3>Was it sent once?</h3><p>Persist an outbox item and stable idempotency key before a worker calls the provider.</p><small>Worker reports · timeout stays unresolved</small></li>
+      <li><span>06 · SETTLEMENT</span><h3>Did value move?</h3><p>Verify the exact rail, asset, payer/recipient, amount and transaction against saved terms.</p><small>Rail observer attests · inclusion is not delivery</small></li>
+      <li><span>07 · DELIVERY</span><h3>Was the job fulfilled?</h3><p>Verify the enrolled supplier receipt and exact accepted artifact or service result.</p><small>Supplier signs · payment alone is not acceptance</small></li>
+      <li><span>08 · RECOVERY</span><h3>Can we explain the ending?</h3><p>Reconcile the original operation after retry, refund, reversal, timeout or restart.</p><small>Operator reviews · unknown keeps capacity held</small></li>
+    </ol>
+    <div class="assurance-crosscut"><strong>Across every step:</strong> advisory agents can gather and challenge evidence; deterministic code enforces limits; an enrolled signer controls keys; a named human owns exceptions. No agent recommendation can approve its own spend.</div>
+    <div class="assurance-adapters" aria-label="Payment rail adapters">
+      <article><span>WEB2 ADAPTER</span><h3>Cards · invoices · service APIs</h3><p>Use provider idempotency, authenticated webhooks and bank/card reconciliation. A timeout triggers lookup of the original payment.</p></article>
+      <article><span>WEB3 ADAPTER</span><h3>Cardano · escrow · tokens</h3><p>Bind network, asset unit, UTxOs, fee/collateral and transaction outputs. A confirmation is an observation; a contract needs its own review.</p></article>
+    </div>
+    <p class="assurance-status"><strong>What exists today:</strong> the deterministic reserve/defer kernel, durable journals, authenticated delivery receipt path and read-only Cardano observation. Private production identity, signed mandates, a live dispatch worker, fully bound settlement proof and a funded audited lifecycle are still pending.</p>
+    <a class="insurance-inline-link" href="/protocol.html#evidence">Inspect the current evidence boundary →</a>
+  </section>
+
+  <section class="insurance-section" aria-labelledby="example-title">
+    <p class="protocol-label">ONE CLEAR FAILURE CASE</p>
+    <h2 id="example-title">A supplier times out. The agent wants to pay again.</h2>
+    <div class="incident-example">
+      <div class="incident-state"><span>Agent request</span><strong>Buy one research report</strong><small>Supplier A · 1.50 ADA · synthetic example</small></div>
+      <span class="incident-arrow" aria-hidden="true">→</span>
+      <div class="incident-state uncertain"><span>Delivery response</span><strong>Unknown</strong><small>A timeout does not prove failure</small></div>
+      <span class="incident-arrow" aria-hidden="true">→</span>
+      <div class="incident-state held"><span>MEW decision</span><strong>DEFER duplicate</strong><small>Keep original commitment open</small></div>
+    </div>
+    <p>The evidence can show the mandate, decision and unresolved state. It cannot establish by itself whether the supplier performed, whether the operator suffered a covered loss, or whether policy language responds. This example is a deterministic simulation; no payment occurred.</p>
+  </section>
+
+  <section class="insurance-section" aria-labelledby="pack-title">
+    <p class="protocol-label">PROPOSED EVIDENCE PACK</p>
+    <h2 id="pack-title">Make the system inspectable before assigning a score.</h2>
+    <div class="insurance-cards">
+      <article><span class="card-step">SYSTEM</span><h3>What is deployed?</h3><p>Workflow and version, model/provider where known, connected tools, action scope, accountable owner and change history.</p></article>
+      <article><span class="card-step">CONTROLS</span><h3>What limits it?</h3><p>Per-action and aggregate caps, approval thresholds, tested retries, stop controls and recovery owner.</p></article>
+      <article><span class="card-step">OUTCOMES</span><h3>What actually happened?</h3><p>Stable operation ID, decision, reservation, external reference, verified observation, delivery and resolution—with gaps visible.</p></article>
+    </div>
+    <p class="insurance-note">A digest helps detect changed evidence bytes; it does not authenticate the underlying facts. No prompts, keys, seed phrases or raw customer content belong in the default pack.</p>
+  </section>
+
+  <section class="insurance-section insurance-risk" aria-labelledby="risk-title">
+    <div><p class="protocol-label">KEEP THE RISK TYPES SEPARATE</p><h2 id="risk-title">An execution error is not a market loss.</h2><p>A future trading adapter could record duplicate orders, wrong side/size, replay or an exceeded mandate. Price movement, liquidation, oracle failure, MEV, custody loss and protocol exploits need distinct evidence and risk transfer. MEW does not promise to insure any of them.</p></div>
+    <aside><h3>What this prototype does not do</h3><ul><li>Quote, bind or administer insurance</li><li>Set premiums, limits or exclusions</li><li>Decide liability or adjudicate claims</li><li>Sign or send trades or payments</li><li>Predict loss from synthetic demo data</li></ul></aside>
+  </section>
+
+  <section class="insurance-section" aria-labelledby="roadmap-title">
+    <p class="protocol-label">A LOW-RISK PATH TO VALIDATION</p><h2 id="roadmap-title">Prove the evidence is useful first.</h2>
+    <ol class="insurance-roadmap">
+      <li><b>01</b><div><h3>Define one agent system</h3><p>Inventory its tools, authority, limits, human gates and owner.</p></div><span>Operator</span></li>
+      <li><b>02</b><div><h3>Rehearse control failures</h3><p>Test duplicate, timeout, stale quote and wrong-recipient cases with fixtures.</p></div><span>MEW + QA</span></li>
+      <li><b>03</b><div><h3>Review the evidence pack</h3><p>Ask a broker or insurer whether it helps a named workflow and what is missing.</p></div><span>Partner</span></li>
+      <li><b>04</b><div><h3>Run a consented shadow pilot</h3><p>Use customer-approved cases, no changed execution path, and a written data-retention plan.</p></div><span>Operator + partner</span></li>
+    </ol>
+  </section>
+
+  <section class="insurance-sources" aria-labelledby="sources-title">
+    <h2 id="sources-title">Where this direction comes from</h2>
+    <p>EIOPA reports cautious, human-supervised insurer AI adoption; NAIC is developing an AI Risk Evaluation Supplement; and CFC has announced affirmative AI language across existing products. These are context for product discovery, not proof that MEW is insured or partnered.</p>
+    <ul><li><a href="https://www.eiopa.europa.eu/eiopa-survey-generative-ai-shows-swift-cautious-adoption-among-europes-insurers-2026-02-02_en" rel="noopener noreferrer">EIOPA: 2026 insurer GenAI survey</a></li><li><a href="https://content.naic.org/committees/h/big-data-artificial-intelligence-wg" rel="noopener noreferrer">NAIC: AI evaluation workgroup</a></li><li><a href="https://www.cfc.com/en-us/knowledge/news/2026/06/cfc-responds-to-customer-demand-for-affirmative-ai-cover/" rel="noopener noreferrer">CFC: affirmative AI cover announcement</a></li></ul>
+  </section>
+  <footer class="protocol-footer"><a href="/marketing.html?workflow=clips">See the marketing-workflow example</a><a href="/protocol.html#evidence">Inspect MEW’s control boundary</a></footer>
+</main>
+<script type="module" src="/site-shell.js"></script><script type="module" src="/journey.js"></script><script type="module" src="/motion.js"></script>
+</body>
+</html>

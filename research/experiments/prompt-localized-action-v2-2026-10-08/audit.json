@@ -1,0 +1,111 @@
+{
+  "schema": "mew.localized-model-experiment-audit.v1",
+  "verdict": "BLOCKED",
+  "changedVariable": "localizedSystemPrompt",
+  "policySha256": "3eab69e80467a70149c97471c516c0bfe020df74d0f2895b0fc2c09a66f51138",
+  "completionSha256": "9c68dfe295c58f87e2f046a1a0b41ba77f43e157f93b6eebfc23f4a23e55c965",
+  "baselinePolicySha256": "92b147bfa721f5e080964bbfbc32c1ac96ed525356bc2a67a6a094566de4763b",
+  "cases": 12,
+  "strictContractPasses": 12,
+  "annotatedEvidenceCoverage": 12,
+  "semanticPasses": null,
+  "semanticImprovementMeasured": false,
+  "authenticatedHumanReviews": 0,
+  "customerHoldoutCases": 0,
+  "packSha256": "d2fb36242a011116f171c251979a9c9b5aa636316ecb64dc70d717561bfb11ee",
+  "modelActivationAllowed": false,
+  "trainingAuthorized": false,
+  "paymentsEnabled": false,
+  "casesAudit": [
+    {
+      "id": "unknown-exposure-en",
+      "strictContractValid": true,
+      "errors": [],
+      "allAnnotatedEvidencePresent": true,
+      "semanticStatus": "not-human-reviewed"
+    },
+    {
+      "id": "unknown-exposure-fr",
+      "strictContractValid": true,
+      "errors": [],
+      "allAnnotatedEvidencePresent": true,
+      "semanticStatus": "not-human-reviewed"
+    },
+    {
+      "id": "settlement-delivery-en",
+      "strictContractValid": true,
+      "errors": [],
+      "allAnnotatedEvidencePresent": true,
+      "semanticStatus": "not-human-reviewed"
+    },
+    {
+      "id": "settlement-delivery-fr",
+      "strictContractValid": true,
+      "errors": [],
+      "allAnnotatedEvidencePresent": true,
+      "semanticStatus": "not-human-reviewed"
+    },
+    {
+      "id": "rail-mismatch-en",
+      "strictContractValid": true,
+      "errors": [],
+      "allAnnotatedEvidencePresent": true,
+      "semanticStatus": "not-human-reviewed"
+    },
+    {
+      "id": "rail-mismatch-fr",
+      "strictContractValid": true,
+      "errors": [],
+      "allAnnotatedEvidencePresent": true,
+      "semanticStatus": "not-human-reviewed"
+    },
+    {
+      "id": "evidence-grounding-en",
+      "strictContractValid": true,
+      "errors": [],
+      "allAnnotatedEvidencePresent": true,
+      "semanticStatus": "not-human-reviewed"
+    },
+    {
+      "id": "evidence-grounding-fr",
+      "strictContractValid": true,
+      "errors": [],
+      "allAnnotatedEvidencePresent": true,
+      "semanticStatus": "not-human-reviewed"
+    },
+    {
+      "id": "event-opportunity-en",
+      "strictContractValid": true,
+      "errors": [],
+      "allAnnotatedEvidencePresent": true,
+      "semanticStatus": "not-human-reviewed"
+    },
+    {
+      "id": "event-opportunity-fr",
+      "strictContractValid": true,
+      "errors": [],
+      "allAnnotatedEvidencePresent": true,
+      "semanticStatus": "not-human-reviewed"
+    },
+    {
+      "id": "training-rights-en",
+      "strictContractValid": true,
+      "errors": [],
+      "allAnnotatedEvidencePresent": true,
+      "semanticStatus": "not-human-reviewed"
+    },
+    {
+      "id": "training-rights-fr",
+      "strictContractValid": true,
+      "errors": [],
+      "allAnnotatedEvidencePresent": true,
+      "semanticStatus": "not-human-reviewed"
+    }
+  ],
+  "limitations": [
+    "System language uses question metadata only; no gold labels entered the request.",
+    "Prior inspected development cases cannot establish generalization or customer value.",
+    "Local receipts/hashes are not authenticated inference or independent human judgments.",
+    "Human semantic review, new customer holdout and activation provenance remain pending."
+  ]
+}

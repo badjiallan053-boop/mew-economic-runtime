@@ -1,0 +1,31 @@
+{
+  "schema": "mew.agent-review-freeze.v1",
+  "finalizedAt": "2026-10-07T23:52:14.903594+00:00",
+  "mappingOpenedByThisReview": false,
+  "reviewerType": "agent",
+  "identityAuthenticated": false,
+  "packSha256": "3881afefd44502f56acd47e40cd406019fb3335306f58e30ddc27a9d2a6d8b26",
+  "notesFileSha256": "376c57b1eab620d94a1f6ba0788c51fe6a7eef1e090ce05031e8fa4a853e9a88",
+  "protocolFileSha256": "cd99e2e60e4242e53b2a431b563514d0f55aee9a8a9336d8ceee5705dce1be93",
+  "sourceEvidence": [
+    {
+      "id": "docs/ML_LEARNING_PIPELINE.md",
+      "sha256": "ec5778ce7224a6161d010160e78be1cca328c1ba60958e424cd7e17593644e0f"
+    },
+    {
+      "id": "SPEC.md",
+      "sha256": "fec538843190a64a262f63304c36f54c5add2489a583ec8c219fa8bdeca40359"
+    },
+    {
+      "id": "docs/EVENT_DATA_SOURCES.md",
+      "sha256": "d7fc14a3d0b7559667eb0ca7352492a584eea6b43272c9f3ed8399062aebe9b6"
+    },
+    {
+      "id": "docs/SOCIAL_PROTOCOL_COMMITTEE.md",
+      "sha256": "b360fc373d7462ef63a5aee7f9007cf98a30e88231c34a561822c04272f2a8b3"
+    }
+  ],
+  "modelActivationAllowed": false,
+  "trainingAuthorized": false,
+  "paymentsEnabled": false
+}

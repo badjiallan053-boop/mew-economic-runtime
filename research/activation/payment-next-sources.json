@@ -1,0 +1,48 @@
+{
+  "schema": "mew.payment-next-source-review.v1",
+  "reviewedAt": "2026-10-08",
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/brianc/node-postgres/0980cefebe0ae461da8883703be049fe13ca96cf/packages/pg-pool/index.js",
+      "commit": "0980cefebe0ae461da8883703be049fe13ca96cf",
+      "sha256": "6f304776edaabde2954cbf8c4366fa6d9512bfba0e408e78cc56b3c46c69d058",
+      "reviewedScope": "Pool _releaseOnce and _release lifecycle",
+      "lesson": "A truthy release argument removes a client instead of pooling it."
+    },
+    {
+      "url": "https://node-postgres.com/apis/pool",
+      "reviewedScope": "release(destroy) official API",
+      "lesson": "Discard uncertain transaction-control sessions via release(true)."
+    },
+    {
+      "url": "https://node-postgres.com/features/transactions",
+      "reviewedScope": "Checked-out connection invariant",
+      "lesson": "All transaction queries must use one connection."
+    },
+    {
+      "url": "https://www.skills.sh/obra/superpowers/verification-before-completion",
+      "status": "reference-guidance-reviewed-not-installed",
+      "lesson": "Use fresh meaningful failure evidence rather than marking gates complete from source documentation."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/masumi-network/masumi-payment-service/5fccf58b0f30873085b59ee540c67b4ae8433cd0/src/utils/generator/swagger-generator/openapi-docs.json",
+      "commit": "5fccf58b0f30873085b59ee540c67b4ae8433cd0",
+      "status": "existing-pinned-local-adapter-boundary-reviewed",
+      "lesson": "MPS health/purchase GET connectivity is separate from native-token purchase/withdrawal implementation."
+    }
+  ],
+  "installedDependencies": {
+    "pg": {
+      "version": "8.23.1"
+    },
+    "pg-pool": {
+      "version": "3.14.0",
+      "sourceSha256": "6f304776edaabde2954cbf8c4366fa6d9512bfba0e408e78cc56b3c46c69d058"
+    }
+  },
+  "limitations": [
+    "Mock transport control-failure tests and serialized PGlite SQL/RLS are not hosted PostgreSQL crash/concurrency proof.",
+    "No credentials, external payment request, signer, closing transaction or deployment was used.",
+    "Current official GitHub master is pinned for research only; no dependency upgrade or copied upstream code."
+  ]
+}

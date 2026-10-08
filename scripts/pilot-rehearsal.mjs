@@ -1,0 +1,5 @@
+import {mkdir,writeFile} from 'node:fs/promises';
+import {createPilot,recordArtifact,recordReview,pilotMetrics,artifactHash} from '../src/pilot/record.mjs';
+let s=createPilot({id:'five-clips-fixture',principal:'synthetic-customer',objectiveId:'fixture-objective',effectId:'fixture-effect',customerConsentRef:'fixture-consent',rightsEvidenceRef:'fixture-rights',expectedClips:5,revisionLimit:1,mode:'simulation'});
+for(let n=1;n<=5;n++){const artifactSha256=artifactHash(`Synthetic outline ${n}; not a generated video`);s=recordArtifact(s,{clipId:`clip-${n}`,revision:0,artifactSha256,submittedAt:1000});s=recordReview(s,{reviewId:`review-${n}`,reviewerId:'synthetic-reviewer',clipId:`clip-${n}`,revision:0,artifactSha256,decision:'ACCEPT',reviewedAt:2000});}
+const result={snapshot:s,metrics:pilotMetrics(s,{reportedCostAtomic:8000000,asset:'lovelace'})};await mkdir('.local/evidence',{recursive:true});await writeFile('.local/evidence/pilot-rehearsal.json',JSON.stringify(result,null,2));console.log(JSON.stringify(result.metrics,null,2));

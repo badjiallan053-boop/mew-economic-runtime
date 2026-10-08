@@ -1,0 +1,14 @@
+{
+  "reviewerId": "data-science-audit",
+  "reviewType": "independent-agent-review",
+  "humanReviewed": false,
+  "baseRunFindings": {
+    "strictContractPasses": 0,
+    "sourceRetrievalMisses": 4,
+    "additionalContextTruncationMisses": 1,
+    "generationCapReached": 4,
+    "criticalCase": "settlement-delivery-fr",
+    "criticalError": "Claims settlement proves delivery, with fabricated French quote."
+  },
+  "recommendation": "Fix multilingual retrieval and context selection, constrain schema, then review separate approved training data before comparing an adapter. Preserve original baseline."
+}

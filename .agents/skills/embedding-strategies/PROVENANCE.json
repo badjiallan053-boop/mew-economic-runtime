@@ -1,0 +1,11 @@
+{
+  "repository": "https://github.com/wshobson/agents",
+  "revision": "46891e7e60da0e52baf1050b7b6391b64e84c6d9",
+  "path": "plugins/llm-application-dev/skills/embedding-strategies",
+  "discoveredVia": "https://skills.sh/wshobson/agents/embedding-strategies",
+  "license": "MIT",
+  "licenseSha256": "f89abb55d9f073f38f1703e4518f0613c788c6174be7f13b8dfe48a1c076c746",
+  "skillSha256": "d87e8c3e519cdc1d4d4578412aeb681e931ada45de143159610d8fe3cda20648",
+  "upstreamModified": false,
+  "executableScriptsInstalled": false
+}

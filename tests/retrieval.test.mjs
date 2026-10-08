@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {fitRetrieval,searchRetrieval} from '../src/learning/retrieval.mjs';
+test('fitted retrieval preserves source hashes, deterministic ranking and abstention on absent vocabulary',()=>{const corpus=[{id:'a',text:'Cardano transaction confirmation payment'},{id:'b',text:'Customer pilot marketing'}],model=fitRetrieval(corpus);assert.equal(searchRetrieval(model,'Cardano confirmation')[0].id,'a');assert.deepEqual(searchRetrieval(model,'unknown vocabulary'),[]);assert.equal(model.paymentAuthority,false);assert.equal(model.languageModelTrained,false);assert.deepEqual(fitRetrieval(corpus),model);assert.match(model.documents[0].sha256,/^[a-f0-9]{64}$/);});
+test('retrieval refuses ambiguous identities and invalid query bounds',()=>{assert.throws(()=>fitRetrieval([{id:'a',text:'first'},{id:'a',text:'second'}]));const model=fitRetrieval([{id:'a',text:'valid text'}]);assert.throws(()=>searchRetrieval(model,'valid',0));assert.throws(()=>searchRetrieval(model,'valid',21));});

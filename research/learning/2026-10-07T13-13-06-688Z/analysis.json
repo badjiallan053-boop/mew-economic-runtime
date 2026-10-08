@@ -1,0 +1,65 @@
+{
+  "schema": "mew.learning-description.v1",
+  "attention": [
+    {
+      "entity": "Cardano_(blockchain_platform)",
+      "days": 28,
+      "start": "2026-09-08T00:00:00.000Z",
+      "end": "2026-10-05T00:00:00.000Z",
+      "totalViews": 2121,
+      "firstSevenDaysViews": 488,
+      "lastSevenDaysViews": 522,
+      "changePercent": 6.97
+    },
+    {
+      "entity": "Artificial_intelligence",
+      "days": 28,
+      "start": "2026-09-08T00:00:00.000Z",
+      "end": "2026-10-05T00:00:00.000Z",
+      "totalViews": 543305,
+      "firstSevenDaysViews": 125894,
+      "lastSevenDaysViews": 145671,
+      "changePercent": 15.71
+    },
+    {
+      "entity": "Intelligent_agent",
+      "days": 28,
+      "start": "2026-09-08T00:00:00.000Z",
+      "end": "2026-10-05T00:00:00.000Z",
+      "totalViews": 9130,
+      "firstSevenDaysViews": 2245,
+      "lastSevenDaysViews": 2423,
+      "changePercent": 7.93
+    },
+    {
+      "entity": "Content_marketing",
+      "days": 28,
+      "start": "2026-09-08T00:00:00.000Z",
+      "end": "2026-10-05T00:00:00.000Z",
+      "totalViews": 3712,
+      "firstSevenDaysViews": 969,
+      "lastSevenDaysViews": 990,
+      "changePercent": 2.17
+    }
+  ],
+  "paymentContext": [
+    {
+      "network": "mainnet",
+      "sampledTransactions": 20,
+      "feeLovelaceSum": "4476085",
+      "medianFeeLovelaceFloor": "166953",
+      "verifiedMerchantPayments": 0,
+      "paymentAttribution": "UNKNOWN"
+    },
+    {
+      "network": "preprod",
+      "sampledTransactions": 12,
+      "feeLovelaceSum": "4140620",
+      "medianFeeLovelaceFloor": "265702",
+      "verifiedMerchantPayments": 0,
+      "paymentAttribution": "UNKNOWN"
+    }
+  ],
+  "correlationEstimated": false,
+  "reason": "No matched daily merchant-payment history, customer outcome labels or causal design. No cross-grain join was performed."
+}

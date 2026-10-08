@@ -1,0 +1,637 @@
+{
+  "seed": 3151929131,
+  "summary": {
+    "total": 49,
+    "passed": 49,
+    "failed": 0,
+    "kind": {
+      "unit": 49,
+      "property": 0
+    }
+  },
+  "modules": [
+    {
+      "name": "approval_escrow",
+      "summary": {
+        "total": 49,
+        "passed": 49,
+        "failed": 0,
+        "kind": {
+          "unit": 49,
+          "property": 0
+        }
+      },
+      "tests": [
+        {
+          "title": "accept_succeeds",
+          "status": "pass",
+          "on_failure": "fail_immediately",
+          "execution_units": {
+            "mem": 449234,
+            "cpu": 161664537
+          }
+        },
+        {
+          "title": "cancel_succeeds_without_provider_signature",
+          "status": "pass",
+          "on_failure": "fail_immediately",
+          "execution_units": {
+            "mem": 443387,
+            "cpu": 159937926
+          }
+        },
+        {
+          "title": "accept_without_principal_signature_fails",
+          "status": "pass",
+          "on_failure": "succeed_eventually",
+          "execution_units": {
+            "mem": 382602,
+            "cpu": 137511646
+          },
+          "traces": [
+            "the validator crashed / exited prematurely",
+            "expect list.has(tx.extra_signatories, principal_key)"
+          ]
+        },
+        {
+          "title": "accept_without_provider_signature_fails",
+          "status": "pass",
+          "on_failure": "succeed_eventually",
+          "execution_units": {
+            "mem": 403085,
+            "cpu": 142058052
+          },
+          "traces": [
+            "the validator crashed / exited prematurely",
+            "expect list.has(tx.extra_signatories, provider_key)"
+          ]
+        },
+        {
+          "title": "accept_with_attacker_signature_fails",
+          "status": "pass",
+          "on_failure": "succeed_eventually",
+          "execution_units": {
+            "mem": 403215,
+            "cpu": 142481105
+          },
+          "traces": [
+            "the validator crashed / exited prematurely",
+            "expect list.has(tx.extra_signatories, provider_key)"
+          ]
+        },
+        {
+          "title": "cancel_without_principal_signature_fails",
+          "status": "pass",
+          "on_failure": "succeed_eventually",
+          "execution_units": {
+            "mem": 382172,
+            "cpu": 136308001
+          },
+          "traces": [
+            "the validator crashed / exited prematurely",
+            "expect list.has(tx.extra_signatories, principal_key)"
+          ]
+        },
+        {
+          "title": "wrong_artifact_fails",
+          "status": "pass",
+          "on_failure": "succeed_eventually",
+          "execution_units": {
+            "mem": 361127,
+            "cpu": 130510427
+          },
+          "traces": [
+            "the validator crashed / exited prematurely",
+            "expect artifact_digest == d.artifact_digest"
+          ]
+        },
+        {
+          "title": "malformed_redeemer_artifact_fails",
+          "status": "pass",
+          "on_failure": "succeed_eventually",
+          "execution_units": {
+            "mem": 360837,
+            "cpu": 129727136
+          },
+          "traces": [
+            "the validator crashed / exited prematurely",
+            "expect bytearray.length(artifact_digest) == 32"
+          ]
+        },
+        {
+          "title": "missing_handler_datum_fails",
+          "status": "pass",
+          "on_failure": "succeed_eventually",
+          "execution_units": {
+            "mem": 63502,
+            "cpu": 17289211
+          },
+          "traces": [
+            "the validator crashed / exited prematurely",
+            "expect Some(d) = datum"
+          ]
+        },
+        {
+          "title": "fabricated_handler_datum_fails",
+          "status": "pass",
+          "on_failure": "succeed_eventually",
+          "execution_units": {
+            "mem": 190510,
+            "cpu": 63915200
+          },
+          "traces": [
+            "the validator crashed / exited prematurely",
+            "expect actual == d"
+          ]
+        },
+        {
+          "title": "missing_actual_inline_datum_fails",
+          "status": "pass",
+          "on_failure": "succeed_eventually",
+          "execution_units": {
+            "mem": 127772,
+            "cpu": 43216789
+          },
+          "traces": [
+            "the validator crashed / exited prematurely",
+            "expect InlineDatum(raw) = own_input.output.datum"
+          ]
+        },
+        {
+          "title": "datum_hash_instead_of_inline_fails",
+          "status": "pass",
+          "on_failure": "succeed_eventually",
+          "execution_units": {
+            "mem": 127772,
+            "cpu": 43216789
+          },
+          "traces": [
+            "the validator crashed / exited prematurely",
+            "expect InlineDatum(raw) = own_input.output.datum"
+          ]
+        },
+        {
+          "title": "invalid_inline_datum_type_fails",
+          "status": "pass",
+          "on_failure": "succeed_eventually",
+          "execution_units": {
+            "mem": 127964,
+            "cpu": 43655407
+          },
+          "traces": [
+            "the validator crashed / exited prematurely",
+            "expect actual: EscrowDatum = raw"
+          ]
+        },
+        {
+          "title": "unknown_own_ref_fails",
+          "status": "pass",
+          "on_failure": "succeed_eventually",
+          "execution_units": {
+            "mem": 84658,
+            "cpu": 26218987
+          },
+          "traces": [
+            "the validator crashed / exited prematurely",
+            "expect [own_input] = list.filter(\n      tx.inputs,\n      fn(i) { i.output_reference == own_ref },\n    )"
+          ]
+        },
+        {
+          "title": "duplicate_own_ref_fails",
+          "status": "pass",
+          "on_failure": "succeed_eventually",
+          "execution_units": {
+            "mem": 106006,
+            "cpu": 33898310
+          },
+          "traces": [
+            "the validator crashed / exited prematurely",
+            "expect [own_input] = list.filter(\n      tx.inputs,\n      fn(i) { i.output_reference == own_ref },\n    )"
+          ]
+        },
+        {
+          "title": "key_input_cannot_impersonate_script_fails",
+          "status": "pass",
+          "on_failure": "succeed_eventually",
+          "execution_units": {
+            "mem": 127098,
+            "cpu": 41433253
+          },
+          "traces": [
+            "the validator crashed / exited prematurely",
+            "expect Script(own_hash) = own_input.output.address.payment_credential"
+          ]
+        },
+        {
+          "title": "wrong_version_fails",
+          "status": "pass",
+          "on_failure": "succeed_eventually",
+          "execution_units": {
+            "mem": 190000,
+            "cpu": 62835184
+          },
+          "traces": [
+            "the validator crashed / exited prematurely",
+            "expect d.version == 1"
+          ]
+        },
+        {
+          "title": "malformed_objective_digest_fails",
+          "status": "pass",
+          "on_failure": "succeed_eventually",
+          "execution_units": {
+            "mem": 233603,
+            "cpu": 80030702
+          },
+          "traces": [
+            "the validator crashed / exited prematurely",
+            "expect bytearray.length(d.objective_digest) == 32"
+          ]
+        },
+        {
+          "title": "malformed_effect_digest_fails",
+          "status": "pass",
+          "on_failure": "succeed_eventually",
+          "execution_units": {
+            "mem": 233967,
+            "cpu": 81014883
+          },
+          "traces": [
+            "the validator crashed / exited prematurely",
+            "expect bytearray.length(d.effect_digest) == 32"
+          ]
+        },
+        {
+          "title": "malformed_committed_artifact_fails",
+          "status": "pass",
+          "on_failure": "succeed_eventually",
+          "execution_units": {
+            "mem": 234299,
+            "cpu": 81917401
+          },
+          "traces": [
+            "the validator crashed / exited prematurely",
+            "expect bytearray.length(d.artifact_digest) == 32"
+          ]
+        },
+        {
+          "title": "provider_cannot_be_script_fails",
+          "status": "pass",
+          "on_failure": "succeed_eventually",
+          "execution_units": {
+            "mem": 190866,
+            "cpu": 65134063
+          },
+          "traces": [
+            "the validator crashed / exited prematurely",
+            "expect VerificationKey(key) = address.payment_credential"
+          ]
+        },
+        {
+          "title": "principal_cannot_be_script_fails",
+          "status": "pass",
+          "on_failure": "succeed_eventually",
+          "execution_units": {
+            "mem": 169650,
+            "cpu": 58183081
+          },
+          "traces": [
+            "the validator crashed / exited prematurely",
+            "expect VerificationKey(key) = address.payment_credential"
+          ]
+        },
+        {
+          "title": "malformed_principal_payment_key_fails",
+          "status": "pass",
+          "on_failure": "succeed_eventually",
+          "execution_units": {
+            "mem": 190688,
+            "cpu": 64781718
+          },
+          "traces": [
+            "the validator crashed / exited prematurely",
+            "expect valid_key_address(d.principal) && valid_key_address(d.provider)"
+          ]
+        },
+        {
+          "title": "malformed_provider_payment_key_fails",
+          "status": "pass",
+          "on_failure": "succeed_eventually",
+          "execution_units": {
+            "mem": 211903,
+            "cpu": 71656651
+          },
+          "traces": [
+            "the validator crashed / exited prematurely",
+            "expect valid_key_address(d.principal) && valid_key_address(d.provider)"
+          ]
+        },
+        {
+          "title": "same_principal_provider_key_fails",
+          "status": "pass",
+          "on_failure": "succeed_eventually",
+          "execution_units": {
+            "mem": 233271,
+            "cpu": 79210021
+          },
+          "traces": [
+            "the validator crashed / exited prematurely",
+            "expect principal_key != provider_key"
+          ]
+        },
+        {
+          "title": "malformed_staking_key_fails",
+          "status": "pass",
+          "on_failure": "succeed_eventually",
+          "execution_units": {
+            "mem": 211377,
+            "cpu": 70115320
+          },
+          "traces": [
+            "the validator crashed / exited prematurely",
+            "expect valid_key_address(d.principal) && valid_key_address(d.provider)"
+          ]
+        },
+        {
+          "title": "malformed_staking_script_fails",
+          "status": "pass",
+          "on_failure": "succeed_eventually",
+          "execution_units": {
+            "mem": 212594,
+            "cpu": 73918635
+          },
+          "traces": [
+            "the validator crashed / exited prematurely",
+            "expect valid_key_address(d.principal) && valid_key_address(d.provider)"
+          ]
+        },
+        {
+          "title": "negative_stake_pointer_fails",
+          "status": "pass",
+          "on_failure": "succeed_eventually",
+          "execution_units": {
+            "mem": 212485,
+            "cpu": 73505265
+          },
+          "traces": [
+            "the validator crashed / exited prematurely",
+            "expect valid_key_address(d.principal) && valid_key_address(d.provider)"
+          ]
+        },
+        {
+          "title": "wrong_payout_recipient_fails",
+          "status": "pass",
+          "on_failure": "succeed_eventually",
+          "execution_units": {
+            "mem": 423833,
+            "cpu": 154273586
+          },
+          "traces": [
+            "the validator crashed / exited prematurely",
+            "expect [payout] = list.filter(tx.outputs, fn(o) { o.address == recipient })"
+          ]
+        },
+        {
+          "title": "provider_stake_substitution_fails",
+          "status": "pass",
+          "on_failure": "succeed_eventually",
+          "execution_units": {
+            "mem": 424025,
+            "cpu": 154253727
+          },
+          "traces": [
+            "the validator crashed / exited prematurely",
+            "expect [payout] = list.filter(tx.outputs, fn(o) { o.address == recipient })"
+          ]
+        },
+        {
+          "title": "principal_stake_substitution_fails",
+          "status": "pass",
+          "on_failure": "succeed_eventually",
+          "execution_units": {
+            "mem": 402950,
+            "cpu": 147998960
+          },
+          "traces": [
+            "the validator crashed / exited prematurely",
+            "expect [payout] = list.filter(tx.outputs, fn(o) { o.address == recipient })"
+          ]
+        },
+        {
+          "title": "insufficient_payout_fails",
+          "status": "pass",
+          "on_failure": "fail_immediately",
+          "execution_units": {
+            "mem": 474483,
+            "cpu": 168611420
+          }
+        },
+        {
+          "title": "surplus_payout_fails",
+          "status": "pass",
+          "on_failure": "fail_immediately",
+          "execution_units": {
+            "mem": 474483,
+            "cpu": 168611420
+          }
+        },
+        {
+          "title": "split_payout_fails",
+          "status": "pass",
+          "on_failure": "succeed_eventually",
+          "execution_units": {
+            "mem": 486921,
+            "cpu": 175811017
+          },
+          "traces": [
+            "the validator crashed / exited prematurely",
+            "expect [payout] = list.filter(tx.outputs, fn(o) { o.address == recipient })"
+          ]
+        },
+        {
+          "title": "second_script_input_different_hash_fails",
+          "status": "pass",
+          "on_failure": "succeed_eventually",
+          "execution_units": {
+            "mem": 297742,
+            "cpu": 102346491
+          },
+          "traces": [
+            "the validator crashed / exited prematurely",
+            "expect\n      list.length(\n        list.filter(\n          tx.inputs,\n          fn(i) {\n            when i.output.address.payment_credential is {\n              Script(_) -> True\n              VerificationKey(_) -> False\n            }\n          },\n        ),\n      ) == 1"
+          ]
+        },
+        {
+          "title": "second_script_input_different_stake_fails",
+          "status": "pass",
+          "on_failure": "succeed_eventually",
+          "execution_units": {
+            "mem": 297934,
+            "cpu": 102763096
+          },
+          "traces": [
+            "the validator crashed / exited prematurely",
+            "expect\n      list.length(\n        list.filter(\n          tx.inputs,\n          fn(i) {\n            when i.output.address.payment_credential is {\n              Script(_) -> True\n              VerificationKey(_) -> False\n            }\n          },\n        ),\n      ) == 1"
+          ]
+        },
+        {
+          "title": "escrow_native_asset_fails",
+          "status": "pass",
+          "on_failure": "succeed_eventually",
+          "execution_units": {
+            "mem": 339707,
+            "cpu": 118488693
+          },
+          "traces": [
+            "the validator crashed / exited prematurely",
+            "expect\n      list.all(\n        tx.inputs,\n        fn(i) { assets.is_zero(assets.without_lovelace(i.output.value)) },\n      )"
+          ]
+        },
+        {
+          "title": "fee_input_native_asset_fails",
+          "status": "pass",
+          "on_failure": "succeed_eventually",
+          "execution_units": {
+            "mem": 339486,
+            "cpu": 116873527
+          },
+          "traces": [
+            "the validator crashed / exited prematurely",
+            "expect\n      list.all(\n        tx.inputs,\n        fn(i) { assets.is_zero(assets.without_lovelace(i.output.value)) },\n      )"
+          ]
+        },
+        {
+          "title": "output_native_asset_fails",
+          "status": "pass",
+          "on_failure": "succeed_eventually",
+          "execution_units": {
+            "mem": 360358,
+            "cpu": 123275015
+          },
+          "traces": [
+            "the validator crashed / exited prematurely",
+            "expect\n      list.all(\n        tx.outputs,\n        fn(o) { assets.is_zero(assets.without_lovelace(o.value)) },\n      )"
+          ]
+        },
+        {
+          "title": "mint_fails",
+          "status": "pass",
+          "on_failure": "succeed_eventually",
+          "execution_units": {
+            "mem": 296939,
+            "cpu": 100440512
+          },
+          "traces": [
+            "the validator crashed / exited prematurely",
+            "expect assets.is_zero(tx.mint)"
+          ]
+        },
+        {
+          "title": "withdrawal_fails",
+          "status": "pass",
+          "on_failure": "succeed_eventually",
+          "execution_units": {
+            "mem": 276231,
+            "cpu": 95136491
+          },
+          "traces": [
+            "the validator crashed / exited prematurely",
+            "expect tx.withdrawals == []"
+          ]
+        },
+        {
+          "title": "terminal_continuation_same_address_fails",
+          "status": "pass",
+          "on_failure": "succeed_eventually",
+          "execution_units": {
+            "mem": 360623,
+            "cpu": 128029800
+          },
+          "traces": [
+            "the validator crashed / exited prematurely",
+            "expect\n      !list.any(\n        tx.outputs,\n        fn(o) { o.address.payment_credential == Script(own_hash) },\n      )"
+          ]
+        },
+        {
+          "title": "terminal_continuation_changed_stake_fails",
+          "status": "pass",
+          "on_failure": "succeed_eventually",
+          "execution_units": {
+            "mem": 360815,
+            "cpu": 128446405
+          },
+          "traces": [
+            "the validator crashed / exited prematurely",
+            "expect\n      !list.any(\n        tx.outputs,\n        fn(o) { o.address.payment_credential == Script(own_hash) },\n      )"
+          ]
+        },
+        {
+          "title": "zero_locked_value_fails",
+          "status": "pass",
+          "on_failure": "succeed_eventually",
+          "execution_units": {
+            "mem": 382003,
+            "cpu": 137616031
+          },
+          "traces": [
+            "the validator crashed / exited prematurely",
+            "expect locked > 0"
+          ]
+        },
+        {
+          "title": "no_staking_addresses_succeed",
+          "status": "pass",
+          "on_failure": "fail_immediately",
+          "execution_units": {
+            "mem": 412212,
+            "cpu": 148468630
+          }
+        },
+        {
+          "title": "script_staking_addresses_succeed",
+          "status": "pass",
+          "on_failure": "fail_immediately",
+          "execution_units": {
+            "mem": 455418,
+            "cpu": 163944144
+          }
+        },
+        {
+          "title": "pointer_staking_addresses_succeed",
+          "status": "pass",
+          "on_failure": "fail_immediately",
+          "execution_units": {
+            "mem": 436639,
+            "cpu": 157430169
+          }
+        },
+        {
+          "title": "provider_input_cannot_satisfy_accept_payout_fails",
+          "status": "pass",
+          "on_failure": "succeed_eventually",
+          "execution_units": {
+            "mem": 424953,
+            "cpu": 153092999
+          },
+          "traces": [
+            "the validator crashed / exited prematurely",
+            "expect !list.any(tx.inputs, fn(i) { i.output.address == recipient })"
+          ]
+        },
+        {
+          "title": "principal_input_cannot_satisfy_cancel_payout_fails",
+          "status": "pass",
+          "on_failure": "succeed_eventually",
+          "execution_units": {
+            "mem": 423878,
+            "cpu": 150038232
+          },
+          "traces": [
+            "the validator crashed / exited prematurely",
+            "expect !list.any(tx.inputs, fn(i) { i.output.address == recipient })"
+          ]
+        }
+      ]
+    }
+  ]
+}

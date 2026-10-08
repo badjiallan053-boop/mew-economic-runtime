@@ -1,0 +1,138 @@
+{
+  "schema": "mew.activation-sources.v1",
+  "lane": "model",
+  "checkedOn": "2026-10-08",
+  "repositories": [
+    {
+      "repository": "ai-evals-course/evals-skills",
+      "revision": "80d5f7b0127c7572ed9e9339937adbfd7240ffeb",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+          "bytes": 11357,
+          "url": "https://raw.githubusercontent.com/ai-evals-course/evals-skills/80d5f7b0127c7572ed9e9339937adbfd7240ffeb/LICENSE"
+        },
+        {
+          "path": "README.md",
+          "sha256": "868be07b328ec2ef44f7e702ea945106e9b41fe7e235f8f5a3dc6f90c955c3fb",
+          "bytes": 4398,
+          "url": "https://raw.githubusercontent.com/ai-evals-course/evals-skills/80d5f7b0127c7572ed9e9339937adbfd7240ffeb/README.md"
+        },
+        {
+          "path": "skills/validate-evaluator/SKILL.md",
+          "sha256": "dd601ca58d2165f51798e12934170a435af9a7938832b67bb00986b881752355",
+          "bytes": 8901,
+          "url": "https://raw.githubusercontent.com/ai-evals-course/evals-skills/80d5f7b0127c7572ed9e9339937adbfd7240ffeb/skills/validate-evaluator/SKILL.md"
+        }
+      ],
+      "adoption": "Reviewed validate-evaluator copied unchanged as a conditional calibration reference; original MEW skill created. Existing eval-audit/evaluate-rag preserved.",
+      "adoptionLimits": "Human-label calibration only; thresholds are guidance, not authority. Apache-2.0 license retained.",
+      "trainingAuthorized": false
+    },
+    {
+      "repository": "promptfoo/promptfoo",
+      "revision": "2dbf3ecc75966e6d924c2c9dde5bcbd5c0cd2d2f",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "bf813686553f451e1b833fbd827488aee49b60b189626915bf3108d10b754e44",
+          "bytes": 1053,
+          "url": "https://raw.githubusercontent.com/promptfoo/promptfoo/2dbf3ecc75966e6d924c2c9dde5bcbd5c0cd2d2f/LICENSE"
+        },
+        {
+          "path": "README.md",
+          "sha256": "9419faaa9d56675b923462d5052a176b3da58f60bf66c84af23159bf3d63c270",
+          "bytes": 4596,
+          "url": "https://raw.githubusercontent.com/promptfoo/promptfoo/2dbf3ecc75966e6d924c2c9dde5bcbd5c0cd2d2f/README.md"
+        },
+        {
+          "path": "site/docs/configuration/expected-outputs.md",
+          "status": "unavailable",
+          "reason": "HTTPError"
+        },
+        {
+          "path": "SECURITY.md",
+          "sha256": "6dd58d48eb8a1832d120ae08b478bff99cfdb21907241bb63a63c0ba129fcdfd",
+          "bytes": 43427,
+          "url": "https://raw.githubusercontent.com/promptfoo/promptfoo/2dbf3ecc75966e6d924c2c9dde5bcbd5c0cd2d2f/SECURITY.md"
+        }
+      ],
+      "adoption": "Candidate comparison runner only; no install, copied code, cloud use or evaluator replacement.",
+      "adoptionLimits": "MIT LICENSE verified. Configs/scripts are trusted executable content; isolate adversarial cases and keep viewer private.",
+      "trainingAuthorized": false
+    },
+    {
+      "repository": "mlflow/skills",
+      "revision": "c55c66586a35f7e3f2a377bfc462ef9791fbc3f4",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+          "bytes": 11357,
+          "url": "https://raw.githubusercontent.com/mlflow/skills/c55c66586a35f7e3f2a377bfc462ef9791fbc3f4/LICENSE"
+        },
+        {
+          "path": "agent-evaluation/SKILL.md",
+          "sha256": "3a0d868663fb53b7e36ca7145054d7e7c084452fef9cbb5417f295675335a9ed",
+          "bytes": 23032,
+          "url": "https://raw.githubusercontent.com/mlflow/skills/c55c66586a35f7e3f2a377bfc462ef9791fbc3f4/agent-evaluation/SKILL.md"
+        }
+      ],
+      "adoption": "Optional trace-linked evaluation reference reviewed; not installed.",
+      "adoptionLimits": "Apache-2.0. Requires MLflow/tracing service setup; preserve current evaluator before adopting any adapter.",
+      "trainingAuthorized": false
+    }
+  ],
+  "skillDiscovery": [
+    {
+      "url": "https://www.skills.sh/ai-evals-course/evals-skills/validate-evaluator",
+      "decision": "Review calibration procedure for a later semantic judge; unchanged source reference under project-local skill."
+    },
+    {
+      "url": "https://www.skills.sh/ai-evals-course/evals-skills/evals-start",
+      "decision": "Reuse existing targeted eval-audit/evaluate-rag instead of installing duplicate routing."
+    },
+    {
+      "url": "https://www.skills.sh/wshobson/agents/evaluation-methodology",
+      "decision": "Not adopted: plugin score targets do not address MEW customer answer semantics."
+    }
+  ],
+  "videos": [
+    {
+      "videoId": "tqUDjc1HzO4",
+      "url": "https://www.youtube.com/watch?v=tqUDjc1HzO4",
+      "attemptedAt": "2026-10-07T21:51:14.905398+00:00",
+      "publisherLink": "https://github.com/ai-evals-course/evals-skills/blob/80d5f7b0127c7572ed9e9339937adbfd7240ffeb/README.md",
+      "trainingAuthorized": false,
+      "status": "retrieved",
+      "language": "en",
+      "generated": false,
+      "segments": 331,
+      "sha256": "81262c1bfc0a2e3faa5623b45aa627980f25ad23ae0ededc2b7d3e2eb2e1f382",
+      "title": "How to Automate AI Evals (Correctly)",
+      "access": "English public captions read; no audio/video downloaded or watched. Raw captions excluded from committed artifacts.",
+      "applications": [
+        {
+          "startSeconds": 159,
+          "endSeconds": 201,
+          "paraphrase": "Separate failure analysis, measurement and improvement; revisit the cycle."
+        },
+        {
+          "startSeconds": 500,
+          "endSeconds": 670,
+          "paraphrase": "Use AI to organize human trace review and sampling; people annotate and refine failure categories."
+        }
+      ],
+      "rights": "Caption availability does not provide fine-tuning permission; reference-only bounded paraphrase.",
+      "spokenClaimsUsed": true
+    }
+  ],
+  "modelActivated": false,
+  "paymentsEnabled": false,
+  "trainingAuthorized": false,
+  "limitations": [
+    "Source references guide workflow design; no new model provider call, training or production deployment occurred.",
+    "External model/prompt content cannot authorize credentials, spending or publication."
+  ]
+}

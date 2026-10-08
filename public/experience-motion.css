@@ -1,0 +1,183 @@
+/* Shared finishing layer. Static content and native controls remain the default. */
+:root {
+  --mew-experience-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --mew-experience-accent: var(--forest, var(--accent, #245b49));
+}
+.mew-reading-progress {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 80;
+  height: 2px;
+  pointer-events: none;
+  contain: strict;
+}
+.mew-reading-progress span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--mew-experience-accent), #55a993);
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+:where(
+  .pilot-card,
+  .proof-grid article,
+  .evidence-grid article,
+  .protocol-release article,
+  .brief-panel,
+  [data-motion-surface]
+) {
+  position: relative;
+}
+.mew-motion-surface::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    340px circle at var(--mew-pointer-x, 50%) var(--mew-pointer-y, 50%),
+    rgb(36 91 73 / 7%),
+    transparent 72%
+  );
+  pointer-events: none;
+}
+:where(.button.primary, .header-cta, .protocol-cta, .formation-cta) {
+  position: relative;
+  isolation: isolate;
+}
+:where(.button.primary, .header-cta) {
+  overflow: hidden;
+}
+:where(.button.primary, .header-cta)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 30%,
+    rgb(255 255 255 / 18%) 49%,
+    transparent 68%
+  );
+  transform: translateX(-35%);
+}
+:where(.site-nav, .story-journey nav) a[aria-current] {
+  box-shadow: inset 0 -2px var(--mew-experience-accent);
+}
+:where(.layer-tabs, [role="tablist"]) [aria-selected="true"] {
+  box-shadow:
+    inset 0 -2px var(--mew-experience-accent),
+    0 2px 10px rgb(36 91 73 / 9%);
+}
+.demo-steps [aria-current="step"] {
+  box-shadow: inset 2px 0 var(--mew-experience-accent);
+}
+@media (prefers-reduced-motion: no-preference) {
+  :where(.button.primary, .header-cta)::before {
+    transition:
+      opacity 180ms,
+      transform 340ms var(--mew-experience-ease);
+  }
+  :where(
+    .button.primary,
+    .header-cta,
+    .protocol-cta,
+    .formation-cta,
+    .pilot-card,
+    .text-link,
+    .card-action
+  ) {
+    transition:
+      transform 180ms var(--mew-experience-ease),
+      box-shadow 240ms var(--mew-experience-ease),
+      border-color 200ms;
+  }
+  :where(.button, .header-cta, .text-link) > span[aria-hidden="true"],
+  .card-action {
+    transition: transform 200ms var(--mew-experience-ease);
+  }
+  :where(.button.primary, .header-cta, .protocol-cta, .formation-cta):not(
+      :disabled
+    ):active {
+    transform: translateY(1px) scale(0.992);
+  }
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  html:not(.mew-experience-paused)
+    :where(.button.primary, .header-cta):not(:disabled):hover::before {
+    opacity: 1;
+    transform: translateX(35%);
+  }
+  html:not(.mew-experience-paused)
+    :where(.button.primary, .header-cta, .protocol-cta, .formation-cta):not(
+      :disabled
+    ):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 18px rgb(36 54 42 / 12%);
+  }
+  html:not(.mew-experience-paused)
+    :where(.button, .header-cta, .text-link):hover
+    > span[aria-hidden="true"] {
+    transform: translate(3px, -2px);
+  }
+  html:not(.mew-experience-paused) .pilot-card:hover .card-action {
+    transform: translateX(4px);
+  }
+  html:not(.mew-experience-paused) .pilot-card:hover {
+    transform: translateY(-3px);
+  }
+}
+.mew-experience-paused .mew-motion-surface::before,
+.sculpture.is-paused .mew-motion-surface::before,
+.mew-experience-paused :where(.button.primary, .header-cta)::before {
+  display: none;
+}
+html.mew-experience-paused
+  :is(
+    .button.primary,
+    .header-cta,
+    .protocol-cta,
+    .formation-cta,
+    .pilot-card,
+    .text-link,
+    .card-action
+  ),
+html.mew-experience-paused
+  :is(.button, .header-cta, .text-link)
+  > span[aria-hidden="true"] {
+  transition: none;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .mew-motion-surface::before,
+  :where(.button.primary, .header-cta)::before {
+    display: none;
+  }
+  html
+    :is(
+      .button.primary,
+      .header-cta,
+      .protocol-cta,
+      .formation-cta,
+      .pilot-card,
+      .text-link,
+      .card-action
+    ),
+  html :is(.button, .header-cta, .text-link) > span[aria-hidden="true"] {
+    transition: none;
+    transform: none;
+  }
+}
+@media (hover: none), (pointer: coarse) {
+  html
+    :is(
+      .button.primary,
+      .header-cta,
+      .protocol-cta,
+      .formation-cta,
+      .pilot-card
+    ):hover {
+    transform: none;
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "retrievedAt": "2026-10-07T10:20:04.284Z",
+  "records": 54,
+  "sourcesSucceeded": 10,
+  "sourcesFailed": 0,
+  "duplicates": 0,
+  "nullRowsExcluded": 0,
+  "byGrain": {
+    "network_tip": 2,
+    "country_year": 45,
+    "repository_snapshot": 7
+  },
+  "limitations": [
+    "Null indicator values excluded; excluded rows are not zero.",
+    "Tip observation is not transaction verification or Masumi activity.",
+    "Country Internet use is historical context, not marketing demand.",
+    "Repository descriptions are untrusted source text; do not execute.",
+    "A single collection cannot establish growth or causal product value."
+  ]
+}

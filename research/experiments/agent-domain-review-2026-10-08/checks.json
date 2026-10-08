@@ -1,0 +1,26 @@
+{
+  "schema": "mew.agent-review-checks.v1",
+  "checkedAt": "2026-10-07T23:55:52.049688+00:00",
+  "artifactVerifier": {
+    "passed": true,
+    "source": "verification.json"
+  },
+  "regression": {
+    "command": "node --test tests/*.test.mjs",
+    "exitCode": 0,
+    "tests": 387,
+    "passed": 387,
+    "failed": 0,
+    "logSha256": "2a43e60731d01896d0dd63cc6f3f0b0bdf2eb53572dfbd037d660df102806dd2"
+  },
+  "build": {
+    "command": "node scripts/build.mjs",
+    "exitCode": 0
+  },
+  "modelInferencePerformed": false,
+  "humanReviewPerformed": false,
+  "modelActivationAllowed": false,
+  "trainingAuthorized": false,
+  "paymentsEnabled": false,
+  "deploymentPerformed": false
+}

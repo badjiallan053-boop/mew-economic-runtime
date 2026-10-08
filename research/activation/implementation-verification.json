@@ -1,0 +1,44 @@
+{
+  "schema": "mew.implementation-verification.v1",
+  "checkedAt": "2026-10-07T23:09:31.611Z",
+  "tests": {
+    "passed": 375,
+    "failed": 0,
+    "skipped": 0,
+    "suite": "node --test tests/*.test.mjs",
+    "logSha256": "2384ac2e6018ad0aa6cc27b9aa6f9074cb8aa6e77536984de6e1b347c88cee5e"
+  },
+  "build": {
+    "passed": true,
+    "command": "node scripts/build.mjs"
+  },
+  "productionDependencyAudit": {
+    "knownPublishedVulnerabilities": 0,
+    "authority": "npm registry advisory snapshot, not a security audit",
+    "lockfileSha256": "5f61f19b3fda31f3c28324d8787bddc1a61dcacc60bd7cb2d2c09a1593a87f7f"
+  },
+  "actualOfflineModelGenerations": 36,
+  "independentCustomerHoldoutCases": 0,
+  "authenticatedSemanticReviews": 0,
+  "supabaseDeliveryMigration": "20261007225017",
+  "hostedRuntimeProbeExecuted": false,
+  "actualPublicAuthSettingsProbe": true,
+  "actualUserSessionExecuted": false,
+  "customerPilotExecuted": false,
+  "modelActivated": false,
+  "paymentsEnabled": false,
+  "signedTransactions": 0,
+  "broadcastTransactions": 0,
+  "limitations": [
+    "Local PGlite tests do not establish hosted multi-session or crash behavior.",
+    "Agent review and advisory snapshots do not replace independent compiled-contract audit.",
+    "Model experiments preserve development benchmark; semantic promotion remains blocked."
+  ],
+  "supabaseIndexMigration": "20261007230838",
+  "hostedDeployment": {
+    "commit": "9e8acd4b3645cc3fdc9af9c4cd9ca9c95d7e5944",
+    "deploymentId": "aa9ef122-6b8b-4f08-92c6-5e0ba14ee9df",
+    "readOnlyChecks": 55,
+    "failed": 0
+  }
+}

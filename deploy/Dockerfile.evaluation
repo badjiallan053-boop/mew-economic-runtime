@@ -1,0 +1,14 @@
+FROM node:24-alpine
+WORKDIR /app
+# Deliberately omit public server, economic core, adapters, credentials and databases.
+COPY src/company ./src/company
+COPY src/evaluation ./src/evaluation
+COPY prompts/company ./prompts/company
+COPY .agents/skills/mew-engineering/SKILL.md ./.agents/skills/mew-engineering/SKILL.md
+COPY .agents/skills/company-knowledge/SKILL.md ./.agents/skills/company-knowledge/SKILL.md
+COPY .agents/skills/test-driven-development/SKILL.md ./.agents/skills/test-driven-development/SKILL.md
+COPY .agents/skills/handoff-review/SKILL.md ./.agents/skills/handoff-review/SKILL.md
+COPY scripts/evaluate-model.mjs ./scripts/evaluate-model.mjs
+USER node
+ENTRYPOINT ["node", "scripts/evaluate-model.mjs"]
+CMD ["--workflow"]

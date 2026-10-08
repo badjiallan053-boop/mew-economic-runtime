@@ -1,0 +1,104 @@
+[
+  {
+    "id": "cardano-mainnet",
+    "kind": "chain",
+    "network": "mainnet",
+    "url": "https://api.koios.rest/api/v1/tip",
+    "retrievedAt": "2026-10-07T10:19:46.957Z",
+    "sha256": "e5604da1b380792f56d3be51db4ad2f364de61343fe66ab5225724602f1344d9",
+    "status": "collected",
+    "records": 1,
+    "nullRowsExcluded": 0
+  },
+  {
+    "id": "cardano-preprod",
+    "kind": "chain",
+    "network": "preprod",
+    "url": "https://preprod.koios.rest/api/v1/tip",
+    "retrievedAt": "2026-10-07T10:19:51.126Z",
+    "sha256": "710b75b446c6a712972d9e2c711747a0db3fc64df1786b5b7c5185296c4f6b7f",
+    "status": "collected",
+    "records": 1,
+    "nullRowsExcluded": 0
+  },
+  {
+    "id": "internet-context",
+    "kind": "indicator",
+    "url": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100",
+    "retrievedAt": "2026-10-07T10:19:52.138Z",
+    "sha256": "2f79e0f29e702379f62d44c78f80a3e5f0d133dcf66a9f63d544646357d3c2ed",
+    "status": "collected",
+    "records": 45,
+    "nullRowsExcluded": 0
+  },
+  {
+    "id": "masumi-network/Sokosumi-MCP",
+    "kind": "repository",
+    "url": "https://api.github.com/repos/masumi-network/Sokosumi-MCP",
+    "retrievedAt": "2026-10-07T10:19:58.544Z",
+    "sha256": "37ab94f8a3b4b6f29cc76aaec7192b966a653f7829485b53949fbe48e41c4fa9",
+    "status": "collected",
+    "records": 1,
+    "nullRowsExcluded": 0
+  },
+  {
+    "id": "masumi-network/sokosumi",
+    "kind": "repository",
+    "url": "https://api.github.com/repos/masumi-network/sokosumi",
+    "retrievedAt": "2026-10-07T10:20:00.050Z",
+    "sha256": "47337632b5e9dc07746d1834e91129b5b8fbb68ca5cf615d702a61f8ba8435a0",
+    "status": "collected",
+    "records": 1,
+    "nullRowsExcluded": 0
+  },
+  {
+    "id": "cardano-community/koios-artifacts",
+    "kind": "repository",
+    "url": "https://api.github.com/repos/cardano-community/koios-artifacts",
+    "retrievedAt": "2026-10-07T10:20:00.399Z",
+    "sha256": "36262e24b2f10d08476f85e12d06572e2b58a440013e695bf3bbbd15415f1519",
+    "status": "collected",
+    "records": 1,
+    "nullRowsExcluded": 0
+  },
+  {
+    "id": "masumi-network/masumi-payment-service",
+    "kind": "repository",
+    "url": "https://api.github.com/repos/masumi-network/masumi-payment-service",
+    "retrievedAt": "2026-10-07T10:20:00.889Z",
+    "sha256": "5d15fe1c327541be6a81f71565f39c98305f2a7e81323fc0e9d6ee5c66f2ce77",
+    "status": "collected",
+    "records": 1,
+    "nullRowsExcluded": 0
+  },
+  {
+    "id": "masumi-network/masumi-skills",
+    "kind": "repository",
+    "url": "https://api.github.com/repos/masumi-network/masumi-skills",
+    "retrievedAt": "2026-10-07T10:20:01.422Z",
+    "sha256": "1cfb445fb8f36f07f0e611efba20689b0904bbd46fbaa2b687dfc6b49667231b",
+    "status": "collected",
+    "records": 1,
+    "nullRowsExcluded": 0
+  },
+  {
+    "id": "modelcontextprotocol/typescript-sdk",
+    "kind": "repository",
+    "url": "https://api.github.com/repos/modelcontextprotocol/typescript-sdk",
+    "retrievedAt": "2026-10-07T10:20:01.889Z",
+    "sha256": "2fc52b2898546ff1bf1a6217141e52ae513e4b94c4f4320a7618e09abfd71bcb",
+    "status": "collected",
+    "records": 1,
+    "nullRowsExcluded": 0
+  },
+  {
+    "id": "n8n-io/n8n",
+    "kind": "repository",
+    "url": "https://api.github.com/repos/n8n-io/n8n",
+    "retrievedAt": "2026-10-07T10:20:03.111Z",
+    "sha256": "dcfc5052a6a5dd9b2f5f8eae02cf2a8e231fda25d424e8d18d8f644b7eb6d31f",
+    "status": "collected",
+    "records": 1,
+    "nullRowsExcluded": 0
+  }
+]

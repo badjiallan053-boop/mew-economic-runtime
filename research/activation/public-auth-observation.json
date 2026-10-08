@@ -1,0 +1,14 @@
+{
+  "schema": "mew.public-auth-observation.v1",
+  "projectRef": "ndorfchuhciidfcltbzf",
+  "observedAt": "2026-10-07T23:00:11.100219+00:00",
+  "status": "PUBLIC_AUTH_SETTINGS_VERIFIED",
+  "source": "scripts/supabase-auth-preflight.mjs",
+  "publicApiConnected": true,
+  "privateDatabaseConnected": false,
+  "userAuthenticated": false,
+  "economicAuthority": false,
+  "modelActivated": false,
+  "paymentsEnabled": false,
+  "note": "Actual fixed-origin public settings request using the supplied publishable key. No account, login, customer data or runtime database connection."
+}

@@ -1,0 +1,13 @@
+{
+  "repository": "https://github.com/ai-evals-course/evals-skills",
+  "commit": "80d5f7b0127c7572ed9e9339937adbfd7240ffeb",
+  "sourcePath": "skills/error-discovery",
+  "discovery": "https://skills.sh/ai-evals-course/evals-skills/error-discovery",
+  "license": "Apache-2.0",
+  "hashes": {
+    "SKILL.md": "e125c9b764b7aa658ea8c9104fb2856b67b40c0604e73d5bfe142e0dd5d10149",
+    "review-loop.md": "4c500d0fc6fbeba9bbd8d4858e7e14c848b8ea8cd2a6bdef5c854b668943286a",
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+  },
+  "usage": "Installed reference and future interactive human error-analysis workflow; no actual human annotation session performed."
+}

@@ -1,0 +1,70 @@
+{
+  "schema": "mew.activation-sources.v1",
+  "reviewedOn": "2026-10-08",
+  "lane": "database",
+  "sources": [
+    {
+      "url": "https://supabase.com/docs/guides/database/postgres/roles",
+      "kind": "official-documentation",
+      "adoption": "Separate dedicated runtime role and secret provisioning; privileged/admin connections are not runtime credentials.",
+      "limits": "Documentation does not prove this project's LOGIN or TLS was configured."
+    },
+    {
+      "url": "https://supabase.com/docs/guides/database/connecting-to-postgres",
+      "kind": "official-documentation",
+      "adoption": "Select direct or displayed pooler endpoint based on connectivity; do not guess pooler hostname.",
+      "limits": "Existing deployment network and actual Node certificate connection remain unverified."
+    },
+    {
+      "url": "https://www.postgresql.org/docs/17/app-psql.html",
+      "kind": "official-documentation",
+      "adoption": "Use interactive password handling rather than literal password SQL/history.",
+      "limits": "No administrative client was installed or connected; operator provisioning remains pending."
+    },
+    {
+      "url": "https://node-postgres.com/features/transactions",
+      "kind": "official-documentation",
+      "adoption": "Retain one checked-out client through transaction-local principal context, lock and commit.",
+      "limits": "Correct transaction structure is not a hosted multi-client execution receipt."
+    },
+    {
+      "url": "https://skills.sh/supabase/agent-skills/supabase-postgres-best-practices",
+      "repository": "https://github.com/supabase/agent-skills",
+      "revision": "c9be0e931b7930f7d02126d04774d904c381e7d7",
+      "kind": "reviewed-skill-reference",
+      "licenseDeclaredBySkill": "MIT",
+      "adoption": "Original MEW activation procedure preserves forced RLS and bounded pooling; no unreviewed remote skill execution.",
+      "limits": "Do not copy illustrative session-scoped principal settings into pooled MEW transactions; preserve transaction-local context. Generic performance claims are not MEW benchmark evidence.",
+      "files": [
+        {
+          "path": "skills/supabase-postgres-best-practices/SKILL.md",
+          "sha256": "ad65e776f45e761bafc609d3f506c77c1032225aa65e0c4c02f241b8071e5855"
+        },
+        {
+          "path": "skills/supabase-postgres-best-practices/references/security-rls-basics.md",
+          "sha256": "e04dd1a3a382aafdaaa73fe9f7976352acdde6e90c2a2470d281b94d4f44b096"
+        },
+        {
+          "path": "skills/supabase-postgres-best-practices/references/conn-pooling.md",
+          "sha256": "88cf086bf98ba865d2e9d0579974e1366b14157619d6a93e7da77be91084e4a5"
+        }
+      ]
+    }
+  ],
+  "execution": {
+    "remoteSkillInstalled": false,
+    "remoteSkillExecuted": false,
+    "skillValidationDependency": {
+      "package": "PyYAML",
+      "version": "6.0.2",
+      "location": "ignored .local/database-skill-validator",
+      "runtimeDependencyAdded": false
+    },
+    "databaseLoginEnabled": false,
+    "credentialRead": false,
+    "databasePasswordGenerated": false,
+    "modelActivated": false,
+    "paymentSigned": false,
+    "paymentBroadcast": false
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "repository": "https://github.com/ai-evals-course/evals-skills",
+  "revision": "80d5f7b0127c7572ed9e9339937adbfd7240ffeb",
+  "path": "skills/write-code-eval",
+  "discoveredVia": "https://skills.sh/ai-evals-course/evals-skills/write-code-eval",
+  "license": "Apache-2.0",
+  "skillSha256": "6acf7d26f1b64d2dd7792675e3afefa0fc7accd6e0efd73184c6dd356c64338b",
+  "upstreamModified": false,
+  "executableScriptsInstalled": false
+}

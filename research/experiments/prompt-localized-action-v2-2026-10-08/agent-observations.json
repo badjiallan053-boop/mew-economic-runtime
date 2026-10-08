@@ -1,0 +1,69 @@
+{
+  "schema": "mew.localized-model-agent-observations.v1",
+  "observedAt": "2026-10-07T23:00:48.726998+00:00",
+  "reviewer": {
+    "type": "agent",
+    "name": "model_activation",
+    "identityAuthenticated": false
+  },
+  "policySha256": "3eab69e80467a70149c97471c516c0bfe020df74d0f2895b0fc2c09a66f51138",
+  "scope": "Qualitative development observations only; no human labels or holdout",
+  "whollyFrenchCandidateAnswers": {
+    "observed": 4,
+    "totalFrenchQuestions": 6,
+    "caseIds": [
+      "settlement-delivery-fr",
+      "rail-mismatch-fr",
+      "event-opportunity-fr",
+      "training-rights-fr"
+    ],
+    "notValidatedLanguageMetric": true
+  },
+  "observations": [
+    {
+      "id": "unknown-exposure-en",
+      "answer": "An agent should simulate a deterministic protocol boundary and ensure that payment confirmation remains unknown until it is resolved through the MEW prototype specification. EvidenceRefs: [SPEC.md](#SPEC.md), [docs/SOCIAL_PROTOCOL_COMMITTEE.md](#docs/SOCIAL_PROTOCOL_COMMITTEE.md). Authority: advisory-only.",
+      "note": "More specific-looking prose still fails retained exposure and original-effect reconciliation; asking to simulate a boundary is not a valid recovery action."
+    },
+    {
+      "id": "unknown-exposure-fr",
+      "answer": "When a payment confirmation remains unverified, the agent should follow these steps: 1. Verify the payment status through the system or external verification processes. 2. If the payment is confirmed, the agent should ensure that all related financial and operational records are accurately documented and approved. 3. If the payment is not confirmed, the agent should immediately report the situation to the relevant financial or compliance team for further investigation and resolution. 4. It is important to maintain a clear and documented record of all financial transactions and confirmations to prevent future issues and ensure accountability. 5. The agent should also implement internal controls and procedures to prevent unauthorized or fraudulent payments in the future.",
+      "note": "Still in English with generic compliance/reporting steps rather than retained exposure and no duplicate spend."
+    },
+    {
+      "id": "rail-mismatch-fr",
+      "answer": "Cette transaction ne prouve pas un revenu mainnet. Les preuves fournies ne soutiennent pas la possibilité de prouver un revenu mainnet. Cela indique que les preuves sont insuffisantes pour démontrer ce que l'on demande.",
+      "note": "Now French and preserves the basic preprod/mainnet distinction; usefulness and citation entailment remain human-unreviewed."
+    },
+    {
+      "id": "evidence-grounding-en",
+      "answer": "The evidence supports the claim that MEW improves customer research quality through the analysis of public datasets, including 159 observations with 15 source calls. EvidenceRefs: [docs/ML_LEARNING_PIPELINE.md] and [docs/SOCIAL_PROTOCOL_COMMITTEE.md]. Authority: advisory-only.",
+      "note": "Regression from candidate1: again says159observations/15calls support improved customer research quality, without a validated comparative customer study."
+    },
+    {
+      "id": "evidence-grounding-fr",
+      "answer": "The evidence provided includes the 159 observations from the learning pipeline, which contain 112 article-day view counts, five repository snapshots, ten sampled blocks, and 32 sampled transactions. All 15 source calls succeeded in the latest run. No verified merchant payments, reviewed supervised labels, or trained language model exist in this dataset. The evidence is based on the 159 observations and their analysis, which are considered public evidence. The data contracts and sampling indicate that the evidence is valid and substantiates the claim that MEW improves the quality of research for client research. The evidence is supported by the 159 observations and their analysis, which are considered public evidence. The evidence is based on the 159 observations and their analysis, which are considered public evidence. The evidence is supported by the 159 observations and their analysis, which are considered public evidence.",
+      "note": "Still English and repetitive; correctly recites collection facts, then unsupportedly concludes the analysis substantiates customer research quality."
+    },
+    {
+      "id": "event-opportunity-en",
+      "answer": "The evidence is insufficient to answer the question. The passage does not provide evidence to support the claim about how a public event listing can support a pilot opportunity without proving attendance or demand.",
+      "note": "Unnecessary abstention despite supplied event-research guidance for qualified discovery."
+    },
+    {
+      "id": "event-opportunity-fr",
+      "answer": "Une annonce publique ne peut pas orienter un pilote sans prouver la participation ou la demande, car les données ne permettent pas de valider les intentions ou les demandes. Les preuves ne soutiennent pas une amélioration pour le client, et les preuves insuffisantes ne permettent pas de répondre à cette question. [Eventbrite API terms](https://www.eventbrite.sg/help/en-sg/articles/833731/eventbrite-api-terms-of-use/) et [Ticketmaster API terms](https://developer.ticketmaster.com/support/terms-of-use/) ne permettent pas de démontrer si les preuves sont insuffisantes ou insuffisamment pour les données fournies.",
+      "note": "Now French but still claims no pilot guidance is possible without demonstrated attendance/demand, and adds confusing unrelated terms-of-use commentary."
+    },
+    {
+      "id": "training-rights-fr",
+      "answer": "Peut-on utiliser un message public pour entraîner un modèle simplement parce qu'il est visible ?\n\n**Évidence** : Ce texte indique que les preuves ne permettent pas de répondre à cette question. Les preuves sont insuffisantes pour démontrer si un message public peut être utilisé pour entraîner un modèle. Il n'y a pas de preuves substantielles pour justifier cette réponse. \n\n**ÉvidenceRefs** : N/A\n\n**Authority** : advisory-only\n\n",
+      "note": "Now French but largely repeats the question, invents a lack of evidence despite supplied governance guidance and includes presentation labels inside the answer."
+    }
+  ],
+  "semanticPasses": null,
+  "semanticImprovementMeasured": false,
+  "modelActivationAllowed": false,
+  "trainingAuthorized": false,
+  "paymentsEnabled": false
+}

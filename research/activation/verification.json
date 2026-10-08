@@ -1,0 +1,40 @@
+{
+  "schema": "mew.activation-verification.v1",
+  "observedAt": "2026-10-07T21:59:29.946Z",
+  "baseRevision": "58e1df27c1db1926bf69003080c4d61b76bbf5d0",
+  "tests": {
+    "total": 274,
+    "passed": 274,
+    "failed": 0,
+    "providerTransport": "mocked",
+    "testLogSha256": "1799383cb1d80f0765001cbcc7a818a5ac897f787a8aa361e073164fa1129852"
+  },
+  "build": "PASS",
+  "skillsValidated": [
+    "mew-activation-orchestrator",
+    "mew-private-database-activation",
+    "mew-live-model-evaluation",
+    "mew-preprod-payment-review"
+  ],
+  "handoffs": {
+    "lanes": [
+      "database",
+      "model",
+      "payment"
+    ],
+    "artifactsIntact": true,
+    "reviewVerdict": "BLOCKED",
+    "teamReviewSha256": "65c6a171268526d6a6c6dd7a5cc9f68106772c1fb934e8af4e8c50c16579b00e"
+  },
+  "newProviderModelCalls": 0,
+  "liveWalletObservations": 0,
+  "databaseLoginProvisioned": false,
+  "paymentSigned": false,
+  "paymentBroadcast": false,
+  "independentContractAuditPerformed": false,
+  "productionActivationPerformed": false,
+  "limitations": [
+    "Source research and fake-transport tests do not prove successful credentials or a funded chain lifecycle.",
+    "The model coordinator forward-test is agent review, not domain-human approval."
+  ]
+}

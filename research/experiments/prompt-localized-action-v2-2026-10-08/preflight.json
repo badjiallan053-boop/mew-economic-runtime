@@ -1,0 +1,16 @@
+{
+  "schema": "mew.model-localized-preflight.v1",
+  "status": "BLOCKED_BEFORE_GENERATION",
+  "error": "Renderer or token drift",
+  "cause": "Canonical saved JSON sorts evidence before question; original renderer used question before evidence. Guard failed before invoking the generator.",
+  "observedGeneratedResponses": 0,
+  "requestRowsWritten": 0,
+  "archivedLocally": ".local/prompt-localized-preflight-2026-10-08",
+  "failedPolicySha256": "83194596eeb557bdf695269b9ef8d10a721660148d3483e2c5bbe0e72f0dbe0b",
+  "failedRunnerSha256": "747d9afbd8ead784b4633d51ca53d0994586a75dec21c37334b479ac3e02d897",
+  "failedPromptSha256": "6f2e392ebc5fcd9a16261c24cff623459754a76a7b08c5ed6376a5e369a6c8bd",
+  "resolution": "Reconstruct original user-field order and rerun in a fresh directory; remove an unnecessary domain maxim before any generation.",
+  "baselineModified": false,
+  "trainingAuthorized": false,
+  "paymentsEnabled": false
+}

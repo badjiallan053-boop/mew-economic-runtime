@@ -1,0 +1,172 @@
+# Live deployment handoff and implementation references
+
+7 October 2026. Real hosting and real payments are separate milestones.
+
+## Railway rollout
+
+The owner approved up to US$10 total for this submission on 7 October. Only the
+new MEW services in `survival-alpha-prod` were changed; its existing app and
+database were left intact.
+
+- `mew-demo`: service `b0d1b572-6582-453e-a176-af5c857e1c8b`, 100 MB persistent
+  `/data` volume, one Singapore replica, 0.25 vCPU / 0.25 GB memory limits.
+- Dedicated MPS `Postgres`: service `bfadf5cd-6867-4a73-b0d0-b30f0c8c21ae`,
+  PostgreSQL 18, 500 MB persistent volume, one Singapore replica, 0.25 vCPU /
+  0.5 GB memory limits. Verified online, no public domain or TCP proxy. No MPS
+  migrations, wallet seed or worker connection have been performed.
+
+The first two demo builds failed Dockerfile validation before runtime logs.
+Removed the Docker `VOLUME` instruction, retaining Railway's attached volume,
+then deployed full commit `659b36d35a05cf9229becaeb4b4276c280282e85`.
+Container copies runtime files only; secrets and `.local` are excluded, and
+entrypoint drops privileges after preparing `/data`. Simulation mode is explicit.
+
+Verified hosted simulation: https://mew-demo-production.up.railway.app/rehearsal.html.
+Health, page and rehearsal endpoint checks passed. A synthetic reservation was
+saved at rehearsal stage 2, redeployed as `21320afc-0cdd-426b-b5f1-85475ceab442`,
+and the full saved rehearsal state matched after the new deployment succeeded.
+The rehearsal was then reset for judges. This proves hosted fixture persistence,
+not a live blockchain payment. Local verification: 66 tests passed; build passed.
+
+Resource limits are applied but are not a dollar spending cap. Check incremental
+Railway usage against the approved US$10 budget; avoid extra replicas and idle
+payment/model services. Do not alter workspace-wide settings affecting unrelated
+apps. Railway rejected the deprecated config-file update; healthcheck, Dockerfile
+path and region were configured through the service API instead.
+
+## References that actually match the desired behavior
+
+| Source | Inspected behavior | Reuse boundary |
+| --- | --- | --- |
+| [Official Cardano x402 demo](https://github.com/cardano-foundation/x402-cardano-demo), 6481c9aea1bc36c45c0d872fc1f3a3414c108e8f | `server/src/paymentOperations.ts` binds transaction to operation; `masumi/README.md` describes MIP-003 and x402 escrow with later collection | Add persistent admission before payment dispatch; its in-memory operation map alone does not survive restart |
+| [Official TOKEN2049 live implementation](https://github.com/masumi-network/demo-agent-token2049/tree/live-demo-name-finder), ff35ea7 | `paid-task.mjs` saves pending stages; `client.mjs` calls eve sessions; `settlement.mjs` checks receipt/withdrawal/net seller output | Use as worker reference; replace team-name instructions with procurement criteria and preserve credentials/runtime isolation |
+| [Masumi Payment Service](https://github.com/masumi-network/masumi-payment-service), d569a338ca54d5be7441564770d75ebf89b71f12 | Dedicated encrypted wallet database, scoped payment API and lifecycle | Separate PostgreSQL service; exact deployed API and signed fields must be checked before writes |
+| [eve deployment guide](https://github.com/vercel/eve/blob/main/docs/guides/deployment/vercel.mdx) | Separate hosted agent runtime | Hosting eve alone does not deploy the Task worker or MPS |
+| [Cardano x402 facilitator](https://github.com/cardano-foundation/cardano-x402-facilitator) | v2 exact, network/asset/amount admission and broadcast/reconciliation | Protocol verification does not establish user's objective satisfaction |
+
+The live template's receipt helper accepts net token value greater than zero. MEW's new `verifyTokenReceipt` requires the full configured atomic amount, validates transaction identity, token unit and confirmation depth, and subtracts seller input value from seller outputs. The read-only `verifyMasumiCollection` bridge now binds trusted saved terms to the authenticated Task receipt and confirmed MPS ordinary withdrawal before invoking chain verification. See [MASUMI_SETUP.md](MASUMI_SETUP.md) for the runnable CLI. It is not a paid-task worker and has only been exercised with synthetic provider fixtures. No foreign asset is inserted into MEW's lovelace kernel.
+
+Two assets named tUSDM exist in the inspected x402 demo. The ordinary token payment route defaults to a different policy from Masumi dispenser tUSDM. Configure the complete policy/asset-name unit, not a symbol. The demo documents policy `16a55b2a…` for Masumi. Do not silently substitute token policies or treat escrow lock as seller collection.
+
+## YouTube knowledge sources
+
+- [x402 on Cardano — official Office Hours](https://www.youtube.com/watch?v=5yhdNPAn8BA), linked from the [official developer article](https://developers.cardano.org/blog/2026-04-24-media-cardano-developer-office-hours/): v2/protocol context. No transcript obtained.
+- [Masumi Updates: AI Agents, Payments & Infrastructure on Cardano](https://www.youtube.com/watch?v=mCH4xWJ89Vc), linked from the [official developer article](https://developers.cardano.org/blog/2026-08-28-media-cardano-developer-office-hours/): ecosystem context. Browser page inspected; transcript export explicitly returned no transcript.
+
+These videos are context, not implementation evidence. Source code above is the reproducible implementation reference. Search for the October 6 x402 Office Hours announcement found the event but did not establish a verified recording URL; none is invented.
+
+## Gates before a real paid job
+
+1. Deploy and verify the isolated demo; authenticate Sokosumi using the intended account.
+2. Configure entitled model credentials privately. Prove one actual eve session and quality-check its result.
+3. Reuse/create Vendor and Coworker after inventory, permissions and grant checks.
+4. Configure dedicated MPS PostgreSQL and Blockfrost Preprod; migrate/seed safely and preserve encryption keys. Fund the actual seller address and verify balance.
+5. Implement the worker against the deployed schema with durable pending operations. No automatic replay of uncertain payment or model submissions.
+6. Run the real Task, escrow lock, exact result/hash submission and collection sequence. Independently verify the full expected net seller receipt.
+7. Prove a new Task works with the laptop offline, then record deployed endpoints and sanitized evidence.
+
+Current gates pending: model access, Sokosumi sign-in, payment configuration/funding, live worker implementation and verified collection. Publishing the simulation does not complete these gates.
+
+## Company hierarchy release · 7 October 2026
+
+Deployed commit `38da4f9e0bf67d23d0f0b83f0184d29876f754b3` to the existing
+MEW service; deployment `075b3460-8dee-416a-973e-f3ef7bbe67f6` succeeded. No new
+billed services or model workers were created. Hosted company map:
+https://mew-demo-production.up.railway.app/company.html.
+
+Verified HTTP health, company page/script and registry: 12 leads, 36 specialists,
+48 assigned tasks, `modelExecution: NOT_CONFIGURED`, payments disabled. Company
+runtime tests and existing regression suite: 77 passing. Local synthetic CLI
+completed all 48 advisory tasks; replay returned identical persisted output.
+Browser visual rendering was not inspected in this contribution.
+
+The image explicitly includes only the reviewed company prompts, three skill
+files and local rehearsal CLI. The API exposes the read-only registry; it does
+not start providers, load credentials or dispatch company tasks. Company task
+SQLite is separate from economic SQLite and the MPS PostgreSQL service.
+Read COMPANY_AGENTS.md for configuration gates and interrupted-task recovery.
+
+## Focused operating workflows · 7 October 2026
+
+Deployed `bdbd2af9d0584bcf880dd9686a6bd100762f452b`; Railway deployment
+`ded356cd-d7c4-40df-a2a1-d100a97fbd7f` succeeded. The hosted registry and
+company page/script return discovery (13 tasks), release (21), paid-readiness
+(20) and explicit full (48). The UI/CLI default is discovery.
+No new services were created; models remain NOT_CONFIGURED and payments disabled.
+83 tests pass; build passes; local discovery completed synthetic tasks and the
+previous full journal replay was unchanged. Visual browser rendering was not
+inspected. See COHERENT_OPERATIONS.md for ownership and knowledge references.
+
+## Ecosystem research release · 7 October 2026
+
+Code commit `0d01ce71e4643d6ec3bca46bfda22cfc88527845` adds a bounded public-source snapshot and read-only `/research.html`. Ten API sources succeeded: 54 normalized observations plus five original summaries of publisher announcements/analyses. 102 regression tests and build passed; local health, page, script and snapshot endpoints passed. The 59-record compact handoff used simulatedProvider; no live model, wallet or payment worker ran.
+
+A staged connect of this exact commit to existing mew-demo failed: Railway reported repository not found or not accessible. Hosted health remained HTTP 200, demo mode with payments disabled; `/research.html` returned 404. The new research page is therefore not deployed. No additional services or resources were created.
+
+Owner action: in GitHub installed applications, grant Railway access to private `badjiallan053-boop/mew-economic-runtime`, using the same owner account as the Railway GitHub connection. Reconnect the source and pin the desired reviewed branch commit; inspect pending environment changes before deploying. After success, verify `/api/health`, `/research.html`, `/research-snapshot.json` and SQLite persistence. Existing US$10 total authorization remains the budget; resource limits do not enforce a dollar cap. Do not enable live payment or model execution as part of this static research rollout.
+
+## Railway access restored and research hosted · 7 October 2026
+
+GitHub UI now shows Railway App installation `168824511` on the intended account. Its installed access was already enabled; no permissions were changed by this contribution. The connector successfully staged the source at full commit `ee44f94cf02ea3a0899893e6adc79b87f7aff287`. Inspection showed exactly one pending change, the MEW demo commit, before applying it.
+
+Deployment `b5e9d110-74f3-475f-a174-45a58e74dbb4` succeeded. Read-only verification checked health and SHA-256 equality against the checkout for company HTML/JS, campaign HTML, research HTML/JS and public snapshot JSON. Browser inspection confirmed 54 API records, ten successful sources and explicit simulated-model labels at https://mew-demo-production.up.railway.app/research.html. Health returned demo mode, SQLite and payments disabled. No new billed service, replica or database was added; the existing /data volume remained configured. This release did not perform a fresh post-redeploy state persistence experiment or payment/model execution.
+
+The prior repository-access blocker is resolved. Source remains pinned: future pushes do not automatically deploy. `npm run deploy:verify` repeats read-only asset checks. docs/DELIVERY_PLAN.md now defines the ordered backlog, owners, acceptance evidence and deployment procedure. All 102 tests and build passed for this follow-up.
+
+## Unified website and company studio hosted · 7 October 2026 (SGT)
+
+Existing mew-demo was updated to commit `06a2cfaff95ba8acab3808e5cf2d0157170f30e1`. Railway deployment `eb2fde68-37fd-49e3-8f26-6b1d490e92e9` succeeded; environment reports one healthy replica, no pending changes or service issues. The staged patch contained only its source commit. Existing /data volume, Singapore region, replica and resource limits were preserved; no new paid service was created.
+
+Homepage: https://mew-demo-production.up.railway.app/ . Internal demonstration studio: https://mew-demo-production.up.railway.app/design-studio.html . Independent security reviewer found no blocker for public deterministic demo release; 150 tests and build passed. Expanded verification matched 22 asset byte hashes, including homepage, studio, design studio, shell and artwork. Initial health request timed out during rollout; a separate post-rollout check passed: demo mode, SQLite, payments disabled.
+
+Browser inspection confirmed hosted homepage and shared-data warning. A synthetic default brief was saved through the studio UI; an independent subsequent HTTP read returned revision1, five critique records and NEEDS_HUMAN_REVIEW. This proves a hosted save/read, not persistence through a second redeployment. No private data, real model call, merchant job or payment ran. Git pushes remain separate from this pinned deployed source.
+
+Release context inspected: official https://docs.railway.com/volumes and https://github.com/railwayapp/railway-skills ; skills.sh https://www.skills.sh/vstorm-co/production-stack-skills/production-check listing was reference-only, no package installed. Located https://www.youtube.com/watch?v=oitx514tQgk (DevOps Directive, 2024); transcript export returned unavailable. No technical conclusions were attributed to unseen video content; deployment behavior was checked against current official docs and executable evidence.
+
+
+## 7 October: Web3 website redesign
+
+Deployed website commit `1dbd7d2c83712deb16e2ee6af40103895ae0fd15` through existing mew-demo service. Deployment `cce167ca-5a26-48fe-8e36-8958082d790f`. The reviewed environment patch changed only its pinned source commit; no new service, volume, credential or resource limit was added. Payments remain disabled.
+
+152 regression tests and build passed. Eight changed/current page local asset and link checks passed. Read-only hosted verification matched all 25 asset byte hashes and healthy demo-mode SQLite status (26 paths including health). Browser inspection confirmed the live homepage and simulation labels. Local rendered review covered homepage, decision studio, company, design studio and evidence library; mobile390px checks on homepage, studio, company and design studio found no document overflow. The local homepage illustration retained0.55ADA through UNKNOWN and DEFER; architecture tabs accepted keyboard End navigation. Reviewer identified filled-CTA contrast and lovelace wording defects, both corrected before release. No new payment or model call ran and no fresh post-redeploy persistence experiment is claimed. See WEB_DESIGN.md for source references and actual contributor roles.
+
+
+## 7 October: product-led pilot and GTM writing
+
+Website source `44a21dfb6f3d32de94a89b19f55de79ff16330da` deployed successfully as `90f42328-5326-4ad7-a9bb-37b633e57698`. Reviewed staged patch changed only the existing service source commit. Existing volume, replica, limits and payment-disabled configuration were preserved.
+
+155 tests passed, including planner rejection of unsupported stages, missing acceptance, oversized goals and unsafe uncertainty policy. Build and nine-page local asset/link checks passed. Both original GTM/writing skills passed frontmatter validation. All 30 hosted checks passed: healthy demo SQLite boundary plus 29 exact asset hashes. Browser confirmed live pilot page. Local browser exercised synthetic brief creation, enabled download and download feedback, incorrect/correct learning answers, and mobile390px homepage/pilot layouts without document overflow. A successful browser download feedback is not independent inspection of the downloaded file. No customer contact, outreach, analytics, live model or payment was invoked; no post-redeploy persistence drill was performed.
+
+See PRODUCT_MARKETING_CONTEXT.md and GTM_PLAYBOOK.md for audience hypotheses and proposed measurements. Two implementation agents contributed copy and GTM/skills; lead implemented planner, learning feedback and integration review. Host-side workstream prompts do not add running models or economic privileges.
+
+## Connected website story — 7 October 2026
+
+Deployed commit `e7ac76ff53276af71ad1b55e67b790bf6e40fc95` through existing Railway service, deployment `1c4ce8d9-229f-4b32-a829-bb9e9314d907` reported SUCCESS. The four-step story and original seeded SVG artwork preserve existing economic contracts. 157 tests and build passed. Browser checks verified UNKNOWN/DEFER artwork, open checkpoint disclosure, and 390 px verification layout without horizontal overflow. No live model or payment execution occurred.
+
+## Interaction and motion release — 7 October 2026
+
+Railway deployment `7db52e7d-bf82-47ea-a105-1d51cfc8adea` reported SUCCESS for pinned commit `3d7147e2c5e6211dbd5b4f251f1d20daca61b0c4`. All 159 tests and build passed; 36 hosted health/asset checks passed against exact checkout bytes. Browser review confirmed published progress and synthetic state, local checkpoint focus restoration, tab arrow navigation, menu Escape, disconnected control recovery and mobile width. Reduced-motion behavior is unit-tested and stylesheet-gated; customer-device frame rate was not measured. No live model or payment execution was performed. See MOTION_DESIGN.md.
+
+## TOKEN2049 motion, SEO and education release — 8 October 2026
+
+Railway deployment `05dd6861-5552-47af-be79-69cfa91605d1` reported SUCCESS for pinned source `17ab667ee27e5581e42961ffbf7522fcc5929d76`. The environment patch changed only the existing mew-demo source commit. Its persistent volume and resource limits were preserved; no new service, credentials or model/payment worker was created. Railway reported one running replica, no service issues and no pending work.
+
+All **250 regression tests** and the build passed. Eight local HTTP checks plus home/index parity passed. At `2026-10-07T20:59:10.892Z`, **50 hosted health/asset checks** passed: exact checkout byte hashes, demo-mode SQLite health, security headers, workspace noindex and crawler MIME. Separate hosted reads confirmed `modelExecution: NOT_CONFIGURED`, `paymentsEnabled: false`, and HTTP 403 for the demo's Cardano status endpoint. These reads do not prove funded execution or persistence across another redeployment.
+
+Hosted browser verification exercised keyboard motion pause/resume and the actual ephemeral kernel sequence ALLOW → UNKNOWN → DEFER, retaining 1.50 ADA and one occupied report. Sculpture and result panel both reflected DEFER. The new knowledge navigation displayed 18 historical observations from 12/13 retrieved sources; the unavailable Crossref query remains an HTTP 429 in the immutable manifest. Fresh browser logs contained no warnings/errors. Local 390 px homepage and knowledge layouts had no document overflow. OS reduced-motion and screen-reader operation were source-reviewed, not freshly emulated.
+
+Four official Stanford course references, five pinned repositories and two public YouTube caption reviews inform the original advisory integration. The actual existing five-role/six-task simulation completed locally; the public hosted service serves a dated archive and does not execute the collector, training or company inference. No customer contact, wallet signing, transaction broadcast or payment ran. See [workflow and sources](STANFORD_AGENT_WORKFLOW.md) and [independent technical review](LIVE_SHOWCASE_RELEASE_AUDIT.md).
+
+## Operating ecosystem and Cardano observation boundary — 8 October 2026
+
+Railway deployment `aba67bd4-786a-460c-9c2c-399d49316ece` reported SUCCESS for source commit `a0a9e35` on `feat/cardano-agent-boundaries`. The existing `mew-demo-data` volume remained mounted at `/data`; the one Singapore replica and configured CPU/memory limits were unchanged. Railway reported all four services online, no active issues and no pending work.
+
+All **423 tests** and the standalone site build passed before release. `scripts/verify-deployment.mjs` then verified every configured health/session/asset check against exact checkout bytes, including the new `/insurance.html` and `/insurance.css`. Hosted health confirmed `mode: demo`, `paymentsEnabled: false`, SQLite persistence and `privateDatabaseAccess: false`; this is still the public demo, not the private customer service. The demo page now shows the operator → MEW → Cardano → supplier → partner evidence handoffs.
+
+The Cardano preprod verifier records `payment.observed` only. Payer attribution remains unverified, transaction binding is operator-attested, settlement finality is unestablished, and accounting exposure stays reserved. No wallet was invoked, transaction signed or broadcast, contract deployed, customer data processed, insurer contacted or payment collected. Private database login, customer consent, live model evaluation, authenticated provider dispatch, funded signer custody, rollback-aware reconciliation and independent contract audit remain required before business operation.
+
+## Launch-readiness workflow and production auto-deploy discovery — 8 October 2026
+
+Commit `767286d4d4ee54e26ad2c346128e5f7d41e1118a` adds the bounded launch-review workflow, local skill and seven task prompts. GitHub push to `feat/cardano-agent-boundaries` triggered production deployment `78930672-5e35-4f13-9d12-59e544206e20` automatically. Railway configuration confirms the service tracks that branch; earlier statements in this log and release docs that the source was pinned described a prior configuration and are no longer current. The service's `/data` volume, Singapore region and single replica were preserved.
+
+All **424 tests** passed on Node 24 and `scripts/build.mjs` succeeded before push. The post-deploy `scripts/verify-deployment.mjs` passed all 60 configured health, session, security-header and hosted-byte checks. Railway reported the service online with one running replica, zero issues and no pending work. The changed files are documentation and review prompts; no live model, external job, payment, signer, wallet, customer workflow or outreach ran. The hosted demo remains simulation-only. Future pushes to this feature branch are production deployments until Railway's source configuration changes.

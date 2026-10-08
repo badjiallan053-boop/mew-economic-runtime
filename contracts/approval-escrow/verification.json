@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "status": "compiled-local-tests-pass",
+  "deployed": false,
+  "funded": false,
+  "transactionSigned": false,
+  "transactionBroadcast": false,
+  "compiler": {
+    "name": "Aiken",
+    "version": "v1.1.23+8949565"
+  },
+  "stdlibVersion": "v2.1.0",
+  "plutusVersion": "v3",
+  "traceLevel": "silent",
+  "testSummary": {
+    "total": 49,
+    "passed": 49,
+    "failed": 0,
+    "kind": {
+      "unit": 49,
+      "property": 0
+    }
+  },
+  "sourceAndArtifactSha256": {
+    "aiken.toml": "69ffda0b0ac396bc64d6006475c6f30b98aff990b5657528c0ccb1543d65bc15",
+    "aiken.lock": "b285931c531ca3cfebba9a9778627934aa062a46b33f1fb280d0867736ae4066",
+    "lib/mew/types.ak": "12fb9f7484def7cde21bf361845d774ab35ea2d759bbb146819fa1349aa3c233",
+    "validators/approval_escrow.ak": "cacd4a39e2d6499e07f7dd76d83ab192d3cb9bc96996483ce8caf9a3385b06dd",
+    "test-results.json": "10c82be6d7a972bb3caa2acbb251e0cf106ed5b2e061bea9c3a54a4c609c4f50",
+    "plutus.json": "abe6547ac833a48772ce6e07e9a1071a2e1d6928e9c103195390e88e9474249f"
+  },
+  "validators": [
+    {
+      "title": "approval_escrow.approval_escrow.spend",
+      "hash": "b4f05c52f35ff19f653540cd9e3f4cd36ee420ad894ad503ab2039c7"
+    },
+    {
+      "title": "approval_escrow.approval_escrow.else",
+      "hash": "b4f05c52f35ff19f653540cd9e3f4cd36ee420ad894ad503ab2039c7"
+    }
+  ],
+  "limitations": [
+    "Individual cell; not global mandate enforcement or effect uniqueness",
+    "No authenticated funding policy, signer, transaction builder or network broadcast",
+    "Handler tests do not establish ledger balancing, wallet signatures or network inclusion",
+    "Principal can unilaterally cancel; no guarantee of provider compensation",
+    "Invalid funding may permanently lock funds"
+  ]
+}

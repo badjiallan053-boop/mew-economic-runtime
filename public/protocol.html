@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f6f2e9">
+<title>MEW — Why the second order waits</title>
+<link rel="stylesheet" href="/assets/fonts/instrument.css"><link rel="stylesheet" href="site-shell.css?v=palette-20261008a"><link rel="stylesheet" href="journey.css?v=palette-20261008a"><link rel="stylesheet" href="protocol.css"><!-- MEW SEO START -->
+<meta name="description" content="Understand why an unanswered supplier request stays open. Follow a simple visual example, inspect the demo record and plan one reviewable pilot."><link rel="canonical" href="https://mew-demo-production.up.railway.app/protocol.html"><meta name="robots" content="index,follow"><meta property="og:type" content="website"><meta property="og:site_name" content="MEW"><meta property="og:title" content="MEW — Why the second order waits"><meta property="og:description" content="Understand why an unanswered supplier request stays open. Follow a simple visual example, inspect the demo record and plan one reviewable pilot."><meta property="og:url" content="https://mew-demo-production.up.railway.app/protocol.html"><meta property="og:image" content="https://mew-demo-production.up.railway.app/assets/mew-social.png"><meta property="og:image:alt" content="MEW — one purchase, one shared mandate. Interactive prototype; models and payments disabled."><meta name="twitter:card" content="summary_large_image">
+<!-- MEW SEO END -->
+<link rel="stylesheet" href="/cream-motion.css?v=cream-20261008f">
+</head><body class="site-page verify-page">
+<a class="protocol-skip" href="#main">Skip to content</a>
+<main id="main">
+<header class="protocol-heading" data-journey-after>
+<p class="protocol-label">VERIFY / THE DECISION EXPLAINED</p>
+<h1>One job.<br><em>Don’t buy it twice.</em></h1>
+<p class="protocol-lead">The first supplier hasn’t answered. That doesn’t tell you whether the job failed. MEW keeps the first request open while you check what happened.</p>
+<p class="protocol-mode">Illustrated example · no real order or payment</p>
+</header>
+<section id="evidence" class="decision-story" aria-labelledby="proof-title">
+<div class="section-heading"><div><p class="protocol-label" id="proof-example-label">THE RESEARCH REPORT EXAMPLE</p><h2 id="proof-title">Here’s why the next request waits.</h2></div><a id="proof-record-link" class="text-action" href="studio.html#checkpoint-record">Inspect the demo record <span aria-hidden="true">↗</span></a></div>
+<p id="proof-goal" class="goal-line">Your goal: <strong>one report</strong> · maximum <strong>3 ADA</strong></p>
+<ol class="decision-flow" aria-label="Illustrated decision while the first request is unresolved">
+<li><span class="step-number">01 / FIRST REQUEST</span><div class="flow-icon" aria-hidden="true">↗</div><h3 id="first-title">Ask Alpha.</h3><p id="first-copy">Set aside 1.50 ADA for the report.</p><span class="flow-status held">One job held</span></li>
+<li><span class="step-number">02 / NO ANSWER</span><div class="flow-icon" aria-hidden="true">…</div><h3>Keep the request open.</h3><p>It might still be running. Silence does not prove it failed.</p><span class="flow-status waiting">Outcome unknown</span></li>
+<li><span class="step-number">03 / SAME JOB AGAIN</span><div class="flow-icon" aria-hidden="true">Ⅱ</div><h3 id="second-title">Pause Beta.</h3><p id="second-copy">Another 1.40 ADA would buy the same report again.</p><span class="flow-status paused">Check the first request</span></li>
+</ol>
+<div class="decision-takeaway"><span aria-hidden="true">↳</span><p id="proof-example">1.50 + 1.40 = 2.90 ADA. Both prices fit the 3 ADA limit. The second request waits because you asked for one report, and that job is already held.</p></div>
+<p class="diagram-caption">This diagram explains an unresolved first request. It does not read the current demo record or show a live transaction. ADA is Cardano’s currency; these are example amounts.</p>
+</section>
+<section class="evidence-checks" aria-labelledby="checks-title">
+<p class="protocol-label">THREE THINGS TO CHECK</p><h2 id="checks-title">A demo decision is useful.<br>Know what it proves.</h2>
+<div class="evidence-grid">
+<article><span class="check-number">01 / VISIBLE IN THE DEMO</span><h3>The second request waits.</h3><p>The synthetic record shows the first commitment, the unresolved job and the paused duplicate request.</p><a id="evidence-demo-link" href="studio.html#checkpoint-record">Open the exact demo record <span aria-hidden="true">↗</span></a></article>
+<article><span class="check-number">02 / IMPLEMENTED IN CODE</span><h3>Check the job and its cost.</h3><p>The decision engine checks both quantity and money. A timeout cannot release an unresolved commitment. This covers requests routed through MEW.</p><details><summary>Read the accounting details</summary><p>Reservations are persisted before external dispatch. Unknown outcomes retain capacity. Replayed effect IDs must not authorize a second spend.</p><a href="https://github.com/badjiallan053-boop/mew-economic-runtime/blob/532e885/SPEC.md" rel="noopener noreferrer">Accounting specification — repository access required</a></details></article>
+<article><span class="check-number">03 / STILL NEEDS REAL PROOF</span><h3>Delivery and payment.</h3><p>This diagram does not prove that a customer received real work or that a supplier was paid. Model quality and funded payment tests are separate gates.</p><a href="research.html">Inspect the source library <span aria-hidden="true">↗</span></a></article>
+</div>
+</section>
+<section class="plain-rule" aria-labelledby="rule-title">
+<div><p class="protocol-label">THE RECOVERY RULE</p><h2 id="rule-title">Check the original job<br>before ordering again.</h2><p>You need evidence of what happened: was the work delivered, did the request fail, or was money returned? Until then, keep the commitment visible.</p><a id="timeout-demo-link" class="protocol-cta" href="studio.html">Try the timeout demo <span aria-hidden="true">→</span></a></div>
+<div class="money-guide"><h3>Keep three amounts separate.</h3><ul><li><strong>Set aside</strong><span>Approved, but not yet confirmed as paid.</span></li><li><strong>In progress</strong><span>A verified payment is still being completed.</span></li><li><strong>Spent</strong><span>Payment settlement is confirmed.</span></li></ul><p>Count all three against the agreed limit.</p><details><summary>Technical names and refund limits</summary><p>Reserved + committed + spent = exposure. Amounts use integer lovelace. Verified delivery and payment settlement are separate facts. A refund observation does not automatically prove full fee-inclusive recovery.</p></details></div>
+</section>
+<section class="next-proof" aria-labelledby="release-title">
+<p class="protocol-label">FROM DEMO TO REAL WORK</p><h2 id="release-title">Prove one step at a time.</h2>
+<ol class="roadmap"><li><span class="release-status">AVAILABLE NOW</span><h3>Rehearse the failure.</h3><p>Try the simulation. Inspect its decision record. No supplier is booked.</p></li><li><span class="release-status pending">NEXT / CUSTOMER PILOT</span><h3>Accept one real deliverable.</h3><p>Agree consent, source rights, exact output and a human reviewer. Record actual cost and review effort.</p></li><li><span class="release-status pending">GATED / PAYMENT TEST</span><h3>Test a funded preprod job.</h3><p>Complete private database access, approved signer custody, funding and independent contract audit. Verify delivery and settlement separately.</p></li></ol>
+<a class="text-action" href="pilot.html">Prepare a local pilot brief <span aria-hidden="true">→</span></a>
+</section>
+<section class="technical-section" aria-labelledby="technical-title">
+<details><summary id="technical-title">For builders: how the four layers connect</summary>
+<p class="technical-intro">These are implementation boundaries. Selecting a layer changes this explanation only.</p>
+<div class="layer-tabs" role="tablist" aria-label="Implementation layers"><button id="advice-tab" role="tab" aria-selected="true" aria-controls="layer-panel" data-layer="advice">Team advice</button><button id="mandate-tab" role="tab" aria-selected="false" tabindex="-1" aria-controls="layer-panel" data-layer="mandate">Order checks</button><button id="proof-tab" role="tab" aria-selected="false" tabindex="-1" aria-controls="layer-panel" data-layer="proof">Delivery evidence</button><button id="rail-tab" role="tab" aria-selected="false" tabindex="-1" aria-controls="layer-panel" data-layer="rail">Payment connection</button></div>
+<article id="layer-panel" class="layer-panel" role="tabpanel" aria-labelledby="advice-tab" tabindex="0"><div><p id="layer-state" class="protocol-label">Configured advice only</p><h3 id="layer-title">A team proposes. Code checks.</h3><p id="layer-description">Knowledge and engineering prepare a proposal. Risk and red team examine it independently. The coordinator combines accepted handoffs.</p></div><dl><dt>What it can do</dt><dd id="layer-allowed">Read assigned evidence and submit a recommendation.</dd><dt>What it cannot prove</dt><dd id="layer-boundary">A recommendation cannot authorize spending. Hosted role outputs are fixtures, not model executions.</dd><dt>Next inspection</dt><dd><a id="layer-link" href="company.html">See team responsibilities</a></dd></dl></article>
+</details>
+</section>
+<footer class="protocol-footer"><p>Models and payments remain disabled. No transaction was signed or broadcast.</p><a href="marketing.html#workflow">See the marketing &amp; clipping example</a></footer>
+</main>
+<script type="module" src="site-shell.js"></script><script type="module" src="protocol.js"></script><script type="module" src="journey.js"></script>
+</body></html>

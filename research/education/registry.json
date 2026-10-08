@@ -1,0 +1,205 @@
+{
+  "schema": "mew.education-registry.v1",
+  "reviewedAt": "2026-10-08",
+  "purpose": "bounded advisory research only",
+  "maxRecords": 30,
+  "automaticTraining": false,
+  "sources": [
+    {
+      "id": "stanford-cs251",
+      "kind": "course",
+      "url": "https://cs251.stanford.edu/",
+      "title": "CS251: Blockchain Technologies",
+      "summary": "Public course context on wallets, consensus and blockchain software. Recheck rollback and key boundaries before any preprod signing; Ethereum or Bitcoin examples do not establish Cardano behavior.",
+      "workflowRole": "blockchain-risk-review",
+      "license": {
+        "metadata": "MEW original research notes; underlying bibliographic facts",
+        "content": "unknown",
+        "trainingReuseApproved": false
+      },
+      "match": "CS 251",
+      "freshForSeconds": 2592000
+    },
+    {
+      "id": "stanford-cs229",
+      "kind": "course",
+      "url": "https://cs229.stanford.edu/index.html-fall25",
+      "title": "CS229: Machine Learning, Fall 2025",
+      "summary": "Dataset splits, model evaluation and error analysis inform a failure taxonomy. Freeze development comparisons, reserve a separate human-reviewed holdout and distinguish response shape from answer quality.",
+      "workflowRole": "evaluation-review",
+      "license": {
+        "metadata": "MEW original research notes; underlying bibliographic facts",
+        "content": "unknown",
+        "trainingReuseApproved": false
+      },
+      "match": "CS229",
+      "freshForSeconds": 2592000
+    },
+    {
+      "id": "stanford-cs25",
+      "kind": "course",
+      "url": "https://web.stanford.edu/class/cs25/recordings/",
+      "title": "CS25: Transformers United recordings",
+      "summary": "Official recording index links public talks on retrieval, alignment and generalist agents. Video access is not a grant of training rights or proof of reliable autonomous commerce.",
+      "workflowRole": "retrieval-research",
+      "license": {
+        "metadata": "MEW original research notes; underlying bibliographic facts",
+        "content": "unknown",
+        "trainingReuseApproved": false
+      },
+      "match": "Retrieval Augmented Language Models",
+      "freshForSeconds": 2592000
+    },
+    {
+      "id": "stanford-cs336",
+      "kind": "course",
+      "url": "https://cs336.stanford.edu/",
+      "title": "CS336: Language Modeling from Scratch",
+      "summary": "Current public syllabus includes evaluation, data filtering, deduplication and post-training. Apply these as review gates before adaptation; no cloud training or academic assignment execution is performed.",
+      "workflowRole": "data-quality-review",
+      "license": {
+        "metadata": "MEW original research notes; underlying bibliographic facts",
+        "content": "unknown",
+        "trainingReuseApproved": false
+      },
+      "match": "Language Modeling from Scratch",
+      "freshForSeconds": 2592000
+    },
+    {
+      "id": "stanford-data",
+      "kind": "repository",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment4-data/0555bea66369872d912652debf10b115ca0688c8/README.md",
+      "title": "CS336 data assignment reference",
+      "summary": "Reference for filtering and deduplication evaluation; its learner implementation is incomplete and its full training configuration is not a low-cost MEW deployment.",
+      "workflowRole": "data-quality-review",
+      "license": {
+        "metadata": "MEW original research notes; underlying bibliographic facts",
+        "content": "MIT (repository metadata); dataset rights separate",
+        "trainingReuseApproved": false
+      },
+      "referenceUrl": "https://github.com/stanford-cs336/assignment4-data/tree/0555bea66369872d912652debf10b115ca0688c8",
+      "commit": "0555bea66369872d912652debf10b115ca0688c8",
+      "freshForSeconds": 2592000
+    },
+    {
+      "id": "stanford-alignment",
+      "kind": "repository",
+      "url": "https://raw.githubusercontent.com/stanford-cs336/assignment5-alignment/c2734a26308710949fe13226960a1e8cece94b7e/README.md",
+      "title": "CS336 alignment assignment reference",
+      "summary": "Reference for separating alignment objectives and tests. Starter adapters require learner implementation; no model training result or usable finished agent is implied.",
+      "workflowRole": "evaluation-review",
+      "license": {
+        "metadata": "MEW original research notes; underlying bibliographic facts",
+        "content": "unknown",
+        "trainingReuseApproved": false
+      },
+      "referenceUrl": "https://github.com/stanford-cs336/assignment5-alignment/tree/c2734a26308710949fe13226960a1e8cece94b7e",
+      "commit": "c2734a26308710949fe13226960a1e8cece94b7e",
+      "freshForSeconds": 2592000
+    },
+    {
+      "id": "koios-api",
+      "kind": "repository",
+      "url": "https://raw.githubusercontent.com/cardano-community/koios-artifacts/2e2eb57933e1e2528de5ca36ee961759841cf389/README.md",
+      "title": "Koios public API repository",
+      "summary": "Public Cardano indexer interface reference. A network-tip snapshot cannot verify MEW settlement, wallet ownership, delivery or transaction finality.",
+      "workflowRole": "blockchain-risk-review",
+      "license": {
+        "metadata": "MEW original research notes; underlying bibliographic facts",
+        "content": "CC-BY-4.0 repository; chain-data rights separate",
+        "trainingReuseApproved": false
+      },
+      "referenceUrl": "https://github.com/cardano-community/koios-artifacts/tree/2e2eb57933e1e2528de5ca36ee961759841cf389",
+      "commit": "2e2eb57933e1e2528de5ca36ee961759841cf389",
+      "freshForSeconds": 2592000
+    },
+    {
+      "id": "crossref-api",
+      "kind": "repository",
+      "url": "https://raw.githubusercontent.com/CrossRef/rest-api-doc/00b1cc2c90e62d49c82f5381710590a6d9ca53ff/README.md",
+      "title": "Crossref API repository, deprecated documentation",
+      "summary": "Historical REST API source; README explicitly points to current API documentation. Only bounded bibliographic metadata is collected, and paper titles do not establish paper findings.",
+      "workflowRole": "research-discovery",
+      "license": {
+        "metadata": "MEW original research notes; underlying bibliographic facts",
+        "content": "CC-BY-4.0 documentation; individual metadata no Crossref ownership claim",
+        "trainingReuseApproved": false
+      },
+      "referenceUrl": "https://github.com/CrossRef/rest-api-doc/tree/00b1cc2c90e62d49c82f5381710590a6d9ca53ff",
+      "commit": "00b1cc2c90e62d49c82f5381710590a6d9ca53ff",
+      "freshForSeconds": 2592000
+    },
+    {
+      "id": "openalex-api",
+      "kind": "repository",
+      "url": "https://raw.githubusercontent.com/ourresearch/openalex/312af8772356104fc80cb4597113a5ab7ce3b027/README.md",
+      "title": "OpenAlex API source reference",
+      "summary": "Public research-index source. Current documentation states basic no-key access; failures remain recorded. The API metadata license does not transfer publisher full-text rights.",
+      "workflowRole": "research-discovery",
+      "license": {
+        "metadata": "MEW original research notes; underlying bibliographic facts",
+        "content": "unknown repository; API metadata CC0 per current docs",
+        "trainingReuseApproved": false
+      },
+      "referenceUrl": "https://github.com/ourresearch/openalex/tree/312af8772356104fc80cb4597113a5ab7ce3b027",
+      "commit": "312af8772356104fc80cb4597113a5ab7ce3b027",
+      "freshForSeconds": 2592000
+    },
+    {
+      "id": "crossref-rag",
+      "kind": "crossref",
+      "url": "https://api.crossref.org/works?query.bibliographic=retrieval+augmented+generation+evaluation&rows=4&select=DOI%2Ctitle%2Cpublished%2Ctype%2Clicense&filter=until-pub-date%3A2026-10-08",
+      "title": "Research metadata: retrieval augmented generation evaluation",
+      "summary": "Bounded relevance-ranked bibliographic discovery only; human relevance review and full source inspection remain pending.",
+      "workflowRole": "research-discovery",
+      "license": {
+        "metadata": "MEW original research notes; underlying bibliographic facts",
+        "content": "Crossref metadata; publisher content rights not evaluated",
+        "trainingReuseApproved": false
+      },
+      "freshForSeconds": 86400
+    },
+    {
+      "id": "crossref-agents",
+      "kind": "crossref",
+      "url": "https://api.crossref.org/works?query.bibliographic=autonomous+agent+transaction+safety&rows=4&select=DOI%2Ctitle%2Cpublished%2Ctype%2Clicense&filter=until-pub-date%3A2026-10-08",
+      "title": "Research metadata: autonomous agent transaction safety",
+      "summary": "Bounded relevance-ranked bibliographic discovery only; human relevance review and full source inspection remain pending.",
+      "workflowRole": "research-discovery",
+      "license": {
+        "metadata": "MEW original research notes; underlying bibliographic facts",
+        "content": "Crossref metadata; publisher content rights not evaluated",
+        "trainingReuseApproved": false
+      },
+      "freshForSeconds": 86400
+    },
+    {
+      "id": "openalex-rag",
+      "kind": "openalex",
+      "url": "https://api.openalex.org/works?search=retrieval+augmented+generation+evaluation&per_page=4&select=id%2Cdoi%2Ctitle%2Cpublication_date%2Ctype&filter=to_publication_date%3A2026-10-08",
+      "title": "OpenAlex research metadata: retrieval evaluation",
+      "summary": "Bounded public research metadata discovery only; no abstract, authors, personal identifiers or full text are retained.",
+      "workflowRole": "research-discovery",
+      "license": {
+        "metadata": "MEW original research notes; underlying bibliographic facts",
+        "content": "CC0 metadata; publisher content rights separate",
+        "trainingReuseApproved": false
+      },
+      "freshForSeconds": 86400
+    },
+    {
+      "id": "koios-preprod-tip",
+      "kind": "tip",
+      "url": "https://preprod.koios.rest/api/v1/tip?select=block_no,abs_slot,block_time",
+      "title": "Cardano preprod network tip",
+      "summary": "Public network aggregate observation only; not a wallet, payment or delivery verification.",
+      "workflowRole": "blockchain-risk-review",
+      "license": {
+        "metadata": "MEW original research notes; underlying bibliographic facts",
+        "content": "Chain-data reuse review pending",
+        "trainingReuseApproved": false
+      },
+      "freshForSeconds": 600
+    }
+  ]
+}

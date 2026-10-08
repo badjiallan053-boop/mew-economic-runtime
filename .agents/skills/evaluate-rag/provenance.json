@@ -1,0 +1,9 @@
+{
+  "repository": "https://github.com/ai-evals-course/evals-skills",
+  "revision": "80d5f7b0127c7572ed9e9339937adbfd7240ffeb",
+  "path": "skills/evaluate-rag",
+  "discoveredVia": "https://www.skills.sh/ai-evals-course/evals-skills/evaluate-rag",
+  "license": "Apache-2.0",
+  "skillSha256": "e22a7bff31a73a9a82722c771326acf13121622a8caca6221fcbea111c9bf88d",
+  "upstreamModified": false
+}

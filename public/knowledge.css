@@ -1,0 +1,117 @@
+.knowledge-main {
+  max-width: 1152px;
+  margin: 90px auto;
+  padding: 0 24px;
+}
+.knowledge-main h1 {
+  font-size: clamp(44px, 6vw, 78px);
+  line-height: 1.06;
+  letter-spacing: -0.05em;
+  margin: 28px 0;
+}
+.knowledge-main h1 em {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  color: var(--blue);
+}
+.knowledge-main h2 {
+  font-size: clamp(30px, 4vw, 44px);
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  margin: 26px 0;
+}
+.knowledge-main section {
+  margin-top: 72px;
+}
+.knowledge-main .lead {
+  max-width: 800px;
+}
+.knowledge-boundary {
+  border-left: 3px solid var(--mint);
+  background: #e9eee7;
+  padding: 24px 28px;
+  margin: 36px 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.knowledge-boundary p {
+  margin-bottom: 0;
+}
+.knowledge-steps {
+  padding-left: 24px;
+  line-height: 1.8;
+  max-width: 850px;
+}
+.knowledge-steps li {
+  padding: 9px 12px;
+}
+.knowledge-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+.knowledge-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 28px;
+  overflow-wrap: anywhere;
+}
+.knowledge-card h3 {
+  font-size: 23px;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+.knowledge-card p {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+.knowledge-card .eyebrow {
+  font-size: 11px;
+  color: var(--mint);
+}
+.knowledge-card .source-detail {
+  font-size: 13px;
+}
+.knowledge-card a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+.knowledge-next {
+  padding: 36px;
+  background: #e9eee7;
+  border-radius: 8px;
+}
+.knowledge-next a {
+  margin: 12px 20px 0 0;
+}
+.knowledge-main > section > p {
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 850px;
+}
+@media (max-width: 700px) {
+  .knowledge-main {
+    margin: 64px auto;
+    padding: 0 20px;
+  }
+  .knowledge-grid {
+    grid-template-columns: 1fr;
+  }
+  .knowledge-card {
+    padding: 22px;
+  }
+  .knowledge-main section {
+    margin-top: 48px;
+  }
+  .knowledge-next {
+    padding: 24px;
+  }
+  .knowledge-boundary {
+    padding: 20px;
+  }
+  .knowledge-card h3 {
+    font-size: 21px;
+  }
+}

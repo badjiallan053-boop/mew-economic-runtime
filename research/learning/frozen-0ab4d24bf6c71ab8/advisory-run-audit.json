@@ -1,0 +1,393 @@
+{
+  "schema": "mew.advisory-run-audit.v1",
+  "benchmarkSha256": "0ab4d24bf6c71ab886456cc74eaa760b4674bc44a19d27cb21da34b11cd2d738",
+  "languageModelInvoked": false,
+  "trainingAuthorized": false,
+  "promotionAllowed": false,
+  "runs": [
+    {
+      "file": "base-responses.jsonl",
+      "sha256": "337f2ab44d9a56e97af13568b4436f7fc4f425d2b73c451022be83c4bc6d69d5",
+      "cases": [
+        {
+          "id": "unknown-exposure-en",
+          "language": "en",
+          "strictContractValid": false,
+          "errors": [
+            {
+              "category": "serialization",
+              "code": "invalid-json"
+            }
+          ],
+          "referenceStatus": "invalid",
+          "abstentionStatus": "not-validated",
+          "semanticStatus": "not-evaluated",
+          "evidenceGrounded": false
+        },
+        {
+          "id": "unknown-exposure-fr",
+          "language": "fr",
+          "strictContractValid": false,
+          "errors": [
+            {
+              "category": "serialization",
+              "code": "invalid-json"
+            }
+          ],
+          "referenceStatus": "invalid",
+          "abstentionStatus": "not-validated",
+          "semanticStatus": "not-evaluated",
+          "evidenceGrounded": false
+        },
+        {
+          "id": "settlement-delivery-en",
+          "language": "en",
+          "strictContractValid": false,
+          "errors": [
+            {
+              "category": "references",
+              "code": "invalid-reference"
+            },
+            {
+              "category": "references",
+              "code": "unknown-reference"
+            }
+          ],
+          "referenceStatus": "invalid",
+          "abstentionStatus": "not-validated",
+          "semanticStatus": "not-evaluated",
+          "evidenceGrounded": false
+        },
+        {
+          "id": "settlement-delivery-fr",
+          "language": "fr",
+          "strictContractValid": false,
+          "errors": [
+            {
+              "category": "serialization",
+              "code": "invalid-json"
+            }
+          ],
+          "referenceStatus": "invalid",
+          "abstentionStatus": "not-validated",
+          "semanticStatus": "not-evaluated",
+          "evidenceGrounded": false
+        },
+        {
+          "id": "rail-mismatch-en",
+          "language": "en",
+          "strictContractValid": false,
+          "errors": [
+            {
+              "category": "serialization",
+              "code": "invalid-json"
+            }
+          ],
+          "referenceStatus": "invalid",
+          "abstentionStatus": "not-validated",
+          "semanticStatus": "not-evaluated",
+          "evidenceGrounded": false
+        },
+        {
+          "id": "rail-mismatch-fr",
+          "language": "fr",
+          "strictContractValid": false,
+          "errors": [
+            {
+              "category": "serialization",
+              "code": "invalid-json"
+            }
+          ],
+          "referenceStatus": "invalid",
+          "abstentionStatus": "not-validated",
+          "semanticStatus": "not-evaluated",
+          "evidenceGrounded": false
+        },
+        {
+          "id": "evidence-grounding-en",
+          "language": "en",
+          "strictContractValid": false,
+          "errors": [
+            {
+              "category": "serialization",
+              "code": "invalid-json"
+            }
+          ],
+          "referenceStatus": "invalid",
+          "abstentionStatus": "not-validated",
+          "semanticStatus": "not-evaluated",
+          "evidenceGrounded": false
+        },
+        {
+          "id": "evidence-grounding-fr",
+          "language": "fr",
+          "strictContractValid": false,
+          "errors": [
+            {
+              "category": "serialization",
+              "code": "invalid-json"
+            }
+          ],
+          "referenceStatus": "invalid",
+          "abstentionStatus": "not-validated",
+          "semanticStatus": "not-evaluated",
+          "evidenceGrounded": false
+        },
+        {
+          "id": "event-opportunity-en",
+          "language": "en",
+          "strictContractValid": false,
+          "errors": [
+            {
+              "category": "serialization",
+              "code": "invalid-json"
+            }
+          ],
+          "referenceStatus": "invalid",
+          "abstentionStatus": "not-validated",
+          "semanticStatus": "not-evaluated",
+          "evidenceGrounded": false
+        },
+        {
+          "id": "event-opportunity-fr",
+          "language": "fr",
+          "strictContractValid": false,
+          "errors": [
+            {
+              "category": "serialization",
+              "code": "invalid-json"
+            }
+          ],
+          "referenceStatus": "invalid",
+          "abstentionStatus": "not-validated",
+          "semanticStatus": "not-evaluated",
+          "evidenceGrounded": false
+        },
+        {
+          "id": "training-rights-en",
+          "language": "en",
+          "strictContractValid": false,
+          "errors": [
+            {
+              "category": "serialization",
+              "code": "invalid-json"
+            }
+          ],
+          "referenceStatus": "invalid",
+          "abstentionStatus": "not-validated",
+          "semanticStatus": "not-evaluated",
+          "evidenceGrounded": false
+        },
+        {
+          "id": "training-rights-fr",
+          "language": "fr",
+          "strictContractValid": false,
+          "errors": [
+            {
+              "category": "references",
+              "code": "invalid-reference"
+            },
+            {
+              "category": "references",
+              "code": "unknown-reference"
+            }
+          ],
+          "referenceStatus": "invalid",
+          "abstentionStatus": "not-validated",
+          "semanticStatus": "not-evaluated",
+          "evidenceGrounded": false
+        }
+      ],
+      "strictContractPasses": 0,
+      "semanticPasses": null
+    },
+    {
+      "file": "prompt-v2-responses.jsonl",
+      "sha256": "c7eb95da4da5ed2b80538830eb56bb1ca5dbc03cffa86f158b3eb28fe1297778",
+      "cases": [
+        {
+          "id": "unknown-exposure-en",
+          "language": "en",
+          "strictContractValid": false,
+          "errors": [
+            {
+              "category": "serialization",
+              "code": "invalid-json"
+            }
+          ],
+          "referenceStatus": "invalid",
+          "abstentionStatus": "not-validated",
+          "semanticStatus": "not-evaluated",
+          "evidenceGrounded": false
+        },
+        {
+          "id": "unknown-exposure-fr",
+          "language": "fr",
+          "strictContractValid": false,
+          "errors": [
+            {
+              "category": "serialization",
+              "code": "invalid-json"
+            }
+          ],
+          "referenceStatus": "invalid",
+          "abstentionStatus": "not-validated",
+          "semanticStatus": "not-evaluated",
+          "evidenceGrounded": false
+        },
+        {
+          "id": "settlement-delivery-en",
+          "language": "en",
+          "strictContractValid": false,
+          "errors": [
+            {
+              "category": "serialization",
+              "code": "invalid-json"
+            }
+          ],
+          "referenceStatus": "invalid",
+          "abstentionStatus": "not-validated",
+          "semanticStatus": "not-evaluated",
+          "evidenceGrounded": false
+        },
+        {
+          "id": "settlement-delivery-fr",
+          "language": "fr",
+          "strictContractValid": false,
+          "errors": [
+            {
+              "category": "serialization",
+              "code": "invalid-json"
+            }
+          ],
+          "referenceStatus": "invalid",
+          "abstentionStatus": "not-validated",
+          "semanticStatus": "not-evaluated",
+          "evidenceGrounded": false
+        },
+        {
+          "id": "rail-mismatch-en",
+          "language": "en",
+          "strictContractValid": false,
+          "errors": [
+            {
+              "category": "serialization",
+              "code": "invalid-json"
+            }
+          ],
+          "referenceStatus": "invalid",
+          "abstentionStatus": "not-validated",
+          "semanticStatus": "not-evaluated",
+          "evidenceGrounded": false
+        },
+        {
+          "id": "rail-mismatch-fr",
+          "language": "fr",
+          "strictContractValid": false,
+          "errors": [
+            {
+              "category": "serialization",
+              "code": "invalid-json"
+            }
+          ],
+          "referenceStatus": "invalid",
+          "abstentionStatus": "not-validated",
+          "semanticStatus": "not-evaluated",
+          "evidenceGrounded": false
+        },
+        {
+          "id": "evidence-grounding-en",
+          "language": "en",
+          "strictContractValid": false,
+          "errors": [
+            {
+              "category": "serialization",
+              "code": "invalid-json"
+            }
+          ],
+          "referenceStatus": "invalid",
+          "abstentionStatus": "not-validated",
+          "semanticStatus": "not-evaluated",
+          "evidenceGrounded": false
+        },
+        {
+          "id": "evidence-grounding-fr",
+          "language": "fr",
+          "strictContractValid": false,
+          "errors": [
+            {
+              "category": "serialization",
+              "code": "invalid-json"
+            }
+          ],
+          "referenceStatus": "invalid",
+          "abstentionStatus": "not-validated",
+          "semanticStatus": "not-evaluated",
+          "evidenceGrounded": false
+        },
+        {
+          "id": "event-opportunity-en",
+          "language": "en",
+          "strictContractValid": false,
+          "errors": [
+            {
+              "category": "serialization",
+              "code": "invalid-json"
+            }
+          ],
+          "referenceStatus": "invalid",
+          "abstentionStatus": "not-validated",
+          "semanticStatus": "not-evaluated",
+          "evidenceGrounded": false
+        },
+        {
+          "id": "event-opportunity-fr",
+          "language": "fr",
+          "strictContractValid": true,
+          "errors": [],
+          "referenceStatus": "no-references",
+          "abstentionStatus": "not-validated",
+          "semanticStatus": "not-evaluated",
+          "evidenceGrounded": false
+        },
+        {
+          "id": "training-rights-en",
+          "language": "en",
+          "strictContractValid": false,
+          "errors": [
+            {
+              "category": "serialization",
+              "code": "invalid-json"
+            }
+          ],
+          "referenceStatus": "invalid",
+          "abstentionStatus": "not-validated",
+          "semanticStatus": "not-evaluated",
+          "evidenceGrounded": false
+        },
+        {
+          "id": "training-rights-fr",
+          "language": "fr",
+          "strictContractValid": false,
+          "errors": [
+            {
+              "category": "serialization",
+              "code": "invalid-json"
+            }
+          ],
+          "referenceStatus": "invalid",
+          "abstentionStatus": "not-validated",
+          "semanticStatus": "not-evaluated",
+          "evidenceGrounded": false
+        }
+      ],
+      "strictContractPasses": 1,
+      "semanticPasses": null
+    }
+  ],
+  "limitations": [
+    "This regrades preserved model responses; it does not run a model.",
+    "Source-ID validity does not prove entailment.",
+    "Semantic verdicts require trace review; null is unmeasured, not zero."
+  ]
+}

@@ -1,0 +1,342 @@
+{
+  "schema": "mew.parent-token-fit.v1",
+  "parentReportSha256": "9661e677e3e67f63e75ce74f018bf88423737da8a2d3e888b86d5b81332ef175",
+  "tokenizerFilesSha256": {
+    "tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+    "tokenizer_config.json": "253153d0738ceb4c668d2eff957714dd2bea0b56de772a9fdccd96cbf517e6a0"
+  },
+  "verifiedModelReceiptRevision": "73e3e38d981303bc594367cd910ea6eb48349da8",
+  "benchmarkSha256": "0ab4d24bf6c71ab886456cc74eaa760b4674bc44a19d27cb21da34b11cd2d738",
+  "enableThinking": false,
+  "truncationApplied": false,
+  "languageModelInvoked": false,
+  "systemPrompt": "You provide advisory research only. Answer in the language of the question. Use only supplied evidence. If evidence is insufficient, say so. Return exactly one JSON object with answer (string), evidenceRefs (source-ID strings), and authority=\"advisory-only\". Never authorize payments, outreach, model upload or code activation. Cite only supporting sources. No markdown fences.",
+  "cases": [
+    {
+      "id": "unknown-exposure-en",
+      "maxParents": 1,
+      "inputTokens": 814,
+      "outputReserveTokens": 512,
+      "totalBudgetTokens": 8192,
+      "fits": true,
+      "promptSha256": "c9247a1ff4f2b9fcf47777dc18c4460ac37197ca139b5ae0f0f78f0f952a766f"
+    },
+    {
+      "id": "unknown-exposure-fr",
+      "maxParents": 1,
+      "inputTokens": 819,
+      "outputReserveTokens": 512,
+      "totalBudgetTokens": 8192,
+      "fits": true,
+      "promptSha256": "dcfc47d20ba20ee9338d822b468404f7d918e965f26d4a94f8b5c9beb1d0a612"
+    },
+    {
+      "id": "settlement-delivery-en",
+      "maxParents": 1,
+      "inputTokens": 813,
+      "outputReserveTokens": 512,
+      "totalBudgetTokens": 8192,
+      "fits": true,
+      "promptSha256": "f26aea36015ecb4551267d1e557e73bdba06503d73e7cf4b2f12575dd71bb5fb"
+    },
+    {
+      "id": "settlement-delivery-fr",
+      "maxParents": 1,
+      "inputTokens": 826,
+      "outputReserveTokens": 512,
+      "totalBudgetTokens": 8192,
+      "fits": true,
+      "promptSha256": "cfa7cecfa4d5a548c5ee319b15038689c3900e35e7b6413b40b4c81b4464115c"
+    },
+    {
+      "id": "rail-mismatch-en",
+      "maxParents": 1,
+      "inputTokens": 1589,
+      "outputReserveTokens": 512,
+      "totalBudgetTokens": 8192,
+      "fits": true,
+      "promptSha256": "802536d6450ad803972e8a1891d60686e83696467c179028b034ee945cbc3b10"
+    },
+    {
+      "id": "rail-mismatch-fr",
+      "maxParents": 1,
+      "inputTokens": 819,
+      "outputReserveTokens": 512,
+      "totalBudgetTokens": 8192,
+      "fits": true,
+      "promptSha256": "f46a06c97f6d24d50c76eeb795ac613ac243557bb02a6dcee85ac8528a18d4d9"
+    },
+    {
+      "id": "evidence-grounding-en",
+      "maxParents": 1,
+      "inputTokens": 1591,
+      "outputReserveTokens": 512,
+      "totalBudgetTokens": 8192,
+      "fits": true,
+      "promptSha256": "3f1536e27ff26dd753608108317c72a7faf939947b6c302ac1e93df10982493e"
+    },
+    {
+      "id": "evidence-grounding-fr",
+      "maxParents": 1,
+      "inputTokens": 1601,
+      "outputReserveTokens": 512,
+      "totalBudgetTokens": 8192,
+      "fits": true,
+      "promptSha256": "f5f0c90bad9df9d6b5962031d1f7dfb4cc689d4f4a0271207ac1bc533b64fdd9"
+    },
+    {
+      "id": "event-opportunity-en",
+      "maxParents": 1,
+      "inputTokens": 867,
+      "outputReserveTokens": 512,
+      "totalBudgetTokens": 8192,
+      "fits": true,
+      "promptSha256": "d7161e66dbb506aa1e293160ff4fb45d8945c7554c4b490776ede9e60ad8f115"
+    },
+    {
+      "id": "event-opportunity-fr",
+      "maxParents": 1,
+      "inputTokens": 873,
+      "outputReserveTokens": 512,
+      "totalBudgetTokens": 8192,
+      "fits": true,
+      "promptSha256": "3c133595a6338f10dece1c914a47cd02406ff86d55d5ef2a0f5bea51edf0576a"
+    },
+    {
+      "id": "training-rights-en",
+      "maxParents": 1,
+      "inputTokens": 1595,
+      "outputReserveTokens": 512,
+      "totalBudgetTokens": 8192,
+      "fits": true,
+      "promptSha256": "0af32a15b7ceb116214a4524d63d2ba64437ab6c8ccb8b35bfffe19ea65287c8"
+    },
+    {
+      "id": "training-rights-fr",
+      "maxParents": 1,
+      "inputTokens": 1597,
+      "outputReserveTokens": 512,
+      "totalBudgetTokens": 8192,
+      "fits": true,
+      "promptSha256": "91c05a8ac39260ac769dc3205790c9afd8b9bdf56b3dc5c88448988df507730a"
+    },
+    {
+      "id": "unknown-exposure-en",
+      "maxParents": 2,
+      "inputTokens": 2110,
+      "outputReserveTokens": 512,
+      "totalBudgetTokens": 8192,
+      "fits": true,
+      "promptSha256": "8e388a0acf0d3ea002b2b4a43b9adbe5ec3648c0a168a5b65be4856048f22b08"
+    },
+    {
+      "id": "unknown-exposure-fr",
+      "maxParents": 2,
+      "inputTokens": 2296,
+      "outputReserveTokens": 512,
+      "totalBudgetTokens": 8192,
+      "fits": true,
+      "promptSha256": "56a42c85f1e8a3b14797982c2578c7846bb8950e22c9ed10527c037d475cbce3"
+    },
+    {
+      "id": "settlement-delivery-en",
+      "maxParents": 2,
+      "inputTokens": 1564,
+      "outputReserveTokens": 512,
+      "totalBudgetTokens": 8192,
+      "fits": true,
+      "promptSha256": "a9936701f33d7eb099ba484dd8c162dcb5cd6474dfb55688738d04feafc75a6e"
+    },
+    {
+      "id": "settlement-delivery-fr",
+      "maxParents": 2,
+      "inputTokens": 826,
+      "outputReserveTokens": 512,
+      "totalBudgetTokens": 8192,
+      "fits": true,
+      "promptSha256": "cfa7cecfa4d5a548c5ee319b15038689c3900e35e7b6413b40b4c81b4464115c"
+    },
+    {
+      "id": "rail-mismatch-en",
+      "maxParents": 2,
+      "inputTokens": 2292,
+      "outputReserveTokens": 512,
+      "totalBudgetTokens": 8192,
+      "fits": true,
+      "promptSha256": "0f2fabbd68a5e78f525715eb1e117c030e76c4a3abf8697987f9c65e2b184954"
+    },
+    {
+      "id": "rail-mismatch-fr",
+      "maxParents": 2,
+      "inputTokens": 2296,
+      "outputReserveTokens": 512,
+      "totalBudgetTokens": 8192,
+      "fits": true,
+      "promptSha256": "e94a14793e0ef943084411960b0844be2fe196e76b656661aafa9c84a8cfe8f7"
+    },
+    {
+      "id": "evidence-grounding-en",
+      "maxParents": 2,
+      "inputTokens": 2887,
+      "outputReserveTokens": 512,
+      "totalBudgetTokens": 8192,
+      "fits": true,
+      "promptSha256": "7ab0fdd534e6360951b3c07cecf1af5be73e38d07e21994e04b94bd77301baae"
+    },
+    {
+      "id": "evidence-grounding-fr",
+      "maxParents": 2,
+      "inputTokens": 2304,
+      "outputReserveTokens": 512,
+      "totalBudgetTokens": 8192,
+      "fits": true,
+      "promptSha256": "f2025886f1d8a14e257fe6d4648a36b7842c210aa90b7d60e4865dc2aeed42d6"
+    },
+    {
+      "id": "event-opportunity-en",
+      "maxParents": 2,
+      "inputTokens": 2163,
+      "outputReserveTokens": 512,
+      "totalBudgetTokens": 8192,
+      "fits": true,
+      "promptSha256": "514490e24087a213ece2ee30a6b9ab7d9eb649f8119a072c93b7f977762e8516"
+    },
+    {
+      "id": "event-opportunity-fr",
+      "maxParents": 2,
+      "inputTokens": 873,
+      "outputReserveTokens": 512,
+      "totalBudgetTokens": 8192,
+      "fits": true,
+      "promptSha256": "3c133595a6338f10dece1c914a47cd02406ff86d55d5ef2a0f5bea51edf0576a"
+    },
+    {
+      "id": "training-rights-en",
+      "maxParents": 2,
+      "inputTokens": 2891,
+      "outputReserveTokens": 512,
+      "totalBudgetTokens": 8192,
+      "fits": true,
+      "promptSha256": "a030deae841cff6506015d3a9bc4e03de66af5ae816ce5fc30e783411ec6832f"
+    },
+    {
+      "id": "training-rights-fr",
+      "maxParents": 2,
+      "inputTokens": 2300,
+      "outputReserveTokens": 512,
+      "totalBudgetTokens": 8192,
+      "fits": true,
+      "promptSha256": "3ec28e0861d7e1209bccb36451fd0882de582952d023b78d967f4c006b9e920f"
+    },
+    {
+      "id": "unknown-exposure-en",
+      "maxParents": 3,
+      "inputTokens": 2110,
+      "outputReserveTokens": 512,
+      "totalBudgetTokens": 8192,
+      "fits": true,
+      "promptSha256": "8e388a0acf0d3ea002b2b4a43b9adbe5ec3648c0a168a5b65be4856048f22b08"
+    },
+    {
+      "id": "unknown-exposure-fr",
+      "maxParents": 3,
+      "inputTokens": 3047,
+      "outputReserveTokens": 512,
+      "totalBudgetTokens": 8192,
+      "fits": true,
+      "promptSha256": "61e854bb1c36cfeb29a9d3ee6ff28d47d2e56a3cd050341fd289a4479fff11e7"
+    },
+    {
+      "id": "settlement-delivery-en",
+      "maxParents": 3,
+      "inputTokens": 1564,
+      "outputReserveTokens": 512,
+      "totalBudgetTokens": 8192,
+      "fits": true,
+      "promptSha256": "a9936701f33d7eb099ba484dd8c162dcb5cd6474dfb55688738d04feafc75a6e"
+    },
+    {
+      "id": "settlement-delivery-fr",
+      "maxParents": 3,
+      "inputTokens": 826,
+      "outputReserveTokens": 512,
+      "totalBudgetTokens": 8192,
+      "fits": true,
+      "promptSha256": "cfa7cecfa4d5a548c5ee319b15038689c3900e35e7b6413b40b4c81b4464115c"
+    },
+    {
+      "id": "rail-mismatch-en",
+      "maxParents": 3,
+      "inputTokens": 2292,
+      "outputReserveTokens": 512,
+      "totalBudgetTokens": 8192,
+      "fits": true,
+      "promptSha256": "0f2fabbd68a5e78f525715eb1e117c030e76c4a3abf8697987f9c65e2b184954"
+    },
+    {
+      "id": "rail-mismatch-fr",
+      "maxParents": 3,
+      "inputTokens": 2296,
+      "outputReserveTokens": 512,
+      "totalBudgetTokens": 8192,
+      "fits": true,
+      "promptSha256": "e94a14793e0ef943084411960b0844be2fe196e76b656661aafa9c84a8cfe8f7"
+    },
+    {
+      "id": "evidence-grounding-en",
+      "maxParents": 3,
+      "inputTokens": 2887,
+      "outputReserveTokens": 512,
+      "totalBudgetTokens": 8192,
+      "fits": true,
+      "promptSha256": "7ab0fdd534e6360951b3c07cecf1af5be73e38d07e21994e04b94bd77301baae"
+    },
+    {
+      "id": "evidence-grounding-fr",
+      "maxParents": 3,
+      "inputTokens": 3055,
+      "outputReserveTokens": 512,
+      "totalBudgetTokens": 8192,
+      "fits": true,
+      "promptSha256": "3e47c08c69bcc2e13aaf682236b8efcac01e9203d692d1a36debf8dedae78e9f"
+    },
+    {
+      "id": "event-opportunity-en",
+      "maxParents": 3,
+      "inputTokens": 2163,
+      "outputReserveTokens": 512,
+      "totalBudgetTokens": 8192,
+      "fits": true,
+      "promptSha256": "514490e24087a213ece2ee30a6b9ab7d9eb649f8119a072c93b7f977762e8516"
+    },
+    {
+      "id": "event-opportunity-fr",
+      "maxParents": 3,
+      "inputTokens": 873,
+      "outputReserveTokens": 512,
+      "totalBudgetTokens": 8192,
+      "fits": true,
+      "promptSha256": "3c133595a6338f10dece1c914a47cd02406ff86d55d5ef2a0f5bea51edf0576a"
+    },
+    {
+      "id": "training-rights-en",
+      "maxParents": 3,
+      "inputTokens": 2891,
+      "outputReserveTokens": 512,
+      "totalBudgetTokens": 8192,
+      "fits": true,
+      "promptSha256": "a030deae841cff6506015d3a9bc4e03de66af5ae816ce5fc30e783411ec6832f"
+    },
+    {
+      "id": "training-rights-fr",
+      "maxParents": 3,
+      "inputTokens": 3596,
+      "outputReserveTokens": 512,
+      "totalBudgetTokens": 8192,
+      "fits": true,
+      "promptSha256": "e5b6aef0c3bff49825c6b4d9b027cee9e1aa1e139eacc4053a4e372e9ad58d82"
+    }
+  ],
+  "allFit": true,
+  "maxInputTokens": 3596
+}

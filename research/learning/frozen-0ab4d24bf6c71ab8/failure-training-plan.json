@@ -1,0 +1,50 @@
+{
+  "schema": "mew.failure-training-plan.v1",
+  "benchmarkSha256": "0ab4d24bf6c71ab886456cc74eaa760b4674bc44a19d27cb21da34b11cd2d738",
+  "trainingAuthorized": false,
+  "frozenLineagesExcluded": true,
+  "demonstratedFailures": [
+    {
+      "caseId": "settlement-delivery-fr",
+      "failureClass": "expected-source-missing-at-3",
+      "component": "retriever",
+      "answerModelFineTuningJustified": false
+    },
+    {
+      "caseId": "evidence-grounding-fr",
+      "failureClass": "expected-source-missing-at-3",
+      "component": "retriever",
+      "answerModelFineTuningJustified": false
+    },
+    {
+      "caseId": "event-opportunity-fr",
+      "failureClass": "expected-source-missing-at-3",
+      "component": "retriever",
+      "answerModelFineTuningJustified": false
+    },
+    {
+      "caseId": "training-rights-fr",
+      "failureClass": "expected-source-missing-at-3",
+      "component": "retriever",
+      "answerModelFineTuningJustified": false
+    }
+  ],
+  "nextExperiments": [
+    "Compare a multilingual retriever on a fresh frozen evaluation version, while reporting the original baseline.",
+    "Measure local language-model grounding and schema adherence before selecting adapter targets.",
+    "Prepare independent MEW-owned training scenarios and obtain genuine human review; do not train on the benchmark or translated siblings."
+  ],
+  "promotionAllowed": false,
+  "demonstratedAnswerFailures": [
+    "malformed output schema",
+    "fabricated citations",
+    "wrong-language responses",
+    "false settlement/delivery equivalence",
+    "unjustified claims of product improvement"
+  ],
+  "trainingBlockers": [
+    "No separately human-approved training labels.",
+    "Multilingual retrieval still incomplete.",
+    "Corrected pipeline must be evaluated before an adapter comparison."
+  ]
+}

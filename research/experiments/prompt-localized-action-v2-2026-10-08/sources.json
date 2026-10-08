@@ -1,0 +1,8 @@
+{
+  "schema": "mew.localized-model-source-link.v1",
+  "parentSourceManifest": "research/experiments/prompt-grounding-language-2026-10-08/sources.json",
+  "sha256": "1f508863374cb9e31f785d333786db6db61daad8241719e962b3979893f496d9",
+  "newExternalSources": 0,
+  "trainingEligible": false,
+  "adoption": "Original language-localized instructions plus full-trace review. Reuses verified Stanford/skills.sh/GitHub references without additional copied code."
+}

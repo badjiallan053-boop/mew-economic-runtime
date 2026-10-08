@@ -1,0 +1,22 @@
+{
+  "modelId": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "revision": "e8f8c211226b894fcb81acc59f3b34ba3efd5f42",
+  "license": "apache-2.0",
+  "trustRemoteCode": false,
+  "weightsIgnored": true,
+  "files": {
+    "tokenizer_config.json": "5036ea374ffedd706e3bef33e2e0d6953cb868ef8a490e76e32ba0faa37a6b9b",
+    "config.json": "6300193cb75e01cf80c96decef7187dfb33094d97cc1490b7ead6ff134476e4e",
+    "tokenizer.json": "2c3387be76557bd40970cec13153b3bbf80407865484b209e655e5e4729076b8",
+    "README.md": "1e98ea05b0de579fcaad3d625b62ea55647142ed674d5f5ebf1440e4bbbb6f23",
+    "sentence_bert_config.json": "70f4448f31320443fe3557cacea5abf2dcc4915dda8c80646bec9f3bb0aa5a1f",
+    "1_Pooling/config.json": "4be450dde3b0273bb9787637cfbd28fe04a7ba6ab9d36ac48e92b11e350ffc23",
+    "onnx/model_qint8_arm64.onnx": "783fea82d71a58179b830a4dbd2d58447e640609e98eedf9ffa12622d375a672"
+  },
+  "runtime": {
+    "onnxruntime": "1.24.3",
+    "tokenizers": "0.23.2",
+    "numpy": "2.5.3",
+    "huggingface_hub": "1.33.0"
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "schema": "mew.blinded-review-key.v1",
+  "sessionId": "5e927637-e1bc-4d3a-897d-e89a3028d28d",
+  "leftPackSha256": "171c18e9808777d8330837232d2ab9ed4357f130137e1eec4647bda3ea3e3ec8",
+  "rightPackSha256": "d2fb36242a011116f171c251979a9c9b5aa636316ecb64dc70d717561bfb11ee",
+  "leftVariant": "baseline",
+  "rightVariant": "localized",
+  "rows": [
+    {
+      "id": "0de4f76e-5468-4459-a80f-a9b13d13a520",
+      "language": "en",
+      "A": {
+        "side": "left",
+        "id": "unknown-exposure-en",
+        "traceSha256": "06becaf079f4ec96c865198e354d3885f16f2beabe0bc3748f56c671cfe6d376"
+      },
+      "B": {
+        "side": "right",
+        "id": "unknown-exposure-en",
+        "traceSha256": "1d58db4b1e13d2e0308614a3e56ac088c4cb9c0fb3cd7bceb6d84359c01078e0"
+      }
+    },
+    {
+      "id": "7ee929b1-7f00-4764-86f0-fdaca354b05d",
+      "language": "en",
+      "A": {
+        "side": "right",
+        "id": "settlement-delivery-en",
+        "traceSha256": "d9d06c86f9b32f2049b0c8dab7daef7a11235def0c35264929e1fc0f0bb3c053"
+      },
+      "B": {
+        "side": "left",
+        "id": "settlement-delivery-en",
+        "traceSha256": "c6d9e6367fb33a34a0794d3427c426d5a2fac4893560a549ad651ec7d141ca13"
+      }
+    },
+    {
+      "id": "84ce0df0-18ad-42c5-886c-8e03aea3de27",
+      "language": "en",
+      "A": {
+        "side": "left",
+        "id": "rail-mismatch-en",
+        "traceSha256": "8b914922124815fb3190a137db68958616248906a37769a49fdd0efc295a11d6"
+      },
+      "B": {
+        "side": "right",
+        "id": "rail-mismatch-en",
+        "traceSha256": "48c04d0efd613d0068cc648d3199a4209b1ce5be38bafce1f7cdae776bc35eb4"
+      }
+    },
+    {
+      "id": "bfd41c7f-1fad-4ae6-9093-1a75560d5f05",
+      "language": "en",
+      "A": {
+        "side": "right",
+        "id": "evidence-grounding-en",
+        "traceSha256": "73403af77798236180aaa33e0f145c63ceda0d1ec170b5ecf778457f9384d9e1"
+      },
+      "B": {
+        "side": "left",
+        "id": "evidence-grounding-en",
+        "traceSha256": "d1fef24d3ed46e79205f5be27809e94e0471f927f111f864b750d2788e5233cd"
+      }
+    },
+    {
+      "id": "834fc3c8-8403-49f3-819f-b7d8ab3def2e",
+      "language": "en",
+      "A": {
+        "side": "left",
+        "id": "event-opportunity-en",
+        "traceSha256": "847f9cbca58a996d55bf91273a6012fcfa638e01cfe2468c39a74141ae201347"
+      },
+      "B": {
+        "side": "right",
+        "id": "event-opportunity-en",
+        "traceSha256": "03324b8b0a826051f2f2a3301e38773bdbefd25ceff5b7a8b5c645ea3648edaf"
+      }
+    },
+    {
+      "id": "d3ee79ce-5850-4773-b8a6-45aa161823c3",
+      "language": "en",
+      "A": {
+        "side": "right",
+        "id": "training-rights-en",
+        "traceSha256": "2e6f251e3c7104c7e75c72b17ff17a1885ea258f1da4a151e1d4faf7388ec0ff"
+      },
+      "B": {
+        "side": "left",
+        "id": "training-rights-en",
+        "traceSha256": "d59d4c7fc1ab17c289bd82a9e7a702981a54cf507a1e8b091736333f664bc6cb"
+      }
+    },
+    {
+      "id": "837db7d0-7708-4350-a2e9-3bbab5fbddc4",
+      "language": "fr",
+      "A": {
+        "side": "right",
+        "id": "unknown-exposure-fr",
+        "traceSha256": "1ea7ec76d5c6294cd72b667ca1a4a2dbebcf35cc604e1f581a2422d3a3a35290"
+      },
+      "B": {
+        "side": "left",
+        "id": "unknown-exposure-fr",
+        "traceSha256": "e16b255dcc6af468af5286ca717e67366d0fddfb69d9e19eecd6d10c0122cffc"
+      }
+    },
+    {
+      "id": "ecdef171-bda5-4191-aeff-b65554175a80",
+      "language": "fr",
+      "A": {
+        "side": "right",
+        "id": "settlement-delivery-fr",
+        "traceSha256": "b1af209d3514e6b4a3d54b167a9657aec8022f4eb5197e9978ebf869db258c7e"
+      },
+      "B": {
+        "side": "left",
+        "id": "settlement-delivery-fr",
+        "traceSha256": "aef88b72e037a310f34b3aa3deba036b7884983f0885627ea252abe08f2dffc9"
+      }
+    },
+    {
+      "id": "67f0c7ee-6b85-4a39-9e1b-996696498cdd",
+      "language": "fr",
+      "A": {
+        "side": "left",
+        "id": "rail-mismatch-fr",
+        "traceSha256": "f8a16032078b43e338c26d10f1a0d6a8eeb32cabbf85e8cbca9820c473341f95"
+      },
+      "B": {
+        "side": "right",
+        "id": "rail-mismatch-fr",
+        "traceSha256": "4af818a1f86d6436e181c111abf9429da4491836c3faf382a2acc83329ab0ad8"
+      }
+    },
+    {
+      "id": "2806b34b-59e5-4c06-b3ce-f5c9d4bb23c5",
+      "language": "fr",
+      "A": {
+        "side": "left",
+        "id": "evidence-grounding-fr",
+        "traceSha256": "cc13707399b81f4049cb0d312785bad17824cde553cdb4f597df385dd835d05f"
+      },
+      "B": {
+        "side": "right",
+        "id": "evidence-grounding-fr",
+        "traceSha256": "487f38f832b665c7cfd5e5f1aa9414fc0d28a889ab7f9006341ab31b7d3871a7"
+      }
+    },
+    {
+      "id": "4043dd1b-3ab3-4433-aa72-565e6a86c5b6",
+      "language": "fr",
+      "A": {
+        "side": "left",
+        "id": "event-opportunity-fr",
+        "traceSha256": "00ae35d103db2d7edd4dc68d704101332049195a5fccbd1d6c2d8e56a402b789"
+      },
+      "B": {
+        "side": "right",
+        "id": "event-opportunity-fr",
+        "traceSha256": "b4533fb1ef104ac2b97725b111042ba8b9292be6bfccda26bd24de2b4af45ce4"
+      }
+    },
+    {
+      "id": "8e1507f6-9fab-4938-a08c-28ad47579e06",
+      "language": "fr",
+      "A": {
+        "side": "right",
+        "id": "training-rights-fr",
+        "traceSha256": "f75aaff3b8f3cea0002b960e64d5ecdaff0450c62789945c4fded3f72e9d19e1"
+      },
+      "B": {
+        "side": "left",
+        "id": "training-rights-fr",
+        "traceSha256": "d421b9af4b8152a6fee9aa2cc7a08f6940275f0fb19be9db45201d10b61089c6"
+      }
+    }
+  ]
+}

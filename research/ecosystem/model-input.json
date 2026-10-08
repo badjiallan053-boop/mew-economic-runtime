@@ -1,0 +1,359 @@
+{
+  "mode": "public-evidence-simulated-processing",
+  "evidence": [
+    {
+      "id": "cardano-mainnet:14037049",
+      "kind": "network_tip",
+      "content": "{\"id\":\"cardano-mainnet:14037049\",\"grain\":\"network_tip\",\"network\":\"mainnet\",\"blockHeight\":14037049,\"absoluteSlot\":199801978,\"blockTime\":1791368269,\"source\":\"https://api.koios.rest/api/v1/tip\"}",
+      "source": "https://api.koios.rest/api/v1/tip"
+    },
+    {
+      "id": "cardano-preprod:5264036",
+      "kind": "network_tip",
+      "content": "{\"id\":\"cardano-preprod:5264036\",\"grain\":\"network_tip\",\"network\":\"preprod\",\"blockHeight\":5264036,\"absoluteSlot\":135685186,\"blockTime\":1791368386,\"source\":\"https://preprod.koios.rest/api/v1/tip\"}",
+      "source": "https://preprod.koios.rest/api/v1/tip"
+    },
+    {
+      "id": "internet:ARE:2024",
+      "kind": "country_year",
+      "content": "{\"id\":\"internet:ARE:2024\",\"grain\":\"country_year\",\"country\":\"ARE\",\"year\":2024,\"value\":100,\"unit\":\"percent_population\",\"indicator\":\"IT.NET.USER.ZS\",\"source\":\"https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100\"}",
+      "source": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100"
+    },
+    {
+      "id": "internet:ARE:2023",
+      "kind": "country_year",
+      "content": "{\"id\":\"internet:ARE:2023\",\"grain\":\"country_year\",\"country\":\"ARE\",\"year\":2023,\"value\":100,\"unit\":\"percent_population\",\"indicator\":\"IT.NET.USER.ZS\",\"source\":\"https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100\"}",
+      "source": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100"
+    },
+    {
+      "id": "internet:ARE:2022",
+      "kind": "country_year",
+      "content": "{\"id\":\"internet:ARE:2022\",\"grain\":\"country_year\",\"country\":\"ARE\",\"year\":2022,\"value\":100,\"unit\":\"percent_population\",\"indicator\":\"IT.NET.USER.ZS\",\"source\":\"https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100\"}",
+      "source": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100"
+    },
+    {
+      "id": "internet:ARE:2021",
+      "kind": "country_year",
+      "content": "{\"id\":\"internet:ARE:2021\",\"grain\":\"country_year\",\"country\":\"ARE\",\"year\":2021,\"value\":100,\"unit\":\"percent_population\",\"indicator\":\"IT.NET.USER.ZS\",\"source\":\"https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100\"}",
+      "source": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100"
+    },
+    {
+      "id": "internet:ARE:2020",
+      "kind": "country_year",
+      "content": "{\"id\":\"internet:ARE:2020\",\"grain\":\"country_year\",\"country\":\"ARE\",\"year\":2020,\"value\":100,\"unit\":\"percent_population\",\"indicator\":\"IT.NET.USER.ZS\",\"source\":\"https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100\"}",
+      "source": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100"
+    },
+    {
+      "id": "internet:BRA:2024",
+      "kind": "country_year",
+      "content": "{\"id\":\"internet:BRA:2024\",\"grain\":\"country_year\",\"country\":\"BRA\",\"year\":2024,\"value\":84.46347227,\"unit\":\"percent_population\",\"indicator\":\"IT.NET.USER.ZS\",\"source\":\"https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100\"}",
+      "source": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100"
+    },
+    {
+      "id": "internet:BRA:2023",
+      "kind": "country_year",
+      "content": "{\"id\":\"internet:BRA:2023\",\"grain\":\"country_year\",\"country\":\"BRA\",\"year\":2023,\"value\":84.15060238,\"unit\":\"percent_population\",\"indicator\":\"IT.NET.USER.ZS\",\"source\":\"https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100\"}",
+      "source": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100"
+    },
+    {
+      "id": "internet:BRA:2022",
+      "kind": "country_year",
+      "content": "{\"id\":\"internet:BRA:2022\",\"grain\":\"country_year\",\"country\":\"BRA\",\"year\":2022,\"value\":80.52775094,\"unit\":\"percent_population\",\"indicator\":\"IT.NET.USER.ZS\",\"source\":\"https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100\"}",
+      "source": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100"
+    },
+    {
+      "id": "internet:BRA:2021",
+      "kind": "country_year",
+      "content": "{\"id\":\"internet:BRA:2021\",\"grain\":\"country_year\",\"country\":\"BRA\",\"year\":2021,\"value\":80.68989314,\"unit\":\"percent_population\",\"indicator\":\"IT.NET.USER.ZS\",\"source\":\"https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100\"}",
+      "source": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100"
+    },
+    {
+      "id": "internet:BRA:2020",
+      "kind": "country_year",
+      "content": "{\"id\":\"internet:BRA:2020\",\"grain\":\"country_year\",\"country\":\"BRA\",\"year\":2020,\"value\":81.34269353,\"unit\":\"percent_population\",\"indicator\":\"IT.NET.USER.ZS\",\"source\":\"https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100\"}",
+      "source": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100"
+    },
+    {
+      "id": "internet:DEU:2024",
+      "kind": "country_year",
+      "content": "{\"id\":\"internet:DEU:2024\",\"grain\":\"country_year\",\"country\":\"DEU\",\"year\":2024,\"value\":93.49999579,\"unit\":\"percent_population\",\"indicator\":\"IT.NET.USER.ZS\",\"source\":\"https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100\"}",
+      "source": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100"
+    },
+    {
+      "id": "internet:DEU:2023",
+      "kind": "country_year",
+      "content": "{\"id\":\"internet:DEU:2023\",\"grain\":\"country_year\",\"country\":\"DEU\",\"year\":2023,\"value\":92.4763763,\"unit\":\"percent_population\",\"indicator\":\"IT.NET.USER.ZS\",\"source\":\"https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100\"}",
+      "source": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100"
+    },
+    {
+      "id": "internet:DEU:2022",
+      "kind": "country_year",
+      "content": "{\"id\":\"internet:DEU:2022\",\"grain\":\"country_year\",\"country\":\"DEU\",\"year\":2022,\"value\":91.62984383,\"unit\":\"percent_population\",\"indicator\":\"IT.NET.USER.ZS\",\"source\":\"https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100\"}",
+      "source": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100"
+    },
+    {
+      "id": "internet:DEU:2021",
+      "kind": "country_year",
+      "content": "{\"id\":\"internet:DEU:2021\",\"grain\":\"country_year\",\"country\":\"DEU\",\"year\":2021,\"value\":91.43060973,\"unit\":\"percent_population\",\"indicator\":\"IT.NET.USER.ZS\",\"source\":\"https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100\"}",
+      "source": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100"
+    },
+    {
+      "id": "internet:DEU:2020",
+      "kind": "country_year",
+      "content": "{\"id\":\"internet:DEU:2020\",\"grain\":\"country_year\",\"country\":\"DEU\",\"year\":2020,\"value\":89.81294133,\"unit\":\"percent_population\",\"indicator\":\"IT.NET.USER.ZS\",\"source\":\"https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100\"}",
+      "source": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100"
+    },
+    {
+      "id": "internet:FRA:2024",
+      "kind": "country_year",
+      "content": "{\"id\":\"internet:FRA:2024\",\"grain\":\"country_year\",\"country\":\"FRA\",\"year\":2024,\"value\":88.65381638,\"unit\":\"percent_population\",\"indicator\":\"IT.NET.USER.ZS\",\"source\":\"https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100\"}",
+      "source": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100"
+    },
+    {
+      "id": "internet:FRA:2023",
+      "kind": "country_year",
+      "content": "{\"id\":\"internet:FRA:2023\",\"grain\":\"country_year\",\"country\":\"FRA\",\"year\":2023,\"value\":86.83635789,\"unit\":\"percent_population\",\"indicator\":\"IT.NET.USER.ZS\",\"source\":\"https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100\"}",
+      "source": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100"
+    },
+    {
+      "id": "internet:FRA:2022",
+      "kind": "country_year",
+      "content": "{\"id\":\"internet:FRA:2022\",\"grain\":\"country_year\",\"country\":\"FRA\",\"year\":2022,\"value\":85.33331734,\"unit\":\"percent_population\",\"indicator\":\"IT.NET.USER.ZS\",\"source\":\"https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100\"}",
+      "source": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100"
+    },
+    {
+      "id": "internet:FRA:2021",
+      "kind": "country_year",
+      "content": "{\"id\":\"internet:FRA:2021\",\"grain\":\"country_year\",\"country\":\"FRA\",\"year\":2021,\"value\":86.09548575,\"unit\":\"percent_population\",\"indicator\":\"IT.NET.USER.ZS\",\"source\":\"https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100\"}",
+      "source": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100"
+    },
+    {
+      "id": "internet:FRA:2020",
+      "kind": "country_year",
+      "content": "{\"id\":\"internet:FRA:2020\",\"grain\":\"country_year\",\"country\":\"FRA\",\"year\":2020,\"value\":84.70639801,\"unit\":\"percent_population\",\"indicator\":\"IT.NET.USER.ZS\",\"source\":\"https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100\"}",
+      "source": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100"
+    },
+    {
+      "id": "internet:GBR:2024",
+      "kind": "country_year",
+      "content": "{\"id\":\"internet:GBR:2024\",\"grain\":\"country_year\",\"country\":\"GBR\",\"year\":2024,\"value\":95.4720993,\"unit\":\"percent_population\",\"indicator\":\"IT.NET.USER.ZS\",\"source\":\"https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100\"}",
+      "source": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100"
+    },
+    {
+      "id": "internet:GBR:2023",
+      "kind": "country_year",
+      "content": "{\"id\":\"internet:GBR:2023\",\"grain\":\"country_year\",\"country\":\"GBR\",\"year\":2023,\"value\":95.44719696,\"unit\":\"percent_population\",\"indicator\":\"IT.NET.USER.ZS\",\"source\":\"https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100\"}",
+      "source": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100"
+    },
+    {
+      "id": "internet:GBR:2022",
+      "kind": "country_year",
+      "content": "{\"id\":\"internet:GBR:2022\",\"grain\":\"country_year\",\"country\":\"GBR\",\"year\":2022,\"value\":95.46530151,\"unit\":\"percent_population\",\"indicator\":\"IT.NET.USER.ZS\",\"source\":\"https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100\"}",
+      "source": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100"
+    },
+    {
+      "id": "internet:GBR:2021",
+      "kind": "country_year",
+      "content": "{\"id\":\"internet:GBR:2021\",\"grain\":\"country_year\",\"country\":\"GBR\",\"year\":2021,\"value\":96.19650269,\"unit\":\"percent_population\",\"indicator\":\"IT.NET.USER.ZS\",\"source\":\"https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100\"}",
+      "source": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100"
+    },
+    {
+      "id": "internet:GBR:2020",
+      "kind": "country_year",
+      "content": "{\"id\":\"internet:GBR:2020\",\"grain\":\"country_year\",\"country\":\"GBR\",\"year\":2020,\"value\":94.81820132,\"unit\":\"percent_population\",\"indicator\":\"IT.NET.USER.ZS\",\"source\":\"https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100\"}",
+      "source": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100"
+    },
+    {
+      "id": "internet:IND:2024",
+      "kind": "country_year",
+      "content": "{\"id\":\"internet:IND:2024\",\"grain\":\"country_year\",\"country\":\"IND\",\"year\":2024,\"value\":64.9434967,\"unit\":\"percent_population\",\"indicator\":\"IT.NET.USER.ZS\",\"source\":\"https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100\"}",
+      "source": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100"
+    },
+    {
+      "id": "internet:IND:2023",
+      "kind": "country_year",
+      "content": "{\"id\":\"internet:IND:2023\",\"grain\":\"country_year\",\"country\":\"IND\",\"year\":2023,\"value\":60.25230026,\"unit\":\"percent_population\",\"indicator\":\"IT.NET.USER.ZS\",\"source\":\"https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100\"}",
+      "source": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100"
+    },
+    {
+      "id": "internet:IND:2022",
+      "kind": "country_year",
+      "content": "{\"id\":\"internet:IND:2022\",\"grain\":\"country_year\",\"country\":\"IND\",\"year\":2022,\"value\":55.9,\"unit\":\"percent_population\",\"indicator\":\"IT.NET.USER.ZS\",\"source\":\"https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100\"}",
+      "source": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100"
+    },
+    {
+      "id": "internet:IND:2021",
+      "kind": "country_year",
+      "content": "{\"id\":\"internet:IND:2021\",\"grain\":\"country_year\",\"country\":\"IND\",\"year\":2021,\"value\":49.2580986,\"unit\":\"percent_population\",\"indicator\":\"IT.NET.USER.ZS\",\"source\":\"https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100\"}",
+      "source": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100"
+    },
+    {
+      "id": "internet:IND:2020",
+      "kind": "country_year",
+      "content": "{\"id\":\"internet:IND:2020\",\"grain\":\"country_year\",\"country\":\"IND\",\"year\":2020,\"value\":43.40544313,\"unit\":\"percent_population\",\"indicator\":\"IT.NET.USER.ZS\",\"source\":\"https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100\"}",
+      "source": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100"
+    },
+    {
+      "id": "internet:NGA:2024",
+      "kind": "country_year",
+      "content": "{\"id\":\"internet:NGA:2024\",\"grain\":\"country_year\",\"country\":\"NGA\",\"year\":2024,\"value\":41.21139908,\"unit\":\"percent_population\",\"indicator\":\"IT.NET.USER.ZS\",\"source\":\"https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100\"}",
+      "source": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100"
+    },
+    {
+      "id": "internet:NGA:2023",
+      "kind": "country_year",
+      "content": "{\"id\":\"internet:NGA:2023\",\"grain\":\"country_year\",\"country\":\"NGA\",\"year\":2023,\"value\":40.06399918,\"unit\":\"percent_population\",\"indicator\":\"IT.NET.USER.ZS\",\"source\":\"https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100\"}",
+      "source": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100"
+    },
+    {
+      "id": "internet:NGA:2022",
+      "kind": "country_year",
+      "content": "{\"id\":\"internet:NGA:2022\",\"grain\":\"country_year\",\"country\":\"NGA\",\"year\":2022,\"value\":39.14720154,\"unit\":\"percent_population\",\"indicator\":\"IT.NET.USER.ZS\",\"source\":\"https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100\"}",
+      "source": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100"
+    },
+    {
+      "id": "internet:NGA:2021",
+      "kind": "country_year",
+      "content": "{\"id\":\"internet:NGA:2021\",\"grain\":\"country_year\",\"country\":\"NGA\",\"year\":2021,\"value\":35.50979996,\"unit\":\"percent_population\",\"indicator\":\"IT.NET.USER.ZS\",\"source\":\"https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100\"}",
+      "source": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100"
+    },
+    {
+      "id": "internet:NGA:2020",
+      "kind": "country_year",
+      "content": "{\"id\":\"internet:NGA:2020\",\"grain\":\"country_year\",\"country\":\"NGA\",\"year\":2020,\"value\":31.88879967,\"unit\":\"percent_population\",\"indicator\":\"IT.NET.USER.ZS\",\"source\":\"https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100\"}",
+      "source": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100"
+    },
+    {
+      "id": "internet:SGP:2024",
+      "kind": "country_year",
+      "content": "{\"id\":\"internet:SGP:2024\",\"grain\":\"country_year\",\"country\":\"SGP\",\"year\":2024,\"value\":94.37757178,\"unit\":\"percent_population\",\"indicator\":\"IT.NET.USER.ZS\",\"source\":\"https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100\"}",
+      "source": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100"
+    },
+    {
+      "id": "internet:SGP:2023",
+      "kind": "country_year",
+      "content": "{\"id\":\"internet:SGP:2023\",\"grain\":\"country_year\",\"country\":\"SGP\",\"year\":2023,\"value\":94.28518987,\"unit\":\"percent_population\",\"indicator\":\"IT.NET.USER.ZS\",\"source\":\"https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100\"}",
+      "source": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100"
+    },
+    {
+      "id": "internet:SGP:2022",
+      "kind": "country_year",
+      "content": "{\"id\":\"internet:SGP:2022\",\"grain\":\"country_year\",\"country\":\"SGP\",\"year\":2022,\"value\":95.95386476,\"unit\":\"percent_population\",\"indicator\":\"IT.NET.USER.ZS\",\"source\":\"https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100\"}",
+      "source": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100"
+    },
+    {
+      "id": "internet:SGP:2021",
+      "kind": "country_year",
+      "content": "{\"id\":\"internet:SGP:2021\",\"grain\":\"country_year\",\"country\":\"SGP\",\"year\":2021,\"value\":96.92468156,\"unit\":\"percent_population\",\"indicator\":\"IT.NET.USER.ZS\",\"source\":\"https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100\"}",
+      "source": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100"
+    },
+    {
+      "id": "internet:SGP:2020",
+      "kind": "country_year",
+      "content": "{\"id\":\"internet:SGP:2020\",\"grain\":\"country_year\",\"country\":\"SGP\",\"year\":2020,\"value\":92.00434653,\"unit\":\"percent_population\",\"indicator\":\"IT.NET.USER.ZS\",\"source\":\"https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100\"}",
+      "source": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100"
+    },
+    {
+      "id": "internet:USA:2024",
+      "kind": "country_year",
+      "content": "{\"id\":\"internet:USA:2024\",\"grain\":\"country_year\",\"country\":\"USA\",\"year\":2024,\"value\":94.69380188,\"unit\":\"percent_population\",\"indicator\":\"IT.NET.USER.ZS\",\"source\":\"https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100\"}",
+      "source": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100"
+    },
+    {
+      "id": "internet:USA:2023",
+      "kind": "country_year",
+      "content": "{\"id\":\"internet:USA:2023\",\"grain\":\"country_year\",\"country\":\"USA\",\"year\":2023,\"value\":93.52559662,\"unit\":\"percent_population\",\"indicator\":\"IT.NET.USER.ZS\",\"source\":\"https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100\"}",
+      "source": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100"
+    },
+    {
+      "id": "internet:USA:2022",
+      "kind": "country_year",
+      "content": "{\"id\":\"internet:USA:2022\",\"grain\":\"country_year\",\"country\":\"USA\",\"year\":2022,\"value\":92.72850037,\"unit\":\"percent_population\",\"indicator\":\"IT.NET.USER.ZS\",\"source\":\"https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100\"}",
+      "source": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100"
+    },
+    {
+      "id": "internet:USA:2021",
+      "kind": "country_year",
+      "content": "{\"id\":\"internet:USA:2021\",\"grain\":\"country_year\",\"country\":\"USA\",\"year\":2021,\"value\":91.2684021,\"unit\":\"percent_population\",\"indicator\":\"IT.NET.USER.ZS\",\"source\":\"https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100\"}",
+      "source": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100"
+    },
+    {
+      "id": "internet:USA:2020",
+      "kind": "country_year",
+      "content": "{\"id\":\"internet:USA:2020\",\"grain\":\"country_year\",\"country\":\"USA\",\"year\":2020,\"value\":90.34470367,\"unit\":\"percent_population\",\"indicator\":\"IT.NET.USER.ZS\",\"source\":\"https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100\"}",
+      "source": "https://api.worldbank.org/v2/country/USA;GBR;SGP;FRA;DEU;ARE;IND;BRA;NGA/indicator/IT.NET.USER.ZS?date=2020:2024&format=json&per_page=100"
+    },
+    {
+      "id": "repo:masumi-network/Sokosumi-MCP",
+      "kind": "repository_snapshot",
+      "content": "{\"id\":\"repo:masumi-network/Sokosumi-MCP\",\"grain\":\"repository_snapshot\",\"repository\":\"masumi-network/Sokosumi-MCP\",\"description\":null,\"updatedAt\":\"2026-06-01T14:39:34Z\",\"archived\":false,\"license\":null,\"source\":\"https://github.com/masumi-network/Sokosumi-MCP\"}",
+      "source": "https://github.com/masumi-network/Sokosumi-MCP"
+    },
+    {
+      "id": "repo:masumi-network/sokosumi",
+      "kind": "repository_snapshot",
+      "content": "{\"id\":\"repo:masumi-network/sokosumi\",\"grain\":\"repository_snapshot\",\"repository\":\"masumi-network/sokosumi\",\"description\":\"This is the monorepo of the Sokosumi Marketplace, the web-app is built with Next.js and TypeScript, with a strong focus on UX and security\",\"updatedAt\":\"2026-10-07T10:17:46Z\",\"archived\":false,\"license\":\"MIT\",\"source\":\"https://github.com/masumi-network/sokosumi\"}",
+      "source": "https://github.com/masumi-network/sokosumi"
+    },
+    {
+      "id": "repo:cardano-community/koios-artifacts",
+      "kind": "repository_snapshot",
+      "content": "{\"id\":\"repo:cardano-community/koios-artifacts\",\"grain\":\"repository_snapshot\",\"repository\":\"cardano-community/koios-artifacts\",\"description\":\"Artifacts for https://koios.rest and https://api.koios.rest websites\",\"updatedAt\":\"2026-09-22T04:45:50Z\",\"archived\":false,\"license\":\"CC-BY-4.0\",\"source\":\"https://github.com/cardano-community/koios-artifacts\"}",
+      "source": "https://github.com/cardano-community/koios-artifacts"
+    },
+    {
+      "id": "repo:masumi-network/masumi-payment-service",
+      "kind": "repository_snapshot",
+      "content": "{\"id\":\"repo:masumi-network/masumi-payment-service\",\"grain\":\"repository_snapshot\",\"repository\":\"masumi-network/masumi-payment-service\",\"description\":null,\"updatedAt\":\"2026-10-06T07:59:25Z\",\"archived\":false,\"license\":\"MIT\",\"source\":\"https://github.com/masumi-network/masumi-payment-service\"}",
+      "source": "https://github.com/masumi-network/masumi-payment-service"
+    },
+    {
+      "id": "repo:masumi-network/masumi-skills",
+      "kind": "repository_snapshot",
+      "content": "{\"id\":\"repo:masumi-network/masumi-skills\",\"grain\":\"repository_snapshot\",\"repository\":\"masumi-network/masumi-skills\",\"description\":\"Enable your AI agent to accept blockchain payments in minutes\",\"updatedAt\":\"2026-07-13T10:04:37Z\",\"archived\":false,\"license\":\"MIT\",\"source\":\"https://github.com/masumi-network/masumi-skills\"}",
+      "source": "https://github.com/masumi-network/masumi-skills"
+    },
+    {
+      "id": "repo:modelcontextprotocol/typescript-sdk",
+      "kind": "repository_snapshot",
+      "content": "{\"id\":\"repo:modelcontextprotocol/typescript-sdk\",\"grain\":\"repository_snapshot\",\"repository\":\"modelcontextprotocol/typescript-sdk\",\"description\":\"The official TypeScript SDK for Model Context Protocol servers and clients\",\"updatedAt\":\"2026-10-06T12:57:39Z\",\"archived\":false,\"license\":\"NOASSERTION\",\"source\":\"https://github.com/modelcontextprotocol/typescript-sdk\"}",
+      "source": "https://github.com/modelcontextprotocol/typescript-sdk"
+    },
+    {
+      "id": "repo:n8n-io/n8n",
+      "kind": "repository_snapshot",
+      "content": "{\"id\":\"repo:n8n-io/n8n\",\"grain\":\"repository_snapshot\",\"repository\":\"n8n-io/n8n\",\"description\":\"Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.\",\"updatedAt\":\"2026-10-07T10:19:48Z\",\"archived\":false,\"license\":\"NOASSERTION\",\"source\":\"https://github.com/n8n-io/n8n\"}",
+      "source": "https://github.com/n8n-io/n8n"
+    },
+    {
+      "id": "gwi-identity",
+      "kind": "publisher_announcement",
+      "content": "{\"id\":\"gwi-identity\",\"grain\":\"publisher_announcement\",\"publishedAt\":\"2026-06-22\",\"source\":\"https://www.masumi.network/blogs/verifiable-identity-for-the-gwi-agent\",\"summary\":\"Masumi describes identity verification for the GWI audience-insight agent on Sokosumi. This is a potential commercial audience-data integration; public data access and a MEW partnership are not established.\",\"classification\":\"publisher_claim\"}",
+      "source": "https://www.masumi.network/blogs/verifiable-identity-for-the-gwi-agent"
+    },
+    {
+      "id": "sokosumi-mcp",
+      "kind": "publisher_announcement",
+      "content": "{\"id\":\"sokosumi-mcp\",\"grain\":\"publisher_announcement\",\"publishedAt\":\"2025-09-24\",\"source\":\"https://www.masumi.network/blogs/sokosumi-meets-mcp\",\"summary\":\"Masumi announces MCP access to Sokosumi services. Repository and authentication compatibility require separate testing before MEW can dispatch jobs.\",\"classification\":\"publisher_claim\"}",
+      "source": "https://www.masumi.network/blogs/sokosumi-meets-mcp"
+    },
+    {
+      "id": "masumi-n8n",
+      "kind": "publisher_announcement",
+      "content": "{\"id\":\"masumi-n8n\",\"grain\":\"publisher_announcement\",\"publishedAt\":\"2025-09-23\",\"source\":\"https://www.masumi.network/blogs/monetize-your-workflows\",\"summary\":\"Masumi describes monetizing n8n workflows and their payment and job lifecycle. MEW should retain its own durable operation identity and reconcile uncertain outcomes.\",\"classification\":\"publisher_claim\"}",
+      "source": "https://www.masumi.network/blogs/monetize-your-workflows"
+    },
+    {
+      "id": "agent-dispute-analysis",
+      "kind": "publisher_announcement",
+      "content": "{\"id\":\"agent-dispute-analysis\",\"grain\":\"publisher_announcement\",\"publishedAt\":\"2026-08-10\",\"source\":\"https://www.masumi.network/blogs/the-return-counter-nobody-built\",\"summary\":\"Masumi argues that agent purchases need traceable authorization and dispute handling. Treat this as publisher analysis; legal conclusions and cited market statistics are not independently validated here. MEW should test dispute evidence export and separate delivery acceptance from settlement.\",\"classification\":\"publisher_analysis\"}",
+      "source": "https://www.masumi.network/blogs/the-return-counter-nobody-built"
+    },
+    {
+      "id": "x402-security-analysis",
+      "kind": "publisher_announcement",
+      "content": "{\"id\":\"x402-security-analysis\",\"grain\":\"publisher_announcement\",\"publishedAt\":\"2026-07-28\",\"source\":\"https://www.masumi.network/blogs/x402-protocol-security-two-phase-gap\",\"summary\":\"Masumi discusses HTTP-to-chain settlement races, replay and paid-response caching. This is a threat-model lead rather than independently reproduced security research. MEW still needs authenticated delivery receipts and tests against any actual payment worker before production.\",\"classification\":\"publisher_analysis\"}",
+      "source": "https://www.masumi.network/blogs/x402-protocol-security-two-phase-gap"
+    }
+  ]
+}
