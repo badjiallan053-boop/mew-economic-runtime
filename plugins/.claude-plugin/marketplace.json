@@ -1,0 +1,11 @@
+{
+  "name": "local-plugins",
+  "owner": { "name": "arslane" },
+  "plugins": [
+    {
+      "name": "github-connect",
+      "source": "./github-connect",
+      "description": "Connect Claude Code to GitHub via the hosted MCP server."
+    }
+  ]
+}

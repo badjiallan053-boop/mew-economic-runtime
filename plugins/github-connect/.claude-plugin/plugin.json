@@ -1,0 +1,6 @@
+{
+  "name": "github-connect",
+  "version": "0.1.0",
+  "description": "Connect Claude Code to your GitHub account via GitHub's hosted MCP server, with commands for status and PR review.",
+  "keywords": ["github", "mcp", "pull-requests", "issues"]
+}
