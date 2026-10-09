@@ -75,3 +75,6 @@ The local simulator now exercises atomic reservation/outbox, fenced worker recov
 
 
 Implemented: deterministic reserve/defer accounting with per-asset objectives, SQLite transactional reservation journal that survives restart, idempotent claim ledger, read-only Cardano preprod payment observation, provider-neutral HMAC webhook intake and binding, minimized evidence-case export. **Pending (do not remove these labels without retained verification evidence per gate):** live authentication and production signed mandates, real provider dispatch/outbox integration, quote and signed delivery-receipt verification, provider API reconciliation, tenant isolation, any signer, a funded audited on-chain lifecycle, and any actual insurer integration. Nothing here signs, custodies or moves value.
+
+
+Local delivery protocol: the one-command pilot now exercises real Ed25519 verification of a simulated supplier receipt and separate fixture-owner acceptance, bound to exact artifact bytes and immutable pre-dispatch criteria. Exports contain binding digests. This is not evidence of real supplier enrollment, human acceptance, production key management or the completion of the signed-delivery release gate.

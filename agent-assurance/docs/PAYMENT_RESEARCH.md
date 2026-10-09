@@ -59,3 +59,8 @@ Reviewed [stripe-best-practices on skills.sh](https://skills.sh/stripe/ai/stripe
 
 Result: a separate sandbox inbox, fast durable acknowledgement, exact read-only PaymentIntent retrieval, bounded retry and atomic application. Deferred: thin-event support, live payment accounts, Connect tenancy, signed supplier acceptance, refund/dispute reconciliation and an actual credentialed provider run.
 
+
+
+## Delivery research — 9 October 2026
+
+Reviewed [Node 24 crypto](https://nodejs.org/docs/latest-v24.x/api/crypto.html) for Ed25519 sign/verify with a null algorithm and public SPKI DER keys. Reviewed [in-toto Statement v1](https://github.com/in-toto/attestation/blob/main/spec/v1/statement.md) for immutable artifact subjects identified by digest. MEW uses its own versioned, domain-separated protocol and does not claim in-toto/DSSE conformance. Existing skills.sh invariant-testing guidance informed negative tests for changed bytes, identities, timing, replay and atomicity; no external skill was installed and no formal/property-based proof is claimed. The actual scripted pilot now verifies supplier and fixture-owner signatures, but a human-reviewed supplier trial remains pending.

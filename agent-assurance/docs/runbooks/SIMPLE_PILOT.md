@@ -6,7 +6,7 @@ From `agent-assurance/`, with Node 24+:
 npm run pilot
 ```
 
-No installation, account, wallet, paid inference or API key is required. One scripted proposal buys one simulated report; the provider loses its response; a replacement is deferred; reconciliation finds the original purchase; synthetic delivery completes the objective. Expect a short result: one purchase, one report delivered, replacement deferred, and an evidence digest. Use `npm run pilot -- --evidence` for the complete minimized JSON evidence (`acceptedPurchases: 1`, `fulfilledQuantity: 1`, `replacement: "DEFER"`). Temporary databases are removed afterwards. All of this is explicitly simulation.
+No installation, account, wallet, paid inference or API key is required. One scripted proposal buys one simulated report; the provider loses its response; a replacement is deferred; reconciliation finds the original purchase; a signed supplier fixture receipt binds the exact report bytes and a separate fixture-owner signature accepts them. See [DELIVERY_ACCEPTANCE.md](DELIVERY_ACCEPTANCE.md). No actual human review is claimed. Expect a short result: one purchase, one report delivered, replacement deferred, and an evidence digest. Use `npm run pilot -- --evidence` for the complete minimized JSON evidence (`acceptedPurchases: 1`, `fulfilledQuantity: 1`, `replacement: "DEFER"`). Temporary databases are removed afterwards. All of this is explicitly simulation.
 
 To connect the same control workflow to Stripe's actual test API, privately configure `STRIPE_SANDBOX_KEY` and `STRIPE_SANDBOX_ACCOUNT_ID` as described in [STRIPE_SANDBOX.md](STRIPE_SANDBOX.md), then:
 
