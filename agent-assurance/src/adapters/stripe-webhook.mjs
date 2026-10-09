@@ -41,6 +41,9 @@ export class StripeInbox {
       id TEXT PRIMARY KEY, descriptor TEXT NOT NULL, digest TEXT NOT NULL, state TEXT NOT NULL,
       attempts INTEGER NOT NULL DEFAULT 0, token INTEGER NOT NULL DEFAULT 0,
       lease_until INTEGER NOT NULL DEFAULT 0, next_at INTEGER NOT NULL DEFAULT 0);`);
+    store.db.exec(`CREATE TABLE IF NOT EXISTS stripe_inbox_recovery (
+      sequence INTEGER PRIMARY KEY, event_id TEXT NOT NULL, at INTEGER NOT NULL,
+      prior_attempts INTEGER NOT NULL, prior_token INTEGER NOT NULL);`);
   }
   accept(raw,header,secrets) {
     const event=verifyStripeEvent(raw,header,{secrets,accountId:this.provider.accountId,now:this.clock()});
@@ -87,4 +90,25 @@ export class StripeInbox {
     });
     return true;
   }
+}
+
+export function inboxStatus(store) {
+  return store.db.prepare(`SELECT e.id,e.state,e.attempts,
+    (SELECT COUNT(*) FROM stripe_inbox_recovery r WHERE r.event_id=e.id) AS recoveries,
+    e.attempts+COALESCE((SELECT SUM(prior_attempts) FROM stripe_inbox_recovery r WHERE r.event_id=e.id),0) AS total_attempts
+    FROM stripe_event_inbox e ORDER BY e.id`).all();
+}
+
+// Explicit local operator recovery. Never creates or resubmits a payment.
+export function retryInboxReview(store,id,now=Date.now()) {
+  if(typeof id!=='string'||!/^evt_[A-Za-z0-9]+$/.test(id)||!Number.isSafeInteger(now)||now<0)throw new Error('Valid event and clock required');
+  return store.transact(()=>{
+    const row=store.db.prepare('SELECT * FROM stripe_event_inbox WHERE id=?').get(id);
+    if(!row||row.state!=='REVIEW')throw new Error('Only REVIEW events can be retried');
+    const count=store.db.prepare('SELECT COUNT(*) AS count FROM stripe_inbox_recovery WHERE event_id=?').get(id).count;
+    if(count>=3)throw new Error('Manual recovery bound reached');
+    store.db.prepare('INSERT INTO stripe_inbox_recovery (event_id,at,prior_attempts,prior_token) VALUES (?,?,?,?)').run(id,now,row.attempts,row.token);
+    store.db.prepare("UPDATE stripe_event_inbox SET state='PENDING',attempts=0,token=token+1,lease_until=0,next_at=0 WHERE id=?").run(id);
+    return {id,state:'PENDING',recovery:count+1};
+  });
 }

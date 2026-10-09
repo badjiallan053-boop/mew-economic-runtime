@@ -6,7 +6,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { Store } from '../src/server/store.mjs';
 import { StripeSandboxProvider } from '../src/adapters/stripe-sandbox.mjs';
-import { StripeInbox,verifyStripeEvent } from '../src/adapters/stripe-webhook.mjs';
+import { StripeInbox,verifyStripeEvent,inboxStatus,retryInboxReview } from '../src/adapters/stripe-webhook.mjs';
 import { createStripeReceiver } from '../src/server/stripe-receiver.mjs';
 
 const secret='whsec_fixture123',accountId='acct_fixture';
@@ -83,4 +83,20 @@ test('event deduplication survives closing and reopening the SQLite store',()=>{
 });
 test('read-only recovery rejects a returned payment identity different from the event hint',async()=>{
   const f=fixture();try{await assert.rejects(f.provider.submit(f.op.request,f.op.key));await assert.rejects(f.provider.readObservation(f.op.key,'pi_other'),/identity changed/);assert.equal(f.provider.row(f.op.key).intent,null);assert.equal(f.posts(),1);}finally{f.close();}
+});
+test('manual review recovery preserves attempt history and exposure, then reconciles without a second POST',async()=>{
+  const f=fixture();try{await assert.rejects(f.provider.submit(f.op.request,f.op.key));f.setOutage(true);const s=signed(f.event());f.inbox.accept(s.raw,s.header,[secret]);
+    for(let i=0;i<9;i++){await f.inbox.tick();f.setNow(f.now()+31000);}
+    assert.equal(inboxStatus(f.store)[0].state,'REVIEW');const snapshot=f.store.read().snapshot();
+    retryInboxReview(f.store,'evt_fixture',f.now());assert.deepEqual(f.store.read().snapshot(),snapshot);assert.equal(inboxStatus(f.store)[0].total_attempts,8);
+    assert.throws(()=>retryInboxReview(f.store,'evt_fixture',f.now()),/Only REVIEW/);
+    f.setOutage(false);await f.inbox.tick();const status=inboxStatus(f.store)[0];assert.equal(status.state,'APPLIED');assert.equal(status.total_attempts,9);assert.equal(status.recoveries,1);assert.equal(f.posts(),1);
+    assert.throws(()=>retryInboxReview(f.store,'evt_fixture',f.now()),/Only REVIEW/);
+  }finally{f.close();}
+});
+test('manual recovery has a lifetime bound, rejects malformed identity and never retries completed events',()=>{
+  const f=fixture();try{const s=signed(f.event());f.inbox.accept(s.raw,s.header,[secret]);assert.throws(()=>retryInboxReview(f.store,'bad',f.now()),/Valid/);
+    for(let i=0;i<3;i++){f.store.db.prepare("UPDATE stripe_event_inbox SET state='REVIEW',attempts=8 WHERE id=?").run('evt_fixture');retryInboxReview(f.store,'evt_fixture',f.now());}
+    f.store.db.prepare("UPDATE stripe_event_inbox SET state='REVIEW',attempts=8 WHERE id=?").run('evt_fixture');assert.throws(()=>retryInboxReview(f.store,'evt_fixture',f.now()),/bound/);assert.equal(inboxStatus(f.store)[0].total_attempts,32);assert.equal(f.posts(),0);
+  }finally{f.close();}
 });

@@ -13,6 +13,7 @@
     "assurance:verify": "node scripts/assurance.mjs --verify",
     "payment:stripe": "node scripts/stripe-pilot.mjs",
     "pilot": "node scripts/pilot.mjs",
-    "pilot:listen": "node scripts/stripe-listener.mjs"
+    "pilot:listen": "node scripts/stripe-listener.mjs",
+    "pilot:inbox": "node scripts/stripe-inbox.mjs"
   }
 }
