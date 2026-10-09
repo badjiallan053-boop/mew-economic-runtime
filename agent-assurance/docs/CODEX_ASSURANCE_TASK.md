@@ -1,6 +1,6 @@
 # Codex implementation task: durable dispatch and economic assurance
 
-Status: implementation handoff. The harness, worker and reports specified below are NOT implemented by this documentation PR.
+Status: implemented for the local simulator in PR #4. The specification below is retained as the acceptance contract; see docs/runbooks/ASSURANCE_DEMO.md for execution and limits. No real provider is integrated.
 Reviewed baseline: dca6a9a7f530daf2de1fc512ebcf95610450b204 (8 October 2026).
 Target: agent-assurance/. Preserve the original root MEW demo and APIs.
 
@@ -12,7 +12,7 @@ Implement this task on this PR branch, run the checks below and update the PR de
 
 ## Problem and resulting behavior
 
-Today ALLOW persists a reservation, but no dispatch worker couples that authorization to an external request. The existing tests cover the ledger and HTTP API, not a provider that accepts a purchase and then loses its response. Generic retries can duplicate a side effect; a permanent block can strand a legitimate objective.
+At the reviewed baseline, ALLOW persisted a reservation, but no dispatch worker coupled that authorization to an external request. The existing tests cover the ledger and HTTP API, not a provider that accepts a purchase and then loses its response. Generic retries can duplicate a side effect; a permanent block can strand a legitimate objective.
 
 Add a dependency-free, local Web2 provider simulator with a separately persisted ledger, a transactional reservation/outbox, a bounded worker and read-only reconciliation. Then run frozen, repeatable scenarios and export independently checkable results. In the lost-response scenario, the provider accepts Alpha, the worker cannot establish the result, capacity remains occupied, Beta is deferred, and reconciliation observes the original Alpha request without buying again.
 
@@ -149,7 +149,7 @@ No global skill installation or runtime dependency is required. If further reusa
 5. Add JSON/HTML report, verification and 90-second runbook.
 6. Run both suites and root build; update status labels only for exercised features.
 
-Proposed commands to implement (not present at baseline):
+Implemented commands (not present at baseline):
 - npm --prefix agent-assurance run assurance -- --out ./artifacts/assurance
 - npm --prefix agent-assurance run assurance:verify -- ./artifacts/assurance/report.json
 
@@ -161,16 +161,16 @@ Required existing commands:
 Extend the root assurance CI job with the new runner/verifier after those commands exist. A missing command is a failure, never an optional skipped check. Upload only minimized report artifacts if desired. Preserve root workflows and normal demo build.
 
 Final evidence checklist:
-- [ ] Atomic reserve/enqueue rollback and reopened database upgrade pass.
-- [ ] Competing processes on the SAME database cannot admit duplicate equivalent actions.
-- [ ] Real child-process kill before/after provider acceptance recovers safely.
-- [ ] Same key with altered request is rejected by provider and runtime.
-- [ ] Receiver ledger proves the guarded lost-response case accepts only once.
-- [ ] Deny-all fails utility; bypass fails coverage; tampered reports fail verification.
-- [ ] All scenarios have outcomes and provenance; unsupported controls remain labelled.
-- [ ] Both test suites, root build and evaluation commands pass with recorded output.
-- [ ] No changes enable real dispatch, signing, custody, insurance or deployment.
-- [ ] PR title/body describe actual delivered code and remaining limits.
+- [x] Atomic reserve/enqueue rollback and reopened database upgrade pass.
+- [x] Competing processes on the SAME database cannot admit duplicate equivalent actions.
+- [x] Real child-process kill before/after provider acceptance recovers safely.
+- [x] Same key with altered request is rejected by provider and runtime.
+- [x] Receiver ledger proves the guarded lost-response case accepts only once.
+- [x] Deny-all fails utility; bypass fails coverage; tampered reports fail verification.
+- [x] All scenarios have outcomes and provenance; unsupported controls remain labelled.
+- [x] Both test suites, root build and evaluation commands pass with recorded output.
+- [x] No changes enable real dispatch, signing, custody, insurance or deployment.
+- [x] PR title/body describe actual delivered code and remaining limits.
 
 ## Baseline verification for this handoff
 
@@ -180,3 +180,7 @@ On 9 October 2026, Node v24.19.0, fetched source from the reviewed revision:
 - agent-assurance npm test: 37 passed, 0 failed.
 
 These results establish the baseline only. They do not validate this future dispatch/harness implementation, live providers or the newly added CI execution on GitHub.
+
+## Implementation verification
+
+On 9 October 2026 with Node v24.19.0: root npm test passed 28/28; root npm run build exited 0; agent-assurance npm test passed 58/58; assurance generation and assurance:verify exited 0 for all 45 simulated results. Workflow YAML parsed successfully. GitHub CI status is tracked in PR #4 separately from these local checks. Local reports are explicitly unversioned unless CI supplies its checkout revision. The guarded expected result is 14/15, with the deliberate bypass failing coverage; an all-green report is rejected. Both process-kill points and same-database competing reservations use real subprocesses. Production release gates remain open.

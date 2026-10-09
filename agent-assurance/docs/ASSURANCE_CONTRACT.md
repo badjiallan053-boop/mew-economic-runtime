@@ -1,6 +1,6 @@
 # Agent payment assurance layer
 
-Updated 8 October 2026. This is the product and integration contract. It does not enable live dispatch, payment, custody or insurance.
+Updated 9 October 2026. This is the product and integration contract. It does not enable live dispatch, payment, custody or insurance.
 
 ## Product boundary
 
@@ -68,4 +68,7 @@ The first customer delivery is a **Web2 shadow-mode purchase workflow**. It exer
 
 ## Current implementation status
 
-Implemented: deterministic reserve/defer accounting with per-asset objectives, SQLite transactional reservation journal that survives restart, idempotent claim ledger, read-only Cardano preprod payment observation, provider-neutral HMAC webhook intake and binding, minimized evidence-case export. **Pending (do not remove these labels without retained verification evidence per gate):** live authentication and production signed mandates, dispatch worker/outbox, quote and delivery-receipt verification, provider API reconciliation, tenant isolation, any signer, a funded audited on-chain lifecycle, and any actual insurer integration. Nothing here signs, custodies or moves value.
+The local simulator now exercises atomic reservation/outbox, fenced worker recovery, durable receiver idempotency and 15 frozen scenarios in three modes. The receiver database is separate from MEW; all its observations, delivery and refunds are synthetic. Genuine subprocess kills and competing-process admission are tested in guarded mode; comparator modes use scripted equivalents for crash faults. See [ASSURANCE_DEMO.md](runbooks/ASSURANCE_DEMO.md). This does not satisfy a real provider sandbox, customer identity, signed delivery or production gate.
+
+
+Implemented: deterministic reserve/defer accounting with per-asset objectives, SQLite transactional reservation journal that survives restart, idempotent claim ledger, read-only Cardano preprod payment observation, provider-neutral HMAC webhook intake and binding, minimized evidence-case export. **Pending (do not remove these labels without retained verification evidence per gate):** live authentication and production signed mandates, real provider dispatch/outbox integration, quote and signed delivery-receipt verification, provider API reconciliation, tenant isolation, any signer, a funded audited on-chain lifecycle, and any actual insurer integration. Nothing here signs, custodies or moves value.

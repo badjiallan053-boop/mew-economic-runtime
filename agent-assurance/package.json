@@ -6,6 +6,9 @@
   "engines": {"node": ">=24"},
   "scripts": {
     "start": "node src/server/server.mjs",
-    "test": "node --test tests/*.test.mjs"
+    "test": "node --test tests/*.test.mjs",
+    "assurance": "node scripts/assurance.mjs",
+    "assurance:verify": "node scripts/assurance.mjs --verify"
   }
 }
+

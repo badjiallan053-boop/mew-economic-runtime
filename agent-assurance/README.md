@@ -4,16 +4,22 @@ Control and evidence layer between an AI agent's proposed purchase or trade and 
 
 Extracted from the MEW prototype, keeping only the infrastructure. See [docs/EXTRACTION_MAP.md](docs/EXTRACTION_MAP.md).
 
-**Not implemented:** signing, custody, real payments, insurance binding, dispatch worker, delivery-receipt verification, tenant isolation. Hosted use is demo-only. Do not describe this as having moved real value.
+**Implemented locally:** atomic reservation/outbox, fenced worker and an independent persisted provider simulator. Every simulator observation is synthetic.
+
+**Not implemented:** signing, custody, real provider dispatch/payments, insurance binding, signed delivery verification, tenant isolation. Hosted use is demo-only. Do not describe this as having moved real value.
 
 ## Run
 
-Node 24+, no dependencies. The extraction was desk-reviewed but its tests have not been executed yet; run `npm test` first.
+Node 24+, no external dependencies. Run from this directory:
 
 ```sh
 npm test
 npm start   # simulated demo at http://127.0.0.1:3000/api/health
+npm run assurance -- --out ./artifacts/assurance
+npm run assurance:verify -- ./artifacts/assurance/report.json
 ```
+
+The assurance runner evaluates 15 frozen scenarios in guarded, unguarded and deny-all modes. The guarded result is 14/15: the deliberate bypass must fail coverage. Zero eligible objectives displays N/A, and unsupported controls remain NOT_IMPLEMENTED. See the [90-second runbook](docs/runbooks/ASSURANCE_DEMO.md). These are deterministic regression results, not insurance or production loss estimates.
 
 ## What is here
 
@@ -22,6 +28,10 @@ npm start   # simulated demo at http://127.0.0.1:3000/api/health
 - `src/adapters/web2.mjs`: HMAC webhook verification and binding to the reservation.
 - `src/adapters/cardano.mjs`: read-only Cardano preprod payment observation.
 - `src/server/`: SQLite transactional journal and HTTP API: `/api/evaluate`, `/api/simulate`, `/api/objectives`, `/api/state`, `/api/evidence?objectiveId=&purpose=`, `/api/web2/webhook` and `/api/cardano/verify` (live mode).
+
+- `src/dispatch/`: simulator-only worker with bounded retries, reconciliation and stale-write fencing.
+- `src/adapters/sandbox-provider.mjs`: independent SQLite receiver ledger and durable matching-request deduplication.
+- `src/eval/`: frozen schedules, receiver-based oracle, minimized JSON/HTML and strict report verification.
 
 ## Docs
 

@@ -60,3 +60,12 @@ Baseline: dca6a9a7f530daf2de1fc512ebcf95610450b204.
 ## Honest product claim after implementation
 
 If all new checks pass, say that the specified controls passed the frozen simulated scenarios under documented assumptions. Report provider idempotency dependence, unresolved outcomes, bypass gaps and unsupported identity/delivery controls. A simulation does not establish production loss reduction, regulatory certification or insurance coverage.
+
+
+## Recovery research applied on 9 October 2026
+
+- [AWS transactional outbox guidance](https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/transactional-outbox.html): persist business state and dispatch intent together; consumers still need idempotency because delivery can repeat. Applied as one SQLite transaction plus a separately persisted receiver key.
+- [SQLite isolation](https://www.sqlite.org/isolation.html): BEGIN IMMEDIATE takes the writer transaction up front. Applied to admission and lease claims; competing processes share one local database. This is not multi-store coordination.
+- [SQLite file format / WAL](https://www.sqlite.org/fileformat2.html): do not infer cross-machine locking guarantees from a local journal. The simulator runbook uses local temporary files only.
+
+These primary sources support design choices. Test outcomes come from the retained commands and receiver ledger, not from the documentation or the YouTube discovery leads.
