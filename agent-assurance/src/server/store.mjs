@@ -144,7 +144,8 @@ export class Store {
       if(!['accepted','failed','refunded'].includes(status)) throw new Error('Unsupported provider observation');
       text(reference,'provider reference');
       const financial=status==='accepted'?'settled':status;
-      const evidence={verified:true,simulated:true,verifier:'local-simulator',providerReference:reference};
+      const verifier=observation.verifier==='stripe-api-sandbox'?'stripe-api-sandbox':'local-simulator';
+      const evidence={verified:true,simulated:true,verifier,providerReference:reference};
       k.observe({claimId:'sandbox:'+reference+':'+financial,effectId:id,source:'web2',type:'payment.'+financial,
         amount:op.request.amount,evidence});
       if(observation.delivered && status==='accepted') k.observe({claimId:'sandbox:'+reference+':delivery',effectId:id,

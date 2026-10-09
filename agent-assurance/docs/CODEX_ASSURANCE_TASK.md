@@ -184,3 +184,7 @@ These results establish the baseline only. They do not validate this future disp
 ## Implementation verification
 
 On 9 October 2026 with Node v24.19.0: root npm test passed 28/28; root npm run build exited 0; agent-assurance npm test passed 58/58; assurance generation and assurance:verify exited 0 for all 45 simulated results. Workflow YAML parsed successfully. GitHub CI status is tracked in PR #4 separately from these local checks. Local reports are explicitly unversioned unless CI supplies its checkout revision. The guarded expected result is 14/15, with the deliberate bypass failing coverage; an all-green report is rejected. Both process-kill points and same-database competing reservations use real subprocesses. Production release gates remain open.
+
+## Provider bridge and simple pilot follow-up
+
+The shared worker now supports the explicitly registered Stripe test-provider adapter as well as the local simulator. See PAYMENT_BRIDGE.md, PAYMENT_RESEARCH.md and runbooks/SIMPLE_PILOT.md. `npm run pilot` executes the account-free one-command demonstration; `npm run pilot -- --stripe` opts into a configured provider sandbox. Final local follow-up checks: 72 assurance tests and 28 root tests passed, root build and the pilot exited 0, and all 45 simulator results generated/verified. Stripe transport is mocked in CI; no credentialed remote sandbox transaction or live payment is claimed.

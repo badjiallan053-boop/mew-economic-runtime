@@ -25,6 +25,9 @@ jobs:
       - name: Generate minimized simulation evidence
         working-directory: agent-assurance
         run: npm run assurance -- --out ./artifacts/assurance
+      - name: Run one-command local pilot
+        working-directory: agent-assurance
+        run: npm run pilot
       - name: Verify simulation evidence and negative controls
         working-directory: agent-assurance
         run: npm run assurance:verify -- ./artifacts/assurance/report.json
