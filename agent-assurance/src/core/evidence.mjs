@@ -41,7 +41,14 @@ export function buildEvidenceCase(snapshot, { objectiveId, purpose, systemVersio
     ...snapshot.decisions.filter(d => ids.has(d.effect?.id)).map(d => ({ kind: 'decision', at: d.timestamp, effectId: d.effect.id, decision: d.decision, reason: d.reason })),
     ...snapshot.claims.filter(c => ids.has(c.effectId)).map(c => ({ kind: 'claim', at: c.receivedAt, effectId: c.effectId, claimType: c.type, source: c.source, sourceClass: sourceClass(c), verifier: c.evidence?.verifier ?? null, simulated: c.evidence?.simulated === true, evidenceRef: String(c.evidence?.txHash ?? c.evidence?.providerReference ?? '').slice(0, 128) || null }))
   ].sort((a, b) => String(a.at).localeCompare(String(b.at)));
-  const operations = effects.map(e => ({ effectId: e.id, provider: e.provider, asset: e.asset ?? objective.asset, amount: e.amount, nativeStatus: e.status, deliveryVerified: e.deliveryVerified, ...operationState(e) }));
+  const operations = effects.map(e => {
+    const delivery=snapshot.claims.find(c=>c.effectId===e.id&&c.type==='delivery'&&c.evidence?.verifier==='delivery-ed25519-local'&&
+      c.evidence.simulated===true&&c.evidence.verified===true&&['artifactDigest','receiptDigest','acceptanceDigest','contractDigest'].every(key=>
+        typeof c.evidence[key]==='string'&&/^[a-f0-9]{64}$/.test(c.evidence[key])));
+    return { effectId: e.id, provider: e.provider, asset: e.asset ?? objective.asset, amount: e.amount, nativeStatus: e.status, deliveryVerified: e.deliveryVerified,
+      ...operationState(e),...(delivery?{deliveryBinding:{artifactDigest:delivery.evidence.artifactDigest,receiptDigest:delivery.evidence.receiptDigest,
+        acceptanceDigest:delivery.evidence.acceptanceDigest,contractDigest:delivery.evidence.contractDigest,simulated:true}}:{}) };
+  });
   const missing = [];
   for (const o of operations) {
     if (o.nativeStatus === 'settled' && !o.deliveryVerified) missing.push({ effectId: o.effectId, gap: 'delivery receipt not recorded' });
@@ -61,3 +68,4 @@ export function buildEvidenceCase(snapshot, { objectiveId, purpose, systemVersio
   };
   return { ...body, caseDigest: digest(body) };
 }
+

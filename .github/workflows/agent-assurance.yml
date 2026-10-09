@@ -1,0 +1,40 @@
+name: Agent assurance
+on:
+  push:
+    paths:
+      - 'agent-assurance/**'
+      - '.github/workflows/agent-assurance.yml'
+  pull_request:
+    paths:
+      - 'agent-assurance/**'
+      - '.github/workflows/agent-assurance.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Verify existing assurance kernel and API
+        run: npm --prefix agent-assurance test
+      - name: Generate minimized simulation evidence
+        working-directory: agent-assurance
+        run: npm run assurance -- --out ./artifacts/assurance
+      - name: Run one-command local pilot
+        working-directory: agent-assurance
+        run: npm run pilot
+      - name: Verify simulation evidence and negative controls
+        working-directory: agent-assurance
+        run: npm run assurance:verify -- ./artifacts/assurance/report.json
+      - name: Retain minimized reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: simulated-assurance-report
+          path: agent-assurance/artifacts/assurance/
+          if-no-files-found: error
+          retention-days: 7
