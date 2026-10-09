@@ -3,14 +3,16 @@
   "version": "0.2.0",
   "private": true,
   "type": "module",
-  "engines": {"node": ">=24"},
+  "engines": {
+    "node": ">=24"
+  },
   "scripts": {
     "start": "node src/server/server.mjs",
     "test": "node --test tests/*.test.mjs",
     "assurance": "node scripts/assurance.mjs",
     "assurance:verify": "node scripts/assurance.mjs --verify",
     "payment:stripe": "node scripts/stripe-pilot.mjs",
-    "pilot": "node scripts/pilot.mjs"
+    "pilot": "node scripts/pilot.mjs",
+    "pilot:listen": "node scripts/stripe-listener.mjs"
   }
 }
-

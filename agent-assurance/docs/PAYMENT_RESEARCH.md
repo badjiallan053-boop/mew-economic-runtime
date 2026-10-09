@@ -49,3 +49,11 @@ The existing local assurance-engineering procedure controls this implementation.
 | [Cardano Foundation: Smart Contracts on Cardano](https://cardanofoundation.org/en/academy/video/smart-contracts-cardano) | Official video landing-page description retrieved; video content not reviewed | CIP-30, Aiken and eUTxO contract walkthroughs from primary documentation |
 
 No timestamps, quotations or claim of watching these videos are used as evidence. Written primary specs, actual code and executed checks support the implementation. Neither views nor GitHub stars establish buyer demand, security or provider eligibility.
+# Webhook recovery research — 9 October 2026
+
+Reviewed the official [Stripe webhook documentation](https://docs.stripe.com/webhooks) and `stripe/stripe-node` at commit `fe645f63d645011aca38dff9e245c1cf7b9ae60e`, specifically [Webhooks.ts](https://github.com/stripe/stripe-node/blob/fe645f63d645011aca38dff9e245c1cf7b9ae60e/src/Webhooks.ts) and its Express webhook-signing example. The implementation is original dependency-free Node code following the documented HMAC format, not a claim of full SDK equivalence. Raw-body verification, rotating v1 signatures, durable acknowledgement and current-resource retrieval informed this stage. Our freshness policy additionally rejects far-future timestamps and zero tolerance.
+
+Reviewed [stripe-best-practices on skills.sh](https://skills.sh/stripe/ai/stripe-best-practices) and its official `stripe/ai` skill source as reference guidance. No third-party skill was installed or granted credentials. The official Stripe Developers YouTube lesson [Build a basic webhook handler](https://www.youtube.com/watch?v=ApCJ98VGM14) was found through its indexed description; playback/transcript retrieval was unavailable. No claim here depends on watching that video. Executable requirements come from the official documentation and source repository.
+
+Result: a separate sandbox inbox, fast durable acknowledgement, exact read-only PaymentIntent retrieval, bounded retry and atomic application. Deferred: thin-event support, live payment accounts, Connect tenancy, signed supplier acceptance, refund/dispute reconciliation and an actual credentialed provider run.
+

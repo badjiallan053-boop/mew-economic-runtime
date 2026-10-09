@@ -70,6 +70,20 @@ export class StripeSandboxProvider {
         'automatic_payment_methods[allow_redirects]':'never','metadata[mew_request_digest]':row.digest});
       intent=await this.api('payment_intents',{body,idempotencyKey:'mew:'+digest({key:row.key,account:row.account})});
     }
+    return this.validateIntent(row,intent);
+  }
+  async readObservation(key,intentId) {
+    const row=this.row(key);
+    if(!row||row.account!==this.accountId)throw new Error('Missing or mismatched provider journal');
+    if(!/^pi_[A-Za-z0-9]+$/.test(intentId)||(row.intent&&row.intent!==intentId))throw new Error('Stripe payment identity changed');
+    await this.checkAccount();
+    const intent=await this.api('payment_intents/'+intentId);
+    if(intent.id!==intentId)throw new Error('Stripe payment identity changed');
+    return this.validateIntent(row,intent);
+  }
+  validateIntent(row,intent) {
+    const request=requestContract(JSON.parse(row.request));
+    if(digest(request)!==row.digest||request.provider!=='stripe-sandbox'||request.recipient!=='stripe:'+this.accountId||request.asset!=='usd-cent')throw new Error('Provider journal request changed');
     if(intent.object!=='payment_intent'||!/^pi_[A-Za-z0-9]+$/.test(intent.id)||intent.livemode!==false||
       intent.currency!=='usd'||intent.amount!==request.amount||intent.metadata?.mew_request_digest!==row.digest)
       throw new Error('Stripe sandbox observation does not match reserved request');

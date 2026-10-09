@@ -42,3 +42,5 @@ For the provider sandbox pilot see [STRIPE_SANDBOX.md](docs/runbooks/STRIPE_SAND
 ## Docs
 
 [Assurance contract](docs/ASSURANCE_CONTRACT.md) · [Chain decision](docs/CHAIN_DECISION.md) · [Market notes](docs/MARKET_NOTES.md) · [Kernel spec](SPEC.md) · [Agents used](docs/TEAM.md) · [Engineering contract](AGENTS.md)
+
+Stripe webhook recovery: `npm run pilot:listen` starts the separate test-only loopback receiver. See [STRIPE_WEBHOOK.md](docs/runbooks/STRIPE_WEBHOOK.md) for the short SOP. The account-free `npm run pilot` remains the default.

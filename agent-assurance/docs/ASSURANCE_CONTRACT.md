@@ -68,7 +68,7 @@ The first customer delivery is a **Web2 shadow-mode purchase workflow**. It exer
 
 ## Current implementation status
 
-An opt-in Stripe test-provider adapter and private pilot CLI now implement fixed-origin API submission, account/request binding and durable PaymentIntent recovery. Automated checks mock the remote API; a credentialed external sandbox run has not been performed. All observations stay synthetic. It does not implement live customer collection, customer-funded supplier spending, Stripe-specific webhooks or signed delivery.
+An opt-in Stripe test-provider adapter and private pilot CLI now implement fixed-origin API submission, account/request binding and durable PaymentIntent recovery. Automated checks mock the remote API; a credentialed external sandbox run has not been performed. All observations stay synthetic. It does not implement live customer collection, customer-funded supplier spending or signed delivery. Stripe snapshot webhooks now have a separate test-only loopback receiver and durable inbox; financial state is reconciled through read-only provider retrieval. This is locally fixture-tested, not evidence of a credentialed external sandbox run.
 
 
 The local simulator now exercises atomic reservation/outbox, fenced worker recovery, durable receiver idempotency and 15 frozen scenarios in three modes. The receiver database is separate from MEW; all its observations, delivery and refunds are synthetic. Genuine subprocess kills and competing-process admission are tested in guarded mode; comparator modes use scripted equivalents for crash faults. See [ASSURANCE_DEMO.md](runbooks/ASSURANCE_DEMO.md). This does not satisfy a real provider sandbox, customer identity, signed delivery or production gate.
